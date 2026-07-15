@@ -19,11 +19,13 @@ var queued_state_id: StringName
 var bar_elapsed_seconds: float = 0.0
 var transition_count: int = 0
 var is_muted: bool = false
+var is_dialogue_ducked: bool = false
 
 var _streams: Dictionary[StringName, AudioStreamWAV] = {}
 
 
 func _ready() -> void:
+	_update_volume()
 	set_process(true)
 
 
@@ -45,7 +47,16 @@ func request_state(state_id: StringName) -> bool:
 
 func set_music_muted(enabled: bool) -> void:
 	is_muted = enabled
-	volume_db = SILENT_DB if enabled else 0.0
+	_update_volume()
+
+
+func set_dialogue_ducked(enabled: bool) -> void:
+	is_dialogue_ducked = enabled
+	_update_volume()
+
+
+func _update_volume() -> void:
+	volume_db = SILENT_DB if is_muted else AudioMixPolicy.music_gain_db(is_dialogue_ducked)
 
 
 func stop_music() -> void:

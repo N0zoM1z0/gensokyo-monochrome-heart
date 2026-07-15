@@ -6,15 +6,18 @@ var cue_id: StringName
 var visual_key: StringName
 var pitch_hz: float
 var duration_seconds: float
+var role: AudioMixPolicy.Role
 
 
 func _init(
 	p_cue_id: StringName = &"",
 	p_visual_key: StringName = &"",
 	p_pitch_hz: float = 220.0,
-	p_duration_seconds: float = 0.08
+	p_duration_seconds: float = 0.08,
+	p_role: AudioMixPolicy.Role = AudioMixPolicy.Role.AUTO
 ) -> void:
 	cue_id = p_cue_id
 	visual_key = p_visual_key
 	pitch_hz = p_pitch_hz
 	duration_seconds = p_duration_seconds
+	role = p_role

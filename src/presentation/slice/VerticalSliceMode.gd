@@ -693,6 +693,8 @@ func _set_phase(next_phase: Phase, telemetry_phase_id: StringName) -> void:
 	if next_phase != _phase and next_phase == Phase.JOURNAL:
 		_large_text_page = 0
 	_phase = next_phase
+	if music_player != null:
+		music_player.set_dialogue_ducked(next_phase in [Phase.EVENT_LINE, Phase.EVENT_CHOICE])
 	if telemetry_phase_id != &"" and telemetry_phase_id != _telemetry_phase_id:
 		_telemetry_phase_id = telemetry_phase_id
 		_telemetry.enter_phase(telemetry_phase_id, -1, _is_replay)

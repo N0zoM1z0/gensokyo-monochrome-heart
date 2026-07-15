@@ -29,6 +29,19 @@ func _expect_adaptive_tones(failures: Array[String]) -> void:
 	player.set_music_muted(true)
 	if not player.is_muted or player.volume_db > AdaptiveTestTonePlayer.SILENT_DB:
 		failures.append("music mute did not silence the generated tone")
+	player.set_dialogue_ducked(true)
+	player.set_music_muted(false)
+	if player.volume_db != AudioMixPolicy.music_gain_db(true):
+		failures.append("important dialogue did not apply the reviewed 3 dB music duck")
+	player.set_dialogue_ducked(false)
+	if player.volume_db != AudioMixPolicy.MUSIC_DB:
+		failures.append("music did not return to its reviewed base gain after dialogue")
+	var warning_db := AudioMixPolicy.gain_db(AudioMixPolicy.Role.AUTO, &"sfx.threat.warning")
+	var damage_db := AudioMixPolicy.gain_db(AudioMixPolicy.Role.AUTO, &"sfx.player.damage")
+	var gameplay_db := AudioMixPolicy.gain_db(AudioMixPolicy.Role.AUTO, &"sfx.danmaku.graze")
+	var ambience_db := AudioMixPolicy.gain_db(AudioMixPolicy.Role.AUTO, &"sfx.step.wood")
+	if not (warning_db > damage_db and damage_db > gameplay_db and gameplay_db > ambience_db):
+		failures.append("procedural cue gains violate the warning/damage/gameplay/ambience hierarchy")
 	if player.request_state(&"mus.not_reviewed"):
 		failures.append("adaptive tone player accepted an unaudited music state")
 	player.free()

@@ -16,6 +16,7 @@ func play_cue(cue: AudioCueIntent) -> void:
 		return
 	last_cue_id = cue.cue_id
 	last_visual_key = cue.visual_key
+	volume_db = AudioMixPolicy.gain_db(cue.role, cue.cue_id)
 	# Headless and Dummy-audio validation have no listener or mix callback.
 	# Preserve the cue contract without allocating playback that cannot drain.
 	if DisplayServer.get_name() == "headless" or AudioServer.get_driver_name() == "Dummy":

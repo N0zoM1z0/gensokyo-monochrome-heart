@@ -36,6 +36,7 @@ func _run() -> void:
 	_expect(_kernel.state_snapshot().current_location == &"loc.hakurei_shrine", "map travel did not persist Hakurei Shrine")
 	_expect(_slice.complete_exploration_for_test(), "real exploration could not complete the cup/cushion objective")
 	_expect(_slice.phase_id() == &"dialogue" and _slice.current_event_node_id() == &"n003", "exploration trigger did not start the authored event opening")
+	_expect(_slice.music_player.is_dialogue_ducked, "important dialogue did not duck the music bed")
 
 	_slice.handle_semantic_action(GameInput.PAGE_RIGHT)
 	_expect(_slice.current_text().contains("湯呑み"), "live locale switch did not update the production dialogue")
@@ -50,6 +51,7 @@ func _run() -> void:
 
 	_accept_line()
 	_expect(_slice.phase_id() == &"mini.shrine.tea_temperature", "tone response did not instantiate Tea Temperature")
+	_expect(not _slice.music_player.is_dialogue_ducked, "mechanical mode retained dialogue music ducking")
 	var tea := _slice.active_child_mode() as TeaTemperatureMode
 	_expect(
 		tea != null
