@@ -1,0 +1,6 @@
+session_id,status,player_group,date_utc,commit,build_channel,os,input_device,locale,accessibility_preset,one_handed,ui_scale_percent,completed,route_block_count,observer_hint_count,title_exit_seconds,objective_understood_seconds,tea_result,danmaku_result,fighter_result,understood_tone_intent,understood_accept_loss,understood_journal_replay,explained_day_loop,comfort_info_preserved,highest_severity,open_issue_ids,telemetry_artifact,observer_summary
+P01,pending,touhou_aware,,,,qa,,,,,,false,,,,,,,,false,false,false,false,false,,,P01_vertical_slice_latest.json,
+P02,pending,touhou_aware,,,,qa,,,,,,false,,,,,,,,false,false,false,false,false,,,P02_vertical_slice_latest.json,
+P03,pending,touhou_unfamiliar,,,,qa,,,,,,false,,,,,,,,false,false,false,false,false,,,P03_vertical_slice_latest.json,
+P04,pending,touhou_unfamiliar,,,,qa,,,,,,false,,,,,,,,false,false,false,false,false,,,P04_vertical_slice_latest.json,
+P05,pending,accessibility_focused,,,,qa,,,,,,false,,,,,,,,false,false,false,false,false,,,P05_vertical_slice_latest.json,
