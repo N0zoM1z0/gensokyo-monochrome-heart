@@ -1,0 +1,983 @@
+{
+  "schema": "gensokyo-monochrome-ui-v2",
+  "count": 40,
+  "screens": [
+    {
+      "id": "boot",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/boot_screen.tscn",
+      "layout": "center 160x64 mark; status y=148",
+      "components": [
+        "loading_mark"
+      ],
+      "states": [
+        "loading",
+        "saving_migration",
+        "error",
+        "ready"
+      ],
+      "input": "cancel only during non-destructive loading",
+      "localization": "brand text <=24 EN / 12 JA glyphs",
+      "assets": "brand_mark_64, loading_gohei_16",
+      "acceptance": "never shows a blank frame longer than 500ms; error exposes safe quit and retry"
+    },
+    {
+      "id": "language_select",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/language_select.tscn",
+      "layout": "title y=28; two 120x28 cards centered; help y=142",
+      "components": [
+        "frame",
+        "choice_card",
+        "focus_marker",
+        "action_hint"
+      ],
+      "states": [
+        "first_boot",
+        "from_options"
+      ],
+      "input": "move/confirm/cancel when from options",
+      "localization": "language names are endonyms; each card <=12 glyphs",
+      "assets": "language_stamp_en, language_stamp_ja",
+      "acceptance": "chosen font renders sample before confirmation; selection is stored immediately"
+    },
+    {
+      "id": "content_notice",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/content_notice.tscn",
+      "layout": "272x132 modal; scroll body 244x76; actions bottom",
+      "components": [
+        "modal",
+        "scrollbar",
+        "choice_card",
+        "action_hint"
+      ],
+      "states": [
+        "first_view",
+        "revisit"
+      ],
+      "input": "scroll/confirm/cancel",
+      "localization": "body 33 EN chars x 7 lines or 16 JA glyphs x 7",
+      "assets": "notice_icons_12",
+      "acceptance": "full notice keyboard/pad readable; accept is never pre-committed by held input"
+    },
+    {
+      "id": "title",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/title_screen.tscn",
+      "layout": "logo x=16 y=20; menu x=176 y=86 w=128; version bottom",
+      "components": [
+        "frame",
+        "list_row",
+        "focus_marker",
+        "loading_mark"
+      ],
+      "states": [
+        "fresh",
+        "continue_available",
+        "no_save",
+        "update_notice"
+      ],
+      "input": "move/confirm/cancel/menu",
+      "localization": "menu <=18 EN / 9 JA glyphs",
+      "assets": "title_logo_192x64, title_bg_320x180, season_overlay",
+      "acceptance": "logo/background remain readable at 1x; continue hidden only when no valid save exists"
+    },
+    {
+      "id": "profile_select",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/profile_select.tscn",
+      "layout": "four 72x96 cards; preview top 48; explanation bottom",
+      "components": [
+        "frame",
+        "choice_card",
+        "focus_marker",
+        "tooltip"
+      ],
+      "states": [
+        "choose_default",
+        "preview",
+        "forced_A"
+      ],
+      "input": "move/confirm/cancel/help",
+      "localization": "profile label <=14 EN / 7 JA; explanation 42x3 EN",
+      "assets": "profile_preview_A-D_64x48",
+      "acceptance": "profiles change presentation only; forced A statement is explicit"
+    },
+    {
+      "id": "new_game_setup",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/new_game_setup.tscn",
+      "layout": "left options 160x124; right summary 136x124; confirm bottom",
+      "components": [
+        "frame",
+        "list_row",
+        "toggle",
+        "slider",
+        "tooltip",
+        "modal"
+      ],
+      "states": [
+        "new",
+        "preset_applied",
+        "confirm"
+      ],
+      "input": "move/adjust/confirm/cancel/help",
+      "localization": "labels <=20 EN / 10 JA",
+      "assets": "difficulty_stamps_12, input_glyphs",
+      "acceptance": "all difficulty/access choices are reversible; no route is chosen here"
+    },
+    {
+      "id": "save_load",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/save_load.tscn",
+      "layout": "tabs y=6; five 296x36 slots paged; modal overlay",
+      "components": [
+        "tab",
+        "save_slot",
+        "scrollbar",
+        "page_indicator",
+        "modal",
+        "loading_mark"
+      ],
+      "states": [
+        "save",
+        "load",
+        "autosave",
+        "empty",
+        "overwrite",
+        "corrupt"
+      ],
+      "input": "move/confirm/cancel/page/help",
+      "localization": "chapter/place each <=23 EN / 11 JA",
+      "assets": "save_thumbnail_region_64x32, slot_status_8",
+      "acceptance": "save waits for flush mark; overwrite has explicit slot identity; corrupt slots are not silently deleted"
+    },
+    {
+      "id": "options",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/options_screen.tscn",
+      "layout": "tabs y=6; rows x=12 y=28; help pane bottom 42",
+      "components": [
+        "tab",
+        "list_row",
+        "toggle",
+        "slider",
+        "tooltip",
+        "modal"
+      ],
+      "states": [
+        "video",
+        "audio",
+        "gameplay",
+        "language",
+        "reset"
+      ],
+      "input": "move/adjust/confirm/cancel/page/help",
+      "localization": "row label <=24 EN / 12 JA; help 45x3 EN",
+      "assets": "option_icons_12, input_glyphs",
+      "acceptance": "live preview for scale/profile; cancel restores pre-open values when requested"
+    },
+    {
+      "id": "accessibility",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/accessibility_screen.tscn",
+      "layout": "category rail 84; settings pane 220; preview 220x36 bottom",
+      "components": [
+        "tab",
+        "list_row",
+        "toggle",
+        "slider",
+        "tooltip"
+      ],
+      "states": [
+        "visual",
+        "motion",
+        "combat",
+        "text",
+        "input",
+        "audio_cues"
+      ],
+      "input": "move/adjust/confirm/cancel/help",
+      "localization": "row label <=25 EN / 12 JA",
+      "assets": "contrast_test_96x36, bullet_shapes_12",
+      "acceptance": "every switch testable in preview; reset is per category; forced A completes all content"
+    },
+    {
+      "id": "pause",
+      "category": "system",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/pause_screen.tscn",
+      "layout": "game frozen behind 50% ordered mask; menu 136x148 right",
+      "components": [
+        "frame",
+        "list_row",
+        "focus_marker",
+        "action_hint"
+      ],
+      "states": [
+        "field",
+        "danmaku",
+        "fighter",
+        "minigame"
+      ],
+      "input": "move/confirm/cancel/journal",
+      "localization": "label <=18 EN / 9 JA",
+      "assets": "pause_stamp_16",
+      "acceptance": "opens within one frame offline; active input is released; combat resumes after 3-frame countdown"
+    },
+    {
+      "id": "credits",
+      "category": "system",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/credits_screen.tscn",
+      "layout": "scroll field 296x140; chapter cards; skip hint",
+      "components": [
+        "frame",
+        "region_stamp",
+        "page_indicator",
+        "action_hint"
+      ],
+      "states": [
+        "rolling",
+        "paused",
+        "fast",
+        "complete"
+      ],
+      "input": "confirm pause; hold page fast; cancel skip modal",
+      "localization": "credit role <=28 EN / 14 JA",
+      "assets": "ending_stamps, staff_portrait_cameos",
+      "acceptance": "text never scrolls faster than 24px/s by default; full credits accessible from title"
+    },
+    {
+      "id": "chapter_card",
+      "category": "narrative",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/chapter_card.tscn",
+      "layout": "full composition; 240x64 title slip; stamp 32; continue bottom",
+      "components": [
+        "frame",
+        "region_stamp",
+        "relation_seal",
+        "action_hint"
+      ],
+      "states": [
+        "chapter",
+        "memory",
+        "incident",
+        "afterbeat"
+      ],
+      "input": "confirm/cancel to skip after first view",
+      "localization": "title <=28 EN / 14 JA; subtitle <=42 EN",
+      "assets": "chapter_woodcut_320x180, region_stamp_32",
+      "acceptance": "remains 90 frames minimum on first view; title survives forced A"
+    },
+    {
+      "id": "world_map",
+      "category": "narrative",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/world_map.tscn",
+      "layout": "top ribbon 16; graph x=4 y=24 w=224 h=132; detail x=232 w=84; footer 20",
+      "components": [
+        "top_ribbon",
+        "map_node",
+        "region_stamp",
+        "focus_marker",
+        "tooltip",
+        "action_hint"
+      ],
+      "states": [
+        "free",
+        "travel_locked",
+        "incident",
+        "changed"
+      ],
+      "input": "move/confirm/cancel/journal/page/help",
+      "localization": "node <=12 EN / 6 JA; detail <=12x8 EN",
+      "assets": "map_graph, 19_region_stamps_12, route_lines",
+      "acceptance": "every node reachable without pointer; link direction and lock cause are readable"
+    },
+    {
+      "id": "destination_detail",
+      "category": "narrative",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/destination_detail.tscn",
+      "layout": "region plate 128x72 left; spots/people right; travel action bottom",
+      "components": [
+        "frame",
+        "region_stamp",
+        "list_row",
+        "thread_node",
+        "action_hint"
+      ],
+      "states": [
+        "known",
+        "partial",
+        "changed",
+        "locked"
+      ],
+      "input": "move/confirm/cancel/page",
+      "localization": "spot <=20 EN / 10 JA",
+      "assets": "region_thumb_128x72, cast_head_16",
+      "acceptance": "shows knowledge state, not hidden spoiler; active companion affordance is explicit"
+    },
+    {
+      "id": "travel_confirm",
+      "category": "narrative",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/travel_confirm.tscn",
+      "layout": "modal 272x88 over dimmed map; route line 232x16",
+      "components": [
+        "modal",
+        "region_stamp",
+        "action_hint",
+        "loading_mark"
+      ],
+      "states": [
+        "normal",
+        "cost",
+        "companion_warning",
+        "blocked"
+      ],
+      "input": "confirm/cancel",
+      "localization": "cause <=40 EN x3 / 19 JA x3",
+      "assets": "travel_route_icons_12",
+      "acceptance": "default focus is cancel only for irreversible warning; otherwise travel"
+    },
+    {
+      "id": "exploration_hud",
+      "category": "narrative",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/exploration_hud.tscn",
+      "layout": "top ribbon optional; world prompts; footer appears only on hold/help",
+      "components": [
+        "top_ribbon",
+        "prompt_chip",
+        "toast",
+        "action_hint",
+        "region_stamp"
+      ],
+      "states": [
+        "free",
+        "near_spot",
+        "conversation_ready",
+        "changed",
+        "stealth",
+        "companion_action"
+      ],
+      "input": "move/confirm/cancel/menu/journal/companion",
+      "localization": "prompt <=12 EN / 6 JA",
+      "assets": "prompt_shapes, companion_action_icons, region_stamp",
+      "acceptance": "no permanent HUD covers faces; prompts clamp within 4px; hidden mode remains operable via audio/text cue"
+    },
+    {
+      "id": "spot_card",
+      "category": "narrative",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/spot_card.tscn",
+      "layout": "88x120 scene slip left; title and known hooks right; action footer",
+      "components": [
+        "frame",
+        "region_stamp",
+        "thread_node",
+        "action_hint"
+      ],
+      "states": [
+        "first_visit",
+        "repeat",
+        "changed",
+        "route_private"
+      ],
+      "input": "confirm/cancel/journal",
+      "localization": "title <=24 EN / 12 JA",
+      "assets": "spot_woodcut_88x120, spot_stamp_16",
+      "acceptance": "first visit establishes location; repeat variant completes in <=30 frames"
+    },
+    {
+      "id": "dialogue",
+      "category": "narrative",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/dialogue_screen.tscn",
+      "layout": "portrait optional x=4 y=56; panel x=4 y=112 w=312 h=64; nameplate overlaps y=104",
+      "components": [
+        "dialogue_panel",
+        "nameplate",
+        "portrait_window",
+        "action_hint",
+        "toast"
+      ],
+      "states": [
+        "typing",
+        "await",
+        "auto",
+        "skip_read",
+        "narrator",
+        "aside",
+        "two_portrait"
+      ],
+      "input": "confirm/cancel/menu/journal/page/help",
+      "localization": "3x48 EN cells or 4x22 JA glyphs; name <=18 EN/9 JA",
+      "assets": "portrait_80x104, expression_parts, continue_marks",
+      "acceptance": "no orphan one-word final line; auto/skip state visible; backlog stores exact localized text"
+    },
+    {
+      "id": "dialogue_choice",
+      "category": "narrative",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/dialogue_choice.tscn",
+      "layout": "context panel 188x64 left; 3-4 cards x=200 y=100 w=116; optional portrait",
+      "components": [
+        "dialogue_panel",
+        "choice_card",
+        "stance_stamp",
+        "focus_marker",
+        "tooltip"
+      ],
+      "states": [
+        "direct",
+        "playful",
+        "patient",
+        "defiant",
+        "locked",
+        "changed"
+      ],
+      "input": "move/confirm/cancel/help",
+      "localization": "choice <=26 EN x2 / 13 JA x2",
+      "assets": "stance_stamps_12, portrait_crop_80x104",
+      "acceptance": "choice intent is described; locked reason available; no invisible affinity number"
+    },
+    {
+      "id": "backlog",
+      "category": "narrative",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/backlog.tscn",
+      "layout": "speaker rail 72; text pane 238; scrollbar; event markers",
+      "components": [
+        "frame",
+        "tab",
+        "list_row",
+        "scrollbar",
+        "page_indicator",
+        "action_hint"
+      ],
+      "states": [
+        "dialogue",
+        "choice",
+        "system",
+        "filter_character"
+      ],
+      "input": "move/confirm/cancel/page/help",
+      "localization": "exact prior localized lines; no truncation",
+      "assets": "speaker_heads_12, choice_stamps_8",
+      "acceptance": "opens at latest line; choice and system records distinguishable without color"
+    },
+    {
+      "id": "route_threshold",
+      "category": "narrative",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/route_threshold.tscn",
+      "layout": "relation seal 48 center; two narrative blocks; confirm action after reveal",
+      "components": [
+        "frame",
+        "relation_seal",
+        "thread_node",
+        "action_hint"
+      ],
+      "states": [
+        "quiet",
+        "open",
+        "strained",
+        "crossed",
+        "deferred"
+      ],
+      "input": "confirm/cancel after 90 frames",
+      "localization": "title <=20 EN /10 JA; body 38x5 EN",
+      "assets": "character_route_seal_48, threshold_woodcut",
+      "acceptance": "never says romance locked by a hidden number; consequence text is qualitative and reviewable in journal"
+    },
+    {
+      "id": "ending_card",
+      "category": "narrative",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/ending_card.tscn",
+      "layout": "full 320x180 woodcut; 248x72 text slip; ending stamp 24",
+      "components": [
+        "frame",
+        "relation_seal",
+        "region_stamp",
+        "action_hint"
+      ],
+      "states": [
+        "route",
+        "ensemble",
+        "bad",
+        "afterbeat"
+      ],
+      "input": "confirm; cancel skip modal",
+      "localization": "title <=28 EN /14 JA; body <=42x4 EN",
+      "assets": "ending_woodcut_320x180, ending_stamp_24",
+      "acceptance": "ending ID stored after card completes; replay gallery lists unlocked language versions"
+    },
+    {
+      "id": "journal_summary",
+      "category": "journal",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/journal_summary.tscn",
+      "layout": "tabs y=4; active thread 304x40; recent changes; footer",
+      "components": [
+        "tab",
+        "thread_node",
+        "list_row",
+        "relation_seal",
+        "page_indicator",
+        "action_hint"
+      ],
+      "states": [
+        "normal",
+        "new",
+        "incident",
+        "route"
+      ],
+      "input": "move/confirm/cancel/page",
+      "localization": "row <=32 EN /16 JA",
+      "assets": "journal_tabs, status_shapes",
+      "acceptance": "new information sorted but never auto-opens spoilers; all states have text label"
+    },
+    {
+      "id": "journal_people",
+      "category": "journal",
+      "default_profile": "B",
+      "godot_scene": "res://ui/screens/journal_people.tscn",
+      "layout": "list 96 left; 80x104 portrait; facts/rumors 126 right",
+      "components": [
+        "tab",
+        "list_row",
+        "portrait_window",
+        "thread_node",
+        "scrollbar",
+        "relation_seal"
+      ],
+      "states": [
+        "known",
+        "partial",
+        "changed",
+        "route_ready",
+        "unknown"
+      ],
+      "input": "move/confirm/cancel/page/help",
+      "localization": "bio 20x8 EN /10x8 JA",
+      "assets": "portrait_80x104, person_stamp_16",
+      "acceptance": "facts and rumors visually separated; relationship is qualitative; unknown data not inferable from layout count"
+    },
+    {
+      "id": "journal_places",
+      "category": "journal",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/journal_places.tscn",
+      "layout": "region list 92; thumbnail 128x72; spot grid and state key",
+      "components": [
+        "tab",
+        "list_row",
+        "region_stamp",
+        "thread_node",
+        "page_indicator"
+      ],
+      "states": [
+        "known",
+        "partial",
+        "changed",
+        "completed"
+      ],
+      "input": "move/confirm/cancel/page",
+      "localization": "spot <=19 EN/9 JA",
+      "assets": "19_region_stamps, region_thumb_128x72, 19_spot_maps",
+      "acceptance": "state overlays list what player observed, not implementation flags"
+    },
+    {
+      "id": "journal_rumors",
+      "category": "journal",
+      "default_profile": "B",
+      "godot_scene": "res://ui/screens/journal_rumors.tscn",
+      "layout": "filter tabs; rumor cards 296x28; source/status tail",
+      "components": [
+        "tab",
+        "list_row",
+        "thread_node",
+        "scrollbar",
+        "tooltip"
+      ],
+      "states": [
+        "observed",
+        "contradicted",
+        "changed",
+        "resolved",
+        "unreliable"
+      ],
+      "input": "move/confirm/cancel/page/help",
+      "localization": "rumor <=42x2 EN /20x2 JA",
+      "assets": "rumor_status_shapes_8, source_heads_12",
+      "acceptance": "source certainty and contradiction are text+shape; sorting never rewrites chronology"
+    },
+    {
+      "id": "memory_thread",
+      "category": "journal",
+      "default_profile": "B",
+      "godot_scene": "res://ui/screens/memory_thread.tscn",
+      "layout": "graph 304x108; detail pane 304x48; pan cursor",
+      "components": [
+        "thread_node",
+        "focus_marker",
+        "tooltip",
+        "scrollbar",
+        "action_hint"
+      ],
+      "states": [
+        "observed",
+        "contradicted",
+        "changed",
+        "route",
+        "resolved"
+      ],
+      "input": "move/pan/confirm/cancel/page/help",
+      "localization": "node <=16 EN/8 JA; detail <=48x4 EN",
+      "assets": "thread_lines, thread_status_shapes, evidence_icons",
+      "acceptance": "all nodes reachable in linear list fallback; edges have pattern and label; no color dependence"
+    },
+    {
+      "id": "keepsakes",
+      "category": "journal",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/keepsakes.tscn",
+      "layout": "5x3 40x40 grid left; selected 88x120 composition right",
+      "components": [
+        "tab",
+        "list_row",
+        "focus_marker",
+        "tooltip",
+        "relation_seal"
+      ],
+      "states": [
+        "unknown",
+        "found",
+        "changed",
+        "gifted",
+        "returned"
+      ],
+      "input": "move/confirm/cancel/page/help",
+      "localization": "item <=20 EN/10 JA; note <=18x8 EN",
+      "assets": "keepsake_icons_32, item_woodcut_88x120",
+      "acceptance": "unknown slots do not disclose exact total for secret items; changes preserve prior description in history"
+    },
+    {
+      "id": "character_profile",
+      "category": "journal",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/character_profile.tscn",
+      "layout": "portrait 88x120; route seal 32; facts, voice cue, shared memories",
+      "components": [
+        "portrait_window",
+        "relation_seal",
+        "thread_node",
+        "page_indicator",
+        "action_hint"
+      ],
+      "states": [
+        "known",
+        "major",
+        "deep",
+        "route_open",
+        "complete"
+      ],
+      "input": "move/confirm/cancel/page",
+      "localization": "quote max 36 EN /18 JA; facts 22x7 EN",
+      "assets": "portrait_88x120, route_seal_32, motif_strip",
+      "acceptance": "profile uses authored public knowledge only; production tier is never visible to player"
+    },
+    {
+      "id": "danmaku_hud",
+      "category": "combat",
+      "default_profile": "D",
+      "godot_scene": "res://ui/screens/danmaku_hud.tscn",
+      "layout": "playfield 224x152 left; status rail 88 right; top spell 16; footer 12",
+      "components": [
+        "meter",
+        "pip_row",
+        "combat_timer",
+        "spell_banner",
+        "reticle",
+        "action_hint"
+      ],
+      "states": [
+        "normal",
+        "focus",
+        "bomb",
+        "life_lost",
+        "spell",
+        "pause",
+        "clear"
+      ],
+      "input": "move/focus/shot/bomb/pause",
+      "localization": "spell <=24 EN/12 JA; labels <=10 EN",
+      "assets": "bullet_shape_atlas, player_hitbox, boss_stamp, HUD_icons",
+      "acceptance": "bullets retain full contrast; score is secondary; focus reticle shows hitbox; decor suppressed on focus"
+    },
+    {
+      "id": "spell_card_intro",
+      "category": "combat",
+      "default_profile": "D",
+      "godot_scene": "res://ui/screens/spell_card_intro.tscn",
+      "layout": "24px banner; owner stamp; card title; playfield remains visible",
+      "components": [
+        "spell_banner",
+        "region_stamp",
+        "action_hint"
+      ],
+      "states": [
+        "first",
+        "repeat",
+        "timeout"
+      ],
+      "input": "confirm skips repeat only",
+      "localization": "title <=26 EN/13 JA",
+      "assets": "spell_owner_stamps, spell_banner_corners",
+      "acceptance": "first intro <=60 frames; repeated <=24; collision inactive until banner exits"
+    },
+    {
+      "id": "danmaku_result",
+      "category": "combat",
+      "default_profile": "D",
+      "godot_scene": "res://ui/screens/danmaku_result.tscn",
+      "layout": "result card 272x128; stat rows; retry/continue actions",
+      "components": [
+        "frame",
+        "list_row",
+        "meter",
+        "pip_row",
+        "choice_card"
+      ],
+      "states": [
+        "clear",
+        "fail",
+        "practice",
+        "new_record"
+      ],
+      "input": "move/confirm/cancel",
+      "localization": "stat <=18 EN/9 JA",
+      "assets": "result_stamps, capture_mark",
+      "acceptance": "shows capture/fail reason in words; restart is one confirmation; story mode always exposes continue policy"
+    },
+    {
+      "id": "fighter_hud",
+      "category": "combat",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/fighter_hud.tscn",
+      "layout": "name+life top edges; timer center; spell pips; arena bottom footer",
+      "components": [
+        "meter",
+        "pip_row",
+        "combat_timer",
+        "action_hint",
+        "relation_seal"
+      ],
+      "states": [
+        "round_intro",
+        "active",
+        "spell_break",
+        "down",
+        "pause",
+        "sudden"
+      ],
+      "input": "move/light/heavy/skill/spell/companion/pause",
+      "localization": "name <=16 EN/8 JA",
+      "assets": "fighter_portrait_24, skill_icons_12, round_stamps",
+      "acceptance": "both sides mirrored semantically; health loss has delayed notch; arena decor drops under effects"
+    },
+    {
+      "id": "fighter_result",
+      "category": "combat",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/fighter_result.tscn",
+      "layout": "winner woodcut 136x104; round marks; rematch/continue",
+      "components": [
+        "frame",
+        "relation_seal",
+        "pip_row",
+        "choice_card"
+      ],
+      "states": [
+        "win",
+        "loss",
+        "draw",
+        "story_continue",
+        "versus"
+      ],
+      "input": "move/confirm/cancel",
+      "localization": "result line <=32 EN/16 JA",
+      "assets": "winner_pose_136x104, round_marks",
+      "acceptance": "story outcome explains narrative continuation; versus supports immediate rematch"
+    },
+    {
+      "id": "training_pause",
+      "category": "combat",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/training_pause.tscn",
+      "layout": "command list 136; frame data 168; input history bottom",
+      "components": [
+        "tab",
+        "list_row",
+        "toggle",
+        "slider",
+        "scrollbar",
+        "action_hint"
+      ],
+      "states": [
+        "commands",
+        "dummy",
+        "display",
+        "reset"
+      ],
+      "input": "move/adjust/confirm/cancel/page",
+      "localization": "command <=20 EN/10 JA",
+      "assets": "command_icons, input_history_glyphs",
+      "acceptance": "all fighter actions discoverable; reset position one action; frame display optional"
+    },
+    {
+      "id": "minigame_shell",
+      "category": "activity",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/minigame_shell.tscn",
+      "layout": "top objective 20; central custom playfield; progress/status; footer controls",
+      "components": [
+        "top_ribbon",
+        "meter",
+        "pip_row",
+        "combat_timer",
+        "action_hint",
+        "region_stamp"
+      ],
+      "states": [
+        "intro",
+        "active",
+        "success",
+        "partial",
+        "fail",
+        "pause"
+      ],
+      "input": "custom + confirm/cancel/pause",
+      "localization": "objective <=38 EN/19 JA",
+      "assets": "19_region_stamps, activity_icons_12, result_marks",
+      "acceptance": "every minigame declares objective and controls before input; retry <=2 actions; story never hard-locks on dexterity"
+    },
+    {
+      "id": "photo_camera",
+      "category": "activity",
+      "default_profile": "D",
+      "godot_scene": "res://ui/screens/photo_camera.tscn",
+      "layout": "viewfinder 272x144; right exposure rail; target tags; shutter footer",
+      "components": [
+        "reticle",
+        "meter",
+        "pip_row",
+        "action_hint",
+        "toast"
+      ],
+      "states": [
+        "free",
+        "target",
+        "locked",
+        "shutter",
+        "review"
+      ],
+      "input": "move/adjust/confirm/cancel/focus",
+      "localization": "target <=16 EN/8 JA",
+      "assets": "camera_corners, subject_tags, photo_grade_stamps",
+      "acceptance": "shutter flash replaced by border close in safe mode; target criteria readable before capture"
+    },
+    {
+      "id": "trade_shop",
+      "category": "activity",
+      "default_profile": "A",
+      "godot_scene": "res://ui/screens/trade_shop.tscn",
+      "layout": "category tabs; item list 124; item detail 176; purse footer",
+      "components": [
+        "tab",
+        "list_row",
+        "tooltip",
+        "pip_row",
+        "modal",
+        "toast"
+      ],
+      "states": [
+        "buy",
+        "sell",
+        "trade",
+        "unavailable",
+        "confirm"
+      ],
+      "input": "move/confirm/cancel/page/help",
+      "localization": "item <=22 EN/11 JA; description 28x5 EN",
+      "assets": "item_icons_16, currency_shapes, shop_stamp",
+      "acceptance": "price/currency shown in digits and icon; unavailable reason shown; irreversible unique trade confirms"
+    },
+    {
+      "id": "clinic",
+      "category": "activity",
+      "default_profile": "B",
+      "godot_scene": "res://ui/screens/clinic.tscn",
+      "layout": "patient rail 80; symptoms/evidence 116; medicine tray 108; result modal",
+      "components": [
+        "tab",
+        "list_row",
+        "thread_node",
+        "focus_marker",
+        "modal",
+        "toast"
+      ],
+      "states": [
+        "observe",
+        "diagnose",
+        "compound",
+        "administer",
+        "result"
+      ],
+      "input": "move/confirm/cancel/page/help",
+      "localization": "symptom <=22 EN/11 JA",
+      "assets": "vial_icons_16, symptom_shapes, dosage_meter",
+      "acceptance": "wrong answer gives narrative feedback without medical-realism claims; ingredient effects reviewable"
+    },
+    {
+      "id": "activity_result",
+      "category": "activity",
+      "default_profile": "C",
+      "godot_scene": "res://ui/screens/activity_result.tscn",
+      "layout": "region stamp 24; result seal 48; 3 stat rows; continue/retry",
+      "components": [
+        "frame",
+        "region_stamp",
+        "relation_seal",
+        "list_row",
+        "choice_card"
+      ],
+      "states": [
+        "success",
+        "partial",
+        "fail",
+        "route_variant",
+        "record"
+      ],
+      "input": "move/confirm/cancel",
+      "localization": "result <=36 EN/18 JA",
+      "assets": "activity_result_seals, character_reaction_head",
+      "acceptance": "partial success is explicit; relationship reaction described qualitatively; no hidden score required for route"
+    }
+  ]
+}

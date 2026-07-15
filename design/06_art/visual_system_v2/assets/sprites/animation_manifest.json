@@ -1,0 +1,186 @@
+{
+  "format": "RGBA PNG; visible pixels are #000000 or #FFFFFF; transparent background",
+  "model_s": {
+    "frame_size": [
+      16,
+      24
+    ],
+    "purpose": "map markers and crowds"
+  },
+  "model_m": {
+    "frame_size": [
+      24,
+      32
+    ],
+    "purpose": "exploration and minigames"
+  },
+  "model_l": {
+    "frame_size": [
+      32,
+      48
+    ],
+    "purpose": "dramatic and fighter prototype"
+  },
+  "sheet_order": [
+    {
+      "action": "idle",
+      "index": 0,
+      "duration": 160
+    },
+    {
+      "action": "idle",
+      "index": 1,
+      "duration": 160
+    },
+    {
+      "action": "idle",
+      "index": 2,
+      "duration": 160
+    },
+    {
+      "action": "idle",
+      "index": 3,
+      "duration": 160
+    },
+    {
+      "action": "walk",
+      "index": 0,
+      "duration": 90
+    },
+    {
+      "action": "walk",
+      "index": 1,
+      "duration": 90
+    },
+    {
+      "action": "walk",
+      "index": 2,
+      "duration": 90
+    },
+    {
+      "action": "walk",
+      "index": 3,
+      "duration": 90
+    },
+    {
+      "action": "walk",
+      "index": 4,
+      "duration": 90
+    },
+    {
+      "action": "walk",
+      "index": 5,
+      "duration": 90
+    },
+    {
+      "action": "walk",
+      "index": 6,
+      "duration": 90
+    },
+    {
+      "action": "walk",
+      "index": 7,
+      "duration": 90
+    },
+    {
+      "action": "talk",
+      "index": 0,
+      "duration": 140
+    },
+    {
+      "action": "talk",
+      "index": 1,
+      "duration": 140
+    },
+    {
+      "action": "talk",
+      "index": 2,
+      "duration": 140
+    },
+    {
+      "action": "talk",
+      "index": 3,
+      "duration": 140
+    }
+  ],
+  "characters": {
+    "reimu": {
+      "label": "REIMU",
+      "silhouette": "oversized bow / detached sleeves / gohei",
+      "anchors": {
+        "feet_anchor": [
+          12,
+          31
+        ],
+        "focus_anchor": [
+          12,
+          22
+        ],
+        "hand_primary": [
+          19,
+          16
+        ],
+        "hand_secondary": [
+          5,
+          16
+        ],
+        "head_top": [
+          12,
+          0
+        ]
+      }
+    },
+    "marisa": {
+      "label": "MARISA",
+      "silhouette": "witch hat / white apron cut / broom diagonal",
+      "anchors": {
+        "feet_anchor": [
+          12,
+          31
+        ],
+        "focus_anchor": [
+          12,
+          22
+        ],
+        "hand_primary": [
+          18,
+          16
+        ],
+        "hand_secondary": [
+          6,
+          16
+        ],
+        "head_top": [
+          12,
+          0
+        ]
+      }
+    },
+    "sakuya": {
+      "label": "SAKUYA",
+      "silhouette": "maid headpiece / straight posture / knife or watch",
+      "anchors": {
+        "feet_anchor": [
+          12,
+          31
+        ],
+        "focus_anchor": [
+          12,
+          22
+        ],
+        "hand_primary": [
+          18,
+          16
+        ],
+        "hand_secondary": [
+          6,
+          16
+        ],
+        "head_top": [
+          12,
+          1
+        ]
+      }
+    }
+  }
+}

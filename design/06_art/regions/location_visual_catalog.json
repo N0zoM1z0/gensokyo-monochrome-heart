@@ -1,0 +1,1407 @@
+{
+  "schema": "gensokyo-monochrome-location-visual-v2",
+  "resolution": [
+    320,
+    180
+  ],
+  "tile": [
+    16,
+    16
+  ],
+  "profiles": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "entries": [
+    {
+      "id": "animal_realm_primate_garden",
+      "title": "Animal Realm and Primate Spirit Garden",
+      "tier": "B",
+      "profiles": [
+        "D",
+        "B"
+      ],
+      "stamp": "broken haniwa face inside a square seal",
+      "thesis": "Military geometry tries to contain souls that refuse to become identical.",
+      "silhouette": "stacked black towers, assembly lines, regimented haniwa ranks, enormous beast-shadow cutouts",
+      "layers": [
+        "white void with sparse descending soul commas",
+        "factory terraces and distant regiment silhouettes",
+        "hard-edged platforms, clay ramps and conveyor seams",
+        "passing haniwa shields and beast claws"
+      ],
+      "signature_tiles": [
+        "clay brick",
+        "kiln grate",
+        "conveyor teeth",
+        "haniwa face",
+        "spirit pool",
+        "beast claw mark",
+        "garden plinth",
+        "command banner"
+      ],
+      "landmark": "Keiki atelier: a white goddess-shaped gap surrounded by dense black scaffolding",
+      "texture": "orthogonal 50% ordered dither interrupted by organic soul curves",
+      "ambience": "kiln pulse, marching dust, soul commas and one-frame forge sparks",
+      "transition": "a haniwa stamp strikes; the screen breaks into four disciplined panels",
+      "world_states": [
+        "CALM: orderly ranks with one figure subtly misaligned",
+        "INCIDENT: command banners double and corridors narrow",
+        "ROUTE: one handmade figure appears beside the chosen character",
+        "SEASON: kiln steam and clay moisture change the floor pattern",
+        "AFTER: regiment gaps become gardens without losing the industrial skeleton"
+      ],
+      "combat_readability": "reserve a clean 208x128 arena; hazards move on visible 16-pixel lanes; soul bullets never share the clay dither frequency",
+      "spots": [
+        "Animal City",
+        "Kiketsu Office",
+        "Keiga Training Ground",
+        "Oil Shore",
+        "Primate Spirit Garden",
+        "Haniwa Workshop",
+        "Boundary Elevator"
+      ],
+      "primary_cast": [
+        "Yachie",
+        "Saki",
+        "Keiki",
+        "Mayumi",
+        "Hecatia cameo"
+      ],
+      "minigames": [
+        "Resource Negotiation",
+        "Leg-Strength Courier",
+        "Idol Assembly",
+        "Haniwa Formation",
+        "Willpower Check"
+      ],
+      "art_anchor": "angular city blocks, beast emblems, oil surfaces, clay figures, fortress garden walls ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 48,
+        "macro_tiles_32x32": 14,
+        "animated_props": 9,
+        "background_strips_320x180": 6,
+        "foreground_masks": 4,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "eientei_bamboo_forest",
+      "title": "Eientei and the Bamboo Forest of the Lost",
+      "tier": "A",
+      "profiles": [
+        "C",
+        "D"
+      ],
+      "stamp": "rabbit ears crossing a medicine vial",
+      "thesis": "Repeated corridors become intimate only through tiny, remembered differences.",
+      "silhouette": "vertical bamboo bars, long rabbit ears, low tiled roofs and an impossible moon disc",
+      "layers": [
+        "moon and sparse bamboo ghosts",
+        "two scrolling bamboo bands at unequal speed",
+        "root paths, clinic floor and sliding-door thresholds",
+        "near bamboo wipes, drifting leaves and rabbit-ear peeks"
+      ],
+      "signature_tiles": [
+        "bamboo stalk",
+        "split root",
+        "lost-path fork",
+        "moonlit puddle",
+        "tatami",
+        "medicine shelf",
+        "rabbit burrow",
+        "sealed corridor"
+      ],
+      "landmark": "Eientei gate appears as a white horizontal cut through a forest of black verticals",
+      "texture": "low-frequency vertical hatch; interiors return to broad white tatami fields",
+      "ambience": "bamboo sway, ear silhouettes, vial glints and moon phase wipes",
+      "transition": "three bamboo trunks pass foreground; the middle trunk becomes a door frame",
+      "world_states": [
+        "CALM: readable leaf notches identify loops",
+        "INCIDENT: notches migrate and the moon repeats",
+        "ROUTE: a private shortcut gains a character-specific charm",
+        "SEASON: snow, rain and fireflies alter only the far/mid bands",
+        "AFTER: wrong turns retain small gifts instead of punishment"
+      ],
+      "combat_readability": "use black stalk columns only at arena edges; lunatic wavelength effects are 2-pixel dashed contours, distinct from collision bullets",
+      "spots": [
+        "Forest Entrance",
+        "Looping Bamboo Path",
+        "Rabbit Clearing",
+        "Eientei Gate",
+        "Clinic",
+        "Long Corridor",
+        "Kaguya's Chamber",
+        "Moon-Viewing Veranda",
+        "Hidden Burn Path"
+      ],
+      "primary_cast": [
+        "Kaguya",
+        "Eirin",
+        "Reisen",
+        "Tewi",
+        "Mokou"
+      ],
+      "minigames": [
+        "Bamboo Loop Memory",
+        "Clinic Triage",
+        "Wavelength Hallway",
+        "Five Impossible Errands",
+        "Rabbit Luck Ledger",
+        "Immortal Escort"
+      ],
+      "art_anchor": "vertical bamboo rhythm, long black corridors, white moon disks, medicine shelves, rabbit ears in negative space ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 64,
+        "macro_tiles_32x32": 18,
+        "animated_props": 12,
+        "background_strips_320x180": 8,
+        "foreground_masks": 6,
+        "landmark_sets": 3,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "forest_of_magic_kourindou",
+      "title": "Forest of Magic and Kourindou",
+      "tier": "A",
+      "profiles": [
+        "A",
+        "D"
+      ],
+      "stamp": "mushroom cap over a price tag",
+      "thesis": "Curiosity makes a home from clutter, but every object keeps an unknown past.",
+      "silhouette": "leaning trees, mushroom shelves, broom diagonals, shop roof and outside-world rectangles",
+      "layers": [
+        "white mist with crooked canopy islands",
+        "tree arches and distant object piles",
+        "soft root ground, shop floorboards and mushroom rings",
+        "hanging herbs, close branches and unlabeled junk"
+      ],
+      "signature_tiles": [
+        "root bridge",
+        "mushroom cluster",
+        "spark moss",
+        "herb hook",
+        "shop shelf",
+        "radio rectangle",
+        "broom rack",
+        "price tag"
+      ],
+      "landmark": "Kourindou window: a bright display grid of objects whose silhouettes never quite match their labels",
+      "texture": "organic stipple in forest; clean parallel hatching on shop wood; no checker noise",
+      "ambience": "spore drift, hanging herb swing, mini-hakkero spark and radio scan line",
+      "transition": "a found object rotates as a black silhouette and becomes the next scene aperture",
+      "world_states": [
+        "CALM: paths curve around useful clutter",
+        "INCIDENT: object labels detach and float to wrong items",
+        "ROUTE: the companion leaves a persistent object on one shelf",
+        "SEASON: fungi and canopy density swap by tile overlay",
+        "AFTER: a repaired object hums imperfectly in the shop"
+      ],
+      "combat_readability": "forest hazards use slow root telegraphs; sparks and bullets use hollow/solid polarity pairs; shop duels protect shelf silhouettes from visual overlap",
+      "spots": [
+        "Forest Edge",
+        "Mushroom Field",
+        "Marisa's House",
+        "Alice's House",
+        "Doll Clearing",
+        "Kourindou",
+        "Discard Stream"
+      ],
+      "primary_cast": [
+        "Marisa",
+        "Alice",
+        "Rinnosuke",
+        "Patchouli visitors",
+        "fairies"
+      ],
+      "minigames": [
+        "Mushroom Field Notes",
+        "Doll Orchestra",
+        "Curio Identification",
+        "Broom Cargo Run"
+      ],
+      "art_anchor": "gnarled trunks, mushrooms, shelves, bottles, doll silhouettes, heaps of unrecognized tools ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 64,
+        "macro_tiles_32x32": 18,
+        "animated_props": 12,
+        "background_strips_320x180": 8,
+        "foreground_masks": 6,
+        "landmark_sets": 3,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "former_hell_chireiden",
+      "title": "Former Hell and the Palace of the Earth Spirits",
+      "tier": "A",
+      "profiles": [
+        "D",
+        "C"
+      ],
+      "stamp": "third eye above a reactor ring",
+      "thesis": "What is buried remains warm, social and capable of answering back.",
+      "silhouette": "cavern vaults, palace arches, cat cart, raven wing, reactor circles and third-eye cords",
+      "layers": [
+        "black cavern with white heat cracks",
+        "old city bridges and palace facade",
+        "basalt ledges, tiled corridors and reactor catwalks",
+        "steam plumes, chains, pipes and passing spirits"
+      ],
+      "signature_tiles": [
+        "basalt crack",
+        "hot spring edge",
+        "old city lantern",
+        "palace eye door",
+        "cat-cart rail",
+        "reactor grate",
+        "control rod socket",
+        "spirit flame niche"
+      ],
+      "landmark": "subterranean sun: concentric white rings held inside a nearly solid black reactor hall",
+      "texture": "75% rock masses, 25% steam, broad white safety lanes around interactables",
+      "ambience": "heat shimmer as alternating contour, cat-tail flame, cable pulse and slow spirit ascent",
+      "transition": "a third-eye cord draws a circle; the circle becomes a tunnel or reactor iris",
+      "world_states": [
+        "CALM: warm windows dot the black city",
+        "INCIDENT: heat cracks connect into an accusing eye",
+        "ROUTE: one sealed palace room opens into a quiet domestic vignette",
+        "SEASON: surface weather appears only as pipe condensation",
+        "AFTER: safety markings remain hand-painted and slightly uneven"
+      ],
+      "combat_readability": "reactor pulses occur behind the playfield at 2 Hz maximum; bullets use white cores with black safety rims; camera shake is optional and disabled by default",
+      "spots": [
+        "Old Capital Street",
+        "Bridge Descent",
+        "Palace Entrance",
+        "Satori's Parlor",
+        "Koishi's Unnoticed Path",
+        "Corpse Cart Rails",
+        "Blazing Fires",
+        "Reactor Control"
+      ],
+      "primary_cast": [
+        "Satori",
+        "Koishi",
+        "Rin",
+        "Utsuho",
+        "Yuugi",
+        "Parsee cameo"
+      ],
+      "minigames": [
+        "Mind-Read Seating",
+        "Unconscious Hide-and-Seek",
+        "Corpse Cart Switchback",
+        "Reactor Balance",
+        "Oni Cup Balance"
+      ],
+      "art_anchor": "brick caverns, palace eye motifs, rail tracks, furnace circles, old-city lanterns ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 64,
+        "macro_tiles_32x32": 18,
+        "animated_props": 12,
+        "background_strips_320x180": 8,
+        "foreground_masks": 6,
+        "landmark_sets": 3,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "garden_sun_nameless_hill",
+      "title": "Garden of the Sun and Nameless Hill",
+      "tier": "C",
+      "profiles": [
+        "C",
+        "A"
+      ],
+      "stamp": "sunflower split by a lily-of-the-valley bell",
+      "thesis": "Beauty and poison share a border that must be approached, not erased.",
+      "silhouette": "sunflower walls, parasol circle, low poisonous bells and abandoned doll shapes",
+      "layers": [
+        "white sun disc and distant flower horizon",
+        "alternating tall sunflower and low hill bands",
+        "soil rows, narrow safe paths and petal clearings",
+        "petals, parasol edge and close swaying stems"
+      ],
+      "signature_tiles": [
+        "sunflower stem",
+        "turning flower head",
+        "lily bell",
+        "poison soil",
+        "safe stepping stone",
+        "doll scrap",
+        "parasol shade",
+        "wind furrow"
+      ],
+      "landmark": "one enormous sunflower turns away from the player while every small flower faces them",
+      "texture": "parallel soil hatch; flower heads are solid black disks with white seed notches",
+      "ambience": "petal drift, flower turns, poison motes and abrupt wind silence",
+      "transition": "a parasol closes to a vertical line, then opens onto the next field",
+      "world_states": [
+        "CALM: tall and low fields remain clearly distinct",
+        "INCIDENT: flower heads track contradictory targets",
+        "ROUTE: a safe picnic shade appears without cleansing the hill",
+        "SEASON: bloom density changes through sparse overlays",
+        "AFTER: warning markers become handmade and cared for"
+      ],
+      "combat_readability": "poison zones use perimeter animation, never noisy fill; flower bullets remain circular while harmful pollen uses tiny crosses",
+      "spots": [
+        "Sunflower Rows",
+        "Umbrella Path",
+        "Night Bloom Corner",
+        "Nameless Hill",
+        "Lily Valley",
+        "Abandoned Doll Site"
+      ],
+      "primary_cast": [
+        "Yuuka",
+        "Medicine cameo",
+        "Hina visitors",
+        "Alice visitors"
+      ],
+      "minigames": [
+        "Flower Listening",
+        "Shadow Watering",
+        "Poison Wind Route",
+        "Doll Memorial"
+      ],
+      "art_anchor": "repeating flower heads differentiated by silhouette, umbrella arc, dense grasses, poison bells ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 36,
+        "macro_tiles_32x32": 10,
+        "animated_props": 6,
+        "background_strips_320x180": 4,
+        "foreground_masks": 3,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "hakugyokurou",
+      "title": "Hakugyokurou",
+      "tier": "A",
+      "profiles": [
+        "C",
+        "A"
+      ],
+      "stamp": "half-phantom curling around a fan",
+      "thesis": "Care for the dead is expressed through chores, appetite and disciplined incompleteness.",
+      "silhouette": "endless stair, cherry boughs, broad ghost sleeves, twin swords and drifting soul commas",
+      "layers": [
+        "white heaven with faint petal diagonals",
+        "stair terraces and Saigyou Ayakashi crown",
+        "garden paths, veranda boards and grave edges",
+        "petal veils, close branches and passing phantoms"
+      ],
+      "signature_tiles": [
+        "white stone stair",
+        "cherry root",
+        "petal mound",
+        "spirit lantern",
+        "garden rake line",
+        "meal tray",
+        "sword stand",
+        "sealed tree bark"
+      ],
+      "landmark": "the staircase rises through three depth bands toward a tree too large to fit the frame",
+      "texture": "very sparse 25% petal fields; black reserved for trunks, roofs and emotional beats",
+      "ambience": "petal parallax, phantom breathing, fan flick and food steam",
+      "transition": "petals gather into a butterfly; its wings open as the next scene",
+      "world_states": [
+        "CALM: spirits drift in slow readable lanes",
+        "INCIDENT: stairs repeat one landing and petals fall upward",
+        "ROUTE: one shared meal setting persists on the veranda",
+        "SEASON: blossoms, bare branches and snow use the same collision map",
+        "AFTER: repaired garden lines include one playful detour"
+      ],
+      "combat_readability": "ghost bullets use hollow comma silhouettes; petals are non-colliding and dim to 25% behind combat; sword trails occupy one frame only",
+      "spots": [
+        "Long Stairway",
+        "Front Garden",
+        "Soul Orchard",
+        "Kitchen",
+        "Veranda",
+        "Training Yard",
+        "Saigyou Ayakashi View",
+        "Netherworld Gate"
+      ],
+      "primary_cast": [
+        "Yuyuko",
+        "Youmu",
+        "Yukari",
+        "Komachi",
+        "visiting spirits"
+      ],
+      "minigames": [
+        "Soul Garden",
+        "Bottomless Banquet",
+        "Half-Phantom Balance",
+        "Memorial Kitchen"
+      ],
+      "art_anchor": "white stone steps, black cherry branches, drifting spirit tails, raked garden lines, kitchen steam ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 64,
+        "macro_tiles_32x32": 18,
+        "animated_props": 12,
+        "background_strips_320x180": 8,
+        "foreground_masks": 6,
+        "landmark_sets": 3,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "hakurei_shrine",
+      "title": "Hakurei Shrine",
+      "tier": "A",
+      "profiles": [
+        "A",
+        "C"
+      ],
+      "stamp": "yin-yang orb beneath a torii",
+      "thesis": "A home is recognizable by the work that resumes after every incident.",
+      "silhouette": "torii, low shrine eaves, donation box, bell rope, gohei zigzags and broad sky",
+      "layers": [
+        "mostly white sky with one weather band",
+        "mountain line, distant torii and tree masses",
+        "stone path, veranda, yard and shrine interior",
+        "leaves, rope, eave edge and boundary tear"
+      ],
+      "signature_tiles": [
+        "stone step",
+        "weathered plank",
+        "tatami edge",
+        "donation box",
+        "paper charm",
+        "bell rope",
+        "leaf pile",
+        "boundary seam"
+      ],
+      "landmark": "torii and donation box align for one instant when the boundary is stable",
+      "texture": "white breathing room; black eaves; 25% stone and cloud dither only",
+      "ambience": "leaf loops, charm flutter, kettle steam, bell tail and one-pixel boundary crawl",
+      "transition": "a gohei swipe wipes a paper-white strip across the frame",
+      "world_states": [
+        "CALM: chores and guest shoes create readable micro-state",
+        "INCIDENT: boundary seams cross ordinary objects",
+        "ROUTE: a chosen cushion and cup placement persist",
+        "SEASON: tree/leaf/weather overlays change independently",
+        "AFTER: patched wood and uneven new charms remain visible"
+      ],
+      "combat_readability": "protect a wide white center; boundary hazards use thick frame lines; leaves disappear in focus mode; donation box collision is outlined before impact",
+      "spots": [
+        "Long Stone Stairway",
+        "Torii and Boundary Edge",
+        "Donation Box",
+        "Veranda",
+        "Main Hall",
+        "Back Storehouse",
+        "Old Well",
+        "Festival Yard"
+      ],
+      "primary_cast": [
+        "Reimu",
+        "Marisa",
+        "Suika",
+        "Yukari",
+        "Kasen",
+        "visiting ensemble"
+      ],
+      "minigames": [
+        "Donation Box Arithmetic",
+        "Leaf-Graze Sweep",
+        "Tea at the Right Silence",
+        "Festival Setup"
+      ],
+      "art_anchor": "weathered wood, paper screens, rope, bell, stone, weeds, maple and cherry leaves; large white sky fields contrast dense black eaves ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 64,
+        "macro_tiles_32x32": 18,
+        "animated_props": 12,
+        "background_strips_320x180": 8,
+        "foreground_masks": 6,
+        "landmark_sets": 3,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "heaven",
+      "title": "Heaven",
+      "tier": "C",
+      "profiles": [
+        "C",
+        "D"
+      ],
+      "stamp": "peach resting on a keystone",
+      "thesis": "Perfect scenery becomes alive only when someone is allowed to disturb it.",
+      "silhouette": "cloud shelves, peach trees, keystone blocks, celestial ribbons and weather sword",
+      "layers": [
+        "pure white void with thin weather contours",
+        "floating islands and palace rails",
+        "cloud roads, peach terraces and keystone platforms",
+        "ribbon wipes, close cloud curls and falling peach leaves"
+      ],
+      "signature_tiles": [
+        "cloud curl",
+        "cloud stair",
+        "keystone face",
+        "peach branch",
+        "celestial railing",
+        "weather vein",
+        "banquet mat",
+        "island edge"
+      ],
+      "landmark": "a black keystone floats below a white garden whose roots never touch it",
+      "texture": "almost no dither; weight is communicated by solid keystones against blank cloud",
+      "ambience": "cloud scroll, peach drop, ribbon wave and weather line travelling along edges",
+      "transition": "a keystone falls toward camera and becomes a black full-screen card",
+      "world_states": [
+        "CALM: immaculate repeated cloud curls",
+        "INCIDENT: one cloud layer moves against the others",
+        "ROUTE: an untidy picnic interrupts a perfect terrace",
+        "SEASON: weather changes by outline symbols, not fill",
+        "AFTER: a repaired railing keeps one visible dent"
+      ],
+      "combat_readability": "maximum negative space; weather telegraphs trace arena border first; keystones cast solid predictable rectangles with reduced-motion option",
+      "spots": [
+        "Cloud Stair",
+        "Peach Orchard",
+        "Keystone Terrace",
+        "Celestial Banquet",
+        "Weather Observatory",
+        "Edge of Heaven"
+      ],
+      "primary_cast": [
+        "Tenshi",
+        "Iku",
+        "Shion visitors",
+        "celestials"
+      ],
+      "minigames": [
+        "Keystone Construction",
+        "Peach Banquet Etiquette",
+        "Atmosphere Reading",
+        "Cloud Surf"
+      ],
+      "art_anchor": "large white cloud masses, black keystones, sparse palace rails, peach silhouettes, enormous empty sky ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 36,
+        "macro_tiles_32x32": 10,
+        "animated_props": 6,
+        "background_strips_320x180": 4,
+        "foreground_masks": 3,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "hidden_back_doors",
+      "title": "Hidden Back Doors and Boundary Spaces",
+      "tier": "B",
+      "profiles": [
+        "B",
+        "D"
+      ],
+      "stamp": "open rectangle behind a folding fan",
+      "thesis": "Every backstage entrance reveals an author, but never the entire production.",
+      "silhouette": "freestanding doors, fan arcs, seated deity triangle, season emblems and impossible frame overlaps",
+      "layers": [
+        "blank field with off-grid door specks",
+        "repeating stages seen through mismatched apertures",
+        "temporary platforms and threshold strips",
+        "door slabs crossing every UI-safe margin except the text zone"
+      ],
+      "signature_tiles": [
+        "door face",
+        "threshold",
+        "season crest",
+        "dancer footprint",
+        "backstage rope",
+        "empty frame",
+        "stage brace",
+        "boundary hinge"
+      ],
+      "landmark": "four doors show four seasons while casting one shared black shadow",
+      "texture": "profile shifts per doorway; threshold areas stay pure white for state readability",
+      "ambience": "hinge tick, season particle swap, dancer shadow and fan-snap inversion",
+      "transition": "the current background closes like a door, revealing the next scene already behind it",
+      "world_states": [
+        "CALM: doors obey a visible seasonal grammar",
+        "INCIDENT: destinations and shadows disagree",
+        "ROUTE: one door gains a private hand-painted mark",
+        "SEASON: all four are present; active season controls only particles",
+        "AFTER: backstage braces remain visible and proudly functional"
+      ],
+      "combat_readability": "door teleports show destination outline for 12 frames; profile inversions never occur during dense volleys; screen border is gameplay geometry only when double-lined",
+      "spots": [
+        "Back of the Shrine",
+        "Season Door",
+        "Unlabeled Waiting Room",
+        "Gap Railway",
+        "Sage Table",
+        "Screen Edge",
+        "Archive Core"
+      ],
+      "primary_cast": [
+        "Yukari",
+        "Okina",
+        "Kasen",
+        "Ran",
+        "Satono and Mai cameos"
+      ],
+      "minigames": [
+        "Boundary Fold",
+        "Back-Door Permission",
+        "Season Battery",
+        "Gap Luggage Sort"
+      ],
+      "art_anchor": "UI frames, door silhouettes, eye-like negative space, rail lines, floating seasonal icons ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 48,
+        "macro_tiles_32x32": 14,
+        "animated_props": 9,
+        "background_strips_320x180": 6,
+        "foreground_masks": 4,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "human_village",
+      "title": "Human Village",
+      "tier": "A",
+      "profiles": [
+        "A",
+        "B"
+      ],
+      "stamp": "open book behind a shop curtain",
+      "thesis": "Ordinary routines are the infrastructure that makes extraordinary lives possible.",
+      "silhouette": "layered tiled roofs, shop curtains, carts, books, school boards and crowded human-scale doors",
+      "layers": [
+        "white sky, smoke lines and distant roof rhythm",
+        "alley roofs, market banners and school facade",
+        "stone drains, packed-earth streets and shop interiors",
+        "passing carts, curtains, signboards and crowd silhouettes"
+      ],
+      "signature_tiles": [
+        "roof cap",
+        "plaster wall",
+        "street drain",
+        "shop curtain",
+        "book shelf",
+        "school slate",
+        "market crate",
+        "rumor notice"
+      ],
+      "landmark": "main crossing: four readable shop signs and one rumor board fit a 320-pixel frame without text collision",
+      "texture": "low-frequency plaster speckle and wood hatch; crowds remain uncluttered solid shapes",
+      "ambience": "curtain lift, cooking steam, page flip, cart wheel and changing notice slips",
+      "transition": "a shop curtain sweeps sideways; its crest identifies the destination category",
+      "world_states": [
+        "CALM: schedules visible through shutters and stall props",
+        "INCIDENT: rumor slips multiply faster than shops open",
+        "ROUTE: one shared routine alters a storefront at a fixed hour",
+        "SEASON: awnings, produce and street wetness use overlays",
+        "AFTER: residents reuse incident debris in repairs"
+      ],
+      "combat_readability": "civilian silhouettes vacate before arena lock; shop signs dim behind bullets; no random crowd motion during choice or combat focus",
+      "spots": [
+        "Market Street",
+        "Temple School",
+        "Hieda Residence",
+        "Suzunaan",
+        "Izakaya Alley",
+        "Festival Square",
+        "Village Edge"
+      ],
+      "primary_cast": [
+        "Akyuu",
+        "Kosuzu",
+        "Keine",
+        "Rinnosuke visitors",
+        "Reimu",
+        "Aya",
+        "Mamizou cameo"
+      ],
+      "minigames": [
+        "Chronicle Redaction",
+        "Demon Book Checkout",
+        "Classroom History Reconstruction",
+        "Festival Stall Logistics"
+      ],
+      "art_anchor": "shop signs, lattice doors, paper lanterns, carts, school boards, crowded low silhouettes ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 64,
+        "macro_tiles_32x32": 18,
+        "animated_props": 12,
+        "background_strips_320x180": 8,
+        "foreground_masks": 6,
+        "landmark_sets": 3,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "lunar_capital_dream_world",
+      "title": "Lunar Capital and Dream World",
+      "tier": "B",
+      "profiles": [
+        "B",
+        "D"
+      ],
+      "stamp": "crescent inside a sleeping eye",
+      "thesis": "Sterile certainty and unruly dreams become frightening when each impersonates the other.",
+      "silhouette": "clean lunar spires, rabbit antennae, fan and sword lines, soft dream bubbles and three-world orbs",
+      "layers": [
+        "white vacuum or black dream field",
+        "precise capital terraces / soft impossible horizons",
+        "geometric bridges / deforming dream floors",
+        "scan frames, bubbles and foreground moon gates"
+      ],
+      "signature_tiles": [
+        "lunar panel",
+        "purity seal",
+        "moon gate",
+        "rabbit terminal",
+        "dream pillow",
+        "bubble floor",
+        "impossible stair",
+        "waking crack"
+      ],
+      "landmark": "a perfect moon gate casts a soft, anatomically impossible sleeping shadow",
+      "texture": "capital uses sparse exact line grids; dream world uses slow large dither blobs, never pixel noise",
+      "ambience": "terminal scan, distant rabbit signal, dream bubble reshape and polarity breathing",
+      "transition": "an eyelid-shaped iris closes; on opening, grid and dream profiles swap",
+      "world_states": [
+        "CALM: capital symmetry and dream asymmetry remain separate",
+        "INCIDENT: each leaks one texture into the other",
+        "ROUTE: a personal object survives the waking cut",
+        "SEASON: Gensokyo weather appears as archived screen icons",
+        "AFTER: one lunar panel bears a repaired, visibly handmade seam"
+      ],
+      "combat_readability": "grid lines fade to 25% under bullets; dream deformation never moves collision geometry without a 20-frame outline preview; polarity label remains textual",
+      "spots": [
+        "Dream Transit",
+        "Lunar Gate",
+        "Pure Corridor",
+        "Moon Sea Balcony",
+        "Watatsuki Audience Hall",
+        "Dream Pillow Field",
+        "Doremy's Archive"
+      ],
+      "primary_cast": [
+        "Toyohime",
+        "Yorihime",
+        "Reisen",
+        "Eirin",
+        "Kaguya",
+        "Sagume",
+        "Doremy",
+        "Junko",
+        "Hecatia"
+      ],
+      "minigames": [
+        "Dream Inventory",
+        "Do Not Say the Outcome",
+        "Sea-Mountain Fold",
+        "God Invocation Match",
+        "Purity Containment"
+      ],
+      "art_anchor": "clean geometric corridors, moon disks, sea-wave symbols, dream clouds, sparse court ornament ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 48,
+        "macro_tiles_32x32": 14,
+        "animated_props": 9,
+        "background_strips_320x180": 6,
+        "foreground_masks": 4,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "misty_lake",
+      "title": "Misty Lake",
+      "tier": "B",
+      "profiles": [
+        "A",
+        "D"
+      ],
+      "stamp": "ice crystal reflected in a wave",
+      "thesis": "Playful mistakes become landmarks when friends remember them together.",
+      "silhouette": "flat waterline, reed clusters, ice-crystal wings, umbrella arc and mansion shadow",
+      "layers": [
+        "white fog field with mansion pinprick",
+        "two reed/island bands dissolving into mist",
+        "shore stones, docks, ice floes and shallow water",
+        "fog curtains, close reeds, umbrella pop and splash arcs"
+      ],
+      "signature_tiles": [
+        "shore pebble",
+        "reed base",
+        "dock plank",
+        "water ripple",
+        "ice edge",
+        "fog pocket",
+        "umbrella puddle",
+        "fairy marker"
+      ],
+      "landmark": "the mansion silhouette appears only through a narrow clear slit in three moving fog bands",
+      "texture": "horizontal 25% ripple lines; fog stays white; ice uses black edge with white interior",
+      "ambience": "fog drift, ripple ring, uneven ice-wing twitch and surprise umbrella blink",
+      "transition": "fog fills the frame; a ripple opens a circular view onto the next spot",
+      "world_states": [
+        "CALM: fog lanes loop predictably",
+        "INCIDENT: reflections lead one tile away from bodies",
+        "ROUTE: a ridiculous handmade marker persists on one island",
+        "SEASON: ice/fog/rain alter traversal overlays",
+        "AFTER: repaired dock boards retain mismatched widths"
+      ],
+      "combat_readability": "water reflection is disabled in focus mode; ice hazards telegraph with a thick crack outline; fog never lowers bullet contrast below AA target",
+      "spots": [
+        "Fog Shore",
+        "Frozen Reeds",
+        "Fairy Island",
+        "Boat Wreck",
+        "Mansion Causeway",
+        "Moon Reflection"
+      ],
+      "primary_cast": [
+        "Cirno",
+        "Daiyousei cameo",
+        "Wakasagihime cameo",
+        "Meiling patrols",
+        "Scarlet residents"
+      ],
+      "minigames": [
+        "Perfect Freeze Puzzle",
+        "Fog Echo Tag",
+        "Fairy Territory Flags"
+      ],
+      "art_anchor": "broad white fog, black reeds, broken ice polygons, distant mansion silhouette ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 48,
+        "macro_tiles_32x32": 14,
+        "animated_props": 9,
+        "background_strips_320x180": 6,
+        "foreground_masks": 4,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "moriya_shrine",
+      "title": "Moriya Shrine",
+      "tier": "B",
+      "profiles": [
+        "B",
+        "A"
+      ],
+      "stamp": "frog eye and snake curve around an onbashira",
+      "thesis": "Faith is maintained through engineering, hospitality and arguments about what counts as progress.",
+      "silhouette": "mountain shrine roof, enormous rope loop, onbashira columns, frog hat and wind turbines/waterworks",
+      "layers": [
+        "white mountain sky with wind contours",
+        "lake, shrine roof and rope ring",
+        "stone terrace, plank routes and device platforms",
+        "prayer slips, turbine blades, rope tassels and frog ripples"
+      ],
+      "signature_tiles": [
+        "mountain stone",
+        "shrine plank",
+        "onbashira socket",
+        "rope knot",
+        "frog pond edge",
+        "miracle charm",
+        "water pipe",
+        "wind rotor"
+      ],
+      "landmark": "shimenawa ring frames a practical waterwheel rather than hiding it",
+      "texture": "strong vertical pillars, circular rope/frog forms and clean mechanical hatch",
+      "ambience": "wind sock, rope tassel, frog ripple, rotor step and miracle glyph",
+      "transition": "a wind gust turns prayer slips into a wipe; one slip carries the next spot name",
+      "world_states": [
+        "CALM: sacred and mechanical props share the terrace",
+        "INCIDENT: devices produce faith-shaped side effects",
+        "ROUTE: one jointly maintained machine gains a personal modification",
+        "SEASON: water level, snow and wind direction alter overlays",
+        "AFTER: signs explain repairs with conflicting divine annotations"
+      ],
+      "combat_readability": "rotors lock before combat; wind force uses arrows plus particles; onbashira lanes are 16-pixel aligned and preview impact footprints",
+      "spots": [
+        "Mountain Lake",
+        "Main Shrine",
+        "Festival Platform",
+        "Ropeway Station",
+        "Wind Turbine Yard",
+        "Frog Pond",
+        "Private Residence"
+      ],
+      "primary_cast": [
+        "Sanae",
+        "Kanako",
+        "Suwako",
+        "Nitori",
+        "Aya"
+      ],
+      "minigames": [
+        "Faith Festival Planner",
+        "Divine Ropeway",
+        "Frog-Ring Geometry",
+        "Miracle Demonstration Rehearsal"
+      ],
+      "art_anchor": "shimenawa, lake horizon, wind machinery, pillars, frog and snake motifs, clean mountain sky ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 48,
+        "macro_tiles_32x32": 14,
+        "animated_props": 9,
+        "background_strips_320x180": 6,
+        "foreground_masks": 4,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "myouren_temple",
+      "title": "Myouren Temple and Cemetery",
+      "tier": "B",
+      "profiles": [
+        "B",
+        "C"
+      ],
+      "stamp": "lotus above a ship anchor",
+      "thesis": "A community is not harmony; it is the repeated practice of making room for difference.",
+      "silhouette": "temple roof, lotus arches, ship ribs, cloud giant, anchor and cemetery markers",
+      "layers": [
+        "white sky and distant pagoda",
+        "temple/ship structure and cemetery tree line",
+        "courtyard gravel, tatami, grave paths and hold decks",
+        "incense smoke, prayer flags, cloud fists and close grave stones"
+      ],
+      "signature_tiles": [
+        "temple gravel",
+        "lotus floor",
+        "ship rib",
+        "prayer bell",
+        "incense stand",
+        "grave marker",
+        "cloud step",
+        "anchor groove"
+      ],
+      "landmark": "temple facade and ship hull share one contour, readable differently from each side",
+      "texture": "gravel uses sparse fixed dots; robes/lotus spaces remain broad white; cemetery black is clustered low",
+      "ambience": "incense curl, prayer flag, mouse pendulum, umbrella blink and restrained cloud breath",
+      "transition": "a struck bell emits concentric outlines; the third ring becomes the next frame border",
+      "world_states": [
+        "CALM: incompatible routines overlap without collision",
+        "INCIDENT: one rule is copied everywhere and stops fitting",
+        "ROUTE: a shared duty leaves a named object in the common hall",
+        "SEASON: incense, rain and cemetery foliage use overlays",
+        "AFTER: multiple repair styles remain side by side"
+      ],
+      "combat_readability": "cemetery markers are outside central arena; Unzan telegraphs with cloud outline before solid fist; incense disappears in focus mode",
+      "spots": [
+        "Temple Gate",
+        "Main Hall",
+        "Training Yard",
+        "Kitchen",
+        "Cemetery",
+        "Palanquin Ship Deck",
+        "Bell Tower"
+      ],
+      "primary_cast": [
+        "Byakuren",
+        "Ichirin",
+        "Murasa",
+        "Nazrin",
+        "Shou cameo",
+        "Kogasa",
+        "Nue"
+      ],
+      "minigames": [
+        "Temple Chant Relay",
+        "Anchor the Ship",
+        "Surprise Timing",
+        "Treasure Dowse",
+        "Unzan Gesture Match"
+      ],
+      "art_anchor": "temple beams, bell rope, grave markers, cloud fists, ship planks and anchor chain ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 48,
+        "macro_tiles_32x32": 14,
+        "animated_props": 9,
+        "background_strips_320x180": 6,
+        "foreground_masks": 4,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "outside_world_dream_theatre",
+      "title": "Outside World Dream Theatre",
+      "tier": "C",
+      "profiles": [
+        "B",
+        "C"
+      ],
+      "stamp": "smartphone rectangle behind a stage moon",
+      "thesis": "A memory of the outside world is a performance with visible missing scenery.",
+      "silhouette": "rail platform, classroom window, city antennae, smartphone, occult cape and exposed theatre braces",
+      "layers": [
+        "black auditorium void with white city pinpoints",
+        "flat scenery cards: train, school, rooftop",
+        "stage floor, taped marks and dream platforms",
+        "curtain edge, phone screen, dangling cable and audience shadow"
+      ],
+      "signature_tiles": [
+        "stage board",
+        "gaffer mark",
+        "train door",
+        "school desk",
+        "rooftop fence",
+        "phone icon",
+        "occult card",
+        "missing-set void"
+      ],
+      "landmark": "a city skyline is visibly held up by two backstage braces and one dream thread",
+      "texture": "screen-tone blocks imitate print/phone capture; stage remains clean enough to reveal artifice",
+      "ambience": "phone scroll, train light pass, curtain breath and set-card wobble",
+      "transition": "a phone camera shutter freezes the set; the frozen image slides aside",
+      "world_states": [
+        "CALM: sets change on visible cues",
+        "INCIDENT: cues fire without performers",
+        "ROUTE: one prop gains a Gensokyo repair and survives scene changes",
+        "SEASON: city weather is a projected icon layer",
+        "AFTER: missing scenery is labeled instead of concealed"
+      ],
+      "combat_readability": "stage marks telegraph spawn positions; phone overlays sit outside playfield; photosensitivity mode replaces shutter flashes with border ticks",
+      "spots": [
+        "Small Apartment",
+        "Convenience Store",
+        "Station Concourse",
+        "Akihabara Hall",
+        "Event Convention",
+        "Office Floor",
+        "Night Rooftop"
+      ],
+      "primary_cast": [
+        "broad ensemble"
+      ],
+      "minigames": [
+        "Convenience Store Shift",
+        "Smartphone Rumor Chain",
+        "Convention Booth Planner",
+        "Office Meeting Survival",
+        "Apartment Tetris"
+      ],
+      "art_anchor": "train signs, compact room furniture, screens, vending machines, convention tables; no real trademarks in final art ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 36,
+        "macro_tiles_32x32": 10,
+        "animated_props": 6,
+        "background_strips_320x180": 4,
+        "foreground_masks": 3,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "sanzu_higan",
+      "title": "Sanzu River and Higan",
+      "tier": "C",
+      "profiles": [
+        "C",
+        "A"
+      ],
+      "stamp": "coin balanced on a judge rod",
+      "thesis": "Judgment gains meaning only after someone listens to the journey that produced the evidence.",
+      "silhouette": "wide river bands, low ferry, scythe crescent, flower plain, judge dais and rod vertical",
+      "layers": [
+        "blank far shore with one dark tree",
+        "river strips and flower horizon",
+        "ferry deck, bank stones and court path",
+        "close reeds, drifting coins, sleeves and flower heads"
+      ],
+      "signature_tiles": [
+        "river ripple",
+        "bank stone",
+        "ferry plank",
+        "oar lock",
+        "coin eddy",
+        "higan flower",
+        "court stair",
+        "verdict tablet"
+      ],
+      "landmark": "one coin remains perfectly still on the river while every bank line scrolls",
+      "texture": "long horizontal 25% bands; court uses vertical black/white authority blocks",
+      "ambience": "coin drift, oar drip, flower lean, page turn and single rod tap",
+      "transition": "the ferry crosses a black river strip; arrival reveals the next scene above it",
+      "world_states": [
+        "CALM: current and ferry schedules are legible",
+        "INCIDENT: memories arrive without matching owners",
+        "ROUTE: a privately heard testimony changes one flower marker",
+        "SEASON: river height and flower density use overlays",
+        "AFTER: queue markers allow pauses and conversation"
+      ],
+      "combat_readability": "river current arrows appear on floor and HUD; verdict text never overlaps bullets; scythe arcs are thick telegraphs followed by thin active edge",
+      "spots": [
+        "Road of Reconsideration",
+        "River Bank",
+        "Komachi's Boat",
+        "Midstream Fog",
+        "Court Approach",
+        "Judgment Hall",
+        "Unfinished Shore"
+      ],
+      "primary_cast": [
+        "Komachi",
+        "Eiki",
+        "departing spirits",
+        "Yuyuko and Youmu in route events"
+      ],
+      "minigames": [
+        "Ferry Fare",
+        "Two-Color Judgment",
+        "Testimony Ordering",
+        "Distance Knot"
+      ],
+      "art_anchor": "wide river bands, coin glints, red-spider-lily silhouettes, court steps, vast white fog ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 36,
+        "macro_tiles_32x32": 10,
+        "animated_props": 6,
+        "background_strips_320x180": 4,
+        "foreground_masks": 3,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "scarlet_devil_mansion",
+      "title": "Scarlet Devil Mansion",
+      "tier": "A",
+      "profiles": [
+        "B",
+        "D"
+      ],
+      "stamp": "clock hand crossing a bat wing",
+      "thesis": "Perfection is a performance built from labor, hierarchy and chosen loyalty.",
+      "silhouette": "gothic roof, tall windows, clock hands, maid geometry, bat wings, library stacks and crystal prisms",
+      "layers": [
+        "black night or white mist behind roofline",
+        "tower windows and long corridor vanishing points",
+        "checker-reduced floors, service passages and library platforms",
+        "curtains, chandelier edge, knife glints and crystal silhouettes"
+      ],
+      "signature_tiles": [
+        "gothic brick",
+        "tall window",
+        "clock gear",
+        "service door",
+        "library shelf",
+        "tea cart rail",
+        "basement lock",
+        "crystal play mark"
+      ],
+      "landmark": "the great clock shows three readable times at three depths, only one belonging to the current room",
+      "texture": "large 4x4 checker groups on floors, vertical book rhythm, solid curtain masses; never 1-pixel checker",
+      "ambience": "clock tick, curtain shift, page drift, tea steam and crystal quarter-turn",
+      "transition": "clock hands meet; the black wedge between them expands into the next room",
+      "world_states": [
+        "CALM: servant routes and room clocks agree",
+        "INCIDENT: one minute is missing from every corridor",
+        "ROUTE: a private cup/book/knife placement persists by character",
+        "SEASON: exterior mist and interior drapery overlays change",
+        "AFTER: repaired furniture keeps small mismatched joins"
+      ],
+      "combat_readability": "floor pattern drops to 25% during combat; knives are thin black shapes with white rim; crystal break points use diamonds, never bullet circles",
+      "spots": [
+        "Front Gate",
+        "Grand Hall",
+        "Clock Corridor",
+        "Kitchen",
+        "Dining Room",
+        "Voile Library",
+        "Clock Tower",
+        "Basement Playroom",
+        "Roof"
+      ],
+      "primary_cast": [
+        "Remilia",
+        "Flandre",
+        "Sakuya",
+        "Patchouli",
+        "Meiling",
+        "Koakuma"
+      ],
+      "minigames": [
+        "Gate Nap Patrol",
+        "Perfect Tea Service",
+        "Library Breathing Room",
+        "Red Mist Etiquette",
+        "Crystal Play Rules"
+      ],
+      "art_anchor": "gothic arches, tall windows, checker floors rendered with low-frequency dither, clocks, books, curtains, service doors ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 64,
+        "macro_tiles_32x32": 18,
+        "animated_props": 12,
+        "background_strips_320x180": 8,
+        "foreground_masks": 6,
+        "landmark_sets": 3,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "senkai_mausoleum",
+      "title": "Senkai and the Hall of Dreams' Great Mausoleum",
+      "tier": "B",
+      "profiles": [
+        "B",
+        "D"
+      ],
+      "stamp": "earmuff arc above a ritual plate",
+      "thesis": "Revival turns old certainty into a conversation with a present that did not wait.",
+      "silhouette": "mausoleum stairs, Taoist arches, cape triangle, ritual plates, wall passages and jiang-shi talisman",
+      "layers": [
+        "white hermit sky with floating architecture traces",
+        "mausoleum roofs and Senkai islands",
+        "stone court, ritual floor and wall-crossing passages",
+        "plate arcs, cape edge, talisman strips and listening waves"
+      ],
+      "signature_tiles": [
+        "mausoleum stone",
+        "Tao seal",
+        "ritual plate",
+        "incense square",
+        "wall passage",
+        "speech wave",
+        "talisman door",
+        "Senkai cloud edge"
+      ],
+      "landmark": "a formal stair ascends into a doorway whose back is visibly a floating island",
+      "texture": "concentric ritual lines and broad stone fields; speech waves are sparse dashed outlines",
+      "ambience": "plate orbit, cape settle, wall ripple, talisman flap and multi-voice wave",
+      "transition": "a wall outline slides across the player; the reverse side is the destination",
+      "world_states": [
+        "CALM: rituals map cleanly to doors",
+        "INCIDENT: old labels summon modern side effects",
+        "ROUTE: a jointly translated sign remains installed",
+        "SEASON: cloud island vegetation uses overlays",
+        "AFTER: new wiring/signage sits visibly beside ancient stone"
+      ],
+      "combat_readability": "plates orbit on fixed readable radii; wall-pass silhouettes are previewed on both surfaces; voice waves remain HUD cues, not collision objects",
+      "spots": [
+        "Mausoleum Gate",
+        "Desire Hall",
+        "Senkai Path",
+        "Futo's Plate Court",
+        "Seiga's Passage Wall",
+        "Audience Chamber",
+        "Rooftop Stars"
+      ],
+      "primary_cast": [
+        "Miko",
+        "Futo",
+        "Seiga",
+        "Yoshika",
+        "Kokoro visitors"
+      ],
+      "minigames": [
+        "Desire Chorus",
+        "Plate Feng Shui",
+        "Wall-Walk Rescue",
+        "Jiang-Shi Instruction Queue"
+      ],
+      "art_anchor": "stone tomb passages, halo lines, plates, star maps, impossible doors ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 48,
+        "macro_tiles_32x32": 14,
+        "animated_props": 9,
+        "background_strips_320x180": 6,
+        "foreground_masks": 4,
+        "landmark_sets": 2,
+        "state_overlays": 5
+      }
+    },
+    {
+      "id": "youkai_mountain",
+      "title": "Youkai Mountain",
+      "tier": "A",
+      "profiles": [
+        "A",
+        "D"
+      ],
+      "stamp": "tengu feather over a waterfall notch",
+      "thesis": "Every view is political: who can see, report, patrol, build and pass through.",
+      "silhouette": "steep switchbacks, waterfall columns, tengu wings/cameras, kappa pipes, wolf shield and cable structures",
+      "layers": [
+        "white sky with distant summit and cloud shelf",
+        "waterfalls, ropeways and settlement terraces",
+        "rock paths, bridges, workshops and patrol gates",
+        "spray curtains, leaves, camera frame and close pipework"
+      ],
+      "signature_tiles": [
+        "mountain ledge",
+        "waterfall lip",
+        "rope bridge",
+        "tengu notice",
+        "patrol marker",
+        "kappa pipe",
+        "workshop plate",
+        "camera perch"
+      ],
+      "landmark": "one waterfall crosses all three depth bands but breaks into different pixel rhythms at each",
+      "texture": "diagonal rock hatch, vertical water stripes and clean white spray gaps",
+      "ambience": "spray step, leaf gust, camera shutter, valve spin and patrol ear twitch",
+      "transition": "a newspaper page flips; its photo window expands into the destination view",
+      "world_states": [
+        "CALM: patrol, press and workshop routes are separately legible",
+        "INCIDENT: reports redraw access before terrain changes",
+        "ROUTE: a shared lookout gains a private annotation",
+        "SEASON: waterfall volume, leaves and snow use overlays",
+        "AFTER: temporary bridges become accepted shortcuts without looking official"
+      ],
+      "combat_readability": "waterfall animation slows under dense bullets; wind arrows and patrol cones use different outlines; camera shutter uses no full-screen flash in safe mode",
+      "spots": [
+        "Mountain Trail",
+        "Great Youkai Forest",
+        "Waterfall of Nine Heavens",
+        "Tengu Village Threshold",
+        "Bunbunmaru Office",
+        "Kappa Valley",
+        "Wind Ridge"
+      ],
+      "primary_cast": [
+        "Aya",
+        "Hatate",
+        "Momiji",
+        "Nitori",
+        "Hina",
+        "Kanako",
+        "Sanae",
+        "Suwako"
+      ],
+      "minigames": [
+        "Headline or Harm",
+        "Wind-Frame Graze",
+        "Thoughtography Search",
+        "Waterwheel Tuning",
+        "Patrol Line",
+        "Misfortune Carousel"
+      ],
+      "art_anchor": "steep rock silhouettes, white waterfall columns, rope bridges, maple canopy, pipes and waterwheels, distant crow shapes ### Dither allocation - 0%: important white space, sky, or quiet emotional focus - 25%: distant atmosphere - 50%: traversable but uncertain space - 75%: danger, rumor, or occluded depth - 100%: solid silhouette and collision-critical geometry Never use high-frequency dither directly behind bullets or dialogue text.",
+      "budgets": {
+        "base_tiles_16x16": 64,
+        "macro_tiles_32x32": 18,
+        "animated_props": 12,
+        "background_strips_320x180": 8,
+        "foreground_masks": 6,
+        "landmark_sets": 3,
+        "state_overlays": 5
+      }
+    }
+  ]
+}

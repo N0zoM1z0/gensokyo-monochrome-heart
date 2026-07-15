@@ -1,0 +1,1381 @@
+{
+  "schema": "gensokyo-monochrome-visual-validation-v2",
+  "generated_utc": "2026-07-15T03:26:58.078Z",
+  "checks": 274,
+  "passed": 274,
+  "failed": 0,
+  "digest": "0775038f95bbd2936ec2bed40d6ebb8b974b34774bc5918dd0d6deda30bc9c6a",
+  "errors": [],
+  "results": [
+    {
+      "name": "core JSON parse",
+      "detail": "UI/components/characters/regions",
+      "status": "PASS"
+    },
+    {
+      "name": "screen count",
+      "detail": "40",
+      "status": "PASS"
+    },
+    {
+      "name": "component count",
+      "detail": "30",
+      "status": "PASS"
+    },
+    {
+      "name": "screen component refs",
+      "detail": "194 refs",
+      "status": "PASS"
+    },
+    {
+      "name": "unique screen ids",
+      "detail": "40",
+      "status": "PASS"
+    },
+    {
+      "name": "unique screen scenes",
+      "detail": "40",
+      "status": "PASS"
+    },
+    {
+      "name": "screen contracts complete",
+      "detail": "states/input/localization/acceptance",
+      "status": "PASS"
+    },
+    {
+      "name": "character catalog count",
+      "detail": "71",
+      "status": "PASS"
+    },
+    {
+      "name": "character tier split",
+      "detail": "{\"A\":12,\"B\":22,\"C\":37}",
+      "status": "PASS"
+    },
+    {
+      "name": "roster/catalog ids",
+      "detail": "71 exact",
+      "status": "PASS"
+    },
+    {
+      "name": "brief alice_margatroid",
+      "detail": "06_art/characters/briefs/alice_margatroid.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/alice_margatroid_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief aunn_komano",
+      "detail": "06_art/characters/briefs/aunn_komano.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/aunn_komano_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief aya_shameimaru",
+      "detail": "06_art/characters/briefs/aya_shameimaru.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/aya_shameimaru_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief byakuren_hijiri",
+      "detail": "06_art/characters/briefs/byakuren_hijiri.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/byakuren_hijiri_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief chen",
+      "detail": "06_art/characters/briefs/chen.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/chen_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief cirno",
+      "detail": "06_art/characters/briefs/cirno.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/cirno_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief clownpiece",
+      "detail": "06_art/characters/briefs/clownpiece.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/clownpiece_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief doremy_sweet",
+      "detail": "06_art/characters/briefs/doremy_sweet.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/doremy_sweet_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief eiki_shiki_yamaxanadu",
+      "detail": "06_art/characters/briefs/eiki_shiki_yamaxanadu.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/eiki_shiki_yamaxanadu_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief eirin_yagokoro",
+      "detail": "06_art/characters/briefs/eirin_yagokoro.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/eirin_yagokoro_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief flandre_scarlet",
+      "detail": "06_art/characters/briefs/flandre_scarlet.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/flandre_scarlet_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief fujiwara_no_mokou",
+      "detail": "06_art/characters/briefs/fujiwara_no_mokou.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/fujiwara_no_mokou_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief hata_no_kokoro",
+      "detail": "06_art/characters/briefs/hata_no_kokoro.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/hata_no_kokoro_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief hatate_himekaidou",
+      "detail": "06_art/characters/briefs/hatate_himekaidou.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/hatate_himekaidou_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief hecatia_lapislazuli",
+      "detail": "06_art/characters/briefs/hecatia_lapislazuli.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/hecatia_lapislazuli_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief hieda_no_akyuu",
+      "detail": "06_art/characters/briefs/hieda_no_akyuu.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/hieda_no_akyuu_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief hina_kagiyama",
+      "detail": "06_art/characters/briefs/hina_kagiyama.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/hina_kagiyama_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief hong_meiling",
+      "detail": "06_art/characters/briefs/hong_meiling.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/hong_meiling_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief ichirin_kumoi",
+      "detail": "06_art/characters/briefs/ichirin_kumoi.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/ichirin_kumoi_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief iku_nagae",
+      "detail": "06_art/characters/briefs/iku_nagae.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/iku_nagae_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief joon_yorigami",
+      "detail": "06_art/characters/briefs/joon_yorigami.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/joon_yorigami_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief junko",
+      "detail": "06_art/characters/briefs/junko.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/junko_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief kaguya_houraisan",
+      "detail": "06_art/characters/briefs/kaguya_houraisan.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/kaguya_houraisan_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief kanako_yasaka",
+      "detail": "06_art/characters/briefs/kanako_yasaka.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/kanako_yasaka_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief kasen_ibaraki",
+      "detail": "06_art/characters/briefs/kasen_ibaraki.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/kasen_ibaraki_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief keiki_haniyasushin",
+      "detail": "06_art/characters/briefs/keiki_haniyasushin.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/keiki_haniyasushin_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief keine_kamishirasawa",
+      "detail": "06_art/characters/briefs/keine_kamishirasawa.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/keine_kamishirasawa_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief koakuma",
+      "detail": "06_art/characters/briefs/koakuma.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/koakuma_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief kogasa_tatara",
+      "detail": "06_art/characters/briefs/kogasa_tatara.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/kogasa_tatara_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief koishi_komeiji",
+      "detail": "06_art/characters/briefs/koishi_komeiji.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/koishi_komeiji_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief komachi_onozuka",
+      "detail": "06_art/characters/briefs/komachi_onozuka.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/komachi_onozuka_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief kosuzu_motoori",
+      "detail": "06_art/characters/briefs/kosuzu_motoori.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/kosuzu_motoori_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief marisa_kirisame",
+      "detail": "06_art/characters/briefs/marisa_kirisame.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/marisa_kirisame_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief mayumi_joutouguu",
+      "detail": "06_art/characters/briefs/mayumi_joutouguu.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/mayumi_joutouguu_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief minamitsu_murasa",
+      "detail": "06_art/characters/briefs/minamitsu_murasa.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/minamitsu_murasa_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief momiji_inubashiri",
+      "detail": "06_art/characters/briefs/momiji_inubashiri.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/momiji_inubashiri_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief mononobe_no_futo",
+      "detail": "06_art/characters/briefs/mononobe_no_futo.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/mononobe_no_futo_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief nazrin",
+      "detail": "06_art/characters/briefs/nazrin.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/nazrin_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief nitori_kawashiro",
+      "detail": "06_art/characters/briefs/nitori_kawashiro.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/nitori_kawashiro_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief nue_houjuu",
+      "detail": "06_art/characters/briefs/nue_houjuu.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/nue_houjuu_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief okina_matara",
+      "detail": "06_art/characters/briefs/okina_matara.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/okina_matara_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief patchouli_knowledge",
+      "detail": "06_art/characters/briefs/patchouli_knowledge.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/patchouli_knowledge_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief ran_yakumo",
+      "detail": "06_art/characters/briefs/ran_yakumo.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/ran_yakumo_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief reimu_hakurei",
+      "detail": "06_art/characters/briefs/reimu_hakurei.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/reimu_hakurei_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief reisen_udongein_inaba",
+      "detail": "06_art/characters/briefs/reisen_udongein_inaba.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/reisen_udongein_inaba_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief remilia_scarlet",
+      "detail": "06_art/characters/briefs/remilia_scarlet.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/remilia_scarlet_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief rin_kaenbyou",
+      "detail": "06_art/characters/briefs/rin_kaenbyou.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/rin_kaenbyou_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief rinnosuke_morichika",
+      "detail": "06_art/characters/briefs/rinnosuke_morichika.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/rinnosuke_morichika_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief sagume_kishin",
+      "detail": "06_art/characters/briefs/sagume_kishin.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/sagume_kishin_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief saki_kurokoma",
+      "detail": "06_art/characters/briefs/saki_kurokoma.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/saki_kurokoma_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief sakuya_izayoi",
+      "detail": "06_art/characters/briefs/sakuya_izayoi.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/sakuya_izayoi_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief sanae_kochiya",
+      "detail": "06_art/characters/briefs/sanae_kochiya.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/sanae_kochiya_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief satori_komeiji",
+      "detail": "06_art/characters/briefs/satori_komeiji.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/satori_komeiji_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief seiga_kaku",
+      "detail": "06_art/characters/briefs/seiga_kaku.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/seiga_kaku_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief shion_yorigami",
+      "detail": "06_art/characters/briefs/shion_yorigami.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/shion_yorigami_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief suika_ibuki",
+      "detail": "06_art/characters/briefs/suika_ibuki.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/suika_ibuki_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief sumireko_usami",
+      "detail": "06_art/characters/briefs/sumireko_usami.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/sumireko_usami_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief suwako_moriya",
+      "detail": "06_art/characters/briefs/suwako_moriya.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/suwako_moriya_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief tenshi_hinanawi",
+      "detail": "06_art/characters/briefs/tenshi_hinanawi.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/tenshi_hinanawi_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief tewi_inaba",
+      "detail": "06_art/characters/briefs/tewi_inaba.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/tewi_inaba_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief toyostomimi_no_miko",
+      "detail": "06_art/characters/briefs/toyostomimi_no_miko.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/toyostomimi_no_miko_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief utsuho_reiuji",
+      "detail": "06_art/characters/briefs/utsuho_reiuji.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/utsuho_reiuji_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief watatsuki_no_toyohime",
+      "detail": "06_art/characters/briefs/watatsuki_no_toyohime.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/watatsuki_no_toyohime_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief watatsuki_no_yorihime",
+      "detail": "06_art/characters/briefs/watatsuki_no_yorihime.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/watatsuki_no_yorihime_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief yachie_kicchou",
+      "detail": "06_art/characters/briefs/yachie_kicchou.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/yachie_kicchou_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief yoshika_miyako",
+      "detail": "06_art/characters/briefs/yoshika_miyako.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/yoshika_miyako_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief youmu_konpaku",
+      "detail": "06_art/characters/briefs/youmu_konpaku.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/youmu_konpaku_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief yukari_yakumo",
+      "detail": "06_art/characters/briefs/yukari_yakumo.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/yukari_yakumo_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief yuugi_hoshiguma",
+      "detail": "06_art/characters/briefs/yuugi_hoshiguma.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/yuugi_hoshiguma_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief yuuka_kazami",
+      "detail": "06_art/characters/briefs/yuuka_kazami.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/yuuka_kazami_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "brief yuyuko_saigyouji",
+      "detail": "06_art/characters/briefs/yuyuko_saigyouji.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/characters/silhouette_tokens/yuyuko_saigyouji_s_token.png",
+      "detail": "16x24; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "region catalog count",
+      "detail": "19",
+      "status": "PASS"
+    },
+    {
+      "name": "region/location ids",
+      "detail": "19 exact",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief animal_realm_primate_garden",
+      "detail": "06_art/regions/briefs/animal_realm_primate_garden.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/animal_realm_primate_garden_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief eientei_bamboo_forest",
+      "detail": "06_art/regions/briefs/eientei_bamboo_forest.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/eientei_bamboo_forest_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief forest_of_magic_kourindou",
+      "detail": "06_art/regions/briefs/forest_of_magic_kourindou.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/forest_of_magic_kourindou_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief former_hell_chireiden",
+      "detail": "06_art/regions/briefs/former_hell_chireiden.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/former_hell_chireiden_12.png",
+      "detail": "12x12; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief garden_sun_nameless_hill",
+      "detail": "06_art/regions/briefs/garden_sun_nameless_hill.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/garden_sun_nameless_hill_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief hakugyokurou",
+      "detail": "06_art/regions/briefs/hakugyokurou.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/hakugyokurou_12.png",
+      "detail": "12x12; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief hakurei_shrine",
+      "detail": "06_art/regions/briefs/hakurei_shrine.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/hakurei_shrine_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief heaven",
+      "detail": "06_art/regions/briefs/heaven.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/heaven_12.png",
+      "detail": "12x12; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief hidden_back_doors",
+      "detail": "06_art/regions/briefs/hidden_back_doors.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/hidden_back_doors_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief human_village",
+      "detail": "06_art/regions/briefs/human_village.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/human_village_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief lunar_capital_dream_world",
+      "detail": "06_art/regions/briefs/lunar_capital_dream_world.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/lunar_capital_dream_world_12.png",
+      "detail": "12x12; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief misty_lake",
+      "detail": "06_art/regions/briefs/misty_lake.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/misty_lake_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief moriya_shrine",
+      "detail": "06_art/regions/briefs/moriya_shrine.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/moriya_shrine_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief myouren_temple",
+      "detail": "06_art/regions/briefs/myouren_temple.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/myouren_temple_12.png",
+      "detail": "12x12; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief outside_world_dream_theatre",
+      "detail": "06_art/regions/briefs/outside_world_dream_theatre.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/outside_world_dream_theatre_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief sanzu_higan",
+      "detail": "06_art/regions/briefs/sanzu_higan.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/sanzu_higan_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief scarlet_devil_mansion",
+      "detail": "06_art/regions/briefs/scarlet_devil_mansion.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/scarlet_devil_mansion_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief senkai_mausoleum",
+      "detail": "06_art/regions/briefs/senkai_mausoleum.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/senkai_mausoleum_12.png",
+      "detail": "12x12; colors=0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "region brief youkai_mountain",
+      "detail": "06_art/regions/briefs/youkai_mountain.md",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/regions/stamps/youkai_mountain_12.png",
+      "detail": "12x12; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "UI sample count",
+      "detail": "24",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/title.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/title_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/language.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/language_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/save_load.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/save_load_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/options_accessibility.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/options_accessibility_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/world_map.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/world_map_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/destination.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/destination_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/exploration.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/exploration_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/dialogue.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/dialogue_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/dialogue_choice.png",
+      "detail": "320x180; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/dialogue_choice_4x.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/backlog.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/backlog_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/journal_people.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/journal_people_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/journal_rumors.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/journal_rumors_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/memory_thread.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/memory_thread_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/keepsakes.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/keepsakes_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/character_profile.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/character_profile_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/route_threshold.png",
+      "detail": "320x180; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/route_threshold_4x.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/danmaku.png",
+      "detail": "320x180; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/danmaku_4x.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/danmaku_result.png",
+      "detail": "320x180; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/danmaku_result_4x.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/fighter.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/fighter_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/fighter_result.png",
+      "detail": "320x180; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/fighter_result_4x.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/minigame.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/minigame_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/photo_camera.png",
+      "detail": "320x180; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/photo_camera_4x.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/trade_shop.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/trade_shop_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/raw_320x180/clinic.png",
+      "detail": "320x180; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/preview_4x/clinic_4x.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/complete_ui_sample_atlas_raw.png",
+      "detail": "660x612; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 05_ui_ux/samples/complete_ui_sample_atlas_2x.png",
+      "detail": "1320x1224; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "primary mockup count",
+      "detail": "7",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/mockups/01_world_map.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/mockups/02_exploration_spot.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/mockups/03_dialogue_choice.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/mockups/04_danmaku.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/mockups/05_fighter.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/mockups/06_journal.png",
+      "detail": "1280x720; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/mockups/07_core_sprite_atlas.png",
+      "detail": "1280x720; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/sprites/reimu_m_sheet.png",
+      "detail": "384x32; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/sprites/reimu_m_sheet_inverted.png",
+      "detail": "384x32; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/sprites/marisa_m_sheet.png",
+      "detail": "384x32; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/sprites/marisa_m_sheet_inverted.png",
+      "detail": "384x32; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/sprites/sakuya_m_sheet.png",
+      "detail": "384x32; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/sprites/sakuya_m_sheet_inverted.png",
+      "detail": "384x32; colors=0,0,0|255,255,255",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/tiles/shrine_tiles_16.png",
+      "detail": "128x64; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/tiles/mansion_tiles_16.png",
+      "detail": "128x64; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG 06_art/visual_system_v2/assets/tiles/eientei_tiles_16.png",
+      "detail": "128x64; colors=255,255,255|0,0,0",
+      "status": "PASS"
+    },
+    {
+      "name": "concept A",
+      "detail": "06_art/visual_system_v2/assets/concepts/A_pocket_shrine.png",
+      "status": "PASS"
+    },
+    {
+      "name": "concept B",
+      "detail": "06_art/visual_system_v2/assets/concepts/B_pc98_dither.png",
+      "status": "PASS"
+    },
+    {
+      "name": "concept C",
+      "detail": "06_art/visual_system_v2/assets/concepts/C_woodblock_adventure.png",
+      "status": "PASS"
+    },
+    {
+      "name": "concept D",
+      "detail": "06_art/visual_system_v2/assets/concepts/D_midnight_lcd.png",
+      "status": "PASS"
+    },
+    {
+      "name": "Japanese font",
+      "detail": "06_art/visual_system_v2/assets/fonts/DotGothic16-Japanese.woff2",
+      "status": "PASS"
+    },
+    {
+      "name": "Latin font",
+      "detail": "06_art/visual_system_v2/assets/fonts/DotGothic16-Latin.woff2",
+      "status": "PASS"
+    },
+    {
+      "name": "handoff UI_ART_V2_HANDOFF.md",
+      "detail": "UI_ART_V2_HANDOFF.md",
+      "status": "PASS"
+    },
+    {
+      "name": "handoff PACKAGE_V2_CHANGE_AUDIT.md",
+      "detail": "PACKAGE_V2_CHANGE_AUDIT.md",
+      "status": "PASS"
+    },
+    {
+      "name": "handoff 05_ui_ux/ui_system_v2.md",
+      "detail": "05_ui_ux/ui_system_v2.md",
+      "status": "PASS"
+    },
+    {
+      "name": "handoff 06_art/character_asset_contract_v2.md",
+      "detail": "06_art/character_asset_contract_v2.md",
+      "status": "PASS"
+    },
+    {
+      "name": "handoff 06_art/region_asset_contract_v2.md",
+      "detail": "06_art/region_asset_contract_v2.md",
+      "status": "PASS"
+    },
+    {
+      "name": "handoff 10_codex/UI_ART_IMPLEMENTATION_TASKBOOK_V2.md",
+      "detail": "10_codex/UI_ART_IMPLEMENTATION_TASKBOOK_V2.md",
+      "status": "PASS"
+    },
+    {
+      "name": "handoff 10_codex/CODEX_UI_ART_BOOTSTRAP_PROMPT_V2.md",
+      "detail": "10_codex/CODEX_UI_ART_BOOTSTRAP_PROMPT_V2.md",
+      "status": "PASS"
+    },
+    {
+      "name": "non-empty package files",
+      "detail": "572",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿key,text
+event.hkr.empty_cushion.title,空いたままの座布団
+obj.hkr.find_second_cup,二つ目の湯呑みが温かい理由を探す。
+dlg.hkr.empty_cushion.reimu.001,待ってないわ。二つ目の湯呑みを片づけてなかっただけ。
+choice.hkr.empty_cushion.direct,まだ温かい理由を聞く。
+choice.hkr.empty_cushion.playful,辛抱強く待った湯呑みを褒める。
+choice.hkr.empty_cushion.patient,何も正さず、お茶を注いで席を空けておく。
+choice.hkr.empty_cushion.defiant,本人が認めなくても、神社は覚えていると言う。
+dlg.hkr.empty_cushion.reimu.excellent,……温度まで覚えてたのね。変わる前に座りなさい。
+dlg.hkr.empty_cushion.reimu.clear,それでいいわ。もう一つの湯呑みを取って。
+dlg.hkr.empty_cushion.reimu.loss,熱すぎ。ちょっとどいて、私が直す。
+journal.hkr.empty_cushion.title,空いた二つ目の湯呑み
+journal.hkr.empty_cushion.body,着く前から湯呑みは温かかった。座布団はもう片づけられていない。
+ui.map.travel,移動
+ui.common.back,戻る
+ui.journal.open,手帳

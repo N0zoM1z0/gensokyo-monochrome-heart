@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Event Index",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "events"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title_en",
+          "location_id",
+          "lead_character_ids",
+          "primary_mode",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^evt\\."
+          },
+          "legacy_id": {
+            "type": "string"
+          },
+          "title_en": {
+            "type": "string"
+          },
+          "location_id": {
+            "type": "string",
+            "pattern": "^loc\\."
+          },
+          "lead_character_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^char\\."
+            }
+          },
+          "primary_mode": {
+            "type": "string"
+          },
+          "core_change": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "estimated_minutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "comfort_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

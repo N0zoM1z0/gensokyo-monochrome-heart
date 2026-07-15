@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "locations": [
+    {
+      "id": "loc.hakurei_shrine",
+      "display_name_en": "Hakurei Shrine",
+      "display_name_ja": "博麗神社",
+      "bible_path": "../03_locations/hakurei_shrine.md",
+      "map_position": [
+        128,
+        105
+      ],
+      "thesis": "Home is proved by repeated responsibility, not ownership.",
+      "launch_tier": "headline"
+    },
+    {
+      "id": "loc.scarlet_devil_mansion",
+      "display_name_en": "Scarlet Devil Mansion",
+      "display_name_ja": "紅魔館",
+      "bible_path": "../03_locations/scarlet_devil_mansion.md",
+      "map_position": [
+        48,
+        61
+      ],
+      "thesis": "Perfection is a performance built from labor, hierarchy, and chosen loyalty.",
+      "launch_tier": "headline"
+    },
+    {
+      "id": "loc.youkai_mountain",
+      "display_name_en": "Youkai Mountain",
+      "display_name_ja": "妖怪の山",
+      "bible_path": "../03_locations/youkai_mountain.md",
+      "map_position": [
+        210,
+        43
+      ],
+      "thesis": "Information and infrastructure can connect people or turn them into resources.",
+      "launch_tier": "headline"
+    },
+    {
+      "id": "loc.moriya_shrine",
+      "display_name_en": "Moriya Shrine",
+      "display_name_ja": "守矢神社",
+      "bible_path": "../03_locations/moriya_shrine.md",
+      "map_position": [
+        268,
+        36
+      ],
+      "thesis": "Faith cannot be reduced to audience size, technology, or nostalgia.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.eientei",
+      "display_name_en": "Eientei and Bamboo Forest",
+      "display_name_ja": "永遠亭・迷いの竹林",
+      "bible_path": "../03_locations/eientei_bamboo_forest.md",
+      "map_position": [
+        258,
+        145
+      ],
+      "thesis": "Eternity becomes meaningful only when moments can differ and end.",
+      "launch_tier": "headline"
+    },
+    {
+      "id": "loc.hakugyokurou",
+      "display_name_en": "Hakugyokurou",
+      "display_name_ja": "白玉楼",
+      "bible_path": "../03_locations/hakugyokurou.md",
+      "map_position": [
+        62,
+        137
+      ],
+      "thesis": "Care includes allowing things to finish.",
+      "launch_tier": "headline"
+    },
+    {
+      "id": "loc.human_village",
+      "display_name_en": "Human Village",
+      "display_name_ja": "人間の里",
+      "bible_path": "../03_locations/human_village.md",
+      "map_position": [
+        190,
+        84
+      ],
+      "thesis": "Public safety, curiosity, and truthful history rarely align perfectly.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.forest_of_magic",
+      "display_name_en": "Forest of Magic and Kourindou",
+      "display_name_ja": "魔法の森・香霖堂",
+      "bible_path": "../03_locations/forest_of_magic_kourindou.md",
+      "map_position": [
+        246,
+        110
+      ],
+      "thesis": "Curiosity becomes care when objects and people retain histories beyond usefulness.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.misty_lake",
+      "display_name_en": "Misty Lake",
+      "display_name_ja": "霧の湖",
+      "bible_path": "../03_locations/misty_lake.md",
+      "map_position": [
+        84,
+        77
+      ],
+      "thesis": "Simple confidence can be creative rather than merely foolish.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.former_hell",
+      "display_name_en": "Former Hell and Chireiden",
+      "display_name_ja": "旧地獄・地霊殿",
+      "bible_path": "../03_locations/former_hell_chireiden.md",
+      "map_position": [
+        150,
+        166
+      ],
+      "thesis": "Being understood without consent is not the same as being known.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.myouren_temple",
+      "display_name_en": "Myouren Temple and Cemetery",
+      "display_name_ja": "命蓮寺・墓地",
+      "bible_path": "../03_locations/myouren_temple.md",
+      "map_position": [
+        214,
+        93
+      ],
+      "thesis": "Community is not sameness; hospitality requires rules and repair.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.senkai",
+      "display_name_en": "Senkai and Great Mausoleum",
+      "display_name_ja": "仙界・夢殿大祀廟",
+      "bible_path": "../03_locations/senkai_mausoleum.md",
+      "map_position": [
+        241,
+        87
+      ],
+      "thesis": "Hearing desire is not permission to define it.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.heaven",
+      "display_name_en": "Heaven",
+      "display_name_ja": "天界",
+      "bible_path": "../03_locations/heaven.md",
+      "map_position": [
+        275,
+        15
+      ],
+      "thesis": "A flawless life can become a prison when nothing resists or surprises.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.sanzu_higan",
+      "display_name_en": "Sanzu River and Higan",
+      "display_name_ja": "三途の川・彼岸",
+      "bible_path": "../03_locations/sanzu_higan.md",
+      "map_position": [
+        18,
+        146
+      ],
+      "thesis": "A finite life cannot be valued by length alone, and judgment requires context.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.garden_sun",
+      "display_name_en": "Garden of the Sun and Nameless Hill",
+      "display_name_ja": "太陽の畑・無名の丘",
+      "bible_path": "../03_locations/garden_sun_nameless_hill.md",
+      "map_position": [
+        106,
+        149
+      ],
+      "thesis": "Attention is respect when it does not become possession.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.lunar_capital",
+      "display_name_en": "Lunar Capital and Dream World",
+      "display_name_ja": "月の都・夢の世界",
+      "bible_path": "../03_locations/lunar_capital_dream_world.md",
+      "map_position": [
+        300,
+        18
+      ],
+      "thesis": "Purity and perfect order can erase mixed, mortal experience.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.animal_realm",
+      "display_name_en": "Animal Realm and Primate Spirit Garden",
+      "display_name_ja": "畜生界・霊長園",
+      "bible_path": "../03_locations/animal_realm_primate_garden.md",
+      "map_position": [
+        16,
+        171
+      ],
+      "thesis": "Treating people as resources creates efficient systems and empty loyalties.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.hidden_doors",
+      "display_name_en": "Hidden Back Doors and Boundary Spaces",
+      "display_name_ja": "後戸・境界空間",
+      "bible_path": "../03_locations/hidden_back_doors.md",
+      "map_position": [
+        160,
+        18
+      ],
+      "thesis": "Access is power; privacy depends on who controls the door.",
+      "launch_tier": "expansion"
+    },
+    {
+      "id": "loc.outside_world",
+      "display_name_en": "Outside World Dream Theatre",
+      "display_name_ja": "外の世界・夢劇場",
+      "bible_path": "../03_locations/outside_world_dream_theatre.md",
+      "map_position": [
+        302,
+        165
+      ],
+      "thesis": "Convenience and spectacle cannot replace shared presence.",
+      "launch_tier": "expansion"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "id": "evt.hkr.empty_cushion",
+  "title_key": "event.hkr.empty_cushion.title",
+  "location_id": "loc.hakurei_shrine",
+  "spot_id": "loc.hakurei_shrine.veranda",
+  "cast": [
+    "char.reimu_hakurei"
+  ],
+  "availability": [
+    {
+      "predicate": "chapter_at_least",
+      "value": "chapter.1"
+    },
+    {
+      "predicate": "flag_false",
+      "key": "evt.hkr.empty_cushion.complete"
+    },
+    {
+      "predicate": "time_in",
+      "values": [
+        "day",
+        "dusk"
+      ]
+    }
+  ],
+  "entry_node": "n001",
+  "nodes": {
+    "n001": {
+      "type": "music_state",
+      "state": "mus_shrine_day",
+      "next": "n002"
+    },
+    "n002": {
+      "type": "exploration_objective",
+      "objective_key": "obj.hkr.find_second_cup",
+      "interactable_ids": [
+        "prop.unpaired_cup",
+        "prop.empty_cushion"
+      ],
+      "next": "n003"
+    },
+    "n003": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.001",
+      "next": "n004"
+    },
+    "n004": {
+      "type": "choice",
+      "choice_id": "choice.hkr.empty_cushion.01",
+      "options": [
+        {
+          "tone": "direct",
+          "text_key": "choice.hkr.empty_cushion.direct",
+          "next": "n_direct"
+        },
+        {
+          "tone": "playful",
+          "text_key": "choice.hkr.empty_cushion.playful",
+          "next": "n_playful"
+        },
+        {
+          "tone": "patient",
+          "text_key": "choice.hkr.empty_cushion.patient",
+          "next": "n_patient"
+        },
+        {
+          "tone": "defiant",
+          "text_key": "choice.hkr.empty_cushion.defiant",
+          "next": "n_defiant"
+        }
+      ]
+    },
+    "n_direct": {
+      "type": "effects",
+      "effects": [
+        {
+          "op": "relationship",
+          "character_id": "char.reimu_hakurei",
+          "facet": "respect",
+          "delta": 1
+        }
+      ],
+      "next": "n005"
+    },
+    "n_playful": {
+      "type": "effects",
+      "effects": [
+        {
+          "op": "relationship",
+          "character_id": "char.reimu_hakurei",
+          "facet": "spark",
+          "delta": 1
+        },
+        {
+          "op": "relationship",
+          "character_id": "char.reimu_hakurei",
+          "facet": "strain",
+          "delta": 1
+        }
+      ],
+      "next": "n005"
+    },
+    "n_patient": {
+      "type": "effects",
+      "effects": [
+        {
+          "op": "relationship",
+          "character_id": "char.reimu_hakurei",
+          "facet": "ease",
+          "delta": 1
+        },
+        {
+          "op": "relationship",
+          "character_id": "char.reimu_hakurei",
+          "facet": "trust",
+          "delta": 1
+        }
+      ],
+      "next": "n005"
+    },
+    "n_defiant": {
+      "type": "effects",
+      "effects": [
+        {
+          "op": "relationship",
+          "character_id": "char.reimu_hakurei",
+          "facet": "respect",
+          "delta": 1
+        },
+        {
+          "op": "relationship",
+          "character_id": "char.reimu_hakurei",
+          "facet": "strain",
+          "delta": 1
+        }
+      ],
+      "next": "n005"
+    },
+    "n005": {
+      "type": "start_minigame",
+      "minigame_id": "mini.shrine.tea_temperature",
+      "context": {
+        "target_band": "warm",
+        "cups": 2
+      },
+      "result_branches": {
+        "excellent": "n006a",
+        "clear": "n006b",
+        "loss": "n006c"
+      }
+    },
+    "n006a": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.excellent",
+      "next": "n007"
+    },
+    "n006b": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.clear",
+      "next": "n007"
+    },
+    "n006c": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.loss",
+      "next": "n007"
+    },
+    "n007": {
+      "type": "give_item",
+      "item_id": "item.keepsake.unpaired_cup",
+      "next": "n008"
+    },
+    "n008": {
+      "type": "journal_entry",
+      "entry_id": "journal.hkr.empty_cushion",
+      "next": "n009"
+    },
+    "n009": {
+      "type": "effects",
+      "effects": [
+        {
+          "op": "set_flag",
+          "key": "evt.hkr.empty_cushion.complete",
+          "value": true
+        }
+      ],
+      "next": "n010"
+    },
+    "n010": {
+      "type": "end_event",
+      "outcome": "complete"
+    }
+  },
+  "origin_tags": {
+    "canon": 1,
+    "fanon": 0,
+    "original": 5
+  },
+  "comfort_tags": []
+}

@@ -1,0 +1,16 @@
+﻿key,text
+event.hkr.empty_cushion.title,The Empty Cushion
+obj.hkr.find_second_cup,Find why a second cup is warm.
+dlg.hkr.empty_cushion.reimu.001,I didn't wait. I simply hadn't put the second cup away yet.
+choice.hkr.empty_cushion.direct,Ask why it is still warm.
+choice.hkr.empty_cushion.playful,Praise the cup for waiting patiently.
+choice.hkr.empty_cushion.patient,Pour tea and leave the empty place open.
+choice.hkr.empty_cushion.defiant,"Say the shrine remembers, even if she will not."
+dlg.hkr.empty_cushion.reimu.excellent,...You remembered the temperature. Sit down before it changes.
+dlg.hkr.empty_cushion.reimu.clear,That is fine. Hand me the other cup.
+dlg.hkr.empty_cushion.reimu.loss,Too hot. Move over; I will fix it.
+journal.hkr.empty_cushion.title,The Empty Second Cup
+journal.hkr.empty_cushion.body,The cup was warm before I arrived. The cushion is no longer stored away.
+ui.map.travel,Travel
+ui.common.back,Back
+ui.journal.open,Journal

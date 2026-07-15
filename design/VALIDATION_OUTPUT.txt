@@ -1,0 +1,10 @@
+Gensokyo Monochrome Heart design-2 validation
+
+Original package: Files checked; character skills=71; errors=0; warnings=0
+Core visual demo: checks=102; passed=102; failed=0
+Full visual v2: checks=274; passed=274; failed=0
+UI coverage: screens=40; components=30; exact samples=24
+Character coverage: briefs=71; silhouette blockouts=71; core animated=3
+Region coverage: briefs=19; stamps=19; foundation tile sets=3
+Preservation: 191 original files outside authorized UI/art+metadata scope match SHA-256
+RESULT: PASS

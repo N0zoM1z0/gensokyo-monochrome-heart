@@ -1,0 +1,798 @@
+{
+  "character_tokens": [
+    {
+      "id": "alice_margatroid",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "aunn_komano",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "aya_shameimaru",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "byakuren_hijiri",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "chen",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "cirno",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "clownpiece",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "doremy_sweet",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "eiki_shiki_yamaxanadu",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "eirin_yagokoro",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "flandre_scarlet",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "fujiwara_no_mokou",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "hata_no_kokoro",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "hatate_himekaidou",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "hecatia_lapislazuli",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "hieda_no_akyuu",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "hina_kagiyama",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "hong_meiling",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "ichirin_kumoi",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "iku_nagae",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "joon_yorigami",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "junko",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "kaguya_houraisan",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "kanako_yasaka",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "kasen_ibaraki",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "keiki_haniyasushin",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "keine_kamishirasawa",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "koakuma",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "kogasa_tatara",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "koishi_komeiji",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "komachi_onozuka",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "kosuzu_motoori",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "marisa_kirisame",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "mayumi_joutouguu",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "minamitsu_murasa",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "momiji_inubashiri",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "mononobe_no_futo",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "nazrin",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "nitori_kawashiro",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "nue_houjuu",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "okina_matara",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "patchouli_knowledge",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "ran_yakumo",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "reimu_hakurei",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "reisen_udongein_inaba",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "remilia_scarlet",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "rin_kaenbyou",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "rinnosuke_morichika",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "sagume_kishin",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "saki_kurokoma",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "sakuya_izayoi",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "sanae_kochiya",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "satori_komeiji",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "seiga_kaku",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "shion_yorigami",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "suika_ibuki",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "sumireko_usami",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "suwako_moriya",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "tenshi_hinanawi",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "tewi_inaba",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "toyostomimi_no_miko",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "utsuho_reiuji",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "watatsuki_no_toyohime",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "watatsuki_no_yorihime",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "yachie_kicchou",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "yoshika_miyako",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "youmu_konpaku",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "yukari_yakumo",
+      "tier": "B",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "yuugi_hoshiguma",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "yuuka_kazami",
+      "tier": "C",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    },
+    {
+      "id": "yuyuko_saigyouji",
+      "tier": "A",
+      "size": [
+        16,
+        24
+      ],
+      "status": "silhouette blockout; not final sprite"
+    }
+  ],
+  "region_stamps": [
+    {
+      "id": "animal_realm_primate_garden",
+      "size": [
+        12,
+        12
+      ],
+      "description": "broken haniwa face inside a square seal"
+    },
+    {
+      "id": "eientei_bamboo_forest",
+      "size": [
+        12,
+        12
+      ],
+      "description": "rabbit ears crossing a medicine vial"
+    },
+    {
+      "id": "forest_of_magic_kourindou",
+      "size": [
+        12,
+        12
+      ],
+      "description": "mushroom cap over a price tag"
+    },
+    {
+      "id": "former_hell_chireiden",
+      "size": [
+        12,
+        12
+      ],
+      "description": "third eye above a reactor ring"
+    },
+    {
+      "id": "garden_sun_nameless_hill",
+      "size": [
+        12,
+        12
+      ],
+      "description": "sunflower split by a lily-of-the-valley bell"
+    },
+    {
+      "id": "hakugyokurou",
+      "size": [
+        12,
+        12
+      ],
+      "description": "half-phantom curling around a fan"
+    },
+    {
+      "id": "hakurei_shrine",
+      "size": [
+        12,
+        12
+      ],
+      "description": "yin-yang orb beneath a torii"
+    },
+    {
+      "id": "heaven",
+      "size": [
+        12,
+        12
+      ],
+      "description": "peach resting on a keystone"
+    },
+    {
+      "id": "hidden_back_doors",
+      "size": [
+        12,
+        12
+      ],
+      "description": "open rectangle behind a folding fan"
+    },
+    {
+      "id": "human_village",
+      "size": [
+        12,
+        12
+      ],
+      "description": "open book behind a shop curtain"
+    },
+    {
+      "id": "lunar_capital_dream_world",
+      "size": [
+        12,
+        12
+      ],
+      "description": "crescent inside a sleeping eye"
+    },
+    {
+      "id": "misty_lake",
+      "size": [
+        12,
+        12
+      ],
+      "description": "ice crystal reflected in a wave"
+    },
+    {
+      "id": "moriya_shrine",
+      "size": [
+        12,
+        12
+      ],
+      "description": "frog eye and snake curve around an onbashira"
+    },
+    {
+      "id": "myouren_temple",
+      "size": [
+        12,
+        12
+      ],
+      "description": "lotus above a ship anchor"
+    },
+    {
+      "id": "outside_world_dream_theatre",
+      "size": [
+        12,
+        12
+      ],
+      "description": "smartphone rectangle behind a stage moon"
+    },
+    {
+      "id": "sanzu_higan",
+      "size": [
+        12,
+        12
+      ],
+      "description": "coin balanced on a judge rod"
+    },
+    {
+      "id": "scarlet_devil_mansion",
+      "size": [
+        12,
+        12
+      ],
+      "description": "clock hand crossing a bat wing"
+    },
+    {
+      "id": "senkai_mausoleum",
+      "size": [
+        12,
+        12
+      ],
+      "description": "earmuff arc above a ritual plate"
+    },
+    {
+      "id": "youkai_mountain",
+      "size": [
+        12,
+        12
+      ],
+      "description": "tengu feather over a waterfall notch"
+    }
+  ],
+  "warning": "Character tokens are recognition blockouts. Reimu/Marisa/Sakuya animation sheets are the production model reference."
+}

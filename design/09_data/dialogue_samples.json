@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "beats": [
+    {
+      "id": "beat.hkr.empty_cushion.reimu.001",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.001",
+      "portrait": "private_neutral",
+      "nonverbal_key": "cue.reimu.look_at_cup",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.excellent",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.excellent",
+      "portrait": "quiet_amused",
+      "nonverbal_key": "cue.reimu.slide_cup",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.clear",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.clear",
+      "portrait": "working_neutral",
+      "nonverbal_key": "cue.reimu_take_cup",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.loss",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.loss",
+      "portrait": "dry_irritated",
+      "nonverbal_key": "cue.reimu_fix_tea",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    }
+  ]
+}

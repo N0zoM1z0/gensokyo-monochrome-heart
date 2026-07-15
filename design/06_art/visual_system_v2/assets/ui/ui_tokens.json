@@ -1,0 +1,83 @@
+{
+  "internal_resolution": [
+    320,
+    180
+  ],
+  "safe_frame": 4,
+  "ui_grid": 4,
+  "tile_grid": 16,
+  "colors": [
+    "#000000",
+    "#FFFFFF"
+  ],
+  "components": {
+    "PaperPanel": {
+      "border": [
+        1,
+        2
+      ],
+      "padding": 8
+    },
+    "CharacterTag": {
+      "min": [
+        44,
+        12
+      ],
+      "max_name_width": 72
+    },
+    "ToneChoice": {
+      "row_height": 12,
+      "min_target": 12
+    },
+    "TimeWeatherChip": {
+      "height": 12
+    },
+    "ObjectiveThread": {
+      "height": 12
+    },
+    "StampIcon": {
+      "sizes": [
+        [
+          9,
+          9
+        ],
+        [
+          13,
+          13
+        ]
+      ]
+    },
+    "Gauge": {
+      "min_height": 5
+    },
+    "ContextPrompt": {
+      "height": 12
+    }
+  },
+  "skins": {
+    "A": {
+      "usage": "default exploration and ordinary dialogue",
+      "border": 2,
+      "dither": "0-25%",
+      "black_coverage": "25-35%"
+    },
+    "B": {
+      "usage": "dense interiors and key portraits",
+      "border": 1,
+      "dither": "25/50/75%",
+      "black_coverage": "40-50%"
+    },
+    "C": {
+      "usage": "chapter cards, intimacy, memory",
+      "border": "irregular 1-3",
+      "portrait_overflow": 8,
+      "black_coverage": "large alternating masses"
+    },
+    "D": {
+      "usage": "night combat, danmaku, dreams",
+      "polarity": "inverted",
+      "dither": "none behind bullets",
+      "black_coverage": "70-85%"
+    }
+  }
+}

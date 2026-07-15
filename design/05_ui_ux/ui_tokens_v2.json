@@ -1,0 +1,161 @@
+{
+  "schema": "gensokyo-monochrome-ui-v2",
+  "internal_canvas": [
+    320,
+    180
+  ],
+  "scale": {
+    "allowed": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "filter": "nearest",
+    "fractional_scaling": false
+  },
+  "palette": {
+    "ink": "#000000",
+    "paper": "#ffffff",
+    "transparent": "#00000000",
+    "visible_colors": 2
+  },
+  "grid": {
+    "micro": 2,
+    "ui": 4,
+    "tile": 16,
+    "safe_margin": 4,
+    "text_baseline": 8
+  },
+  "typography": {
+    "latin": {
+      "family": "Kiri8",
+      "cell": [
+        6,
+        8
+      ],
+      "baseline": 7,
+      "body": 8,
+      "label": 8,
+      "title": 16
+    },
+    "japanese": {
+      "family": "DotGothic16 subset",
+      "cell": [
+        8,
+        8
+      ],
+      "baseline": 7,
+      "body": 8,
+      "label": 8,
+      "title": 16
+    },
+    "fallback": "full-width 8x8 bitmap glyph; no runtime antialiasing",
+    "line_heights": [
+      8,
+      10,
+      12,
+      16
+    ]
+  },
+  "borders": {
+    "hairline": 1,
+    "standard": 2,
+    "heavy": 3,
+    "double_gap": 2,
+    "focus_inset": 2
+  },
+  "timing_frames_60fps": {
+    "focus_move": 4,
+    "confirm": 3,
+    "cancel": 3,
+    "panel_open": 6,
+    "page_turn": 8,
+    "toast_hold": 90,
+    "profile_switch_max": 6
+  },
+  "dither": {
+    "matrix": "4x4 Bayer",
+    "levels": [
+      0,
+      25,
+      50,
+      75,
+      100
+    ],
+    "animate": false,
+    "forbidden_zones": [
+      "body text",
+      "choice label",
+      "bullet field",
+      "focus reticle"
+    ]
+  },
+  "profiles": {
+    "A": {
+      "name": "Pocket Shrine",
+      "polarity": "paper",
+      "black_budget": "25-35%",
+      "frame": "2px open-corner",
+      "use": "default/exploration/system"
+    },
+    "B": {
+      "name": "PC-98 Dither",
+      "polarity": "paper or controlled ink",
+      "black_budget": "40-50%",
+      "frame": "1px double + corner blocks",
+      "use": "dense interiors/investigation"
+    },
+    "C": {
+      "name": "Woodblock Adventure",
+      "polarity": "paper",
+      "black_budget": "compositional blocks",
+      "frame": "paper slip + fold",
+      "use": "relationship/memory/chapter"
+    },
+    "D": {
+      "name": "Midnight LCD",
+      "polarity": "ink",
+      "black_budget": "70-85%",
+      "frame": "2px white line",
+      "use": "combat/night/dream/underground"
+    }
+  },
+  "input": {
+    "actions": [
+      "move",
+      "confirm",
+      "cancel",
+      "menu",
+      "journal",
+      "focus",
+      "shot",
+      "bomb",
+      "light",
+      "heavy",
+      "skill",
+      "spell",
+      "companion",
+      "page_left",
+      "page_right"
+    ],
+    "glyphs": "resolved from active device; text action name is always available",
+    "hold_threshold_ms": 350,
+    "repeat_ms": {
+      "initial": 300,
+      "interval": 80
+    }
+  },
+  "accessibility": {
+    "min_target": [
+      16,
+      16
+    ],
+    "focus": "2px outline + leading > or corner notch; never polarity alone",
+    "reduced_motion": "replace wipes/shake/flicker with 3-frame border tick",
+    "forced_profile": "A must support every screen and every gameplay outcome",
+    "combat_contrast": "bullet/hazard center contrast must be 100%; decor is suppressed in focus mode",
+    "photosensitivity": "no full-screen alternating flash; hit inversion limited to local 32x32 for one frame"
+  }
+}

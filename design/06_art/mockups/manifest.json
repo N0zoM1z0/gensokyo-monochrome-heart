@@ -1,0 +1,16 @@
+{
+  "schema": "gensokyo-monochrome-mockups-v2",
+  "internal_resolution": [320, 180],
+  "preview_scale": 4,
+  "palette": ["#000000", "#ffffff"],
+  "filter": "nearest-neighbor",
+  "files": [
+    {"file":"01_world_map.png","size_px":[1280,720],"mode":"1","source":"05_ui_ux/samples/raw_320x180/world_map.png","profile":"A"},
+    {"file":"02_exploration_spot.png","size_px":[1280,720],"mode":"1","source":"05_ui_ux/samples/raw_320x180/exploration.png","profile":"A"},
+    {"file":"03_dialogue_choice.png","size_px":[1280,720],"mode":"1","source":"05_ui_ux/samples/raw_320x180/dialogue_choice.png","profile":"C"},
+    {"file":"04_danmaku.png","size_px":[1280,720],"mode":"1","source":"05_ui_ux/samples/raw_320x180/danmaku.png","profile":"D"},
+    {"file":"05_fighter.png","size_px":[1280,720],"mode":"1","source":"05_ui_ux/samples/raw_320x180/fighter.png","profile":"A"},
+    {"file":"06_journal.png","size_px":[1280,720],"mode":"1","source":"05_ui_ux/samples/raw_320x180/journal_people.png","profile":"B"},
+    {"file":"07_core_sprite_atlas.png","size_px":[1280,720],"mode":"1","source":"06_art/visual_system_v2/assets/sprites/character_model_lock_raw.png","profile":"A"}
+  ]
+}

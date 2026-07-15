@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "characters": [
+    {
+      "id": "alice_margatroid",
+      "name_en": "Alice Margatroid",
+      "name_ja": "アリス・マーガトロイド",
+      "faction_region": "Forest of Magic / magician  ",
+      "route_scope": "Support route with romance-ready expansion  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/alice_margatroid/skills.md"
+    },
+    {
+      "id": "aunn_komano",
+      "name_en": "Aunn Komano",
+      "name_ja": "高麗野 あうん",
+      "faction_region": "Hakurei Shrine / places of faith across Gensokyo  ",
+      "route_scope": "Support route; shrine guardian and tutorial cameo  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/aunn_komano/skills.md"
+    },
+    {
+      "id": "aya_shameimaru",
+      "name_en": "Aya Shameimaru",
+      "name_ja": "射命丸 文",
+      "faction_region": "Youkai Mountain / Bunbunmaru Newspaper  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/aya_shameimaru/skills.md"
+    },
+    {
+      "id": "byakuren_hijiri",
+      "name_en": "Byakuren Hijiri",
+      "name_ja": "聖 白蓮",
+      "faction_region": "Myouren Temple  ",
+      "route_scope": "Major support; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/byakuren_hijiri/skills.md"
+    },
+    {
+      "id": "chen",
+      "name_en": "Chen",
+      "name_ja": "橙",
+      "faction_region": "Yakumo household / Youkai Mountain and Mayohiga  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/chen/skills.md"
+    },
+    {
+      "id": "cirno",
+      "name_en": "Cirno",
+      "name_ja": "チルノ",
+      "faction_region": "Misty Lake / fairies  ",
+      "route_scope": "Support friendship only  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "3/5",
+      "skills_path": "04_characters/cirno/skills.md"
+    },
+    {
+      "id": "clownpiece",
+      "name_en": "Clownpiece",
+      "name_ja": "クラウンピース",
+      "faction_region": "Hell / Hecatia's subordinate  ",
+      "route_scope": "Support friendship only  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/clownpiece/skills.md"
+    },
+    {
+      "id": "doremy_sweet",
+      "name_en": "Doremy Sweet",
+      "name_ja": "ドレミー・スイート",
+      "faction_region": "Dream World  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/doremy_sweet/skills.md"
+    },
+    {
+      "id": "eiki_shiki_yamaxanadu",
+      "name_en": "Eiki Shiki, Yamaxanadu",
+      "name_ja": "四季映姫・ヤマザナドゥ",
+      "faction_region": "Higan / Ministry of Right and Wrong  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/eiki_shiki_yamaxanadu/skills.md"
+    },
+    {
+      "id": "eirin_yagokoro",
+      "name_en": "Eirin Yagokoro",
+      "name_ja": "八意 永琳",
+      "faction_region": "Eientei / former Lunar sage  ",
+      "route_scope": "Deep route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/eirin_yagokoro/skills.md"
+    },
+    {
+      "id": "flandre_scarlet",
+      "name_en": "Flandre Scarlet",
+      "name_ja": "フランドール・スカーレット",
+      "faction_region": "Scarlet Devil Mansion  ",
+      "route_scope": "Support route; high-safety writing review  ",
+      "canon_confidence": "Medium  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/flandre_scarlet/skills.md"
+    },
+    {
+      "id": "fujiwara_no_mokou",
+      "name_en": "Fujiwara no Mokou",
+      "name_ja": "藤原 妹紅",
+      "faction_region": "Bamboo Forest / immortal wanderer  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/fujiwara_no_mokou/skills.md"
+    },
+    {
+      "id": "hata_no_kokoro",
+      "name_en": "Hata no Kokoro",
+      "name_ja": "秦 こころ",
+      "faction_region": "Menreiki / performance traditions  ",
+      "route_scope": "Support route; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/hata_no_kokoro/skills.md"
+    },
+    {
+      "id": "hatate_himekaidou",
+      "name_en": "Hatate Himekaidou",
+      "name_ja": "姫海棠 はたて",
+      "faction_region": "Youkai Mountain / Kakashi Spirit News  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/hatate_himekaidou/skills.md"
+    },
+    {
+      "id": "hecatia_lapislazuli",
+      "name_en": "Hecatia Lapislazuli",
+      "name_ja": "ヘカーティア・ラピスラズリ",
+      "faction_region": "Hell / Earth, Moon, and Otherworld  ",
+      "route_scope": "Major support / late-game challenge  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/hecatia_lapislazuli/skills.md"
+    },
+    {
+      "id": "hieda_no_akyuu",
+      "name_en": "Hieda no Akyuu",
+      "name_ja": "稗田 阿求",
+      "faction_region": "Human Village / Gensokyo Chronicle  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/hieda_no_akyuu/skills.md"
+    },
+    {
+      "id": "hina_kagiyama",
+      "name_en": "Hina Kagiyama",
+      "name_ja": "鍵山 雛",
+      "faction_region": "Youkai Mountain forest / misfortune god  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/hina_kagiyama/skills.md"
+    },
+    {
+      "id": "hong_meiling",
+      "name_en": "Hong Meiling",
+      "name_ja": "紅 美鈴",
+      "faction_region": "Scarlet Devil Mansion  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/hong_meiling/skills.md"
+    },
+    {
+      "id": "ichirin_kumoi",
+      "name_en": "Ichirin Kumoi",
+      "name_ja": "雲居 一輪",
+      "faction_region": "Myouren Temple  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/ichirin_kumoi/skills.md"
+    },
+    {
+      "id": "iku_nagae",
+      "name_en": "Iku Nagae",
+      "name_ja": "永江 衣玖",
+      "faction_region": "Heaven / Dragon Palace messenger  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/iku_nagae/skills.md"
+    },
+    {
+      "id": "joon_yorigami",
+      "name_en": "Joon Yorigami",
+      "name_ja": "依神 女苑",
+      "faction_region": "Pestilence / financial ruin goddess  ",
+      "route_scope": "Support antagonist  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/joon_yorigami/skills.md"
+    },
+    {
+      "id": "junko",
+      "name_en": "Junko",
+      "name_ja": "純狐",
+      "faction_region": "Lunar conflict / purified divine spirit  ",
+      "route_scope": "Late-game support/antagonist  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/junko/skills.md"
+    },
+    {
+      "id": "kaguya_houraisan",
+      "name_en": "Kaguya Houraisan",
+      "name_ja": "蓬莱山 輝夜",
+      "faction_region": "Eientei / former Lunar princess  ",
+      "route_scope": "Deep route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/kaguya_houraisan/skills.md"
+    },
+    {
+      "id": "kanako_yasaka",
+      "name_en": "Kanako Yasaka",
+      "name_ja": "八坂 神奈子",
+      "faction_region": "Moriya Shrine  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/kanako_yasaka/skills.md"
+    },
+    {
+      "id": "kasen_ibaraki",
+      "name_en": "Kasen Ibaraki",
+      "name_ja": "茨木 華扇",
+      "faction_region": "Hermit / Gensokyo sage-associated  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/kasen_ibaraki/skills.md"
+    },
+    {
+      "id": "keiki_haniyasushin",
+      "name_en": "Keiki Haniyasushin",
+      "name_ja": "埴安神 袿姫",
+      "faction_region": "Primate Spirit Garden / sculptor god  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/keiki_haniyasushin/skills.md"
+    },
+    {
+      "id": "keine_kamishirasawa",
+      "name_en": "Keine Kamishirasawa",
+      "name_ja": "上白沢 慧音",
+      "faction_region": "Human Village / history guardian  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/keine_kamishirasawa/skills.md"
+    },
+    {
+      "id": "koakuma",
+      "name_en": "Koakuma",
+      "name_ja": "小悪魔",
+      "faction_region": "Scarlet Devil Mansion / Voile Library  ",
+      "route_scope": "Minor support  ",
+      "canon_confidence": "Low  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/koakuma/skills.md"
+    },
+    {
+      "id": "kogasa_tatara",
+      "name_en": "Kogasa Tatara",
+      "name_ja": "多々良 小傘",
+      "faction_region": "Wandering karakasa / cemetery vicinity  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/kogasa_tatara/skills.md"
+    },
+    {
+      "id": "koishi_komeiji",
+      "name_en": "Koishi Komeiji",
+      "name_ja": "古明地 こいし",
+      "faction_region": "Palace of the Earth Spirits / wandering  ",
+      "route_scope": "Support route; high-safety writing review  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/koishi_komeiji/skills.md"
+    },
+    {
+      "id": "komachi_onozuka",
+      "name_en": "Komachi Onozuka",
+      "name_ja": "小野塚 小町",
+      "faction_region": "Sanzu River / shinigami ferryman  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/komachi_onozuka/skills.md"
+    },
+    {
+      "id": "kosuzu_motoori",
+      "name_en": "Kosuzu Motoori",
+      "name_ja": "本居 小鈴",
+      "faction_region": "Human Village / Suzunaan  ",
+      "route_scope": "Support friendship only  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/kosuzu_motoori/skills.md"
+    },
+    {
+      "id": "marisa_kirisame",
+      "name_en": "Marisa Kirisame",
+      "name_ja": "霧雨 魔理沙",
+      "faction_region": "Forest of Magic / independent magician  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "3/5",
+      "skills_path": "04_characters/marisa_kirisame/skills.md"
+    },
+    {
+      "id": "mayumi_joutouguu",
+      "name_en": "Mayumi Joutouguu",
+      "name_ja": "杖刀偶 磨弓",
+      "faction_region": "Primate Spirit Garden / haniwa army  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/mayumi_joutouguu/skills.md"
+    },
+    {
+      "id": "minamitsu_murasa",
+      "name_en": "Minamitsu Murasa",
+      "name_ja": "村紗 水蜜",
+      "faction_region": "Myouren Temple / Palanquin Ship  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/minamitsu_murasa/skills.md"
+    },
+    {
+      "id": "momiji_inubashiri",
+      "name_en": "Momiji Inubashiri",
+      "name_ja": "犬走 椛",
+      "faction_region": "Youkai Mountain / white wolf tengu patrol  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/momiji_inubashiri/skills.md"
+    },
+    {
+      "id": "mononobe_no_futo",
+      "name_en": "Mononobe no Futo",
+      "name_ja": "物部 布都",
+      "faction_region": "Senkai / Taoist  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/mononobe_no_futo/skills.md"
+    },
+    {
+      "id": "nazrin",
+      "name_en": "Nazrin",
+      "name_ja": "ナズーリン",
+      "faction_region": "Myouren Temple circle / Shou's subordinate  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/nazrin/skills.md"
+    },
+    {
+      "id": "nitori_kawashiro",
+      "name_en": "Nitori Kawashiro",
+      "name_ja": "河城 にとり",
+      "faction_region": "Youkai Mountain / kappa engineering  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/nitori_kawashiro/skills.md"
+    },
+    {
+      "id": "nue_houjuu",
+      "name_en": "Nue Houjuu",
+      "name_ja": "封獣 ぬえ",
+      "faction_region": "Myouren Temple circle / unidentified youkai  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/nue_houjuu/skills.md"
+    },
+    {
+      "id": "okina_matara",
+      "name_en": "Okina Matara",
+      "name_ja": "摩多羅 隠岐奈",
+      "faction_region": "Secret god / Gensokyo sage  ",
+      "route_scope": "Major support/final act foil  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/okina_matara/skills.md"
+    },
+    {
+      "id": "patchouli_knowledge",
+      "name_en": "Patchouli Knowledge",
+      "name_ja": "パチュリー・ノーレッジ",
+      "faction_region": "Scarlet Devil Mansion / Voile Library  ",
+      "route_scope": "Deep route; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/patchouli_knowledge/skills.md"
+    },
+    {
+      "id": "ran_yakumo",
+      "name_en": "Ran Yakumo",
+      "name_ja": "八雲 藍",
+      "faction_region": "Yakumo household / boundaries  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/ran_yakumo/skills.md"
+    },
+    {
+      "id": "reimu_hakurei",
+      "name_en": "Reimu Hakurei",
+      "name_ja": "博麗 霊夢",
+      "faction_region": "Hakurei Shrine / Hakurei Border  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/reimu_hakurei/skills.md"
+    },
+    {
+      "id": "reisen_udongein_inaba",
+      "name_en": "Reisen Udongein Inaba",
+      "name_ja": "鈴仙・優曇華院・イナバ",
+      "faction_region": "Eientei / moon rabbit  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/reisen_udongein_inaba/skills.md"
+    },
+    {
+      "id": "remilia_scarlet",
+      "name_en": "Remilia Scarlet",
+      "name_ja": "レミリア・スカーレット",
+      "faction_region": "Scarlet Devil Mansion  ",
+      "route_scope": "Deep route; launch fighter  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/remilia_scarlet/skills.md"
+    },
+    {
+      "id": "rin_kaenbyou",
+      "name_en": "Rin Kaenbyou",
+      "name_ja": "火焔猫 燐",
+      "faction_region": "Palace of the Earth Spirits / Former Hell  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/rin_kaenbyou/skills.md"
+    },
+    {
+      "id": "rinnosuke_morichika",
+      "name_en": "Rinnosuke Morichika",
+      "name_ja": "森近 霖之助",
+      "faction_region": "Kourindou / Forest of Magic edge  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/rinnosuke_morichika/skills.md"
+    },
+    {
+      "id": "sagume_kishin",
+      "name_en": "Sagume Kishin",
+      "name_ja": "稀神 サグメ",
+      "faction_region": "Lunar Capital  ",
+      "route_scope": "Late-game support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/sagume_kishin/skills.md"
+    },
+    {
+      "id": "saki_kurokoma",
+      "name_en": "Saki Kurokoma",
+      "name_ja": "驪駒 早鬼",
+      "faction_region": "Animal Realm / Keiga Family  ",
+      "route_scope": "Support rival  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/saki_kurokoma/skills.md"
+    },
+    {
+      "id": "sakuya_izayoi",
+      "name_en": "Sakuya Izayoi",
+      "name_ja": "十六夜 咲夜",
+      "faction_region": "Scarlet Devil Mansion  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/sakuya_izayoi/skills.md"
+    },
+    {
+      "id": "sanae_kochiya",
+      "name_en": "Sanae Kochiya",
+      "name_ja": "東風谷 早苗",
+      "faction_region": "Moriya Shrine  ",
+      "route_scope": "Deep route; launch fighter  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/sanae_kochiya/skills.md"
+    },
+    {
+      "id": "satori_komeiji",
+      "name_en": "Satori Komeiji",
+      "name_ja": "古明地 さとり",
+      "faction_region": "Palace of the Earth Spirits  ",
+      "route_scope": "Support route with romance-ready expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/satori_komeiji/skills.md"
+    },
+    {
+      "id": "seiga_kaku",
+      "name_en": "Seiga Kaku",
+      "name_ja": "霍 青娥",
+      "faction_region": "Senkai-adjacent / wicked hermit  ",
+      "route_scope": "Support antagonist  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/seiga_kaku/skills.md"
+    },
+    {
+      "id": "shion_yorigami",
+      "name_en": "Shion Yorigami",
+      "name_ja": "依神 紫苑",
+      "faction_region": "Poverty god / wandering; associated with Tenshi  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/shion_yorigami/skills.md"
+    },
+    {
+      "id": "suika_ibuki",
+      "name_en": "Suika Ibuki",
+      "name_ja": "伊吹 萃香",
+      "faction_region": "Oni / frequent Hakurei Shrine guest  ",
+      "route_scope": "Support route; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/suika_ibuki/skills.md"
+    },
+    {
+      "id": "sumireko_usami",
+      "name_en": "Sumireko Usami",
+      "name_ja": "宇佐見 菫子",
+      "faction_region": "Outside World / occultist visitor  ",
+      "route_scope": "Major support; postgame lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/sumireko_usami/skills.md"
+    },
+    {
+      "id": "suwako_moriya",
+      "name_en": "Suwako Moriya",
+      "name_ja": "洩矢 諏訪子",
+      "faction_region": "Moriya Shrine / ancient local deity  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/suwako_moriya/skills.md"
+    },
+    {
+      "id": "tenshi_hinanawi",
+      "name_en": "Tenshi Hinanawi",
+      "name_ja": "比那名居 天子",
+      "faction_region": "Heaven / Hinanawi clan  ",
+      "route_scope": "Deep route; launch fighter  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/tenshi_hinanawi/skills.md"
+    },
+    {
+      "id": "tewi_inaba",
+      "name_en": "Tewi Inaba",
+      "name_ja": "因幡 てゐ",
+      "faction_region": "Eientei / earth rabbits  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/tewi_inaba/skills.md"
+    },
+    {
+      "id": "toyostomimi_no_miko",
+      "name_en": "Toyosatomimi no Miko",
+      "name_ja": "豊聡耳 神子",
+      "faction_region": "Senkai / Taoist leadership  ",
+      "route_scope": "Major support; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/toyostomimi_no_miko/skills.md"
+    },
+    {
+      "id": "utsuho_reiuji",
+      "name_en": "Utsuho Reiuji",
+      "name_ja": "霊烏路 空",
+      "faction_region": "Palace of the Earth Spirits / Blazing Fires  ",
+      "route_scope": "Support route; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/utsuho_reiuji/skills.md"
+    },
+    {
+      "id": "watatsuki_no_toyohime",
+      "name_en": "Watatsuki no Toyohime",
+      "name_ja": "綿月 豊姫",
+      "faction_region": "Lunar Capital / Watatsuki household  ",
+      "route_scope": "Late-game support/antagonistic guest  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/watatsuki_no_toyohime/skills.md"
+    },
+    {
+      "id": "watatsuki_no_yorihime",
+      "name_en": "Watatsuki no Yorihime",
+      "name_ja": "綿月 依姫",
+      "faction_region": "Lunar Capital / Watatsuki household  ",
+      "route_scope": "Late-game support/duel  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/watatsuki_no_yorihime/skills.md"
+    },
+    {
+      "id": "yachie_kicchou",
+      "name_en": "Yachie Kicchou",
+      "name_ja": "吉弔 八千慧",
+      "faction_region": "Animal Realm / Kiketsu Family  ",
+      "route_scope": "Support antagonist  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/yachie_kicchou/skills.md"
+    },
+    {
+      "id": "yoshika_miyako",
+      "name_en": "Yoshika Miyako",
+      "name_ja": "宮古 芳香",
+      "faction_region": "Seiga's jiang-shi / mausoleum  ",
+      "route_scope": "Minor support; safety-sensitive  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/yoshika_miyako/skills.md"
+    },
+    {
+      "id": "youmu_konpaku",
+      "name_en": "Youmu Konpaku",
+      "name_ja": "魂魄 妖夢",
+      "faction_region": "Hakugyokurou / Netherworld  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/youmu_konpaku/skills.md"
+    },
+    {
+      "id": "yukari_yakumo",
+      "name_en": "Yukari Yakumo",
+      "name_ja": "八雲 紫",
+      "faction_region": "Gensokyo sages / boundaries  ",
+      "route_scope": "Major support; ensemble and finale lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/yukari_yakumo/skills.md"
+    },
+    {
+      "id": "yuugi_hoshiguma",
+      "name_en": "Yuugi Hoshiguma",
+      "name_ja": "星熊 勇儀",
+      "faction_region": "Former Hell / oni  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/yuugi_hoshiguma/skills.md"
+    },
+    {
+      "id": "yuuka_kazami",
+      "name_en": "Yuuka Kazami",
+      "name_ja": "風見 幽香",
+      "faction_region": "Garden of the Sun / flower fields  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/yuuka_kazami/skills.md"
+    },
+    {
+      "id": "yuyuko_saigyouji",
+      "name_en": "Yuyuko Saigyouji",
+      "name_ja": "西行寺 幽々子",
+      "faction_region": "Hakugyokurou / Netherworld  ",
+      "route_scope": "Deep route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/yuyuko_saigyouji/skills.md"
+    }
+  ]
+}

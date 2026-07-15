@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gensokyo Monochrome Visual System Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">GENSOKYO / MONOCHROME HEART</p>
+      <h1>1-bit UI & Character System Demo</h1>
+      <p>同一套 320×180 骨架，四种表现皮肤。所有画面在最后一步重新阈值化为纯黑／纯白。</p>
+    </header>
+
+    <section class="demo-grid">
+      <div class="screen-card">
+        <div class="screen-wrap"><canvas id="game" width="320" height="180" aria-label="Game visual demo"></canvas></div>
+        <div class="readout" id="readout">A / SHRINE / REIMU / IDLE</div>
+      </div>
+
+      <div class="controls">
+        <fieldset>
+          <legend>表现模式 / SKIN</legend>
+          <button data-group="profile" data-value="A" class="active">A DEFAULT</button>
+          <button data-group="profile" data-value="B">B DENSE</button>
+          <button data-group="profile" data-value="C">C STORY</button>
+          <button data-group="profile" data-value="D">D NIGHT</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>基础 TILE</legend>
+          <button data-group="region" data-value="shrine" class="active">博丽神社</button>
+          <button data-group="region" data-value="mansion">红魔馆</button>
+          <button data-group="region" data-value="eientei">永远亭</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>角色 / ACTOR</legend>
+          <button data-group="actor" data-value="reimu" class="active">REIMU</button>
+          <button data-group="actor" data-value="marisa">MARISA</button>
+          <button data-group="actor" data-value="sakuya">SAKUYA</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>动画 / ACTION</legend>
+          <button data-group="action" data-value="idle" class="active">IDLE 4F</button>
+          <button data-group="action" data-value="walk">WALK 8F</button>
+          <button data-group="action" data-value="talk">TALK 4F</button>
+        </fieldset>
+
+        <fieldset>
+          <legend>检查 / QA</legend>
+          <button data-group="language" data-value="en" class="active">EN</button>
+          <button data-group="language" data-value="ja">日本語</button>
+          <label class="toggle"><input id="anchors" type="checkbox"> 显示锚点</label>
+        </fieldset>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>这个 demo 在验证什么</h2>
+      <div class="note-grid">
+        <article><b>共享骨架</b><span>角色帧、碰撞锚点、UI 安全区不随皮肤变化。</span></article>
+        <article><b>真实像素</b><span>内部画布始终为 320×180；仅 nearest-neighbor 整数放大。</span></article>
+        <article><b>四种用法</b><span>A 日常；B 高密度室内；C 亲密／回忆；D 夜战／弹幕。</span></article>
+        <article><b>双语</b><span>英文使用 8px 单元；日文原型使用 12px 单元并在画布内二值化。</span></article>
+      </div>
+    </section>
+  </main>
+  <script src="demo.js"></script>
+</body>
+</html>

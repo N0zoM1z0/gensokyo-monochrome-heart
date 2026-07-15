@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Save Envelope",
+  "type": "object",
+  "required": [
+    "format",
+    "schema_version",
+    "game_version",
+    "profile_id",
+    "saved_utc",
+    "checksum",
+    "payload"
+  ],
+  "properties": {
+    "format": {
+      "const": "gmh_save"
+    },
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "game_version": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "created_utc": {
+      "type": "string"
+    },
+    "saved_utc": {
+      "type": "string"
+    },
+    "checksum": {
+      "type": "string",
+      "pattern": "^sha256:"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

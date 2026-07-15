@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Character Index",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "characters"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer"
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "display_name_en",
+          "skills_document",
+          "route_depth"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^char\\."
+          },
+          "slug": {
+            "type": "string"
+          },
+          "display_name_en": {
+            "type": "string"
+          },
+          "display_name_ja": {
+            "type": "string"
+          },
+          "faction_region": {
+            "type": "string"
+          },
+          "route_depth": {
+            "enum": [
+              "deep",
+              "support"
+            ]
+          },
+          "route_scope_note": {
+            "type": "string"
+          },
+          "canon_confidence": {
+            "type": "string"
+          },
+          "skills_document": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

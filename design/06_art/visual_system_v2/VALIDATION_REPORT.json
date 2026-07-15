@@ -1,0 +1,517 @@
+{
+  "status": "passed",
+  "checks": 102,
+  "failures": 0,
+  "details": [
+    {
+      "name": "exists:assets/sprites/reimu_m_sheet.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/reimu_m_sheet.png",
+      "ok": true,
+      "detail": "384x32; expected 384x32"
+    },
+    {
+      "name": "palette:assets/sprites/reimu_m_sheet.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/sprites/reimu_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/reimu_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "384x32; expected 384x32"
+    },
+    {
+      "name": "palette:assets/sprites/reimu_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/sprites/reimu_sml.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/reimu_sml.png",
+      "ok": true,
+      "detail": "88x48; expected 88x48"
+    },
+    {
+      "name": "palette:assets/sprites/reimu_sml.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/sprites/marisa_m_sheet.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/marisa_m_sheet.png",
+      "ok": true,
+      "detail": "384x32; expected 384x32"
+    },
+    {
+      "name": "palette:assets/sprites/marisa_m_sheet.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/sprites/marisa_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/marisa_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "384x32; expected 384x32"
+    },
+    {
+      "name": "palette:assets/sprites/marisa_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/sprites/marisa_sml.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/marisa_sml.png",
+      "ok": true,
+      "detail": "88x48; expected 88x48"
+    },
+    {
+      "name": "palette:assets/sprites/marisa_sml.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/sprites/sakuya_m_sheet.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/sakuya_m_sheet.png",
+      "ok": true,
+      "detail": "384x32; expected 384x32"
+    },
+    {
+      "name": "palette:assets/sprites/sakuya_m_sheet.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/sprites/sakuya_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/sakuya_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "384x32; expected 384x32"
+    },
+    {
+      "name": "palette:assets/sprites/sakuya_m_sheet_inverted.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/sprites/sakuya_sml.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/sprites/sakuya_sml.png",
+      "ok": true,
+      "detail": "88x48; expected 88x48"
+    },
+    {
+      "name": "palette:assets/sprites/sakuya_sml.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/tiles/shrine_tiles_16.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/tiles/shrine_tiles_16.png",
+      "ok": true,
+      "detail": "128x64; expected 128x64"
+    },
+    {
+      "name": "palette:assets/tiles/shrine_tiles_16.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:demo/background_shrine.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:demo/background_shrine.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:demo/background_shrine.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/tiles/mansion_tiles_16.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/tiles/mansion_tiles_16.png",
+      "ok": true,
+      "detail": "128x64; expected 128x64"
+    },
+    {
+      "name": "palette:assets/tiles/mansion_tiles_16.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:demo/background_mansion.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:demo/background_mansion.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:demo/background_mansion.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/tiles/eientei_tiles_16.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/tiles/eientei_tiles_16.png",
+      "ok": true,
+      "detail": "128x64; expected 128x64"
+    },
+    {
+      "name": "palette:assets/tiles/eientei_tiles_16.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:demo/background_eientei.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:demo/background_eientei.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:demo/background_eientei.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/ui/ui_components_4skins_raw.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/ui/ui_components_4skins_raw.png",
+      "ok": true,
+      "detail": "640x360; expected 640x360"
+    },
+    {
+      "name": "palette:assets/ui/ui_components_4skins_raw.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/fonts/kiri8_latin_raw.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/fonts/kiri8_latin_raw.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:assets/fonts/kiri8_latin_raw.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:assets/fonts/font_specimen_raw.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:assets/fonts/font_specimen_raw.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:assets/fonts/font_specimen_raw.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:preview/demo_A_raw.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:preview/demo_A_raw.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:preview/demo_A_raw.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:preview/demo_B_raw.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:preview/demo_B_raw.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:preview/demo_B_raw.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:preview/demo_C_raw.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:preview/demo_C_raw.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:preview/demo_C_raw.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:preview/demo_D_raw.png",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "size:preview/demo_D_raw.png",
+      "ok": true,
+      "detail": "320x180; expected 320x180"
+    },
+    {
+      "name": "palette:preview/demo_D_raw.png",
+      "ok": true,
+      "detail": "bad_rgb_channels=0; bad_alpha_pixels=0"
+    },
+    {
+      "name": "exists:demo/index.html",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:demo/style.css",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:demo/demo.js",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:assets/sprites/animation_manifest.json",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:assets/tiles/tiles_manifest.json",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:assets/ui/ui_tokens.json",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:assets/fonts/DotGothic16-Japanese.woff2",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:assets/fonts/DotGothic16-Latin.woff2",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:assets/fonts/DotGothic16-LICENSE.txt",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:README.md",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:ARTIFACT_INDEX.md",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:manifest.json",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "exists:preview/reimu_idle.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/reimu_idle.gif",
+      "ok": true,
+      "detail": "4; expected 4"
+    },
+    {
+      "name": "exists:preview/reimu_walk.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/reimu_walk.gif",
+      "ok": true,
+      "detail": "8; expected 8"
+    },
+    {
+      "name": "exists:preview/reimu_talk.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/reimu_talk.gif",
+      "ok": true,
+      "detail": "4; expected 4"
+    },
+    {
+      "name": "exists:preview/marisa_idle.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/marisa_idle.gif",
+      "ok": true,
+      "detail": "4; expected 4"
+    },
+    {
+      "name": "exists:preview/marisa_walk.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/marisa_walk.gif",
+      "ok": true,
+      "detail": "8; expected 8"
+    },
+    {
+      "name": "exists:preview/marisa_talk.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/marisa_talk.gif",
+      "ok": true,
+      "detail": "4; expected 4"
+    },
+    {
+      "name": "exists:preview/sakuya_idle.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/sakuya_idle.gif",
+      "ok": true,
+      "detail": "4; expected 4"
+    },
+    {
+      "name": "exists:preview/sakuya_walk.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/sakuya_walk.gif",
+      "ok": true,
+      "detail": "8; expected 8"
+    },
+    {
+      "name": "exists:preview/sakuya_talk.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/sakuya_talk.gif",
+      "ok": true,
+      "detail": "4; expected 4"
+    },
+    {
+      "name": "exists:preview/trio_idle.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/trio_idle.gif",
+      "ok": true,
+      "detail": "4; expected 4"
+    },
+    {
+      "name": "exists:preview/trio_walk.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/trio_walk.gif",
+      "ok": true,
+      "detail": "8; expected 8"
+    },
+    {
+      "name": "exists:preview/trio_talk.gif",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "frames:preview/trio_talk.gif",
+      "ok": true,
+      "detail": "4; expected 4"
+    }
+  ]
+}

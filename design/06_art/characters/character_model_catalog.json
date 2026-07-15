@@ -1,0 +1,3873 @@
+{
+  "schema_version": 2,
+  "characters": [
+    {
+      "id": "alice_margatroid",
+      "name_en": "Alice Margatroid",
+      "name_ja": "アリス・マーガトロイド",
+      "faction_region": "Forest of Magic / magician  ",
+      "route_scope": "Support route with romance-ready expansion  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/alice_margatroid/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "hair ribbon, fitted dress, puppet strings and doll shapes",
+      "primary_prop": "grimoire / control cross",
+      "companion_or_fx_layer": "Shanghai and Hourai doll anchors",
+      "idle_signature": "fingers tighten one thread while a doll lags one frame",
+      "talk_signature": "a doll mirrors or contradicts her restrained hand gesture",
+      "profile_affinity": [
+        "A",
+        "B",
+        "C"
+      ],
+      "costume_event_variants": "work apron; rain cloak; formal dollmaker",
+      "portrait_emphasis": "precision, guarded pride, private softness",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "aunn_komano",
+      "name_en": "Aunn Komano",
+      "name_ja": "高麗野 あうん",
+      "faction_region": "Hakurei Shrine / places of faith across Gensokyo  ",
+      "route_scope": "Support route; shrine guardian and tutorial cameo  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/aunn_komano/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "komainu ears, curled tail, round chest gem, compact guardian stance",
+      "primary_prop": "guardian orb / shrine charm",
+      "companion_or_fx_layer": "tail and ear child layers",
+      "idle_signature": "ears scan first, tail follows, feet stay planted",
+      "talk_signature": "both hands open as if welcoming, then return to guard",
+      "profile_affinity": [
+        "A",
+        "C"
+      ],
+      "costume_event_variants": "shrine work sash; rain guard; festival guardian",
+      "portrait_emphasis": "earnest vigilance and uncomplicated delight",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "aya_shameimaru",
+      "name_en": "Aya Shameimaru",
+      "name_ja": "射命丸 文",
+      "faction_region": "Youkai Mountain / Bunbunmaru Newspaper  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/aya_shameimaru/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "tokin cap, wing wedge, camera and notebook, geta stance",
+      "primary_prop": "camera / feather fan",
+      "companion_or_fx_layer": "wings, strap and newspaper layers",
+      "idle_signature": "camera strap shifts while her eyes keep tracking",
+      "talk_signature": "camera rises, shutter cuts one frame, then she lowers it only if sincere",
+      "profile_affinity": [
+        "A",
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "press armband; mountain patrol coat; rain cape",
+      "portrait_emphasis": "professional smile, predatory curiosity, camera-lowered sincerity",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "byakuren_hijiri",
+      "name_en": "Byakuren Hijiri",
+      "name_ja": "聖 白蓮",
+      "faction_region": "Myouren Temple  ",
+      "route_scope": "Major support; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/byakuren_hijiri/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "long two-tone-implied hair, layered monk robes, broad calm sleeves",
+      "primary_prop": "scroll / lotus light",
+      "companion_or_fx_layer": "beads and lotus glyph layer",
+      "idle_signature": "beads settle after the sleeve, never bouncy",
+      "talk_signature": "open palm and level gaze; power is shown by stillness",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "temple work robe; travel mantle; formal sermon robe",
+      "portrait_emphasis": "compassion, resolve, restrained physical power",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "8–16 boss/fighter key poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "chen",
+      "name_en": "Chen",
+      "name_ja": "橙",
+      "faction_region": "Yakumo household / Youkai Mountain and Mayohiga  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/chen/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "cat ears, two tails, short dress and quick low stance",
+      "primary_prop": "claw swipe / charm",
+      "companion_or_fx_layer": "two independent tail layers",
+      "idle_signature": "one tail notices first, the second catches up",
+      "talk_signature": "leans forward, hands close to chest, tails reveal the real mood",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "Mayohiga errands; rain hood; festival ribbon",
+      "portrait_emphasis": "curiosity, loyalty, sudden embarrassment",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "cirno",
+      "name_en": "Cirno",
+      "name_ja": "チルノ",
+      "faction_region": "Misty Lake / fairies  ",
+      "route_scope": "Support friendship only  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "3/5",
+      "skills_path": "04_characters/cirno/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "short hair bow, six ice-crystal wing points, wide boastful stance",
+      "primary_prop": "ice shard",
+      "companion_or_fx_layer": "crystal wing layer",
+      "idle_signature": "wing points jitter in an uneven 2-1 rhythm",
+      "talk_signature": "hands on hips, then one emphatic point that overshoots",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "summer melt gag; winter crown; lake patrol",
+      "portrait_emphasis": "boast, confusion, stubborn courage",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "clownpiece",
+      "name_en": "Clownpiece",
+      "name_ja": "クラウンピース",
+      "faction_region": "Hell / Hecatia's subordinate  ",
+      "route_scope": "Support friendship only  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/clownpiece/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "jester cap, star-and-stripe geometry, torch and energetic legs",
+      "primary_prop": "torch",
+      "companion_or_fx_layer": "flame and flag-pattern layer",
+      "idle_signature": "flame changes while the body holds a coiled bounce",
+      "talk_signature": "torch arcs wide; eyes and cap bells carry the chaos",
+      "profile_affinity": [
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "Hell patrol; festival torch; moon-surface dust",
+      "portrait_emphasis": "mischief, bewilderment, dangerous excitement",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "doremy_sweet",
+      "name_en": "Doremy Sweet",
+      "name_ja": "ドレミー・スイート",
+      "faction_region": "Dream World  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/doremy_sweet/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "nightcap, soft robe, dream-tail curl and floating orb silhouette",
+      "primary_prop": "dream orb / pillow",
+      "companion_or_fx_layer": "dream bubbles and tail layer",
+      "idle_signature": "body barely moves while bubbles drift out of phase",
+      "talk_signature": "reshapes one orb into the subject of the sentence",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "sleep-clinic wrap; dream librarian; nightmare inversion",
+      "portrait_emphasis": "gentle distance, clinical dream-reading, sly amusement",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "eiki_shiki_yamaxanadu",
+      "name_en": "Eiki Shiki, Yamaxanadu",
+      "name_ja": "四季映姫・ヤマザナドゥ",
+      "faction_region": "Higan / Ministry of Right and Wrong  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/eiki_shiki_yamaxanadu/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "judge cap, formal robe column and unmistakable rod",
+      "primary_prop": "Rod of Remorse",
+      "companion_or_fx_layer": "verdict tablet layer",
+      "idle_signature": "nearly motionless; rod angle changes one pixel",
+      "talk_signature": "rod indicates the issue, not the person, until the final beat",
+      "profile_affinity": [
+        "B",
+        "C"
+      ],
+      "costume_event_variants": "court formal; field inspection cloak",
+      "portrait_emphasis": "measured concern, severity, reluctant warmth",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "eirin_yagokoro",
+      "name_en": "Eirin Yagokoro",
+      "name_ja": "八意 永琳",
+      "faction_region": "Eientei / former Lunar sage  ",
+      "route_scope": "Deep route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/eirin_yagokoro/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "very long braid, large asymmetric bow, vertical physician posture",
+      "primary_prop": "vial / bow / medicine case",
+      "companion_or_fx_layer": "braid and medicine-case layer",
+      "idle_signature": "checks one vial label; braid settles late",
+      "talk_signature": "small hand motion, exact eye line, no wasted flourish",
+      "profile_affinity": [
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "clinic coat; lunar formal; forest travel mantle",
+      "portrait_emphasis": "diagnostic calm, dry wit, guarded responsibility",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "flandre_scarlet",
+      "name_en": "Flandre Scarlet",
+      "name_ja": "フランドール・スカーレット",
+      "faction_region": "Scarlet Devil Mansion  ",
+      "route_scope": "Support route; high-safety writing review  ",
+      "canon_confidence": "Medium  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/flandre_scarlet/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "cap, small body and two crystal-laden wing rods",
+      "primary_prop": "wand / crystal prism",
+      "companion_or_fx_layer": "eight crystal children with fixed spacing",
+      "idle_signature": "crystals rotate one step while her body remains intent",
+      "talk_signature": "crouches closer or tilts one prism; avoid generic manic bouncing",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "mansion daywear; supervised garden cape; dream silhouette",
+      "portrait_emphasis": "intense curiosity, isolation, careful trust",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "fujiwara_no_mokou",
+      "name_en": "Fujiwara no Mokou",
+      "name_ja": "藤原 妹紅",
+      "faction_region": "Bamboo Forest / immortal wanderer  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/fujiwara_no_mokou/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "long rough hair, trouser silhouette, paper charms and flame tails",
+      "primary_prop": "fire / paper charm",
+      "companion_or_fx_layer": "flame and charm layer",
+      "idle_signature": "ember rises from a still shoulder line",
+      "talk_signature": "one hand stays in a pocket until the line matters",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "forest guide coat; rain poncho; scorched battle set",
+      "portrait_emphasis": "blunt help, old exhaustion, competitive spark",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "hata_no_kokoro",
+      "name_en": "Hata no Kokoro",
+      "name_ja": "秦 こころ",
+      "faction_region": "Menreiki / performance traditions  ",
+      "route_scope": "Support route; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/hata_no_kokoro/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "bob hair, broad sleeves and a halo/fan of distinct masks",
+      "primary_prop": "selected mask / fan",
+      "companion_or_fx_layer": "mask wheel companion layer",
+      "idle_signature": "one mask changes while her face remains neutral",
+      "talk_signature": "the chosen mask moves to the foreground and supplies the gesture",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "stage costume; rehearsal plainwear; festival mask set",
+      "portrait_emphasis": "literal focus, learned emotion, uncanny comedy",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "8–16 boss/fighter key poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "hatate_himekaidou",
+      "name_en": "Hatate Himekaidou",
+      "name_ja": "姫海棠 はたて",
+      "faction_region": "Youkai Mountain / Kakashi Spirit News  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/hatate_himekaidou/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "tengu cap, twin hair masses, compact wings and phone-camera rectangle",
+      "primary_prop": "spirit camera / phone",
+      "companion_or_fx_layer": "wings and developed-photo layer",
+      "idle_signature": "thumb scrolls; wings react after she finds something",
+      "talk_signature": "shows a photo rather than performing a grand reporter pose",
+      "profile_affinity": [
+        "A",
+        "B"
+      ],
+      "costume_event_variants": "newsroom vest; rain cover; mountain casual",
+      "portrait_emphasis": "skepticism, competitive interest, reluctant admiration",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "hecatia_lapislazuli",
+      "name_en": "Hecatia Lapislazuli",
+      "name_ja": "ヘカーティア・ラピスラズリ",
+      "faction_region": "Hell / Earth, Moon, and Otherworld  ",
+      "route_scope": "Major support / late-game challenge  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/hecatia_lapislazuli/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "collar and chain, casual dress, three unmistakable planet spheres",
+      "primary_prop": "planet sphere",
+      "companion_or_fx_layer": "three orbiting world layers",
+      "idle_signature": "worlds rotate at different periods while she slouches casually",
+      "talk_signature": "one world replaces another at the point of emphasis",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "Earth casual; Moon formal; Otherworld inversion",
+      "portrait_emphasis": "casual cosmic authority, humor, sudden seriousness",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "hieda_no_akyuu",
+      "name_en": "Hieda no Akyuu",
+      "name_ja": "稗田 阿求",
+      "faction_region": "Human Village / Gensokyo Chronicle  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/hieda_no_akyuu/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "short formal hair, flower ornament, kimono block and book/brush",
+      "primary_prop": "chronicle / brush",
+      "companion_or_fx_layer": "page and ink-stamp layer",
+      "idle_signature": "brush pauses above a page; breath is minimal",
+      "talk_signature": "turns the book toward the listener, then withholds one line",
+      "profile_affinity": [
+        "A",
+        "B",
+        "C"
+      ],
+      "costume_event_variants": "archive work; village formal; winter writing layer",
+      "portrait_emphasis": "observant courtesy, mortality-aware resolve, quiet mischief",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "hina_kagiyama",
+      "name_en": "Hina Kagiyama",
+      "name_ja": "鍵山 雛",
+      "faction_region": "Youkai Mountain forest / misfortune god  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/hina_kagiyama/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "many ribbons, spiral skirt and circular misfortune silhouette",
+      "primary_prop": "misfortune amulet",
+      "companion_or_fx_layer": "ribbon spiral layer",
+      "idle_signature": "slow quarter-turn; ribbons lag in alternating directions",
+      "talk_signature": "stops the spin for one direct sentence",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "forest work; festival purification; storm set",
+      "portrait_emphasis": "gentleness, ritual caution, lonely humor",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "hong_meiling",
+      "name_en": "Hong Meiling",
+      "name_ja": "紅 美鈴",
+      "faction_region": "Scarlet Devil Mansion  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/hong_meiling/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "star cap, braid, qipao mass and grounded martial stance",
+      "primary_prop": "fists / gate staff",
+      "companion_or_fx_layer": "braid and leaf layer",
+      "idle_signature": "weight shifts through the feet, braid follows",
+      "talk_signature": "salute, open palm or compact martial explanation",
+      "profile_affinity": [
+        "A",
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "gate uniform; garden work; formal guard coat",
+      "portrait_emphasis": "warm competence, sleepy humor without incompetence",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "ichirin_kumoi",
+      "name_en": "Ichirin Kumoi",
+      "name_ja": "雲居 一輪",
+      "faction_region": "Myouren Temple  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/ichirin_kumoi/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "hooded short figure paired with an enormous cloud-fist silhouette",
+      "primary_prop": "prayer ring",
+      "companion_or_fx_layer": "Unzan full companion layer",
+      "idle_signature": "her sleeve moves first; Unzan answers a beat later",
+      "talk_signature": "small gesture from Ichirin, huge restrained echo from Unzan",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "temple chores; sailor travel; storm battle",
+      "portrait_emphasis": "practical faith, partnership, competitive confidence",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "iku_nagae",
+      "name_en": "Iku Nagae",
+      "name_ja": "永江 衣玖",
+      "faction_region": "Heaven / Dragon Palace messenger  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/iku_nagae/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "long sleeves, veil-like hat and flowing messenger silhouette",
+      "primary_prop": "fan / lightning ribbon",
+      "companion_or_fx_layer": "electric scarf and cloud layer",
+      "idle_signature": "sleeves drift on a slow wave independent of feet",
+      "talk_signature": "fan opens once; weather line answers the cadence",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "messenger formal; storm gear; Heaven reception",
+      "portrait_emphasis": "polite distance, warning, subtle amusement",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "joon_yorigami",
+      "name_en": "Joon Yorigami",
+      "name_ja": "依神 女苑",
+      "faction_region": "Pestilence / financial ruin goddess  ",
+      "route_scope": "Support antagonist  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/joon_yorigami/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "fur collar, fashionable bow, handbag/fan and hip-forward stance",
+      "primary_prop": "purse / fan / coins",
+      "companion_or_fx_layer": "coin sparkle and accessory layer",
+      "idle_signature": "coin flips with practiced indifference",
+      "talk_signature": "hand on hip, fan snap, then a glance at the cost",
+      "profile_affinity": [
+        "B",
+        "C"
+      ],
+      "costume_event_variants": "luxury set; stripped-down penance set; festival fashion",
+      "portrait_emphasis": "swagger, appraisal, flashes of insecurity",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "4 boss silhouettes",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "junko",
+      "name_en": "Junko",
+      "name_ja": "純狐",
+      "faction_region": "Lunar conflict / purified divine spirit  ",
+      "route_scope": "Late-game support/antagonist  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/junko/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "vast hair mass, crown/halo geometry, long purified robe and orbs",
+      "primary_prop": "purification orb",
+      "companion_or_fx_layer": "aura and orb layer",
+      "idle_signature": "everything holds except one perfectly regular orb",
+      "talk_signature": "one hand rises; surrounding clutter disappears rather than explodes",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "lunar conflict robe; quiet post-conflict mantle",
+      "portrait_emphasis": "purity, grief held at distance, frightening clarity",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "8–16 boss/fighter key poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "kaguya_houraisan",
+      "name_en": "Kaguya Houraisan",
+      "name_ja": "蓬莱山 輝夜",
+      "faction_region": "Eientei / former Lunar princess  ",
+      "route_scope": "Deep route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/kaguya_houraisan/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "floor-length hair column, layered sleeves and absolute stillness",
+      "primary_prop": "fan / impossible treasure",
+      "companion_or_fx_layer": "treasure and hair-end layer",
+      "idle_signature": "only the clock/fan moves; body remains composed",
+      "talk_signature": "fan opens by one step or a sleeve reveals a treasure cue",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "indoor loungewear; twelve-layer formal; moonlit game set",
+      "portrait_emphasis": "playful intellect, boredom, ageless vulnerability",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "kanako_yasaka",
+      "name_en": "Kanako Yasaka",
+      "name_ja": "八坂 神奈子",
+      "faction_region": "Moriya Shrine  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/kanako_yasaka/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "huge shimenawa ring, broad sleeves and onbashira verticals",
+      "primary_prop": "onbashira / sacred rope",
+      "companion_or_fx_layer": "rope ring and pillar layer",
+      "idle_signature": "rope tassels settle while she holds a public pose",
+      "talk_signature": "one pillar mark or broad sleeve gesture frames the argument",
+      "profile_affinity": [
+        "A",
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "shrine work; summit storm coat; festival formal",
+      "portrait_emphasis": "executive confidence, strategic warmth, divine scale",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "kasen_ibaraki",
+      "name_en": "Kasen Ibaraki",
+      "name_ja": "茨木 華扇",
+      "faction_region": "Hermit / Gensokyo sage-associated  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/kasen_ibaraki/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "twin buns, one bandaged arm, fitted Chinese dress and animal accents",
+      "primary_prop": "staff / bandaged arm",
+      "companion_or_fx_layer": "animal companion and bandage layer",
+      "idle_signature": "bandage curl moves while posture stays corrective",
+      "talk_signature": "an animal reacts to what she refuses to say directly",
+      "profile_affinity": [
+        "A",
+        "C"
+      ],
+      "costume_event_variants": "hermit workwear; shrine visit cloak; sealed-arm event set",
+      "portrait_emphasis": "admonition, care, concealed identity",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "keiki_haniyasushin",
+      "name_en": "Keiki Haniyasushin",
+      "name_ja": "埴安神 袿姫",
+      "faction_region": "Primate Spirit Garden / sculptor god  ",
+      "route_scope": "Major support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/keiki_haniyasushin/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "sculptor-goddess crown, robe apron and haniwa ranks",
+      "primary_prop": "chisel / clay figure",
+      "companion_or_fx_layer": "haniwa formation layer",
+      "idle_signature": "one haniwa adjusts while she studies the silhouette",
+      "talk_signature": "sculpts a tiny correction as the verbal emphasis",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "studio apron; Primate Garden formal; battle kiln set",
+      "portrait_emphasis": "creator pride, protection, artistic judgment",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "keine_kamishirasawa",
+      "name_en": "Keine Kamishirasawa",
+      "name_ja": "上白沢 慧音",
+      "faction_region": "Human Village / history guardian  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/keine_kamishirasawa/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "teacher cap or horned form, book and upright village-guardian stance",
+      "primary_prop": "history book / chalk",
+      "companion_or_fx_layer": "page and horn-form layer",
+      "idle_signature": "turns one page, pauses to listen outside",
+      "talk_signature": "points to text or corrects a date with a small chalk gesture",
+      "profile_affinity": [
+        "A",
+        "B",
+        "C"
+      ],
+      "costume_event_variants": "school work; night guard; hakutaku event form",
+      "portrait_emphasis": "teacherly patience, vigilance, embarrassment",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "koakuma",
+      "name_en": "Koakuma",
+      "name_ja": "小悪魔",
+      "faction_region": "Scarlet Devil Mansion / Voile Library  ",
+      "route_scope": "Minor support  ",
+      "canon_confidence": "Low  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/koakuma/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "small bat wings, bob hair, pointed tail and book-carrying silhouette",
+      "primary_prop": "book stack / library key",
+      "companion_or_fx_layer": "wings and tail layer",
+      "idle_signature": "balances books; wing tips correct the weight",
+      "talk_signature": "peeks around the stack, then offers the relevant volume",
+      "profile_affinity": [
+        "B"
+      ],
+      "costume_event_variants": "archive work; dust mask; formal library service",
+      "portrait_emphasis": "busy competence, curiosity, minor-devil mischief",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "kogasa_tatara",
+      "name_en": "Kogasa Tatara",
+      "name_ja": "多々良 小傘",
+      "faction_region": "Wandering karakasa / cemetery vicinity  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/kogasa_tatara/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "asymmetric karakasa outfit dominated by one-eyed umbrella",
+      "primary_prop": "karakasa umbrella",
+      "companion_or_fx_layer": "umbrella eye/tongue layer",
+      "idle_signature": "umbrella blinks before she moves",
+      "talk_signature": "sudden pop-in gesture followed by checking whether it worked",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "rain set; cemetery night; festival repair",
+      "portrait_emphasis": "eagerness to surprise, hurt pride, warmth",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "koishi_komeiji",
+      "name_en": "Koishi Komeiji",
+      "name_ja": "古明地 こいし",
+      "faction_region": "Palace of the Earth Spirits / wandering  ",
+      "route_scope": "Support route; high-safety writing review  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/koishi_komeiji/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "wide hat, closed third-eye cords and loose wandering dress",
+      "primary_prop": "closed third eye / pebble",
+      "companion_or_fx_layer": "cord path and subconscious vignette layer",
+      "idle_signature": "a step changes without a preparation frame",
+      "talk_signature": "cords point toward the unspoken subject, not her face",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "surface wanderer; dream archive; quiet garden set",
+      "portrait_emphasis": "untrackable presence, sudden honesty, safety-sensitive distance",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "komachi_onozuka",
+      "name_en": "Komachi Onozuka",
+      "name_ja": "小野塚 小町",
+      "faction_region": "Sanzu River / shinigami ferryman  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/komachi_onozuka/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "large scythe, loose uniform and relaxed ferryman lean",
+      "primary_prop": "scythe / coin",
+      "companion_or_fx_layer": "coin and river-mist layer",
+      "idle_signature": "leans on scythe; coin rolls across knuckles",
+      "talk_signature": "scythe angle stays casual until the moral point lands",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "ferry work; Higan formal; rainy river coat",
+      "portrait_emphasis": "leisurely wit, practical mortality, buried diligence",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "kosuzu_motoori",
+      "name_en": "Kosuzu Motoori",
+      "name_ja": "本居 小鈴",
+      "faction_region": "Human Village / Suzunaan  ",
+      "route_scope": "Support friendship only  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/kosuzu_motoori/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "twin braids, bell-like ties, bookstore apron and oversized book",
+      "primary_prop": "youma book / shop ledger",
+      "companion_or_fx_layer": "page and seal layer",
+      "idle_signature": "book weight shifts; braid follows",
+      "talk_signature": "hugs, opens or reluctantly closes the dangerous book",
+      "profile_affinity": [
+        "A",
+        "B"
+      ],
+      "costume_event_variants": "Suzunaan work; festival reader; incident gloves",
+      "portrait_emphasis": "bookish enthusiasm, risk blindness, friendship",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "marisa_kirisame",
+      "name_en": "Marisa Kirisame",
+      "name_ja": "霧雨 魔理沙",
+      "faction_region": "Forest of Magic / independent magician  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "3/5",
+      "skills_path": "04_characters/marisa_kirisame/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "witch hat, broom diagonal and white apron cut in a black dress mass",
+      "primary_prop": "broom / mini-hakkero",
+      "companion_or_fx_layer": "hat ribbon, broom and spark layer",
+      "idle_signature": "hat tips after the body; fingers tap the broom",
+      "talk_signature": "forward hand gesture as if the conclusion is obvious",
+      "profile_affinity": [
+        "A",
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "rain cape; soot-covered lab set; festival magician",
+      "portrait_emphasis": "confidence, caught-in-the-act humor, private quiet",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "mayumi_joutouguu",
+      "name_en": "Mayumi Joutouguu",
+      "name_ja": "杖刀偶 磨弓",
+      "faction_region": "Primate Spirit Garden / haniwa army  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/mayumi_joutouguu/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "haniwa armor, helmet crest and disciplined sword line",
+      "primary_prop": "sword / bow",
+      "companion_or_fx_layer": "haniwa rank layer",
+      "idle_signature": "military cadence and exact equipment check",
+      "talk_signature": "salute or tactical point; no casual flailing",
+      "profile_affinity": [
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "garden patrol; ceremonial armor; damaged haniwa set",
+      "portrait_emphasis": "loyalty, directness, learning individuality",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "minamitsu_murasa",
+      "name_en": "Minamitsu Murasa",
+      "name_ja": "村紗 水蜜",
+      "faction_region": "Myouren Temple / Palanquin Ship  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/minamitsu_murasa/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "sailor cap, anchor line and water-broken lower silhouette",
+      "primary_prop": "anchor / ladle",
+      "companion_or_fx_layer": "water trail and ghost wake layer",
+      "idle_signature": "one drip falls from the anchor while she floats",
+      "talk_signature": "anchor tilts like punctuation; grin stays restrained",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "temple chores; captain coat; stormwreck set",
+      "portrait_emphasis": "seamanship, dark humor, belonging",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "momiji_inubashiri",
+      "name_en": "Momiji Inubashiri",
+      "name_ja": "犬走 椛",
+      "faction_region": "Youkai Mountain / white wolf tengu patrol  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/momiji_inubashiri/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "wolf ears/tail, round shield and scimitar patrol silhouette",
+      "primary_prop": "shield / blade",
+      "companion_or_fx_layer": "ear and tail layer",
+      "idle_signature": "ears scan opposite directions before the shield shifts",
+      "talk_signature": "shield tap or map-pointing gesture",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "mountain patrol coat; off-duty scarf; storm lookout",
+      "portrait_emphasis": "professional caution, territorial pride, dry camaraderie",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "mononobe_no_futo",
+      "name_en": "Mononobe no Futo",
+      "name_ja": "物部 布都",
+      "faction_region": "Senkai / Taoist  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/mononobe_no_futo/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "small cap, Taoist robe, plates and boat/fire geometry",
+      "primary_prop": "plate / ritual vessel",
+      "companion_or_fx_layer": "plate orbit and flame layer",
+      "idle_signature": "one plate spins with old-fashioned ceremony",
+      "talk_signature": "broad archaic gesture that nearly loses a plate",
+      "profile_affinity": [
+        "A",
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "mausoleum work; festival robe; fire ritual set",
+      "portrait_emphasis": "archaic confidence, literalism, competitive zeal",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "nazrin",
+      "name_en": "Nazrin",
+      "name_ja": "ナズーリン",
+      "faction_region": "Myouren Temple circle / Shou's subordinate  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/nazrin/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "mouse ears/tail, dowsing rods and pendulum triangle",
+      "primary_prop": "dowsing rods / pendulum",
+      "companion_or_fx_layer": "tail and pendulum layer",
+      "idle_signature": "pendulum moves while eyes remain skeptical",
+      "talk_signature": "rods cross or point to the actual evidence",
+      "profile_affinity": [
+        "A",
+        "B"
+      ],
+      "costume_event_variants": "temple errands; cave search coat; market disguise",
+      "portrait_emphasis": "pragmatism, appraisal, understated loyalty",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "nitori_kawashiro",
+      "name_en": "Nitori Kawashiro",
+      "name_ja": "河城 にとり",
+      "faction_region": "Youkai Mountain / kappa engineering  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/nitori_kawashiro/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "cap, large backpack, wrench and pipe/gadget silhouette",
+      "primary_prop": "wrench / optical device",
+      "companion_or_fx_layer": "backpack valves and camouflage layer",
+      "idle_signature": "one valve spins; backpack weight shifts",
+      "talk_signature": "unfolds a schematic or demonstrates a mechanism too close",
+      "profile_affinity": [
+        "A",
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "work overalls; rain gear; market sales set",
+      "portrait_emphasis": "engineering delight, sales instinct, social caution",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "nue_houjuu",
+      "name_en": "Nue Houjuu",
+      "name_ja": "封獣 ぬえ",
+      "faction_region": "Myouren Temple circle / unidentified youkai  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/nue_houjuu/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "trident, asymmetrical wings and deliberately conflicting shape language",
+      "primary_prop": "trident / unidentified seed",
+      "companion_or_fx_layer": "UFO/seed and shifting-wing layer",
+      "idle_signature": "one side of the silhouette changes category",
+      "talk_signature": "trident stays still while a companion shape lies about its form",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "temple casual; night scare; identified/quiet set",
+      "portrait_emphasis": "teasing ambiguity, loneliness, guarded affiliation",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "okina_matara",
+      "name_en": "Okina Matara",
+      "name_ja": "摩多羅 隠岐奈",
+      "faction_region": "Secret god / Gensokyo sage  ",
+      "route_scope": "Major support/final act foil  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/okina_matara/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "seated divine silhouette, large fans and rectangular backdoor/mandala",
+      "primary_prop": "fan / backdoor",
+      "companion_or_fx_layer": "door, dancers and seasonal aura layers",
+      "idle_signature": "door aperture changes while she remains absolutely composed",
+      "talk_signature": "fan snap changes the stage rather than her posture",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "sage formal; seasonal door sets; final-act stage",
+      "portrait_emphasis": "theatrical authority, testing, concealed care",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "patchouli_knowledge",
+      "name_en": "Patchouli Knowledge",
+      "name_ja": "パチュリー・ノーレッジ",
+      "faction_region": "Scarlet Devil Mansion / Voile Library  ",
+      "route_scope": "Deep route; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/patchouli_knowledge/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "mob cap, crescent ornament, layered robe and book block",
+      "primary_prop": "grimoire / elemental glyph",
+      "companion_or_fx_layer": "book and glyph layer",
+      "idle_signature": "page turns while the body barely floats",
+      "talk_signature": "one finger marks the relevant line; breath remains economical",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "reading glasses; blanket/library set; ritual robe",
+      "portrait_emphasis": "dry intellect, physical limitation, private sincerity",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "ran_yakumo",
+      "name_en": "Ran Yakumo",
+      "name_ja": "八雲 藍",
+      "faction_region": "Yakumo household / boundaries  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/ran_yakumo/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "fox ears, hat, nine-tail fan and formal shikigami posture",
+      "primary_prop": "charm / calculation scroll",
+      "companion_or_fx_layer": "nine tail layers and formula glyph",
+      "idle_signature": "tails move in a slow solved pattern",
+      "talk_signature": "writes a formula in air or redirects one tail toward the task",
+      "profile_affinity": [
+        "A",
+        "B",
+        "C"
+      ],
+      "costume_event_variants": "household work; boundary patrol; formal shikigami",
+      "portrait_emphasis": "competence, calculation, household tenderness",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "reimu_hakurei",
+      "name_en": "Reimu Hakurei",
+      "name_ja": "博麗 霊夢",
+      "faction_region": "Hakurei Shrine / Hakurei Border  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/reimu_hakurei/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "oversized hair bow, detached sleeve masses, grounded skirt and gohei",
+      "primary_prop": "gohei / yin-yang orb",
+      "companion_or_fx_layer": "bow, sleeves and orb layer",
+      "idle_signature": "sleeve settles, then one bow lobe lags a pixel",
+      "talk_signature": "small gohei lift; warmth remains logistical rather than performative",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "winter shrine coat; work apron; rain mantle",
+      "portrait_emphasis": "dry neutrality, irritation, restrained sincerity",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "reisen_udongein_inaba",
+      "name_en": "Reisen Udongein Inaba",
+      "name_ja": "鈴仙・優曇華院・イナバ",
+      "faction_region": "Eientei / moon rabbit  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/reisen_udongein_inaba/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "very long rabbit ears, blazer/skirt geometry and alert military posture",
+      "primary_prop": "finger-gun / medicine case",
+      "companion_or_fx_layer": "independent ear and wavelength layer",
+      "idle_signature": "ears disagree about the direction before she corrects them",
+      "talk_signature": "one ear drops while the hand delivers a precise correction",
+      "profile_affinity": [
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "clinic assistant; lunar uniform; forest patrol",
+      "portrait_emphasis": "discipline, anxiety, sharp humor, relief",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "remilia_scarlet",
+      "name_en": "Remilia Scarlet",
+      "name_ja": "レミリア・スカーレット",
+      "faction_region": "Scarlet Devil Mansion  ",
+      "route_scope": "Deep route; launch fighter  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/remilia_scarlet/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "tiny body, cap, bat wings and exaggerated authority/spear line",
+      "primary_prop": "Gungnir / parasol",
+      "companion_or_fx_layer": "wing and fate-thread layer",
+      "idle_signature": "wings hold a throne-like triangle while one foot hovers",
+      "talk_signature": "spear or finger makes a grand claim; body remains small and certain",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "parasol day set; throne cape; night formal",
+      "portrait_emphasis": "command, theatricality, private dependence",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "rin_kaenbyou",
+      "name_en": "Rin Kaenbyou",
+      "name_ja": "火焔猫 燐",
+      "faction_region": "Palace of the Earth Spirits / Former Hell  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/rin_kaenbyou/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "cat ears, twin braids/tails and wheelbarrow/ghost-fire shapes",
+      "primary_prop": "wheelbarrow / corpse cart",
+      "companion_or_fx_layer": "two tails and spirit flame layer",
+      "idle_signature": "tail flame lifts while hands stay on the cart",
+      "talk_signature": "leans on the handle; spirits react to the joke",
+      "profile_affinity": [
+        "D"
+      ],
+      "costume_event_variants": "work dress; surface visit; furnace-rescue set",
+      "portrait_emphasis": "cheerful morbidity, loyalty, work pride",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "rinnosuke_morichika",
+      "name_en": "Rinnosuke Morichika",
+      "name_ja": "森近 霖之助",
+      "faction_region": "Kourindou / Forest of Magic edge  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/rinnosuke_morichika/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "glasses, long shop coat/apron and rectangular outside-world object",
+      "primary_prop": "unidentified tool / book",
+      "companion_or_fx_layer": "object label and lens-glint layer",
+      "idle_signature": "adjusts glasses after examining the object, not before",
+      "talk_signature": "turns the object to show one wrong-but-plausible function",
+      "profile_affinity": [
+        "A",
+        "B"
+      ],
+      "costume_event_variants": "shop work; field salvage coat; formal merchant",
+      "portrait_emphasis": "calm expertise, blind spots, gentle stubbornness",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "sagume_kishin",
+      "name_en": "Sagume Kishin",
+      "name_ja": "稀神 サグメ",
+      "faction_region": "Lunar Capital  ",
+      "route_scope": "Late-game support  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/sagume_kishin/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "single wing, short lunar silhouette and hand held near the mouth",
+      "primary_prop": "tablet / arrow motif",
+      "companion_or_fx_layer": "single wing and reversal-text layer",
+      "idle_signature": "wing freezes whenever she almost speaks",
+      "talk_signature": "one minimal gesture replaces a sentence; text card may reverse after",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "lunar formal; battlefield cloak; dream interference",
+      "portrait_emphasis": "restraint, consequence-aware tension, oblique trust",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "saki_kurokoma",
+      "name_en": "Saki Kurokoma",
+      "name_ja": "驪駒 早鬼",
+      "faction_region": "Animal Realm / Keiga Family  ",
+      "route_scope": "Support rival  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/saki_kurokoma/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "horse ears/tail, broad athletic stance and coat/wing speed wedges",
+      "primary_prop": "kick arc / reins motif",
+      "companion_or_fx_layer": "tail and dust layer",
+      "idle_signature": "hoof tap and forward shoulder; no dainty bounce",
+      "talk_signature": "wide grin, thumb toward the next challenge",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "Keiga patrol; racing scarf; formal faction coat",
+      "portrait_emphasis": "straightforward rivalry, speed, respect",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "sakuya_izayoi",
+      "name_en": "Sakuya Izayoi",
+      "name_ja": "十六夜 咲夜",
+      "faction_region": "Scarlet Devil Mansion  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/sakuya_izayoi/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "maid headpiece, triangular skirt, white apron axis and knife/watch lines",
+      "primary_prop": "knife fan / pocket watch",
+      "companion_or_fx_layer": "headpiece, watch and knife layer",
+      "idle_signature": "checks one minute with almost no body motion",
+      "talk_signature": "precise hand rise; knife fan only when context warrants",
+      "profile_affinity": [
+        "A",
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "rolled kitchen sleeves; formal tailcoat; rain service coat",
+      "portrait_emphasis": "professional neutrality, dry humor, private fatigue",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "sanae_kochiya",
+      "name_en": "Sanae Kochiya",
+      "name_ja": "東風谷 早苗",
+      "faction_region": "Moriya Shrine  ",
+      "route_scope": "Deep route; launch fighter  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/sanae_kochiya/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "long hair, frog/snake ornaments, open sleeves and gohei",
+      "primary_prop": "gohei / miracle glyph",
+      "companion_or_fx_layer": "hair ornament and wind layer",
+      "idle_signature": "ornaments move out of phase with a buoyant but controlled posture",
+      "talk_signature": "open two-handed gesture, then earnest correction",
+      "profile_affinity": [
+        "A",
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "Outside World casual; festival promoter; storm shrine coat",
+      "portrait_emphasis": "enthusiasm, cultural mismatch, sincere responsibility",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "satori_komeiji",
+      "name_en": "Satori Komeiji",
+      "name_ja": "古明地 さとり",
+      "faction_region": "Palace of the Earth Spirits  ",
+      "route_scope": "Support route with romance-ready expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/satori_komeiji/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "third-eye heart, looping cords and compact indoor posture",
+      "primary_prop": "third eye / book",
+      "companion_or_fx_layer": "eye and cord path layer",
+      "idle_signature": "third eye blinks before her own eyes react",
+      "talk_signature": "cords lean toward the thought she chooses not to expose",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "palace work; animal-care apron; surface cloak",
+      "portrait_emphasis": "measured reading, loneliness, consent-aware restraint",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "seiga_kaku",
+      "name_en": "Seiga Kaku",
+      "name_ja": "霍 青娥",
+      "faction_region": "Senkai-adjacent / wicked hermit  ",
+      "route_scope": "Support antagonist  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/seiga_kaku/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "ornate hairpin, long dress and body partially crossing a wall/frame",
+      "primary_prop": "hairpin / wall chisel",
+      "companion_or_fx_layer": "wall-cut and Yoshika link layer",
+      "idle_signature": "one edge of her body ignores the frame boundary",
+      "talk_signature": "fan/hairpin gesture invites trouble with immaculate calm",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "hermit formal; mausoleum work; wall-passage set",
+      "portrait_emphasis": "charm, moral slipperiness, amused manipulation",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "4 boss silhouettes",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "shion_yorigami",
+      "name_en": "Shion Yorigami",
+      "name_ja": "依神 紫苑",
+      "faction_region": "Poverty god / wandering; associated with Tenshi  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/shion_yorigami/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "tattered hood/dress, drooping cloth and empty negative-space aura",
+      "primary_prop": "cracked charm / empty bowl",
+      "companion_or_fx_layer": "misfortune haze and torn-cloth layer",
+      "idle_signature": "cloth sinks a pixel after the body already stopped",
+      "talk_signature": "small hesitant hand; surrounding objects lose one decorative pixel",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "wandering rags; repaired festival set; Tenshi travel set",
+      "portrait_emphasis": "self-effacement, hunger, loyalty, fragile hope",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "suika_ibuki",
+      "name_en": "Suika Ibuki",
+      "name_ja": "伊吹 萃香",
+      "faction_region": "Oni / frequent Hakurei Shrine guest  ",
+      "route_scope": "Support route; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/suika_ibuki/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "oni horns, gourd, chain arcs and compact powerful stance",
+      "primary_prop": "gourd / chain",
+      "companion_or_fx_layer": "mist and density-clone layer",
+      "idle_signature": "takes a sip without moving the gourd level incorrectly",
+      "talk_signature": "chain clink or mist cluster punctuates a teasing line",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "shrine guest; festival coat; mist-body battle",
+      "portrait_emphasis": "boisterous perception, loneliness, honest challenge",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "8–16 boss/fighter key poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "sumireko_usami",
+      "name_en": "Sumireko Usami",
+      "name_ja": "宇佐見 菫子",
+      "faction_region": "Outside World / occultist visitor  ",
+      "route_scope": "Major support; postgame lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/sumireko_usami/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "glasses, occult cape/hat and smartphone/card rectangles",
+      "primary_prop": "smartphone / ESP card",
+      "companion_or_fx_layer": "psychic object and screen layer",
+      "idle_signature": "phone scroll and floating card move independently",
+      "talk_signature": "pushes glasses, presents evidence, then overcommits",
+      "profile_affinity": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "school uniform; dream explorer; winter Outside World",
+      "portrait_emphasis": "modern sarcasm, excitement, outsider vulnerability",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "suwako_moriya",
+      "name_en": "Suwako Moriya",
+      "name_ja": "洩矢 諏訪子",
+      "faction_region": "Moriya Shrine / ancient local deity  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/suwako_moriya/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "frog-eye hat, compact crouch and iron ring circles",
+      "primary_prop": "iron ring / frog glyph",
+      "companion_or_fx_layer": "hat-eye and water layer",
+      "idle_signature": "hat eyes blink separately while she stays low",
+      "talk_signature": "crouched hand gesture or one ring rolling into frame",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "shrine casual; ancient ritual; rainy field set",
+      "portrait_emphasis": "playful antiquity, local authority, elusive seriousness",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "tenshi_hinanawi",
+      "name_en": "Tenshi Hinanawi",
+      "name_ja": "比那名居 天子",
+      "faction_region": "Heaven / Hinanawi clan  ",
+      "route_scope": "Deep route; launch fighter  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/tenshi_hinanawi/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "peach hat, keystone block and long weather-sword line",
+      "primary_prop": "Sword of Hisou / keystone",
+      "companion_or_fx_layer": "peach, stone and weather layer",
+      "idle_signature": "hip/shoulder line boasts while the keystone stays heavy",
+      "talk_signature": "sword points at the sky or self; one beat exposes insecurity",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "Heaven formal; street-food disguise; storm battle",
+      "portrait_emphasis": "arrogance, boredom, craving recognition",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "tewi_inaba",
+      "name_en": "Tewi Inaba",
+      "name_ja": "因幡 てゐ",
+      "faction_region": "Eientei / earth rabbits  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/tewi_inaba/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "rabbit ears, compact dress and trap/coin shapes hidden near the feet",
+      "primary_prop": "luck charm / trap / coin",
+      "companion_or_fx_layer": "ear and hidden-trap layer",
+      "idle_signature": "ears twitch toward opportunity, not sound",
+      "talk_signature": "coin vanishes between hands while the smile stays innocent",
+      "profile_affinity": [
+        "A",
+        "B"
+      ],
+      "costume_event_variants": "Eientei errands; festival vendor; forest prank set",
+      "portrait_emphasis": "calculation, playfulness, community longevity",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "toyostomimi_no_miko",
+      "name_en": "Toyosatomimi no Miko",
+      "name_ja": "豊聡耳 神子",
+      "faction_region": "Senkai / Taoist leadership  ",
+      "route_scope": "Major support; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/toyostomimi_no_miko/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "earmuffs, cape triangle and ritual sword/tablet line",
+      "primary_prop": "shaku / sword",
+      "companion_or_fx_layer": "voice-wave and cape layer",
+      "idle_signature": "earpieces pulse as multiple voices arrive",
+      "talk_signature": "one precise cape opening frames a public declaration",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "Senkai formal; public audience; battle regalia",
+      "portrait_emphasis": "charisma, listening overload, strategic compassion",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "8–16 boss/fighter key poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "utsuho_reiuji",
+      "name_en": "Utsuho Reiuji",
+      "name_ja": "霊烏路 空",
+      "faction_region": "Palace of the Earth Spirits / Blazing Fires  ",
+      "route_scope": "Support route; fighter expansion  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/utsuho_reiuji/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "one heavy wing, control-rod arm, cape and miniature sun circle",
+      "primary_prop": "control rod / sun",
+      "companion_or_fx_layer": "wing, reactor eye and sun layer",
+      "idle_signature": "reactor pulse changes while stance remains proudly open",
+      "talk_signature": "control rod sweeps too far, then corrects with earnest focus",
+      "profile_affinity": [
+        "D"
+      ],
+      "costume_event_variants": "furnace work; surface coat; full reactor battle",
+      "portrait_emphasis": "simple confidence, dangerous scale, loyalty",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "8–16 boss/fighter key poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "watatsuki_no_toyohime",
+      "name_en": "Watatsuki no Toyohime",
+      "name_ja": "綿月 豊姫",
+      "faction_region": "Lunar Capital / Watatsuki household  ",
+      "route_scope": "Late-game support/antagonistic guest  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/watatsuki_no_toyohime/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "long lunar hair, broad refined robe and folding fan",
+      "primary_prop": "fan / peach",
+      "companion_or_fx_layer": "spatial cut and wave layer",
+      "idle_signature": "fan stays closed while a distant line of space shifts",
+      "talk_signature": "fan opens one segment to end the discussion",
+      "profile_affinity": [
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "lunar household formal; Earth visit; sea-parting set",
+      "portrait_emphasis": "courtesy, overwhelming capability, family authority",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "8–16 boss/fighter key poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "watatsuki_no_yorihime",
+      "name_en": "Watatsuki no Yorihime",
+      "name_ja": "綿月 依姫",
+      "faction_region": "Lunar Capital / Watatsuki household  ",
+      "route_scope": "Late-game support/duel  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/watatsuki_no_yorihime/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "lunar military robe, tied hair and disciplined sword silhouette",
+      "primary_prop": "sword / divine invocation",
+      "companion_or_fx_layer": "deity crest and blade layer",
+      "idle_signature": "breath and sword hand move in exact cadence",
+      "talk_signature": "one formal hand sign precedes any drawn blade",
+      "profile_affinity": [
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "lunar command; Earth duel; shrine invocation set",
+      "portrait_emphasis": "discipline, certainty, respectful severity",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "8–16 boss/fighter key poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "yachie_kicchou",
+      "name_en": "Yachie Kicchou",
+      "name_ja": "吉弔 八千慧",
+      "faction_region": "Animal Realm / Kiketsu Family  ",
+      "route_scope": "Support antagonist  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/yachie_kicchou/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "antlers, turtle-dragon tail and elegant command posture",
+      "primary_prop": "fan / command seal",
+      "companion_or_fx_layer": "tail and faction-emblem layer",
+      "idle_signature": "tail curls while the upper body remains diplomatically still",
+      "talk_signature": "one finger or fan edge redirects the room",
+      "profile_affinity": [
+        "B",
+        "D"
+      ],
+      "costume_event_variants": "Kiketsu formal; negotiation cloak; battlefield command",
+      "portrait_emphasis": "soft-spoken control, pressure, strategic courtesy",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "4 boss silhouettes",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "yoshika_miyako",
+      "name_en": "Yoshika Miyako",
+      "name_ja": "宮古 芳香",
+      "faction_region": "Seiga's jiang-shi / mausoleum  ",
+      "route_scope": "Minor support; safety-sensitive  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "1/5",
+      "skills_path": "04_characters/yoshika_miyako/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "jiang-shi cap/talisman, stiff forward arms and heavy hopping feet",
+      "primary_prop": "forehead talisman",
+      "companion_or_fx_layer": "talisman and hunger cue layer",
+      "idle_signature": "small rigid sway, then one delayed jaw movement",
+      "talk_signature": "simple hand/jaw motion; humor never erases dependence or safety",
+      "profile_affinity": [
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "mausoleum guard; repaired talisman; rain-stiff set",
+      "portrait_emphasis": "literal hunger, loyalty, safety-sensitive comedy",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "youmu_konpaku",
+      "name_en": "Youmu Konpaku",
+      "name_ja": "魂魄 妖夢",
+      "faction_region": "Hakugyokurou / Netherworld  ",
+      "route_scope": "Deep route; launch fighter and danmaku lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/youmu_konpaku/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "short hair, twin sword lines and half-phantom comma",
+      "primary_prop": "long and short swords",
+      "companion_or_fx_layer": "half-phantom companion layer",
+      "idle_signature": "hand checks the sheath while phantom drifts late",
+      "talk_signature": "disciplined bow or one sharp sheath tap",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "gardening sleeves; festival hakama; mourning formal",
+      "portrait_emphasis": "duty, earnest confusion, restrained feeling",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "yukari_yakumo",
+      "name_en": "Yukari Yakumo",
+      "name_ja": "八雲 紫",
+      "faction_region": "Gensokyo sages / boundaries  ",
+      "route_scope": "Major support; ensemble and finale lead  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/yukari_yakumo/skills.md",
+      "production_tier": "B",
+      "silhouette_key": "mob cap/ribbons, parasol or fan and unmistakable gap rectangle",
+      "primary_prop": "parasol / fan / gap",
+      "companion_or_fx_layer": "gap eyes and boundary layer",
+      "idle_signature": "a gap opens before she visibly acknowledges it",
+      "talk_signature": "fan closes or a border shifts instead of a large gesture",
+      "profile_affinity": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "day parasol; sage formal; dream conductor set",
+      "portrait_emphasis": "playful distance, old responsibility, selective sincerity",
+      "animation_budget": {
+        "S": "2 idle + 4 walk",
+        "M": "4 idle + 4 walk + 4 talk + 2 reaction",
+        "L": "4–8 dramatic poses",
+        "portraits": 6
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "yuugi_hoshiguma",
+      "name_en": "Yuugi Hoshiguma",
+      "name_ja": "星熊 勇儀",
+      "faction_region": "Former Hell / oni  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/yuugi_hoshiguma/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "single horn, chains, sake bowl and broad grounded shoulders",
+      "primary_prop": "sake bowl / fist",
+      "companion_or_fx_layer": "chain and impact layer",
+      "idle_signature": "bowl remains perfectly level during a weight shift",
+      "talk_signature": "open laugh, bowl offer or compact fist emphasis",
+      "profile_affinity": [
+        "A",
+        "D"
+      ],
+      "costume_event_variants": "Former Hell casual; feast formal; arena battle",
+      "portrait_emphasis": "honesty, strength, hospitality, testing respect",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "yuuka_kazami",
+      "name_en": "Yuuka Kazami",
+      "name_ja": "風見 幽香",
+      "faction_region": "Garden of the Sun / flower fields  ",
+      "route_scope": "Support route  ",
+      "canon_confidence": "Medium-High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/yuuka_kazami/skills.md",
+      "production_tier": "C",
+      "silhouette_key": "parasol, long hair, plaid/flower dress and sunflower vertical",
+      "primary_prop": "parasol / flower",
+      "companion_or_fx_layer": "petal and stem layer",
+      "idle_signature": "near-total stillness; nearby flower turns first",
+      "talk_signature": "parasol angle changes by one step, making politeness feel dangerous",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "garden work; rain parasol; old-style dream silhouette",
+      "portrait_emphasis": "courtesy, menace, aesthetic patience",
+      "animation_budget": {
+        "S": "2 idle",
+        "M": "2 idle + 4 walk + 2 talk/gesture",
+        "L": "not required at launch",
+        "portraits": 3
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    },
+    {
+      "id": "yuyuko_saigyouji",
+      "name_en": "Yuyuko Saigyouji",
+      "name_ja": "西行寺 幽々子",
+      "faction_region": "Hakugyokurou / Netherworld  ",
+      "route_scope": "Deep route  ",
+      "canon_confidence": "High  ",
+      "max_fanon_dial": "2/5",
+      "skills_path": "04_characters/yuyuko_saigyouji/skills.md",
+      "production_tier": "A",
+      "silhouette_key": "mob cap, broad sleeve cloud, butterfly hem and folding fan",
+      "primary_prop": "fan / meal tray",
+      "companion_or_fx_layer": "ghost, butterfly and sleeve layer",
+      "idle_signature": "lower body drifts while fan stays almost still",
+      "talk_signature": "fan arc hides a joke or briefly reveals mourning stillness",
+      "profile_affinity": [
+        "A",
+        "C",
+        "D"
+      ],
+      "costume_event_variants": "meal tray; deep-night mourning; festival formal",
+      "portrait_emphasis": "playful appetite, insight, grief beneath ease",
+      "animation_budget": {
+        "S": "2 idle + 4 walk + 2 interact",
+        "M": "4 idle + 8 walk + 4 talk + 6 interact + 4 reaction",
+        "L": "full fighter/danmaku key set",
+        "portraits": 9
+      },
+      "shared_model": {
+        "S": [
+          16,
+          24
+        ],
+        "M": [
+          24,
+          32
+        ],
+        "L": [
+          32,
+          48
+        ],
+        "portrait": [
+          80,
+          104
+        ]
+      },
+      "required_tests": [
+        "solid silhouette",
+        "white field",
+        "inverted field",
+        "1x peripheral read",
+        "anchor loop",
+        "no copied sprite geometry"
+      ]
+    }
+  ]
+}

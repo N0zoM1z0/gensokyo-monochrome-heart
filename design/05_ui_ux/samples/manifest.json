@@ -1,0 +1,224 @@
+{
+  "schema": "gensokyo-monochrome-ui-samples-v2",
+  "count": 24,
+  "coverage": "representative canonical screens; all 40 screen contracts are in screen_inventory.json",
+  "images": [
+    {
+      "id": "title",
+      "raw": "raw_320x180/title.png",
+      "preview": "preview_4x/title_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "language",
+      "raw": "raw_320x180/language.png",
+      "preview": "preview_4x/language_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "save_load",
+      "raw": "raw_320x180/save_load.png",
+      "preview": "preview_4x/save_load_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "options_accessibility",
+      "raw": "raw_320x180/options_accessibility.png",
+      "preview": "preview_4x/options_accessibility_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "world_map",
+      "raw": "raw_320x180/world_map.png",
+      "preview": "preview_4x/world_map_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "destination",
+      "raw": "raw_320x180/destination.png",
+      "preview": "preview_4x/destination_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "exploration",
+      "raw": "raw_320x180/exploration.png",
+      "preview": "preview_4x/exploration_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "dialogue",
+      "raw": "raw_320x180/dialogue.png",
+      "preview": "preview_4x/dialogue_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "dialogue_choice",
+      "raw": "raw_320x180/dialogue_choice.png",
+      "preview": "preview_4x/dialogue_choice_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "backlog",
+      "raw": "raw_320x180/backlog.png",
+      "preview": "preview_4x/backlog_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "journal_people",
+      "raw": "raw_320x180/journal_people.png",
+      "preview": "preview_4x/journal_people_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "journal_rumors",
+      "raw": "raw_320x180/journal_rumors.png",
+      "preview": "preview_4x/journal_rumors_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "memory_thread",
+      "raw": "raw_320x180/memory_thread.png",
+      "preview": "preview_4x/memory_thread_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "keepsakes",
+      "raw": "raw_320x180/keepsakes.png",
+      "preview": "preview_4x/keepsakes_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "character_profile",
+      "raw": "raw_320x180/character_profile.png",
+      "preview": "preview_4x/character_profile_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "route_threshold",
+      "raw": "raw_320x180/route_threshold.png",
+      "preview": "preview_4x/route_threshold_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "danmaku",
+      "raw": "raw_320x180/danmaku.png",
+      "preview": "preview_4x/danmaku_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "danmaku_result",
+      "raw": "raw_320x180/danmaku_result.png",
+      "preview": "preview_4x/danmaku_result_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "fighter",
+      "raw": "raw_320x180/fighter.png",
+      "preview": "preview_4x/fighter_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "fighter_result",
+      "raw": "raw_320x180/fighter_result.png",
+      "preview": "preview_4x/fighter_result_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "minigame",
+      "raw": "raw_320x180/minigame.png",
+      "preview": "preview_4x/minigame_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "photo_camera",
+      "raw": "raw_320x180/photo_camera.png",
+      "preview": "preview_4x/photo_camera_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "trade_shop",
+      "raw": "raw_320x180/trade_shop.png",
+      "preview": "preview_4x/trade_shop_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    },
+    {
+      "id": "clinic",
+      "raw": "raw_320x180/clinic.png",
+      "preview": "preview_4x/clinic_4x.png",
+      "size": [
+        320,
+        180
+      ]
+    }
+  ],
+  "atlas": "complete_ui_sample_atlas_2x.png"
+}

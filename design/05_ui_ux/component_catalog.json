@@ -1,0 +1,406 @@
+{
+  "schema": "gensokyo-monochrome-ui-v2",
+  "components": [
+    {
+      "id": "frame",
+      "node": "PanelFrame",
+      "size": "variable, min 24x16",
+      "states": [
+        "idle",
+        "focused",
+        "disabled",
+        "urgent"
+      ],
+      "content": "A open-corner; B double; C fold; D white line",
+      "rule": "9-slice with integer margins"
+    },
+    {
+      "id": "top_ribbon",
+      "node": "TopRibbon",
+      "size": "312x16",
+      "states": [
+        "normal",
+        "incident",
+        "combat"
+      ],
+      "content": "time, weather, location, thread state",
+      "rule": "never more than 40 Latin cells"
+    },
+    {
+      "id": "region_stamp",
+      "node": "RegionStamp",
+      "size": "12x12 / 16x16",
+      "states": [
+        "locked",
+        "known",
+        "active",
+        "changed"
+      ],
+      "content": "unique 1-bit mark per region",
+      "rule": "must pass at 12x12"
+    },
+    {
+      "id": "tab",
+      "node": "Tab",
+      "size": "48x14 min",
+      "states": [
+        "idle",
+        "focused",
+        "selected",
+        "disabled",
+        "new"
+      ],
+      "content": "label + optional 6x6 badge",
+      "rule": "selected uses lower-edge merge"
+    },
+    {
+      "id": "list_row",
+      "node": "ListRow",
+      "size": "variable x 16",
+      "states": [
+        "idle",
+        "focused",
+        "selected",
+        "disabled",
+        "changed"
+      ],
+      "content": "icon, label, status tail",
+      "rule": "one row = one focus target"
+    },
+    {
+      "id": "focus_marker",
+      "node": "FocusMarker",
+      "size": "variable",
+      "states": [
+        "keyboard",
+        "pad",
+        "pointer"
+      ],
+      "content": "leading > + 2px inset corners",
+      "rule": "4-frame move, no tween blur"
+    },
+    {
+      "id": "action_hint",
+      "node": "ActionHint",
+      "size": "min 36x12",
+      "states": [
+        "available",
+        "held",
+        "blocked",
+        "alternate"
+      ],
+      "content": "device glyph + verb",
+      "rule": "verb remains visible without glyph"
+    },
+    {
+      "id": "prompt_chip",
+      "node": "PromptChip",
+      "size": "min 20x12",
+      "states": [
+        "observe",
+        "talk",
+        "use",
+        "carry",
+        "danger"
+      ],
+      "content": "12x12 shape + 8px text",
+      "rule": "world anchored, clamped to safe area"
+    },
+    {
+      "id": "dialogue_panel",
+      "node": "DialoguePanel",
+      "size": "312x64 standard",
+      "states": [
+        "idle",
+        "typing",
+        "await",
+        "auto",
+        "history"
+      ],
+      "content": "name, body, continue mark, voice state",
+      "rule": "3 EN lines or 4 JA lines"
+    },
+    {
+      "id": "nameplate",
+      "node": "Nameplate",
+      "size": "min 48x12",
+      "states": [
+        "speaker",
+        "aside",
+        "narrator",
+        "unknown"
+      ],
+      "content": "localized name + speaking notch",
+      "rule": "never baked into portrait"
+    },
+    {
+      "id": "portrait_window",
+      "node": "PortraitWindow",
+      "size": "88x120 / 80x104",
+      "states": [
+        "normal",
+        "crop",
+        "occluded",
+        "absent"
+      ],
+      "content": "separate portrait and frame layers",
+      "rule": "may break C frame by max 8px"
+    },
+    {
+      "id": "choice_card",
+      "node": "ChoiceCard",
+      "size": "296x18 min",
+      "states": [
+        "idle",
+        "focused",
+        "committed",
+        "locked",
+        "changed"
+      ],
+      "content": "stance stamp + 1-2 lines",
+      "rule": "stack gap 2px; no timeout by default"
+    },
+    {
+      "id": "stance_stamp",
+      "node": "StanceStamp",
+      "size": "12x12",
+      "states": [
+        "direct",
+        "playful",
+        "patient",
+        "defiant",
+        "context"
+      ],
+      "content": "shape + text label",
+      "rule": "relationship meaning is never color-coded"
+    },
+    {
+      "id": "toast",
+      "node": "Toast",
+      "size": "max 216x24",
+      "states": [
+        "info",
+        "item",
+        "rumor",
+        "error"
+      ],
+      "content": "icon, 1-2 lines, optional action",
+      "rule": "queues; never covers choices or hitbox"
+    },
+    {
+      "id": "scrollbar",
+      "node": "PixelScrollbar",
+      "size": "6x variable",
+      "states": [
+        "idle",
+        "focused",
+        "drag",
+        "at_start",
+        "at_end"
+      ],
+      "content": "track, 4px min thumb, arrow ends",
+      "rule": "page actions work without dragging"
+    },
+    {
+      "id": "meter",
+      "node": "Meter",
+      "size": "variable x 8",
+      "states": [
+        "normal",
+        "gain",
+        "loss",
+        "locked",
+        "unknown"
+      ],
+      "content": "outline, fill, delayed change notch",
+      "rule": "also exposes numeric/text alternative"
+    },
+    {
+      "id": "pip_row",
+      "node": "PipRow",
+      "size": "8px pitch",
+      "states": [
+        "full",
+        "empty",
+        "used",
+        "charged",
+        "locked"
+      ],
+      "content": "shape differs by semantic",
+      "rule": "max 12 before grouping"
+    },
+    {
+      "id": "reticle",
+      "node": "FocusReticle",
+      "size": "16x16 / 24x24",
+      "states": [
+        "free",
+        "target",
+        "locked",
+        "danger"
+      ],
+      "content": "four corners + center point",
+      "rule": "no smooth scaling"
+    },
+    {
+      "id": "spell_banner",
+      "node": "SpellBanner",
+      "size": "312x24",
+      "states": [
+        "intro",
+        "active",
+        "timeout",
+        "cleared",
+        "failed"
+      ],
+      "content": "owner, card title, bonus state",
+      "rule": "skippable after first view"
+    },
+    {
+      "id": "combat_timer",
+      "node": "CombatTimer",
+      "size": "40x12",
+      "states": [
+        "normal",
+        "low",
+        "paused",
+        "sudden"
+      ],
+      "content": "digits + border cadence",
+      "rule": "low state adds !, not flash"
+    },
+    {
+      "id": "save_slot",
+      "node": "SaveSlot",
+      "size": "296x36",
+      "states": [
+        "empty",
+        "valid",
+        "focused",
+        "overwrite",
+        "corrupt"
+      ],
+      "content": "thumbnail 64x32, chapter, place, time",
+      "rule": "corrupt slot remains exportable"
+    },
+    {
+      "id": "map_node",
+      "node": "MapNode",
+      "size": "12x12 / 16x16",
+      "states": [
+        "unknown",
+        "known",
+        "available",
+        "active",
+        "changed",
+        "locked"
+      ],
+      "content": "region stamp + link anchor",
+      "rule": "link line never crosses its label"
+    },
+    {
+      "id": "thread_node",
+      "node": "ThreadNode",
+      "size": "12x12",
+      "states": [
+        "observed",
+        "contradicted",
+        "changed",
+        "resolved",
+        "route"
+      ],
+      "content": "shape + connecting line style",
+      "rule": "status remains textual in detail pane"
+    },
+    {
+      "id": "tooltip",
+      "node": "Tooltip",
+      "size": "max 152x48",
+      "states": [
+        "info",
+        "help",
+        "error"
+      ],
+      "content": "title + 1-4 short lines",
+      "rule": "opens after 350ms or help action"
+    },
+    {
+      "id": "modal",
+      "node": "Modal",
+      "size": "272x80 min",
+      "states": [
+        "question",
+        "warning",
+        "destructive",
+        "progress"
+      ],
+      "content": "title, body, actions",
+      "rule": "default action cannot be destructive"
+    },
+    {
+      "id": "toggle",
+      "node": "PixelToggle",
+      "size": "28x12",
+      "states": [
+        "off",
+        "on",
+        "focused",
+        "disabled",
+        "mixed"
+      ],
+      "content": "text label + two-position marker",
+      "rule": "does not rely on black/white polarity"
+    },
+    {
+      "id": "slider",
+      "node": "PixelSlider",
+      "size": "96x12",
+      "states": [
+        "focused",
+        "drag",
+        "disabled"
+      ],
+      "content": "ticks + value text",
+      "rule": "step actions and reset available"
+    },
+    {
+      "id": "page_indicator",
+      "node": "PageIndicator",
+      "size": "48x10",
+      "states": [
+        "normal",
+        "last",
+        "unread"
+      ],
+      "content": "current/total + optional unread notch",
+      "rule": "placed consistently at bottom right"
+    },
+    {
+      "id": "relation_seal",
+      "node": "RelationSeal",
+      "size": "32x32",
+      "states": [
+        "quiet",
+        "open",
+        "strained",
+        "threshold",
+        "complete"
+      ],
+      "content": "character motif + qualitative word",
+      "rule": "no affection number in narrative UI"
+    },
+    {
+      "id": "loading_mark",
+      "node": "LoadingMark",
+      "size": "16x16",
+      "states": [
+        "loading",
+        "saving",
+        "complete",
+        "error"
+      ],
+      "content": "4-frame rotating gohei corners",
+      "rule": "saving text remains until flush completes"
+    }
+  ]
+}

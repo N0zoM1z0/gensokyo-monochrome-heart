@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "notes": "Curated high-value edges, not an exhaustive canon genealogy. Every event must still consult the two character skills files.",
+  "edges": [
+    {
+      "from": "reimu_hakurei",
+      "to": "marisa_kirisame",
+      "kind": "friend-rival",
+      "tone": "practiced banter; trust beneath competition",
+      "design_use": "default duo for tutorials, mediation, and contrasting solutions",
+      "reciprocal": true
+    },
+    {
+      "from": "reimu_hakurei",
+      "to": "yukari_yakumo",
+      "kind": "boundary collaborators",
+      "tone": "casual suspicion and strategic dependence",
+      "design_use": "main-plot exposition should remain contested, never a simple mentor lecture",
+      "reciprocal": true
+    },
+    {
+      "from": "reimu_hakurei",
+      "to": "suika_ibuki",
+      "kind": "shrine guest / drinking companion",
+      "tone": "familiar nuisance and genuine ease",
+      "design_use": "social hub events and party escalation",
+      "reciprocal": true
+    },
+    {
+      "from": "reimu_hakurei",
+      "to": "sanae_kochiya",
+      "kind": "peer shrine maiden / rival",
+      "tone": "faith competition with professional recognition",
+      "design_use": "religion, publicity, and modern-vs-local comedy",
+      "reciprocal": true
+    },
+    {
+      "from": "reimu_hakurei",
+      "to": "kasen_ibaraki",
+      "kind": "critic / concerned advisor",
+      "tone": "reprimand, resistance, reluctant respect",
+      "design_use": "ethical pressure and domestic duty scenes",
+      "reciprocal": true
+    },
+    {
+      "from": "marisa_kirisame",
+      "to": "alice_margatroid",
+      "kind": "magician peer / rival",
+      "tone": "competitive craft talk, friction, latent care",
+      "design_use": "co-op mechanisms and borrowed-property incidents",
+      "reciprocal": true
+    },
+    {
+      "from": "marisa_kirisame",
+      "to": "patchouli_knowledge",
+      "kind": "borrower / library owner",
+      "tone": "brazen theft jokes versus serious magical curiosity",
+      "design_use": "library chase, spell research, restitution choices",
+      "reciprocal": true
+    },
+    {
+      "from": "marisa_kirisame",
+      "to": "rinnosuke_morichika",
+      "kind": "old acquaintance / shop relationship",
+      "tone": "familiar commerce and unsolicited advice",
+      "design_use": "Kourindou item identification and mundane history",
+      "reciprocal": true
+    },
+    {
+      "from": "remilia_scarlet",
+      "to": "sakuya_izayoi",
+      "kind": "mistress / chief maid",
+      "tone": "theatrical command and chosen devotion",
+      "design_use": "mansion hierarchy; allow Sakuya independent judgment",
+      "reciprocal": true
+    },
+    {
+      "from": "remilia_scarlet",
+      "to": "flandre_scarlet",
+      "kind": "sisters",
+      "tone": "affection complicated by distance, control, and danger",
+      "design_use": "family scenes must not reduce Flandre to a weapon",
+      "reciprocal": true
+    },
+    {
+      "from": "remilia_scarlet",
+      "to": "patchouli_knowledge",
+      "kind": "close friends / residents",
+      "tone": "dry intimacy and shared authority",
+      "design_use": "quiet mansion councils and mutual teasing",
+      "reciprocal": true
+    },
+    {
+      "from": "sakuya_izayoi",
+      "to": "hong_meiling",
+      "kind": "coworkers",
+      "tone": "strict efficiency versus relaxed gatekeeping",
+      "design_use": "workplace comedy without endless abuse",
+      "reciprocal": true
+    },
+    {
+      "from": "patchouli_knowledge",
+      "to": "koakuma",
+      "kind": "library resident / assistant interpretation",
+      "tone": "sparse canon; keep hierarchy understated",
+      "design_use": "support logistics, no assumed romance or named backstory",
+      "reciprocal": true
+    },
+    {
+      "from": "youmu_konpaku",
+      "to": "yuyuko_saigyouji",
+      "kind": "gardener-guard / mistress",
+      "tone": "service, affection, teasing, and real responsibility",
+      "design_use": "core Hakugyokurou loop and food interruptions",
+      "reciprocal": true
+    },
+    {
+      "from": "yuyuko_saigyouji",
+      "to": "yukari_yakumo",
+      "kind": "old friends",
+      "tone": "graceful indirectness and deep mutual knowledge",
+      "design_use": "quiet high-context conversations",
+      "reciprocal": true
+    },
+    {
+      "from": "youmu_konpaku",
+      "to": "reisen_udongein_inaba",
+      "kind": "peer combatants",
+      "tone": "earnest professionalism under surreal circumstances",
+      "design_use": "training duels and perception mechanics",
+      "reciprocal": true
+    },
+    {
+      "from": "kaguya_houraisan",
+      "to": "eirin_yagokoro",
+      "kind": "princess / trusted physician-retainer",
+      "tone": "authority, dependence, wit, and protective disagreement",
+      "design_use": "eternity theme; Eirin must be able to refuse",
+      "reciprocal": true
+    },
+    {
+      "from": "kaguya_houraisan",
+      "to": "fujiwara_no_mokou",
+      "kind": "immortal adversaries",
+      "tone": "ritual hostility with enduring familiarity",
+      "design_use": "repeatable duel that can become cooperation",
+      "reciprocal": true
+    },
+    {
+      "from": "eirin_yagokoro",
+      "to": "reisen_udongein_inaba",
+      "kind": "mentor / subordinate",
+      "tone": "clinical authority and guarded care",
+      "design_use": "medical plots must preserve consent and Reisen agency",
+      "reciprocal": true
+    },
+    {
+      "from": "reisen_udongein_inaba",
+      "to": "tewi_inaba",
+      "kind": "Eientei rabbits",
+      "tone": "responsible frustration versus opportunistic pranks",
+      "design_use": "navigation, commerce, and escalating errands",
+      "reciprocal": true
+    },
+    {
+      "from": "fujiwara_no_mokou",
+      "to": "keine_kamishirasawa",
+      "kind": "close allies",
+      "tone": "protective trust and practical companionship",
+      "design_use": "Human Village / bamboo bridge events",
+      "reciprocal": true
+    },
+    {
+      "from": "aya_shameimaru",
+      "to": "hatate_himekaidou",
+      "kind": "reporter rivals",
+      "tone": "speed versus remote sourcing; professional irritation",
+      "design_use": "rumor mechanics and competing headlines",
+      "reciprocal": true
+    },
+    {
+      "from": "aya_shameimaru",
+      "to": "momiji_inubashiri",
+      "kind": "mountain hierarchy acquaintances",
+      "tone": "official distance with room for friction",
+      "design_use": "checkpoint events and information asymmetry",
+      "reciprocal": true
+    },
+    {
+      "from": "nitori_kawashiro",
+      "to": "hina_kagiyama",
+      "kind": "mountain acquaintances",
+      "tone": "engineering pragmatism meets misfortune ritual",
+      "design_use": "machine-luck hybrid minigames",
+      "reciprocal": true
+    },
+    {
+      "from": "sanae_kochiya",
+      "to": "kanako_yasaka",
+      "kind": "wind priestess / goddess",
+      "tone": "faith work, trust, and pressure",
+      "design_use": "campaign logistics and ambition",
+      "reciprocal": true
+    },
+    {
+      "from": "sanae_kochiya",
+      "to": "suwako_moriya",
+      "kind": "wind priestess / goddess",
+      "tone": "playful antiquity and modern enthusiasm",
+      "design_use": "ritual puzzle and cheerful disruption",
+      "reciprocal": true
+    },
+    {
+      "from": "kanako_yasaka",
+      "to": "suwako_moriya",
+      "kind": "co-resident gods",
+      "tone": "old rivalry transformed into shared project",
+      "design_use": "Moriya policy debates and engineering miracles",
+      "reciprocal": true
+    },
+    {
+      "from": "satori_komeiji",
+      "to": "koishi_komeiji",
+      "kind": "sisters",
+      "tone": "love obstructed by closed and open hearts",
+      "design_use": "never make Koishi mere random chaos or Satori a mind-reading gag",
+      "reciprocal": true
+    },
+    {
+      "from": "satori_komeiji",
+      "to": "rin_kaenbyou",
+      "kind": "mistress / pet-assistant",
+      "tone": "trust, responsibility, and macabre cheer",
+      "design_use": "corpse-cart logistics and emotional honesty",
+      "reciprocal": true
+    },
+    {
+      "from": "satori_komeiji",
+      "to": "utsuho_reiuji",
+      "kind": "mistress / pet-assistant",
+      "tone": "care under dangerous power",
+      "design_use": "reactor safety and simple-vs-complex communication",
+      "reciprocal": true
+    },
+    {
+      "from": "rin_kaenbyou",
+      "to": "utsuho_reiuji",
+      "kind": "close companions",
+      "tone": "energetic familiarity",
+      "design_use": "pair mechanics and underground traversal",
+      "reciprocal": true
+    },
+    {
+      "from": "yuugi_hoshiguma",
+      "to": "suika_ibuki",
+      "kind": "oni peers",
+      "tone": "boisterous respect and shared history",
+      "design_use": "festival strength trials",
+      "reciprocal": true
+    },
+    {
+      "from": "byakuren_hijiri",
+      "to": "toyostomimi_no_miko",
+      "kind": "religious rivals",
+      "tone": "ideological confidence with personal competence",
+      "design_use": "debates become mechanics, not caricatured sect hatred",
+      "reciprocal": true
+    },
+    {
+      "from": "byakuren_hijiri",
+      "to": "ichirin_kumoi",
+      "kind": "temple leader / disciple",
+      "tone": "trust and disciplined warmth",
+      "design_use": "temple operations and tag-team combat",
+      "reciprocal": true
+    },
+    {
+      "from": "byakuren_hijiri",
+      "to": "minamitsu_murasa",
+      "kind": "temple leader / disciple",
+      "tone": "redemption and responsibility",
+      "design_use": "ship navigation and water incidents",
+      "reciprocal": true
+    },
+    {
+      "from": "toyostomimi_no_miko",
+      "to": "mononobe_no_futo",
+      "kind": "leader / follower",
+      "tone": "charismatic command and enthusiastic literalism",
+      "design_use": "desire-reading and plate mechanics",
+      "reciprocal": true
+    },
+    {
+      "from": "seiga_kaku",
+      "to": "yoshika_miyako",
+      "kind": "master / jiang-shi",
+      "tone": "morally dubious control; dark comedy with safeguards",
+      "design_use": "do not romanticize loss of autonomy",
+      "reciprocal": true
+    },
+    {
+      "from": "hata_no_kokoro",
+      "to": "toyostomimi_no_miko",
+      "kind": "mask origin conflict",
+      "tone": "identity, responsibility, and emotional literacy",
+      "design_use": "expression system and mask quests",
+      "reciprocal": true
+    },
+    {
+      "from": "hata_no_kokoro",
+      "to": "byakuren_hijiri",
+      "kind": "post-incident mentor influence",
+      "tone": "careful emotional guidance",
+      "design_use": "performance events and community repair",
+      "reciprocal": true
+    },
+    {
+      "from": "tenshi_hinanawi",
+      "to": "iku_nagae",
+      "kind": "celestial / messenger acquaintance",
+      "tone": "reckless privilege versus formal warning",
+      "design_use": "weather escalation and consequence",
+      "reciprocal": true
+    },
+    {
+      "from": "eiki_shiki_yamaxanadu",
+      "to": "komachi_onozuka",
+      "kind": "judge / shinigami subordinate",
+      "tone": "serious doctrine versus easygoing delay",
+      "design_use": "time-budget and moral accounting",
+      "reciprocal": true
+    },
+    {
+      "from": "kaguya_houraisan",
+      "to": "watatsuki_no_toyohime",
+      "kind": "lunar history / kin sphere",
+      "tone": "distance, status, and exile implications",
+      "design_use": "Lunar route confrontation",
+      "reciprocal": true
+    },
+    {
+      "from": "kaguya_houraisan",
+      "to": "watatsuki_no_yorihime",
+      "kind": "lunar history / kin sphere",
+      "tone": "formality, judgment, and unresolved belonging",
+      "design_use": "Lunar duel and home-choice theme",
+      "reciprocal": true
+    },
+    {
+      "from": "eirin_yagokoro",
+      "to": "watatsuki_no_toyohime",
+      "kind": "former teacher / lunar connection",
+      "tone": "high-context respect and political risk",
+      "design_use": "Moon exposition through contested history",
+      "reciprocal": true
+    },
+    {
+      "from": "eirin_yagokoro",
+      "to": "watatsuki_no_yorihime",
+      "kind": "former teacher / lunar connection",
+      "tone": "high-context respect and military caution",
+      "design_use": "Moon tactics and responsibility",
+      "reciprocal": true
+    },
+    {
+      "from": "doremy_sweet",
+      "to": "sumireko_usami",
+      "kind": "dream administrator / dream traveler",
+      "tone": "professional curiosity and boundary instability",
+      "design_use": "Outside World dream theatre",
+      "reciprocal": true
+    },
+    {
+      "from": "junko",
+      "to": "hecatia_lapislazuli",
+      "kind": "allies",
+      "tone": "focused vengeance and relaxed cosmic confidence",
+      "design_use": "high-level postgame incidents",
+      "reciprocal": true
+    },
+    {
+      "from": "hecatia_lapislazuli",
+      "to": "clownpiece",
+      "kind": "mistress / fairy subordinate",
+      "tone": "informal command and exuberant loyalty",
+      "design_use": "chaos arena with clear safety rules",
+      "reciprocal": true
+    },
+    {
+      "from": "hieda_no_akyuu",
+      "to": "kosuzu_motoori",
+      "kind": "friends / chronicler and bookseller",
+      "tone": "curiosity, worry, and differing risk tolerance",
+      "design_use": "archive truth and dangerous book events",
+      "reciprocal": true
+    },
+    {
+      "from": "kosuzu_motoori",
+      "to": "rinnosuke_morichika",
+      "kind": "village collectors",
+      "tone": "objects, stories, and trade",
+      "design_use": "item provenance and Outside World artifacts",
+      "reciprocal": true
+    },
+    {
+      "from": "hieda_no_akyuu",
+      "to": "reimu_hakurei",
+      "kind": "chronicler / subject",
+      "tone": "official record versus lived contradiction",
+      "design_use": "main archive theme",
+      "reciprocal": true
+    },
+    {
+      "from": "sumireko_usami",
+      "to": "reimu_hakurei",
+      "kind": "Outside World occultist / incident resolver",
+      "tone": "challenging familiarity across dreams",
+      "design_use": "protagonist mirror and border plot",
+      "reciprocal": true
+    },
+    {
+      "from": "keiki_haniyasushin",
+      "to": "mayumi_joutouguu",
+      "kind": "creator / haniwa captain",
+      "tone": "purpose, loyalty, and personhood questions",
+      "design_use": "formation combat and creation ethics",
+      "reciprocal": true
+    },
+    {
+      "from": "yachie_kicchou",
+      "to": "saki_kurokoma",
+      "kind": "organization rivals",
+      "tone": "strategic manipulation versus direct force",
+      "design_use": "Animal Realm faction route",
+      "reciprocal": true
+    },
+    {
+      "from": "yachie_kicchou",
+      "to": "keiki_haniyasushin",
+      "kind": "political adversaries",
+      "tone": "control versus manufactured protection",
+      "design_use": "faction puzzle and trust test",
+      "reciprocal": true
+    },
+    {
+      "from": "saki_kurokoma",
+      "to": "mayumi_joutouguu",
+      "kind": "combat opponents",
+      "tone": "speed/strength challenge and mutual appraisal",
+      "design_use": "fighter ladder",
+      "reciprocal": true
+    },
+    {
+      "from": "okina_matara",
+      "to": "reimu_hakurei",
+      "kind": "hidden god / incident resolver",
+      "tone": "tests, recruitment, and refusal",
+      "design_use": "back-door system and agency theme",
+      "reciprocal": true
+    },
+    {
+      "from": "okina_matara",
+      "to": "yukari_yakumo",
+      "kind": "sages / large-scale actors",
+      "tone": "parallel authority without forced consensus",
+      "design_use": "late-game governance",
+      "reciprocal": true
+    },
+    {
+      "from": "shion_yorigami",
+      "to": "joon_yorigami",
+      "kind": "sisters",
+      "tone": "exploitative dependence with real attachment",
+      "design_use": "economy incidents and reconciliation",
+      "reciprocal": true
+    },
+    {
+      "from": "yuuka_kazami",
+      "to": "reimu_hakurei",
+      "kind": "powerful youkai / resolver",
+      "tone": "unhurried confidence versus direct action",
+      "design_use": "flower-field restraint encounters",
+      "reciprocal": true
+    },
+    {
+      "from": "cirno",
+      "to": "reimu_hakurei",
+      "kind": "fairy nuisance / resolver",
+      "tone": "comic challenge without cruelty",
+      "design_use": "beginner danmaku and seasonal events",
+      "reciprocal": true
+    },
+    {
+      "from": "kogasa_tatara",
+      "to": "youmu_konpaku",
+      "kind": "surpriser / easily startled target",
+      "tone": "comic fear loop with empathy",
+      "design_use": "kimodameshi and repair quests",
+      "reciprocal": true
+    },
+    {
+      "from": "aunn_komano",
+      "to": "reimu_hakurei",
+      "kind": "self-appointed shrine guardian / shrine maiden",
+      "tone": "earnest service met by casual acceptance",
+      "design_use": "shrine tutorial, sacred-boundary detection, invisible labor",
+      "reciprocal": true
+    },
+    {
+      "from": "aunn_komano",
+      "to": "okina_matara",
+      "kind": "incident-linked hidden being / hidden god",
+      "tone": "caution and unclear causality",
+      "design_use": "Hidden Star fallout without invented servitude",
+      "reciprocal": true
+    }
+  ]
+}

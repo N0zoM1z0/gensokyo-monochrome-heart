@@ -1,0 +1,29 @@
+{
+  "tile_size": [
+    16,
+    16
+  ],
+  "atlas_grid": [
+    8,
+    4
+  ],
+  "format": "1-bit visible palette",
+  "rows": [
+    "terrain and collision",
+    "architecture and structures",
+    "props and interaction",
+    "tone / weather / memory / region signatures"
+  ],
+  "regions": [
+    "shrine",
+    "mansion",
+    "eientei"
+  ],
+  "interactive_shape_language": {
+    "observe": "2x2 sparkle",
+    "carry": "double lower handle",
+    "repair": "three-segment crack",
+    "danger": "alternating edge",
+    "memory": "incomplete rectangle"
+  }
+}
