@@ -1,0 +1,18 @@
+{
+  "replay_version": 1,
+  "duel_id": "duel.hkr.spell_card_terms",
+  "duel_data_hash": "0511fa41648a356b857e6b82801f180379b1bb5276c3e0f2c95b44ff2ec0ab87",
+  "deterministic_seed": 8088,
+  "assist_signature": "1|1|1|100|1|0|0",
+  "player_fighter_id": "fighter.reimu",
+  "opponent_fighter_id": "fighter.marisa",
+  "runs": [
+    {"ticks": 574, "player_code": 69, "opponent_code": 5}
+  ],
+  "expected_checkpoints": [
+    "break.1|287|1|0",
+    "break.2|574|2|0"
+  ],
+  "expected_result_tag": "win",
+  "expected_final_hash": "e53757b7b6fe67df9224a48d093ad85ea5a47611ec0d1a4c40f48551cfba74cc"
+}

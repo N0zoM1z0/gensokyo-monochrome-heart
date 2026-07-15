@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gensokyo Monochrome Heart fighter duel",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "title_key", "arena", "breaks_to_win", "max_projectiles_per_fighter", "fighters"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^duel\\.[a-z0-9_.]+$"},
+    "title_key": {"type": "string", "minLength": 1},
+    "arena": {
+      "type": "object", "additionalProperties": false,
+      "required": ["width", "ground_y", "left_bound", "right_bound"],
+      "properties": {
+        "width": {"const": 320}, "ground_y": {"type": "integer", "minimum": 1},
+        "left_bound": {"type": "integer", "minimum": 0}, "right_bound": {"type": "integer", "maximum": 320}
+      }
+    },
+    "breaks_to_win": {"const": 2},
+    "max_projectiles_per_fighter": {"const": 64},
+    "fighters": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/fighter"}}
+  },
+  "$defs": {
+    "box": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": {"type": "integer"}, "y": {"type": "integer"},
+        "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}
+      }
+    },
+    "event": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tick", "type"],
+      "properties": {
+        "tick": {"type": "integer", "minimum": 0},
+        "type": {"enum": ["hitbox_on", "hitbox_off", "projectile", "root_motion", "invulnerable_on", "invulnerable_off"]},
+        "value": {"type": "integer"}
+      }
+    },
+    "projectile": {
+      "type": "object", "additionalProperties": false,
+      "required": ["enabled", "speed", "lifetime_ticks", "family"],
+      "properties": {
+        "enabled": {"type": "boolean"}, "speed": {"type": "number"},
+        "lifetime_ticks": {"type": "integer", "minimum": 0}, "family": {"type": "string"}
+      }
+    },
+    "move": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "action", "startup_ticks", "active_ticks", "recovery_ticks", "damage", "guard_damage", "hitstun_ticks", "blockstun_ticks", "temperament_cost", "temperament_gain", "hitbox", "projectile", "events"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^move\\.[a-z0-9_.]+$"},
+        "action": {"enum": ["light", "heavy", "skill", "skill_forward", "spell"]},
+        "startup_ticks": {"type": "integer", "minimum": 1}, "active_ticks": {"type": "integer", "minimum": 1},
+        "recovery_ticks": {"type": "integer", "minimum": 1}, "damage": {"type": "integer", "minimum": 1},
+        "guard_damage": {"type": "integer", "minimum": 1}, "hitstun_ticks": {"type": "integer", "minimum": 1},
+        "blockstun_ticks": {"type": "integer", "minimum": 1}, "temperament_cost": {"type": "integer", "minimum": 0},
+        "temperament_gain": {"type": "integer", "minimum": 0}, "hitbox": {"$ref": "#/$defs/box"},
+        "projectile": {"$ref": "#/$defs/projectile"}, "events": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/event"}}
+      }
+    },
+    "fighter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "character_id", "name_key", "passive", "walk_speed", "jump_speed", "hurtbox", "moves"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^fighter\\.[a-z0-9_.]+$"},
+        "character_id": {"type": "string", "pattern": "^char\\.[a-z0-9_.]+$"},
+        "name_key": {"type": "string", "minLength": 1}, "passive": {"enum": ["neutral_reset", "momentum"]},
+        "walk_speed": {"type": "number", "exclusiveMinimum": 0}, "jump_speed": {"type": "number", "exclusiveMinimum": 0},
+        "hurtbox": {"$ref": "#/$defs/box"}, "moves": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/move"}}
+      }
+    }
+  }
+}

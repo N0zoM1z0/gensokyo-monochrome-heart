@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "id": "duel.hkr.spell_card_terms",
+  "title_key": "ui.fighter.terms.title",
+  "arena": {"width": 320, "ground_y": 142, "left_bound": 12, "right_bound": 308},
+  "breaks_to_win": 2,
+  "max_projectiles_per_fighter": 64,
+  "fighters": [
+    {
+      "id": "fighter.reimu",
+      "character_id": "char.reimu_hakurei",
+      "name_key": "char.reimu_hakurei.name",
+      "passive": "neutral_reset",
+      "walk_speed": 1.5,
+      "jump_speed": 4.5,
+      "hurtbox": {"x": -6, "y": -30, "width": 12, "height": 30},
+      "moves": [
+        {
+          "id": "move.reimu.paper_tap", "action": "light",
+          "startup_ticks": 4, "active_ticks": 3, "recovery_ticks": 9,
+          "damage": 72, "guard_damage": 14, "hitstun_ticks": 11, "blockstun_ticks": 7,
+          "temperament_cost": 0, "temperament_gain": 30,
+          "hitbox": {"x": 6, "y": -26, "width": 18, "height": 10},
+          "projectile": {"enabled": false, "speed": 0, "lifetime_ticks": 0, "family": "paper"},
+          "events": [{"tick": 4, "type": "hitbox_on"}, {"tick": 7, "type": "hitbox_off"}]
+        },
+        {
+          "id": "move.reimu.orb_sweep", "action": "heavy",
+          "startup_ticks": 8, "active_ticks": 4, "recovery_ticks": 14,
+          "damage": 158, "guard_damage": 28, "hitstun_ticks": 17, "blockstun_ticks": 10,
+          "temperament_cost": 0, "temperament_gain": 55,
+          "hitbox": {"x": 5, "y": -32, "width": 29, "height": 20},
+          "projectile": {"enabled": false, "speed": 0, "lifetime_ticks": 0, "family": "orb"},
+          "events": [{"tick": 6, "type": "root_motion", "value": 3}, {"tick": 8, "type": "hitbox_on"}, {"tick": 12, "type": "hitbox_off"}]
+        },
+        {
+          "id": "move.reimu.amulet_line", "action": "skill",
+          "startup_ticks": 10, "active_ticks": 1, "recovery_ticks": 18,
+          "damage": 124, "guard_damage": 22, "hitstun_ticks": 14, "blockstun_ticks": 9,
+          "temperament_cost": 0, "temperament_gain": 44,
+          "hitbox": {"x": 0, "y": -1, "width": 1, "height": 1},
+          "projectile": {"enabled": true, "speed": 4.0, "lifetime_ticks": 90, "family": "amulet"},
+          "events": [{"tick": 10, "type": "projectile"}]
+        },
+        {
+          "id": "move.reimu.boundary_slip", "action": "skill_forward",
+          "startup_ticks": 7, "active_ticks": 4, "recovery_ticks": 14,
+          "damage": 136, "guard_damage": 20, "hitstun_ticks": 15, "blockstun_ticks": 8,
+          "temperament_cost": 0, "temperament_gain": 48,
+          "hitbox": {"x": 4, "y": -28, "width": 24, "height": 16},
+          "projectile": {"enabled": false, "speed": 0, "lifetime_ticks": 0, "family": "boundary"},
+          "events": [{"tick": 0, "type": "invulnerable_on", "value": 8}, {"tick": 3, "type": "root_motion", "value": 12}, {"tick": 7, "type": "hitbox_on"}, {"tick": 11, "type": "hitbox_off"}, {"tick": 12, "type": "invulnerable_off"}]
+        },
+        {
+          "id": "move.reimu.seal_declaration", "action": "spell",
+          "startup_ticks": 16, "active_ticks": 2, "recovery_ticks": 28,
+          "damage": 272, "guard_damage": 64, "hitstun_ticks": 22, "blockstun_ticks": 14,
+          "temperament_cost": 400, "temperament_gain": 0,
+          "hitbox": {"x": 0, "y": -1, "width": 1, "height": 1},
+          "projectile": {"enabled": true, "speed": 5.5, "lifetime_ticks": 72, "family": "seal"},
+          "events": [{"tick": 16, "type": "projectile"}]
+        }
+      ]
+    },
+    {
+      "id": "fighter.marisa",
+      "character_id": "char.marisa_kirisame",
+      "name_key": "char.marisa_kirisame.name",
+      "passive": "momentum",
+      "walk_speed": 1.75,
+      "jump_speed": 4.75,
+      "hurtbox": {"x": -6, "y": -29, "width": 12, "height": 29},
+      "moves": [
+        {
+          "id": "move.marisa.broom_jab", "action": "light",
+          "startup_ticks": 3, "active_ticks": 3, "recovery_ticks": 10,
+          "damage": 68, "guard_damage": 13, "hitstun_ticks": 10, "blockstun_ticks": 7,
+          "temperament_cost": 0, "temperament_gain": 30,
+          "hitbox": {"x": 6, "y": -25, "width": 20, "height": 9},
+          "projectile": {"enabled": false, "speed": 0, "lifetime_ticks": 0, "family": "broom"},
+          "events": [{"tick": 3, "type": "hitbox_on"}, {"tick": 6, "type": "hitbox_off"}]
+        },
+        {
+          "id": "move.marisa.broom_arc", "action": "heavy",
+          "startup_ticks": 7, "active_ticks": 5, "recovery_ticks": 15,
+          "damage": 164, "guard_damage": 31, "hitstun_ticks": 18, "blockstun_ticks": 11,
+          "temperament_cost": 0, "temperament_gain": 56,
+          "hitbox": {"x": 3, "y": -35, "width": 32, "height": 24},
+          "projectile": {"enabled": false, "speed": 0, "lifetime_ticks": 0, "family": "broom"},
+          "events": [{"tick": 5, "type": "root_motion", "value": 4}, {"tick": 7, "type": "hitbox_on"}, {"tick": 12, "type": "hitbox_off"}]
+        },
+        {
+          "id": "move.marisa.star_spread", "action": "skill",
+          "startup_ticks": 9, "active_ticks": 1, "recovery_ticks": 17,
+          "damage": 116, "guard_damage": 21, "hitstun_ticks": 13, "blockstun_ticks": 8,
+          "temperament_cost": 0, "temperament_gain": 42,
+          "hitbox": {"x": 0, "y": -1, "width": 1, "height": 1},
+          "projectile": {"enabled": true, "speed": 4.5, "lifetime_ticks": 86, "family": "star"},
+          "events": [{"tick": 9, "type": "projectile"}]
+        },
+        {
+          "id": "move.marisa.broom_vault", "action": "skill_forward",
+          "startup_ticks": 6, "active_ticks": 5, "recovery_ticks": 13,
+          "damage": 142, "guard_damage": 22, "hitstun_ticks": 16, "blockstun_ticks": 9,
+          "temperament_cost": 0, "temperament_gain": 50,
+          "hitbox": {"x": 5, "y": -31, "width": 29, "height": 20},
+          "projectile": {"enabled": false, "speed": 0, "lifetime_ticks": 0, "family": "broom"},
+          "events": [{"tick": 2, "type": "root_motion", "value": 15}, {"tick": 6, "type": "hitbox_on"}, {"tick": 11, "type": "hitbox_off"}]
+        },
+        {
+          "id": "move.marisa.narrow_laser", "action": "spell",
+          "startup_ticks": 14, "active_ticks": 2, "recovery_ticks": 30,
+          "damage": 284, "guard_damage": 68, "hitstun_ticks": 23, "blockstun_ticks": 15,
+          "temperament_cost": 400, "temperament_gain": 0,
+          "hitbox": {"x": 0, "y": -1, "width": 1, "height": 1},
+          "projectile": {"enabled": true, "speed": 7.0, "lifetime_ticks": 58, "family": "laser"},
+          "events": [{"tick": 14, "type": "projectile"}]
+        }
+      ]
+    }
+  ]
+}

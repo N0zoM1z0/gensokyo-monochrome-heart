@@ -11,6 +11,7 @@ func _initialize() -> void:
 		TestDialogueRuntime.new(),
 		TestEventInterpreter.new(),
 		TestExplorationFoundation.new(),
+		TestFighterFoundation.new(),
 		TestFontAssets.new(),
 		TestGameCommands.new(),
 		TestGameKernelServices.new(),
