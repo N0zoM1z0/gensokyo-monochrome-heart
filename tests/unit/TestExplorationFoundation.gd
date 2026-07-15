@@ -1,0 +1,164 @@
+class_name TestExplorationFoundation
+extends RefCounted
+## M05 typed interactions, objective order, fixed locomotion, triggers, hints, and input parity.
+
+
+func run() -> Array[String]:
+	var failures: Array[String] = []
+	_expect_registry_and_magnetism(failures)
+	_expect_objective_and_trigger(failures)
+	_expect_fixed_motor(failures)
+	_expect_companion_hint_and_feedback(failures)
+	_expect_input_parity(failures)
+	return failures
+
+
+func _expect_registry_and_magnetism(failures: Array[String]) -> void:
+	var registry := ExplorationInteractionRegistry.new()
+	var required_ids: Array[StringName] = [
+		&"prop.unpaired_cup",
+		&"prop.empty_cushion",
+		&"prop.donation_box",
+		&"prop.old_tree",
+		&"prop.veranda_door",
+		&"prop.broom",
+	]
+	for index: int in range(required_ids.size()):
+		var action := ExplorationAction.new(
+			StringName("explore.observe.%s" % String(required_ids[index]).trim_prefix("prop.")),
+			&"observe",
+			required_ids[index],
+			&"ui.exploration.observe",
+			StringName("observe.%s" % String(required_ids[index]).trim_prefix("prop."))
+		)
+		if not action.validation_errors().is_empty():
+			failures.append("valid exploration action was rejected")
+		registry.register(ExplorationInteractable.new(required_ids[index], Vector2(index * 80 + 40, 140), action, 20.0))
+	if registry.all().size() != 6 or registry.query_count != 0:
+		failures.append("interaction registry did not remain passive after six registrations")
+	var magnetized := registry.nearest(Vector2(17, 140), Vector2.RIGHT)
+	if magnetized == null or magnetized.interactable_id != &"prop.unpaired_cup":
+		failures.append("four-pixel interaction magnetism did not acquire the nearby cup")
+	if registry.nearest(Vector2(17, 140), Vector2.LEFT) != null:
+		failures.append("eight-direction probe acquired an object behind the player")
+	for interactable: ExplorationInteractable in registry.all():
+		if interactable.has_method("_process") or interactable.has_method("_physics_process"):
+			failures.append("an interactable owns a per-frame player-distance poll")
+
+
+func _expect_objective_and_trigger(failures: Array[String]) -> void:
+	var tracker := ExplorationObjectiveTracker.new()
+	tracker.configure(&"obj.hkr.find_second_cup", [&"prop.unpaired_cup", &"prop.empty_cushion"])
+	if tracker.observe(&"prop.empty_cushion").accepted_step or tracker.current_step != 0:
+		failures.append("objective advanced from the authored sequence in reverse order")
+	if not tracker.observe(&"prop.unpaired_cup").accepted_step or tracker.current_step != 1:
+		failures.append("objective did not accept its first authored observation")
+	if tracker.observe(&"prop.donation_box").accepted_step:
+		failures.append("unrelated exploration note advanced the event objective")
+	var completed := tracker.observe(&"prop.empty_cushion")
+	if not completed.completed_now or not tracker.is_complete():
+		failures.append("authored cup-to-cushion sequence did not complete the objective")
+	var triggers := ExplorationTriggerRegistry.new()
+	triggers.register(ExplorationEventTrigger.new(
+		&"trigger.empty_cushion",
+		&"evt.hkr.empty_cushion",
+		Rect2(248, 100, 40, 40),
+		&"obj.hkr.find_second_cup"
+	))
+	if triggers.resolve(Vector2(260, 120), &"") != null:
+		failures.append("event trigger ignored its authored objective requirement")
+	var triggered := triggers.resolve(Vector2(260, 120), tracker.objective_id)
+	if triggered == null or triggered.event_id != &"evt.hkr.empty_cushion":
+		failures.append("data-owned event trigger did not resolve after objective completion")
+	if triggers.resolve(Vector2(260, 120), tracker.objective_id) != null:
+		failures.append("one-shot event trigger fired more than once")
+
+
+func _expect_fixed_motor(failures: Array[String]) -> void:
+	var motor := ExplorationMotor.new()
+	motor.solid_obstacles.append(Rect2(70, 120, 20, 20))
+	var state := ExplorationMotorState.new()
+	state.position = Vector2(40, 140)
+	var input := ExplorationMotorInput.new()
+	input.horizontal_axis = 1.0
+	for _frame: int in range(180):
+		motor.step(state, input)
+	if not is_equal_approx(state.position.x, 64.0) or not state.is_grounded or not is_equal_approx(state.position.y, 140.0):
+		failures.append("60 Hz motor did not settle against the donation-box collision")
+	var settled := state.position
+	for _frame: int in range(120):
+		motor.step(state, input)
+	if state.position != settled:
+		failures.append("ground/prop collision drifted after repeated fixed steps")
+	var free_motor := ExplorationMotor.new()
+	var hopping := ExplorationMotorState.new()
+	var hop := ExplorationMotorInput.new()
+	hop.hop_pressed = true
+	free_motor.step(hopping, hop)
+	hop.hop_pressed = false
+	var rose_above_floor := hopping.position.y < 140.0
+	for _frame: int in range(120):
+		free_motor.step(hopping, hop)
+	if not rose_above_floor or not hopping.is_grounded or not is_equal_approx(hopping.position.y, 140.0):
+		failures.append("short hop did not deterministically return to the floor")
+	if not motor.consume_footstep(state) or motor.consume_footstep(state):
+		failures.append("distance-based wood footstep cadence was not deterministic")
+
+
+func _expect_companion_hint_and_feedback(failures: Array[String]) -> void:
+	var context := ExplorationModeContext.new()
+	context.location_id = &"loc.hakurei_shrine"
+	context.spot_id = &"loc.hakurei_shrine.veranda"
+	context.companion_id = &"char.reimu_hakurei"
+	if context.mode_type != &"exploration" or context.companion_id == &"":
+		failures.append("exploration mode context omitted its typed mode/companion contract")
+	var preview := IntuitiveFloatPreview.new()
+	preview.rebuild(Vector2(50, 120), Vector2.RIGHT)
+	if preview.points.size() != 6 or preview.points[2].y >= 120:
+		failures.append("Intuitive Float did not produce a readable traversal arc")
+	preview.is_enabled = false
+	preview.rebuild(Vector2(50, 120), Vector2.RIGHT)
+	if not preview.points.is_empty():
+		failures.append("disabled companion skill still produced traversal guidance")
+	var hint := ExplorationHintTimer.new()
+	hint.story_hints_enabled = true
+	hint.delay_seconds = 2.0
+	if hint.tick(1.0) or not hint.tick(1.0) or hint.tick(10.0):
+		failures.append("Story navigation hint did not fire once after its configured delay")
+	hint.reset_after_progress()
+	if not hint.tick(2.0):
+		failures.append("Story navigation hint did not reset after meaningful progress")
+	var wood := ExplorationSfxCue.new(&"sfx.step.wood", &"ui.sfx.wood_step", 140.0)
+	var cup := ExplorationSfxCue.new(&"sfx.prop.cup", &"ui.sfx.cup", 420.0)
+	var door := ExplorationSfxCue.new(&"sfx.door.wood", &"ui.sfx.door", 210.0)
+	if wood.pitch_hz == cup.pitch_hz or cup.pitch_hz == door.pitch_hz or wood.visual_key == cup.visual_key:
+		failures.append("exploration SFX intents lack distinct audio/visual equivalents")
+
+
+func _expect_input_parity(failures: Array[String]) -> void:
+	InputMapInstaller.install_defaults(true)
+	if not _has_event_type(GameInput.CONFIRM, InputEventKey) or not _has_event_type(GameInput.CONFIRM, InputEventJoypadButton):
+		failures.append("Confirm lacks keyboard/controller parity")
+	if not _has_event_type(GameInput.COMPANION, InputEventKey) or not _has_event_type(GameInput.COMPANION, InputEventJoypadButton):
+		failures.append("remappable companion skill lacks keyboard/controller parity")
+	InputMapInstaller.apply_one_handed_preset(InputMapInstaller.OneHandedPreset.LEFT_HAND)
+	if not _has_key(GameInput.CONFIRM, KEY_SPACE) or not _has_key(GameInput.COMPANION, KEY_Q):
+		failures.append("left-handed exploration preset omitted confirm or companion skill")
+	InputMapInstaller.apply_one_handed_preset(InputMapInstaller.OneHandedPreset.RIGHT_HAND)
+	if not _has_key(GameInput.CONFIRM, KEY_KP_0) or not _has_key(GameInput.COMPANION, KEY_KP_1):
+		failures.append("right-handed exploration preset omitted confirm or companion skill")
+	InputMapInstaller.install_defaults(true)
+
+
+func _has_event_type(action: StringName, expected_type: Variant) -> bool:
+	for event: InputEvent in InputMap.action_get_events(action):
+		if is_instance_of(event, expected_type):
+			return true
+	return false
+
+
+func _has_key(action: StringName, keycode: int) -> bool:
+	for event: InputEvent in InputMap.action_get_events(action):
+		if event is InputEventKey and event.physical_keycode == keycode:
+			return true
+	return false

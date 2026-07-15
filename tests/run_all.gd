@@ -9,6 +9,7 @@ func _initialize() -> void:
 		TestContentValidator.new(),
 		TestDialogueRuntime.new(),
 		TestEventInterpreter.new(),
+		TestExplorationFoundation.new(),
 		TestFontAssets.new(),
 		TestGameCommands.new(),
 		TestGameKernelServices.new(),
