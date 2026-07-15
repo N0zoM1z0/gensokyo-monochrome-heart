@@ -10,7 +10,32 @@ func run() -> Array[String]:
 	_expect_fixed_motor(failures)
 	_expect_companion_hint_and_feedback(failures)
 	_expect_input_parity(failures)
+	_expect_mansion_service_spot(failures)
 	return failures
+
+
+func _expect_mansion_service_spot(failures: Array[String]) -> void:
+	var spot := MansionServiceSpotFactory.build()
+	if spot.environment_style != &"mansion_service" or spot.required_sequence != [&"prop.sdm.offset_clock", &"prop.sdm.reset_tray"]:
+		failures.append("mansion service spot lost its typed environment or objective sequence")
+	if spot.interactables.size() != 6 or spot.event_triggers.size() != 1:
+		failures.append("mansion service spot omitted authored foyer/kitchen interactions")
+	else:
+		var trigger := spot.event_triggers[0]
+		if trigger.event_id != &"evt.sdm.late_by_three_minutes" or trigger.required_objective_id != spot.objective_id:
+			failures.append("mansion service trigger lost its objective-gated event handoff")
+	var motor := ExplorationMotor.new()
+	motor.world_bounds = spot.world_bounds
+	motor.floor_y = spot.floor_y
+	motor.solid_obstacles = spot.solid_obstacles.duplicate()
+	var state := ExplorationMotorState.new()
+	state.position = spot.start_position
+	var move_right := ExplorationMotorInput.new()
+	move_right.horizontal_axis = 1.0
+	for _frame: int in range(600):
+		motor.step(state, move_right)
+	if state.position.x < 540.0:
+		failures.append("mansion service route requires an undisclosed hop to reach Sakuya")
 
 
 func _expect_registry_and_magnetism(failures: Array[String]) -> void:

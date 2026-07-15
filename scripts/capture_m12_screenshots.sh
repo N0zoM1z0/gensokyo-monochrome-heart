@@ -49,6 +49,8 @@ capture_pair m12_time_grid_loss_a res://tests/ui/fixtures/TimeGridLossFixture.ts
 capture_pair m12_time_grid_assist_c res://tests/ui/fixtures/TimeGridAssistFixture.tscn C --reduced-motion --safe-flash
 capture m12_time_grid_controller_b_ja res://tests/ui/fixtures/TimeGridActiveFixture.tscn B ja --input-device=controller
 capture m12_time_grid_150_a_en res://tests/ui/fixtures/TimeGridActiveFixture.tscn A en --ui-scale=150
+capture_pair m12_mansion_exploration_b res://tests/ui/fixtures/MansionServiceExplorationFixture.tscn B
+capture_pair m12_mansion_kitchen_c res://tests/ui/fixtures/MansionServiceKitchenFixture.tscn C
 capture_pair m12_knives_tutorial_a res://tests/ui/fixtures/MissingMinuteKnivesTutorialFixture.tscn A
 capture_pair m12_knives_phase1_b res://tests/ui/fixtures/MissingMinuteKnivesPhase1Fixture.tscn B
 capture_pair m12_knives_phase2_c res://tests/ui/fixtures/MissingMinuteKnivesPhase2Fixture.tscn C

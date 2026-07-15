@@ -1,6 +1,6 @@
 key,context,speaker,en,ja,max_width_px,origin
 event.sdm.late_by_three_minutes.title,event title,,Late by Three Minutes,三分遅れ,180,Original
-obj.sdm.trace_missing_minute,objective,,Trace the tray that resets with the corridor clock.,廊下の時計と一緒に戻る盆を追う。,208,Original
+obj.sdm.trace_missing_minute,objective,,Clock first. Then trace the resetting tray.,遅い時計、次に戻る盆を追う。,208,Original
 choice.sdm.late.direct,tone choice,,Say: The clock is wrong and you know it.,「時計がずれている。あなたも気づいている」と言う。,200,Original
 choice.sdm.late.playful,tone choice,,Say: Does punctuality allow borrowed minutes?,「時間厳守なら、分を借りてもいいの？」と聞く。,200,Original
 choice.sdm.late.patient,tone choice,,Say: We can leave one tray unfinished.,「盆を一つ、未完のままにしてもいい」と言う。,200,Original

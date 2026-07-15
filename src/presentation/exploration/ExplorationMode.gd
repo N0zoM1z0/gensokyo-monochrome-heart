@@ -16,6 +16,8 @@ const ACTION_CONTRACT := [
 
 @export var fixture_show_focus: bool = false
 @export var fixture_show_companion: bool = false
+@export_enum("hakurei_veranda", "mansion_service") var spot_component := "hakurei_veranda"
+@export var fixture_start_x: float = -1.0
 var exploration_context: ExplorationModeContext
 var spot_definition := HakureiVerandaSpotFactory.build()
 var motor := ExplorationMotor.new()
@@ -71,6 +73,7 @@ func _ready() -> void:
 	_resolver = LocalizedContentResolver.new(content)
 	sfx_player.cue_played.connect(_on_sfx_cue_played)
 	if exploration_context == null:
+		spot_definition = _build_spot_definition()
 		configure(_default_context())
 	ready_for_input.emit()
 
@@ -283,12 +286,12 @@ func capture_debug_state() -> Dictionary:
 
 func _default_context() -> ExplorationModeContext:
 	var context := ExplorationModeContext.new()
-	context.mode_id = &"explore.hakurei_shrine.veranda"
+	context.mode_id = spot_definition.mode_id
 	context.location_id = spot_definition.location_id
 	context.spot_id = spot_definition.spot_id
 	context.time_slot = &"dusk"
 	context.objective_id = spot_definition.objective_id
-	context.companion_id = &"char.reimu_hakurei"
+	context.companion_id = spot_definition.companion_id
 	context.story_navigation_hints = true
 	context.companion_skill_enabled = true
 	return context
@@ -297,13 +300,15 @@ func _default_context() -> ExplorationModeContext:
 func _reset_spot() -> void:
 	if exploration_context == null:
 		return
-	spot_definition = HakureiVerandaSpotFactory.build()
+	spot_definition = _build_spot_definition()
 	motor = ExplorationMotor.new()
 	motor.world_bounds = spot_definition.world_bounds
 	motor.floor_y = spot_definition.floor_y
 	motor.solid_obstacles = spot_definition.solid_obstacles.duplicate()
 	motor_state = ExplorationMotorState.new()
 	motor_state.position = spot_definition.start_position
+	if fixture_start_x >= 0.0:
+		motor_state.position.x = fixture_start_x
 	interaction_registry = ExplorationInteractionRegistry.new()
 	objective_tracker = ExplorationObjectiveTracker.new()
 	objective_tracker.configure(exploration_context.objective_id, spot_definition.required_sequence)
@@ -331,6 +336,10 @@ func _reset_spot() -> void:
 	queue_redraw()
 
 
+func _build_spot_definition() -> ExplorationSpotDefinition:
+	return MansionServiceSpotFactory.build() if spot_component == "mansion_service" else HakureiVerandaSpotFactory.build()
+
+
 func _build_registry() -> void:
 	for interactable: ExplorationInteractable in spot_definition.interactables:
 		interaction_registry.register(interactable)
@@ -354,7 +363,7 @@ func _interact(interactable: ExplorationInteractable) -> void:
 		_hint_visible = false
 	if progress.completed_now:
 		_marisa_entered = true
-		_note_text = _catalog.text(&"ui.exploration.objective.complete", _locale)
+		_note_text = _catalog.text(spot_definition.complete_key, _locale)
 	else:
 		_note_text = _catalog.text(action.observation_key, _locale)
 	_note_seconds = 3.0
@@ -418,10 +427,10 @@ func _refresh_text_cache() -> void:
 		return
 	var in_room := _camera_x > 180.0
 	_header_text = _catalog.text(
-		&"ui.exploration.location.room" if in_room else &"ui.exploration.location.veranda",
+		spot_definition.header_secondary_key if in_room else spot_definition.header_primary_key,
 		_locale
 	)
-	var objective_key := &"ui.exploration.objective.complete" if objective_tracker.is_complete() else objective_tracker.objective_id
+	var objective_key := spot_definition.complete_key if objective_tracker.is_complete() else objective_tracker.objective_id
 	_objective_text = (
 		_catalog.text(objective_key, _locale)
 		if objective_tracker.is_complete()
@@ -432,8 +441,8 @@ func _refresh_text_cache() -> void:
 		input_hint(GameInput.CONFIRM, _catalog.text(&"ui.input.observe", _locale)),
 		input_hint(GameInput.JOURNAL, _catalog.text(&"ui.input.journal", _locale)),
 	])
-	_hint_text = _catalog.text(&"ui.exploration.hint.second_cup", _locale)
-	_companion_text = _catalog.text(&"ui.exploration.companion.float", _locale)
+	_hint_text = _catalog.text(spot_definition.hint_key, _locale)
+	_companion_text = _catalog.text(spot_definition.companion_key, _locale)
 
 
 func _sfx_cue(cue_id: StringName) -> ExplorationSfxCue:
@@ -466,6 +475,13 @@ func _draw() -> void:
 
 
 func _draw_world(foreground: Color, background: Color) -> void:
+	if spot_definition.environment_style == &"mansion_service":
+		_draw_mansion_world(foreground, background)
+		return
+	_draw_shrine_world(foreground, background)
+
+
+func _draw_shrine_world(foreground: Color, background: Color) -> void:
 	for y: int in range(22, 88, 6):
 		for x: int in range(2 + floori(y / 6.0) % 2 * 3, 320, 6):
 			draw_rect(Rect2(x, y, 1, 1), foreground)
@@ -497,6 +513,48 @@ func _draw_world(foreground: Color, background: Color) -> void:
 	_draw_reimu(Vector2(252 + offset, 130), foreground, background)
 	if _marisa_entered:
 		_draw_marisa(Vector2(536 + offset, 130), foreground, background)
+
+
+func _draw_mansion_world(foreground: Color, background: Color) -> void:
+	var offset := -_camera_x
+	for tile_y: int in range(26, 137, 16):
+		for tile_x: int in range(8, 632, 24):
+			if posmod(floori(tile_x / 24.0) + floori(tile_y / 16.0), 2) == 0:
+				draw_rect(Rect2(tile_x + offset, tile_y, 12, 8), foreground, false, 1.0)
+	draw_rect(Rect2(8 + offset, 136, 616, 5), foreground)
+	draw_rect(Rect2(320 + offset, 42, 304, 22), foreground)
+	for pillar_x: int in [24, 174, 310, 338, 470, 610]:
+		draw_rect(Rect2(pillar_x + offset, 62, 6, 76), foreground)
+	_draw_clock(Vector2(118 + offset, 91), foreground, background)
+	_draw_service_tray(Vector2(220 + offset, 130), foreground, background)
+	_draw_door(Vector2(306 + offset, 136), foreground, background)
+	draw_rect(Rect2(374 + offset, 110, 76, 28), foreground, false, 2.0)
+	draw_line(Vector2(374 + offset, 118), Vector2(450 + offset, 118), foreground, 1.0)
+	_draw_service_tray(Vector2(410 + offset, 112), foreground, background)
+	draw_rect(Rect2(478 + offset, 112, 18, 24), foreground, false, 1.0)
+	for line_y: int in [117, 122, 127]:
+		draw_line(Vector2(481 + offset, line_y), Vector2(493 + offset, line_y), foreground, 1.0)
+	_draw_sakuya(Vector2(552 + offset, 130), foreground, background)
+
+
+func _draw_clock(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_circle(position, 14, foreground)
+	draw_circle(position, 11, background)
+	draw_line(position, position + Vector2(0, -8), foreground, 2.0)
+	draw_line(position, position + Vector2(7, 4), foreground, 2.0)
+
+
+func _draw_service_tray(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(position - Vector2(16, 5), Vector2(32, 6)), foreground, false, 2.0)
+	draw_circle(position + Vector2(-7, -8), 4, foreground, false, 1.0)
+	draw_rect(Rect2(position + Vector2(3, -13), Vector2(9, 9)), background)
+	draw_rect(Rect2(position + Vector2(3, -13), Vector2(9, 9)), foreground, false, 1.0)
+
+
+func _draw_sakuya(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_colored_polygon(PackedVector2Array([position + Vector2(-9, 0), position + Vector2(-6, -24), position + Vector2(0, -32), position + Vector2(7, -24), position + Vector2(9, 0)]), foreground)
+	draw_rect(Rect2(position + Vector2(-3, -27), Vector2(6, 7)), background)
+	draw_line(position + Vector2(-8, -17), position + Vector2(8, -17), background, 1.0)
 
 
 func _draw_hud(foreground: Color, background: Color) -> void:
