@@ -12,7 +12,67 @@ func run() -> Array[String]:
 	_expect_assists(failures)
 	_expect_pause_retry_and_loss(failures)
 	_expect_host_and_story_isolation(failures)
+	_expect_time_grid_service(failures)
 	return failures
+
+
+func _expect_time_grid_service(failures: Array[String]) -> void:
+	var definition := TimeGridServiceDefinition.new()
+	if not definition.validation_errors().is_empty() or definition.assist_ids.size() != 3:
+		failures.append("Time Grid Service does not satisfy the shared minigame contract")
+	var first := _run_time_grid(1212, true)
+	var second := _run_time_grid(1212, true)
+	if first.final_result == null or first.final_result.result_tag != &"excellent":
+		failures.append("correct stopped-time service queue did not score Excellent")
+	elif first.final_result.telemetry.final_state_hash != second.final_result.telemetry.final_state_hash:
+		failures.append("same Time Grid input produced nondeterministic telemetry")
+	if first.state.completed_tasks != 6 or first.state.missed_tasks != 0 or first.state.stop_ticks_used <= 0:
+		failures.append("Time Grid did not record queued tasks or stopped-time cost")
+	var loss := _run_time_grid(1313, false)
+	if loss.final_result == null or loss.final_result.result_tag != &"loss":
+		failures.append("wrong-station service did not produce the authored Loss escalation")
+	var host := MinigameHost.new()
+	if not host.load_minigame(TimeGridServiceSimulation.new(), _time_grid_context(1414), MinigameAssistSettings.new()):
+		failures.append("shared MinigameHost rejected Time Grid Service")
+
+
+func _run_time_grid(seed: int, correct_stations: bool) -> TimeGridServiceSimulation:
+	var game := TimeGridServiceSimulation.new()
+	game.configure(_time_grid_context(seed), MinigameAssistSettings.new())
+	var start := MinigameInputFrame.new()
+	start.confirm_pressed = true
+	game.step(start)
+	while game.final_result == null:
+		var target := game.current_station() if correct_stations else 4
+		_move_grid_cursor(game, Vector2i(target % 3, target / 3))
+		var queue := MinigameInputFrame.new()
+		queue.patience_held = true
+		queue.pour_pressed = true
+		game.step(queue)
+		var task_before := game.state.task_index
+		while game.final_result == null and game.state.task_index == task_before:
+			game.step(MinigameInputFrame.new())
+	return game
+
+
+func _move_grid_cursor(game: TimeGridServiceSimulation, target: Vector2i) -> void:
+	while game.state.cursor != target:
+		var frame := MinigameInputFrame.new()
+		frame.patience_held = true
+		frame.grid_direction = Vector2i(signi(target.x - game.state.cursor.x), signi(target.y - game.state.cursor.y))
+		game.step(frame)
+
+
+func _time_grid_context(seed: int) -> ModeContext:
+	var context := ModeContext.new()
+	context.mode_type = &"start_minigame"
+	context.mode_id = &"mini.sdm.time_grid_service"
+	context.event_id = &"evt.sdm.late_by_three_minutes"
+	context.node_id = &"n006"
+	context.target_band = &"exact"
+	context.cups = 3
+	context.deterministic_seed = seed
+	return context
 
 
 func _expect_definition_and_golden_fixture(failures: Array[String]) -> void:
