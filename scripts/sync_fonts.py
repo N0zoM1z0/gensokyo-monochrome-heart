@@ -91,15 +91,13 @@ def _glyph_for(character: str, glyphs: dict[str, tuple[str, ...]]) -> tuple[str,
     return glyphs.get(normalized, glyphs["?"])
 
 
-def _build_kiri8() -> tuple[bytes, bytes]:
+def _build_kiri8() -> bytes:
     glyphs = _parse_kiri8_source()
     character_count = LAST_CODEPOINT - FIRST_CODEPOINT + 1
     rows = math.ceil(character_count / ATLAS_COLUMNS)
     width = ATLAS_COLUMNS * CELL_WIDTH
     height = rows * CELL_HEIGHT
     pixels = bytearray(width * height * 4)
-    characters: list[str] = []
-
     for index, codepoint in enumerate(range(FIRST_CODEPOINT, LAST_CODEPOINT + 1)):
         cell_x = index % ATLAS_COLUMNS * CELL_WIDTH
         cell_y = index // ATLAS_COLUMNS * CELL_HEIGHT
@@ -109,33 +107,13 @@ def _build_kiri8() -> tuple[bytes, bytes]:
                     continue
                 offset = ((cell_y + glyph_y) * width + cell_x + glyph_x) * 4
                 pixels[offset : offset + 4] = b"\xff\xff\xff\xff"
-        characters.append(
-            "char id={id} x={x} y={y} width=5 height=7 "
-            "xoffset=0 yoffset=0 xadvance=6 page=0 chnl=15".format(
-                id=codepoint, x=cell_x, y=cell_y
-            )
-        )
-
-    descriptor = "\n".join(
-        [
-            'info face="Kiri8" size=8 bold=0 italic=0 charset="" unicode=1 '
-            "stretchH=100 smooth=0 aa=1 padding=0,0,0,0 spacing=1,0 outline=0",
-            f"common lineHeight=8 base=7 scaleW={width} scaleH={height} pages=1 packed=0",
-            'page id=0 file="kiri8_latin.png"',
-            f"chars count={character_count}",
-            *characters,
-            "kernings count=0",
-            "",
-        ]
-    ).encode()
-    return _encode_rgba_png(width, height, pixels), descriptor
+    return _encode_rgba_png(width, height, pixels)
 
 
 def _expected_outputs() -> dict[Path, bytes]:
-    kiri_png, kiri_fnt = _build_kiri8()
+    kiri_png = _build_kiri8()
     outputs = {
         FONT_DESTINATION / "kiri8_latin.png": kiri_png,
-        FONT_DESTINATION / "kiri8_latin.fnt": kiri_fnt,
     }
     copied_names = [
         "DotGothic16-Japanese.woff2",

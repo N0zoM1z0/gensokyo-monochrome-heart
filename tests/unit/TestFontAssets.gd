@@ -11,6 +11,7 @@ func run() -> Array[String]:
 	var measured_width := int(kiri8.get_string_size("ABC", HORIZONTAL_ALIGNMENT_LEFT, -1, 8).x)
 	if measured_width != expected_width:
 		failures.append("Kiri8 ABC width expected %d, got %d" % [expected_width, measured_width])
+	_validate_kiri8_import(failures)
 
 	var japanese := UiFontRegistry.japanese()
 	if not japanese.has_char("霊".unicode_at(0)):
@@ -24,6 +25,24 @@ func run() -> Array[String]:
 	]:
 		_validate_pixel_import(path, failures)
 	return failures
+
+
+func _validate_kiri8_import(failures: Array[String]) -> void:
+	var path := "res://ui/fonts/kiri8_latin.png.import"
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null:
+		failures.append("missing reviewed Kiri8 image-font import settings")
+		return
+	var settings := file.get_as_text()
+	for required: String in [
+		"importer=\"font_data_image\"",
+		"scaling_mode=1",
+		"character_ranges=PackedStringArray(\"32-126\")",
+		"columns=16",
+		"rows=6",
+	]:
+		if not settings.contains(required):
+			failures.append("%s lacks %s" % [path, required])
 
 
 func _validate_pixel_import(path: String, failures: Array[String]) -> void:

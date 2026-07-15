@@ -40,11 +40,6 @@
       "bytes": 10508
     },
     {
-      "path": "ui/fonts/kiri8_latin.fnt",
-      "sha256": "385927a1c09396192bb6898795ac48caee55d43706f9527661604c852c07f6a3",
-      "bytes": 8219
-    },
-    {
       "path": "ui/fonts/kiri8_latin.png",
       "sha256": "d225988c0ae6f986d1681c886edf9ed02c8e49022ac5fbd948c4574d7efe119c",
       "bytes": 628

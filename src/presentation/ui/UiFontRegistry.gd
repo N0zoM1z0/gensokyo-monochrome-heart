@@ -2,7 +2,7 @@ class_name UiFontRegistry
 extends RefCounted
 ## Loads the reviewed pixel-font assets without introducing system-font fallback.
 
-const KIRI8_PATH := "res://ui/fonts/kiri8_latin.fnt"
+const KIRI8_PATH := "res://ui/fonts/kiri8_latin.png"
 const DOT_GOTHIC_JAPANESE_PATH := "res://ui/fonts/DotGothic16-Japanese.woff2"
 const DOT_GOTHIC_LATIN_PATH := "res://ui/fonts/DotGothic16-Latin.woff2"
 

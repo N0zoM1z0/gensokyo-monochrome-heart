@@ -1,3 +1,25 @@
 [remap]
 
-importer="skip"
+importer="font_data_image"
+type="FontFile"
+uid="uid://1427q8mkymv0"
+path="res://.godot/imported/kiri8_latin.png-be246753a3c3ff2ca3d34c015f79cfe4.fontdata"
+
+[deps]
+
+source_file="res://ui/fonts/kiri8_latin.png"
+dest_files=["res://.godot/imported/kiri8_latin.png-be246753a3c3ff2ca3d34c015f79cfe4.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("32-126")
+kerning_pairs=PackedStringArray()
+columns=16
+rows=6
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+ascent=7
+descent=1
+fallbacks=[]
+compress=true
+scaling_mode=1
