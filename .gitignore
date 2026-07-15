@@ -1,0 +1,13 @@
+/.godot/
+/.idea/
+/.vscode/
+/build/
+/dist/
+/reports/generated/
+/tests/screenshots/generated/
+/preparation/
+
+*.log
+*.tmp
+*.swp
+*~

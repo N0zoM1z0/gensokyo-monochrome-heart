@@ -1,0 +1,2 @@
+# The design package is an immutable production reference, not runtime content.
+# Approved data and assets are synchronized into schemas/, content/, assets/, or ui/.

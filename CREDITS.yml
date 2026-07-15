@@ -1,0 +1,22 @@
+schema: gmh-credits-v1
+project:
+  title: "Gensokyo: Monochrome Heart"
+  unofficial_fan_work: true
+  notice_en: "This is an unofficial Touhou Project fan work. Touhou Project is created by Team Shanghai Alice."
+  notice_ja: "本作は『東方Project』の非公式二次創作作品です。『東方Project』の原作者は上海アリス幻樂団です。"
+tools:
+  - id: godot
+    name: "Godot Engine"
+    version: "4.7.1-stable"
+    license: MIT
+    source: "https://godotengine.org/"
+fonts:
+  - id: dotgothic16
+    name: "DotGothic16"
+    license: "SIL Open Font License 1.1"
+    status: approved_prototype
+  - id: kiri8
+    name: "Kiri8 prototype"
+    license: project_original
+    status: approved_prototype
+assets: []

@@ -1,0 +1,40 @@
+; Engine configuration file.
+; Edit through reviewed changes or the Godot editor; do not silently change foundation constraints.
+
+config_version=5
+
+[application]
+
+config/name="Gensokyo: Monochrome Heart"
+run/main_scene="res://src/presentation/shell/Main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/show_image=false
+
+[autoload]
+
+SettingsService="*res://src/autoload/SettingsService.gd"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/stretch/scale_mode="integer"
+
+[gmh]
+
+build/channel="dev"
+content/revision="2026.07.14.1"
+save/schema_version=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
