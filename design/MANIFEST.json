@@ -1,6 +1,6 @@
 {
   "package": "Gensokyo: Monochrome Heart design-2",
-  "generated_utc": "2026-07-15T14:44:16.893Z",
+  "generated_utc": "2026-07-15T15:02:07.625Z",
   "file_count_excluding_manifest": 570,
   "total_bytes_excluding_manifest": 12063214,
   "files": [
@@ -2572,7 +2572,7 @@
     {
       "path": "09_data/content_index.json",
       "size_bytes": 636,
-      "sha256": "60320743ff716f4480697ba145dc9820d7a8ac737259fb8c2395332a6bec22a1"
+      "sha256": "27d9c2c2b4240f1d01f3818f8d9b98e4208e358e1352ac6317faf21bfe52c65c"
     },
     {
       "path": "09_data/dialogue_samples.json",

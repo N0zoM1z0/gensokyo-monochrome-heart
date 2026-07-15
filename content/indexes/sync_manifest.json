@@ -1,6 +1,6 @@
 {
   "schema": "gmh-design-content-sync-v1",
-  "source_revision": "2026.07.15.1",
+  "source_revision": "2026.07.15.2",
   "files": [
     {
       "source": "design/09_data/characters.json",
@@ -25,7 +25,7 @@
     {
       "source": "design/09_data/content_index.json",
       "destination": "content/indexes/design_content_index.json",
-      "sha256": "60320743ff716f4480697ba145dc9820d7a8ac737259fb8c2395332a6bec22a1"
+      "sha256": "27d9c2c2b4240f1d01f3818f8d9b98e4208e358e1352ac6317faf21bfe52c65c"
     },
     {
       "source": "design/09_data/localization/en.csv",

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/presentation/slice/VerticalSliceMode.gd" id="1_mode"]
+[ext_resource type="Script" path="res://ui/components/FourToneChoiceControl.gd" id="2_choice"]
+[ext_resource type="Script" path="res://src/presentation/audio/AdaptiveTestTonePlayer.gd" id="3_music"]
+
+[node name="VerticalSliceMode" type="Control"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+script = ExtResource("1_mode")
+
+[node name="ModeHost" type="Control" parent="."]
+unique_name_in_owner = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FourToneChoice" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+layout_mode = 0
+offset_left = 87.0
+offset_top = 35.0
+offset_right = 315.0
+offset_bottom = 159.0
+script = ExtResource("2_choice")
+
+[node name="AdaptiveTestTonePlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_music")
+
+[connection signal="tone_confirmed" from="FourToneChoice" to="." method="_on_tone_confirmed"]
