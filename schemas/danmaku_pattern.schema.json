@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gensokyo-monochrome-heart.invalid/schemas/danmaku_pattern.schema.json",
+  "title": "Danmaku Pattern",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "title_key", "arena", "phases"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^danmaku\\.[a-z0-9_.]+$"},
+    "title_key": {"type": "string", "minLength": 1},
+    "arena": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 160},
+        "height": {"type": "integer", "minimum": 120}
+      }
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/phase"}
+    }
+  },
+  "$defs": {
+    "phase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title_key", "duration_ticks", "boss_integrity", "teaching_ticks", "transform_tick", "safe_lane", "emitters"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^phase\\.[a-z0-9_.]+$"},
+        "title_key": {"type": "string", "minLength": 1},
+        "duration_ticks": {"type": "integer", "minimum": 60},
+        "boss_integrity": {"type": "integer", "minimum": 1},
+        "teaching_ticks": {"type": "integer", "minimum": 1},
+        "transform_tick": {"type": "integer", "minimum": 2},
+        "safe_lane": {"type": "integer", "minimum": -1},
+        "emitters": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/emitter"}
+        }
+      }
+    },
+    "emitter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "pattern", "start_tick", "interval_ticks", "volleys", "slot_count", "origin_x", "origin_y", "speed_pixels_per_tick", "angle_millidegrees", "telegraph_ticks", "lifetime_ticks", "family", "polarity", "safe_lane"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^emit\\.[a-z0-9_.]+$"},
+        "pattern": {"enum": ["lane_fan", "offering_ring", "safe_lane_grid"]},
+        "start_tick": {"type": "integer", "minimum": 0},
+        "interval_ticks": {"type": "integer", "minimum": 1},
+        "volleys": {"type": "integer", "minimum": 1},
+        "slot_count": {"type": "integer", "minimum": 1},
+        "origin_x": {"type": "integer"},
+        "origin_y": {"type": "integer"},
+        "speed_pixels_per_tick": {"type": "number", "exclusiveMinimum": 0},
+        "angle_millidegrees": {"type": "integer"},
+        "telegraph_ticks": {"type": "integer", "minimum": 1},
+        "lifetime_ticks": {"type": "integer", "minimum": 1},
+        "family": {"enum": ["amulet", "offering", "memory"]},
+        "polarity": {"enum": ["ink", "paper"]},
+        "safe_lane": {"type": "integer", "minimum": -1}
+      }
+    }
+  }
+}

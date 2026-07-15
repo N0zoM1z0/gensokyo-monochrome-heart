@@ -84,6 +84,8 @@ run_checked "release validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_release.gd -- --release
 run_checked "headless tests" "$GODOT_BIN" --headless --path . \
 	--script res://tests/run_all.gd
+run_checked "M07 packed bullet stress" "$GODOT_BIN" --headless --path . \
+	--script res://tests/performance/run_m07_bullet_pool_stress.gd
 run_checked "M03 generated state inspector" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/inspect_state.gd -- --profile=p01
 run_checked "M03 migration fixture inspector" "$GODOT_BIN" --headless --path . \

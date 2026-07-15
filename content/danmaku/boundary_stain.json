@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "id": "danmaku.hkr.boundary_stain",
+  "title_key": "ui.danmaku.boundary.title",
+  "arena": {
+    "width": 224,
+    "height": 152
+  },
+  "phases": [
+    {
+      "id": "phase.boundary.amulet_lanes",
+      "title_key": "ui.danmaku.boundary.phase.amulet_lanes",
+      "duration_ticks": 360,
+      "boss_integrity": 180,
+      "teaching_ticks": 90,
+      "transform_tick": 180,
+      "safe_lane": -1,
+      "emitters": [
+        {
+          "id": "emit.boundary.amulet_teach",
+          "pattern": "lane_fan",
+          "start_tick": 30,
+          "interval_ticks": 45,
+          "volleys": 7,
+          "slot_count": 15,
+          "origin_x": 112,
+          "origin_y": 12,
+          "speed_pixels_per_tick": 0.75,
+          "angle_millidegrees": 90000,
+          "telegraph_ticks": 24,
+          "lifetime_ticks": 300,
+          "family": "amulet",
+          "polarity": "paper",
+          "safe_lane": -1
+        },
+        {
+          "id": "emit.boundary.amulet_drift",
+          "pattern": "lane_fan",
+          "start_tick": 180,
+          "interval_ticks": 36,
+          "volleys": 5,
+          "slot_count": 13,
+          "origin_x": 112,
+          "origin_y": 18,
+          "speed_pixels_per_tick": 0.95,
+          "angle_millidegrees": 90000,
+          "telegraph_ticks": 20,
+          "lifetime_ticks": 260,
+          "family": "amulet",
+          "polarity": "ink",
+          "safe_lane": -1
+        }
+      ]
+    },
+    {
+      "id": "phase.boundary.offerings",
+      "title_key": "ui.danmaku.boundary.phase.offerings",
+      "duration_ticks": 360,
+      "boss_integrity": 180,
+      "teaching_ticks": 90,
+      "transform_tick": 180,
+      "safe_lane": -1,
+      "emitters": [
+        {
+          "id": "emit.boundary.offering_ring",
+          "pattern": "offering_ring",
+          "start_tick": 30,
+          "interval_ticks": 60,
+          "volleys": 5,
+          "slot_count": 12,
+          "origin_x": 112,
+          "origin_y": 42,
+          "speed_pixels_per_tick": 0.72,
+          "angle_millidegrees": 0,
+          "telegraph_ticks": 30,
+          "lifetime_ticks": 260,
+          "family": "offering",
+          "polarity": "ink",
+          "safe_lane": -1
+        },
+        {
+          "id": "emit.boundary.offering_fall",
+          "pattern": "lane_fan",
+          "start_tick": 190,
+          "interval_ticks": 48,
+          "volleys": 3,
+          "slot_count": 9,
+          "origin_x": 112,
+          "origin_y": 12,
+          "speed_pixels_per_tick": 0.85,
+          "angle_millidegrees": 90000,
+          "telegraph_ticks": 24,
+          "lifetime_ticks": 280,
+          "family": "offering",
+          "polarity": "paper",
+          "safe_lane": -1
+        }
+      ]
+    },
+    {
+      "id": "phase.boundary.shifted_memory",
+      "title_key": "ui.danmaku.boundary.phase.shifted_memory",
+      "duration_ticks": 360,
+      "boss_integrity": 180,
+      "teaching_ticks": 90,
+      "transform_tick": 180,
+      "safe_lane": 6,
+      "emitters": [
+        {
+          "id": "emit.boundary.remembered_lane",
+          "pattern": "safe_lane_grid",
+          "start_tick": 30,
+          "interval_ticks": 42,
+          "volleys": 8,
+          "slot_count": 11,
+          "origin_x": 112,
+          "origin_y": 10,
+          "speed_pixels_per_tick": 0.9,
+          "angle_millidegrees": 90000,
+          "telegraph_ticks": 30,
+          "lifetime_ticks": 280,
+          "family": "memory",
+          "polarity": "paper",
+          "safe_lane": 6
+        },
+        {
+          "id": "emit.boundary.memory_punchline",
+          "pattern": "safe_lane_grid",
+          "start_tick": 210,
+          "interval_ticks": 36,
+          "volleys": 4,
+          "slot_count": 11,
+          "origin_x": 112,
+          "origin_y": 18,
+          "speed_pixels_per_tick": 1.05,
+          "angle_millidegrees": 90000,
+          "telegraph_ticks": 24,
+          "lifetime_ticks": 240,
+          "family": "memory",
+          "polarity": "ink",
+          "safe_lane": 6
+        }
+      ]
+    }
+  ]
+}

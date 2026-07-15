@@ -1,0 +1,19 @@
+{
+  "replay_version": 1,
+  "pattern_id": "danmaku.hkr.boundary_stain",
+  "pattern_data_hash": "267b498c050a0b956549f6f41ce5d97f6f5831b8c601ba0ffc1acd7ce23d7188",
+  "deterministic_seed": 7070,
+  "assist_signature": "1|70|55|1|1|1|70|1",
+  "runs": [
+    {"ticks": 720, "input_code": 53},
+    {"ticks": 28, "input_code": 54},
+    {"ticks": 332, "input_code": 53}
+  ],
+  "expected_checkpoints": [
+    "phase.boundary.amulet_lanes|360|3|2|12|1",
+    "phase.boundary.offerings|720|3|2|18|2",
+    "phase.boundary.shifted_memory|1080|3|2|8|2"
+  ],
+  "expected_result_tag": "clear",
+  "expected_final_hash": "9337b7d203c605fe2922abafc75e29c5465c63e6c93441aaa096a9b68fa8bbd2"
+}
