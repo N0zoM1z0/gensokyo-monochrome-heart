@@ -154,6 +154,155 @@ func write_preview(bundle_path: String, locale: StringName, output_path: String)
 	return bundle
 
 
+func render_dependency_report(bundle: EventAuthoringBundle) -> String:
+	if bundle == null or not bundle.is_valid() or bundle.graph == null:
+		return ""
+	var graph := _build_dependency_graph(bundle)
+	var lines: PackedStringArray = [
+		"# Event dependency report",
+		"",
+		"- Event: `%s`" % bundle.graph.id,
+		"- Nodes: %d" % graph.node_ids().size(),
+		"- Edges: %d" % graph.edges().size(),
+		"",
+		"| Source | Relationship | Target |",
+		"| --- | --- | --- |",
+	]
+	for edge: ContentDependencyEdge in graph.edges():
+		lines.append("| `%s` | %s | `%s` |" % [edge.source_id, edge.kind, edge.target_id])
+	return "\n".join(lines) + "\n"
+
+
+func write_dependency_report(bundle_path: String, output_path: String) -> EventAuthoringBundle:
+	var bundle := validate_bundle(bundle_path)
+	if not bundle.is_valid():
+		return bundle
+	var report := render_dependency_report(bundle)
+	if output_path == "-":
+		print(report)
+	else:
+		_write_text(output_path, report, bundle.errors)
+	return bundle
+
+
+func render_width_report(bundle: EventAuthoringBundle, locale: StringName, ui_scale: int = 100) -> String:
+	if bundle == null or not bundle.is_valid() or locale not in [&"en", &"ja"] or ui_scale not in [100, 150]:
+		return ""
+	var font := UiFontRegistry.japanese() if locale == &"ja" else UiFontRegistry.latin()
+	var font_size := 12 if ui_scale == 150 else 8
+	var records := bundle.localized_strings.duplicate()
+	records.sort_custom(func(left: ContentStringRecord, right: ContentStringRecord) -> bool: return String(left.key) < String(right.key))
+	var overflow_count := 0
+	var wrapped_count := 0
+	var rows := PackedStringArray()
+	for record: ContentStringRecord in records:
+		var text := record.resolve(locale)
+		var budget := ceili(float(record.maximum_width_px) * float(ui_scale) / 100.0)
+		var raw_width := ceili(font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x)
+		var wrapped := PixelTextWrapper.wrap(text, font, budget, font_size, locale)
+		var maximum_line_width := 0
+		for line: String in wrapped:
+			maximum_line_width = maxi(maximum_line_width, ceili(font.get_string_size(line, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x))
+		var overflow := maxi(0, maximum_line_width - budget)
+		var status := "FIT"
+		if overflow > 0:
+			status = "OVERFLOW"
+			overflow_count += 1
+		elif wrapped.size() > 1:
+			status = "WRAP"
+			wrapped_count += 1
+		rows.append("| `%s` | %s | %d | %d | %d | %d | %d | %s |" % [
+			record.key,
+			record.context,
+			raw_width,
+			budget,
+			wrapped.size(),
+			maximum_line_width,
+			overflow,
+			status,
+		])
+	var lines: PackedStringArray = [
+		"# Localization width report",
+		"",
+		"- Event: `%s`" % bundle.graph.id,
+		"- Locale: `%s`" % locale,
+		"- UI scale: `%d%%`" % ui_scale,
+		"- Font size: `%d px`" % font_size,
+		"- Strings: %d" % records.size(),
+		"- Wrapped: %d" % wrapped_count,
+		"- Overflow: %d" % overflow_count,
+		"",
+		"| Key | Context | Raw px | Budget px | Lines | Max line px | Overflow px | Status |",
+		"| --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
+	]
+	lines.append_array(rows)
+	return "\n".join(lines) + "\n"
+
+
+func write_width_report(
+	bundle_path: String,
+	locale: StringName,
+	ui_scale: int,
+	output_path: String
+) -> EventAuthoringBundle:
+	var bundle := validate_bundle(bundle_path)
+	if not bundle.is_valid():
+		return bundle
+	if locale not in [&"en", &"ja"]:
+		bundle.errors.append("locale must be en or ja: %s" % locale)
+		return bundle
+	if ui_scale not in [100, 150]:
+		bundle.errors.append("ui-scale must be 100 or 150: %d" % ui_scale)
+		return bundle
+	var report := render_width_report(bundle, locale, ui_scale)
+	if output_path == "-":
+		print(report)
+	else:
+		_write_text(output_path, report, bundle.errors)
+	return bundle
+
+
+func _build_dependency_graph(bundle: EventAuthoringBundle) -> ContentDependencyGraph:
+	var result := ContentDependencyGraph.new()
+	var event_id := bundle.graph.id
+	result.add_node(event_id)
+	result.add_edge(event_id, bundle.graph.title_key, &"title")
+	result.add_edge(event_id, bundle.graph.location_id, &"location")
+	result.add_edge(event_id, bundle.graph.spot_id, &"spot")
+	for character_id: StringName in bundle.graph.cast:
+		result.add_edge(event_id, character_id, &"cast")
+	for beat: DialogueBeatRecord in bundle.dialogue_beats:
+		result.add_edge(beat.id, beat.speaker_id, &"speaker")
+		result.add_edge(beat.id, beat.text_key, &"localization")
+	for node: EventNodeRecord in bundle.graph.nodes:
+		var owner := StringName("%s.node.%s" % [event_id, node.id])
+		result.add_edge(event_id, owner, &"node")
+		for target: StringName in node.outgoing_node_ids():
+			result.add_edge(owner, StringName("%s.node.%s" % [event_id, target]), &"event_edge")
+		if node.music_state_id != &"":
+			result.add_edge(owner, node.music_state_id, &"music")
+		if node.objective_key != &"":
+			result.add_edge(owner, node.objective_key, &"localization")
+		for interactable_id: StringName in node.interactable_ids:
+			result.add_edge(owner, interactable_id, &"interactable")
+		if node.beat_id != &"":
+			result.add_edge(owner, node.beat_id, &"dialogue_beat")
+		if node.choice != null:
+			result.add_edge(owner, node.choice.id, &"choice")
+			for option: ChoiceOptionRecord in node.choice.options:
+				result.add_edge(node.choice.id, option.text_key, &"localization")
+		for effect: EventEffectRecord in node.effects:
+			if effect.character_id != &"":
+				result.add_edge(owner, effect.character_id, &"effect_character")
+		if node.minigame_id != &"":
+			result.add_edge(owner, node.minigame_id, &"mode")
+		if node.item_id != &"":
+			result.add_edge(owner, node.item_id, &"item")
+		if node.journal_entry_id != &"":
+			result.add_edge(owner, node.journal_entry_id, &"journal_entry")
+	return result
+
+
 func _validate_bundle_references(bundle: EventAuthoringBundle) -> void:
 	var beat_ids: Array[StringName] = []
 	var string_keys: Array[StringName] = []

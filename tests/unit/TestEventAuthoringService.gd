@@ -20,6 +20,7 @@ func run() -> Array[String]:
 		failures.append("data-only event edits failed validation: %s" % edited.human_readable())
 	else:
 		_expect_bilingual_preview(service, edited, failures)
+		_expect_authoring_reports(service, edited, failures)
 	_expect_missing_reference_failure(service, failures)
 	_remove_tree(ProjectSettings.globalize_path(BUNDLE_PATH).get_base_dir())
 	return failures
@@ -69,6 +70,36 @@ func _expect_bilingual_preview(
 		failures.append("Japanese preview omitted the edited localized title")
 	if english.contains("書き手の座布団") or japanese.contains("A Writer's Cushion"):
 		failures.append("bilingual previews leaked the opposite locale")
+
+
+func _expect_authoring_reports(
+	service: EventAuthoringService,
+	bundle: EventAuthoringBundle,
+	failures: Array[String]
+) -> void:
+	var dependencies := service.render_dependency_report(bundle)
+	for expected: String in [
+		"| `evt.hkr.writer_fixture` | location | `loc.hakurei_shrine` |",
+		"| `evt.hkr.writer_fixture.node.n002` | interactable | `prop.writer_fixture_cup` |",
+		"| `beat.hkr.writer_fixture.reimu.001` | localization | `dlg.hkr.writer_fixture.reimu.001` |",
+	]:
+		if not dependencies.contains(expected):
+			failures.append("dependency report omitted edge: %s" % expected)
+	if dependencies != service.render_dependency_report(bundle):
+		failures.append("dependency report is nondeterministic")
+	for locale: StringName in [&"en", &"ja"]:
+		for scale: int in [100, 150]:
+			var widths := service.render_width_report(bundle, locale, scale)
+			for expected: String in [
+				"- Locale: `%s`" % locale,
+				"- UI scale: `%d%%`" % scale,
+				"- Strings: 27",
+				"| `event.hkr.writer_fixture.title` | event title |",
+			]:
+				if not widths.contains(expected):
+					failures.append("width report omitted %s/%d evidence: %s" % [locale, scale, expected])
+			if widths != service.render_width_report(bundle, locale, scale):
+				failures.append("width report is nondeterministic for %s/%d" % [locale, scale])
 
 
 func _expect_missing_reference_failure(service: EventAuthoringService, failures: Array[String]) -> void:

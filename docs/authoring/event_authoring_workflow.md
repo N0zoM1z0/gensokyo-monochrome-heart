@@ -75,6 +75,36 @@ GODOT_BIN="$HOME/.local/bin/godot" scripts/author_event.sh \
 
 The deterministic Markdown preview follows every reachable branch once and shows dialogue, choice text, objects, effects, mode results, rewards, journals, and final outcomes. Use `--output=-` to print the preview in the terminal.
 
+## 5. Inspect dependencies
+
+```bash
+GODOT_BIN="$HOME/.local/bin/godot" scripts/author_event.sh \
+  --action=dependencies \
+  --bundle=authoring/drafts/my_event \
+  --output=authoring/drafts/my_event/dependencies.md
+```
+
+The dependency report lists deterministic, typed edges from the event to its nodes and shared content, from nodes to graph targets and gameplay content, and from dialogue beats and choices to localized text. Search the target column before renaming or removing a stable ID.
+
+## 6. Check localization widths
+
+Generate all four required locale/scale reports:
+
+```bash
+for locale in en ja; do
+  for scale in 100 150; do
+    GODOT_BIN="$HOME/.local/bin/godot" scripts/author_event.sh \
+      --action=width-report \
+      --bundle=authoring/drafts/my_event \
+      --locale="$locale" \
+      --ui-scale="$scale" \
+      --output="authoring/drafts/my_event/width-${locale}-${scale}.md"
+  done
+done
+```
+
+The report uses the approved project fonts and the same English word wrapping and Japanese kinsoku rules as the game. `Raw px` is the unwrapped measurement, `Budget px` is the authored width budget at the requested scale, `Lines` and `Max line px` describe the actual wrapped result, and `OVERFLOW` identifies a line that cannot fit even after wrapping. `WRAP` is expected for dialogue and other multiline copy.
+
 ## Current boundary
 
-This first M11 increment proves the duplicate/edit/validate/bilingual-preview acceptance path. Publishing drafts into reviewed runtime content remains a deliberate review step. The wider M11 workbench—dependency visualization, localization width reports, mode fixture launchers, Bullet Pattern Lab, fighter frame viewer, migration harness, and screenshot matrix UI—remains separate work so draft authoring does not bypass its future checks.
+The current M11 increments prove the duplicate/edit/validate/bilingual-preview acceptance path and provide draft dependency and localization width diagnostics. Publishing drafts into reviewed runtime content remains a deliberate review step. The wider M11 workbench—mode fixture launchers, Bullet Pattern Lab, fighter frame viewer, migration harness, and screenshot matrix UI—remains separate work so draft authoring does not bypass its future checks.

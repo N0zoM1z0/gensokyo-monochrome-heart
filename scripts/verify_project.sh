@@ -137,6 +137,19 @@ run_checked "M11 Japanese event preview" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/author_event.gd -- \
 	--action=preview --bundle="$LOG_DIR/m11-authoring" --locale=ja \
 	--output="$LOG_DIR/m11-authoring/preview-ja.md"
+run_checked "M11 event dependency report" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/author_event.gd -- \
+	--action=dependencies --bundle="$LOG_DIR/m11-authoring" \
+	--output="$LOG_DIR/m11-authoring/dependencies.md"
+for locale in en ja; do
+	for ui_scale in 100 150; do
+		run_checked "M11 ${locale} width report at ${ui_scale} percent" \
+			"$GODOT_BIN" --headless --path . --script res://src/tools/author_event.gd -- \
+			--action=width-report --bundle="$LOG_DIR/m11-authoring" \
+			--locale="$locale" --ui-scale="$ui_scale" \
+			--output="$LOG_DIR/m11-authoring/width-${locale}-${ui_scale}.md"
+	done
+done
 run_checked "M07 packed bullet stress" "$GODOT_BIN" --headless --path . \
 	--script res://tests/performance/run_m07_bullet_pool_stress.gd
 run_checked "M03 generated state inspector" "$GODOT_BIN" --headless --path . \
