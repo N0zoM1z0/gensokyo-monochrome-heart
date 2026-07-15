@@ -62,6 +62,10 @@ git diff --cached --check
 run_checked "Godot clean import" "$GODOT_BIN" --headless --editor --path . --quit
 run_checked "content validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_content.gd
+run_checked "typed content validation" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/validate_typed_content.gd
+run_checked "runtime content cache" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/build_content_cache.gd -- --check
 run_checked "one-bit validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_one_bit.gd
 run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
@@ -79,6 +83,23 @@ run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
 	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_content.gd -- \
 	--fixture-duplicate-ids
+run_expected_failure "typed invalid ID fixture" "invalid stable ID format" \
+	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_typed_content.gd -- \
+	--fixture-invalid-id
+run_expected_failure "typed duplicate ID fixture" "duplicate stable ID" \
+	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_typed_content.gd -- \
+	--fixture-duplicate-id
+run_expected_failure "missing event reference fixture" "unknown location reference" \
+	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_typed_content.gd -- \
+	--fixture-missing-event-reference
+run_expected_failure "missing localization reference fixture" "unknown localization reference" \
+	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_typed_content.gd -- \
+	--fixture-missing-localization-reference
+run_expected_failure "missing typed source fixture" "file is missing" \
+	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_typed_content.gd -- \
+	--fixture-missing-file
+run_expected_failure "M02 invalid startup gate" "Title route blocked by invalid ContentDB before presentation." \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m02_invalid_boot.gd
 run_expected_failure "gray pixel fixture" "got #808080" \
 	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--fixture-gray
