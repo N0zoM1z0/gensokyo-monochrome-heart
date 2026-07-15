@@ -32,7 +32,7 @@ func _expect_counts(report: ContentLoadReport, failures: Array[String]) -> void:
 		report.music_cue_count,
 		report.event_node_count,
 	]
-	var expected := [71, 19, 28, 19, 310, 89, 36]
+	var expected := [71, 19, 28, 35, 334, 89, 70]
 	if actual != expected:
 		failures.append("typed starter counts differ: expected %s, got %s" % [expected, actual])
 	if not report.human_readable().contains("content_hash=%s" % report.content_hash):
@@ -115,11 +115,8 @@ func _expect_reference_graph(repository: ContentRepository, failures: Array[Stri
 
 
 func _expect_multiple_event_graphs(failures: Array[String]) -> void:
-	var sources := ContentSourceSet.new()
-	sources.enforce_manifest_counts = false
-	sources.supplemental_event_graph_paths.append("res://tests/fixtures/content/sdm_secondary_event_graph.json")
 	var repository := ContentRepository.new()
-	var report := repository.load_sources(sources)
+	var report := repository.load_sources()
 	if not report.is_success():
 		failures.append("secondary event graph failed typed loading: %s" % report.human_readable())
 		return
@@ -128,10 +125,10 @@ func _expect_multiple_event_graphs(failures: Array[String]) -> void:
 	var sdm := repository.graph(&"evt.sdm.late_by_three_minutes")
 	if sdm == null or sdm.location_id != &"loc.scarlet_devil_mansion" or sdm.node(&"n_end") == null:
 		failures.append("stable graph lookup did not expose the SDM fixture")
-	if report.event_node_count != 37:
-		failures.append("event node aggregate expected 37, got %d" % report.event_node_count)
+	if report.event_node_count != 70:
+		failures.append("event node aggregate expected 70, got %d" % report.event_node_count)
 	var parsed: Variant = JSON.parse_string(repository.runtime_index_json())
-	if not parsed is Dictionary or int(parsed.counts.event_nodes) != 37:
+	if not parsed is Dictionary or int(parsed.counts.event_nodes) != 70:
 		failures.append("runtime index did not aggregate multiple event graphs")
 
 

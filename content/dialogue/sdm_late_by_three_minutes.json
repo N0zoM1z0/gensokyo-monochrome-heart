@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "beats": [
+    {"id":"beat.sdm.late.sakuya.intro","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.intro","portrait":"public_neutral","nonverbal_key":"cue.sakuya.align_clock","advance_policy":"input","memory_tag":"sdm.missing_minute"},
+    {"id":"beat.sdm.late.sakuya.direct","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.direct","portrait":"public_measured","nonverbal_key":"cue.sakuya.check_watch","advance_policy":"input","memory_tag":"sdm.missing_minute"},
+    {"id":"beat.sdm.late.sakuya.playful","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.playful","portrait":"dry_amused","nonverbal_key":"cue.sakuya_lift_brow","advance_policy":"input","memory_tag":"sdm.missing_minute"},
+    {"id":"beat.sdm.late.sakuya.patient","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.patient","portrait":"private_hesitation","nonverbal_key":"cue.sakuya_leave_clock","advance_policy":"input","memory_tag":"sdm.missing_minute"},
+    {"id":"beat.sdm.late.sakuya.defiant","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.defiant","portrait":"public_sharp","nonverbal_key":"cue.sakuya_set_tray","advance_policy":"input","memory_tag":"sdm.missing_minute"},
+    {"id":"beat.sdm.late.sakuya.service_excellent","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.service_excellent","portrait":"working_approval","nonverbal_key":"cue.sakuya_one_empty_square","advance_policy":"input","memory_tag":"sdm.service_grid"},
+    {"id":"beat.sdm.late.sakuya.service_clear","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.service_clear","portrait":"working_neutral","nonverbal_key":"cue.sakuya_count_trays","advance_policy":"input","memory_tag":"sdm.service_grid"},
+    {"id":"beat.sdm.late.sakuya.service_loss","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.service_loss","portrait":"working_strained","nonverbal_key":"cue.sakuya_knives_stop","advance_policy":"input","memory_tag":"sdm.service_grid"},
+    {"id":"beat.sdm.late.sakuya.danmaku_clear","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.danmaku_clear","portrait":"private_neutral","nonverbal_key":"cue.sakuya_release_knives","advance_policy":"input","memory_tag":"sdm.knife_lattice"},
+    {"id":"beat.sdm.late.sakuya.danmaku_assist","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.danmaku_assist","portrait":"private_measured","nonverbal_key":"cue.sakuya_widen_lane","advance_policy":"input","memory_tag":"sdm.knife_lattice"},
+    {"id":"beat.sdm.late.sakuya.danmaku_loss","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.danmaku_loss","portrait":"private_concern","nonverbal_key":"cue.sakuya_end_spell","advance_policy":"input","memory_tag":"sdm.knife_lattice"},
+    {"id":"beat.sdm.late.sakuya.after_01","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.after_01","portrait":"private_hesitation","nonverbal_key":"cue.sakuya_uncross_minute","advance_policy":"input","memory_tag":"sdm.missing_minute"},
+    {"id":"beat.sdm.late.sakuya.after_02","speaker_id":"char.sakuya_izayoi","text_key":"dlg.sdm.late.sakuya.after_02","portrait":"private_warm","nonverbal_key":"cue.sakuya_leave_blank","advance_policy":"input","memory_tag":"sdm.missing_minute"},
+    {"id":"beat.sdm.late.patchouli.teaser","speaker_id":"char.patchouli_knowledge","text_key":"dlg.sdm.late.patchouli.teaser","portrait":"working_neutral","nonverbal_key":"cue.patchouli_mark_margin","advance_policy":"input","memory_tag":"sdm.tomorrow_book"},
+    {"id":"beat.sdm.late.remilia.public","speaker_id":"char.remilia_scarlet","text_key":"dlg.sdm.late.remilia.public","portrait":"public_regal","nonverbal_key":"cue.remilia_take_center","advance_policy":"input","memory_tag":"sdm.public_mask"},
+    {"id":"beat.sdm.late.remilia.private","speaker_id":"char.remilia_scarlet","text_key":"dlg.sdm.late.remilia.private","portrait":"private_curious","nonverbal_key":"cue.remilia_lower_stage","advance_policy":"input","memory_tag":"sdm.private_mask"}
+  ]
+}

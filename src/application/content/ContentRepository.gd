@@ -464,7 +464,8 @@ func _validate_manifest_counts(sources: ContentSourceSet) -> void:
 	for record: ContentStringRecord in _strings.values():
 		if record.context != &"ui":
 			authored_string_count += 1
-	_check_count("localization rows", authored_string_count, manifest.expected_localization_rows, sources.manifest_path)
+	_check_count("dialogue beats", _dialogue_beats.size(), 19 + sources.expected_supplemental_dialogue_count, sources.dialogue_path)
+	_check_count("localization rows", authored_string_count, manifest.expected_localization_rows + sources.expected_supplemental_localization_count, sources.manifest_path)
 	_check_count("music cues", _music_cues.size(), 89, sources.music_cues_path)
 
 

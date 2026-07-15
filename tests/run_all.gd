@@ -31,6 +31,7 @@ func _initialize() -> void:
 		TestReleasePlaceholderScanner.new(),
 		TestSaveMigrations.new(),
 		TestSaveRepository.new(),
+		TestScarletDevilMansionContent.new(),
 		TestScreenshotFixture.new(),
 		TestVisualValidators.new(),
 		TestVerticalSliceServices.new(),

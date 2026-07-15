@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "33db2e10fc1e7b99c7923176faf3215bc22cec55d4d3b4e91dd7ed81148b3489",
+  "content_hash": "108432905b2f2f67ff86f5b52f469c48bcecf4c48a268f701c48dce03567ef4e",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 28,
-    "dialogue_beats": 19,
-    "localization": 310,
+    "dialogue_beats": 35,
+    "localization": 334,
     "music_cues": 89,
-    "event_nodes": 36
+    "event_nodes": 70
   },
   "ids": {
     "characters": [
@@ -155,7 +155,23 @@
       "beat.hkr.empty_cushion.reimu.loss",
       "beat.hkr.empty_cushion.reimu.patient",
       "beat.hkr.empty_cushion.reimu.playful",
-      "beat.hkr.empty_cushion.reimu.stain"
+      "beat.hkr.empty_cushion.reimu.stain",
+      "beat.sdm.late.patchouli.teaser",
+      "beat.sdm.late.remilia.private",
+      "beat.sdm.late.remilia.public",
+      "beat.sdm.late.sakuya.after_01",
+      "beat.sdm.late.sakuya.after_02",
+      "beat.sdm.late.sakuya.danmaku_assist",
+      "beat.sdm.late.sakuya.danmaku_clear",
+      "beat.sdm.late.sakuya.danmaku_loss",
+      "beat.sdm.late.sakuya.defiant",
+      "beat.sdm.late.sakuya.direct",
+      "beat.sdm.late.sakuya.intro",
+      "beat.sdm.late.sakuya.patient",
+      "beat.sdm.late.sakuya.playful",
+      "beat.sdm.late.sakuya.service_clear",
+      "beat.sdm.late.sakuya.service_excellent",
+      "beat.sdm.late.sakuya.service_loss"
     ],
     "localization": [
       "accessibility.preset.custom",
@@ -166,6 +182,10 @@
       "choice.hkr.empty_cushion.direct",
       "choice.hkr.empty_cushion.patient",
       "choice.hkr.empty_cushion.playful",
+      "choice.sdm.late.defiant",
+      "choice.sdm.late.direct",
+      "choice.sdm.late.patient",
+      "choice.sdm.late.playful",
       "dlg.hkr.empty_cushion.marisa.terms_intro",
       "dlg.hkr.empty_cushion.reimu.001",
       "dlg.hkr.empty_cushion.reimu.afterbeat_01",
@@ -185,7 +205,24 @@
       "dlg.hkr.empty_cushion.reimu.patient",
       "dlg.hkr.empty_cushion.reimu.playful",
       "dlg.hkr.empty_cushion.reimu.stain",
+      "dlg.sdm.late.patchouli.teaser",
+      "dlg.sdm.late.remilia.private",
+      "dlg.sdm.late.remilia.public",
+      "dlg.sdm.late.sakuya.after_01",
+      "dlg.sdm.late.sakuya.after_02",
+      "dlg.sdm.late.sakuya.danmaku_assist",
+      "dlg.sdm.late.sakuya.danmaku_clear",
+      "dlg.sdm.late.sakuya.danmaku_loss",
+      "dlg.sdm.late.sakuya.defiant",
+      "dlg.sdm.late.sakuya.direct",
+      "dlg.sdm.late.sakuya.intro",
+      "dlg.sdm.late.sakuya.patient",
+      "dlg.sdm.late.sakuya.playful",
+      "dlg.sdm.late.sakuya.service_clear",
+      "dlg.sdm.late.sakuya.service_excellent",
+      "dlg.sdm.late.sakuya.service_loss",
       "event.hkr.empty_cushion.title",
+      "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
       "input.glyph.keyboard.confirm",
       "input.glyph.keyboard.menu",
@@ -200,7 +237,10 @@
       "input.glyph.pointer.move",
       "journal.hkr.empty_cushion.body",
       "journal.hkr.empty_cushion.title",
+      "journal.sdm.missing_minute.body",
+      "journal.sdm.missing_minute.title",
       "obj.hkr.find_second_cup",
+      "obj.sdm.trace_missing_minute",
       "ui.accessibility.help",
       "ui.accessibility.title",
       "ui.common.back",
@@ -753,6 +793,166 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sdm.late.patchouli.teaser",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.patchouli.teaser",
+      "target": "dlg.sdm.late.patchouli.teaser",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.remilia.private",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.remilia.private",
+      "target": "dlg.sdm.late.remilia.private",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.remilia.public",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.remilia.public",
+      "target": "dlg.sdm.late.remilia.public",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.after_01",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.after_01",
+      "target": "dlg.sdm.late.sakuya.after_01",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.after_02",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.after_02",
+      "target": "dlg.sdm.late.sakuya.after_02",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.danmaku_assist",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.danmaku_assist",
+      "target": "dlg.sdm.late.sakuya.danmaku_assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.danmaku_clear",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.danmaku_clear",
+      "target": "dlg.sdm.late.sakuya.danmaku_clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.danmaku_loss",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.danmaku_loss",
+      "target": "dlg.sdm.late.sakuya.danmaku_loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.defiant",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.defiant",
+      "target": "dlg.sdm.late.sakuya.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.direct",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.direct",
+      "target": "dlg.sdm.late.sakuya.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.intro",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.intro",
+      "target": "dlg.sdm.late.sakuya.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.patient",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.patient",
+      "target": "dlg.sdm.late.sakuya.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.playful",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.playful",
+      "target": "dlg.sdm.late.sakuya.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.service_clear",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.service_clear",
+      "target": "dlg.sdm.late.sakuya.service_clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.service_excellent",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.service_excellent",
+      "target": "dlg.sdm.late.sakuya.service_excellent",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.service_loss",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.late.sakuya.service_loss",
+      "target": "dlg.sdm.late.sakuya.service_loss",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hkr.empty_cushion.01",
       "target": "choice.hkr.empty_cushion.defiant",
       "kind": "localization"
@@ -770,6 +970,26 @@
     {
       "source": "choice.hkr.empty_cushion.01",
       "target": "choice.hkr.empty_cushion.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.late.01",
+      "target": "choice.sdm.late.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.late.01",
+      "target": "choice.sdm.late.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.late.01",
+      "target": "choice.sdm.late.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.late.01",
+      "target": "choice.sdm.late.playful",
       "kind": "localization"
     },
     {
@@ -1498,9 +1718,414 @@
       "kind": "location"
     },
     {
+      "source": "evt.sdm.late_by_three_minutes.node.n001",
+      "target": "evt.sdm.late_by_three_minutes.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n001",
+      "target": "mus_sdm_foyer",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n002",
+      "target": "evt.sdm.late_by_three_minutes.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n002",
+      "target": "obj.sdm.trace_missing_minute",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n002",
+      "target": "prop.sdm.offset_clock",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n002",
+      "target": "prop.sdm.reset_tray",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n003",
+      "target": "beat.sdm.late.sakuya.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n003",
+      "target": "evt.sdm.late_by_three_minutes.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n004",
+      "target": "choice.sdm.late.01",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n004",
+      "target": "evt.sdm.late_by_three_minutes.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n004",
+      "target": "evt.sdm.late_by_three_minutes.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n004",
+      "target": "evt.sdm.late_by_three_minutes.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n004",
+      "target": "evt.sdm.late_by_three_minutes.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n005",
+      "target": "evt.sdm.late_by_three_minutes.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n005",
+      "target": "mus_sakuya_kitchen",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n006",
+      "target": "evt.sdm.late_by_three_minutes.node.n_service_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n006",
+      "target": "evt.sdm.late_by_three_minutes.node.n_service_excellent",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n006",
+      "target": "evt.sdm.late_by_three_minutes.node.n_service_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n006",
+      "target": "mini.sdm.time_grid_service",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_after_01",
+      "target": "beat.sdm.late.sakuya.after_01",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_after_01",
+      "target": "evt.sdm.late_by_three_minutes.node.n_after_02",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_after_02",
+      "target": "beat.sdm.late.sakuya.after_02",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_after_02",
+      "target": "evt.sdm.late_by_three_minutes.node.n_patchouli_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_after_music",
+      "target": "evt.sdm.late_by_three_minutes.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_after_music",
+      "target": "mus_sakuya_clock",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku_assist",
+      "target": "beat.sdm.late.sakuya.danmaku_assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku_assist",
+      "target": "evt.sdm.late_by_three_minutes.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku_clear",
+      "target": "beat.sdm.late.sakuya.danmaku_clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku_clear",
+      "target": "evt.sdm.late_by_three_minutes.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku_loss",
+      "target": "beat.sdm.late.sakuya.danmaku_loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku_loss",
+      "target": "evt.sdm.late_by_three_minutes.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku_music",
+      "target": "evt.sdm.late_by_three_minutes.node.n_danmaku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku_music",
+      "target": "mus_sakuya_clock",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku",
+      "target": "danmaku.sdm.missing_minute_knives",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku",
+      "target": "evt.sdm.late_by_three_minutes.node.n_danmaku_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku",
+      "target": "evt.sdm.late_by_three_minutes.node.n_danmaku_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_danmaku",
+      "target": "evt.sdm.late_by_three_minutes.node.n_danmaku_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_defiant_line",
+      "target": "beat.sdm.late.sakuya.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_defiant_line",
+      "target": "evt.sdm.late_by_three_minutes.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_defiant",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_defiant",
+      "target": "evt.sdm.late_by_three_minutes.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_direct_line",
+      "target": "beat.sdm.late.sakuya.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_direct_line",
+      "target": "evt.sdm.late_by_three_minutes.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_direct",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_direct",
+      "target": "evt.sdm.late_by_three_minutes.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_effects",
+      "target": "evt.sdm.late_by_three_minutes.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_item",
+      "target": "char.sakuya_izayoi",
+      "kind": "item_owner"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_item",
+      "target": "evt.sdm.late_by_three_minutes.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_item",
+      "target": "item.keepsake.unfinished_checklist",
+      "kind": "item"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_journal",
+      "target": "evt.sdm.late_by_three_minutes.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_journal",
+      "target": "journal.sdm.missing_minute",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_patchouli_music",
+      "target": "evt.sdm.late_by_three_minutes.node.n_patchouli",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_patchouli_music",
+      "target": "mus_patchouli_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_patchouli",
+      "target": "beat.sdm.late.patchouli.teaser",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_patchouli",
+      "target": "evt.sdm.late_by_three_minutes.node.n_remilia_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_patient_line",
+      "target": "beat.sdm.late.sakuya.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_patient_line",
+      "target": "evt.sdm.late_by_three_minutes.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_patient",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_patient",
+      "target": "evt.sdm.late_by_three_minutes.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_playful_line",
+      "target": "beat.sdm.late.sakuya.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_playful_line",
+      "target": "evt.sdm.late_by_three_minutes.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_playful",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_playful",
+      "target": "evt.sdm.late_by_three_minutes.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_remilia_music",
+      "target": "evt.sdm.late_by_three_minutes.node.n_remilia_public",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_remilia_music",
+      "target": "mus_remilia_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_remilia_private",
+      "target": "beat.sdm.late.remilia.private",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_remilia_private",
+      "target": "evt.sdm.late_by_three_minutes.node.n_item",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_remilia_public",
+      "target": "beat.sdm.late.remilia.public",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_remilia_public",
+      "target": "evt.sdm.late_by_three_minutes.node.n_remilia_private",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_service_clear",
+      "target": "beat.sdm.late.sakuya.service_clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_service_clear",
+      "target": "evt.sdm.late_by_three_minutes.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_service_excellent",
+      "target": "beat.sdm.late.sakuya.service_excellent",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_service_excellent",
+      "target": "evt.sdm.late_by_three_minutes.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_service_loss",
+      "target": "beat.sdm.late.sakuya.service_loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes.node.n_service_loss",
+      "target": "evt.sdm.late_by_three_minutes.node.n_danmaku_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes",
+      "target": "char.patchouli_knowledge",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes",
+      "target": "char.remilia_scarlet",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes",
+      "target": "char.sakuya_izayoi",
+      "kind": "cast"
+    },
+    {
       "source": "evt.sdm.late_by_three_minutes",
       "target": "char.sakuya_izayoi",
       "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes",
+      "target": "event.sdm.late_by_three_minutes.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes",
+      "target": "evt.sdm.late_by_three_minutes",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes",
+      "target": "loc.scarlet_devil_mansion.foyer",
+      "kind": "spot"
     },
     {
       "source": "evt.sdm.late_by_three_minutes",

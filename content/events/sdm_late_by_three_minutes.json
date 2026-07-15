@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "evt.sdm.late_by_three_minutes",
+  "title_key": "event.sdm.late_by_three_minutes.title",
+  "location_id": "loc.scarlet_devil_mansion",
+  "spot_id": "loc.scarlet_devil_mansion.foyer",
+  "cast": ["char.sakuya_izayoi", "char.patchouli_knowledge", "char.remilia_scarlet"],
+  "availability": [
+    {"predicate": "chapter_at_least", "value": "chapter.1"},
+    {"predicate": "flag_false", "key": "evt.sdm.late_by_three_minutes.complete"},
+    {"predicate": "time_in", "values": ["day", "dusk"]}
+  ],
+  "entry_node": "n001",
+  "nodes": {
+    "n001": {"type": "music_state", "state": "mus_sdm_foyer", "next": "n002"},
+    "n002": {"type": "exploration_objective", "objective_key": "obj.sdm.trace_missing_minute", "interactable_ids": ["prop.sdm.offset_clock", "prop.sdm.reset_tray"], "next": "n003"},
+    "n003": {"type": "line", "beat_id": "beat.sdm.late.sakuya.intro", "next": "n004"},
+    "n004": {"type": "choice", "choice_id": "choice.sdm.late.01", "options": [
+      {"tone": "direct", "text_key": "choice.sdm.late.direct", "next": "n_direct"},
+      {"tone": "playful", "text_key": "choice.sdm.late.playful", "next": "n_playful"},
+      {"tone": "patient", "text_key": "choice.sdm.late.patient", "next": "n_patient"},
+      {"tone": "defiant", "text_key": "choice.sdm.late.defiant", "next": "n_defiant"}
+    ]},
+    "n_direct": {"type": "effects", "effects": [{"op": "relationship", "character_id": "char.sakuya_izayoi", "facet": "respect", "delta": 1}], "next": "n_direct_line"},
+    "n_playful": {"type": "effects", "effects": [{"op": "relationship", "character_id": "char.sakuya_izayoi", "facet": "spark", "delta": 1}], "next": "n_playful_line"},
+    "n_patient": {"type": "effects", "effects": [{"op": "relationship", "character_id": "char.sakuya_izayoi", "facet": "ease", "delta": 1}], "next": "n_patient_line"},
+    "n_defiant": {"type": "effects", "effects": [{"op": "relationship", "character_id": "char.sakuya_izayoi", "facet": "strain", "delta": 1}], "next": "n_defiant_line"},
+    "n_direct_line": {"type": "line", "beat_id": "beat.sdm.late.sakuya.direct", "next": "n005"},
+    "n_playful_line": {"type": "line", "beat_id": "beat.sdm.late.sakuya.playful", "next": "n005"},
+    "n_patient_line": {"type": "line", "beat_id": "beat.sdm.late.sakuya.patient", "next": "n005"},
+    "n_defiant_line": {"type": "line", "beat_id": "beat.sdm.late.sakuya.defiant", "next": "n005"},
+    "n005": {"type": "music_state", "state": "mus_sakuya_kitchen", "next": "n006"},
+    "n006": {"type": "start_minigame", "minigame_id": "mini.sdm.time_grid_service", "context": {"target_band": "exact", "cups": 3}, "result_branches": {"excellent": "n_service_excellent", "clear": "n_service_clear", "loss": "n_service_loss"}},
+    "n_service_excellent": {"type": "line", "beat_id": "beat.sdm.late.sakuya.service_excellent", "next": "n_after_music"},
+    "n_service_clear": {"type": "line", "beat_id": "beat.sdm.late.sakuya.service_clear", "next": "n_after_music"},
+    "n_service_loss": {"type": "line", "beat_id": "beat.sdm.late.sakuya.service_loss", "next": "n_danmaku_music"},
+    "n_danmaku_music": {"type": "music_state", "state": "mus_sakuya_clock", "next": "n_danmaku"},
+    "n_danmaku": {"type": "start_danmaku", "minigame_id": "danmaku.sdm.missing_minute_knives", "result_branches": {"clear": "n_danmaku_clear", "assist_clear": "n_danmaku_assist", "loss": "n_danmaku_loss"}},
+    "n_danmaku_clear": {"type": "line", "beat_id": "beat.sdm.late.sakuya.danmaku_clear", "next": "n_after_music"},
+    "n_danmaku_assist": {"type": "line", "beat_id": "beat.sdm.late.sakuya.danmaku_assist", "next": "n_after_music"},
+    "n_danmaku_loss": {"type": "line", "beat_id": "beat.sdm.late.sakuya.danmaku_loss", "next": "n_after_music"},
+    "n_after_music": {"type": "music_state", "state": "mus_sakuya_clock", "next": "n_after_01"},
+    "n_after_01": {"type": "line", "beat_id": "beat.sdm.late.sakuya.after_01", "next": "n_after_02"},
+    "n_after_02": {"type": "line", "beat_id": "beat.sdm.late.sakuya.after_02", "next": "n_patchouli_music"},
+    "n_patchouli_music": {"type": "music_state", "state": "mus_patchouli_route", "next": "n_patchouli"},
+    "n_patchouli": {"type": "line", "beat_id": "beat.sdm.late.patchouli.teaser", "next": "n_remilia_music"},
+    "n_remilia_music": {"type": "music_state", "state": "mus_remilia_route", "next": "n_remilia_public"},
+    "n_remilia_public": {"type": "line", "beat_id": "beat.sdm.late.remilia.public", "next": "n_remilia_private"},
+    "n_remilia_private": {"type": "line", "beat_id": "beat.sdm.late.remilia.private", "next": "n_item"},
+    "n_item": {"type": "give_item", "item_id": "item.keepsake.unfinished_checklist", "owner_character_id": "char.sakuya_izayoi", "dialogue_tags": ["sdm.missing_minute"], "next": "n_journal"},
+    "n_journal": {"type": "journal_entry", "entry_id": "journal.sdm.missing_minute", "entry_type": "event_observation", "tags": ["missing_minute", "service_route"], "next": "n_effects"},
+    "n_effects": {"type": "effects", "effects": [
+      {"op": "set_flag", "key": "sdm.missing_minute.observed", "value": true},
+      {"op": "set_flag", "key": "evt.sdm.late_by_three_minutes.complete", "value": true}
+    ], "next": "n_end"},
+    "n_end": {"type": "end_event", "outcome": "missing_minute_kept"}
+  },
+  "origin_tags": {"canon": 2, "fanon": 0, "original": 12},
+  "comfort_tags": ["low_motion_available", "no_flash_available"]
+}
