@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/presentation/fighter/CompactFighterMode.gd" id="1_mode"]
+[ext_resource type="Script" path="res://src/presentation/audio/ProceduralSfxPlayer.gd" id="2_sfx"]
+[ext_resource type="Shader" path="res://ui/theme/one_bit_post_process.gdshader" id="3_threshold"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_threshold"]
+shader = ExtResource("3_threshold")
+
+[node name="CompactFighterMode" type="Control"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+script = ExtResource("1_mode")
+
+[node name="ProceduralSfxPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_sfx")
+
+[node name="OneBitThreshold" type="ColorRect" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_threshold")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

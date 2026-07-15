@@ -18,6 +18,7 @@ const PAUSE: StringName = &"pause"
 const ACCESSIBILITY: StringName = &"accessibility"
 const SHOT: StringName = &"shot"
 const FOCUS: StringName = &"focus"
+const GUARD: StringName = &"guard"
 const LIGHT: StringName = &"light"
 const HEAVY: StringName = &"heavy"
 const SKILL: StringName = &"skill"
@@ -41,6 +42,7 @@ const ALL_ACTIONS := [
 	ACCESSIBILITY,
 	SHOT,
 	FOCUS,
+	GUARD,
 	LIGHT,
 	HEAVY,
 	SKILL,

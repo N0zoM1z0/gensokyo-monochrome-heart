@@ -26,6 +26,7 @@ static func install_defaults(should_reset: bool = false) -> void:
 	_add_keys_and_button(GameInput.LIGHT, [KEY_Z, KEY_J], JOY_BUTTON_A)
 	_add_keys_and_button(GameInput.CANCEL, [KEY_X, KEY_K, KEY_ESCAPE], JOY_BUTTON_B)
 	_add_keys_and_button(GameInput.FOCUS, [KEY_X, KEY_K], JOY_BUTTON_B)
+	_add_keys_and_button(GameInput.GUARD, [KEY_SHIFT], JOY_BUTTON_LEFT_SHOULDER)
 	_add_keys_and_button(GameInput.HEAVY, [KEY_X, KEY_K], JOY_BUTTON_B)
 	_add_keys_and_button(GameInput.COMPANION, [KEY_C, KEY_L], JOY_BUTTON_X)
 	_add_keys_and_button(GameInput.SKILL, [KEY_C, KEY_L], JOY_BUTTON_X)

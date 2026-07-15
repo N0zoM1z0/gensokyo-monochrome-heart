@@ -9,6 +9,7 @@ const INPUT_GLYPH_SERVICE_SCRIPT := preload("res://src/autoload/InputGlyphServic
 func run() -> Array[String]:
 	var failures: Array[String] = []
 	_validate_input_map(failures)
+	_validate_fighter_keyboard_controller_bindings(failures)
 	_validate_glyph_hot_swap(failures)
 	_validate_focus_stack(failures)
 	_validate_accessibility_presets(failures)
@@ -27,6 +28,26 @@ func _validate_input_map(failures: Array[String]) -> void:
 	elif InputMap.action_get_events(GameInput.CONFIRM).size() != 1:
 		failures.append("confirm remap did not replace prior bindings")
 	InputMapInstaller.install_defaults(true)
+
+
+func _validate_fighter_keyboard_controller_bindings(failures: Array[String]) -> void:
+	InputMapInstaller.install_defaults(true)
+	for action: StringName in [
+		GameInput.LIGHT,
+		GameInput.HEAVY,
+		GameInput.SKILL,
+		GameInput.SPELL,
+		GameInput.GUARD,
+	]:
+		var has_keyboard := false
+		var has_controller := false
+		for event: InputEvent in InputMap.action_get_events(action):
+			has_keyboard = has_keyboard or event is InputEventKey
+			has_controller = has_controller or event is InputEventJoypadButton
+		if not has_keyboard:
+			failures.append("fighter action lacks a keyboard binding: %s" % action)
+		if not has_controller:
+			failures.append("fighter action lacks a controller binding: %s" % action)
 
 
 func _validate_glyph_hot_swap(failures: Array[String]) -> void:
