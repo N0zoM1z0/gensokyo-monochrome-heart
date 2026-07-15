@@ -25,6 +25,12 @@ func _run() -> void:
 	event_yield = interpreter.advance_line()
 	event_yield = interpreter.choose_tone(&"patient")
 	_expect(
+		event_yield.status == EventInterpreterResult.Status.WAIT_INPUT
+		and event_yield.node_id == &"n_patient_line",
+		"Patient event branch did not present its authored response"
+	)
+	event_yield = interpreter.advance_line()
+	_expect(
 		event_yield.status == EventInterpreterResult.Status.WAIT_MODE
 		and event_yield.node_id == &"n005"
 		and event_yield.mode_context != null,
@@ -101,9 +107,18 @@ func _run() -> void:
 	)
 	event_yield = interpreter.advance_line()
 	_expect(
-		event_yield.status == EventInterpreterResult.Status.END
-		and &"evt.hkr.empty_cushion" in state.completed_event_ids,
-		"Excellent event branch did not complete after the returned mode result"
+		event_yield.status == EventInterpreterResult.Status.WAIT_INPUT
+		and event_yield.node_id == &"n006d",
+		"Excellent response did not continue to the boundary-stain setup"
+	)
+	event_yield = interpreter.advance_line()
+	_expect(
+		event_yield.status == EventInterpreterResult.Status.WAIT_MODE
+		and event_yield.node_id == &"n007"
+		and event_yield.mode_context != null
+		and event_yield.mode_context.mode_type == &"start_danmaku"
+		and &"evt.hkr.empty_cushion" not in state.completed_event_ids,
+		"Excellent tea branch did not hand the unfinished story to Boundary Stain"
 	)
 	mode.free()
 
@@ -112,6 +127,7 @@ func _run() -> void:
 	var loss_yield := loss_interpreter.start(graph, loss_state, _content)
 	loss_yield = loss_interpreter.advance_line()
 	loss_yield = loss_interpreter.choose_tone(&"direct")
+	loss_yield = loss_interpreter.advance_line()
 	var loss_mode := packed.instantiate() as TeaTemperatureMode
 	loss_mode.configure(loss_yield.mode_context)
 	get_root().add_child(loss_mode)
@@ -132,9 +148,16 @@ func _run() -> void:
 	)
 	loss_yield = loss_interpreter.advance_line()
 	_expect(
-		loss_yield.status == EventInterpreterResult.Status.END
-		and &"evt.hkr.empty_cushion" in loss_state.completed_event_ids,
-		"Loss recovery branch did not remain story-completable"
+		loss_yield.status == EventInterpreterResult.Status.WAIT_INPUT
+		and loss_yield.node_id == &"n006d",
+		"Loss recovery branch did not continue to the same story setup"
+	)
+	loss_yield = loss_interpreter.advance_line()
+	_expect(
+		loss_yield.status == EventInterpreterResult.Status.WAIT_MODE
+		and loss_yield.node_id == &"n007"
+		and &"evt.hkr.empty_cushion" not in loss_state.completed_event_ids,
+		"Loss recovery branch did not remain story-completable through Boundary Stain"
 	)
 	loss_mode.free()
 	_finish(_failures)

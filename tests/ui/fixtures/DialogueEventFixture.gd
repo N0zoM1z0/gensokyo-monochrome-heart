@@ -22,7 +22,9 @@ const ACTION_CONTRACT := [
 	"page_right",
 ]
 const EVENT_ID: StringName = &"evt.hkr.empty_cushion"
-const MODE_RESULTS: Array[StringName] = [&"excellent", &"clear", &"loss"]
+const TEA_MODE_RESULTS: Array[StringName] = [&"excellent", &"clear", &"loss"]
+const DANMAKU_MODE_RESULTS: Array[StringName] = [&"clear", &"assist_clear", &"loss"]
+const FIGHTER_MODE_RESULTS: Array[StringName] = [&"win", &"loss"]
 
 @export var fixture_start_at_choice: bool = false
 
@@ -37,6 +39,7 @@ var _phase: Phase = Phase.ERROR
 var _instant_text := true
 var _show_backlog := false
 var _mode_result_index := 1
+var _mode_results: Array[StringName] = TEA_MODE_RESULTS.duplicate()
 var _checkpoint_reasons: Array[StringName] = []
 var _resonance_views: Array[ResonanceCueView] = []
 var _diagnostic := ""
@@ -128,15 +131,15 @@ func handle_semantic_action(action: StringName) -> bool:
 			return choice_control.handle_semantic_action(action)
 		Phase.MODE:
 			if action in [GameInput.MOVE_UP, GameInput.MOVE_LEFT]:
-				_mode_result_index = posmod(_mode_result_index - 1, MODE_RESULTS.size())
+				_mode_result_index = posmod(_mode_result_index - 1, _mode_results.size())
 				queue_redraw()
 				return true
 			if action in [GameInput.MOVE_DOWN, GameInput.MOVE_RIGHT]:
-				_mode_result_index = posmod(_mode_result_index + 1, MODE_RESULTS.size())
+				_mode_result_index = posmod(_mode_result_index + 1, _mode_results.size())
 				queue_redraw()
 				return true
 			if action == GameInput.CONFIRM:
-				_accept_interpreter_result(_interpreter.resume_mode(ModeResult.new(MODE_RESULTS[_mode_result_index])))
+				_accept_interpreter_result(_interpreter.resume_mode(ModeResult.new(_mode_results[_mode_result_index])))
 				return true
 	return false
 
@@ -216,6 +219,7 @@ func _restart() -> void:
 	_resonance_views.clear()
 	_show_backlog = false
 	_mode_result_index = 1
+	_mode_results = TEA_MODE_RESULTS.duplicate()
 	_diagnostic = ""
 	choice_control.visible = false
 	choice_control.set_profile(_profile.profile_id)
@@ -267,6 +271,8 @@ func _accept_interpreter_result(next_result: EventInterpreterResult) -> void:
 		EventInterpreterResult.Status.WAIT_MODE:
 			_phase = Phase.MODE
 			choice_control.visible = false
+			_mode_results = _results_for_context(next_result.mode_context)
+			_mode_result_index = mini(_mode_result_index, _mode_results.size() - 1)
 		EventInterpreterResult.Status.END:
 			_phase = Phase.END
 			choice_control.visible = false
@@ -368,15 +374,37 @@ func _draw_mock_mode(foreground: Color, background: Color) -> void:
 	var font := _japanese_font if _locale == &"ja" else _latin_font
 	draw_string(font, Vector2(96, 41), _catalog.text(&"ui.dialogue.mock_mode", _locale), HORIZONTAL_ALIGNMENT_CENTER, 210, 8, foreground)
 	_draw_two_cups(Vector2(154, 62), foreground)
-	for index: int in range(MODE_RESULTS.size()):
+	for index: int in range(_mode_results.size()):
 		var rect := Rect2(111, 104 + index * 18, 176, 15)
 		draw_rect(rect, foreground, false, 1.0)
 		if index == _mode_result_index:
 			draw_rect(rect.grow(-2), foreground, false, 1.0)
-		var key := StringName("ui.dialogue.result.%s" % MODE_RESULTS[index])
+		var key := _result_label_key(_mode_results[index])
 		draw_string(font, Vector2(118, rect.position.y + 11), _catalog.text(key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 162, 8, foreground)
 	if not _resonance_views.is_empty():
 		draw_string(font, Vector2(94, 94), _catalog.text(&"ui.dialogue.resonance.cup_closer", _locale), HORIZONTAL_ALIGNMENT_CENTER, 214, 8, foreground)
+
+
+func _results_for_context(context: ModeContext) -> Array[StringName]:
+	if context != null:
+		match context.mode_type:
+			&"start_danmaku":
+				return DANMAKU_MODE_RESULTS.duplicate()
+			&"start_duel":
+				return FIGHTER_MODE_RESULTS.duplicate()
+	return TEA_MODE_RESULTS.duplicate()
+
+
+func _result_label_key(result_tag: StringName) -> StringName:
+	match result_tag:
+		&"assist_clear":
+			return &"ui.danmaku.result.assist_clear.title"
+		&"win":
+			return &"ui.fighter.result.win.title"
+		&"loss":
+			if _result != null and _result.mode_context != null and _result.mode_context.mode_type == &"start_duel":
+				return &"ui.fighter.result.loss.title"
+	return StringName("ui.dialogue.result.%s" % result_tag)
 
 
 func _draw_two_cups(origin: Vector2, foreground: Color) -> void:

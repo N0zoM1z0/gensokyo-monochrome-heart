@@ -31,7 +31,7 @@ func _expect_counts(report: ContentLoadReport, failures: Array[String]) -> void:
 		report.music_cue_count,
 		report.event_node_count,
 	]
-	var expected := [71, 19, 28, 4, 220, 89, 16]
+	var expected := [71, 19, 28, 19, 235, 89, 36]
 	if actual != expected:
 		failures.append("typed starter counts differ: expected %s, got %s" % [expected, actual])
 	if not report.human_readable().contains("content_hash=%s" % report.content_hash):
@@ -57,7 +57,7 @@ func _expect_hash_and_cache(repository: ContentRepository, failures: Array[Strin
 		if not schema_errors.is_empty():
 			failures.append("runtime index schema failed: %s" % "; ".join(schema_errors))
 	var replay_header := repository.replay_header()
-	if replay_header.content_hash != first_hash or replay_header.content_revision != &"2026.07.14.1":
+	if replay_header.content_hash != first_hash or replay_header.content_revision != &"2026.07.15.1":
 		failures.append("typed replay header omitted content identity")
 	if replay_header.diagnostic_header() != repository.diagnostic_header():
 		failures.append("diagnostic and replay content headers diverge")
@@ -79,8 +79,10 @@ func _expect_queries(repository: ContentRepository, failures: Array[String]) -> 
 		failures.append("headline location query expected 5 records")
 	if repository.events_by_mode(&"danmaku").size() != 4:
 		failures.append("danmaku event query expected 4 records")
-	if repository.dialogue_by_speaker(&"char.reimu_hakurei").size() != 4:
-		failures.append("Reimu dialogue query expected 4 beats")
+	if repository.dialogue_by_speaker(&"char.reimu_hakurei").size() != 18:
+		failures.append("Reimu dialogue query expected 18 vertical-slice beats")
+	if repository.dialogue_by_speaker(&"char.marisa_kirisame").size() != 1:
+		failures.append("Marisa dialogue query expected the duel-introduction beat")
 	if repository.music_by_priority(&"A").size() != 44:
 		failures.append("priority-A music query expected 44 cues")
 	if repository.music_by_section(&"system").size() != 12:

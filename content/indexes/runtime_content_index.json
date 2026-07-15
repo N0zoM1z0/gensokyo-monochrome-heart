@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
-  "content_revision": "2026.07.14.1",
-  "content_hash": "857f04580dbef5c2ea957dd31ef16ad42ab81085e97e8d26ba4fc012c2fd5f8b",
+  "content_revision": "2026.07.15.1",
+  "content_hash": "86801032f15857c10240472e6c43c970ee827bd15916f724a52d5e3ae4e03f67",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 28,
-    "dialogue_beats": 4,
-    "localization": 220,
+    "dialogue_beats": 19,
+    "localization": 235,
     "music_cues": 89,
-    "event_nodes": 16
+    "event_nodes": 36
   },
   "ids": {
     "characters": [
@@ -137,10 +137,25 @@
       "evt.sdm.small_chair"
     ],
     "dialogue_beats": [
+      "beat.hkr.empty_cushion.marisa.terms_intro",
       "beat.hkr.empty_cushion.reimu.001",
+      "beat.hkr.empty_cushion.reimu.afterbeat_01",
+      "beat.hkr.empty_cushion.reimu.afterbeat_02",
+      "beat.hkr.empty_cushion.reimu.afterbeat_03",
+      "beat.hkr.empty_cushion.reimu.afterbeat_04",
       "beat.hkr.empty_cushion.reimu.clear",
+      "beat.hkr.empty_cushion.reimu.danmaku_assist",
+      "beat.hkr.empty_cushion.reimu.danmaku_clear",
+      "beat.hkr.empty_cushion.reimu.danmaku_loss",
+      "beat.hkr.empty_cushion.reimu.defiant",
+      "beat.hkr.empty_cushion.reimu.direct",
+      "beat.hkr.empty_cushion.reimu.duel_loss",
+      "beat.hkr.empty_cushion.reimu.duel_win",
       "beat.hkr.empty_cushion.reimu.excellent",
-      "beat.hkr.empty_cushion.reimu.loss"
+      "beat.hkr.empty_cushion.reimu.loss",
+      "beat.hkr.empty_cushion.reimu.patient",
+      "beat.hkr.empty_cushion.reimu.playful",
+      "beat.hkr.empty_cushion.reimu.stain"
     ],
     "localization": [
       "accessibility.preset.custom",
@@ -151,10 +166,25 @@
       "choice.hkr.empty_cushion.direct",
       "choice.hkr.empty_cushion.patient",
       "choice.hkr.empty_cushion.playful",
+      "dlg.hkr.empty_cushion.marisa.terms_intro",
       "dlg.hkr.empty_cushion.reimu.001",
+      "dlg.hkr.empty_cushion.reimu.afterbeat_01",
+      "dlg.hkr.empty_cushion.reimu.afterbeat_02",
+      "dlg.hkr.empty_cushion.reimu.afterbeat_03",
+      "dlg.hkr.empty_cushion.reimu.afterbeat_04",
       "dlg.hkr.empty_cushion.reimu.clear",
+      "dlg.hkr.empty_cushion.reimu.danmaku_assist",
+      "dlg.hkr.empty_cushion.reimu.danmaku_clear",
+      "dlg.hkr.empty_cushion.reimu.danmaku_loss",
+      "dlg.hkr.empty_cushion.reimu.defiant",
+      "dlg.hkr.empty_cushion.reimu.direct",
+      "dlg.hkr.empty_cushion.reimu.duel_loss",
+      "dlg.hkr.empty_cushion.reimu.duel_win",
       "dlg.hkr.empty_cushion.reimu.excellent",
       "dlg.hkr.empty_cushion.reimu.loss",
+      "dlg.hkr.empty_cushion.reimu.patient",
+      "dlg.hkr.empty_cushion.reimu.playful",
+      "dlg.hkr.empty_cushion.reimu.stain",
       "event.hkr.empty_cushion.title",
       "input.glyph.keyboard.cancel",
       "input.glyph.keyboard.confirm",
@@ -458,6 +488,16 @@
   },
   "dependencies": [
     {
+      "source": "beat.hkr.empty_cushion.marisa.terms_intro",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.marisa.terms_intro",
+      "target": "dlg.hkr.empty_cushion.marisa.terms_intro",
+      "kind": "localization"
+    },
+    {
       "source": "beat.hkr.empty_cushion.reimu.001",
       "target": "char.reimu_hakurei",
       "kind": "speaker"
@@ -468,6 +508,46 @@
       "kind": "localization"
     },
     {
+      "source": "beat.hkr.empty_cushion.reimu.afterbeat_01",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.afterbeat_01",
+      "target": "dlg.hkr.empty_cushion.reimu.afterbeat_01",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.afterbeat_02",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.afterbeat_02",
+      "target": "dlg.hkr.empty_cushion.reimu.afterbeat_02",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.afterbeat_03",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.afterbeat_03",
+      "target": "dlg.hkr.empty_cushion.reimu.afterbeat_03",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.afterbeat_04",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.afterbeat_04",
+      "target": "dlg.hkr.empty_cushion.reimu.afterbeat_04",
+      "kind": "localization"
+    },
+    {
       "source": "beat.hkr.empty_cushion.reimu.clear",
       "target": "char.reimu_hakurei",
       "kind": "speaker"
@@ -475,6 +555,76 @@
     {
       "source": "beat.hkr.empty_cushion.reimu.clear",
       "target": "dlg.hkr.empty_cushion.reimu.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.danmaku_assist",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.danmaku_assist",
+      "target": "dlg.hkr.empty_cushion.reimu.danmaku_assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.danmaku_clear",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.danmaku_clear",
+      "target": "dlg.hkr.empty_cushion.reimu.danmaku_clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.danmaku_loss",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.danmaku_loss",
+      "target": "dlg.hkr.empty_cushion.reimu.danmaku_loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.defiant",
+      "target": "dlg.hkr.empty_cushion.reimu.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.direct",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.direct",
+      "target": "dlg.hkr.empty_cushion.reimu.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.duel_loss",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.duel_loss",
+      "target": "dlg.hkr.empty_cushion.reimu.duel_loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.duel_win",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.duel_win",
+      "target": "dlg.hkr.empty_cushion.reimu.duel_win",
       "kind": "localization"
     },
     {
@@ -495,6 +645,36 @@
     {
       "source": "beat.hkr.empty_cushion.reimu.loss",
       "target": "dlg.hkr.empty_cushion.reimu.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.patient",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.patient",
+      "target": "dlg.hkr.empty_cushion.reimu.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.playful",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.playful",
+      "target": "dlg.hkr.empty_cushion.reimu.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.stain",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.stain",
+      "target": "dlg.hkr.empty_cushion.reimu.stain",
       "kind": "localization"
     },
     {
@@ -754,7 +934,7 @@
     },
     {
       "source": "evt.hkr.empty_cushion.node.n006a",
-      "target": "evt.hkr.empty_cushion.node.n007",
+      "target": "evt.hkr.empty_cushion.node.n006d",
       "kind": "event_edge"
     },
     {
@@ -764,7 +944,7 @@
     },
     {
       "source": "evt.hkr.empty_cushion.node.n006b",
-      "target": "evt.hkr.empty_cushion.node.n007",
+      "target": "evt.hkr.empty_cushion.node.n006d",
       "kind": "event_edge"
     },
     {
@@ -774,41 +954,226 @@
     },
     {
       "source": "evt.hkr.empty_cushion.node.n006c",
+      "target": "evt.hkr.empty_cushion.node.n006d",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006d",
+      "target": "beat.hkr.empty_cushion.reimu.stain",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006d",
+      "target": "evt.hkr.empty_cushion.node.n006e",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006e",
       "target": "evt.hkr.empty_cushion.node.n007",
       "kind": "event_edge"
     },
     {
-      "source": "evt.hkr.empty_cushion.node.n007",
+      "source": "evt.hkr.empty_cushion.node.n006e",
+      "target": "mus_border_crossing",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007a",
+      "target": "beat.hkr.empty_cushion.reimu.danmaku_clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007a",
+      "target": "evt.hkr.empty_cushion.node.n007d",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007b",
+      "target": "beat.hkr.empty_cushion.reimu.danmaku_assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007b",
+      "target": "evt.hkr.empty_cushion.node.n007d",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007c",
+      "target": "beat.hkr.empty_cushion.reimu.danmaku_loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007c",
+      "target": "evt.hkr.empty_cushion.node.n007d",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007d",
+      "target": "beat.hkr.empty_cushion.marisa.terms_intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007d",
+      "target": "evt.hkr.empty_cushion.node.n007e",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007e",
       "target": "evt.hkr.empty_cushion.node.n008",
       "kind": "event_edge"
     },
     {
-      "source": "evt.hkr.empty_cushion.node.n007",
-      "target": "item.keepsake.unpaired_cup",
-      "kind": "item"
+      "source": "evt.hkr.empty_cushion.node.n007e",
+      "target": "mus_shrine_duel",
+      "kind": "music"
     },
     {
-      "source": "evt.hkr.empty_cushion.node.n008",
+      "source": "evt.hkr.empty_cushion.node.n007",
+      "target": "danmaku.hkr.boundary_stain",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007",
+      "target": "evt.hkr.empty_cushion.node.n007a",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007",
+      "target": "evt.hkr.empty_cushion.node.n007b",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007",
+      "target": "evt.hkr.empty_cushion.node.n007c",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n008a",
+      "target": "beat.hkr.empty_cushion.reimu.duel_win",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n008a",
+      "target": "evt.hkr.empty_cushion.node.n009",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n008b",
+      "target": "beat.hkr.empty_cushion.reimu.duel_loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n008b",
       "target": "evt.hkr.empty_cushion.node.n009",
       "kind": "event_edge"
     },
     {
       "source": "evt.hkr.empty_cushion.node.n008",
+      "target": "duel.hkr.spell_card_terms",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n008",
+      "target": "evt.hkr.empty_cushion.node.n008a",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n008",
+      "target": "evt.hkr.empty_cushion.node.n008b",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n009",
+      "target": "evt.hkr.empty_cushion.node.n_afterbeat_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n009",
+      "target": "mus_reimu_private",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_add_journal",
+      "target": "evt.hkr.empty_cushion.node.n_complete_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_add_journal",
       "target": "journal.hkr.empty_cushion",
       "kind": "journal_entry"
     },
     {
-      "source": "evt.hkr.empty_cushion.node.n009",
+      "source": "evt.hkr.empty_cushion.node.n_afterbeat_01",
+      "target": "beat.hkr.empty_cushion.reimu.afterbeat_01",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_afterbeat_01",
+      "target": "evt.hkr.empty_cushion.node.n_afterbeat_02",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_afterbeat_02",
+      "target": "beat.hkr.empty_cushion.reimu.afterbeat_02",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_afterbeat_02",
+      "target": "evt.hkr.empty_cushion.node.n_afterbeat_03",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_afterbeat_03",
+      "target": "beat.hkr.empty_cushion.reimu.afterbeat_03",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_afterbeat_03",
+      "target": "evt.hkr.empty_cushion.node.n_afterbeat_04",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_afterbeat_04",
+      "target": "beat.hkr.empty_cushion.reimu.afterbeat_04",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_afterbeat_04",
+      "target": "evt.hkr.empty_cushion.node.n_give_keepsake",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_complete_effects",
       "target": "evt.hkr.empty_cushion.node.n010",
       "kind": "event_edge"
     },
     {
+      "source": "evt.hkr.empty_cushion.node.n_defiant_line",
+      "target": "beat.hkr.empty_cushion.reimu.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_defiant_line",
+      "target": "evt.hkr.empty_cushion.node.n005",
+      "kind": "event_edge"
+    },
+    {
       "source": "evt.hkr.empty_cushion.node.n_defiant",
       "target": "char.reimu_hakurei",
       "kind": "effect_character"
     },
     {
       "source": "evt.hkr.empty_cushion.node.n_defiant",
+      "target": "evt.hkr.empty_cushion.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_direct_line",
+      "target": "beat.hkr.empty_cushion.reimu.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_direct_line",
       "target": "evt.hkr.empty_cushion.node.n005",
       "kind": "event_edge"
     },
@@ -819,6 +1184,26 @@
     },
     {
       "source": "evt.hkr.empty_cushion.node.n_direct",
+      "target": "evt.hkr.empty_cushion.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_give_keepsake",
+      "target": "evt.hkr.empty_cushion.node.n_add_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_give_keepsake",
+      "target": "item.keepsake.unpaired_cup",
+      "kind": "item"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_patient_line",
+      "target": "beat.hkr.empty_cushion.reimu.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_patient_line",
       "target": "evt.hkr.empty_cushion.node.n005",
       "kind": "event_edge"
     },
@@ -829,6 +1214,16 @@
     },
     {
       "source": "evt.hkr.empty_cushion.node.n_patient",
+      "target": "evt.hkr.empty_cushion.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_playful_line",
+      "target": "beat.hkr.empty_cushion.reimu.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_playful_line",
       "target": "evt.hkr.empty_cushion.node.n005",
       "kind": "event_edge"
     },
@@ -839,8 +1234,13 @@
     },
     {
       "source": "evt.hkr.empty_cushion.node.n_playful",
-      "target": "evt.hkr.empty_cushion.node.n005",
+      "target": "evt.hkr.empty_cushion.node.n_playful_line",
       "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion",
+      "target": "char.marisa_kirisame",
+      "kind": "cast"
     },
     {
       "source": "evt.hkr.empty_cushion",

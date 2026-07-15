@@ -1,6 +1,6 @@
 {
   "schema": "gmh-design-content-sync-v1",
-  "source_revision": "2026.07.14.1",
+  "source_revision": "2026.07.15.1",
   "files": [
     {
       "source": "design/09_data/characters.json",
@@ -10,7 +10,7 @@
     {
       "source": "design/09_data/dialogue_samples.json",
       "destination": "content/dialogue/dialogue_samples.json",
-      "sha256": "23064b94ca06ee8c261b225a2bde020cc9548233f1c9f1728741fe7947bd96d5"
+      "sha256": "e2990cf1262e40ecb5a3c4793cd73d7438d3831460cc0ab048cee63b9580ce25"
     },
     {
       "source": "design/09_data/events.json",
@@ -20,27 +20,27 @@
     {
       "source": "design/09_data/sample_event_empty_cushion.json",
       "destination": "content/events/sample_event_empty_cushion.json",
-      "sha256": "e7e58a9aa860707fb3060eeca2294b7f90414f9af0cacb6e43ab654d00e0b674"
+      "sha256": "a5ee6419b3b2c30b70dc9c69bd8903e804af335aadca8060fd1eca5a9c1b9be2"
     },
     {
       "source": "design/09_data/content_index.json",
       "destination": "content/indexes/design_content_index.json",
-      "sha256": "d227e4b75cb37c36335f73a2e253311bdc9f036265c0df5fb353d62ebcc13817"
+      "sha256": "60320743ff716f4480697ba145dc9820d7a8ac737259fb8c2395332a6bec22a1"
     },
     {
       "source": "design/09_data/localization/en.csv",
       "destination": "content/localization/en.csv",
-      "sha256": "eb18c658a5688f02c00585a90d67b9f3f44e8d34761a02027ca1a40824a7c30f"
+      "sha256": "f5c28a6a5cdc50f9a4b0db8693899a0ec3027d61c4dba06dc8b855a646bac437"
     },
     {
       "source": "design/09_data/localization/ja.csv",
       "destination": "content/localization/ja.csv",
-      "sha256": "3099b2e6da5cbec3e4e24bbba84427ca2c9418d533332f76b421d3061b0645f3"
+      "sha256": "3979860f62a418e21c633a52798fa56f89bb6a7be116852dfa19006ada2c9eab"
     },
     {
       "source": "design/09_data/localization/strings.csv",
       "destination": "content/localization/strings.csv",
-      "sha256": "eb234fc77a31a4b219c528d40a443d7c2fd5a284963013f6bdd7220ef98dea31"
+      "sha256": "08155878460438aa6ff89ee996ce9bbf43e39380d247a3c5a6c558e00e4b8afc"
     },
     {
       "source": "design/09_data/locations.json",

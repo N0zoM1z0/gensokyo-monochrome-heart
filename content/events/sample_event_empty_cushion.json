@@ -5,7 +5,8 @@
   "location_id": "loc.hakurei_shrine",
   "spot_id": "loc.hakurei_shrine.veranda",
   "cast": [
-    "char.reimu_hakurei"
+    "char.reimu_hakurei",
+    "char.marisa_kirisame"
   ],
   "availability": [
     {
@@ -81,7 +82,7 @@
           "delta": 1
         }
       ],
-      "next": "n005"
+      "next": "n_direct_line"
     },
     "n_playful": {
       "type": "effects",
@@ -99,7 +100,7 @@
           "delta": 1
         }
       ],
-      "next": "n005"
+      "next": "n_playful_line"
     },
     "n_patient": {
       "type": "effects",
@@ -117,7 +118,7 @@
           "delta": 1
         }
       ],
-      "next": "n005"
+      "next": "n_patient_line"
     },
     "n_defiant": {
       "type": "effects",
@@ -135,6 +136,26 @@
           "delta": 1
         }
       ],
+      "next": "n_defiant_line"
+    },
+    "n_direct_line": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.direct",
+      "next": "n005"
+    },
+    "n_playful_line": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.playful",
+      "next": "n005"
+    },
+    "n_patient_line": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.patient",
+      "next": "n005"
+    },
+    "n_defiant_line": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.defiant",
       "next": "n005"
     },
     "n005": {
@@ -153,29 +174,116 @@
     "n006a": {
       "type": "line",
       "beat_id": "beat.hkr.empty_cushion.reimu.excellent",
-      "next": "n007"
+      "next": "n006d"
     },
     "n006b": {
       "type": "line",
       "beat_id": "beat.hkr.empty_cushion.reimu.clear",
-      "next": "n007"
+      "next": "n006d"
     },
     "n006c": {
       "type": "line",
       "beat_id": "beat.hkr.empty_cushion.reimu.loss",
+      "next": "n006d"
+    },
+    "n006d": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.stain",
+      "next": "n006e"
+    },
+    "n006e": {
+      "type": "music_state",
+      "state": "mus_border_crossing",
       "next": "n007"
     },
     "n007": {
-      "type": "give_item",
-      "item_id": "item.keepsake.unpaired_cup",
+      "type": "start_danmaku",
+      "minigame_id": "danmaku.hkr.boundary_stain",
+      "result_branches": {
+        "clear": "n007a",
+        "assist_clear": "n007b",
+        "loss": "n007c"
+      }
+    },
+    "n007a": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.danmaku_clear",
+      "next": "n007d"
+    },
+    "n007b": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.danmaku_assist",
+      "next": "n007d"
+    },
+    "n007c": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.danmaku_loss",
+      "next": "n007d"
+    },
+    "n007d": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.marisa.terms_intro",
+      "next": "n007e"
+    },
+    "n007e": {
+      "type": "music_state",
+      "state": "mus_shrine_duel",
       "next": "n008"
     },
     "n008": {
-      "type": "journal_entry",
-      "entry_id": "journal.hkr.empty_cushion",
+      "type": "start_duel",
+      "minigame_id": "duel.hkr.spell_card_terms",
+      "result_branches": {
+        "win": "n008a",
+        "loss": "n008b"
+      }
+    },
+    "n008a": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.duel_win",
+      "next": "n009"
+    },
+    "n008b": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.duel_loss",
       "next": "n009"
     },
     "n009": {
+      "type": "music_state",
+      "state": "mus_reimu_private",
+      "next": "n_afterbeat_01"
+    },
+    "n_afterbeat_01": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.afterbeat_01",
+      "next": "n_afterbeat_02"
+    },
+    "n_afterbeat_02": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.afterbeat_02",
+      "next": "n_afterbeat_03"
+    },
+    "n_afterbeat_03": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.afterbeat_03",
+      "next": "n_afterbeat_04"
+    },
+    "n_afterbeat_04": {
+      "type": "line",
+      "beat_id": "beat.hkr.empty_cushion.reimu.afterbeat_04",
+      "next": "n_give_keepsake"
+    },
+    "n_give_keepsake": {
+      "type": "give_item",
+      "item_id": "item.keepsake.unpaired_cup",
+      "next": "n_add_journal"
+    },
+    "n_add_journal": {
+      "type": "journal_entry",
+      "entry_id": "journal.hkr.empty_cushion",
+      "next": "n_complete_effects"
+    },
+    "n_complete_effects": {
       "type": "effects",
       "effects": [
         {
@@ -194,7 +302,7 @@
   "origin_tags": {
     "canon": 1,
     "fanon": 0,
-    "original": 5
+    "original": 9
   },
   "comfort_tags": []
 }

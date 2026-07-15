@@ -86,15 +86,20 @@ func _expect_full_branch(tone: StringName, failures: Array[String]) -> GameState
 		failures.append("%s branch did not yield the four-tone choice" % tone)
 		return state
 	result = interpreter.choose_tone(tone)
-	if result.status != EventInterpreterResult.Status.WAIT_MODE or result.node_id != &"n005":
-		failures.append("%s branch did not reach the mock minigame: %s" % [tone, result.diagnostic])
+	var expected_tone_line: StringName = StringName("n_%s_line" % tone)
+	if result.status != EventInterpreterResult.Status.WAIT_INPUT or result.node_id != expected_tone_line or result.beat == null:
+		failures.append("%s branch did not reach its authored response line: %s" % [tone, result.diagnostic])
 		return state
-	if result.checkpoint_reason != &"before_mode" or result.mode_context == null or result.mode_context.mode_id != &"mini.shrine.tea_temperature" or result.mode_context.deterministic_seed <= 0:
-		failures.append("%s branch emitted an invalid mechanical handoff" % tone)
 	_expect_tone_effects(tone, state, failures)
 	var once := GameStateCodec.new().canonical_state(state)
 	if not interpreter.choose_tone(tone).is_error() or GameStateCodec.new().canonical_state(state) != once:
-		failures.append("%s effects could be applied more than once while waiting for a mode" % tone)
+		failures.append("%s effects could be applied more than once while waiting on its response" % tone)
+	result = interpreter.advance_line()
+	if result.status != EventInterpreterResult.Status.WAIT_MODE or result.node_id != &"n005":
+		failures.append("%s branch did not reach Tea Temperature: %s" % [tone, result.diagnostic])
+		return state
+	if result.checkpoint_reason != &"before_mode" or result.mode_context == null or result.mode_context.mode_id != &"mini.shrine.tea_temperature" or result.mode_context.deterministic_seed <= 0:
+		failures.append("%s branch emitted an invalid Tea Temperature handoff" % tone)
 	var result_tag: StringName = [&"excellent", &"clear", &"loss"][EventGraphValidator.TONES.find(tone) % 3]
 	var expected_line: StringName = {
 		&"excellent": &"n006a",
@@ -118,8 +123,53 @@ func _expect_full_branch(tone: StringName, failures: Array[String]) -> GameState
 			if result.node_id != expected_line or result.beat == null:
 				failures.append("save/load did not resume the exact dialogue boundary")
 	result = interpreter.advance_line()
+	if result.status != EventInterpreterResult.Status.WAIT_INPUT or result.node_id != &"n006d":
+		failures.append("%s branch omitted the boundary-stain setup line" % tone)
+		return state
+	result = interpreter.advance_line()
+	if result.status != EventInterpreterResult.Status.WAIT_MODE or result.node_id != &"n007" or result.mode_context == null or result.mode_context.mode_type != &"start_danmaku":
+		failures.append("%s branch did not reach Boundary Stain" % tone)
+		return state
+	if _cue_kinds(result.presentation_cues) != [&"music"]:
+		failures.append("%s Boundary Stain handoff omitted its authored music transition" % tone)
+	var danmaku_tag: StringName = [&"clear", &"assist_clear", &"loss", &"clear"][EventGraphValidator.TONES.find(tone)]
+	var expected_danmaku_line: StringName = {
+		&"clear": &"n007a",
+		&"assist_clear": &"n007b",
+		&"loss": &"n007c",
+	}[danmaku_tag]
+	result = interpreter.resume_mode(ModeResult.new(danmaku_tag))
+	if result.status != EventInterpreterResult.Status.WAIT_INPUT or result.node_id != expected_danmaku_line:
+		failures.append("%s branch mapped Boundary Stain result %s incorrectly" % [tone, danmaku_tag])
+		return state
+	result = interpreter.advance_line()
+	if result.status != EventInterpreterResult.Status.WAIT_INPUT or result.node_id != &"n007d" or result.beat == null or result.beat.speaker_id != &"char.marisa_kirisame":
+		failures.append("%s branch omitted Marisa's duel introduction" % tone)
+		return state
+	result = interpreter.advance_line()
+	if result.status != EventInterpreterResult.Status.WAIT_MODE or result.node_id != &"n008" or result.mode_context == null or result.mode_context.mode_type != &"start_duel":
+		failures.append("%s branch did not reach the compact fighter" % tone)
+		return state
+	if _cue_kinds(result.presentation_cues) != [&"music"]:
+		failures.append("%s fighter handoff omitted its authored music transition" % tone)
+	var duel_tag: StringName = &"win" if EventGraphValidator.TONES.find(tone) % 2 == 0 else &"loss"
+	var expected_duel_line: StringName = &"n008a" if duel_tag == &"win" else &"n008b"
+	result = interpreter.resume_mode(ModeResult.new(duel_tag))
+	if result.status != EventInterpreterResult.Status.WAIT_INPUT or result.node_id != expected_duel_line:
+		failures.append("%s branch mapped fighter result %s incorrectly" % [tone, duel_tag])
+		return state
+	result = interpreter.advance_line()
+	if result.status != EventInterpreterResult.Status.WAIT_INPUT or result.node_id != &"n_afterbeat_01" or _cue_kinds(result.presentation_cues) != [&"music"]:
+		failures.append("%s branch did not enter the quiet afterbeat with its music transition" % tone)
+		return state
+	for expected_afterbeat: StringName in [&"n_afterbeat_02", &"n_afterbeat_03", &"n_afterbeat_04"]:
+		result = interpreter.advance_line()
+		if result.status != EventInterpreterResult.Status.WAIT_INPUT or result.node_id != expected_afterbeat:
+			failures.append("%s branch omitted afterbeat %s" % [tone, expected_afterbeat])
+			return state
+	result = interpreter.advance_line()
 	if result.status != EventInterpreterResult.Status.END or result.outcome != &"complete":
-		failures.append("%s branch did not complete after the result line: %s" % [tone, result.diagnostic])
+		failures.append("%s branch did not complete after the full vertical slice: %s" % [tone, result.diagnostic])
 		return state
 	if state.active_event_id != &"" or _graph.id not in state.completed_event_ids:
 		failures.append("%s branch did not atomically close and record the event" % tone)
@@ -204,11 +254,25 @@ func _expect_read_only_replay(source: GameState, failures: Array[String]) -> voi
 	var result := replay.start(_graph, source, _content, true)
 	result = replay.advance_line()
 	result = replay.choose_tone(&"direct")
+	result = replay.advance_line()
 	if result.status != EventInterpreterResult.Status.WAIT_MODE or not result.mode_context.is_replay:
 		failures.append("replay did not reach an explicitly read-only mode handoff")
 		return
 	result = replay.resume_mode(ModeResult.new(&"clear"))
 	result = replay.advance_line()
+	result = replay.advance_line()
+	if result.status != EventInterpreterResult.Status.WAIT_MODE or not result.mode_context.is_replay:
+		failures.append("replay did not preserve read-only context for Boundary Stain")
+		return
+	result = replay.resume_mode(ModeResult.new(&"clear"))
+	result = replay.advance_line()
+	result = replay.advance_line()
+	if result.status != EventInterpreterResult.Status.WAIT_MODE or not result.mode_context.is_replay:
+		failures.append("replay did not preserve read-only context for the compact fighter")
+		return
+	result = replay.resume_mode(ModeResult.new(&"win"))
+	for _line: int in range(5):
+		result = replay.advance_line()
 	if result.status != EventInterpreterResult.Status.END:
 		failures.append("read-only replay did not traverse the completed graph")
 	if GameStateCodec.new().canonical_state(source) != opening:

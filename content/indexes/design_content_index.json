@@ -1,11 +1,11 @@
 {
   "package_schema_version": 1,
-  "content_revision": "2026.07.14.1",
+  "content_revision": "2026.07.15.1",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 28,
-    "localization_rows": 15
+    "localization_rows": 30
   },
   "files": [
     "characters.json",

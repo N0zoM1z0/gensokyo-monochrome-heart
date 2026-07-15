@@ -41,30 +41,50 @@ func _run() -> void:
 	_expect(fixture.focused_tone() == &"playful", "choice focus changed during repeated locale switches")
 
 	fixture.handle_semantic_action(GameInput.CONFIRM)
-	_expect(fixture.phase() == &"mode", "Playful choice did not suspend at the mock mechanical mode")
+	_expect(fixture.phase() == &"line", "Playful choice did not present its authored response line")
 	var after_choice := fixture.state_snapshot()
 	var relationship := after_choice.characters[&"char.reimu_hakurei"].relationship
 	_expect(relationship.spark == 1 and relationship.strain == 1, "Playful relationship transaction did not apply exactly once")
 	_expect(relationship.trust == 0 and relationship.ease == 0 and relationship.respect == 0, "Playful choice leaked another tone's effects")
+	_accept_line(fixture)
+	_expect(fixture.phase() == &"mode", "Playful response did not suspend at Tea Temperature")
 
 	fixture.handle_semantic_action(GameInput.CONFIRM)
-	_expect(fixture.phase() == &"line", "mock Clear ModeResult did not resume the authored result line")
+	_expect(fixture.phase() == &"line", "mock Tea Clear did not resume the authored result line")
 	var after_mode := fixture.state_snapshot().characters[&"char.reimu_hakurei"].relationship
 	_expect(after_mode.spark == 1 and after_mode.strain == 1, "mode resume reapplied the tone transaction")
 	_expect(fixture.current_text().contains("湯呑み"), "Clear result did not remain in the selected Japanese locale")
+	_accept_line(fixture)
+	_expect(fixture.phase() == &"line", "Tea result did not continue to the boundary-stain setup")
+	_accept_line(fixture)
+	_expect(fixture.phase() == &"mode", "boundary-stain setup did not suspend at the danmaku handoff")
 	fixture.handle_semantic_action(GameInput.CONFIRM)
+	_expect(fixture.phase() == &"line", "mock Assist Clear did not resume its authored danmaku line")
+	_accept_line(fixture)
+	_expect(fixture.phase() == &"line", "danmaku response did not continue to Marisa's duel introduction")
+	_accept_line(fixture)
+	_expect(fixture.phase() == &"mode", "Marisa's introduction did not suspend at the duel handoff")
 	fixture.handle_semantic_action(GameInput.CONFIRM)
-	_expect(fixture.phase() == &"end", "accepted result line did not complete the event")
+	_expect(fixture.phase() == &"line", "mock duel Loss did not resume its authored response")
+	for _line: int in range(5):
+		_accept_line(fixture)
+	_expect(fixture.phase() == &"end", "accepted vertical-slice afterbeat did not complete the event")
 
 	var completed := fixture.state_snapshot()
 	_expect(&"evt.hkr.empty_cushion" in completed.completed_event_ids, "event completion was not recorded")
 	_expect(completed.active_event_id == &"", "completed event retained an active cursor")
 	_expect(completed.inventory.keepsakes.has(&"item.keepsake.unpaired_cup"), "completion did not grant the unpaired cup Keepsake")
 	_expect(completed.journal.entries.has(&"journal.hkr.empty_cushion"), "completion did not grant the Journal observation")
-	_expect(fixture.backlog_count() == 2, "backlog did not contain exactly the two accepted dialogue beats")
+	_expect(fixture.backlog_count() == 11, "backlog did not contain all eleven accepted branch dialogue beats")
 	var backlog := fixture.backlog_lines()
-	_expect(backlog.size() == 4, "backlog did not retain both text beats and nonverbal cues")
-	_expect(_contains(backlog, "cue.reimu.look_at_cup") and _contains(backlog, "cue.reimu_take_cup"), "backlog omitted authored nonverbal evidence")
+	_expect(backlog.size() == 22, "backlog did not retain text and nonverbal cues for the full branch")
+	_expect(
+		_contains(backlog, "cue.reimu.look_at_cup")
+		and _contains(backlog, "cue.reimu_take_cup")
+		and _contains(backlog, "cue.marisa.broom_arrival")
+		and _contains(backlog, "cue.reimu.look_away"),
+		"backlog omitted authored nonverbal evidence from a vertical-slice phase"
+	)
 	_expect(not _contains(backlog, "spark=") and not _contains(backlog, "strain="), "backlog exposed hidden state deltas")
 
 	var checkpoints := fixture.checkpoint_reasons()
@@ -82,6 +102,11 @@ func _run() -> void:
 func _expect(condition: bool, message: String) -> void:
 	if not condition:
 		_failures.append(message)
+
+
+func _accept_line(fixture: DialogueEventFixture) -> void:
+	fixture.handle_semantic_action(GameInput.CONFIRM)
+	fixture.handle_semantic_action(GameInput.CONFIRM)
 
 
 func _contains(lines: Array[String], needle: String) -> bool:

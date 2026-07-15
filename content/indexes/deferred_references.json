@@ -42,6 +42,36 @@
       "kind": "music_state",
       "target_milestone": "M02",
       "reason": "The starter cue sheet contains planning cues rather than runtime music-state records."
+    },
+    {
+      "id": "mus_border_crossing",
+      "kind": "music_state",
+      "target_milestone": "M09",
+      "reason": "The vertical slice resolves this reviewed cue through its procedural test-tone player."
+    },
+    {
+      "id": "mus_shrine_duel",
+      "kind": "music_state",
+      "target_milestone": "M09",
+      "reason": "The vertical slice resolves this reviewed cue through its procedural test-tone player."
+    },
+    {
+      "id": "mus_reimu_private",
+      "kind": "music_state",
+      "target_milestone": "M09",
+      "reason": "The vertical slice resolves this reviewed cue through its procedural test-tone player."
+    },
+    {
+      "id": "danmaku.hkr.boundary_stain",
+      "kind": "minigame",
+      "target_milestone": "M09",
+      "reason": "The integrated graph hands off to the M07 Boundary Stain runtime."
+    },
+    {
+      "id": "duel.hkr.spell_card_terms",
+      "kind": "minigame",
+      "target_milestone": "M09",
+      "reason": "The integrated graph hands off to the M08 compact fighter runtime."
     }
   ]
 }

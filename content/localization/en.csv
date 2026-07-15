@@ -9,8 +9,23 @@ choice.hkr.empty_cushion.defiant,"Say the shrine remembers, even if she will not
 dlg.hkr.empty_cushion.reimu.excellent,...You remembered the temperature. Sit down before it changes.
 dlg.hkr.empty_cushion.reimu.clear,That is fine. Hand me the other cup.
 dlg.hkr.empty_cushion.reimu.loss,Too hot. Move over; I will fix it.
+dlg.hkr.empty_cushion.reimu.direct,I fixed a cushion. Don't make it important.
+dlg.hkr.empty_cushion.reimu.playful,Reserved seating costs extra. You can pay after the tea.
+dlg.hkr.empty_cushion.reimu.patient,...At least someone here knows when silence is useful.
+dlg.hkr.empty_cushion.reimu.defiant,"If I were glad, I wouldn't need you to announce it for me."
+dlg.hkr.empty_cushion.reimu.stain,Put the cup down. The stain under the donation box is moving.
+dlg.hkr.empty_cushion.reimu.danmaku_clear,Good. It stopped pretending to be part of the floor.
+dlg.hkr.empty_cushion.reimu.danmaku_assist,I'll take the last edge. You kept it away from the cups.
+dlg.hkr.empty_cushion.reimu.danmaku_loss,Back up. Losing an argument with a stain is still survivable.
+dlg.hkr.empty_cushion.marisa.terms_intro,"If we're settling boundaries, let's settle the spell-card terms too."
+dlg.hkr.empty_cushion.reimu.duel_win,Two seals. Fine. You remembered the terms.
+dlg.hkr.empty_cushion.reimu.duel_loss,Terms accepted. You can argue for a rematch tomorrow.
+dlg.hkr.empty_cushion.reimu.afterbeat_01,Your tea's cold.
+dlg.hkr.empty_cushion.reimu.afterbeat_02,"Don't make another. This one's fine."
+dlg.hkr.empty_cushion.reimu.afterbeat_03,"The path gets dark early. That's information, not a warning."
+dlg.hkr.empty_cushion.reimu.afterbeat_04,The spare bedding is also information. Don't make it important.
 journal.hkr.empty_cushion.title,The Empty Second Cup
-journal.hkr.empty_cushion.body,The cup was warm before I arrived. The cushion is no longer stored away.
+journal.hkr.empty_cushion.body,The cup was warm before I arrived. The cushion is no longer stored away. An empty place can be a kind of invitation.
 ui.map.travel,Travel
 ui.common.back,Back
 ui.journal.open,Journal

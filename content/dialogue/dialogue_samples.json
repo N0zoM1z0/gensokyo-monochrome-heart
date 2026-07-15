@@ -36,6 +36,141 @@
       "nonverbal_key": "cue.reimu_fix_tea",
       "advance_policy": "input",
       "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.direct",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.direct",
+      "portrait": "dry_irritated",
+      "nonverbal_key": "cue.reimu.look_at_cushion",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.playful",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.playful",
+      "portrait": "quiet_amused",
+      "nonverbal_key": "cue.reimu.hide_smile",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.patient",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.patient",
+      "portrait": "private_neutral",
+      "nonverbal_key": "cue.reimu.pour_tea",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.defiant",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.defiant",
+      "portrait": "dry_irritated",
+      "nonverbal_key": "cue.reimu.look_away",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.stain",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.stain",
+      "portrait": "working_neutral",
+      "nonverbal_key": "cue.reimu.stand",
+      "advance_policy": "input",
+      "memory_tag": "shrine.boundary_stain"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.danmaku_clear",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.danmaku_clear",
+      "portrait": "quiet_amused",
+      "nonverbal_key": "cue.reimu.check_floor",
+      "advance_policy": "input",
+      "memory_tag": "shrine.boundary_stain"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.danmaku_assist",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.danmaku_assist",
+      "portrait": "working_neutral",
+      "nonverbal_key": "cue.reimu.seal_edge",
+      "advance_policy": "input",
+      "memory_tag": "shrine.boundary_stain"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.danmaku_loss",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.danmaku_loss",
+      "portrait": "private_neutral",
+      "nonverbal_key": "cue.reimu.shield_player",
+      "advance_policy": "input",
+      "memory_tag": "shrine.boundary_stain"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.marisa.terms_intro",
+      "speaker_id": "char.marisa_kirisame",
+      "text_key": "dlg.hkr.empty_cushion.marisa.terms_intro",
+      "portrait": "brisk_grin",
+      "nonverbal_key": "cue.marisa.broom_arrival",
+      "advance_policy": "input",
+      "memory_tag": "shrine.spell_card_terms"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.duel_win",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.duel_win",
+      "portrait": "quiet_amused",
+      "nonverbal_key": "cue.reimu.lower_gohei",
+      "advance_policy": "input",
+      "memory_tag": "shrine.spell_card_terms"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.duel_loss",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.duel_loss",
+      "portrait": "private_neutral",
+      "nonverbal_key": "cue.reimu.offer_rematch",
+      "advance_policy": "input",
+      "memory_tag": "shrine.spell_card_terms"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.afterbeat_01",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.afterbeat_01",
+      "portrait": "private_neutral",
+      "nonverbal_key": "cue.reimu.touch_cold_cup",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.afterbeat_02",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.afterbeat_02",
+      "portrait": "quiet_amused",
+      "nonverbal_key": "cue.reimu.slide_cushion",
+      "advance_policy": "input",
+      "memory_tag": "shrine.second_cup"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.afterbeat_03",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.afterbeat_03",
+      "portrait": "private_neutral",
+      "nonverbal_key": "cue.reimu.look_at_path",
+      "advance_policy": "input",
+      "memory_tag": "shrine.invitation"
+    },
+    {
+      "id": "beat.hkr.empty_cushion.reimu.afterbeat_04",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.hkr.empty_cushion.reimu.afterbeat_04",
+      "portrait": "quiet_amused",
+      "nonverbal_key": "cue.reimu.look_away",
+      "advance_policy": "input",
+      "memory_tag": "shrine.invitation"
     }
   ]
 }

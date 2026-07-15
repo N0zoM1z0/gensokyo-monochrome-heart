@@ -1,7 +1,7 @@
 # File Manifest — design-2
 
 Files (excluding manifest files): **570**  
-Total bytes: **12049317**
+Total bytes: **12063214**
 
 | Path | Bytes | SHA-256 |
 |---|---:|---|
@@ -518,16 +518,16 @@ Total bytes: **12049317**
 | `08_technical/scene_tree.md` | 3584 | `55ced9143265dd4217896382ddbbce93c74c8d674c42bef9a515af4e0e554c89` |
 | `08_technical/testing_strategy.md` | 2986 | `1ecba20225c502658b2d28f7a41866b374b470bdaba6487ae36705f4c72ff2e1` |
 | `09_data/characters.json` | 31068 | `7d64106039f0938e708b062b9bdb2523e1537f671d3636e32f08e37b78915fe7` |
-| `09_data/content_index.json` | 636 | `d227e4b75cb37c36335f73a2e253311bdc9f036265c0df5fb353d62ebcc13817` |
-| `09_data/dialogue_samples.json` | 1303 | `23064b94ca06ee8c261b225a2bde020cc9548233f1c9f1728741fe7947bd96d5` |
+| `09_data/content_index.json` | 636 | `60320743ff716f4480697ba145dc9820d7a8ac737259fb8c2395332a6bec22a1` |
+| `09_data/dialogue_samples.json` | 6232 | `e2990cf1262e40ecb5a3c4793cd73d7438d3831460cc0ab048cee63b9580ce25` |
 | `09_data/events.json` | 11440 | `42d48d2f5030b3ed4a7bd25061ed66eebfabaf5554ade9cd1a5b87a1fdc331b3` |
-| `09_data/localization/en.csv` | 971 | `eb18c658a5688f02c00585a90d67b9f3f44e8d34761a02027ca1a40824a7c30f` |
-| `09_data/localization/ja.csv` | 1157 | `3099b2e6da5cbec3e4e24bbba84427ca2c9418d533332f76b421d3061b0645f3` |
-| `09_data/localization/strings.csv` | 2102 | `eb234fc77a31a4b219c528d40a443d7c2fd5a284963013f6bdd7220ef98dea31` |
+| `09_data/localization/en.csv` | 2397 | `f5c28a6a5cdc50f9a4b0db8693899a0ec3027d61c4dba06dc8b855a646bac437` |
+| `09_data/localization/ja.csv` | 2808 | `3979860f62a418e21c633a52798fa56f89bb6a7be116852dfa19006ada2c9eab` |
+| `09_data/localization/strings.csv` | 5140 | `08155878460438aa6ff89ee996ce9bbf43e39380d247a3c5a6c558e00e4b8afc` |
 | `09_data/locations.json` | 7223 | `cdf7e8ea74c916eea8ce84c2257d3548e31db585436c4bebbf48b9d82b5531ee` |
 | `09_data/music_cues.csv` | 20926 | `2034e6fcf365ea0a02e49777171afb17b046af5c59e6576a3d81608b16abed2f` |
 | `09_data/README.md` | 807 | `7ede25bdfeeed9e64aa083e9980db17a9cd193627e04c1ed689cc4ee08f38c3b` |
-| `09_data/sample_event_empty_cushion.json` | 4419 | `e7e58a9aa860707fb3060eeca2294b7f90414f9af0cacb6e43ab654d00e0b674` |
+| `09_data/sample_event_empty_cushion.json` | 7272 | `a5ee6419b3b2c30b70dc9c69bd8903e804af335aadca8060fd1eca5a9c1b9be2` |
 | `09_data/schemas/character_agent_output.schema.json` | 1670 | `16c74251fabadd96b88c056fe378dfd6c59b7aad176d9e95e6efbdecfa1b19f5` |
 | `09_data/schemas/character_index.schema.json` | 1454 | `8af99d8bffd8665049dcd60c8fff770b544be26f13205b3bab419146579400cd` |
 | `09_data/schemas/event_graph.schema.json` | 1601 | `76a38edade1bf582df30dd3525f7a0007c4c3aadc96a5195f6a0132a973daaa1` |
