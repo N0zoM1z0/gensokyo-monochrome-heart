@@ -1,9 +1,39 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://src/presentation/shell/Main.gd" id="1_main"]
 [ext_resource type="Script" path="res://src/presentation/shell/PixelScaleController.gd" id="2_scale"]
+[ext_resource type="Script" path="res://src/presentation/shell/InputRouter.gd" id="3_input"]
+[ext_resource type="Script" path="res://src/presentation/navigation/SceneRouter.gd" id="4_router"]
+[ext_resource type="Script" path="res://src/presentation/navigation/TransitionController.gd" id="5_transition"]
+[ext_resource type="Script" path="res://src/presentation/navigation/TransitionOverlay.gd" id="6_overlay"]
+[ext_resource type="Shader" path="res://ui/theme/one_bit_post_process.gdshader" id="7_threshold"]
 
-[node name="Main" type="Control"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_threshold"]
+shader = ExtResource("7_threshold")
+
+[node name="Main" type="Node"]
+process_mode = 3
+script = ExtResource("1_main")
+
+[node name="FixedResolutionRoot" type="SubViewportContainer" parent="."]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="GameViewport" type="SubViewport" parent="FixedResolutionRoot"]
+handle_input_locally = false
+size = Vector2i(320, 180)
+disable_3d = true
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+render_target_update_mode = 4
+
+[node name="ModeHost" type="Control" parent="FixedResolutionRoot/GameViewport"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +41,86 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_main")
+
+[node name="WorldCanvas" type="CanvasLayer" parent="FixedResolutionRoot/GameViewport"]
+layer = 0
+
+[node name="RootScreenHost" type="Control" parent="FixedResolutionRoot/GameViewport/WorldCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HUDCanvas" type="CanvasLayer" parent="FixedResolutionRoot/GameViewport"]
+layer = 20
+
+[node name="HUDHost" type="Control" parent="FixedResolutionRoot/GameViewport/HUDCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ModalCanvas" type="CanvasLayer" parent="FixedResolutionRoot/GameViewport"]
+layer = 40
+
+[node name="ModalHost" type="Control" parent="FixedResolutionRoot/GameViewport/ModalCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TransitionCanvas" type="CanvasLayer" parent="FixedResolutionRoot/GameViewport"]
+layer = 80
+
+[node name="TransitionController" type="Node" parent="FixedResolutionRoot/GameViewport/TransitionCanvas"]
+process_mode = 3
+script = ExtResource("5_transition")
+overlay_path = NodePath("../TransitionOverlay")
+
+[node name="TransitionOverlay" type="Control" parent="FixedResolutionRoot/GameViewport/TransitionCanvas"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_overlay")
+
+[node name="OneBitCanvas" type="CanvasLayer" parent="FixedResolutionRoot/GameViewport"]
+layer = 100
+
+[node name="OneBitThreshold" type="ColorRect" parent="FixedResolutionRoot/GameViewport/OneBitCanvas"]
+material = SubResource("ShaderMaterial_threshold")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SceneRouter" type="Node" parent="FixedResolutionRoot/GameViewport"]
+process_mode = 3
+script = ExtResource("4_router")
+screen_host_path = NodePath("../WorldCanvas/RootScreenHost")
+mode_host_path = NodePath("../ModeHost")
+transition_controller_path = NodePath("../TransitionCanvas/TransitionController")
+
+[node name="InputRouter" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("3_input")
 
 [node name="PixelScaleController" type="Node" parent="."]
 script = ExtResource("2_scale")
+
+[node name="AudioRoot" type="Node" parent="."]
+
+[node name="DevOverlay" type="CanvasLayer" parent="."]
+visible = false
+layer = 90
