@@ -2,10 +2,10 @@
 event.hkr.empty_cushion.title,event title,,The Empty Cushion,空いたままの座布団,180,Original
 obj.hkr.find_second_cup,objective,,Find why a second cup is warm.,二つ目の湯呑みが温かい理由を探す。,200,Original
 dlg.hkr.empty_cushion.reimu.001,private dialogue,Reimu,I didn't wait. I simply hadn't put the second cup away yet.,待ってないわ。二つ目の湯呑みを片づけてなかっただけ。,214,Original
-choice.hkr.empty_cushion.direct,tone choice,,Ask why it is still warm.,まだ温かい理由を聞く。,188,Original
-choice.hkr.empty_cushion.playful,tone choice,,Praise the cup for waiting patiently.,辛抱強く待った湯呑みを褒める。,200,Original
+choice.hkr.empty_cushion.direct,tone choice,,"Say, ""You fixed that for me.""",「私のために直したの？」と聞く。,188,Original
+choice.hkr.empty_cushion.playful,tone choice,,Ask whether every visitor gets reserved seating.,「客にはみんな指定席があるの？」と冗談を言う。,200,Original
 choice.hkr.empty_cushion.patient,tone choice,,Pour tea and leave the empty place open.,何も正さず、お茶を注いで席を空けておく。,210,Original
-choice.hkr.empty_cushion.defiant,tone choice,,"Say the shrine remembers, even if she will not.",本人が認めなくても、神社は覚えていると言う。,214,Original
+choice.hkr.empty_cushion.defiant,tone choice,,"Say, ""You could admit you're glad.""",「戻ってきて嬉しいって言えば？」,214,Original
 dlg.hkr.empty_cushion.reimu.excellent,private dialogue,Reimu,...You remembered the temperature. Sit down before it changes.,……温度まで覚えてたのね。変わる前に座りなさい。,214,Original
 dlg.hkr.empty_cushion.reimu.clear,private dialogue,Reimu,That is fine. Hand me the other cup.,それでいいわ。もう一つの湯呑みを取って。,214,Original
 dlg.hkr.empty_cushion.reimu.loss,private dialogue,Reimu,Too hot. Move over; I will fix it.,熱すぎ。ちょっとどいて、私が直す。,214,Original
@@ -20,10 +20,10 @@ dlg.hkr.empty_cushion.reimu.danmaku_loss,private dialogue,Reimu,Back up. Losing 
 dlg.hkr.empty_cushion.marisa.terms_intro,private dialogue,Marisa,"If we're settling boundaries, let's settle the spell-card terms too.",境界の話をつけるなら、スペルカードの条件も決めようぜ。,214,Original
 dlg.hkr.empty_cushion.reimu.duel_win,private dialogue,Reimu,Two seals. Fine. You remembered the terms.,二つ封印。いいわ、条件は覚えてたのね。,214,Original
 dlg.hkr.empty_cushion.reimu.duel_loss,private dialogue,Reimu,Terms accepted. You can argue for a rematch tomorrow.,条件は成立。再戦の言い分は明日にしなさい。,214,Original
-dlg.hkr.empty_cushion.reimu.afterbeat_01,private dialogue,Reimu,Your tea's cold.,お茶、冷めたわよ。,214,Original
-dlg.hkr.empty_cushion.reimu.afterbeat_02,private dialogue,Reimu,"Don't make another. This one's fine.",淹れ直さなくていい。これで。,214,Original
-dlg.hkr.empty_cushion.reimu.afterbeat_03,private dialogue,Reimu,"The path gets dark early. That's information, not a warning.",参道、暗くなるの早いから。忠告じゃなくて情報よ。,214,Original
-dlg.hkr.empty_cushion.reimu.afterbeat_04,private dialogue,Reimu,The spare bedding is also information. Don't make it important.,客用の布団があることも情報。大事なことにしないで。,214,Original
+dlg.hkr.empty_cushion.reimu.afterbeat_01,private dialogue,Reimu,Your tea's cold. Leave it; I already poured another.,お茶、冷めたわね。そのままでいい。もう一杯淹れたから。,214,Original
+dlg.hkr.empty_cushion.reimu.afterbeat_02,private dialogue,Reimu,The path gets dark early. Take the lantern by the gate.,参道は暗くなるのが早い。門の提灯を持っていきなさい。,214,Original
+dlg.hkr.empty_cushion.reimu.afterbeat_03,private dialogue,Reimu,The guest bedding is aired and ready.,客用の布団は干しておいた。,214,Original
+dlg.hkr.empty_cushion.reimu.afterbeat_04,private dialogue,Reimu,"That's information, not an invitation. Don't make it important.",情報よ、招待じゃない。大事なことにしないで。,214,Original
 journal.hkr.empty_cushion.title,journal title,,The Empty Second Cup,空いた二つ目の湯呑み,180,Original
 journal.hkr.empty_cushion.body,journal body,,The cup was warm before I arrived. The cushion is no longer stored away. An empty place can be a kind of invitation.,着く前から湯呑みは温かかった。座布団はもう片づけられていない。空いている場所も、招待になることがある。,286,Original
 ui.map.travel,button,,Travel,移動,48,UI

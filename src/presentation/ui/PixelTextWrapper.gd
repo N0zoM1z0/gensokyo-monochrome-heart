@@ -2,7 +2,7 @@ class_name PixelTextWrapper
 extends RefCounted
 ## Pixel-width wrapping with English word boundaries and basic Japanese kinsoku rules.
 
-const JA_FORBIDDEN_LINE_START := "、。，．・：；？！゛゜ヽヾゝゞ々ー）］｝〕〉》」』】〙〗〟’”｠»"
+const JA_FORBIDDEN_LINE_START := "、。，．・：；？！゛゜ヽヾゝゞ々ーぁぃぅぇぉっゃゅょゎァィゥェォッャュョヮヵヶ）］｝〕〉》」』】〙〗〟’”｠»"
 const JA_FORBIDDEN_LINE_END := "（［｛〔〈《「『【〘〖〝‘“｟«"
 
 
@@ -67,11 +67,19 @@ static func _wrap_japanese(text: String, font: Font, width: float, font_size: in
 			if current.is_empty() or _fits(candidate, font, width, font_size):
 				current = candidate
 				continue
-			if JA_FORBIDDEN_LINE_START.contains(cluster):
-				current += cluster
-				continue
-			var carry := ""
 			var current_clusters := GraphemeSegmenter.segments(current)
+			var carry := ""
+			if JA_FORBIDDEN_LINE_START.contains(cluster) and not current_clusters.is_empty():
+				# Keep closing punctuation and small kana with at least one leading
+				# character without allowing the completed line to exceed its box.
+				carry = current_clusters.pop_back()
+				while not current_clusters.is_empty() and JA_FORBIDDEN_LINE_END.contains(current_clusters.back()):
+					carry = current_clusters.pop_back() + carry
+				current = "".join(current_clusters)
+				if not current.is_empty():
+					lines.append(current)
+				current = carry + cluster
+				continue
 			if not current_clusters.is_empty() and JA_FORBIDDEN_LINE_END.contains(current_clusters.back()):
 				carry = current_clusters.pop_back()
 				current = "".join(current_clusters)

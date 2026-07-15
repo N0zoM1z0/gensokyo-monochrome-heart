@@ -36,7 +36,7 @@ func _expect_adaptive_tones(failures: Array[String]) -> void:
 
 func _expect_local_telemetry(failures: Array[String]) -> void:
 	var telemetry := VerticalSliceTelemetry.new()
-	telemetry.begin_session(&"p90", &"2026.07.15.4", "a".repeat(64), 1000)
+	telemetry.begin_session(&"p90", &"2026.07.16.5", "a".repeat(64), 1000)
 	telemetry.enter_phase(&"exploration", 1100)
 	telemetry.exit_phase(&"exploration", 1450)
 	var mode_telemetry := ModeTelemetry.new()

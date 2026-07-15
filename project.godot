@@ -37,7 +37,7 @@ window/stretch/scale_mode="integer"
 [gmh]
 
 build/channel="dev"
-content/revision="2026.07.15.4"
+content/revision="2026.07.16.5"
 save/schema_version=2
 
 [rendering]

@@ -1,6 +1,6 @@
 {
   "schema": "gmh-design-content-sync-v1",
-  "source_revision": "2026.07.15.4",
+  "source_revision": "2026.07.16.5",
   "files": [
     {
       "source": "design/09_data/characters.json",
@@ -25,22 +25,22 @@
     {
       "source": "design/09_data/content_index.json",
       "destination": "content/indexes/design_content_index.json",
-      "sha256": "dca75e5fade951f4c340025088bef2014d92ab7409719fecec71bccd36c8fb7e"
+      "sha256": "109dda69b393a158e72989df747d0f1784465f598b1ea8ad326c8f022df4844a"
     },
     {
       "source": "design/09_data/localization/en.csv",
       "destination": "content/localization/en.csv",
-      "sha256": "f5c28a6a5cdc50f9a4b0db8693899a0ec3027d61c4dba06dc8b855a646bac437"
+      "sha256": "e084478a7a847bb1f4b7a74fdf7ba162cad4b6dee8d827a92b7f1786c7a4c60a"
     },
     {
       "source": "design/09_data/localization/ja.csv",
       "destination": "content/localization/ja.csv",
-      "sha256": "3979860f62a418e21c633a52798fa56f89bb6a7be116852dfa19006ada2c9eab"
+      "sha256": "a954e6ad8095431873aad6c0a67ccde4433615bef53cdd065a71412bab81b7f1"
     },
     {
       "source": "design/09_data/localization/strings.csv",
       "destination": "content/localization/strings.csv",
-      "sha256": "08155878460438aa6ff89ee996ce9bbf43e39380d247a3c5a6c558e00e4b8afc"
+      "sha256": "0cd46d4b2ed688f1c840cf3c539b2b20ce48b9b31fc96c454fdbba76e9ca051b"
     },
     {
       "source": "design/09_data/locations.json",

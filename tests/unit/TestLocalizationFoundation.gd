@@ -21,8 +21,8 @@ func run() -> Array[String]:
 		elif catalog.text(required_key, &"en").is_empty() or catalog.text(required_key, &"ja").is_empty():
 			failures.append("UI localization is not bilingual for %s" % required_key)
 	var keys := catalog.keys()
-	if keys.size() != 270:
-		failures.append("expected 270 merged localization keys, got %d" % keys.size())
+	if keys.size() != 279:
+		failures.append("expected 279 merged localization keys, got %d" % keys.size())
 	if keys != catalog.keys():
 		failures.append("UI localization keys are not deterministic")
 
@@ -37,4 +37,17 @@ func run() -> Array[String]:
 		if service.locale != &"en":
 			failures.append("unsupported locale did not fall back to English")
 	service.free()
+	_expect_japanese_kinsoku(failures)
 	return failures
+
+
+func _expect_japanese_kinsoku(failures: Array[String]) -> void:
+	var font := UiFontRegistry.japanese()
+	for sample: String in ["あきゃく", "あい、う"]:
+		var lines := PixelTextWrapper.wrap(sample, font, 24, 12, &"ja")
+		for line: String in lines:
+			var clusters := GraphemeSegmenter.segments(line)
+			if not clusters.is_empty() and PixelTextWrapper.JA_FORBIDDEN_LINE_START.contains(clusters[0]):
+				failures.append("Japanese kinsoku orphaned punctuation or small kana: %s" % line)
+			if font.get_string_size(line, HORIZONTAL_ALIGNMENT_LEFT, -1, 12).x > 24:
+				failures.append("Japanese kinsoku overflowed its measured line: %s" % line)

@@ -1,7 +1,7 @@
 # File Manifest — design-2
 
 Files (excluding manifest files): **570**  
-Total bytes: **12063214**
+Total bytes: **12063421**
 
 | Path | Bytes | SHA-256 |
 |---|---:|---|
@@ -518,12 +518,12 @@ Total bytes: **12063214**
 | `08_technical/scene_tree.md` | 3584 | `55ced9143265dd4217896382ddbbce93c74c8d674c42bef9a515af4e0e554c89` |
 | `08_technical/testing_strategy.md` | 2986 | `1ecba20225c502658b2d28f7a41866b374b470bdaba6487ae36705f4c72ff2e1` |
 | `09_data/characters.json` | 31068 | `7d64106039f0938e708b062b9bdb2523e1537f671d3636e32f08e37b78915fe7` |
-| `09_data/content_index.json` | 636 | `dca75e5fade951f4c340025088bef2014d92ab7409719fecec71bccd36c8fb7e` |
+| `09_data/content_index.json` | 636 | `109dda69b393a158e72989df747d0f1784465f598b1ea8ad326c8f022df4844a` |
 | `09_data/dialogue_samples.json` | 6232 | `e2990cf1262e40ecb5a3c4793cd73d7438d3831460cc0ab048cee63b9580ce25` |
 | `09_data/events.json` | 11440 | `42d48d2f5030b3ed4a7bd25061ed66eebfabaf5554ade9cd1a5b87a1fdc331b3` |
-| `09_data/localization/en.csv` | 2397 | `f5c28a6a5cdc50f9a4b0db8693899a0ec3027d61c4dba06dc8b855a646bac437` |
-| `09_data/localization/ja.csv` | 2808 | `3979860f62a418e21c633a52798fa56f89bb6a7be116852dfa19006ada2c9eab` |
-| `09_data/localization/strings.csv` | 5140 | `08155878460438aa6ff89ee996ce9bbf43e39380d247a3c5a6c558e00e4b8afc` |
+| `09_data/localization/en.csv` | 2433 | `e084478a7a847bb1f4b7a74fdf7ba162cad4b6dee8d827a92b7f1786c7a4c60a` |
+| `09_data/localization/ja.csv` | 2874 | `a954e6ad8095431873aad6c0a67ccde4433615bef53cdd065a71412bab81b7f1` |
+| `09_data/localization/strings.csv` | 5245 | `0cd46d4b2ed688f1c840cf3c539b2b20ce48b9b31fc96c454fdbba76e9ca051b` |
 | `09_data/locations.json` | 7223 | `cdf7e8ea74c916eea8ce84c2257d3548e31db585436c4bebbf48b9d82b5531ee` |
 | `09_data/music_cues.csv` | 20926 | `2034e6fcf365ea0a02e49777171afb17b046af5c59e6576a3d81608b16abed2f` |
 | `09_data/README.md` | 807 | `7ede25bdfeeed9e64aa083e9980db17a9cd193627e04c1ed689cc4ee08f38c3b` |

@@ -2,7 +2,7 @@
   "package": "Gensokyo: Monochrome Heart design-2",
   "generated_utc": "2026-07-15T15:10:32.472Z",
   "file_count_excluding_manifest": 570,
-  "total_bytes_excluding_manifest": 12063214,
+  "total_bytes_excluding_manifest": 12063421,
   "files": [
     {
       "path": "00_project/canon_fanon_original_policy.md",
@@ -2572,7 +2572,7 @@
     {
       "path": "09_data/content_index.json",
       "size_bytes": 636,
-      "sha256": "dca75e5fade951f4c340025088bef2014d92ab7409719fecec71bccd36c8fb7e"
+      "sha256": "109dda69b393a158e72989df747d0f1784465f598b1ea8ad326c8f022df4844a"
     },
     {
       "path": "09_data/dialogue_samples.json",
@@ -2586,18 +2586,18 @@
     },
     {
       "path": "09_data/localization/en.csv",
-      "size_bytes": 2397,
-      "sha256": "f5c28a6a5cdc50f9a4b0db8693899a0ec3027d61c4dba06dc8b855a646bac437"
+      "size_bytes": 2433,
+      "sha256": "e084478a7a847bb1f4b7a74fdf7ba162cad4b6dee8d827a92b7f1786c7a4c60a"
     },
     {
       "path": "09_data/localization/ja.csv",
-      "size_bytes": 2808,
-      "sha256": "3979860f62a418e21c633a52798fa56f89bb6a7be116852dfa19006ada2c9eab"
+      "size_bytes": 2874,
+      "sha256": "a954e6ad8095431873aad6c0a67ccde4433615bef53cdd065a71412bab81b7f1"
     },
     {
       "path": "09_data/localization/strings.csv",
-      "size_bytes": 5140,
-      "sha256": "08155878460438aa6ff89ee996ce9bbf43e39380d247a3c5a6c558e00e4b8afc"
+      "size_bytes": 5245,
+      "sha256": "0cd46d4b2ed688f1c840cf3c539b2b20ce48b9b31fc96c454fdbba76e9ca051b"
     },
     {
       "path": "09_data/locations.json",

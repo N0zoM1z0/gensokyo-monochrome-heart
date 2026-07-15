@@ -118,14 +118,14 @@ func _expect_four_tone_focus(failures: Array[String]) -> void:
 	var presenter := FourToneChoicePresenter.new(_content)
 	presenter.configure(choice, &"en")
 	var english := presenter.presentations()
-	if english.size() != 4 or english[0].tone != &"direct" or english[0].text != "Ask why it is still warm.":
+	if english.size() != 4 or english[0].tone != &"direct" or english[0].text != "Say, \"You fixed that for me.\"":
 		failures.append("four-tone presenter did not use stable semantic ordering")
 	presenter.move(1)
 	if presenter.focused_tone != &"playful":
 		failures.append("four-tone focus did not move by semantic tone")
 	presenter.switch_locale(&"ja")
 	var japanese := presenter.presentations()
-	if presenter.focused_tone != &"playful" or japanese[1].text != "辛抱強く待った湯呑みを褒める。":
+	if presenter.focused_tone != &"playful" or japanese[1].text != "「客にはみんな指定席があるの？」と冗談を言う。":
 		failures.append("locale switch changed choice focus or failed to re-resolve Japanese")
 	if presenter.confirm() != &"playful":
 		failures.append("four-tone confirm returned localized text instead of stable intent")
