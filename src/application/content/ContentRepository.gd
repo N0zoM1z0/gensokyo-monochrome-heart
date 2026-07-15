@@ -478,6 +478,8 @@ func _validate_references(sources: ContentSourceSet) -> void:
 	for node: EventNodeRecord in event_graph.nodes:
 		_validate_event_node(node, node_ids, graph_source)
 	_validate_graph_reachability(node_ids, graph_source)
+	for error: String in EventGraphValidator.new().validate(event_graph):
+		report.add_error(&"rules", graph_source, error, event_graph.id)
 
 
 func _validate_event_node(node: EventNodeRecord, node_ids: Array[StringName], source: String) -> void:

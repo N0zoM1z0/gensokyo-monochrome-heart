@@ -20,6 +20,7 @@ func run() -> Array[String]:
 	_test_tea_blends(failures)
 	_test_comfort_profile(failures)
 	_test_time_location_route(failures)
+	_test_event_cursor(failures)
 	_test_unsupported_and_invariant_rejection(failures)
 	_test_transactions(failures)
 	_test_player_safe_relationship_view(failures)
@@ -197,6 +198,34 @@ func _test_time_location_route(failures: Array[String]) -> void:
 	)
 	if state.characters[&"char.reimu_hakurei"].route_intent != &"friendship":
 		failures.append("rejected route intent changed the accepted player choice")
+
+
+func _test_event_cursor(failures: Array[String]) -> void:
+	var state := _fresh()
+	_expect_success(
+		"SetEventPositionCommand positive",
+		_dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.hkr.empty_cushion", &"n001")),
+		failures
+	)
+	_expect_failure(
+		"SetEventPositionCommand negative",
+		_dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.hkr.empty_cushion", &"")),
+		failures
+	)
+	if state.active_event_node_id != &"n001":
+		failures.append("rejected event cursor command changed the accepted position")
+	_expect_success(
+		"CompleteEventCommand positive",
+		_dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.hkr.empty_cushion", &"complete")),
+		failures
+	)
+	_expect_failure(
+		"CompleteEventCommand negative",
+		_dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.hkr.empty_cushion", &"complete")),
+		failures
+	)
+	if state.active_event_id != &"" or state.completed_event_ids != [&"evt.hkr.empty_cushion"]:
+		failures.append("event completion did not atomically clear and record the cursor")
 
 
 func _test_unsupported_and_invariant_rejection(failures: Array[String]) -> void:

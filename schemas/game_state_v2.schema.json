@@ -75,7 +75,7 @@
         "type": "object",
         "required": ["flag_id", "kind", "value"],
         "properties": {
-          "flag_id": {"type": "string", "pattern": "^flag\\."},
+          "flag_id": {"type": "string", "pattern": "^(flag|evt)\\."},
           "kind": {"enum": ["bool", "int", "id"]},
           "value": {"type": ["boolean", "integer", "string"]}
         },
@@ -189,7 +189,7 @@
     },
     "route_intent_id": {"type": "string"},
     "active_event_id": {"type": "string"},
-    "active_event_node_id": {"type": "string"},
+    "active_event_node_id": {"type": "string", "pattern": "^$|^[a-z][a-z0-9_]*$"},
     "completed_event_ids": {"type": "array", "items": {"type": "string", "pattern": "^evt\\."}},
     "route_completion_ids": {"type": "array", "items": {"type": "string"}},
     "play_time_seconds": {"type": "integer", "minimum": 0}

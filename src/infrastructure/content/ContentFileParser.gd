@@ -284,7 +284,10 @@ func parse_event_graph(path: String, schema_path: String) -> EventGraphRecord:
 						_name(raw_predicate.get("predicate", "")),
 						_name(raw_predicate.get("value", "")),
 						_name(raw_predicate.get("key", "")),
-						_names(raw_predicate.get("values", []))
+						_names(raw_predicate.get("values", [])),
+						_name(raw_predicate.get("character_id", "")),
+						_name(raw_predicate.get("facet", "")),
+						_name(raw_predicate.get("band", ""))
 					)
 				)
 	var raw_nodes: Variant = raw.get("nodes", null)
@@ -324,13 +327,15 @@ func _parse_event_node(node_id: StringName, raw: Dictionary) -> EventNodeRecord:
 		if raw_options is Array:
 			for raw_option: Variant in raw_options:
 				if raw_option is Dictionary:
-					options.append(
-						ChoiceOptionRecord.new(
+					var option := ChoiceOptionRecord.new(
 							_name(raw_option.get("tone", "")),
 							_name(raw_option.get("text_key", "")),
 							_name(raw_option.get("next", ""))
 						)
-					)
+					option.visible_if = _parse_predicates(raw_option.get("visible_if", []))
+					option.available_if = _parse_predicates(raw_option.get("available_if", []))
+					option.unavailable_reason_key = _name(raw_option.get("unavailable_reason_key", ""))
+					options.append(option)
 		node.choice = ChoiceRecord.new(_name(raw.get("choice_id", "")), options)
 	var raw_effects: Variant = raw.get("effects", [])
 	if raw_effects is Array:
@@ -358,6 +363,27 @@ func _parse_event_node(node_id: StringName, raw: Dictionary) -> EventNodeRecord:
 				ModeResultBranchRecord.new(StringName(result_tag), _name(raw_branches[result_tag]))
 			)
 	return node
+
+
+func _parse_predicates(raw_predicates: Variant) -> Array[AvailabilityPredicateRecord]:
+	var result: Array[AvailabilityPredicateRecord] = []
+	if not raw_predicates is Array:
+		return result
+	for raw_predicate: Variant in raw_predicates:
+		if not raw_predicate is Dictionary:
+			continue
+		result.append(
+			AvailabilityPredicateRecord.new(
+				_name(raw_predicate.get("predicate", "")),
+				_name(raw_predicate.get("value", "")),
+				_name(raw_predicate.get("key", "")),
+				_names(raw_predicate.get("values", [])),
+				_name(raw_predicate.get("character_id", "")),
+				_name(raw_predicate.get("facet", "")),
+				_name(raw_predicate.get("band", ""))
+			)
+		)
+	return result
 
 
 func _load_validated_json(path: String, schema_path: String, stage: StringName) -> Variant:

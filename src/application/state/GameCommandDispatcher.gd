@@ -67,6 +67,10 @@ func _apply(state: GameState, command: GameCommand) -> CommandResult:
 		return _set_route_intent(state, command)
 	if command is SetComfortProfileCommand:
 		return _set_comfort_profile(state, command)
+	if command is SetEventPositionCommand:
+		return _set_event_position(state, command)
+	if command is CompleteEventCommand:
+		return _complete_event(state, command)
 	return CommandResult.failure(
 		CommandResult.Code.INVALID_COMMAND,
 		command.command_id,
@@ -75,7 +79,7 @@ func _apply(state: GameState, command: GameCommand) -> CommandResult:
 
 
 func _set_flag(state: GameState, command: SetFlagCommand) -> CommandResult:
-	if command.flag == null or not _matches(command.flag.flag_id, "^flag\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
+	if command.flag == null or not _matches(command.flag.flag_id, "^(?:flag|evt)\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
 		return _invalid(command, "flag must have a valid stable ID")
 	state.flags[command.flag.flag_id] = command.flag.duplicate_state()
 	return CommandResult.success(command.command_id)
@@ -258,6 +262,36 @@ func _set_comfort_profile(state: GameState, command: SetComfortProfileCommand) -
 	if state.protagonist.comfort_profile_id == command.comfort_profile_id:
 		return _already_exists(command, "comfort profile is already %s" % command.comfort_profile_id)
 	state.protagonist.comfort_profile_id = command.comfort_profile_id
+	return CommandResult.success(command.command_id)
+
+
+func _set_event_position(state: GameState, command: SetEventPositionCommand) -> CommandResult:
+	var is_clear := command.event_id == &"" and command.node_id == &""
+	if not is_clear and (
+		not _matches(command.event_id, "^evt\\.")
+		or not _matches(command.node_id, "^[a-z][a-z0-9_]*$")
+	):
+		return _invalid(command, "event and node IDs must both be valid or both be empty")
+	if (command.event_id == &"") != (command.node_id == &""):
+		return _invalid(command, "event and node cursor fields cannot be partially empty")
+	if state.active_event_id == command.event_id and state.active_event_node_id == command.node_id:
+		return _already_exists(command, "event cursor is already at %s/%s" % [command.event_id, command.node_id])
+	state.active_event_id = command.event_id
+	state.active_event_node_id = command.node_id
+	return CommandResult.success(command.command_id)
+
+
+func _complete_event(state: GameState, command: CompleteEventCommand) -> CommandResult:
+	if not _matches(command.event_id, "^evt\\.") or command.outcome == &"":
+		return _invalid(command, "event ID and outcome are required")
+	if state.active_event_id != command.event_id or state.active_event_node_id == &"":
+		return _invalid(command, "only the active event can complete")
+	if command.event_id in state.completed_event_ids:
+		return _already_exists(command, "event is already complete: %s" % command.event_id)
+	state.completed_event_ids.append(command.event_id)
+	state.completed_event_ids.sort_custom(_id_less)
+	state.active_event_id = &""
+	state.active_event_node_id = &""
 	return CommandResult.success(command.command_id)
 
 

@@ -37,6 +37,13 @@ func validate(state: GameState) -> Array[String]:
 		errors.append("play time cannot be negative")
 	if state.active_event_id != &"" and not _matches(state.active_event_id, "^evt\\."):
 		errors.append("active event ID is invalid: %s" % state.active_event_id)
+	if (state.active_event_id == &"") != (state.active_event_node_id == &""):
+		errors.append("active event and node cursor must both be set or both be empty")
+	if state.active_event_node_id != &"" and not _matches(state.active_event_node_id, "^[a-z][a-z0-9_]*$"):
+		errors.append("active event node ID is invalid: %s" % state.active_event_node_id)
+	for event_id: StringName in state.completed_event_ids:
+		if not _matches(event_id, "^evt\\."):
+			errors.append("completed event ID is invalid: %s" % event_id)
 	_check_unique(state.completed_event_ids, "completed event", errors)
 	_check_unique(state.route_completion_ids, "route completion", errors)
 	return errors
@@ -71,7 +78,7 @@ func _validate_regions(state: GameState, errors: Array[String]) -> void:
 func _validate_flags(state: GameState, errors: Array[String]) -> void:
 	for flag_id: StringName in state.flags:
 		var flag := state.flags[flag_id]
-		if flag == null or flag.flag_id != flag_id or not _matches(flag_id, "^flag\\."):
+		if flag == null or flag.flag_id != flag_id or not _matches(flag_id, "^(?:flag|evt)\\."):
 			errors.append("invalid flag state: %s" % flag_id)
 		elif flag.kind == FlagState.Kind.STABLE_ID and flag.stable_id_value == &"":
 			errors.append("%s has an empty stable-ID value" % flag_id)

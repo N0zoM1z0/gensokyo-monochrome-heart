@@ -5,6 +5,9 @@ extends RefCounted
 var tone: StringName
 var text_key: StringName
 var next_node_id: StringName
+var visible_if: Array[AvailabilityPredicateRecord] = []
+var available_if: Array[AvailabilityPredicateRecord] = []
+var unavailable_reason_key: StringName
 
 
 func _init(p_tone: StringName, p_text_key: StringName, p_next_node_id: StringName) -> void:
