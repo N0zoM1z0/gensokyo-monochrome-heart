@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PresentationProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/presentation/profile/PresentationProfile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+profile_id = &"A"
+display_name = "Pocket Shrine"
+polarity = &"paper"
+black_budget = "25-35%"
+frame_style = &"open_corner_2px"
+usage = "default/exploration/system"

@@ -7,6 +7,7 @@ func _initialize() -> void:
 		TestContentValidator.new(),
 		TestFontAssets.new(),
 		TestJsonSchemaValidator.new(),
+		TestPresentationFoundation.new(),
 	]
 	var failures: Array[String] = []
 	var executed := 0

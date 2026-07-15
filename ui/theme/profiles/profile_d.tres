@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PresentationProfile" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/presentation/profile/PresentationProfile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+profile_id = &"D"
+display_name = "Midnight LCD"
+polarity = &"ink"
+black_budget = "70-85%"
+frame_style = &"white_line_2px"
+usage = "combat/night/dream/underground"
+is_inverted = true
