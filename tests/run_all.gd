@@ -5,6 +5,7 @@ extends SceneTree
 func _initialize() -> void:
 	var suites: Array[RefCounted] = [
 		TestContentValidator.new(),
+		TestFontAssets.new(),
 		TestJsonSchemaValidator.new(),
 	]
 	var failures: Array[String] = []

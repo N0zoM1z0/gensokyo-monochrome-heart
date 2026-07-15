@@ -1,0 +1,53 @@
+{
+  "schema": "gmh-font-sync-v1",
+  "source_revision": "2026.07.14.1",
+  "kiri8_source": "design/06_art/visual_system_v2/source/pixel_core.js",
+  "kiri8_contract": {
+    "glyph": [
+      5,
+      7
+    ],
+    "cell": [
+      6,
+      8
+    ],
+    "codepoints": [
+      32,
+      126
+    ],
+    "fallback": "?",
+    "lowercase_rendering": "uppercase prototype glyph"
+  },
+  "files": [
+    {
+      "path": "LICENSES/DotGothic16-OFL-1.1.txt",
+      "sha256": "335d6a81ce1afcf64c8bc36334458ba3292ca6fba5d3974895b3ed84ccee530e",
+      "bytes": 4399
+    },
+    {
+      "path": "ui/fonts/DotGothic16-Japanese.woff2",
+      "sha256": "a042e37d1a36798f5a9dee9ab81d2fc4204950ae1729b856e4d22833a61997ee",
+      "bytes": 396312
+    },
+    {
+      "path": "ui/fonts/DotGothic16-LICENSE.txt",
+      "sha256": "335d6a81ce1afcf64c8bc36334458ba3292ca6fba5d3974895b3ed84ccee530e",
+      "bytes": 4399
+    },
+    {
+      "path": "ui/fonts/DotGothic16-Latin.woff2",
+      "sha256": "d29abf817463fdba7e9e87fc954cfa2b60ea6534e8a79c46e858a0dc5aa6a6f6",
+      "bytes": 10508
+    },
+    {
+      "path": "ui/fonts/kiri8_latin.fnt",
+      "sha256": "385927a1c09396192bb6898795ac48caee55d43706f9527661604c852c07f6a3",
+      "bytes": 8219
+    },
+    {
+      "path": "ui/fonts/kiri8_latin.png",
+      "sha256": "d225988c0ae6f986d1681c886edf9ed02c8e49022ac5fbd948c4574d7efe119c",
+      "bytes": 628
+    }
+  ]
+}

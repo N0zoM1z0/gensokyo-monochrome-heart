@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://droxemwfv1obf"
+path="res://.godot/imported/kiri8_latin.fnt-f9e9a26396a86bf7a1c0c7c9b98a8ca7.fontdata"
+
+[deps]
+
+source_file="res://ui/fonts/kiri8_latin.fnt"
+dest_files=["res://.godot/imported/kiri8_latin.fnt-f9e9a26396a86bf7a1c0c7c9b98a8ca7.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=1
