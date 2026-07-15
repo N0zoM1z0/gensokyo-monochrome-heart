@@ -11,11 +11,16 @@ var last_visual_key: StringName
 var _waves: Dictionary[StringName, AudioStreamWAV] = {}
 
 
-func play_cue(cue: ExplorationSfxCue) -> void:
+func play_cue(cue: AudioCueIntent) -> void:
 	if cue == null:
 		return
 	last_cue_id = cue.cue_id
 	last_visual_key = cue.visual_key
+	# Headless and Dummy-audio validation have no listener or mix callback.
+	# Preserve the cue contract without allocating playback that cannot drain.
+	if DisplayServer.get_name() == "headless" or AudioServer.get_driver_name() == "Dummy":
+		cue_played.emit(cue.cue_id, cue.visual_key)
+		return
 	if not _waves.has(cue.cue_id):
 		_waves[cue.cue_id] = _build_wave(cue)
 	stop()
@@ -30,7 +35,7 @@ func _exit_tree() -> void:
 	_waves.clear()
 
 
-func _build_wave(cue: ExplorationSfxCue) -> AudioStreamWAV:
+func _build_wave(cue: AudioCueIntent) -> AudioStreamWAV:
 	var frame_count := ceili(cue.duration_seconds * MIX_RATE)
 	var phase_step := TAU * cue.pitch_hz / float(MIX_RATE)
 	var data := PackedByteArray()

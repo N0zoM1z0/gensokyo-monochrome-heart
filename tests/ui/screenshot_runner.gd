@@ -74,6 +74,8 @@ func _run() -> void:
 		"Screenshot fixture: scene=%s output=%s size=%s requested_profile=%s resolved_profile=%s locale=%s"
 		% [options.scene_path, output_path, image.get_size(), options.profile_id, resolved_profile, options.locale]
 	)
+	# Explicitly release the fixture tree before this short-lived process exits.
+	viewport.free()
 	quit(0)
 
 

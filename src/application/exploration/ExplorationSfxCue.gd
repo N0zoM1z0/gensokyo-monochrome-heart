@@ -1,12 +1,6 @@
 class_name ExplorationSfxCue
-extends RefCounted
+extends AudioCueIntent
 ## Audio intent with a parallel visual key for subtitle-safe exploration feedback.
-
-var cue_id: StringName
-var visual_key: StringName
-var pitch_hz: float
-var duration_seconds: float
-
 
 func _init(
 	p_cue_id: StringName = &"",
@@ -14,7 +8,4 @@ func _init(
 	p_pitch_hz: float = 220.0,
 	p_duration_seconds: float = 0.08
 ) -> void:
-	cue_id = p_cue_id
-	visual_key = p_visual_key
-	pitch_hz = p_pitch_hz
-	duration_seconds = p_duration_seconds
+	super._init(p_cue_id, p_visual_key, p_pitch_hz, p_duration_seconds)
