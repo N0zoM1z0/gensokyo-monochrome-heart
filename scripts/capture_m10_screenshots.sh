@@ -37,6 +37,8 @@ capture m10_title_page2_150_d_ja res://ui/screens/title_screen.tscn D ja --focus
 capture m10_options_150_a_en res://ui/screens/options_screen.tscn A en
 capture m10_options_page2_150_d_ja res://ui/screens/options_screen.tscn D ja --focus-id=options.one_handed
 capture m10_options_comfort_150_a_en res://ui/screens/options_screen.tscn A en --focus-id=options.comfort_coercion
+capture m10_options_left_hand_150_a_en res://ui/screens/options_screen.tscn A en --focus-id=options.one_handed --one-handed=left
+capture m10_options_right_hand_controller_150_d_ja res://ui/screens/options_screen.tscn D ja --focus-id=options.one_handed --one-handed=right --input-device=controller
 capture m10_accessibility_150_a_ja res://ui/screens/accessibility_screen.tscn A ja
 capture m10_profiles_150_d_ja res://ui/screens/profile_select.tscn D ja
 capture m10_pause_150_a_ja res://ui/screens/pause_screen.tscn A ja
@@ -47,12 +49,15 @@ capture m10_dialogue_150_a_ja res://tests/ui/fixtures/VerticalSliceDialogueFixtu
 capture m10_choice_150_d_ja res://tests/ui/fixtures/VerticalSliceChoiceFixture.tscn D ja
 capture m10_reward_150_a_ja res://tests/ui/fixtures/VerticalSliceRewardFixture.tscn A ja
 capture m10_journal_150_d_en res://tests/ui/fixtures/VerticalSliceJournalFixture.tscn D en
+capture m10_journal_page2_controller_150_a_ja res://tests/ui/fixtures/VerticalSliceJournalFixture.tscn A ja --input-device=controller --semantic-action=move_down
 capture m10_exploration_150_a_ja res://tests/ui/fixtures/VerticalSliceExplorationFixture.tscn A ja
 capture m10_tea_tutorial_150_d_ja res://src/presentation/minigames/TeaTemperatureMode.tscn D ja
+capture m10_tea_tutorial_right_hand_controller_150_a_en res://src/presentation/minigames/TeaTemperatureMode.tscn A en --one-handed=right --input-device=controller
 capture m10_tea_active_150_a_ja res://tests/ui/fixtures/TeaTemperatureActiveFixture.tscn A ja
 capture m10_danmaku_intro_150_a_ja res://tests/ui/fixtures/BoundaryStainSpellFixture.tscn A ja
 capture m10_danmaku_result_150_d_en res://tests/ui/fixtures/BoundaryStainResultFixture.tscn D en
 capture m10_fighter_intro_150_a_ja res://tests/ui/fixtures/CompactFighterIntroFixture.tscn A ja
+capture m10_fighter_intro_left_hand_150_d_en res://tests/ui/fixtures/CompactFighterIntroFixture.tscn D en --one-handed=left
 capture m10_fighter_result_150_d_en res://tests/ui/fixtures/CompactFighterResultWinFixture.tscn D en
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \

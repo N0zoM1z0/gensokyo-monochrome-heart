@@ -118,7 +118,7 @@ func _expect_four_tone_focus(failures: Array[String]) -> void:
 	var presenter := FourToneChoicePresenter.new(_content)
 	presenter.configure(choice, &"en")
 	var english := presenter.presentations()
-	if english.size() != 4 or english[0].tone != &"direct" or english[0].text != "Say, \"You fixed that for me.\"":
+	if english.size() != 4 or english[0].tone != &"direct" or english[0].text != "Say: You fixed that for me.":
 		failures.append("four-tone presenter did not use stable semantic ordering")
 	presenter.move(1)
 	if presenter.focused_tone != &"playful":

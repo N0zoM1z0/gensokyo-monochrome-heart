@@ -410,16 +410,16 @@ func _draw_active(foreground: Color, background: Color) -> void:
 	_draw_instrument(Rect2(214, 54, 64, 44), _catalog.text(&"ui.minigame.tea.cup_two", _locale), tea.state.cup_temperatures[1], foreground, background)
 	_draw_steam(Vector2(74, 50), foreground)
 	_draw_assist_marks(Vector2(94, 51), foreground, 208, _compact_font_size())
-	_draw_gauge(Rect2(48, 111, 224, 8), tea.state.kettle_heat, TeaTemperatureSimulation.MIN_HEAT, TeaTemperatureSimulation.MAX_HEAT, foreground, background, true)
-	draw_string(font, Vector2(8, 119), _catalog.text(&"ui.minigame.tea.heat", _locale), HORIZONTAL_ALIGNMENT_LEFT, 38, _compact_font_size(), foreground)
-	_draw_gauge(Rect2(48, 126, 224, 8), tea.state.steep_ticks, 0, 360, foreground, background, false)
-	draw_string(font, Vector2(8, 134), _catalog.text(&"ui.minigame.tea.steep", _locale), HORIZONTAL_ALIGNMENT_LEFT, 38, _compact_font_size(), foreground)
+	_draw_gauge(Rect2(58, 111, 214, 8), tea.state.kettle_heat, TeaTemperatureSimulation.MIN_HEAT, TeaTemperatureSimulation.MAX_HEAT, foreground, background, true)
+	draw_string(font, Vector2(8, 119), _catalog.text(&"ui.minigame.tea.heat", _locale), HORIZONTAL_ALIGNMENT_LEFT, 48, _compact_font_size(), foreground)
+	_draw_gauge(Rect2(58, 126, 214, 8), tea.state.steep_ticks, 0, 360, foreground, background, false)
+	draw_string(font, Vector2(8, 134), _catalog.text(&"ui.minigame.tea.steep", _locale), HORIZONTAL_ALIGNMENT_LEFT, 48, _compact_font_size(), foreground)
 	var pour_key := &"ui.minigame.tea.pour_ready" if tea.can_pour() else &"ui.minigame.tea.pour_wait"
 	draw_string(font, Vector2(18, 150), _catalog.text(pour_key, _locale), HORIZONTAL_ALIGNMENT_LEFT, 190, _compact_font_size(), foreground)
 	var timer_text := (
 		_catalog.text(&"ui.minigame.tea.timer.off", _locale)
 		if tea.assists.no_timer
-		else "TIME %02d" % ceili(tea.state.remaining_ticks / 60.0)
+		else "%s %02d" % [_catalog.text(&"ui.minigame.tea.time", _locale), ceili(tea.state.remaining_ticks / 60.0)]
 	)
 	draw_string(font, Vector2(216, 150), timer_text, HORIZONTAL_ALIGNMENT_RIGHT, 84, _compact_font_size(), foreground)
 	if _visual_cue_seconds > 0.0:

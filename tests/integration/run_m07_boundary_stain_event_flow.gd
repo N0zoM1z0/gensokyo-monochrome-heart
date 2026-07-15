@@ -89,8 +89,21 @@ func _run_clear_branch(graph: EventGraphRecord) -> void:
 	mode.step_fixture(1, bomb_frame)
 	_expect(
 		bool(mode.capture_debug_state().get("no_flash", false))
-		and not bool(mode.capture_debug_state().get("flash_border_active", true)),
-		"no-flash danmaku still armed its high-contrast border pulse"
+		and not bool(mode.capture_debug_state().get("flash_border_active", true))
+		and is_zero_approx(float(mode.capture_debug_state().get("flash_border_seconds", -1.0))),
+		"no-flash danmaku still armed its high-contrast border pulse on the trigger frame"
+	)
+	var no_flash_sequence: Array[bool] = []
+	for _frame: int in range(4):
+		await process_frame
+		var frame_debug := mode.capture_debug_state()
+		no_flash_sequence.append(
+			not bool(frame_debug.get("flash_border_active", true))
+			and is_zero_approx(float(frame_debug.get("flash_border_seconds", -1.0)))
+		)
+	_expect(
+		not false in no_flash_sequence,
+		"no-flash danmaku exposed a border pulse during the four-frame post-trigger sequence"
 	)
 	mode.retry_phase_for_test()
 	mode.step_fixture(120, held)

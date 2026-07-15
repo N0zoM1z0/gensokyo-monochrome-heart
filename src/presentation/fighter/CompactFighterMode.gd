@@ -303,10 +303,11 @@ func capture_debug_state() -> Dictionary:
 		"training": _training_overlay,
 		"tutorial_waiting": _tutorial_waiting,
 		"start_release_ticks": _start_release_ticks,
-			"resume_countdown_ticks": _resume_countdown_ticks,
-			"no_flash": _no_flash_active,
-			"flash_border_active": _border_stamp_seconds > 0.0,
-			"result": String(final_result.result_tag) if final_result != null else "",
+		"resume_countdown_ticks": _resume_countdown_ticks,
+		"no_flash": _no_flash_active,
+		"flash_border_active": _border_stamp_seconds > 0.0,
+		"flash_border_seconds": _border_stamp_seconds,
+		"result": String(final_result.result_tag) if final_result != null else "",
 	}, true)
 	return debug
 
@@ -778,6 +779,9 @@ func _draw_footer(foreground: Color, background: Color) -> void:
 
 func _draw_intro(foreground: Color, background: Color) -> void:
 	var font := _font()
+	if ui_scale_percent() > 100:
+		_draw_large_text_intro(font, foreground, background)
+		return
 	var panel := Rect2(19, 45, 282, 98) if _tutorial_waiting else Rect2(24, 51, 272, 84)
 	draw_rect(panel, background)
 	draw_rect(panel, foreground, false, 2.0)
@@ -788,6 +792,43 @@ func _draw_intro(foreground: Color, background: Color) -> void:
 		draw_string(font, Vector2(30, 105 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
 	if _tutorial_waiting:
 		draw_string(font, Vector2(30, 136), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.fighter.intro.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
+
+
+func _draw_large_text_intro(font: Font, foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(0, 0, 320, 180), background)
+	var panel := Rect2(5, 5, 310, 170)
+	draw_rect(panel, background)
+	draw_rect(panel, foreground, false, 2.0)
+	draw_string(font, Vector2(12, 28), _catalog.text(&"ui.fighter.terms.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 296, _title_font_size(), foreground)
+	draw_string(font, Vector2(12, 48), _catalog.text(&"ui.fighter.intro.rule", _locale), HORIZONTAL_ALIGNMENT_CENTER, 296, _body_font_size(), foreground)
+	var objective_lines := PixelTextWrapper.wrap(_catalog.text(&"ui.fighter.intro.objective", _locale), font, 286, _body_font_size(), _locale, 2)
+	for index: int in range(objective_lines.size()):
+		draw_string(font, Vector2(17, 68 + index * _body_line_height()), objective_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 286, _body_font_size(), foreground)
+	draw_line(Vector2(14, 96), Vector2(306, 96), foreground, 1.0)
+	var movement_font_size := scaled_ui_pixels(7 if _locale == &"en" else 8)
+	var move_hint := "%s %s" % [input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT), _catalog.text(&"ui.input.move", _locale)]
+	var jump_hint := "%s %s" % [input_binding(GameInput.MOVE_UP), _catalog.text(&"ui.fighter.command.jump", _locale)]
+	draw_string(font, Vector2(16, 109), move_hint, HORIZONTAL_ALIGNMENT_CENTER, 140, movement_font_size, foreground)
+	draw_string(font, Vector2(164, 109), jump_hint, HORIZONTAL_ALIGNMENT_CENTER, 140, movement_font_size, foreground)
+	var actions: Array[StringName] = [
+		GameInput.LIGHT, GameInput.HEAVY,
+		GameInput.SKILL, GameInput.SPELL,
+		GameInput.GUARD, GameInput.PAUSE,
+	]
+	var labels: Array[StringName] = [
+		&"ui.input.light", &"ui.input.heavy",
+		&"ui.input.skill", &"ui.input.spell",
+		&"ui.input.guard", &"ui.input.pause",
+	]
+	var control_font_size := scaled_ui_pixels(7 if _locale == &"en" else 8)
+	for index: int in range(actions.size()):
+		var column := index % 2
+		var row := floori(index / 2.0)
+		var x := 16.0 + column * 148.0
+		var binding := input_hint(actions[index], _catalog.text(labels[index], _locale))
+		draw_string(font, Vector2(x, 124 + row * 16), binding, HORIZONTAL_ALIGNMENT_CENTER, 140, control_font_size, foreground)
+	if _tutorial_waiting:
+		draw_string(font, Vector2(16, 169), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.fighter.intro.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 288, control_font_size, foreground)
 
 
 func _draw_break_banner(foreground: Color, background: Color) -> void:
@@ -892,7 +933,7 @@ func _draw_result(foreground: Color, background: Color) -> void:
 	var reason_key := StringName("ui.fighter.result.%s.reason" % tag)
 	draw_string(font, Vector2(32, 43), _catalog.text(title_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 256, _title_font_size(), foreground)
 	_draw_result_seals(Vector2(160, 68), foreground, background)
-	var lines := PixelTextWrapper.wrap(_catalog.text(reason_key, _locale), font, 240, _body_font_size(), _locale, 2)
+	var lines := PixelTextWrapper.wrap(_catalog.text(reason_key, _locale), font, 240, _body_font_size(), _locale, 3)
 	for index: int in range(lines.size()):
 		draw_string(font, Vector2(40, 101 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 240, _body_font_size(), foreground)
 	draw_string(font, Vector2(36, 136), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.fighter.result.continue", _locale)), HORIZONTAL_ALIGNMENT_LEFT, 248, _hud_font_size(), foreground)

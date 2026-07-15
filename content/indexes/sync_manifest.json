@@ -1,6 +1,6 @@
 {
   "schema": "gmh-design-content-sync-v1",
-  "source_revision": "2026.07.16.9",
+  "source_revision": "2026.07.16.10",
   "files": [
     {
       "source": "design/09_data/characters.json",
@@ -25,7 +25,7 @@
     {
       "source": "design/09_data/content_index.json",
       "destination": "content/indexes/design_content_index.json",
-      "sha256": "d1190be15595a7d0b08d6b4f82fdb4b04b0ba6cdf85eeed840ea4dd6f322b328"
+      "sha256": "7f77fca9600d2fa46654a740d4514c498aef2c439f574a7f9a004d0201896746"
     },
     {
       "source": "design/09_data/localization/en.csv",
@@ -40,7 +40,7 @@
     {
       "source": "design/09_data/localization/strings.csv",
       "destination": "content/localization/strings.csv",
-      "sha256": "0cd46d4b2ed688f1c840cf3c539b2b20ce48b9b31fc96c454fdbba76e9ca051b"
+      "sha256": "85217cfb4d0b2999eb80697aa4bdc2cb43bea8e2785113ceef9a7ebdcc5b0fbc"
     },
     {
       "source": "design/09_data/locations.json",

@@ -75,6 +75,8 @@ func _validate_glyph_hot_swap(failures: Array[String]) -> void:
 		failures.append("one-handed hint did not follow the active remapped binding")
 	if service.binding_text(GameInput.PAUSE) != "[ESCAPE]" or service.binding_text(GameInput.MOVE_LEFT) != "[A]":
 		failures.append("one-handed hint did not prefer the preset contract over duplicate defaults")
+	if service.binding_text(GameInput.CANCEL) != "[GRAVE]":
+		failures.append("one-handed hint exposed the engine's QUOTELEFT token instead of a player-facing key name")
 	InputMapInstaller.install_defaults(true)
 	service.free()
 

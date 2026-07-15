@@ -278,10 +278,11 @@ func capture_debug_state() -> Dictionary:
 		"tutorial_waiting": _tutorial_waiting,
 		"start_release_ticks": _start_release_ticks,
 		"resume_countdown_ticks": _resume_countdown_ticks,
-			"paused": runtime.is_paused if runtime != null else false,
-			"no_flash": _no_flash_active,
-			"flash_border_active": _border_pulse_seconds > 0.0,
-			"result": String(final_result.result_tag) if final_result != null else "",
+		"paused": runtime.is_paused if runtime != null else false,
+		"no_flash": _no_flash_active,
+		"flash_border_active": _border_pulse_seconds > 0.0,
+		"flash_border_seconds": _border_pulse_seconds,
+		"result": String(final_result.result_tag) if final_result != null else "",
 	}, true)
 	return debug
 
@@ -614,19 +615,54 @@ func _draw_status_rail(foreground: Color, background: Color) -> void:
 
 func _draw_intro(foreground: Color, background: Color) -> void:
 	var font := _font()
-	var panel := Rect2(10, 24, 212, 104) if _tutorial_waiting else Rect2(14, 31, 204, 82)
+	if ui_scale_percent() > 100 and _tutorial_waiting:
+		_draw_large_text_tutorial(font, foreground, background)
+		return
+	var panel := Rect2(10, 18, 212, 126) if _tutorial_waiting else Rect2(14, 31, 204, 82)
 	draw_rect(panel, background)
 	draw_rect(panel, foreground, false, 2.0)
-	draw_string(font, Vector2(18, 43), _catalog.text(&"ui.danmaku.telegraph", _locale), HORIZONTAL_ALIGNMENT_CENTER, 196, _hud_font_size(), foreground)
+	draw_string(font, Vector2(18, 37 if _tutorial_waiting else 43), _catalog.text(&"ui.danmaku.telegraph", _locale), HORIZONTAL_ALIGNMENT_CENTER, 196, _hud_font_size(), foreground)
 	var title_lines := PixelTextWrapper.wrap(_catalog.text(runtime.current_phase().title_key, _locale), font, 196, _title_font_size(), _locale, 2)
 	for index: int in range(title_lines.size()):
-		draw_string(font, Vector2(18, 63 + index * _title_line_height()), title_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 196, _title_font_size(), foreground)
+		draw_string(font, Vector2(18, (57 if _tutorial_waiting else 63) + index * _title_line_height()), title_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 196, _title_font_size(), foreground)
 	var teaching_key: StringName = [&"ui.danmaku.boundary.teach.amulet", &"ui.danmaku.boundary.teach.offering", &"ui.danmaku.boundary.teach.memory"][runtime.state.phase_index]
 	var teaching_lines := PixelTextWrapper.wrap(_catalog.text(teaching_key, _locale), font, 196, _body_font_size(), _locale, 2)
 	for index: int in range(teaching_lines.size()):
-		draw_string(font, Vector2(18, 94 + index * _body_line_height()), teaching_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
+		draw_string(font, Vector2(18, (84 if _tutorial_waiting else 94) + index * _body_line_height()), teaching_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
 	if _tutorial_waiting:
-		draw_string(font, Vector2(18, 120), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.danmaku.tutorial.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
+		var move_hint := "%s / %s %s" % [
+			input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT),
+			input_axis_binding(GameInput.MOVE_UP, GameInput.MOVE_DOWN),
+			_catalog.text(&"ui.input.move", _locale),
+		]
+		draw_string(font, Vector2(18, 120), move_hint, HORIZONTAL_ALIGNMENT_CENTER, 196, _hud_font_size(), foreground)
+		draw_string(font, Vector2(18, 139), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.danmaku.tutorial.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
+
+
+func _draw_large_text_tutorial(font: Font, foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(0, 0, 320, 180), background)
+	draw_rect(Rect2(5, 5, 310, 170), foreground, false, 2.0)
+	draw_string(font, Vector2(12, 23), _catalog.text(&"ui.danmaku.telegraph", _locale), HORIZONTAL_ALIGNMENT_CENTER, 296, _hud_font_size(), foreground)
+	var title_lines := PixelTextWrapper.wrap(_catalog.text(runtime.current_phase().title_key, _locale), font, 290, _title_font_size(), _locale, 2)
+	for index: int in range(title_lines.size()):
+		draw_string(font, Vector2(15, 43 + index * _title_line_height()), title_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 290, _title_font_size(), foreground)
+	var teaching_key: StringName = [&"ui.danmaku.boundary.teach.amulet", &"ui.danmaku.boundary.teach.offering", &"ui.danmaku.boundary.teach.memory"][runtime.state.phase_index]
+	var teaching_lines := PixelTextWrapper.wrap(_catalog.text(teaching_key, _locale), font, 286, _body_font_size(), _locale, 2)
+	for index: int in range(teaching_lines.size()):
+		draw_string(font, Vector2(17, 69 + index * _body_line_height()), teaching_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 286, _body_font_size(), foreground)
+	draw_line(Vector2(14, 96), Vector2(306, 96), foreground, 1.0)
+	var control_size := scaled_ui_pixels(7 if _locale == &"en" else 8)
+	var move_hint := "%s / %s %s" % [
+		input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT),
+		input_axis_binding(GameInput.MOVE_UP, GameInput.MOVE_DOWN),
+		_catalog.text(&"ui.input.move", _locale),
+	]
+	draw_string(font, Vector2(16, 111), move_hint, HORIZONTAL_ALIGNMENT_CENTER, 288, control_size, foreground)
+	draw_string(font, Vector2(16, 129), input_hint(GameInput.SHOT, _catalog.text(&"ui.input.shot", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
+	draw_string(font, Vector2(164, 129), input_hint(GameInput.FOCUS, _catalog.text(&"ui.input.focus", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
+	draw_string(font, Vector2(16, 147), input_hint(GameInput.BOMB, _catalog.text(&"ui.input.bomb", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
+	draw_string(font, Vector2(164, 147), input_hint(GameInput.COMPANION, _catalog.text(&"ui.input.margin", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
+	draw_string(font, Vector2(16, 169), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.danmaku.tutorial.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 288, control_size, foreground)
 
 
 func _draw_visual_cue(foreground: Color, background: Color) -> void:

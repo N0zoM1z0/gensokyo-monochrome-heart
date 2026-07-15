@@ -86,10 +86,20 @@ func _draw_screen(profile: PresentationProfile) -> void:
 		draw_rect(Rect2(28, 79, 264, 24), foreground, false, 1.0)
 		_draw_localized(&"ui.credits.complete", Vector2(34, 95), 252, HORIZONTAL_ALIGNMENT_CENTER, 10)
 	if ui_scale_percent() > 100:
-		_draw_localized_wrapped(&"ui.credits.controls", Rect2(18, 141, 190, 32), 2, 7)
+		var glyph_service := get_node_or_null("/root/InputGlyphService")
+		var confirm_binding: String = glyph_service.binding_text(GameInput.CONFIRM, active_locale()) if glyph_service != null else ""
+		var page_left_binding: String = glyph_service.binding_text(GameInput.PAGE_LEFT, active_locale()) if glyph_service != null else ""
+		var page_right_binding: String = glyph_service.binding_text(GameInput.PAGE_RIGHT, active_locale()) if glyph_service != null else ""
+		var controls_font := _japanese_font if active_locale() == &"ja" else _latin_font
+		var controls_font_size := 10 if active_locale() == &"ja" else 7
+		var pause_text := _text(&"ui.input.pause")
+		var fast_text := _text(&"ui.credits.fast")
+		draw_string(controls_font, Vector2(18, 153), "%s %s" % [confirm_binding, pause_text], HORIZONTAL_ALIGNMENT_LEFT, 184, controls_font_size, foreground)
+		draw_string(controls_font, Vector2(18, 166), "%s/%s %s" % [page_left_binding, page_right_binding, fast_text], HORIZONTAL_ALIGNMENT_LEFT, 184, controls_font_size, foreground)
 		if not action_hints.is_empty():
-			action_hints[0].position = Vector2(220, 145)
-			action_hints[0].size = Vector2(82, 22)
+			action_hints[0].position = Vector2(208, 145)
+			action_hints[0].size = Vector2(94, 22)
+			action_hints[0].set_ui_scale(125)
 	else:
 		_draw_localized(&"ui.credits.controls", Vector2(18, 166), 198, HORIZONTAL_ALIGNMENT_LEFT, 10)
 

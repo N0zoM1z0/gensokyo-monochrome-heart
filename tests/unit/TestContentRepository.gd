@@ -31,7 +31,7 @@ func _expect_counts(report: ContentLoadReport, failures: Array[String]) -> void:
 		report.music_cue_count,
 		report.event_node_count,
 	]
-	var expected := [71, 19, 28, 19, 305, 89, 36]
+	var expected := [71, 19, 28, 19, 310, 89, 36]
 	if actual != expected:
 		failures.append("typed starter counts differ: expected %s, got %s" % [expected, actual])
 	if not report.human_readable().contains("content_hash=%s" % report.content_hash):
@@ -57,7 +57,7 @@ func _expect_hash_and_cache(repository: ContentRepository, failures: Array[Strin
 		if not schema_errors.is_empty():
 			failures.append("runtime index schema failed: %s" % "; ".join(schema_errors))
 	var replay_header := repository.replay_header()
-	if replay_header.content_hash != first_hash or replay_header.content_revision != &"2026.07.16.9":
+	if replay_header.content_hash != first_hash or replay_header.content_revision != &"2026.07.16.10":
 		failures.append("typed replay header omitted content identity")
 	if replay_header.diagnostic_header() != repository.diagnostic_header():
 		failures.append("diagnostic and replay content headers diverge")

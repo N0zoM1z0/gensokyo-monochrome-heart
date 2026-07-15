@@ -126,8 +126,21 @@ func _run_win_branch(graph: EventGraphRecord) -> void:
 	)
 	_expect(
 		bool(mode.capture_debug_state().get("no_flash", false))
-		and not bool(mode.capture_debug_state().get("flash_border_active", true)),
-		"no-flash fighter still armed its high-contrast Spell Break border"
+		and not bool(mode.capture_debug_state().get("flash_border_active", true))
+		and is_zero_approx(float(mode.capture_debug_state().get("flash_border_seconds", -1.0))),
+		"no-flash fighter still armed its high-contrast Spell Break border on the trigger frame"
+	)
+	var no_flash_sequence: Array[bool] = []
+	for _frame: int in range(4):
+		await process_frame
+		var frame_debug := mode.capture_debug_state()
+		no_flash_sequence.append(
+			not bool(frame_debug.get("flash_border_active", true))
+			and is_zero_approx(float(frame_debug.get("flash_border_seconds", -1.0)))
+		)
+	_expect(
+		not false in no_flash_sequence,
+		"no-flash fighter exposed a border stamp during the four-frame post-trigger sequence"
 	)
 	mode.force_spell_break_for_test(0)
 	var win := mode.current_result()

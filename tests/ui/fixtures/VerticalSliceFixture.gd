@@ -62,6 +62,10 @@ func resolved_profile_id() -> StringName:
 	return slice.resolved_profile_id() if slice != null else &"A"
 
 
+func handle_semantic_action(action: StringName) -> bool:
+	return slice.handle_semantic_action(action) if slice != null else false
+
+
 func _drive_to_fixture_phase() -> void:
 	if fixture_phase == "invitation":
 		return

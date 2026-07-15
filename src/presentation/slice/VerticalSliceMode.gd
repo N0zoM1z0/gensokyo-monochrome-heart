@@ -806,7 +806,7 @@ func _draw_invitation(foreground: Color, background: Color) -> void:
 		draw_rect(Rect2(24, 58, 70, 34), foreground, false, 2.0)
 		draw_colored_polygon(PackedVector2Array([Vector2(28, 62), Vector2(59, 78), Vector2(90, 62)]), foreground)
 		draw_colored_polygon(PackedVector2Array([Vector2(33, 63), Vector2(59, 75), Vector2(85, 63)]), background)
-		_draw_wrapped(&"ui.slice.invitation.body", Rect2(105, 45, 190, 96), 5)
+		_draw_wrapped(&"ui.slice.invitation.body", Rect2(105, 45, 190, 105), 6)
 		_draw_footer(&"ui.slice.invitation.confirm", foreground, background)
 		return
 	draw_rect(Rect2(24, 55, 118, 62), foreground, false, 2.0)
@@ -980,7 +980,8 @@ func _draw_journal(foreground: Color, background: Color) -> void:
 			_large_text_page + 1,
 			pages,
 		]
-		_draw_text(page_hint, Vector2(30, 139), 260, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+		_draw_text(_ui(&"ui.slice.journal.read_only_short"), Vector2(30, 127), 260, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+		_draw_text(page_hint, Vector2(30, 141), 260, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 	if ui_scale_percent() == 100:
 		draw_rect(Rect2(27, 125, 266, 15), foreground, false, 1.0)
 		_draw_text(_ui(&"ui.slice.journal.replay_body"), Vector2(32, 137), 256, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())

@@ -2,10 +2,10 @@
 event.hkr.empty_cushion.title,event title,,The Empty Cushion,空いたままの座布団,180,Original
 obj.hkr.find_second_cup,objective,,Find why a second cup is warm.,二つ目の湯呑みが温かい理由を探す。,200,Original
 dlg.hkr.empty_cushion.reimu.001,private dialogue,Reimu,I didn't wait. I simply hadn't put the second cup away yet.,待ってないわ。二つ目の湯呑みを片づけてなかっただけ。,214,Original
-choice.hkr.empty_cushion.direct,tone choice,,"Say, ""You fixed that for me.""",「私のために直したの？」と聞く。,188,Original
+choice.hkr.empty_cushion.direct,tone choice,,Say: You fixed that for me.,「私のために直したの？」と聞く。,188,Original
 choice.hkr.empty_cushion.playful,tone choice,,Ask whether every visitor gets reserved seating.,「客にはみんな指定席があるの？」と冗談を言う。,200,Original
 choice.hkr.empty_cushion.patient,tone choice,,Pour tea and leave the empty place open.,何も正さず、お茶を注いで席を空けておく。,210,Original
-choice.hkr.empty_cushion.defiant,tone choice,,"Say, ""You could admit you're glad.""",「戻ってきて嬉しいって言えば？」,214,Original
+choice.hkr.empty_cushion.defiant,tone choice,,Say: You could admit you're glad.,「戻ってきて嬉しいって言えば？」,214,Original
 dlg.hkr.empty_cushion.reimu.excellent,private dialogue,Reimu,...You remembered the temperature. Sit down before it changes.,……温度まで覚えてたのね。変わる前に座りなさい。,214,Original
 dlg.hkr.empty_cushion.reimu.clear,private dialogue,Reimu,That is fine. Hand me the other cup.,それでいいわ。もう一つの湯呑みを取って。,214,Original
 dlg.hkr.empty_cushion.reimu.loss,private dialogue,Reimu,Too hot. Move over; I will fix it.,熱すぎ。ちょっとどいて、私が直す。,214,Original

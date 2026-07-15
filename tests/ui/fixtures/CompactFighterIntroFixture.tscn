@@ -3,4 +3,4 @@
 [ext_resource type="PackedScene" path="res://src/presentation/fighter/CompactFighterMode.tscn" id="1_base"]
 
 [node name="CompactFighterIntroFixture" instance=ExtResource("1_base")]
-fixture_state = "intro"
+fixture_state = "live"

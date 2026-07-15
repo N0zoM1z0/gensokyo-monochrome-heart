@@ -39,8 +39,11 @@ func _run() -> void:
 			options.is_safe_flash
 		)
 	_apply_ui_scale_fixture(fixture, options.ui_scale_percent)
+	_apply_one_handed_fixture(fixture, options.one_handed)
 	if options.focus_id != &"" and fixture.has_method("restore_focus"):
 		fixture.call("restore_focus", options.focus_id)
+	if options.semantic_action != &"" and fixture.has_method("handle_semantic_action"):
+		fixture.call("handle_semantic_action", options.semantic_action)
 	_add_one_bit_threshold(viewport)
 	var resolved_profile := options.profile_id
 	if fixture.has_method("resolved_profile_id"):
@@ -130,6 +133,19 @@ func _apply_ui_scale_fixture(node: Node, percent: int) -> void:
 		_apply_ui_scale_fixture(child, percent)
 
 
+func _apply_one_handed_fixture(node: Node, preset_name: String) -> void:
+	if node.has_method("set_one_handed_fixture"):
+		var preset := InputMapInstaller.OneHandedPreset.NONE
+		if preset_name == "left":
+			preset = InputMapInstaller.OneHandedPreset.LEFT_HAND
+		elif preset_name == "right":
+			preset = InputMapInstaller.OneHandedPreset.RIGHT_HAND
+		node.call("set_one_handed_fixture", preset)
+		return
+	for child: Node in node.get_children():
+		_apply_one_handed_fixture(child, preset_name)
+
+
 func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:
 	var options := ScreenshotOptions.new()
 	for argument: String in arguments:
@@ -155,6 +171,8 @@ func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:
 			options.ui_scale_percent = UI_SCALE_POLICY.normalize(int(argument.trim_prefix("--ui-scale=")))
 		elif argument.begins_with("--focus-id="):
 			options.focus_id = StringName(argument.trim_prefix("--focus-id="))
+		elif argument.begins_with("--semantic-action="):
+			options.semantic_action = StringName(argument.trim_prefix("--semantic-action="))
 	return options
 
 
@@ -177,3 +195,4 @@ class ScreenshotOptions:
 	var one_handed: String = "off"
 	var ui_scale_percent: int = 100
 	var focus_id: StringName = &""
+	var semantic_action: StringName = &""

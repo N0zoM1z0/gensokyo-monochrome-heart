@@ -35,6 +35,8 @@ var _safe_flash_toggle: PixelToggle
 var _needles_toggle: PixelToggle
 var _alcohol_toggle: PixelToggle
 var _coercion_toggle: PixelToggle
+var _visible_first: int = 0
+var _visible_count: int = 0
 
 
 func _build_screen() -> void:
@@ -105,6 +107,12 @@ func set_ui_scale_fixture(percent: int) -> void:
 	super.set_ui_scale_fixture(percent)
 	_opening_ui_scale_percent = _fixture_ui_scale_percent
 	_current_ui_scale_percent = _fixture_ui_scale_percent
+	_refresh_screen()
+
+
+func set_one_handed_fixture(preset: int) -> void:
+	_opening_one_handed_preset = clampi(preset, InputMapInstaller.OneHandedPreset.NONE, InputMapInstaller.OneHandedPreset.RIGHT_HAND)
+	_current_one_handed_preset = _opening_one_handed_preset
 	_refresh_screen()
 
 
@@ -182,11 +190,23 @@ func _refresh_screen() -> void:
 func _draw_screen(profile: PresentationProfile) -> void:
 	var foreground := profile.paper if profile.is_inverted else profile.ink
 	_draw_localized(&"ui.options.title", Vector2(12, 24), 296, HORIZONTAL_ALIGNMENT_CENTER)
+	var has_above := _visible_first > 0
+	var has_below := _visible_first + _visible_count < rows.size()
+	var position_hint := "%s %02d/%02d %s" % [
+		_text(&"ui.options.page.up") if has_above else "  ",
+		focused_index + 1,
+		rows.size(),
+		_text(&"ui.options.page.down") if has_below else "  ",
+	]
+	var page_font := _japanese_font if active_locale() == &"ja" else _latin_font
+	var page_font_size := 7 if ui_scale_percent() == 100 else (9 if ui_scale_percent() == 125 else 10)
+	draw_string(page_font, Vector2(206, 24), position_hint, HORIZONTAL_ALIGNMENT_RIGHT, 98, page_font_size, foreground)
 	if ui_scale_percent() == 100:
 		draw_line(Vector2(16, 143), Vector2(304, 143), foreground, 1.0)
 		_draw_localized_wrapped(&"ui.options.help", Rect2(16, 145, 288, 10), 1, 8)
 	else:
-		draw_line(Vector2(16, 151), Vector2(304, 151), foreground, 1.0)
+		var separator_y := 130.0 if ui_scale_percent() == 125 else 121.0
+		draw_line(Vector2(16, separator_y), Vector2(304, separator_y), foreground, 1.0)
 
 
 func _add_toggle(position: Vector2) -> PixelToggle:
@@ -299,11 +319,13 @@ func _apply_scale_layout() -> void:
 	if rows.size() < 10:
 		return
 	var percent := ui_scale_percent()
-	var visible_count := 7 if percent == 100 else (5 if percent == 125 else 4)
+	var visible_count := 7 if percent == 100 else (4 if percent == 125 else 3)
 	var row_height := 15 if percent == 100 else (21 if percent == 125 else 26)
 	var row_step := 16 if percent == 100 else (23 if percent == 125 else 28)
 	var start_y := 29 if percent == 100 else 34
 	var first := clampi(focused_index - 1, 0, rows.size() - visible_count)
+	_visible_first = first
+	_visible_count = visible_count
 	for index: int in range(rows.size()):
 		var slot := index - first
 		rows[index].visible = slot >= 0 and slot < visible_count
@@ -316,10 +338,18 @@ func _apply_scale_layout() -> void:
 	_position_toggle(_alcohol_toggle, 6)
 	_position_toggle(_coercion_toggle, 7)
 	if action_hints.size() >= 2:
-		action_hints[0].position = Vector2(16, 157)
-		action_hints[0].size = Vector2(142, 18)
-		action_hints[1].position = Vector2(166, 157)
-		action_hints[1].size = Vector2(138, 18)
+		if percent == 100:
+			action_hints[0].position = Vector2(16, 157)
+			action_hints[0].size = Vector2(142, 18)
+			action_hints[1].position = Vector2(166, 157)
+			action_hints[1].size = Vector2(138, 18)
+		else:
+			var first_hint_y := 133.0 if percent == 125 else 126.0
+			var second_hint_y := 151.0 if percent == 125 else 148.0
+			action_hints[0].position = Vector2(16, first_hint_y)
+			action_hints[0].size = Vector2(288, 20)
+			action_hints[1].position = Vector2(16, second_hint_y)
+			action_hints[1].size = Vector2(288, 20)
 
 
 func _position_toggle(toggle: PixelToggle, row_index: int) -> void:

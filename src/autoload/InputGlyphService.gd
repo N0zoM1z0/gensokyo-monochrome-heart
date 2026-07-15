@@ -35,7 +35,7 @@ func binding_text(action: StringName, _locale: StringName = &"en") -> String:
 	if active_device == Device.KEYBOARD:
 		var preferred_key := InputMapInstaller.preferred_one_handed_keycode(action)
 		if preferred_key != KEY_NONE:
-			return "[%s]" % OS.get_keycode_string(preferred_key).to_upper()
+			return "[%s]" % _keyboard_key_label(preferred_key)
 	var candidates: Array[InputEvent] = []
 	for event: InputEvent in InputMap.action_get_events(action):
 		if active_device == Device.KEYBOARD and event is InputEventKey:
@@ -46,11 +46,17 @@ func binding_text(action: StringName, _locale: StringName = &"en") -> String:
 		return "[MOUSE]" if active_device == Device.POINTER else "[?]"
 	var selected: InputEvent = candidates.front()
 	if selected is InputEventKey:
-		var label: String = OS.get_keycode_string((selected as InputEventKey).physical_keycode).to_upper()
+		var label := _keyboard_key_label((selected as InputEventKey).physical_keycode)
 		return "[%s]" % (label if not label.is_empty() else "KEY")
 	if selected is InputEventJoypadButton:
 		return "[%s]" % _joy_button_label((selected as InputEventJoypadButton).button_index)
 	return "[STICK]"
+
+
+func _keyboard_key_label(keycode: Key) -> String:
+	if keycode == KEY_QUOTELEFT:
+		return "GRAVE"
+	return OS.get_keycode_string(keycode).to_upper()
 
 
 func _device_for_event(event: InputEvent) -> Device:
