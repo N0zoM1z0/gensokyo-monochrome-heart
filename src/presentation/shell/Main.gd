@@ -78,6 +78,8 @@ func _on_route_completed(result: ScreenRouteResult) -> void:
 
 func _on_screen_command(command_id: StringName, payload: Dictionary) -> void:
 	match command_id:
+		&"continue_game":
+			_continue_game.call_deferred(payload)
 		&"new_profile":
 			var kernel := get_node_or_null("/root/GameKernel")
 			if kernel != null:
@@ -173,6 +175,37 @@ func _enter_vertical_slice() -> void:
 		var result: Variant = save_service.autosave(&"day_start")
 		if result is SaveOperationResult and not result.is_success():
 			push_warning("Day-start autosave failed: %s" % result.message)
+	await _route_primary(&"vertical_slice")
+
+
+func _continue_game(payload: Dictionary) -> void:
+	var profile_id := StringName(payload.get("profile_id", &""))
+	var slot_id := StringName(payload.get("slot_id", &""))
+	var save_service := get_node_or_null("/root/SaveService")
+	if save_service == null:
+		push_error("Continue route blocked because SaveService is unavailable.")
+		return
+	var loaded: Variant = save_service.load_slot(profile_id, slot_id)
+	if not loaded is SaveOperationResult or not loaded.is_success():
+		push_error("Continue route could not load %s/%s." % [profile_id, slot_id])
+		return
+	var state := loaded.state as GameState
+	var presentation_profile_id := ProfileIdentityRules.presentation_profile_id(profile_id)
+	var settings := get_node_or_null("/root/SettingsService")
+	if settings != null:
+		settings.set_preferred_presentation_profile(presentation_profile_id)
+	var theme := get_node_or_null("/root/UiThemeRegistry")
+	if theme != null:
+		theme.set_native_profile(presentation_profile_id)
+	var accessibility := get_node_or_null("/root/AccessibilityState")
+	if accessibility != null and state != null:
+		accessibility.apply_named_preset(
+			StringName(String(state.protagonist.comfort_profile_id).trim_prefix("accessibility.")),
+			false
+		)
+	var focus_router := get_node_or_null("/root/FocusRouter")
+	if focus_router != null:
+		focus_router.clear()
 	await _route_primary(&"vertical_slice")
 
 

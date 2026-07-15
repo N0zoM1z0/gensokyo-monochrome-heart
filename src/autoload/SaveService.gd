@@ -68,6 +68,15 @@ func list_cards(profile_id: StringName) -> Array[SaveCardMetadata]:
 	return _repository.list_cards(profile_id)
 
 
+func latest_story_card() -> SaveCardMetadata:
+	var latest: SaveCardMetadata
+	for profile_id: StringName in ProfileIdentityRules.STORY_PROFILE_IDS:
+		for card: SaveCardMetadata in _repository.list_cards(profile_id):
+			if latest == null or card.saved_utc > latest.saved_utc:
+				latest = card
+	return latest
+
+
 func _save_slot(
 	slot_id: StringName,
 	context: SaveCardContext,

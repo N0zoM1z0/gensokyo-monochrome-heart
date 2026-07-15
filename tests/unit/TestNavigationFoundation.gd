@@ -82,6 +82,8 @@ func _validate_credits_contract(failures: Array[String]) -> void:
 		failures.append("Credits omitted legal, engine, font, audio, or asset provenance")
 	if CreditsScreen.CREDIT_MAX_LINES_PER_ENTRY < 2:
 		failures.append("Credits do not reserve wrapping space for long EN/JA provenance lines")
+	if ProfileIdentityRules.presentation_profile_id(&"p03") != &"C":
+		failures.append("save-profile identity cannot restore its presentation profile")
 
 
 func _validate_screen_text_boundary(failures: Array[String]) -> void:

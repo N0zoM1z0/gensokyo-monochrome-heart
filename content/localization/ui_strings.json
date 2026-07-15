@@ -224,7 +224,7 @@
     {"key": "ui.title.options", "en": "OPTIONS", "ja": "オプション"},
     {"key": "ui.title.quit", "en": "QUIT", "ja": "終了"},
     {"key": "ui.title.unofficial", "en": "UNOFFICIAL TOUHOU PROJECT FAN WORK", "ja": "東方Project 非公式二次創作"},
-    {"key": "ui.title.version", "en": "FOUNDATION M01", "ja": "基礎版 M01"},
+    {"key": "ui.title.version", "en": "VERTICAL SLICE M09", "ja": "垂直スライス M09"},
     {"key": "accessibility.preset.custom", "en": "CUSTOM", "ja": "カスタム"},
     {"key": "accessibility.preset.low_motion", "en": "LOW MOTION", "ja": "低モーション"},
     {"key": "accessibility.preset.original", "en": "ORIGINAL", "ja": "オリジナル"},

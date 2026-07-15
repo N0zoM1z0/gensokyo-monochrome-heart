@@ -57,7 +57,7 @@ func _expect_hash_and_cache(repository: ContentRepository, failures: Array[Strin
 		if not schema_errors.is_empty():
 			failures.append("runtime index schema failed: %s" % "; ".join(schema_errors))
 	var replay_header := repository.replay_header()
-	if replay_header.content_hash != first_hash or replay_header.content_revision != &"2026.07.15.3":
+	if replay_header.content_hash != first_hash or replay_header.content_revision != &"2026.07.15.4":
 		failures.append("typed replay header omitted content identity")
 	if replay_header.diagnostic_header() != repository.diagnostic_header():
 		failures.append("diagnostic and replay content headers diverge")

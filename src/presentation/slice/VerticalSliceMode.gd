@@ -220,6 +220,9 @@ func set_instant_text_for_test(enabled: bool) -> void:
 	_instant_text_for_test = enabled
 	if _dialogue != null:
 		_dialogue.instant_text = enabled
+		if enabled and _dialogue.current != null:
+			_dialogue.current.revealed_count = _dialogue.current.graphemes.size()
+			_dialogue.current.is_complete = true
 
 
 func configure_fixture(

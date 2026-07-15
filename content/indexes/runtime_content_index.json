@@ -1,7 +1,7 @@
 {
   "schema": "gmh-runtime-content-index-v1",
-  "content_revision": "2026.07.15.3",
-  "content_hash": "d3bbd3bb73188c2790b750698674d96fecdd4e26849845d9d676e48e95eef3e6",
+  "content_revision": "2026.07.15.4",
+  "content_hash": "456ce4c2931dcda44085c46a5a0e111abfd2bca33a6ccb75df429eb668746f89",
   "counts": {
     "characters": 71,
     "locations": 19,

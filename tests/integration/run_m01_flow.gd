@@ -27,6 +27,7 @@ func _run() -> void:
 	await _verify_new_profile_to_mode()
 	await _verify_pause_modal_focus_and_resume()
 	await _verify_pause_return_to_title()
+	await _verify_continue_from_latest_save()
 	await _finish()
 
 
@@ -191,6 +192,29 @@ func _verify_pause_return_to_title() -> void:
 	var kernel := root.get_node_or_null("GameKernel")
 	if kernel != null and kernel.has_active_state():
 		_fail("return-to-title retained an active story state")
+
+
+func _verify_continue_from_latest_save() -> void:
+	var title := shell.active_primary_screen() as TitleScreen
+	if title == null or title.current_focus_id() != &"title.continue":
+		_fail("title did not expose Continue after a valid day-start save existed")
+		return
+	_press(GameInput.CONFIRM)
+	if not await _wait_for_route(&"vertical_slice"):
+		return
+	var kernel := root.get_node_or_null("GameKernel")
+	var state: Variant = kernel.state_snapshot() if kernel != null else null
+	if not state is GameState or state.profile_id != &"p02":
+		_fail("Continue did not restore the saved Profile B story state")
+	var settings := root.get_node_or_null("SettingsService")
+	if settings == null or settings.preferred_presentation_profile != &"B":
+		_fail("Continue did not restore the saved presentation-profile identity")
+	var accessibility := root.get_node_or_null("AccessibilityState")
+	if accessibility == null or accessibility.preset != AccessibilityState.Preset.LOW_MOTION:
+		_fail("Continue did not restore the saved Low Motion comfort preset")
+	var slice := shell.active_primary_screen() as VerticalSliceMode
+	if slice == null or slice.phase_id() != &"invitation":
+		_fail("Continue did not rebuild the vertical slice at its saved day cursor")
 
 
 func _press(action: StringName) -> void:
