@@ -98,6 +98,7 @@ func _validate_schema_inventory() -> void:
 		"event_graph.schema.json",
 		"event_index.schema.json",
 		"dialogue_index.schema.json",
+		"game_state_v2.schema.json",
 		"location_index.schema.json",
 		"minigame.schema.json",
 		"save_envelope.schema.json",

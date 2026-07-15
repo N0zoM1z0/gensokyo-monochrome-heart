@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "profile_id": "p01",
+  "chapter_id": "chapter.prologue",
+  "day": 3,
+  "time_slot": "dusk",
+  "current_location": "loc.outside_world",
+  "protagonist": {
+    "origin_id": "origin.outside_world",
+    "comfort_profile_id": "accessibility.story",
+    "profile_seed": 12345
+  },
+  "characters": {
+    "char.reimu_hakurei": {
+      "character_id": "char.reimu_hakurei",
+      "affinity": 2,
+      "route_stage": 2,
+      "route_intent": "friendship",
+      "memory_tags": ["shrine.second_cup"],
+      "completed_event_ids": ["evt.hkr.empty_cushion"],
+      "is_available": true
+    }
+  },
+  "regions": {
+    "loc.outside_world": {
+      "region_id": "loc.outside_world",
+      "condition_id": "region.normal",
+      "visit_count": 1,
+      "last_visited_day": 1,
+      "discovered_spot_ids": []
+    }
+  },
+  "flags": {},
+  "inventory": {
+    "items": {},
+    "keepsakes": {},
+    "tea_blends": {
+      "tea.plain_green": {
+        "blend_id": "tea.plain_green",
+        "unlocked_day": 1,
+        "times_prepared": 2
+      }
+    },
+    "equipped_keepsake_ids": [],
+    "selected_tea_blend_id": "tea.plain_green"
+  },
+  "rumors": {},
+  "journal": {
+    "entries": {},
+    "replay_event_ids": ["evt.hkr.empty_cushion"],
+    "glossary_entry_ids": []
+  },
+  "rng": {
+    "initial_seed": 12345,
+    "current_state": 1697253807,
+    "draw_count": 4
+  },
+  "legacy_route_intent_id": "route.hakurei.friendship",
+  "active_event_id": "",
+  "active_event_node_id": "",
+  "completed_event_ids": ["evt.hkr.empty_cushion"],
+  "play_time_seconds": 900
+}

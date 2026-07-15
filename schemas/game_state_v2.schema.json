@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gensokyo-monochrome-heart.invalid/schemas/game_state_v2.schema.json",
+  "title": "GameState Payload v2",
+  "type": "object",
+  "required": [
+    "schema_version", "profile_id", "chapter_id", "day", "time_slot", "current_location",
+    "protagonist", "characters", "regions", "flags", "inventory", "rumors", "journal", "rng",
+    "route_intent_id", "active_event_id", "active_event_node_id", "completed_event_ids",
+    "route_completion_ids", "play_time_seconds"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "profile_id": {"type": "string", "pattern": "^p[0-9]{2,}$"},
+    "chapter_id": {"type": "string", "pattern": "^chapter\\."},
+    "day": {"type": "integer", "minimum": 1},
+    "time_slot": {"enum": ["morning", "day", "dusk", "night"]},
+    "current_location": {"type": "string", "pattern": "^loc\\."},
+    "protagonist": {
+      "type": "object",
+      "required": ["origin_id", "comfort_profile_id", "profile_seed"],
+      "properties": {
+        "origin_id": {"type": "string"},
+        "comfort_profile_id": {"type": "string"},
+        "profile_seed": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "characters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["character_id", "relationship", "route_stage", "route_intent", "memory_tags", "completed_event_ids", "is_available"],
+        "properties": {
+          "character_id": {"type": "string", "pattern": "^char\\."},
+          "relationship": {
+            "type": "object",
+            "required": ["trust", "ease", "respect", "spark", "strain"],
+            "properties": {
+              "trust": {"type": "integer", "minimum": -3, "maximum": 3},
+              "ease": {"type": "integer", "minimum": -3, "maximum": 3},
+              "respect": {"type": "integer", "minimum": -3, "maximum": 3},
+              "spark": {"type": "integer", "minimum": -3, "maximum": 3},
+              "strain": {"type": "integer", "minimum": -3, "maximum": 3}
+            },
+            "additionalProperties": false
+          },
+          "route_stage": {"type": "integer", "minimum": 0},
+          "route_intent": {"enum": ["undecided", "friendship", "romance", "postponed"]},
+          "memory_tags": {"type": "array", "items": {"type": "string"}},
+          "completed_event_ids": {"type": "array", "items": {"type": "string", "pattern": "^evt\\."}},
+          "is_available": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "regions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["region_id", "condition_id", "visit_count", "last_visited_day", "discovered_spot_ids"],
+        "properties": {
+          "region_id": {"type": "string", "pattern": "^loc\\."},
+          "condition_id": {"type": "string"},
+          "visit_count": {"type": "integer", "minimum": 0},
+          "last_visited_day": {"type": "integer", "minimum": 0},
+          "discovered_spot_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["flag_id", "kind", "value"],
+        "properties": {
+          "flag_id": {"type": "string", "pattern": "^flag\\."},
+          "kind": {"enum": ["bool", "int", "id"]},
+          "value": {"type": ["boolean", "integer", "string"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "required": ["items", "keepsakes", "tea_blends", "equipped_keepsake_ids", "selected_tea_blend_id"],
+      "properties": {
+        "items": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["item_id", "count"],
+            "properties": {
+              "item_id": {"type": "string", "pattern": "^item\\."},
+              "count": {"type": "integer", "minimum": 1, "maximum": 999}
+            },
+            "additionalProperties": false
+          }
+        },
+        "keepsakes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["keepsake_id", "source_event_id", "owner_character_id", "acquired_day", "is_returnable", "dialogue_tags"],
+            "properties": {
+              "keepsake_id": {"type": "string", "pattern": "^item\\.keepsake\\."},
+              "source_event_id": {"type": "string"},
+              "owner_character_id": {"type": "string"},
+              "acquired_day": {"type": "integer", "minimum": 1},
+              "is_returnable": {"type": "boolean"},
+              "dialogue_tags": {"type": "array", "items": {"type": "string"}}
+            },
+            "additionalProperties": false
+          }
+        },
+        "tea_blends": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["blend_id", "unlocked_day", "times_prepared"],
+            "properties": {
+              "blend_id": {"type": "string", "pattern": "^tea\\."},
+              "unlocked_day": {"type": "integer", "minimum": 1},
+              "times_prepared": {"type": "integer", "minimum": 0}
+            },
+            "additionalProperties": false
+          }
+        },
+        "equipped_keepsake_ids": {"type": "array", "maxItems": 2, "items": {"type": "string", "pattern": "^item\\.keepsake\\."}},
+        "selected_tea_blend_id": {"type": "string", "pattern": "^tea\\."}
+      },
+      "additionalProperties": false
+    },
+    "rumors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["rumor_id", "claim_key", "source_character_id", "reliability_milli", "privacy", "mutation_count", "status", "acquired_day"],
+        "properties": {
+          "rumor_id": {"type": "string"},
+          "claim_key": {"type": "string"},
+          "source_character_id": {"type": "string"},
+          "reliability_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+          "privacy": {"enum": ["private", "shared", "public"]},
+          "mutation_count": {"type": "integer", "minimum": 0},
+          "status": {"enum": ["unresolved", "corrected", "refuted", "published"]},
+          "acquired_day": {"type": "integer", "minimum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "journal": {
+      "type": "object",
+      "required": ["entries", "replay_event_ids", "glossary_entry_ids"],
+      "properties": {
+        "entries": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["entry_id", "title_key", "entry_type", "source_event_id", "discovered_day", "observation_keys", "tags", "is_read"],
+            "properties": {
+              "entry_id": {"type": "string", "pattern": "^journal\\."},
+              "title_key": {"type": "string"},
+              "entry_type": {"type": "string"},
+              "source_event_id": {"type": "string"},
+              "discovered_day": {"type": "integer", "minimum": 1},
+              "observation_keys": {"type": "array", "items": {"type": "string"}},
+              "tags": {"type": "array", "items": {"type": "string"}},
+              "is_read": {"type": "boolean"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "replay_event_ids": {"type": "array", "items": {"type": "string", "pattern": "^evt\\."}},
+        "glossary_entry_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "rng": {
+      "type": "object",
+      "required": ["initial_seed", "current_state", "draw_count"],
+      "properties": {
+        "initial_seed": {"type": "integer", "minimum": 1},
+        "current_state": {"type": "integer", "minimum": 1},
+        "draw_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "route_intent_id": {"type": "string"},
+    "active_event_id": {"type": "string"},
+    "active_event_node_id": {"type": "string"},
+    "completed_event_ids": {"type": "array", "items": {"type": "string", "pattern": "^evt\\."}},
+    "route_completion_ids": {"type": "array", "items": {"type": "string"}},
+    "play_time_seconds": {"type": "integer", "minimum": 0}
+  },
+  "additionalProperties": false
+}
