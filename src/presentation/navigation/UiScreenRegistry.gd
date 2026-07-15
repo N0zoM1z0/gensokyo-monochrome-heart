@@ -22,8 +22,16 @@ const ROUTES := {
 		"path": "res://ui/screens/options_screen.tscn",
 		"host": SCREEN_HOST,
 	},
+	&"credits": {
+		"path": "res://ui/screens/credits_screen.tscn",
+		"host": SCREEN_HOST,
+	},
 	&"foundation_mode": {
 		"path": "res://src/presentation/modes/FoundationMode.tscn",
+		"host": MODE_HOST,
+	},
+	&"vertical_slice": {
+		"path": "res://src/presentation/slice/VerticalSliceMode.tscn",
 		"host": MODE_HOST,
 	},
 }

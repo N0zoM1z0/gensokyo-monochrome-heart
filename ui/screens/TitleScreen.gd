@@ -5,10 +5,11 @@ extends UiScreenBase
 
 func _build_screen() -> void:
 	screen_id = &"title"
-	_add_frame(Rect2(172, 80, 140, 68))
-	_add_row(&"ui.title.new_profile", &"new_profile", &"title.new_profile", Rect2(178, 88, 128, 16))
-	_add_row(&"ui.title.options", &"open_options", &"title.options", Rect2(178, 108, 128, 16))
-	_add_row(&"ui.title.quit", &"quit", &"title.quit", Rect2(178, 128, 128, 16))
+	_add_frame(Rect2(172, 74, 140, 80))
+	_add_row(&"ui.title.new_profile", &"new_profile", &"title.new_profile", Rect2(178, 80, 128, 15))
+	_add_row(&"ui.title.options", &"open_options", &"title.options", Rect2(178, 98, 128, 15))
+	_add_row(&"ui.title.credits", &"open_credits", &"title.credits", Rect2(178, 116, 128, 15))
+	_add_row(&"ui.title.quit", &"quit", &"title.quit", Rect2(178, 134, 128, 15))
 
 
 func _draw_screen(profile: PresentationProfile) -> void:

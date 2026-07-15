@@ -318,6 +318,7 @@ func _spawn_exploration() -> void:
 	exploration.checkpoint_requested.connect(_on_child_checkpoint)
 	_active_mode = exploration
 	mode_host.add_child(exploration)
+	_set_content_active_mode(context.mode_id)
 	_set_phase(Phase.EXPLORATION, &"exploration")
 
 
@@ -330,6 +331,7 @@ func _on_exploration_event_triggered(event_id: StringName) -> void:
 
 
 func _start_authored_event(replay: bool) -> void:
+	_set_content_active_mode(&"vertical_slice")
 	_is_replay = replay
 	_interpreter = EventInterpreter.new()
 	_dialogue = DialoguePresenter.new(_content)
@@ -424,6 +426,7 @@ func _spawn_mechanical_mode(context: ModeContext) -> void:
 	mode.checkpoint_requested.connect(_on_child_checkpoint)
 	_active_mode = mode
 	mode_host.add_child(mode)
+	_set_content_active_mode(context.mode_id)
 	_mode_started_ms = Time.get_ticks_msec()
 	_set_phase(
 		Phase.MECHANICAL_MODE,
@@ -442,6 +445,7 @@ func _on_mode_completed(result: ModeResult) -> void:
 		_is_replay
 	)
 	_clear_active_mode()
+	_set_content_active_mode(&"vertical_slice")
 	var resumed := _interpreter.resume_mode(result)
 	if not _is_replay and not _commit_working_state(&"slice.after_mode", &"after_mode"):
 		return
@@ -608,6 +612,12 @@ func _clear_active_mode() -> void:
 
 func _active_mode_id() -> StringName:
 	return _active_mode.mode_context.mode_id if _active_mode != null and _active_mode.mode_context != null else &""
+
+
+func _set_content_active_mode(active_id: StringName) -> void:
+	var content_db := get_node_or_null("/root/ContentDB")
+	if content_db != null:
+		content_db.set_active_mode(active_id)
 
 
 func _connect_live_locale() -> void:

@@ -6,7 +6,9 @@ const ROUTE_IDS: Array[StringName] = [
 	&"profile_select",
 	&"accessibility",
 	&"options",
+	&"credits",
 	&"foundation_mode",
+	&"vertical_slice",
 ]
 
 
@@ -15,6 +17,7 @@ func run() -> Array[String]:
 	_validate_route_registry(failures)
 	_validate_persistent_shell(failures)
 	_validate_transition_variants(failures)
+	_validate_credits_contract(failures)
 	_validate_screen_text_boundary(failures)
 	return failures
 
@@ -72,6 +75,13 @@ func _validate_transition_variants(failures: Array[String]) -> void:
 	controller.free()
 
 
+func _validate_credits_contract(failures: Array[String]) -> void:
+	if CreditsScreen.DEFAULT_SCROLL_SPEED > 24.0 or CreditsScreen.DEFAULT_SCROLL_SPEED <= 0.0:
+		failures.append("Credits default scroll speed exceeds the reviewed readability budget")
+	if CreditsScreen.CREDIT_KEYS.size() < 7:
+		failures.append("Credits omitted legal, engine, font, audio, or asset provenance")
+
+
 func _validate_screen_text_boundary(failures: Array[String]) -> void:
 	var paths := [
 		"res://ui/screens/TitleScreen.gd",
@@ -79,7 +89,9 @@ func _validate_screen_text_boundary(failures: Array[String]) -> void:
 		"res://ui/screens/AccessibilityScreen.gd",
 		"res://ui/screens/OptionsScreen.gd",
 		"res://ui/screens/PauseScreen.gd",
+		"res://ui/screens/CreditsScreen.gd",
 		"res://src/presentation/modes/FoundationMode.gd",
+		"res://src/presentation/slice/VerticalSliceMode.gd",
 	]
 	var visible_literal := RegEx.create_from_string("draw_(?:string|multiline_string)\\([^\\n]*\\\"[A-Za-z]")
 	for path: String in paths:

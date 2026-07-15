@@ -59,6 +59,23 @@ func _prepare_services() -> void:
 
 func _verify_live_locale_route() -> void:
 	_press(GameInput.MOVE_DOWN)
+	_press(GameInput.MOVE_DOWN)
+	_press(GameInput.CONFIRM)
+	if not await _wait_for_route(&"credits"):
+		return
+	var credits := shell.active_primary_screen() as CreditsScreen
+	if credits == null or credits.screen_id != &"credits":
+		_fail("title Credits entry did not open the legal presentation")
+		return
+	_press(GameInput.CONFIRM)
+	if not credits.is_paused:
+		_fail("Credits Confirm did not pause its readable scroll")
+	_press(GameInput.CANCEL)
+	if not await _wait_for_route(&"title"):
+		return
+	if shell.active_primary_screen().current_focus_id() != &"title.credits":
+		_fail("returning from Credits did not restore title focus")
+	_press(GameInput.MOVE_UP)
 	_press(GameInput.CONFIRM)
 	if not await _wait_for_route(&"options"):
 		return
@@ -100,7 +117,7 @@ func _verify_new_profile_to_mode() -> void:
 	_press(GameInput.MOVE_DOWN)
 	_press(GameInput.MOVE_DOWN)
 	_press(GameInput.CONFIRM)
-	if not await _wait_for_route(&"foundation_mode"):
+	if not await _wait_for_route(&"vertical_slice"):
 		return
 	var accessibility := root.get_node_or_null("AccessibilityState")
 	if accessibility == null or not accessibility.is_reduced_motion:
@@ -153,7 +170,7 @@ func _verify_pause_modal_focus_and_resume() -> void:
 	await _wait_frames(3)
 	if shell.has_open_pause() or paused:
 		_fail("Pause did not resume after its three-frame cue")
-	if shell.active_route_id() != &"foundation_mode":
+	if shell.active_route_id() != &"vertical_slice":
 		_fail("resume replaced the active mode instead of preserving it")
 
 

@@ -60,7 +60,7 @@ func _on_semantic_action_pressed(action: StringName) -> void:
 	if pause_screen != null and is_instance_valid(pause_screen):
 		pause_screen.handle_semantic_action(action)
 		return
-	if action == GameInput.PAUSE and scene_router.current_screen_id == &"foundation_mode":
+	if action == GameInput.PAUSE and scene_router.current_screen_id in [&"foundation_mode", &"vertical_slice"]:
 		_open_pause()
 		return
 	var active_screen := scene_router.current_screen
@@ -90,6 +90,9 @@ func _on_screen_command(command_id: StringName, payload: Dictionary) -> void:
 				&"options",
 				{"origin": &"title"}
 			)
+		&"open_credits":
+			_push_primary_focus()
+			_route_primary.call_deferred(&"credits")
 		&"quit":
 			get_tree().quit()
 		&"back":
@@ -145,7 +148,7 @@ func _route_after_profile(payload: Dictionary) -> void:
 	if accessibility != null and accessibility.is_first_run:
 		await _route_primary(&"accessibility")
 	else:
-		await _enter_foundation_mode()
+		await _enter_vertical_slice()
 
 
 func _apply_accessibility_and_enter_mode(payload: Dictionary) -> void:
@@ -158,10 +161,10 @@ func _apply_accessibility_and_enter_mode(payload: Dictionary) -> void:
 			if not result is CommandResult or (not result.is_success() and result.code != CommandResult.Code.ALREADY_EXISTS):
 				push_error("Could not persist accessibility profile into GameState.")
 				return
-	await _enter_foundation_mode()
+	await _enter_vertical_slice()
 
 
-func _enter_foundation_mode() -> void:
+func _enter_vertical_slice() -> void:
 	var focus_router := get_node_or_null("/root/FocusRouter")
 	if focus_router != null:
 		focus_router.clear()
@@ -170,7 +173,7 @@ func _enter_foundation_mode() -> void:
 		var result: Variant = save_service.autosave(&"day_start")
 		if result is SaveOperationResult and not result.is_success():
 			push_warning("Day-start autosave failed: %s" % result.message)
-	await _route_primary(&"foundation_mode")
+	await _route_primary(&"vertical_slice")
 
 
 func _open_pause() -> void:

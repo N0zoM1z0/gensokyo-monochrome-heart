@@ -71,6 +71,8 @@ run_checked "one-bit validation" "$GODOT_BIN" --headless --path . \
 run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_pixel_alignment.gd -- \
 	--scene=res://src/presentation/shell/Main.tscn \
+	--scene=res://ui/screens/credits_screen.tscn \
+	--scene=res://src/presentation/slice/VerticalSliceMode.tscn \
 	--scene=res://tests/ui/fixtures/VisualFoundationFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueEventFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueChoiceFixture.tscn \
@@ -126,6 +128,8 @@ run_checked "M07 Boundary Stain event integration" env XDG_DATA_HOME="$LOG_DIR/u
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m07_boundary_stain_event_flow.gd
 run_checked "M08 fighter event integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m08_fighter_event_flow.gd
+run_checked "M09 vertical slice integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m09_vertical_slice_flow.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
