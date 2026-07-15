@@ -73,7 +73,9 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://src/presentation/shell/Main.tscn \
 	--scene=res://tests/ui/fixtures/VisualFoundationFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueEventFixture.tscn \
-	--scene=res://tests/ui/fixtures/DialogueChoiceFixture.tscn
+	--scene=res://tests/ui/fixtures/DialogueChoiceFixture.tscn \
+	--scene=res://src/presentation/exploration/ExplorationMode.tscn \
+	--scene=res://tests/ui/fixtures/ExplorationFocusFixture.tscn
 run_checked "release validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_release.gd -- --release
 run_checked "headless tests" "$GODOT_BIN" --headless --path . \
@@ -87,6 +89,8 @@ run_checked "M01 navigation integration" env XDG_DATA_HOME="$LOG_DIR/user-data" 
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m01_flow.gd
 run_checked "M04 dialogue integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m04_dialogue_flow.gd
+run_checked "M05 exploration integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m05_exploration_flow.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
@@ -127,6 +131,7 @@ else
 	run_checked "VA00 screenshot matrix" ./scripts/capture_va00_screenshots.sh
 	run_checked "M01 screenshot matrix" ./scripts/capture_m01_screenshots.sh
 	run_checked "M04 screenshot matrix" ./scripts/capture_m04_screenshots.sh
+	run_checked "M05 screenshot matrix" ./scripts/capture_m05_screenshots.sh
 fi
 
 echo "Foundation verification passed."

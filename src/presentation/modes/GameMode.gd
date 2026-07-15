@@ -1,5 +1,5 @@
 class_name GameMode
-extends Node
+extends Control
 ## Shared lifecycle contract for independently bootable gameplay modes.
 
 signal ready_for_input

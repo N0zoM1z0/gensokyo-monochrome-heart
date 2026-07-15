@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/presentation/exploration/ExplorationMode.gd" id="1_mode"]
+[ext_resource type="Script" path="res://ui/components/PromptChip.gd" id="2_prompt"]
+[ext_resource type="Script" path="res://src/presentation/audio/ProceduralSfxPlayer.gd" id="3_sfx"]
+[ext_resource type="Shader" path="res://ui/theme/one_bit_post_process.gdshader" id="4_threshold"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_threshold"]
+shader = ExtResource("4_threshold")
+
+[node name="ExplorationMode" type="Control"]
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+script = ExtResource("1_mode")
+
+[node name="PromptChip" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 20
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 14.0
+mouse_filter = 2
+script = ExtResource("2_prompt")
+
+[node name="ProceduralSfxPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_sfx")
+
+[node name="OneBitThreshold" type="ColorRect" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_threshold")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
