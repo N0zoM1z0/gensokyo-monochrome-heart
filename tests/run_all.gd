@@ -29,6 +29,7 @@ func _initialize() -> void:
 		TestSaveRepository.new(),
 		TestScreenshotFixture.new(),
 		TestVisualValidators.new(),
+		TestVerticalSliceServices.new(),
 	]
 	var failures: Array[String] = []
 	var executed := 0
