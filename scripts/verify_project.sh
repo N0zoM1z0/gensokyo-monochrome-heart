@@ -123,6 +123,20 @@ run_checked "release validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_release.gd -- --release
 run_checked "headless tests" "$GODOT_BIN" --headless --path . \
 	--script res://tests/run_all.gd
+run_checked "M11 event authoring duplicate" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/author_event.gd -- \
+	--action=duplicate --event-id=evt.hkr.verification_fixture --output="$LOG_DIR/m11-authoring"
+run_checked "M11 event authoring validation" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/author_event.gd -- \
+	--action=validate --bundle="$LOG_DIR/m11-authoring"
+run_checked "M11 English event preview" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/author_event.gd -- \
+	--action=preview --bundle="$LOG_DIR/m11-authoring" --locale=en \
+	--output="$LOG_DIR/m11-authoring/preview-en.md"
+run_checked "M11 Japanese event preview" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/author_event.gd -- \
+	--action=preview --bundle="$LOG_DIR/m11-authoring" --locale=ja \
+	--output="$LOG_DIR/m11-authoring/preview-ja.md"
 run_checked "M07 packed bullet stress" "$GODOT_BIN" --headless --path . \
 	--script res://tests/performance/run_m07_bullet_pool_stress.gd
 run_checked "M03 generated state inspector" "$GODOT_BIN" --headless --path . \

@@ -9,6 +9,7 @@ func _initialize() -> void:
 		TestContentValidator.new(),
 		TestDanmakuFoundation.new(),
 		TestDialogueRuntime.new(),
+		TestEventAuthoringService.new(),
 		TestEventInterpreter.new(),
 		TestExplorationFoundation.new(),
 		TestFighterFoundation.new(),
