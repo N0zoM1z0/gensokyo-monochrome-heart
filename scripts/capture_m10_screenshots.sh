@@ -36,6 +36,7 @@ capture m10_title_150_a_en res://ui/screens/title_screen.tscn A en
 capture m10_title_page2_150_d_ja res://ui/screens/title_screen.tscn D ja --focus-id=title.quit
 capture m10_options_150_a_en res://ui/screens/options_screen.tscn A en
 capture m10_options_page2_150_d_ja res://ui/screens/options_screen.tscn D ja --focus-id=options.one_handed
+capture m10_options_comfort_150_a_en res://ui/screens/options_screen.tscn A en --focus-id=options.comfort_coercion
 capture m10_accessibility_150_a_ja res://ui/screens/accessibility_screen.tscn A ja
 capture m10_profiles_150_d_ja res://ui/screens/profile_select.tscn D ja
 capture m10_pause_150_a_ja res://ui/screens/pause_screen.tscn A ja

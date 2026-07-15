@@ -145,8 +145,22 @@ func _validate_accessibility_presets(failures: Array[String]) -> void:
 		failures.append("150% UI scale did not normalize or produce integer pixel sizes")
 	if UI_SCALE_POLICY.next(150, 1) != 100 or UI_SCALE_POLICY.next(100, -1) != 150:
 		failures.append("UI scale choices did not wrap across the reviewed discrete values")
+	if not state.set_comfort_filter(state.COMFORT_NEEDLES, true, false):
+		failures.append("needle comfort filter rejected its stable ID")
+	state.set_comfort_filter(state.COMFORT_ALCOHOL, true, false)
+	state.set_comfort_filter(state.COMFORT_COERCION, true, false)
+	if not state.reduce_needles or not state.replace_alcohol or not state.soften_coercion:
+		failures.append("content comfort filters did not retain their independent values")
+	if state.set_comfort_filter(&"unknown", true, false):
+		failures.append("content comfort filters accepted an unknown stable ID")
 	state.is_first_run = true
-	state.restore_presentation(false, false, state.Preset.ORIGINAL, true, false, 125)
-	if not state.is_first_run or state.ui_scale_percent != 125:
+	state.restore_presentation(false, false, state.Preset.ORIGINAL, true, false, 125, false, true, false)
+	if (
+		not state.is_first_run
+		or state.ui_scale_percent != 125
+		or state.reduce_needles
+		or not state.replace_alcohol
+		or state.soften_coercion
+	):
 		failures.append("cancel-style accessibility restore consumed the first-run preset")
 	state.free()

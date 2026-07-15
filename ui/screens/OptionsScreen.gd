@@ -19,13 +19,22 @@ var _opening_accessibility_preset: int = 0
 var _opening_accessibility_first_run: bool = true
 var _opening_one_handed_preset: int = InputMapInstaller.OneHandedPreset.NONE
 var _opening_ui_scale_percent: int = 100
+var _opening_reduce_needles: bool = false
+var _opening_replace_alcohol: bool = false
+var _opening_soften_coercion: bool = false
 var _current_profile: StringName = &"A"
 var _current_reduced_motion: bool = false
 var _current_safe_flash: bool = false
 var _current_one_handed_preset: int = InputMapInstaller.OneHandedPreset.NONE
 var _current_ui_scale_percent: int = 100
+var _current_reduce_needles: bool = false
+var _current_replace_alcohol: bool = false
+var _current_soften_coercion: bool = false
 var _low_motion_toggle: PixelToggle
 var _safe_flash_toggle: PixelToggle
+var _needles_toggle: PixelToggle
+var _alcohol_toggle: PixelToggle
+var _coercion_toggle: PixelToggle
 
 
 func _build_screen() -> void:
@@ -41,21 +50,33 @@ func _build_screen() -> void:
 	_opening_accessibility_first_run = accessibility.is_first_run if accessibility != null else true
 	_opening_one_handed_preset = accessibility.one_handed_preset if accessibility != null else InputMapInstaller.OneHandedPreset.NONE
 	_opening_ui_scale_percent = accessibility.ui_scale_percent if accessibility != null else 100
+	_opening_reduce_needles = accessibility.reduce_needles if accessibility != null else false
+	_opening_replace_alcohol = accessibility.replace_alcohol if accessibility != null else false
+	_opening_soften_coercion = accessibility.soften_coercion if accessibility != null else false
 	_current_profile = _opening_profile
 	_current_reduced_motion = _opening_reduced_motion
 	_current_safe_flash = _opening_safe_flash
 	_current_one_handed_preset = _opening_one_handed_preset
 	_current_ui_scale_percent = _opening_ui_scale_percent
+	_current_reduce_needles = _opening_reduce_needles
+	_current_replace_alcohol = _opening_replace_alcohol
+	_current_soften_coercion = _opening_soften_coercion
 	_add_frame(Rect2(8, 8, 304, 164))
 	_add_row(&"ui.options.language", &"language", &"options.language", Rect2(16, 29, 288, 15))
 	_add_row(&"ui.options.profile", &"profile", &"options.profile", Rect2(16, 45, 288, 15))
 	_add_row(&"ui.options.ui_scale", &"ui_scale", &"options.ui_scale", Rect2(16, 61, 288, 15))
 	_add_row(&"ui.options.low_motion", &"low_motion", &"options.low_motion", Rect2(16, 77, 288, 15))
 	_add_row(&"ui.options.safe_flash", &"safe_flash", &"options.safe_flash", Rect2(16, 93, 288, 15))
-	_add_row(&"ui.options.one_handed", &"one_handed", &"options.one_handed", Rect2(16, 109, 288, 15))
-	_add_row(&"ui.options.back", &"options_apply", &"options.back", Rect2(16, 126, 288, 15))
+	_add_row(&"ui.options.comfort.needles", &"comfort_needles", &"options.comfort_needles", Rect2(16, 109, 288, 15))
+	_add_row(&"ui.options.comfort.alcohol", &"comfort_alcohol", &"options.comfort_alcohol", Rect2(16, 125, 288, 15))
+	_add_row(&"ui.options.comfort.coercion", &"comfort_coercion", &"options.comfort_coercion", Rect2(16, 141, 288, 15))
+	_add_row(&"ui.options.one_handed", &"one_handed", &"options.one_handed", Rect2(16, 157, 288, 15))
+	_add_row(&"ui.options.back", &"options_apply", &"options.back", Rect2(16, 173, 288, 15))
 	_low_motion_toggle = _add_toggle(Vector2(268, 79))
 	_safe_flash_toggle = _add_toggle(Vector2(268, 95))
+	_needles_toggle = _add_toggle(Vector2(268, 111))
+	_alcohol_toggle = _add_toggle(Vector2(268, 127))
+	_coercion_toggle = _add_toggle(Vector2(268, 143))
 	_add_action_hint(GameInput.CONFIRM, &"ui.common.confirm", Rect2(16, 159, 92, 12))
 	_add_action_hint(GameInput.CANCEL, &"ui.common.cancel", Rect2(210, 159, 94, 12))
 
@@ -68,6 +89,12 @@ func _on_fixture_configured() -> void:
 	_current_profile = _fixture_profile_id
 	_current_reduced_motion = _fixture_reduced_motion
 	_current_safe_flash = _fixture_safe_flash
+	_opening_reduce_needles = false
+	_opening_replace_alcohol = false
+	_opening_soften_coercion = false
+	_current_reduce_needles = false
+	_current_replace_alcohol = false
+	_current_soften_coercion = false
 	_opening_one_handed_preset = InputMapInstaller.OneHandedPreset.NONE
 	_current_one_handed_preset = InputMapInstaller.OneHandedPreset.NONE
 	_opening_ui_scale_percent = _fixture_ui_scale_percent
@@ -96,6 +123,12 @@ func _adjust_current(direction: int) -> bool:
 			_apply_reduced_motion(not _current_reduced_motion)
 		&"safe_flash":
 			_apply_safe_flash(not _current_safe_flash)
+		&"comfort_needles":
+			_apply_comfort_filter(AccessibilityState.COMFORT_NEEDLES, not _current_reduce_needles)
+		&"comfort_alcohol":
+			_apply_comfort_filter(AccessibilityState.COMFORT_ALCOHOL, not _current_replace_alcohol)
+		&"comfort_coercion":
+			_apply_comfort_filter(AccessibilityState.COMFORT_COERCION, not _current_soften_coercion)
 		&"one_handed":
 			_apply_one_handed(wrapi(_current_one_handed_preset + direction, 0, 3))
 		_:
@@ -117,7 +150,7 @@ func _handle_cancel() -> void:
 
 func _refresh_screen() -> void:
 	super._refresh_screen()
-	if rows.size() < 7:
+	if rows.size() < 10:
 		return
 	rows[0].set_value_key(&"ui.language.japanese" if active_locale() == &"ja" else &"ui.language.english")
 	var profile_index := maxi(0, PROFILE_IDS.find(_current_profile))
@@ -125,7 +158,10 @@ func _refresh_screen() -> void:
 	rows[2].set_value_key(StringName("ui.options.ui_scale.%d" % _current_ui_scale_percent))
 	rows[3].set_value_key(&"ui.common.on" if _current_reduced_motion else &"ui.common.off")
 	rows[4].set_value_key(&"ui.common.on" if _current_safe_flash else &"ui.common.off")
-	rows[5].set_value_key([
+	rows[5].set_value_key(&"ui.common.on" if _current_reduce_needles else &"ui.common.off")
+	rows[6].set_value_key(&"ui.common.on" if _current_replace_alcohol else &"ui.common.off")
+	rows[7].set_value_key(&"ui.common.on" if _current_soften_coercion else &"ui.common.off")
+	rows[8].set_value_key([
 		&"ui.options.one_handed.off",
 		&"ui.options.one_handed.left",
 		&"ui.options.one_handed.right",
@@ -135,6 +171,12 @@ func _refresh_screen() -> void:
 		_low_motion_toggle.set_value(_current_reduced_motion, _active_profile_id())
 	if _safe_flash_toggle != null:
 		_safe_flash_toggle.set_value(_current_safe_flash, _active_profile_id())
+	if _needles_toggle != null:
+		_needles_toggle.set_value(_current_reduce_needles, _active_profile_id())
+	if _alcohol_toggle != null:
+		_alcohol_toggle.set_value(_current_replace_alcohol, _active_profile_id())
+	if _coercion_toggle != null:
+		_coercion_toggle.set_value(_current_soften_coercion, _active_profile_id())
 
 
 func _draw_screen(profile: PresentationProfile) -> void:
@@ -142,7 +184,7 @@ func _draw_screen(profile: PresentationProfile) -> void:
 	_draw_localized(&"ui.options.title", Vector2(12, 24), 296, HORIZONTAL_ALIGNMENT_CENTER)
 	if ui_scale_percent() == 100:
 		draw_line(Vector2(16, 143), Vector2(304, 143), foreground, 1.0)
-		_draw_localized_wrapped(&"ui.options.help", Rect2(16, 145, 288, 18), 2, 10)
+		_draw_localized_wrapped(&"ui.options.help", Rect2(16, 145, 288, 10), 1, 8)
 	else:
 		draw_line(Vector2(16, 151), Vector2(304, 151), foreground, 1.0)
 
@@ -212,6 +254,21 @@ func _apply_safe_flash(enabled: bool) -> void:
 	_refresh_screen()
 
 
+func _apply_comfort_filter(filter_id: StringName, enabled: bool) -> void:
+	match filter_id:
+		AccessibilityState.COMFORT_NEEDLES:
+			_current_reduce_needles = enabled
+		AccessibilityState.COMFORT_ALCOHOL:
+			_current_replace_alcohol = enabled
+		AccessibilityState.COMFORT_COERCION:
+			_current_soften_coercion = enabled
+	if not _fixture_mode:
+		var accessibility := get_node_or_null("/root/AccessibilityState")
+		if accessibility != null:
+			accessibility.set_comfort_filter(filter_id, enabled)
+	_refresh_screen()
+
+
 func _apply_one_handed(next_preset: int) -> void:
 	_current_one_handed_preset = next_preset
 	if not _fixture_mode:
@@ -239,35 +296,38 @@ func _focus_changed(_row: ListRow) -> void:
 
 
 func _apply_scale_layout() -> void:
-	if rows.size() < 7:
+	if rows.size() < 10:
 		return
 	var percent := ui_scale_percent()
-	if percent == 100:
-		var positions := [29, 45, 61, 77, 93, 109, 126]
-		for index: int in range(rows.size()):
-			rows[index].visible = true
-			rows[index].position = Vector2(16, positions[index])
-			rows[index].size = Vector2(288, 15)
-		_low_motion_toggle.visible = true
-		_safe_flash_toggle.visible = true
-		return
-	var visible_count := 5 if percent == 125 else 4
-	var row_height := 21 if percent == 125 else 26
-	var row_step := 23 if percent == 125 else 28
+	var visible_count := 7 if percent == 100 else (5 if percent == 125 else 4)
+	var row_height := 15 if percent == 100 else (21 if percent == 125 else 26)
+	var row_step := 16 if percent == 100 else (23 if percent == 125 else 28)
+	var start_y := 29 if percent == 100 else 34
 	var first := clampi(focused_index - 1, 0, rows.size() - visible_count)
 	for index: int in range(rows.size()):
 		var slot := index - first
 		rows[index].visible = slot >= 0 and slot < visible_count
 		if rows[index].visible:
-			rows[index].position = Vector2(16, 34 + slot * row_step)
+			rows[index].position = Vector2(16, start_y + slot * row_step)
 			rows[index].size = Vector2(288, row_height)
-	_low_motion_toggle.visible = false
-	_safe_flash_toggle.visible = false
+	_position_toggle(_low_motion_toggle, 3)
+	_position_toggle(_safe_flash_toggle, 4)
+	_position_toggle(_needles_toggle, 5)
+	_position_toggle(_alcohol_toggle, 6)
+	_position_toggle(_coercion_toggle, 7)
 	if action_hints.size() >= 2:
 		action_hints[0].position = Vector2(16, 157)
 		action_hints[0].size = Vector2(142, 18)
 		action_hints[1].position = Vector2(166, 157)
 		action_hints[1].size = Vector2(138, 18)
+
+
+func _position_toggle(toggle: PixelToggle, row_index: int) -> void:
+	if toggle == null or row_index < 0 or row_index >= rows.size():
+		return
+	toggle.visible = ui_scale_percent() == 100 and rows[row_index].visible
+	if toggle.visible:
+		toggle.position = rows[row_index].position + Vector2(252, 2)
 
 
 func _restore_opening_values() -> void:
@@ -279,6 +339,9 @@ func _restore_opening_values() -> void:
 		_current_profile = _opening_profile
 		_current_reduced_motion = _opening_reduced_motion
 		_current_safe_flash = _opening_safe_flash
+		_current_reduce_needles = _opening_reduce_needles
+		_current_replace_alcohol = _opening_replace_alcohol
+		_current_soften_coercion = _opening_soften_coercion
 		_current_one_handed_preset = _opening_one_handed_preset
 		_fixture_ui_scale_percent = _opening_ui_scale_percent
 		_current_ui_scale_percent = _opening_ui_scale_percent
@@ -301,12 +364,18 @@ func _restore_opening_values() -> void:
 			_opening_accessibility_preset,
 			_opening_accessibility_first_run,
 			true,
-			_opening_ui_scale_percent
+			_opening_ui_scale_percent,
+			_opening_reduce_needles,
+			_opening_replace_alcohol,
+			_opening_soften_coercion
 		)
 		accessibility.set_one_handed_preset(_opening_one_handed_preset)
 	_current_profile = _opening_profile
 	_current_reduced_motion = _opening_reduced_motion
 	_current_safe_flash = _opening_safe_flash
+	_current_reduce_needles = _opening_reduce_needles
+	_current_replace_alcohol = _opening_replace_alcohol
+	_current_soften_coercion = _opening_soften_coercion
 	_current_one_handed_preset = _opening_one_handed_preset
 	_current_ui_scale_percent = _opening_ui_scale_percent
 	_refresh_screen()

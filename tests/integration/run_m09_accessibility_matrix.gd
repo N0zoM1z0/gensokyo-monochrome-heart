@@ -22,7 +22,7 @@ func _run() -> void:
 		{"id": "keyboard_story", "controller": false, "preset": AccessibilityState.Preset.STORY, "hand": InputMapInstaller.OneHandedPreset.NONE, "locale": &"en"},
 		{"id": "controller_story", "controller": true, "preset": AccessibilityState.Preset.STORY, "hand": InputMapInstaller.OneHandedPreset.NONE, "locale": &"ja"},
 		{"id": "keyboard_low_left", "controller": false, "preset": AccessibilityState.Preset.LOW_MOTION, "hand": InputMapInstaller.OneHandedPreset.LEFT_HAND, "locale": &"en"},
-		{"id": "controller_low_right", "controller": true, "preset": AccessibilityState.Preset.LOW_MOTION, "hand": InputMapInstaller.OneHandedPreset.RIGHT_HAND, "locale": &"ja"},
+		{"id": "controller_low_right", "controller": true, "preset": AccessibilityState.Preset.LOW_MOTION, "hand": InputMapInstaller.OneHandedPreset.RIGHT_HAND, "locale": &"ja", "comfort_all": true},
 	]
 	for index: int in range(scenarios.size()):
 		await _run_scenario(scenarios[index], index)
@@ -96,6 +96,8 @@ func _prepare_scenario(scenario: Dictionary, profile_id: StringName) -> void:
 	var accessibility := root.get_node_or_null("AccessibilityState")
 	accessibility.apply_preset(int(scenario.preset) as AccessibilityState.Preset, false)
 	accessibility.set_one_handed_preset(int(scenario.hand), false)
+	for filter_id: StringName in AccessibilityState.COMFORT_FILTER_IDS:
+		accessibility.set_comfort_filter(filter_id, bool(scenario.get("comfort_all", false)), false)
 	var localization := root.get_node_or_null("LocalizationService")
 	localization.set_locale(StringName(scenario.locale), false)
 	var created: CommandResult = _kernel.create_new_profile(profile_id, accessibility.save_profile_id())

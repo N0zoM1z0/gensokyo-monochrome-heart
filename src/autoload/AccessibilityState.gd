@@ -13,6 +13,14 @@ enum Preset {
 }
 
 const CONFIG_PATH := "user://settings.cfg"
+const COMFORT_NEEDLES: StringName = &"needles"
+const COMFORT_ALCOHOL: StringName = &"alcohol"
+const COMFORT_COERCION: StringName = &"coercion"
+const COMFORT_FILTER_IDS: Array[StringName] = [
+	COMFORT_NEEDLES,
+	COMFORT_ALCOHOL,
+	COMFORT_COERCION,
+]
 
 var preset: Preset = Preset.ORIGINAL
 var is_first_run: bool = true
@@ -24,6 +32,9 @@ var game_speed_percent: int = 100
 var bullet_density_percent: int = 100
 var one_handed_preset: int = InputMapInstaller.OneHandedPreset.NONE
 var ui_scale_percent: int = 100
+var reduce_needles: bool = false
+var replace_alcohol: bool = false
+var soften_coercion: bool = false
 
 
 func _ready() -> void:
@@ -124,19 +135,53 @@ func set_ui_scale_percent(next_percent: int, should_persist: bool = true) -> voi
 	accessibility_changed.emit()
 
 
+func set_comfort_filter(filter_id: StringName, enabled: bool, should_persist: bool = true) -> bool:
+	match filter_id:
+		COMFORT_NEEDLES:
+			reduce_needles = enabled
+		COMFORT_ALCOHOL:
+			replace_alcohol = enabled
+		COMFORT_COERCION:
+			soften_coercion = enabled
+		_:
+			return false
+	if should_persist:
+		_save_preference()
+	accessibility_changed.emit()
+	return true
+
+
+func comfort_filter_enabled(filter_id: StringName) -> bool:
+	match filter_id:
+		COMFORT_NEEDLES:
+			return reduce_needles
+		COMFORT_ALCOHOL:
+			return replace_alcohol
+		COMFORT_COERCION:
+			return soften_coercion
+		_:
+			return false
+
+
 func restore_presentation(
 	reduced_motion: bool,
 	safe_flash: bool,
 	prior_preset: int,
 	prior_first_run: bool,
 	should_persist: bool = true,
-	restored_ui_scale_percent: int = 100
+	restored_ui_scale_percent: int = 100,
+	restored_reduce_needles: bool = false,
+	restored_replace_alcohol: bool = false,
+	restored_soften_coercion: bool = false
 ) -> void:
 	preset = clampi(prior_preset, Preset.ORIGINAL, Preset.CUSTOM) as Preset
 	is_first_run = prior_first_run
 	is_reduced_motion = reduced_motion
 	is_safe_flash = safe_flash
 	ui_scale_percent = UI_SCALE_POLICY.normalize(restored_ui_scale_percent)
+	reduce_needles = restored_reduce_needles
+	replace_alcohol = restored_replace_alcohol
+	soften_coercion = restored_soften_coercion
 	_sync_presentation_settings()
 	if should_persist:
 		if is_first_run:
@@ -171,6 +216,9 @@ func _load_preference() -> void:
 		InputMapInstaller.OneHandedPreset.RIGHT_HAND
 	)
 	ui_scale_percent = UI_SCALE_POLICY.normalize(int(config.get_value("accessibility", "ui_scale_percent", 100)))
+	reduce_needles = bool(config.get_value("accessibility", "reduce_needles", false))
+	replace_alcohol = bool(config.get_value("accessibility", "replace_alcohol", false))
+	soften_coercion = bool(config.get_value("accessibility", "soften_coercion", false))
 	InputMapInstaller.apply_one_handed_preset(one_handed_preset as InputMapInstaller.OneHandedPreset)
 
 
@@ -182,6 +230,9 @@ func _save_preference() -> void:
 	config.set_value("accessibility", "safe_flash", is_safe_flash)
 	config.set_value("accessibility", "one_handed_preset", one_handed_preset)
 	config.set_value("accessibility", "ui_scale_percent", ui_scale_percent)
+	config.set_value("accessibility", "reduce_needles", reduce_needles)
+	config.set_value("accessibility", "replace_alcohol", replace_alcohol)
+	config.set_value("accessibility", "soften_coercion", soften_coercion)
 	var error := config.save(CONFIG_PATH)
 	if error != OK:
 		push_error("Could not persist accessibility preference (error %d)" % error)
