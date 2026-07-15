@@ -47,6 +47,8 @@ capture m09_replay_complete_b_en res://tests/ui/fixtures/VerticalSliceReplayComp
 capture m09_complete_d_ja res://tests/ui/fixtures/VerticalSliceCompleteFixture.tscn D ja
 capture m09_credits_a_en res://ui/screens/credits_screen.tscn A en
 capture m09_credits_a_ja res://ui/screens/credits_screen.tscn A ja
+capture m09_exploration_controller_b_ja res://tests/ui/fixtures/VerticalSliceExplorationFixture.tscn B ja --input-device=controller
+capture m09_fighter_left_hand_a_en res://tests/ui/fixtures/VerticalSliceFighterFixture.tscn A en --one-handed=left
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated

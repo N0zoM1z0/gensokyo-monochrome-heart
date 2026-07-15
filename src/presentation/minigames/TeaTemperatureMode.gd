@@ -373,9 +373,13 @@ func _draw_shell(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(4, 160, 312, 18), background)
 	draw_rect(Rect2(4, 160, 312, 18), foreground, false, 1.0)
 	var footer := (
-		_catalog.text(&"ui.minigame.tea.result.continue", _locale)
+		input_hint(GameInput.CONFIRM, _catalog.text(&"ui.minigame.tea.result.continue", _locale))
 		if tea != null and tea.state.phase == TeaTemperatureState.Phase.RESULT
-		else _catalog.text(&"ui.minigame.tea.controls", _locale)
+		else "  ".join([
+			"%s %s" % [input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT), _catalog.text(&"ui.input.heat", _locale)],
+			input_hint(GameInput.FOCUS, _catalog.text(&"ui.input.steep", _locale)),
+			input_hint(GameInput.CONFIRM, _catalog.text(&"ui.input.pour", _locale)),
+		])
 	)
 	draw_string(font, Vector2(8, 174), footer, HORIZONTAL_ALIGNMENT_CENTER, 304, _compact_font_size(), foreground)
 

@@ -972,7 +972,13 @@ func _draw_header(key: StringName, foreground: Color, background: Color) -> void
 func _draw_footer(key: StringName, foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(16, 149, 288, 18), background)
 	draw_rect(Rect2(16, 149, 288, 18), foreground, false, 1.0)
-	_draw_text(_ui(key), Vector2(21, 163), 278, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+	var footer := input_hint(GameInput.CONFIRM, _ui(key))
+	if key == &"ui.slice.journal.confirm":
+		footer = "%s   %s" % [
+			footer,
+			input_hint(GameInput.CANCEL, _ui(&"ui.slice.journal.finish")),
+		]
+	_draw_text(footer, Vector2(21, 163), 278, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 
 
 func _draw_wrapped(key: StringName, rect: Rect2, maximum_lines: int) -> void:

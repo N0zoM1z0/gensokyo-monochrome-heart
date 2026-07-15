@@ -95,7 +95,7 @@ def _expected_outputs() -> dict[Path, bytes]:
 
     manifest = {
         "schema": "gmh-design-content-sync-v1",
-        "source_revision": "2026.07.16.5",
+        "source_revision": "2026.07.16.6",
         "files": sorted(manifest_entries, key=lambda item: str(item["destination"])),
     }
     outputs[ROOT / "content" / "indexes" / "sync_manifest.json"] = _stable_json(

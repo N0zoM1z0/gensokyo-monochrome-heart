@@ -32,6 +32,10 @@ func glyph_key(action: StringName) -> StringName:
 
 
 func binding_text(action: StringName, _locale: StringName = &"en") -> String:
+	if active_device == Device.KEYBOARD:
+		var preferred_key := InputMapInstaller.preferred_one_handed_keycode(action)
+		if preferred_key != KEY_NONE:
+			return "[%s]" % OS.get_keycode_string(preferred_key).to_upper()
 	var candidates: Array[InputEvent] = []
 	for event: InputEvent in InputMap.action_get_events(action):
 		if active_device == Device.KEYBOARD and event is InputEventKey:
@@ -40,11 +44,7 @@ func binding_text(action: StringName, _locale: StringName = &"en") -> String:
 			candidates.append(event)
 	if candidates.is_empty():
 		return "[MOUSE]" if active_device == Device.POINTER else "[?]"
-	var prefer_last := (
-		active_device == Device.KEYBOARD
-		and InputMapInstaller.active_one_handed_preset != InputMapInstaller.OneHandedPreset.NONE
-	)
-	var selected: InputEvent = candidates.back() if prefer_last else candidates.front()
+	var selected: InputEvent = candidates.front()
 	if selected is InputEventKey:
 		var label: String = OS.get_keycode_string((selected as InputEventKey).physical_keycode).to_upper()
 		return "[%s]" % (label if not label.is_empty() else "KEY")

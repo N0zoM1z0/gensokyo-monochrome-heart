@@ -72,6 +72,8 @@ func _validate_glyph_hot_swap(failures: Array[String]) -> void:
 	InputMapInstaller.apply_one_handed_preset(InputMapInstaller.OneHandedPreset.LEFT_HAND)
 	if service.binding_text(GameInput.CONFIRM) != "[SPACE]" or service.binding_text(GameInput.SPELL) != "[R]":
 		failures.append("one-handed hint did not follow the active remapped binding")
+	if service.binding_text(GameInput.PAUSE) != "[ESCAPE]" or service.binding_text(GameInput.MOVE_LEFT) != "[A]":
+		failures.append("one-handed hint did not prefer the preset contract over duplicate defaults")
 	InputMapInstaller.install_defaults(true)
 	service.free()
 

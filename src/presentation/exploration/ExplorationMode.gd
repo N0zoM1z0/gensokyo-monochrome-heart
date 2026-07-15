@@ -427,7 +427,11 @@ func _refresh_text_cache() -> void:
 		if objective_tracker.is_complete()
 		else _resolver.resolve(objective_key, _locale).text
 	)
-	_footer_text = _catalog.text(&"ui.exploration.controls", _locale)
+	_footer_text = "  ".join([
+		"%s %s" % [input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT), _catalog.text(&"ui.input.move", _locale)],
+		input_hint(GameInput.CONFIRM, _catalog.text(&"ui.input.observe", _locale)),
+		input_hint(GameInput.JOURNAL, _catalog.text(&"ui.input.journal", _locale)),
+	])
 	_hint_text = _catalog.text(&"ui.exploration.hint.second_cup", _locale)
 	_companion_text = _catalog.text(&"ui.exploration.companion.float", _locale)
 

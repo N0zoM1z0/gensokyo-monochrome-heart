@@ -98,6 +98,37 @@ static func apply_one_handed_preset(preset: OneHandedPreset) -> void:
 			pass
 
 
+static func preferred_one_handed_keycode(action: StringName) -> Key:
+	match active_one_handed_preset:
+		OneHandedPreset.LEFT_HAND:
+			var left_bindings: Dictionary[StringName, Key] = {
+				GameInput.MOVE_UP: KEY_W, GameInput.MOVE_DOWN: KEY_S,
+				GameInput.MOVE_LEFT: KEY_A, GameInput.MOVE_RIGHT: KEY_D,
+				GameInput.CONFIRM: KEY_SPACE, GameInput.SHOT: KEY_SPACE, GameInput.LIGHT: KEY_SPACE,
+				GameInput.CANCEL: KEY_QUOTELEFT, GameInput.FOCUS: KEY_Q, GameInput.HEAVY: KEY_Q,
+				GameInput.COMPANION: KEY_E, GameInput.SKILL: KEY_E,
+				GameInput.BOMB: KEY_R, GameInput.SPELL: KEY_R,
+				GameInput.GUARD: KEY_SHIFT, GameInput.JOURNAL: KEY_TAB,
+				GameInput.MAP: KEY_F, GameInput.PAGE_LEFT: KEY_1, GameInput.PAGE_RIGHT: KEY_2,
+				GameInput.PAUSE: KEY_ESCAPE, GameInput.MENU: KEY_ESCAPE,
+			}
+			return left_bindings.get(action, KEY_NONE)
+		OneHandedPreset.RIGHT_HAND:
+			var right_bindings: Dictionary[StringName, Key] = {
+				GameInput.MOVE_UP: KEY_UP, GameInput.MOVE_DOWN: KEY_DOWN,
+				GameInput.MOVE_LEFT: KEY_LEFT, GameInput.MOVE_RIGHT: KEY_RIGHT,
+				GameInput.CONFIRM: KEY_KP_0, GameInput.SHOT: KEY_KP_0, GameInput.LIGHT: KEY_KP_0,
+				GameInput.CANCEL: KEY_KP_PERIOD, GameInput.FOCUS: KEY_KP_1, GameInput.HEAVY: KEY_KP_1,
+				GameInput.COMPANION: KEY_KP_2, GameInput.SKILL: KEY_KP_2,
+				GameInput.BOMB: KEY_KP_3, GameInput.SPELL: KEY_KP_3,
+				GameInput.GUARD: KEY_KP_ADD, GameInput.JOURNAL: KEY_KP_7,
+				GameInput.MAP: KEY_KP_9, GameInput.PAGE_LEFT: KEY_KP_4, GameInput.PAGE_RIGHT: KEY_KP_6,
+				GameInput.PAUSE: KEY_KP_SUBTRACT, GameInput.MENU: KEY_KP_SUBTRACT,
+			}
+			return right_bindings.get(action, KEY_NONE)
+	return KEY_NONE
+
+
 static func _add_direction(
 	action: StringName,
 	keycodes: Array,

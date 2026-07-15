@@ -559,7 +559,14 @@ func _draw_field_shell(foreground: Color, background: Color) -> void:
 		draw_line(Vector2(26, 122), Vector2(206, 122), foreground, 1.0)
 	var font := _font()
 	draw_string(font, Vector2(8, 11), _catalog.text(runtime.current_phase().title_key, _locale), HORIZONTAL_ALIGNMENT_LEFT, 214, _hud_font_size(), foreground)
-	draw_string(font, Vector2(8, 176), _catalog.text(&"ui.danmaku.controls", _locale), HORIZONTAL_ALIGNMENT_CENTER, 304, _hud_font_size(), foreground)
+	var controls := "  ".join([
+		input_hint(GameInput.SHOT, _catalog.text(&"ui.input.shot", _locale)),
+		input_hint(GameInput.FOCUS, _catalog.text(&"ui.input.focus", _locale)),
+		input_hint(GameInput.BOMB, _catalog.text(&"ui.input.bomb", _locale)),
+		input_hint(GameInput.COMPANION, _catalog.text(&"ui.input.margin", _locale)),
+		input_hint(GameInput.PAUSE, _catalog.text(&"ui.input.pause", _locale)),
+	])
+	draw_string(font, Vector2(8, 176), controls, HORIZONTAL_ALIGNMENT_CENTER, 304, _hud_font_size(), foreground)
 	if _border_pulse_seconds > 0.0 and not _no_flash_active:
 		draw_rect(FIELD_FRAME.grow(-2), foreground, false, 2.0)
 
@@ -619,7 +626,7 @@ func _draw_intro(foreground: Color, background: Color) -> void:
 	for index: int in range(teaching_lines.size()):
 		draw_string(font, Vector2(18, 94 + index * _body_line_height()), teaching_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
 	if _tutorial_waiting:
-		draw_string(font, Vector2(18, 120), _catalog.text(&"ui.danmaku.tutorial.start", _locale), HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
+		draw_string(font, Vector2(18, 120), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.danmaku.tutorial.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
 
 
 func _draw_visual_cue(foreground: Color, background: Color) -> void:
@@ -670,8 +677,8 @@ func _draw_result(foreground: Color, background: Color) -> void:
 	for index: int in range(reason_lines.size()):
 		draw_string(font, Vector2(30, 99 + index * _body_line_height()), reason_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
 	draw_string(font, Vector2(30, 129), "%s %03d    %s %d" % [_catalog.text(&"ui.danmaku.graze", _locale), runtime.state.graze_count, _catalog.text(&"ui.danmaku.bomb", _locale), runtime.state.bombs_used], HORIZONTAL_ALIGNMENT_CENTER, 260, _hud_font_size(), foreground)
-	draw_string(font, Vector2(26, 147), _catalog.text(&"ui.danmaku.result.continue", _locale), HORIZONTAL_ALIGNMENT_LEFT, 166, _hud_font_size(), foreground)
-	draw_string(font, Vector2(176, 147), _catalog.text(&"ui.danmaku.result.retry", _locale), HORIZONTAL_ALIGNMENT_RIGHT, 118, _hud_font_size(), foreground)
+	draw_string(font, Vector2(26, 147), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.danmaku.result.continue", _locale)), HORIZONTAL_ALIGNMENT_LEFT, 166, _hud_font_size(), foreground)
+	draw_string(font, Vector2(176, 147), input_hint(GameInput.CANCEL, _catalog.text(&"ui.danmaku.result.retry", _locale)), HORIZONTAL_ALIGNMENT_RIGHT, 118, _hud_font_size(), foreground)
 
 
 func _draw_result_stamp(origin: Vector2, tag: StringName, foreground: Color, background: Color) -> void:

@@ -760,8 +760,20 @@ func _draw_footer(foreground: Color, background: Color) -> void:
 	draw_rect(FOOTER_FRAME, background)
 	draw_rect(FOOTER_FRAME, foreground, false, 1.0)
 	var mode_key := &"ui.fighter.mode.simple" if runtime.assists.simple_inputs else &"ui.fighter.mode.motion"
-	draw_string(_font(), Vector2(8, 165), _catalog.text(&"ui.fighter.controls", _locale), HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
-	draw_string(_font(), Vector2(8, 175), "%s / %d%%" % [_catalog.text(mode_key, _locale), runtime.assists.speed_percent], HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
+	var attacks := "  ".join([
+		input_hint(GameInput.LIGHT, _catalog.text(&"ui.input.light", _locale)),
+		input_hint(GameInput.HEAVY, _catalog.text(&"ui.input.heavy", _locale)),
+		input_hint(GameInput.SKILL, _catalog.text(&"ui.input.skill", _locale)),
+		input_hint(GameInput.SPELL, _catalog.text(&"ui.input.spell", _locale)),
+	])
+	var defense := "%s  %s  %s / %d%%" % [
+		input_hint(GameInput.GUARD, _catalog.text(&"ui.input.guard", _locale)),
+		input_hint(GameInput.PAUSE, _catalog.text(&"ui.input.pause", _locale)),
+		_catalog.text(mode_key, _locale),
+		runtime.assists.speed_percent,
+	]
+	draw_string(_font(), Vector2(8, 165), attacks, HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
+	draw_string(_font(), Vector2(8, 175), defense, HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
 
 
 func _draw_intro(foreground: Color, background: Color) -> void:
@@ -775,7 +787,7 @@ func _draw_intro(foreground: Color, background: Color) -> void:
 	for index: int in range(lines.size()):
 		draw_string(font, Vector2(30, 105 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
 	if _tutorial_waiting:
-		draw_string(font, Vector2(30, 136), _catalog.text(&"ui.fighter.intro.start", _locale), HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
+		draw_string(font, Vector2(30, 136), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.fighter.intro.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
 
 
 func _draw_break_banner(foreground: Color, background: Color) -> void:
@@ -883,8 +895,8 @@ func _draw_result(foreground: Color, background: Color) -> void:
 	var lines := PixelTextWrapper.wrap(_catalog.text(reason_key, _locale), font, 240, _body_font_size(), _locale, 2)
 	for index: int in range(lines.size()):
 		draw_string(font, Vector2(40, 101 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 240, _body_font_size(), foreground)
-	draw_string(font, Vector2(36, 136), _catalog.text(&"ui.fighter.result.continue", _locale), HORIZONTAL_ALIGNMENT_LEFT, 248, _hud_font_size(), foreground)
-	draw_string(font, Vector2(36, 148), _catalog.text(&"ui.fighter.result.retry", _locale), HORIZONTAL_ALIGNMENT_RIGHT, 248, _hud_font_size(), foreground)
+	draw_string(font, Vector2(36, 136), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.fighter.result.continue", _locale)), HORIZONTAL_ALIGNMENT_LEFT, 248, _hud_font_size(), foreground)
+	draw_string(font, Vector2(36, 148), input_hint(GameInput.CANCEL, _catalog.text(&"ui.fighter.result.retry", _locale)), HORIZONTAL_ALIGNMENT_RIGHT, 248, _hud_font_size(), foreground)
 
 
 func _draw_result_seals(origin: Vector2, foreground: Color, background: Color) -> void:

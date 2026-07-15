@@ -13,6 +13,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	var options := _parse_options(OS.get_cmdline_user_args())
+	_configure_input_fixture(options)
 	var packed_scene := ResourceLoader.load(options.scene_path) as PackedScene
 	if packed_scene == null:
 		_fail("fixture scene could not be loaded: %s" % options.scene_path)
@@ -76,8 +77,8 @@ func _run() -> void:
 		quit(1)
 		return
 	print(
-		"Screenshot fixture: scene=%s output=%s size=%s requested_profile=%s resolved_profile=%s locale=%s"
-		% [options.scene_path, output_path, image.get_size(), options.profile_id, resolved_profile, options.locale]
+		"Screenshot fixture: scene=%s output=%s size=%s requested_profile=%s resolved_profile=%s locale=%s input=%s one_handed=%s"
+		% [options.scene_path, output_path, image.get_size(), options.profile_id, resolved_profile, options.locale, options.input_device, options.one_handed]
 	)
 	# Explicitly release the fixture tree before this short-lived process exits.
 	viewport.free()
@@ -94,6 +95,27 @@ func _add_one_bit_threshold(viewport: SubViewport) -> void:
 	threshold.z_index = 1000
 	threshold.material = material
 	viewport.add_child(threshold)
+
+
+func _configure_input_fixture(options: ScreenshotOptions) -> void:
+	match options.one_handed:
+		"left":
+			InputMapInstaller.apply_one_handed_preset(InputMapInstaller.OneHandedPreset.LEFT_HAND)
+		"right":
+			InputMapInstaller.apply_one_handed_preset(InputMapInstaller.OneHandedPreset.RIGHT_HAND)
+		_:
+			InputMapInstaller.install_defaults(true)
+	var glyph_service := get_root().get_node_or_null("InputGlyphService")
+	if glyph_service == null:
+		return
+	if options.input_device == "controller":
+		var controller_event := InputEventJoypadButton.new()
+		controller_event.button_index = JOY_BUTTON_A
+		glyph_service.observe_event(controller_event)
+	else:
+		var keyboard_event := InputEventKey.new()
+		keyboard_event.physical_keycode = KEY_Z
+		glyph_service.observe_event(keyboard_event)
 
 
 func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:
@@ -113,6 +135,10 @@ func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:
 			options.is_reduced_motion = true
 		elif argument == "--safe-flash":
 			options.is_safe_flash = true
+		elif argument.begins_with("--input-device="):
+			options.input_device = argument.trim_prefix("--input-device=")
+		elif argument.begins_with("--one-handed="):
+			options.one_handed = argument.trim_prefix("--one-handed=")
 	return options
 
 
@@ -131,3 +157,5 @@ class ScreenshotOptions:
 	var locale: StringName = &"en"
 	var is_reduced_motion: bool = false
 	var is_safe_flash: bool = false
+	var input_device: String = "keyboard"
+	var one_handed: String = "off"

@@ -29,3 +29,18 @@ func capture_debug_state() -> Dictionary:
 		"mode_id": String(mode_context.mode_id) if mode_context != null else "",
 		"suspended": is_suspended,
 	}
+
+
+func input_binding(action: StringName) -> String:
+	var glyph_service := get_node_or_null("/root/InputGlyphService")
+	if glyph_service != null:
+		return glyph_service.binding_text(action)
+	return "[?]"
+
+
+func input_axis_binding(negative_action: StringName, positive_action: StringName) -> String:
+	return "%s/%s" % [input_binding(negative_action), input_binding(positive_action)]
+
+
+func input_hint(action: StringName, verb: String) -> String:
+	return "%s %s" % [input_binding(action), verb]
