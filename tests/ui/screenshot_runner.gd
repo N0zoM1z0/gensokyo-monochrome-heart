@@ -38,8 +38,7 @@ func _run() -> void:
 			options.is_reduced_motion,
 			options.is_safe_flash
 		)
-	if fixture.has_method("set_ui_scale_fixture"):
-		fixture.call("set_ui_scale_fixture", options.ui_scale_percent)
+	_apply_ui_scale_fixture(fixture, options.ui_scale_percent)
 	if options.focus_id != &"" and fixture.has_method("restore_focus"):
 		fixture.call("restore_focus", options.focus_id)
 	_add_one_bit_threshold(viewport)
@@ -121,6 +120,14 @@ func _configure_input_fixture(options: ScreenshotOptions) -> void:
 		var keyboard_event := InputEventKey.new()
 		keyboard_event.physical_keycode = KEY_Z
 		glyph_service.observe_event(keyboard_event)
+
+
+func _apply_ui_scale_fixture(node: Node, percent: int) -> void:
+	if node.has_method("set_ui_scale_fixture"):
+		node.call("set_ui_scale_fixture", percent)
+		return
+	for child: Node in node.get_children():
+		_apply_ui_scale_fixture(child, percent)
 
 
 func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:

@@ -501,14 +501,19 @@ func _draw_world(foreground: Color, background: Color) -> void:
 
 func _draw_hud(foreground: Color, background: Color) -> void:
 	var font := _japanese_font if _locale == &"ja" else _latin_font
-	draw_rect(Rect2(4, 3, 312, 14), background)
-	draw_rect(Rect2(4, 3, 312, 14), foreground, false, 1.0)
-	draw_string(font, Vector2(8, 13), _header_text, HORIZONTAL_ALIGNMENT_LEFT, 198, 8, foreground)
+	var font_size := _hud_font_size()
+	var header_frame := Rect2(4, 3, 312, 19) if ui_scale_percent() > 100 else Rect2(4, 3, 312, 14)
+	draw_rect(header_frame, background)
+	draw_rect(header_frame, foreground, false, 1.0)
+	draw_string(font, Vector2(8, header_frame.position.y + font_size + 1), _header_text, HORIZONTAL_ALIGNMENT_LEFT, 238, font_size, foreground)
 	var counter := "%d/%d" % [objective_tracker.current_step, objective_tracker.required_sequence.size()]
-	draw_string(font, Vector2(252, 13), counter, HORIZONTAL_ALIGNMENT_RIGHT, 58, 8, foreground)
-	draw_rect(Rect2(4, 162, 312, 15), background)
-	draw_rect(Rect2(4, 162, 312, 15), foreground, false, 1.0)
-	draw_string(font, Vector2(8, 173), _footer_text, HORIZONTAL_ALIGNMENT_LEFT, 304, 8, foreground)
+	draw_string(font, Vector2(252, header_frame.position.y + font_size + 1), counter, HORIZONTAL_ALIGNMENT_RIGHT, 58, font_size, foreground)
+	var footer_frame := Rect2(4, 151, 312, 26) if ui_scale_percent() > 100 else Rect2(4, 162, 312, 15)
+	draw_rect(footer_frame, background)
+	draw_rect(footer_frame, foreground, false, 1.0)
+	var controls := PixelTextWrapper.wrap(_footer_text, font, 304, font_size, _locale, 2)
+	for index: int in range(controls.size()):
+		draw_string(font, Vector2(8, footer_frame.position.y + font_size + index * (font_size + 1)), controls[index], HORIZONTAL_ALIGNMENT_LEFT, 304, font_size, foreground)
 
 
 func _draw_feedback(foreground: Color, background: Color) -> void:
@@ -520,12 +525,20 @@ func _draw_feedback(foreground: Color, background: Color) -> void:
 		text = _hint_text
 	elif _companion_latched and exploration_context.companion_skill_enabled:
 		text = _companion_text
+	else:
+		text = _objective_text
 	if not text.is_empty():
-		draw_rect(Rect2(6, 143, 308, 16), background)
-		draw_rect(Rect2(6, 143, 308, 16), foreground, false, 1.0)
-		draw_string(font, Vector2(10, 154), text, HORIZONTAL_ALIGNMENT_CENTER, 300, 8, foreground)
+		var feedback_frame := Rect2(6, 128, 308, 20) if ui_scale_percent() > 100 else Rect2(6, 143, 308, 16)
+		draw_rect(feedback_frame, background)
+		draw_rect(feedback_frame, foreground, false, 1.0)
+		draw_string(font, Vector2(10, feedback_frame.position.y + _hud_font_size() + 2), text, HORIZONTAL_ALIGNMENT_CENTER, 300, _hud_font_size(), foreground)
 	if _sfx_seconds > 0.0:
-		draw_string(font, Vector2(215, 28), _sfx_text, HORIZONTAL_ALIGNMENT_RIGHT, 96, 8, foreground)
+		draw_string(font, Vector2(215, 28), _sfx_text, HORIZONTAL_ALIGNMENT_RIGHT, 96, _hud_font_size(), foreground)
+
+
+func _hud_font_size() -> int:
+	var base_size := (9 if ui_scale_percent() > 100 else 10) if _locale == &"ja" else (7 if ui_scale_percent() > 100 else 8)
+	return scaled_ui_pixels(base_size)
 
 
 func _draw_player(foreground: Color, background: Color) -> void:

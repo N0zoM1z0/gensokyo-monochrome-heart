@@ -392,10 +392,11 @@ func _draw_tutorial(foreground: Color, background: Color) -> void:
 	var body := PixelTextWrapper.wrap(_catalog.text(&"ui.minigame.tea.tutorial.body", _locale), font, 270, _body_font_size(), _locale, 3)
 	for index: int in range(body.size()):
 		draw_string(font, Vector2(25, 59 + index * _body_line_height()), body[index], HORIZONTAL_ALIGNMENT_CENTER, 270, _body_font_size(), foreground)
-	_draw_three_cups(Vector2(77, 87), foreground, background)
+	if ui_scale_percent() == 100:
+		_draw_three_cups(Vector2(77, 87), foreground, background)
 	var controls := PixelTextWrapper.wrap(_catalog.text(&"ui.minigame.tea.tutorial.controls", _locale), font, 280, _compact_font_size(), _locale, 2)
 	for index: int in range(controls.size()):
-		draw_string(font, Vector2(20, 132 + index * 12), controls[index], HORIZONTAL_ALIGNMENT_CENTER, 280, _compact_font_size(), foreground)
+		draw_string(font, Vector2(20, (111 if ui_scale_percent() > 100 else 132) + index * (_compact_font_size() + 1)), controls[index], HORIZONTAL_ALIGNMENT_CENTER, 280, _compact_font_size(), foreground)
 	_draw_assist_marks(Vector2(16, 152), foreground, 288, _compact_font_size())
 
 
@@ -547,12 +548,13 @@ func _draw_result_stamp(origin: Vector2, tag: StringName, foreground: Color, bac
 
 
 func _body_font_size() -> int:
-	return 12 if _locale == &"ja" else 8
+	return scaled_ui_pixels(12 if _locale == &"ja" else 8)
 
 
 func _compact_font_size() -> int:
-	return 10 if _locale == &"ja" else 8
+	var base_size := (9 if ui_scale_percent() > 100 else 10) if _locale == &"ja" else (7 if ui_scale_percent() > 100 else 8)
+	return scaled_ui_pixels(base_size)
 
 
 func _body_line_height() -> int:
-	return 14 if _locale == &"ja" else 11
+	return _body_font_size() + (4 if ui_scale_percent() > 100 else 2)

@@ -720,19 +720,21 @@ func _font() -> Font:
 
 
 func _body_font_size() -> int:
+	if ui_scale_percent() > 100:
+		return scaled_ui_pixels(10 if _locale == &"ja" else 7)
 	return 12 if _locale == &"ja" else 7
 
 
 func _body_line_height() -> int:
-	return 14 if _locale == &"ja" else 9
+	return _body_font_size() + (4 if ui_scale_percent() > 100 else 2)
 
 
 func _title_font_size() -> int:
-	return 14 if _locale == &"ja" else 8
+	return scaled_ui_pixels(12 if _locale == &"ja" else 8) if ui_scale_percent() > 100 else (14 if _locale == &"ja" else 8)
 
 
 func _title_line_height() -> int:
-	return 16 if _locale == &"ja" else 9
+	return _title_font_size() + 2
 
 
 func _hud_font_size() -> int:

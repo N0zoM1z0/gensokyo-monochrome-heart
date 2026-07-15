@@ -19,6 +19,7 @@
 	{"key": "ui.input.margin", "en": "MARGIN", "ja": "余白"},
 	{"key": "ui.input.move", "en": "MOVE", "ja": "移動"},
 	{"key": "ui.input.observe", "en": "OBSERVE", "ja": "観察"},
+	{"key": "ui.input.page", "en": "PAGE", "ja": "ページ"},
 	{"key": "ui.input.pause", "en": "PAUSE", "ja": "停止"},
 	{"key": "ui.input.pour", "en": "POUR", "ja": "注ぐ"},
 	{"key": "ui.input.shot", "en": "SHOT", "ja": "射撃"},

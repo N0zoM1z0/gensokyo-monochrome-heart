@@ -55,6 +55,7 @@ var _fixture_comfort_override: bool = false
 var _fixture_reduced_motion: bool = false
 var _fixture_safe_flash: bool = false
 var _completion_emitted: bool = false
+var _large_text_page: int = 0
 
 var _profile := PresentationProfileRegistry.resolve(&"A")
 var _catalog := UiTextCatalog.new()
@@ -87,9 +88,22 @@ func _ready() -> void:
 	_dialogue = DialoguePresenter.new(_content)
 	_dialogue.instant_text = _instant_text_for_test
 	choice_control.visible = false
+	_apply_choice_scale()
 	_connect_live_locale()
 	_initialize_session()
 	ready_for_input.emit()
+
+
+func set_ui_scale_fixture(percent: int) -> void:
+	super.set_ui_scale_fixture(percent)
+	if choice_control != null:
+		_apply_choice_scale()
+
+
+func _apply_choice_scale() -> void:
+	choice_control.set_ui_scale(ui_scale_percent())
+	choice_control.position = Vector2(14, 31) if ui_scale_percent() > 100 else Vector2(14, 33)
+	choice_control.size = Vector2(292, 134) if ui_scale_percent() > 100 else Vector2(292, 126)
 
 
 func _process(delta: float) -> void:
@@ -106,6 +120,11 @@ func _process(delta: float) -> void:
 
 
 func handle_semantic_action(action: StringName) -> bool:
+	if _phase == Phase.JOURNAL and ui_scale_percent() > 100 and action in [GameInput.MOVE_UP, GameInput.MOVE_DOWN]:
+		var page_count := _journal_large_page_count()
+		_large_text_page = clampi(_large_text_page + (-1 if action == GameInput.MOVE_UP else 1), 0, page_count - 1)
+		queue_redraw()
+		return true
 	if action in [GameInput.PAGE_LEFT, GameInput.PAGE_RIGHT] and _phase in [
 		Phase.EVENT_LINE, Phase.EVENT_CHOICE, Phase.JOURNAL, Phase.REPLAY_COMPLETE,
 	]:
@@ -381,6 +400,8 @@ func _spawn_exploration() -> void:
 		_is_reduced_motion(),
 		_is_safe_flash()
 	)
+	if _fixture_ui_scale_percent > 0:
+		exploration.set_ui_scale_fixture(_fixture_ui_scale_percent)
 	exploration.event_triggered.connect(_on_exploration_event_triggered)
 	exploration.checkpoint_requested.connect(_on_child_checkpoint)
 	_active_mode = exploration
@@ -437,6 +458,7 @@ func _accept_event_result(result: EventInterpreterResult) -> void:
 				)
 			elif result.choice != null:
 				choice_control.visible = true
+				_apply_choice_scale()
 				choice_control.configure(
 					result.choice,
 					_content,
@@ -483,6 +505,8 @@ func _spawn_mechanical_mode(context: ModeContext) -> void:
 		_is_reduced_motion(),
 		_is_safe_flash()
 	)
+	if _fixture_ui_scale_percent > 0:
+		mode.set_ui_scale_fixture(_fixture_ui_scale_percent)
 	if mode is TeaTemperatureMode:
 		(mode as TeaTemperatureMode).configure_assists(_tea_assists())
 	elif mode is BoundaryStainMode:
@@ -659,6 +683,8 @@ func _fighter_assists() -> FighterAssistSettings:
 
 
 func _set_phase(next_phase: Phase, telemetry_phase_id: StringName) -> void:
+	if next_phase != _phase and next_phase == Phase.JOURNAL:
+		_large_text_page = 0
 	_phase = next_phase
 	if telemetry_phase_id != &"" and telemetry_phase_id != _telemetry_phase_id:
 		_telemetry_phase_id = telemetry_phase_id
@@ -702,6 +728,7 @@ func _toggle_locale() -> void:
 
 
 func _on_locale_changed(locale: StringName) -> void:
+	_large_text_page = 0
 	if _dialogue != null and _phase == Phase.EVENT_LINE:
 		_dialogue.switch_locale(locale)
 	choice_control.set_locale(locale)
@@ -766,6 +793,13 @@ func _draw() -> void:
 func _draw_invitation(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.invitation.header", foreground, background)
+	if ui_scale_percent() > 100:
+		draw_rect(Rect2(24, 58, 70, 34), foreground, false, 2.0)
+		draw_colored_polygon(PackedVector2Array([Vector2(28, 62), Vector2(59, 78), Vector2(90, 62)]), foreground)
+		draw_colored_polygon(PackedVector2Array([Vector2(33, 63), Vector2(59, 75), Vector2(85, 63)]), background)
+		_draw_wrapped(&"ui.slice.invitation.body", Rect2(105, 45, 190, 96), 5)
+		_draw_footer(&"ui.slice.invitation.confirm", foreground, background)
+		return
 	draw_rect(Rect2(24, 55, 118, 62), foreground, false, 2.0)
 	draw_line(Vector2(35, 73), Vector2(130, 73), foreground, 1.0)
 	draw_rect(Rect2(49, 80, 68, 24), foreground, false, 1.0)
@@ -778,6 +812,20 @@ func _draw_invitation(foreground: Color, background: Color) -> void:
 func _draw_world_map(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.map.header", foreground, background)
+	if ui_scale_percent() > 100:
+		draw_rect(Rect2(16, 45, 122, 96), foreground, false, 1.0)
+		for point: Vector2 in [Vector2(35, 73), Vector2(55, 119), Vector2(78, 61), Vector2(106, 108), Vector2(124, 76)]:
+			draw_rect(Rect2(point, Vector2(3, 3)), foreground)
+		draw_line(Vector2(36, 74), Vector2(78, 62), foreground, 1.0)
+		draw_line(Vector2(78, 62), Vector2(106, 109), foreground, 1.0)
+		draw_circle(Vector2(78, 62), 7, foreground)
+		draw_circle(Vector2(78, 62), 4, background)
+		var large_location := _content.location(LOCATION_ID)
+		var large_location_name := large_location.display_name(_current_locale()) if large_location != null else ""
+		_draw_text(large_location_name, Vector2(146, 61), 158, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
+		_draw_wrapped(&"ui.slice.map.body", Rect2(146, 68, 158, 70), 4)
+		_draw_footer(&"ui.slice.map.confirm", foreground, background)
+		return
 	draw_rect(Rect2(14, 39, 204, 114), foreground, false, 1.0)
 	for point: Vector2 in [Vector2(42, 71), Vector2(72, 121), Vector2(109, 57), Vector2(155, 105), Vector2(190, 73)]:
 		draw_rect(Rect2(point, Vector2(3, 3)), foreground)
@@ -811,7 +859,11 @@ func _draw_event(foreground: Color, background: Color) -> void:
 		return
 	if _dialogue == null or _dialogue.current == null:
 		return
-	var panel := Rect2(55, 78, 259, 95) if _current_locale() == &"ja" else Rect2(83, 95, 231, 78)
+	var panel := (
+		Rect2(8, 54, 304, 119)
+		if ui_scale_percent() > 100
+		else (Rect2(55, 78, 259, 95) if _current_locale() == &"ja" else Rect2(83, 95, 231, 78))
+	)
 	draw_rect(panel, background)
 	draw_rect(panel, foreground, false, 2.0)
 	var name_tag := Rect2(panel.position.x + 8, panel.position.y - 14, 86, 16)
@@ -831,7 +883,7 @@ func _draw_event(foreground: Color, background: Color) -> void:
 		text_width,
 		_body_font_size(),
 		_current_locale(),
-		4 if _current_locale() == &"ja" else 3
+		4 if ui_scale_percent() > 100 or _current_locale() == &"ja" else 3
 	)
 	for index: int in range(lines.size()):
 		_draw_text(
@@ -850,6 +902,18 @@ func _draw_event(foreground: Color, background: Color) -> void:
 func _draw_reward(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.reward.header", foreground, background)
+	if ui_scale_percent() > 100:
+		draw_rect(Rect2(22, 48, 276, 46), foreground, false, 1.0)
+		_draw_unpaired_cup(Vector2(34, 60), foreground)
+		_draw_text(_ui(&"ui.slice.reward.keepsake"), Vector2(72, 63), 214, HORIZONTAL_ALIGNMENT_LEFT, _chrome_font_size())
+		_draw_wrapped(&"ui.slice.reward.item_name", Rect2(72, 64, 214, 27), 1)
+		draw_rect(Rect2(22, 98, 276, 44), foreground, false, 1.0)
+		_draw_journal_mark(Vector2(34, 106), foreground)
+		_draw_text(_ui(&"ui.slice.reward.journal_added"), Vector2(72, 112), 214, HORIZONTAL_ALIGNMENT_LEFT, _chrome_font_size())
+		var large_title := _resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text
+		_draw_text(large_title, Vector2(72, 135), 214, HORIZONTAL_ALIGNMENT_LEFT, _body_font_size())
+		_draw_footer(&"ui.slice.reward.confirm", foreground, background)
+		return
 	draw_rect(Rect2(22, 49, 130, 92), foreground, false, 1.0)
 	_draw_unpaired_cup(Vector2(72, 64), foreground)
 	_draw_text(_ui(&"ui.slice.reward.keepsake"), Vector2(30, 105), 114, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
@@ -877,7 +941,7 @@ func _draw_day_end(foreground: Color, background: Color) -> void:
 		draw_line(Vector2(x, 116), Vector2(x + 8, 105), foreground, 1.0)
 	draw_circle(Vector2(160, 77), 19, foreground)
 	draw_circle(Vector2(160, 77), 14, background)
-	_draw_wrapped(&"ui.slice.day_end.body", Rect2(46, 128, 228, 22), 2)
+	_draw_wrapped(&"ui.slice.day_end.body", Rect2(30, 119, 260, 30), 2)
 	_draw_footer(&"ui.slice.day_end.confirm", foreground, background)
 
 
@@ -887,11 +951,30 @@ func _draw_journal(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(18, 44, 284, 100), foreground, false, 2.0)
 	_draw_text(_resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text, Vector2(30, 61), 260, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
 	var journal_body := _resolver.resolve(&"journal.hkr.empty_cushion.body", _current_locale()).text
-	var lines := PixelTextWrapper.wrap(journal_body, _font(), 260, _body_font_size(), _current_locale(), 4)
-	for index: int in range(lines.size()):
-		_draw_text(lines[index], Vector2(30, 79 + index * _body_line_height()), 260, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
-	draw_rect(Rect2(27, 125, 266, 15), foreground, false, 1.0)
-	_draw_text(_ui(&"ui.slice.journal.replay_body"), Vector2(32, 137), 256, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+	var maximum_lines := 12 if ui_scale_percent() > 100 else 4
+	var lines := PixelTextWrapper.wrap(journal_body, _font(), 260, _body_font_size(), _current_locale(), maximum_lines)
+	var first_line := _large_text_page * 3 if ui_scale_percent() > 100 else 0
+	var visible_lines: Array[String] = []
+	if ui_scale_percent() > 100:
+		for line_index: int in range(first_line, mini(first_line + 3, lines.size())):
+			visible_lines.append(lines[line_index])
+	else:
+		visible_lines.assign(lines)
+	for index: int in range(visible_lines.size()):
+		_draw_text(visible_lines[index], Vector2(30, (80 if ui_scale_percent() > 100 else 79) + index * _body_line_height()), 260, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
+	if ui_scale_percent() > 100:
+		var pages := maxi(1, ceili(lines.size() / 3.0))
+		_large_text_page = clampi(_large_text_page, 0, pages - 1)
+		var page_hint := "%s %s  %d/%d" % [
+			input_axis_binding(GameInput.MOVE_UP, GameInput.MOVE_DOWN),
+			_ui(&"ui.input.page"),
+			_large_text_page + 1,
+			pages,
+		]
+		_draw_text(page_hint, Vector2(30, 139), 260, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+	if ui_scale_percent() == 100:
+		draw_rect(Rect2(27, 125, 266, 15), foreground, false, 1.0)
+		_draw_text(_ui(&"ui.slice.journal.replay_body"), Vector2(32, 137), 256, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 	_draw_footer(&"ui.slice.journal.confirm", foreground, background)
 
 
@@ -1021,19 +1104,31 @@ func _draw_journal_mark(origin: Vector2, foreground: Color) -> void:
 
 
 func _body_font_size() -> int:
-	return 12 if _current_locale() == &"ja" else 8
+	return scaled_ui_pixels(12 if _current_locale() == &"ja" else 8)
 
 
 func _chrome_font_size() -> int:
-	return 10 if _current_locale() == &"ja" else 7
+	return scaled_ui_pixels(10 if _current_locale() == &"ja" else 7)
 
 
 func _body_line_height() -> int:
-	return 14 if _current_locale() == &"ja" else 11
+	return _body_font_size() + (4 if ui_scale_percent() > 100 else 2)
 
 
 func _font() -> Font:
 	return _japanese_font if _current_locale() == &"ja" else _latin_font
+
+
+func _journal_large_page_count() -> int:
+	if _resolver == null:
+		return 1
+	var body := _resolver.resolve(&"journal.hkr.empty_cushion.body", _current_locale()).text
+	var lines := PixelTextWrapper.wrap(body, _font(), 260, _body_font_size(), _current_locale(), 12)
+	return maxi(1, ceili(lines.size() / 3.0))
+
+
+func large_text_page_for_test() -> int:
+	return _large_text_page
 
 
 func _ui(key: StringName, arguments: Dictionary = {}) -> String:

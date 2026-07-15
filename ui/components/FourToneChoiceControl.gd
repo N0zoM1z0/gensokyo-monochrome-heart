@@ -2,6 +2,8 @@ class_name FourToneChoiceControl
 extends Control
 ## One-bit four-tone selector whose focus identity survives localization changes.
 
+const UI_SCALE_POLICY := preload("res://src/presentation/ui/UiScalePolicy.gd")
+
 signal tone_confirmed(tone: StringName)
 
 const TONE_LABEL_KEYS: Dictionary[StringName, StringName] = {
@@ -13,6 +15,7 @@ const TONE_LABEL_KEYS: Dictionary[StringName, StringName] = {
 
 var profile_id: StringName = &"A"
 var locale: StringName = &"en"
+var ui_scale_percent: int = 100
 var presenter := FourToneChoicePresenter.new()
 
 var _catalog := UiTextCatalog.new()
@@ -51,6 +54,11 @@ func set_locale(next_locale: StringName) -> void:
 
 func set_profile(next_profile_id: StringName) -> void:
 	profile_id = next_profile_id
+	queue_redraw()
+
+
+func set_ui_scale(next_percent: int) -> void:
+	ui_scale_percent = UI_SCALE_POLICY.normalize(next_percent)
 	queue_redraw()
 
 
@@ -128,19 +136,26 @@ func _draw_option(
 			draw_line(Vector2(x, top + row_height - 4), Vector2(x + 5, top + 1), foreground, 1.0)
 	_draw_tone_mark(option.tone, Vector2(13, top + 8), foreground, background)
 	var font := _japanese_font if locale == &"ja" else _latin_font
-	var body_size := 12 if locale == &"ja" else 8
-	var tone_size := 10 if locale == &"ja" else 8
-	var line_height := 13 if locale == &"ja" else 10
+	var body_base := (10 if ui_scale_percent > 100 else 12) if locale == &"ja" else 8
+	var body_size := UI_SCALE_POLICY.pixels(body_base, ui_scale_percent)
+	var tone_size := UI_SCALE_POLICY.pixels(10 if locale == &"ja" else 8, ui_scale_percent)
+	var line_height := body_size
 	var tone_label := _catalog.text(TONE_LABEL_KEYS.get(option.tone, &"ui.common.unavailable"), locale)
-	draw_string(font, Vector2(29, top + 12), tone_label, HORIZONTAL_ALIGNMENT_LEFT, 54, tone_size, foreground)
-	var action_lines := PixelTextWrapper.wrap(option.text, font, size.x - 91, body_size, locale, 2)
+	var first_baseline := mini(row_height - 4, tone_size + 1)
+	var is_reflow := ui_scale_percent > 100
+	if not is_reflow:
+		draw_string(font, Vector2(29, top + first_baseline), tone_label, HORIZONTAL_ALIGNMENT_LEFT, 54, tone_size, foreground)
+	var action_x := 29 if is_reflow else 87
+	var action_width := size.x - action_x - 8
+	var action_text := "%s  %s" % [tone_label, option.text] if is_reflow else option.text
+	var action_lines := PixelTextWrapper.wrap(action_text, font, action_width, body_size, locale, 2)
 	for line_index: int in range(action_lines.size()):
 		draw_string(
 			font,
-			Vector2(87, top + 12 + line_index * line_height),
+			Vector2(action_x, top + mini(row_height - 4, body_size - 2) + line_index * line_height),
 			action_lines[line_index],
 			HORIZONTAL_ALIGNMENT_LEFT,
-			size.x - 91,
+			action_width,
 			body_size,
 			foreground
 		)

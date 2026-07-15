@@ -1,13 +1,13 @@
 {
   "schema": "gmh-runtime-content-index-v1",
-  "content_revision": "2026.07.16.7",
-  "content_hash": "5cafac3e22b6c6bd004e98802557e435b4d0d8a10a9005775a737b9ded731d7f",
+  "content_revision": "2026.07.16.8",
+  "content_hash": "498fd65451368950d0e112dc80d7f0fd7e069a3c707494c11a6ad5fd007b894a",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 28,
     "dialogue_beats": 19,
-    "localization": 301,
+    "localization": 302,
     "music_cues": 89,
     "event_nodes": 36
   },
@@ -354,6 +354,7 @@
       "ui.input.margin",
       "ui.input.move",
       "ui.input.observe",
+      "ui.input.page",
       "ui.input.pause",
       "ui.input.pour",
       "ui.input.shot",

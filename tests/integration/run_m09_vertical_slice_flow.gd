@@ -137,6 +137,12 @@ func _run() -> void:
 
 	_slice.handle_semantic_action(GameInput.CONFIRM)
 	_expect(_slice.phase_id() == &"journal", "day end did not open the Journal")
+	_slice.set_ui_scale_fixture(150)
+	_expect(_slice.ui_scale_percent() == 150 and _slice.large_text_page_for_test() == 0, "Journal did not enter its 150% reflow layout")
+	_slice.handle_semantic_action(GameInput.MOVE_DOWN)
+	_expect(_slice.large_text_page_for_test() == 1, "150% Journal did not expose its next readable text page")
+	_slice.handle_semantic_action(GameInput.MOVE_UP)
+	_expect(_slice.large_text_page_for_test() == 0, "150% Journal did not return to its first readable text page")
 	var before_replay := GameStateCodec.new().canonical_state(_kernel.state_snapshot())
 	_slice.handle_semantic_action(GameInput.CONFIRM)
 	_expect(_slice.is_replay() and _slice.current_event_node_id() == &"n003", "Journal did not start a read-only event replay")
