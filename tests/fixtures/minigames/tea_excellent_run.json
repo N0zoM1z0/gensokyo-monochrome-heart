@@ -1,0 +1,14 @@
+{
+  "schema": "gmh-minigame-input-fixture-v1",
+  "minigame_id": "mini.shrine.tea_temperature",
+  "seed": 6060,
+  "assists": [],
+  "segments": [
+    {"ticks": 110, "heat_direction": 1, "patience_held": true},
+    {"ticks": 70, "heat_direction": 0, "patience_held": true},
+    {"ticks": 1, "pour_pressed": true},
+    {"ticks": 30},
+    {"ticks": 1, "pour_pressed": true}
+  ],
+  "expected_result": "excellent"
+}
