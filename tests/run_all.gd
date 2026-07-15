@@ -9,6 +9,7 @@ func _initialize() -> void:
 		TestInputFoundation.new(),
 		TestJsonSchemaValidator.new(),
 		TestLocalizationFoundation.new(),
+		TestNavigationFoundation.new(),
 		TestPresentationFoundation.new(),
 		TestReleasePlaceholderScanner.new(),
 		TestScreenshotFixture.new(),

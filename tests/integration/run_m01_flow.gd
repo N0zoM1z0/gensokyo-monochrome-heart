@@ -1,0 +1,209 @@
+extends SceneTree
+## Deterministic semantic-input proof of the complete M01 navigation loop.
+
+const MAX_WAIT_FRAMES := 240
+
+var failures: Array[String] = []
+var shell: GameShell
+
+
+func _initialize() -> void:
+	_run.call_deferred()
+
+
+func _run() -> void:
+	_prepare_services()
+	var packed_shell := load("res://src/presentation/shell/Main.tscn") as PackedScene
+	if packed_shell == null:
+		_fail("Main shell could not be loaded")
+		await _finish()
+		return
+	shell = packed_shell.instantiate() as GameShell
+	root.add_child(shell)
+	if not await _wait_for_route(&"title"):
+		await _finish()
+		return
+	await _verify_live_locale_route()
+	await _verify_new_profile_to_mode()
+	await _verify_pause_modal_focus_and_resume()
+	await _verify_pause_return_to_title()
+	await _finish()
+
+
+func _prepare_services() -> void:
+	var localization := root.get_node_or_null("LocalizationService")
+	if localization != null:
+		localization.set_locale(&"en", false)
+	var settings := root.get_node_or_null("SettingsService")
+	if settings != null:
+		settings.set_forced_presentation_profile(&"")
+		settings.set_preferred_presentation_profile(&"A")
+		settings.set_reduced_motion(false)
+		settings.set_safe_flash(false)
+	var theme := root.get_node_or_null("UiThemeRegistry")
+	if theme != null:
+		theme.set_native_profile(&"A")
+	var accessibility := root.get_node_or_null("AccessibilityState")
+	if accessibility != null:
+		accessibility.is_first_run = true
+		accessibility.is_reduced_motion = false
+		accessibility.is_safe_flash = false
+	var focus_router := root.get_node_or_null("FocusRouter")
+	if focus_router != null:
+		focus_router.clear()
+
+
+func _verify_live_locale_route() -> void:
+	_press(GameInput.MOVE_DOWN)
+	_press(GameInput.CONFIRM)
+	if not await _wait_for_route(&"options"):
+		return
+	var options := shell.active_primary_screen()
+	var instance_id := options.get_instance_id()
+	options.call("arm_input_for_test")
+	_press(GameInput.CONFIRM)
+	await _wait_frames(1)
+	var localization := root.get_node_or_null("LocalizationService")
+	if localization == null or localization.locale != &"ja":
+		_fail("Options did not switch the active locale to Japanese")
+	if shell.active_primary_screen().get_instance_id() != instance_id:
+		_fail("locale switching restarted the active Options scene")
+	_press(GameInput.CANCEL)
+	if not await _wait_for_route(&"title"):
+		return
+	if localization != null and localization.locale != &"en":
+		_fail("Options cancel did not restore its opening locale")
+
+
+func _verify_new_profile_to_mode() -> void:
+	var glyph_service := root.get_node_or_null("InputGlyphService")
+	if glyph_service != null:
+		var controller_event := InputEventJoypadButton.new()
+		controller_event.button_index = JOY_BUTTON_A
+		glyph_service.observe_event(controller_event)
+		controller_event = null
+	_press(GameInput.MOVE_UP)
+	_press(GameInput.CONFIRM)
+	if not await _wait_for_route(&"profile_select"):
+		return
+	_press(GameInput.MOVE_RIGHT)
+	_press(GameInput.CONFIRM)
+	if not await _wait_for_route(&"accessibility"):
+		return
+	var settings := root.get_node_or_null("SettingsService")
+	if settings == null or settings.preferred_presentation_profile != &"B":
+		_fail("profile selection did not store visual Profile B")
+	_press(GameInput.MOVE_DOWN)
+	_press(GameInput.MOVE_DOWN)
+	_press(GameInput.CONFIRM)
+	if not await _wait_for_route(&"foundation_mode"):
+		return
+	var accessibility := root.get_node_or_null("AccessibilityState")
+	if accessibility == null or not accessibility.is_reduced_motion:
+		_fail("first-run Low Motion preset was not applied")
+	var transition := shell.get_node("FixedResolutionRoot/GameViewport/TransitionCanvas/TransitionController") as TransitionController
+	if transition.last_style != TransitionOverlay.STYLE_BORDER_TICK:
+		_fail("Low Motion route still used the paper-fold transition")
+	if glyph_service != null and glyph_service.active_device != 1:
+		_fail("controller input did not preserve the active controller glyph family")
+	if shell.active_primary_screen().process_mode != Node.PROCESS_MODE_PAUSABLE:
+		_fail("ModeHost content would continue processing while the tree is paused")
+
+
+func _verify_pause_modal_focus_and_resume() -> void:
+	Input.action_press(GameInput.CONFIRM)
+	Input.action_press(GameInput.PAUSE)
+	_press(GameInput.PAUSE)
+	if not shell.has_open_pause() or not paused:
+		_fail("Pause did not open synchronously while freezing the tree")
+		return
+	if Input.is_action_pressed(GameInput.CONFIRM) or Input.is_action_pressed(GameInput.PAUSE):
+		_fail("opening Pause did not release active semantic input")
+	await _wait_frames(3)
+	shell.pause_screen.arm_input_for_test()
+	_press(GameInput.MOVE_DOWN)
+	_press(GameInput.CONFIRM)
+	if not await _wait_until_modal_options(true):
+		return
+	_press(GameInput.CANCEL)
+	if not await _wait_until_modal_options(false):
+		return
+	if not shell.pause_screen.visible or shell.pause_screen.current_focus_id() != &"pause.options":
+		_fail("closing nested Options did not restore Pause focus")
+	_press(GameInput.CANCEL)
+	await _wait_frames(2)
+	if not shell.has_open_pause():
+		_fail("Pause closed before the three-frame resume cue completed")
+	await _wait_frames(3)
+	if shell.has_open_pause() or paused:
+		_fail("Pause did not resume after its three-frame cue")
+	if shell.active_route_id() != &"foundation_mode":
+		_fail("resume replaced the active mode instead of preserving it")
+
+
+func _verify_pause_return_to_title() -> void:
+	_press(GameInput.PAUSE)
+	if not shell.has_open_pause():
+		_fail("Pause could not reopen after resume")
+		return
+	await _wait_frames(3)
+	shell.pause_screen.arm_input_for_test()
+	_press(GameInput.MOVE_DOWN)
+	_press(GameInput.MOVE_DOWN)
+	_press(GameInput.CONFIRM)
+	if not await _wait_for_route(&"title"):
+		return
+	if paused or shell.has_open_pause():
+		_fail("return-to-title left the game paused or retained the modal")
+
+
+func _press(action: StringName) -> void:
+	shell.receive_semantic_action(action)
+
+
+func _wait_for_route(route_id: StringName) -> bool:
+	for _frame: int in range(MAX_WAIT_FRAMES):
+		if shell.active_route_id() == route_id and not shell.scene_router.is_routing:
+			await _wait_frames(3)
+			var screen := shell.active_primary_screen()
+			if screen != null and screen.has_method("arm_input_for_test"):
+				screen.call("arm_input_for_test")
+			return true
+		await process_frame
+	_fail("timed out waiting for route: %s" % route_id)
+	return false
+
+
+func _wait_until_modal_options(expected_open: bool) -> bool:
+	for _frame: int in range(30):
+		if shell.has_open_modal_options() == expected_open:
+			await _wait_frames(2)
+			if expected_open and shell.modal_options_screen != null:
+				shell.modal_options_screen.arm_input_for_test()
+			return true
+		await process_frame
+	_fail("timed out waiting for nested Options open=%s" % expected_open)
+	return false
+
+
+func _wait_frames(frame_count: int) -> void:
+	for _frame: int in range(frame_count):
+		await process_frame
+
+
+func _fail(message: String) -> void:
+	failures.append(message)
+
+
+func _finish() -> void:
+	paused = false
+	print("M01 integration flow: failures=%d" % failures.size())
+	for failure: String in failures:
+		printerr("FAIL: %s" % failure)
+	if shell != null and is_instance_valid(shell):
+		shell.queue_free()
+		shell = null
+	await process_frame
+	await process_frame
+	await process_frame
+	quit(0 if failures.is_empty() else 1)

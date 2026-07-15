@@ -68,4 +68,8 @@ func _validate_accessibility_presets(failures: Array[String]) -> void:
 	state.apply_preset(state.Preset.ORIGINAL, false)
 	if state.is_reduced_motion or state.has_simple_fighter_input or state.game_speed_percent != 100:
 		failures.append("Original preset did not restore authored defaults")
+	state.is_first_run = true
+	state.restore_presentation(false, false, state.Preset.ORIGINAL, true, false)
+	if not state.is_first_run:
+		failures.append("cancel-style accessibility restore consumed the first-run preset")
 	state.free()

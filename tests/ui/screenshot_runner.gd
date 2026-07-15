@@ -4,6 +4,7 @@ extends SceneTree
 const CANVAS_SIZE := Vector2i(320, 180)
 const DEFAULT_SCENE := "res://tests/ui/fixtures/VisualFoundationFixture.tscn"
 const DEFAULT_OUTPUT := "res://tests/screenshots/generated/visual_foundation_A_en.png"
+const ONE_BIT_SHADER := preload("res://ui/theme/one_bit_post_process.gdshader")
 
 
 func _initialize() -> void:
@@ -35,6 +36,7 @@ func _run() -> void:
 			options.is_reduced_motion,
 			options.is_safe_flash
 		)
+	_add_one_bit_threshold(viewport)
 	var resolved_profile := options.profile_id
 	if fixture.has_method("resolved_profile_id"):
 		resolved_profile = fixture.call("resolved_profile_id")
@@ -73,6 +75,18 @@ func _run() -> void:
 		% [options.scene_path, output_path, image.get_size(), options.profile_id, resolved_profile, options.locale]
 	)
 	quit(0)
+
+
+func _add_one_bit_threshold(viewport: SubViewport) -> void:
+	var material := ShaderMaterial.new()
+	material.shader = ONE_BIT_SHADER
+	var threshold := ColorRect.new()
+	threshold.position = Vector2.ZERO
+	threshold.size = CANVAS_SIZE
+	threshold.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	threshold.z_index = 1000
+	threshold.material = material
+	viewport.add_child(threshold)
 
 
 func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:

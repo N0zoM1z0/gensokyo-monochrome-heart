@@ -10,14 +10,19 @@ func run() -> Array[String]:
 	if not catalog.load_default():
 		failures.append("UI localization catalog failed: %s" % "; ".join(catalog.errors))
 		return failures
-	for required_key: StringName in [&"ui.title.new_profile", &"ui.options.language", &"ui.pause.resume"]:
+	for required_key: StringName in [
+		&"ui.title.new_profile",
+		&"ui.options.language",
+		&"ui.pause.resume",
+		&"ui.accessibility.title",
+	]:
 		if not catalog.has_key(required_key):
 			failures.append("UI localization lacks %s" % required_key)
 		elif catalog.text(required_key, &"en").is_empty() or catalog.text(required_key, &"ja").is_empty():
 			failures.append("UI localization is not bilingual for %s" % required_key)
 	var keys := catalog.keys()
-	if keys.size() != 63:
-		failures.append("expected 63 merged localization keys, got %d" % keys.size())
+	if keys.size() != 67:
+		failures.append("expected 67 merged localization keys, got %d" % keys.size())
 	if keys != catalog.keys():
 		failures.append("UI localization keys are not deterministic")
 
