@@ -1,0 +1,15 @@
+{
+  "intent": "Keep the invitation practical without denying it.",
+  "spoken_line_en": "The path gets dark early. Take the lantern by the gate.",
+  "spoken_line_ja": "参道は暗くなるのが早い。門の提灯を持っていきなさい。",
+  "nonverbal": "Reimu checks the lantern wick without looking up.",
+  "action": "Offer the gate lantern.",
+  "memory_tag": "shrine.lantern_offer",
+  "state_suggestion": {
+    "trust": 1,
+    "ease": 0,
+    "respect": 0,
+    "spark": 0,
+    "strain": 0
+  }
+}

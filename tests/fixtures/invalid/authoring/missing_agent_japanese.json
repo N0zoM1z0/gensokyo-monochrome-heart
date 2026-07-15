@@ -1,0 +1,12 @@
+{
+  "intent": "Demonstrate a schema failure.",
+  "spoken_line_en": "The Japanese field is absent.",
+  "nonverbal": "The validator checks the required fields.",
+  "state_suggestion": {
+    "trust": 0,
+    "ease": 0,
+    "respect": 0,
+    "spark": 0,
+    "strain": 0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "intent": "Change too many hidden relationship facets at once.",
+  "spoken_line_en": "This output is structurally valid but semantically invalid.",
+  "spoken_line_ja": "構造は正しいが、意味上は無効な出力。",
+  "nonverbal": "Two state changes are requested.",
+  "action": null,
+  "memory_tag": "fixture.multiple_changes",
+  "state_suggestion": {
+    "trust": 1,
+    "ease": 1,
+    "respect": 0,
+    "spark": 0,
+    "strain": 0
+  }
+}

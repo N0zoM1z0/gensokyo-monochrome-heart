@@ -137,6 +137,23 @@ run_checked "M11 Japanese event preview" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/author_event.gd -- \
 	--action=preview --bundle="$LOG_DIR/m11-authoring" --locale=ja \
 	--output="$LOG_DIR/m11-authoring/preview-ja.md"
+run_checked "M11 character skills catalog" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/character_authoring.gd -- --action=list
+run_checked "M11 Reimu skills browser" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/character_authoring.gd -- \
+	--action=show --character-id=char.reimu_hakurei
+run_checked "M11 valid character-agent output" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/character_authoring.gd -- \
+	--action=validate-output --character-id=char.reimu_hakurei \
+	--input=res://tests/fixtures/authoring/valid_reimu_agent_output.json
+run_expected_failure "M11 multi-facet agent output" "at most one state facet may change" \
+	"$GODOT_BIN" --headless --path . --script res://src/tools/character_authoring.gd -- \
+	--action=validate-output --character-id=char.reimu_hakurei \
+	--input=res://tests/fixtures/invalid/authoring/multiple_agent_state_changes.json
+run_expected_failure "M11 schema-invalid agent output" "missing required property spoken_line_ja" \
+	"$GODOT_BIN" --headless --path . --script res://src/tools/character_authoring.gd -- \
+	--action=validate-output --character-id=char.reimu_hakurei \
+	--input=res://tests/fixtures/invalid/authoring/missing_agent_japanese.json
 run_checked "M11 event dependency report" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/author_event.gd -- \
 	--action=dependencies --bundle="$LOG_DIR/m11-authoring" \
