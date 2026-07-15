@@ -38,7 +38,7 @@ func validation_errors() -> Array[String]:
 		errors.append("emitter timing and slot counts must be positive: %s" % id)
 	if speed_fp <= 0 or telegraph_ticks <= 0 or lifetime_ticks <= 0:
 		errors.append("emitter speed, telegraph, and lifetime must be positive: %s" % id)
-	if pattern_type == &"safe_lane_grid" and (safe_lane < 0 or safe_lane >= slot_count):
+	if pattern_type in [&"safe_lane_grid", &"knife_lattice"] and (safe_lane < 0 or safe_lane >= slot_count):
 		errors.append("safe-lane emitter requires a lane inside its slot range: %s" % id)
 	return errors
 

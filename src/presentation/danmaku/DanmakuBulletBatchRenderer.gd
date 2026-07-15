@@ -17,6 +17,7 @@ enum Batch {
 }
 
 const TEXTURE_SIZE := 7
+const KNIFE_TEXTURE_SIZE := 9
 const TEXTURE_CENTER := 3
 
 var rendered_bullet_count: int = 0
@@ -24,7 +25,6 @@ var _batch_capacity: int = 0
 var _batch_color := Color(-1, -1, -1, -1)
 var _meshes: Array[MultiMesh] = []
 var _textures: Array[Texture2D] = []
-var _quad_mesh: QuadMesh
 
 
 func draw_field(
@@ -51,9 +51,9 @@ func draw_field(
 			origin.y + roundi(pool.y_fp[index] / 256.0 * scale_y)
 		)
 		if (
-			position.x < origin.x - 8
+			position.x < origin.x
 			or position.x > origin.x + display_size.x + 8
-			or position.y < origin.y - 8
+			or position.y < origin.y
 			or position.y > origin.y + display_size.y + 8
 		):
 			continue
@@ -82,7 +82,7 @@ func draw_safe_lane(
 		return
 	var slot_count := 0
 	for emitter: DanmakuEmitterDefinition in phase.emitters:
-		if emitter.pattern_type == &"safe_lane_grid":
+		if emitter.pattern_type in [&"safe_lane_grid", &"knife_lattice"] and emitter.safe_lane >= 0:
 			slot_count = emitter.slot_count
 			break
 	if slot_count <= 1:
@@ -121,13 +121,14 @@ func _ensure_batches(capacity: int, foreground: Color) -> void:
 		_batch_color = Color(-1, -1, -1, -1)
 		_meshes.clear()
 		_textures.clear()
-		_quad_mesh = QuadMesh.new()
-		_quad_mesh.size = Vector2(TEXTURE_SIZE, TEXTURE_SIZE)
 		for batch: int in range(Batch.COUNT):
+			var quad_mesh := QuadMesh.new()
+			var texture_size := KNIFE_TEXTURE_SIZE if batch in [Batch.KNIFE_INK, Batch.KNIFE_PAPER] else TEXTURE_SIZE
+			quad_mesh.size = Vector2(texture_size, texture_size)
 			var multimesh := MultiMesh.new()
 			multimesh.transform_format = MultiMesh.TRANSFORM_2D
 			multimesh.use_colors = true
-			multimesh.mesh = _quad_mesh
+			multimesh.mesh = quad_mesh
 			multimesh.instance_count = capacity
 			multimesh.visible_instance_count = 0
 			_meshes.append(multimesh)
@@ -141,7 +142,8 @@ func _ensure_batches(capacity: int, foreground: Color) -> void:
 
 
 func _make_texture(batch: int) -> Texture2D:
-	var image := Image.create(TEXTURE_SIZE, TEXTURE_SIZE, false, Image.FORMAT_RGBA8)
+	var texture_size := KNIFE_TEXTURE_SIZE if batch in [Batch.KNIFE_INK, Batch.KNIFE_PAPER] else TEXTURE_SIZE
+	var image := Image.create(texture_size, texture_size, false, Image.FORMAT_RGBA8)
 	image.fill(Color.TRANSPARENT)
 	match batch:
 		Batch.TELEGRAPH:
@@ -162,11 +164,13 @@ func _make_texture(batch: int) -> Texture2D:
 					_set_mask_pixel(image, offset, TEXTURE_CENTER)
 					_set_mask_pixel(image, TEXTURE_CENTER, offset)
 		Batch.KNIFE_INK, Batch.KNIFE_PAPER:
-			for offset: int in range(1, 6):
-				if batch == Batch.KNIFE_INK or offset != 3:
-					_set_mask_pixel(image, 5 - offset, offset)
-			_set_mask_pixel(image, 1, 5)
-			_set_mask_pixel(image, 2, 5)
+			for offset: int in range(1, 8):
+				_set_mask_pixel(image, 8 - offset, offset)
+				if batch == Batch.KNIFE_INK and offset < 7:
+					_set_mask_pixel(image, 7 - offset, offset)
+			_set_mask_pixel(image, 1, 7)
+			_set_mask_pixel(image, 2, 7)
+			_set_mask_pixel(image, 1, 6)
 		Batch.DISSOLVE:
 			_set_mask_pixel(image, TEXTURE_CENTER, TEXTURE_CENTER)
 	return ImageTexture.create_from_image(image)

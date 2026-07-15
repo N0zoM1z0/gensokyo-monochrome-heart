@@ -105,6 +105,14 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/TimeGridResultFixture.tscn \
 	--scene=res://tests/ui/fixtures/TimeGridLossFixture.tscn \
 	--scene=res://tests/ui/fixtures/TimeGridAssistFixture.tscn \
+	--scene=res://src/presentation/danmaku/MissingMinuteKnivesMode.tscn \
+	--scene=res://tests/ui/fixtures/MissingMinuteKnivesTutorialFixture.tscn \
+	--scene=res://tests/ui/fixtures/MissingMinuteKnivesPhase1Fixture.tscn \
+	--scene=res://tests/ui/fixtures/MissingMinuteKnivesPhase2Fixture.tscn \
+	--scene=res://tests/ui/fixtures/MissingMinuteKnivesPhase3Fixture.tscn \
+	--scene=res://tests/ui/fixtures/MissingMinuteKnivesPausedFixture.tscn \
+	--scene=res://tests/ui/fixtures/MissingMinuteKnivesResultFixture.tscn \
+	--scene=res://tests/ui/fixtures/MissingMinuteKnivesLossFixture.tscn \
 	--scene=res://src/presentation/danmaku/BoundaryStainMode.tscn \
 	--scene=res://tests/ui/fixtures/BoundaryStainSpellFixture.tscn \
 	--scene=res://tests/ui/fixtures/BoundaryStainPhase1Fixture.tscn \

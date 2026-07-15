@@ -49,6 +49,13 @@ capture_pair m12_time_grid_loss_a res://tests/ui/fixtures/TimeGridLossFixture.ts
 capture_pair m12_time_grid_assist_c res://tests/ui/fixtures/TimeGridAssistFixture.tscn C --reduced-motion --safe-flash
 capture m12_time_grid_controller_b_ja res://tests/ui/fixtures/TimeGridActiveFixture.tscn B ja --input-device=controller
 capture m12_time_grid_150_a_en res://tests/ui/fixtures/TimeGridActiveFixture.tscn A en --ui-scale=150
+capture_pair m12_knives_tutorial_a res://tests/ui/fixtures/MissingMinuteKnivesTutorialFixture.tscn A
+capture_pair m12_knives_phase1_b res://tests/ui/fixtures/MissingMinuteKnivesPhase1Fixture.tscn B
+capture_pair m12_knives_phase2_c res://tests/ui/fixtures/MissingMinuteKnivesPhase2Fixture.tscn C
+capture_pair m12_knives_phase3_d res://tests/ui/fixtures/MissingMinuteKnivesPhase3Fixture.tscn D --safe-flash
+capture_pair m12_knives_paused_a res://tests/ui/fixtures/MissingMinuteKnivesPausedFixture.tscn A
+capture_pair m12_knives_result_a res://tests/ui/fixtures/MissingMinuteKnivesResultFixture.tscn A
+capture_pair m12_knives_loss_d res://tests/ui/fixtures/MissingMinuteKnivesLossFixture.tscn D
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated

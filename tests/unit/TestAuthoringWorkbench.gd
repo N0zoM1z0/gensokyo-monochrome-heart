@@ -10,12 +10,12 @@ func run() -> Array[String]:
 	if not validation.is_valid():
 		failures.append("workbench registry failed: %s" % validation.human_readable())
 	var targets := service.targets()
-	if targets.size() != 19:
-		failures.append("workbench expected 19 targets, got %d" % targets.size())
+	if targets.size() != 22:
+		failures.append("workbench expected 22 targets, got %d" % targets.size())
 	var catalog := service.render_catalog()
-	if not catalog.is_valid() or not catalog.output.contains("- Targets: 19"):
+	if not catalog.is_valid() or not catalog.output.contains("- Targets: 22"):
 		failures.append("workbench catalog failed: %s" % catalog.human_readable())
-	for expected: String in ["scene.tea.active", "scene.danmaku.stress", "scene.danmaku.lab", "scene.fighter.hitbox", "save.v1_route_affinity", "tone.reimu_private"]:
+	for expected: String in ["scene.tea.active", "scene.danmaku.stress", "scene.danmaku.lab", "scene.danmaku.knives.phase3", "scene.fighter.hitbox", "save.v1_route_affinity", "tone.reimu_private"]:
 		if not catalog.output.contains(expected):
 			failures.append("workbench catalog omitted %s" % expected)
 	var save := service.inspect_target(&"save.v1_route_affinity")

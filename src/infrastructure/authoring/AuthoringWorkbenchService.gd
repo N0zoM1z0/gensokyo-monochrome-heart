@@ -3,6 +3,7 @@ extends RefCounted
 ## Typed registry for M11 scene fixtures, save migration fixtures, and legal tones.
 
 const DANMAKU_DEFINITION := "res://content/danmaku/boundary_stain.json"
+const KNIFE_DANMAKU_DEFINITION := "res://content/danmaku/missing_minute_knives.json"
 const FIGHTER_DEFINITION := "res://content/fighter/reimu_marisa_duel.json"
 
 var _targets: Array[WorkbenchTarget] = []
@@ -18,6 +19,9 @@ func _init() -> void:
 	_register_scene(&"scene.danmaku.focus", &"danmaku", "Boundary Stain focus", "res://tests/ui/fixtures/BoundaryStainFocusFixture.tscn", DANMAKU_DEFINITION, &"focus", "Focus hitbox and Margin review")
 	_register_scene(&"scene.danmaku.stress", &"danmaku", "Boundary Stain stress", "res://tests/ui/fixtures/BoundaryStainStressFixture.tscn", DANMAKU_DEFINITION, &"stress", "2,500-bullet renderer fixture")
 	_register_scene(&"scene.danmaku.lab", &"danmaku", "Bullet Pattern Lab", "res://src/presentation/tools/BulletPatternLab.tscn", DANMAKU_DEFINITION, &"lab", "Editable data-only pattern preview and telemetry")
+	_register_scene(&"scene.danmaku.knives.phase1", &"danmaku", "Missing Minute phase 1", "res://tests/ui/fixtures/MissingMinuteKnivesPhase1Fixture.tscn", KNIFE_DANMAKU_DEFINITION, &"phase1", "Knife lattice teaching fixture")
+	_register_scene(&"scene.danmaku.knives.phase2", &"danmaku", "Missing Minute phase 2", "res://tests/ui/fixtures/MissingMinuteKnivesPhase2Fixture.tscn", KNIFE_DANMAKU_DEFINITION, &"phase2", "Clock-hand transformation fixture")
+	_register_scene(&"scene.danmaku.knives.phase3", &"danmaku", "Missing Minute phase 3", "res://tests/ui/fixtures/MissingMinuteKnivesPhase3Fixture.tscn", KNIFE_DANMAKU_DEFINITION, &"phase3", "Stopped-release punchline fixture")
 	_register_scene(&"scene.fighter.live", &"fighter", "Compact fighter live", "res://src/presentation/fighter/CompactFighterMode.tscn", FIGHTER_DEFINITION, &"live", "Playable Reimu and Marisa duel definition")
 	_register_scene(&"scene.fighter.hitbox", &"fighter", "Fighter hitbox viewer", "res://tests/ui/fixtures/CompactFighterHitboxFixture.tscn", FIGHTER_DEFINITION, &"hitbox", "Data-authored hitbox and hurtbox overlay")
 	_register_scene(&"scene.fighter.training", &"fighter", "Fighter training", "res://tests/ui/fixtures/CompactFighterTrainingFixture.tscn", FIGHTER_DEFINITION, &"training", "Input history, frame data, and combat boxes")

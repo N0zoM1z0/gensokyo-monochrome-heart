@@ -172,7 +172,7 @@ func _emit_volley(emitter: DanmakuEmitterDefinition, volley: int) -> void:
 	var slots := emitter.selected_slots(assists.density_percent)
 	var spawned := 0
 	for slot: int in slots:
-		if emitter.pattern_type == &"safe_lane_grid" and slot == emitter.safe_lane:
+		if emitter.pattern_type in [&"safe_lane_grid", &"knife_lattice"] and slot == emitter.safe_lane:
 			continue
 		var spec := _make_bullet_spec(emitter, volley, slot)
 		if pool.spawn(spec) >= 0:
@@ -356,7 +356,7 @@ func _finish(result_tag: StringName) -> ModeResult:
 	)
 	final_result.used_assist = assists.any_enabled() or result_tag == &"assist_clear"
 	final_result.outcome_tags = [
-		&"danmaku.boundary_stain",
+		definition.id,
 		StringName("danmaku.result.%s" % result_tag),
 	]
 	var telemetry := ModeTelemetry.new()

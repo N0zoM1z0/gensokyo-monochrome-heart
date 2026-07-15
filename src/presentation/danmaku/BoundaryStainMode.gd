@@ -2,7 +2,6 @@ class_name BoundaryStainMode
 extends GameMode
 ## One-bit story danmaku shell backed by the deterministic packed simulation.
 
-const PATTERN_PATH := "res://content/danmaku/boundary_stain.json"
 const FIXED_DELTA := 1.0 / float(BoundaryStainSimulation.TICKS_PER_SECOND)
 const START_RELEASE_TICKS := 3
 const FIELD_TITLE_FRAME := Rect2(4, 2, 224, 11)
@@ -24,6 +23,16 @@ const ACTION_CONTRACT := [
 
 @export_enum("live", "spell", "phase1", "focus", "bomb", "phase2", "phase3", "paused", "result", "loss", "assist_clear", "stress") var fixture_state: String = "live"
 @export_enum("100", "85", "70", "55") var fixture_density: String = "100"
+@export_file("*.json") var pattern_path := "res://content/danmaku/boundary_stain.json"
+@export var default_mode_id: StringName = &"danmaku.hkr.boundary_stain"
+@export var default_event_id: StringName = &"evt.hkr.offerings_without_owners"
+@export var pause_title_key: StringName = &"ui.danmaku.paused"
+@export var result_text_prefix := "ui.danmaku.result"
+@export var teaching_keys: Array[StringName] = [
+	&"ui.danmaku.boundary.teach.amulet",
+	&"ui.danmaku.boundary.teach.offering",
+	&"ui.danmaku.boundary.teach.memory",
+]
 
 var host := DanmakuHost.new()
 var runtime: BoundaryStainSimulation
@@ -53,6 +62,7 @@ var _border_pulse_seconds: float = 0.0
 var _is_reduced_motion: bool = false
 var _is_safe_flash: bool = false
 var _no_flash_active: bool = false
+var _last_shot_held: bool = false
 
 @onready var sfx_player: ProceduralSfxPlayer = %ProceduralSfxPlayer
 
@@ -290,8 +300,8 @@ func capture_debug_state() -> Dictionary:
 func _default_context() -> ModeContext:
 	var context := ModeContext.new()
 	context.mode_type = &"start_danmaku"
-	context.mode_id = &"danmaku.hkr.boundary_stain"
-	context.event_id = &"evt.hkr.offerings_without_owners"
+	context.mode_id = default_mode_id
+	context.event_id = default_event_id
 	context.node_id = &"n_danmaku"
 	context.deterministic_seed = 7070
 	return context
@@ -299,9 +309,9 @@ func _default_context() -> ModeContext:
 
 func _load_runtime() -> void:
 	var loader := DanmakuPatternLoader.new()
-	definition = loader.load_path(PATTERN_PATH)
+	definition = loader.load_path(pattern_path)
 	if definition == null or not loader.errors.is_empty():
-		push_error("Boundary Stain pattern could not load: %s" % [loader.errors])
+		push_error("Danmaku pattern could not load: %s" % [loader.errors])
 		return
 	var settings := _resolved_assists()
 	_no_flash_active = settings.no_flash
@@ -311,7 +321,7 @@ func _load_runtime() -> void:
 	runtime = BoundaryStainSimulation.new()
 	var capacity := 2500 if fixture_state == "stress" else 512
 	if not host.load_encounter(runtime, definition, mode_context, settings, capacity):
-		push_error("Boundary Stain runtime rejected its configuration")
+		push_error("Danmaku runtime rejected its configuration")
 		return
 	final_result = null
 	_fixed_accumulator = 0.0
@@ -326,6 +336,7 @@ func _load_runtime() -> void:
 	_visual_cue_key = &""
 	_visual_cue_seconds = 0.0
 	_border_pulse_seconds = 0.0
+	_last_shot_held = false
 	_fixture_frozen = fixture_state != "live"
 	_prepare_fixture_state()
 	queue_redraw()
@@ -427,6 +438,7 @@ func _prepare_stress_pool() -> void:
 
 
 func _step_runtime(frame: DanmakuInputFrame) -> ModeResult:
+	_last_shot_held = frame.shot_held
 	var previous_graze := runtime.state.graze_count
 	var previous_bombs := runtime.state.bombs_used
 	var result := host.step(frame)
@@ -486,6 +498,7 @@ func _retry_phase() -> void:
 	_visual_cue_key = &""
 	_visual_cue_seconds = 0.0
 	_border_pulse_seconds = 0.0
+	_last_shot_held = false
 	queue_redraw()
 
 
@@ -559,13 +572,18 @@ func _draw_field_shell(foreground: Color, background: Color) -> void:
 		draw_line(Vector2(198, 151), Vector2(198, 119), foreground, 1.0)
 		draw_line(Vector2(26, 122), Vector2(206, 122), foreground, 1.0)
 	var font := _font()
-	draw_string(font, Vector2(8, 11), _catalog.text(runtime.current_phase().title_key, _locale), HORIZONTAL_ALIGNMENT_LEFT, 214, _hud_font_size(), foreground)
-	var controls := "  ".join([
+	draw_string(font, Vector2(8, 11), _catalog.text(runtime.current_phase().title_key, _locale), HORIZONTAL_ALIGNMENT_LEFT, 190, _hud_font_size(), foreground)
+	draw_string(_latin_font, Vector2(198, 11), "%d/3" % (runtime.state.phase_index + 1), HORIZONTAL_ALIGNMENT_RIGHT, 24, 7, foreground)
+	var controls := "%s %s  %s %s  %s %s" % [
+		_movement_binding(), _catalog.text(&"ui.minigame.time_grid.select", _locale),
+		input_binding(GameInput.CONFIRM), _catalog.text(&"ui.common.confirm", _locale),
+		input_binding(GameInput.CANCEL), _catalog.text(&"ui.common.cancel", _locale),
+	] if runtime.is_paused else " ".join([
 		input_hint(GameInput.SHOT, _catalog.text(&"ui.input.shot", _locale)),
 		input_hint(GameInput.FOCUS, _catalog.text(&"ui.input.focus", _locale)),
 		input_hint(GameInput.BOMB, _catalog.text(&"ui.input.bomb", _locale)),
 		input_hint(GameInput.COMPANION, _catalog.text(&"ui.input.margin", _locale)),
-		input_hint(GameInput.PAUSE, _catalog.text(&"ui.input.pause", _locale)),
+		"%s %s" % [_compact_pause_binding(), _catalog.text(&"ui.input.pause", _locale)],
 	])
 	draw_string(font, Vector2(8, 176), controls, HORIZONTAL_ALIGNMENT_CENTER, 304, _hud_font_size(), foreground)
 	if _border_pulse_seconds > 0.0 and not _no_flash_active:
@@ -574,9 +592,12 @@ func _draw_field_shell(foreground: Color, background: Color) -> void:
 
 func _draw_boss_and_player(foreground: Color, background: Color) -> void:
 	var boss := Vector2(116, 28)
+	var player := _display_position(runtime.state.player_x_fp, runtime.state.player_y_fp)
+	if _last_shot_held:
+		for y: int in range(roundi(boss.y + 7), roundi(player.y - 6), 6):
+			draw_line(Vector2(player.x, y), Vector2(player.x, mini(y + 2, player.y - 6)), foreground, 1.0)
 	draw_rect(Rect2(boss - Vector2(5, 2), Vector2(11, 5)), foreground, false, 1.0)
 	draw_rect(Rect2(boss - Vector2(1, 4), Vector2(3, 9)), foreground, false, 1.0)
-	var player := _display_position(runtime.state.player_x_fp, runtime.state.player_y_fp)
 	draw_rect(Rect2(player - Vector2(2, 3), Vector2(5, 6)), foreground, false, 1.0)
 	draw_rect(Rect2(player + Vector2(-4, 3), Vector2(9, 2)), foreground)
 	draw_rect(Rect2(player + Vector2(-1, -5), Vector2(3, 2)), foreground)
@@ -588,7 +609,7 @@ func _draw_boss_and_player(foreground: Color, background: Color) -> void:
 
 func _draw_status_rail(foreground: Color, background: Color) -> void:
 	var font := _font()
-	var title_lines := PixelTextWrapper.wrap(_catalog.text(&"ui.danmaku.boundary.title", _locale), font, 80, _hud_font_size(), _locale, 2)
+	var title_lines := PixelTextWrapper.wrap(_catalog.text(definition.title_key, _locale), font, 80, _hud_font_size(), _locale, 2)
 	for index: int in range(title_lines.size()):
 		draw_string(font, Vector2(232, 15 + index * 12), title_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 80, _hud_font_size(), foreground)
 	_draw_gauge(Rect2(234, 30, 76, 6), runtime.state.boss_integrity, runtime.state.boss_integrity_max, foreground, background)
@@ -625,16 +646,12 @@ func _draw_intro(foreground: Color, background: Color) -> void:
 	var title_lines := PixelTextWrapper.wrap(_catalog.text(runtime.current_phase().title_key, _locale), font, 196, _title_font_size(), _locale, 2)
 	for index: int in range(title_lines.size()):
 		draw_string(font, Vector2(18, (57 if _tutorial_waiting else 63) + index * _title_line_height()), title_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 196, _title_font_size(), foreground)
-	var teaching_key: StringName = [&"ui.danmaku.boundary.teach.amulet", &"ui.danmaku.boundary.teach.offering", &"ui.danmaku.boundary.teach.memory"][runtime.state.phase_index]
+	var teaching_key := _teaching_key()
 	var teaching_lines := PixelTextWrapper.wrap(_catalog.text(teaching_key, _locale), font, 196, _body_font_size(), _locale, 2)
 	for index: int in range(teaching_lines.size()):
 		draw_string(font, Vector2(18, (84 if _tutorial_waiting else 94) + index * _body_line_height()), teaching_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
 	if _tutorial_waiting:
-		var move_hint := "%s / %s %s" % [
-			input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT),
-			input_axis_binding(GameInput.MOVE_UP, GameInput.MOVE_DOWN),
-			_catalog.text(&"ui.input.move", _locale),
-		]
+		var move_hint := "%s %s" % [_movement_binding(), _catalog.text(&"ui.input.move", _locale)]
 		draw_string(font, Vector2(18, 120), move_hint, HORIZONTAL_ALIGNMENT_CENTER, 196, _hud_font_size(), foreground)
 		draw_string(font, Vector2(18, 139), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.danmaku.tutorial.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 196, _body_font_size(), foreground)
 
@@ -646,17 +663,13 @@ func _draw_large_text_tutorial(font: Font, foreground: Color, background: Color)
 	var title_lines := PixelTextWrapper.wrap(_catalog.text(runtime.current_phase().title_key, _locale), font, 290, _title_font_size(), _locale, 2)
 	for index: int in range(title_lines.size()):
 		draw_string(font, Vector2(15, 43 + index * _title_line_height()), title_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 290, _title_font_size(), foreground)
-	var teaching_key: StringName = [&"ui.danmaku.boundary.teach.amulet", &"ui.danmaku.boundary.teach.offering", &"ui.danmaku.boundary.teach.memory"][runtime.state.phase_index]
+	var teaching_key := _teaching_key()
 	var teaching_lines := PixelTextWrapper.wrap(_catalog.text(teaching_key, _locale), font, 286, _body_font_size(), _locale, 2)
 	for index: int in range(teaching_lines.size()):
 		draw_string(font, Vector2(17, 69 + index * _body_line_height()), teaching_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 286, _body_font_size(), foreground)
 	draw_line(Vector2(14, 96), Vector2(306, 96), foreground, 1.0)
 	var control_size := scaled_ui_pixels(7 if _locale == &"en" else 8)
-	var move_hint := "%s / %s %s" % [
-		input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT),
-		input_axis_binding(GameInput.MOVE_UP, GameInput.MOVE_DOWN),
-		_catalog.text(&"ui.input.move", _locale),
-	]
+	var move_hint := "%s %s" % [_movement_binding(), _catalog.text(&"ui.input.move", _locale)]
 	draw_string(font, Vector2(16, 111), move_hint, HORIZONTAL_ALIGNMENT_CENTER, 288, control_size, foreground)
 	draw_string(font, Vector2(16, 129), input_hint(GameInput.SHOT, _catalog.text(&"ui.input.shot", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
 	draw_string(font, Vector2(164, 129), input_hint(GameInput.FOCUS, _catalog.text(&"ui.input.focus", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
@@ -682,7 +695,7 @@ func _draw_pause(foreground: Color, background: Color) -> void:
 	var font := _font()
 	draw_rect(Rect2(12, 14, 208, 148), background)
 	draw_rect(Rect2(12, 14, 208, 148), foreground, false, 2.0)
-	draw_string(font, Vector2(20, 38), _catalog.text(&"ui.danmaku.paused", _locale), HORIZONTAL_ALIGNMENT_CENTER, 192, _title_font_size(), foreground)
+	draw_string(font, Vector2(20, 38), _catalog.text(pause_title_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 192, _title_font_size(), foreground)
 	var keys: Array[StringName] = [
 		&"ui.danmaku.pause.resume",
 		&"ui.danmaku.pause.retry",
@@ -696,7 +709,7 @@ func _draw_pause(foreground: Color, background: Color) -> void:
 			draw_rect(rect.grow(-2), foreground, false, 1.0)
 		var label := _catalog.text(keys[index], _locale)
 		if index == 3 and not host.can_assist_clear():
-			label = "%s / x3" % label
+			label = "%s / %s" % [label, _catalog.text(&"ui.danmaku.pause.assist_locked", _locale)]
 		draw_string(font, Vector2(33, rect.position.y + 16), label, HORIZONTAL_ALIGNMENT_CENTER, 166, _body_font_size(), foreground)
 
 
@@ -705,14 +718,14 @@ func _draw_result(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(14, 14, 292, 148), background)
 	draw_rect(Rect2(14, 14, 292, 148), foreground, false, 2.0)
 	var tag := final_result.result_tag
-	var title_key := StringName("ui.danmaku.result.%s.title" % tag)
-	var reason_key := StringName("ui.danmaku.result.%s.reason" % tag)
+	var title_key := StringName("%s.%s.title" % [result_text_prefix, tag])
+	var reason_key := StringName("%s.%s.reason" % [result_text_prefix, tag])
 	draw_string(font, Vector2(24, 38), _catalog.text(title_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 272, _title_font_size(), foreground)
 	_draw_result_stamp(Vector2(160, 67), tag, foreground, background)
 	var reason_lines := PixelTextWrapper.wrap(_catalog.text(reason_key, _locale), font, 260, _body_font_size(), _locale, 2)
 	for index: int in range(reason_lines.size()):
 		draw_string(font, Vector2(30, 99 + index * _body_line_height()), reason_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
-	draw_string(font, Vector2(30, 129), "%s %03d    %s %d" % [_catalog.text(&"ui.danmaku.graze", _locale), runtime.state.graze_count, _catalog.text(&"ui.danmaku.bomb", _locale), runtime.state.bombs_used], HORIZONTAL_ALIGNMENT_CENTER, 260, _hud_font_size(), foreground)
+	draw_string(font, Vector2(30, 129), "%s %03d    %s %d" % [_catalog.text(&"ui.danmaku.graze", _locale), runtime.state.graze_count, _catalog.text(&"ui.danmaku.bombs_used", _locale), runtime.state.bombs_used], HORIZONTAL_ALIGNMENT_CENTER, 260, _hud_font_size(), foreground)
 	draw_string(font, Vector2(26, 147), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.danmaku.result.continue", _locale)), HORIZONTAL_ALIGNMENT_LEFT, 166, _hud_font_size(), foreground)
 	draw_string(font, Vector2(176, 147), input_hint(GameInput.CANCEL, _catalog.text(&"ui.danmaku.result.retry", _locale)), HORIZONTAL_ALIGNMENT_RIGHT, 118, _hud_font_size(), foreground)
 
@@ -749,6 +762,24 @@ func _display_position(x_fp: int, y_fp: int) -> Vector2:
 		FIELD_ORIGIN.x + roundi(x_fp / 256.0),
 		FIELD_ORIGIN.y + roundi(y_fp / 256.0 * FIELD_SIZE.y / definition.arena_height)
 	)
+
+
+func _teaching_key() -> StringName:
+	if runtime == null or teaching_keys.is_empty():
+		return &"ui.danmaku.telegraph"
+	return teaching_keys[clampi(runtime.state.phase_index, 0, teaching_keys.size() - 1)]
+
+
+func _movement_binding() -> String:
+	var glyph_service := get_node_or_null("/root/InputGlyphService")
+	if glyph_service != null:
+		return _catalog.text(glyph_service.glyph_key(GameInput.MOVE_UP), _locale)
+	return "[ARROWS]"
+
+
+func _compact_pause_binding() -> String:
+	var binding := input_binding(GameInput.PAUSE)
+	return "[ESC]" if binding == "[ESCAPE]" else binding
 
 
 func _font() -> Font:

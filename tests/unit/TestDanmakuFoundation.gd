@@ -107,6 +107,8 @@ func _expect_missing_minute_components(failures: Array[String]) -> void:
 	for component: StringName in [&"knife_lattice", &"clock_hand", &"stopped_release"]:
 		if not _contains_signature(knife_definition.emitter_signature(), component):
 			failures.append("missing-minute data omitted component %s" % component)
+	if knife_definition.phases[0].safe_lane != 5 or knife_definition.phases[0].emitters[0].safe_lane != 5:
+		failures.append("knife-lattice teaching data omitted its central appointment gap")
 	var simulation := BoundaryStainSimulation.new()
 	if not simulation.configure(knife_definition, _context(12121), DanmakuAssistSettings.new(), 512):
 		failures.append("generic danmaku simulation rejected missing-minute components")
@@ -115,6 +117,9 @@ func _expect_missing_minute_components(failures: Array[String]) -> void:
 		simulation.step(DanmakuInputFrame.new())
 	if simulation.pool.total_spawned <= 0 or simulation.pool.untelegraphed_commit_count != 0:
 		failures.append("knife components did not emit warned deterministic bullets")
+	var accepted := simulation.accept_loss()
+	if accepted == null or accepted.outcome_tags[0] != knife_definition.id:
+		failures.append("generic danmaku result retained a boundary-specific outcome tag")
 
 
 func _expect_movement_pause_and_phase_retry(failures: Array[String]) -> void:

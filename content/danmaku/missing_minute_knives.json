@@ -11,10 +11,10 @@
       "boss_integrity": 180,
       "teaching_ticks": 90,
       "transform_tick": 180,
-      "safe_lane": -1,
+      "safe_lane": 5,
       "emitters": [
-        {"id": "emit.missing_minute.lattice_teach", "pattern": "knife_lattice", "start_tick": 30, "interval_ticks": 48, "volleys": 6, "slot_count": 11, "origin_x": 112, "origin_y": 10, "speed_pixels_per_tick": 0.78, "angle_millidegrees": 90000, "telegraph_ticks": 30, "lifetime_ticks": 300, "family": "knife", "polarity": "paper", "safe_lane": -1},
-        {"id": "emit.missing_minute.lattice_cross", "pattern": "knife_lattice", "start_tick": 190, "interval_ticks": 38, "volleys": 4, "slot_count": 13, "origin_x": 112, "origin_y": 18, "speed_pixels_per_tick": 0.92, "angle_millidegrees": 90000, "telegraph_ticks": 24, "lifetime_ticks": 270, "family": "knife", "polarity": "ink", "safe_lane": -1}
+        {"id": "emit.missing_minute.lattice_teach", "pattern": "knife_lattice", "start_tick": 30, "interval_ticks": 48, "volleys": 6, "slot_count": 11, "origin_x": 112, "origin_y": 10, "speed_pixels_per_tick": 0.78, "angle_millidegrees": 90000, "telegraph_ticks": 30, "lifetime_ticks": 300, "family": "knife", "polarity": "paper", "safe_lane": 5},
+        {"id": "emit.missing_minute.lattice_cross", "pattern": "knife_lattice", "start_tick": 190, "interval_ticks": 38, "volleys": 4, "slot_count": 13, "origin_x": 112, "origin_y": 18, "speed_pixels_per_tick": 0.92, "angle_millidegrees": 90000, "telegraph_ticks": 24, "lifetime_ticks": 270, "family": "knife", "polarity": "ink", "safe_lane": 6}
       ]
     },
     {
