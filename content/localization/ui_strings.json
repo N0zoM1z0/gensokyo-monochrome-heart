@@ -198,6 +198,7 @@
     {"key": "ui.slice.afterbeat.settle", "en": "LET THE SILENCE LAND", "ja": "沈黙が落ち着くのを待つ"},
     {"key": "ui.slice.backlog.close", "en": "JOURNAL: CLOSE LOG", "ja": "日記：履歴を閉じる"},
     {"key": "ui.slice.complete.body", "en": "THE DAY IS SAVED. THE SECOND CUP REMAINS IN THE JOURNAL.", "ja": "一日は保存された。二つ目の湯呑みは日記に残っている。"},
+    {"key": "ui.slice.complete.confirm", "en": "CONFIRM: RETURN TO TITLE", "ja": "決定：タイトルへ戻る"},
     {"key": "ui.slice.complete.header", "en": "THE EMPTY CUSHION — COMPLETE", "ja": "空の座布団 — 完了"},
     {"key": "ui.slice.day_end.body", "en": "A NEW MORNING ARRIVES. MANUAL SLOT ONE AND THE DAY AUTOSAVE ARE CURRENT.", "ja": "新しい朝が来た。手動スロット1と一日の自動保存を更新した。"},
     {"key": "ui.slice.day_end.confirm", "en": "CONFIRM: OPEN JOURNAL", "ja": "決定：日記を開く"},

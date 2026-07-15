@@ -15,7 +15,8 @@ extends Control
 	"reward",
 	"day_end",
 	"journal",
-	"replay_complete"
+	"replay_complete",
+	"complete"
 ) var fixture_phase: String = "invitation"
 
 @onready var slice: VerticalSliceMode = %VerticalSliceMode
@@ -115,6 +116,10 @@ func _drive_to_fixture_phase() -> void:
 		return
 	_confirm()
 	_drive_replay()
+	if fixture_phase == "replay_complete":
+		return
+	_confirm()
+	slice.handle_semantic_action(GameInput.CANCEL)
 
 
 func _drive_replay() -> void:

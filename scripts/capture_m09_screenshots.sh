@@ -44,6 +44,7 @@ capture m09_reward_c_ja res://tests/ui/fixtures/VerticalSliceRewardFixture.tscn 
 capture m09_day_end_d_en res://tests/ui/fixtures/VerticalSliceDayEndFixture.tscn D en
 capture m09_journal_a_ja res://tests/ui/fixtures/VerticalSliceJournalFixture.tscn A ja
 capture m09_replay_complete_b_en res://tests/ui/fixtures/VerticalSliceReplayCompleteFixture.tscn B en
+capture m09_complete_d_ja res://tests/ui/fixtures/VerticalSliceCompleteFixture.tscn D ja
 capture m09_credits_a_en res://ui/screens/credits_screen.tscn A en
 capture m09_credits_a_ja res://ui/screens/credits_screen.tscn A ja
 

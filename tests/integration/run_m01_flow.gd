@@ -2,6 +2,7 @@ extends SceneTree
 ## Deterministic semantic-input proof of the complete M01 navigation loop.
 
 const MAX_WAIT_FRAMES := 240
+const TEST_ROOT := "user://tests/m01_flow"
 
 var failures: Array[String] = []
 var shell: GameShell
@@ -28,10 +29,12 @@ func _run() -> void:
 	await _verify_pause_modal_focus_and_resume()
 	await _verify_pause_return_to_title()
 	await _verify_continue_from_latest_save()
+	await _verify_completed_slice_returns_to_title()
 	await _finish()
 
 
 func _prepare_services() -> void:
+	_remove_tree(TEST_ROOT)
 	var localization := root.get_node_or_null("LocalizationService")
 	if localization != null:
 		localization.set_locale(&"en", false)
@@ -53,6 +56,9 @@ func _prepare_services() -> void:
 	var kernel := root.get_node_or_null("GameKernel")
 	if kernel != null:
 		kernel.clear_state()
+	var save_service := root.get_node_or_null("SaveService")
+	if save_service != null:
+		save_service.configure_for_test(kernel, TEST_ROOT)
 	var focus_router := root.get_node_or_null("FocusRouter")
 	if focus_router != null:
 		focus_router.clear()
@@ -217,6 +223,19 @@ func _verify_continue_from_latest_save() -> void:
 		_fail("Continue did not rebuild the vertical slice at its saved day cursor")
 
 
+func _verify_completed_slice_returns_to_title() -> void:
+	var slice := shell.active_primary_screen() as VerticalSliceMode
+	if slice == null:
+		_fail("completed-slice shell test had no active vertical slice")
+		return
+	slice.mode_completed.emit(ModeResult.new(&"complete"))
+	if not await _wait_for_route(&"title"):
+		return
+	var title := shell.active_primary_screen() as TitleScreen
+	if title == null or title.current_focus_id() != &"title.continue":
+		_fail("completed vertical slice did not return to a title with Continue available")
+
+
 func _press(action: StringName) -> void:
 	shell.receive_semantic_action(action)
 
@@ -249,6 +268,26 @@ func _wait_until_modal_options(expected_open: bool) -> bool:
 func _wait_frames(frame_count: int) -> void:
 	for _frame: int in range(frame_count):
 		await process_frame
+
+
+func _remove_tree(path: String) -> void:
+	var absolute := ProjectSettings.globalize_path(path)
+	if not DirAccess.dir_exists_absolute(absolute):
+		return
+	var directory := DirAccess.open(path)
+	if directory == null:
+		return
+	directory.list_dir_begin()
+	var entry := directory.get_next()
+	while not entry.is_empty():
+		var child := "%s/%s" % [path, entry]
+		if directory.current_is_dir():
+			_remove_tree(child)
+		else:
+			DirAccess.remove_absolute(ProjectSettings.globalize_path(child))
+		entry = directory.get_next()
+	directory.list_dir_end()
+	DirAccess.remove_absolute(absolute)
 
 
 func _fail(message: String) -> void:

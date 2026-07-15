@@ -8,6 +8,7 @@ var _failures: Array[String] = []
 var _slice: VerticalSliceMode
 var _kernel: Node
 var _save_service: Node
+var _completed_results: Array[ModeResult] = []
 
 
 func _initialize() -> void:
@@ -17,6 +18,7 @@ func _initialize() -> void:
 func _run() -> void:
 	_prepare_services()
 	_slice = SLICE_SCENE.instantiate() as VerticalSliceMode
+	_slice.mode_completed.connect(func(result: ModeResult) -> void: _completed_results.append(result))
 	root.add_child(_slice)
 	await process_frame
 	_slice.set_instant_text_for_test(true)
@@ -144,6 +146,19 @@ func _run() -> void:
 	var telemetry := _slice.telemetry_snapshot()
 	_expect(bool(telemetry.get("completed", false)), "slice completion did not finalize local acceptance telemetry")
 	_expect(FileAccess.file_exists(VerticalSliceTelemetry.DEFAULT_PATH), "slice completion did not write local acceptance telemetry")
+	_slice.handle_semantic_action(GameInput.CONFIRM)
+	_expect(_slice.phase_id() == &"journal", "replay completion did not return to the Journal")
+	_slice.handle_semantic_action(GameInput.CANCEL)
+	_expect(
+		_slice.phase_id() == &"complete" and _completed_results.is_empty(),
+		"Journal Finish did not stop on the explicit completion screen"
+	)
+	_slice.handle_semantic_action(GameInput.CONFIRM)
+	_slice.handle_semantic_action(GameInput.CONFIRM)
+	_expect(
+		_completed_results.size() == 1 and _completed_results[0].result_tag == &"complete",
+		"completion confirmation did not emit exactly one shell return"
+	)
 
 	_slice.queue_free()
 	await process_frame

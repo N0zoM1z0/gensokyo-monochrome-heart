@@ -54,6 +54,7 @@ var _instant_text_for_test: bool = false
 var _fixture_comfort_override: bool = false
 var _fixture_reduced_motion: bool = false
 var _fixture_safe_flash: bool = false
+var _completion_emitted: bool = false
 
 var _profile := PresentationProfileRegistry.resolve(&"A")
 var _catalog := UiTextCatalog.new()
@@ -156,6 +157,11 @@ func handle_semantic_action(action: StringName) -> bool:
 			if action == GameInput.CONFIRM:
 				_is_replay = false
 				_set_phase(Phase.JOURNAL, &"journal")
+				return true
+		Phase.COMPLETE:
+			if action == GameInput.CONFIRM and not _completion_emitted:
+				_completion_emitted = true
+				mode_completed.emit(ModeResult.new(&"complete"))
 				return true
 	return false
 
@@ -581,7 +587,6 @@ func _complete_without_replay() -> void:
 		_fail("local acceptance telemetry could not be committed")
 		return
 	_set_phase(Phase.COMPLETE, &"complete")
-	mode_completed.emit(ModeResult.new(&"complete"))
 
 
 func _commit_working_state(source_id: StringName, autosave_reason: StringName = &"") -> bool:
@@ -864,6 +869,7 @@ func _draw_complete(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.complete.header", foreground, background)
 	_draw_wrapped(&"ui.slice.complete.body", Rect2(44, 78, 232, 45), 4)
+	_draw_footer(&"ui.slice.complete.confirm", foreground, background)
 
 
 func _draw_error(foreground: Color, background: Color) -> void:

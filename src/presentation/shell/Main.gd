@@ -75,6 +75,22 @@ func _on_route_completed(result: ScreenRouteResult) -> void:
 		content_db.set_active_mode(result.screen_id)
 	if result.screen != null and result.screen.has_signal("command_requested"):
 		result.screen.connect("command_requested", _on_screen_command)
+	if result.screen_id == &"vertical_slice" and result.screen != null and result.screen.has_signal("mode_completed"):
+		result.screen.connect("mode_completed", _on_primary_mode_completed)
+
+
+func _on_primary_mode_completed(result: ModeResult) -> void:
+	if scene_router.current_screen_id != &"vertical_slice" or result == null or result.result_tag != &"complete":
+		return
+	_return_to_title_after_mode.call_deferred()
+
+
+func _return_to_title_after_mode() -> void:
+	_release_active_inputs()
+	var focus_router := get_node_or_null("/root/FocusRouter")
+	if focus_router != null:
+		focus_router.clear()
+	await _route_primary(&"title")
 
 
 func _on_screen_command(command_id: StringName, payload: Dictionary) -> void:

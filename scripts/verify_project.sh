@@ -86,6 +86,7 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/VerticalSliceDayEndFixture.tscn \
 	--scene=res://tests/ui/fixtures/VerticalSliceJournalFixture.tscn \
 	--scene=res://tests/ui/fixtures/VerticalSliceReplayCompleteFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceCompleteFixture.tscn \
 	--scene=res://tests/ui/fixtures/VisualFoundationFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueEventFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueChoiceFixture.tscn \
