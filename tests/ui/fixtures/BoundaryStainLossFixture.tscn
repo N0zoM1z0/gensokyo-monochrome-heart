@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://src/presentation/danmaku/BoundaryStainMode.tscn" id="1_base"]
+
+[node name="BoundaryStainLossFixture" instance=ExtResource("1_base")]
+fixture_state = "loss"
+fixture_density = "100"
