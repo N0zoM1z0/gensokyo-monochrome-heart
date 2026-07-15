@@ -71,7 +71,9 @@ run_checked "one-bit validation" "$GODOT_BIN" --headless --path . \
 run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_pixel_alignment.gd -- \
 	--scene=res://src/presentation/shell/Main.tscn \
-	--scene=res://tests/ui/fixtures/VisualFoundationFixture.tscn
+	--scene=res://tests/ui/fixtures/VisualFoundationFixture.tscn \
+	--scene=res://tests/ui/fixtures/DialogueEventFixture.tscn \
+	--scene=res://tests/ui/fixtures/DialogueChoiceFixture.tscn
 run_checked "release validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_release.gd -- --release
 run_checked "headless tests" "$GODOT_BIN" --headless --path . \
@@ -83,6 +85,8 @@ run_checked "M03 migration fixture inspector" "$GODOT_BIN" --headless --path . \
 	--fixture=res://tests/fixtures/saves/v1_route_affinity_payload.json
 run_checked "M01 navigation integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m01_flow.gd
+run_checked "M04 dialogue integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m04_dialogue_flow.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
@@ -105,6 +109,8 @@ run_expected_failure "missing typed source fixture" "file is missing" \
 	--fixture-missing-file
 run_expected_failure "M02 invalid startup gate" "Title route blocked by invalid ContentDB before presentation." \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m02_invalid_boot.gd
+run_expected_failure "M04 unbounded event cycle" "unbounded event cycle" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m04_invalid_cycle.gd
 run_expected_failure "gray pixel fixture" "got #808080" \
 	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--fixture-gray
@@ -120,6 +126,7 @@ if [[ "${GMH_SKIP_SCREENSHOTS:-0}" == "1" ]]; then
 else
 	run_checked "VA00 screenshot matrix" ./scripts/capture_va00_screenshots.sh
 	run_checked "M01 screenshot matrix" ./scripts/capture_m01_screenshots.sh
+	run_checked "M04 screenshot matrix" ./scripts/capture_m04_screenshots.sh
 fi
 
 echo "Foundation verification passed."

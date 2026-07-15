@@ -1,13 +1,13 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.14.1",
-  "content_hash": "e9baa5f373215d9d934a700890719415c0a59503ab76a0d68bb8803d81da7824",
+  "content_hash": "a285d3c6724481452abfd32d59b22c769630b7a2ce3c1478ad9405c18b6f7bee",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 28,
     "dialogue_beats": 4,
-    "localization": 80,
+    "localization": 81,
     "music_cues": 89,
     "event_nodes": 16
   },
@@ -185,6 +185,7 @@
       "ui.dialogue.choose_intent",
       "ui.dialogue.complete",
       "ui.dialogue.mock_mode",
+      "ui.dialogue.resonance.cup_closer",
       "ui.dialogue.result.clear",
       "ui.dialogue.result.excellent",
       "ui.dialogue.result.loss",

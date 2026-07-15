@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://tests/ui/fixtures/DialogueEventFixture.gd" id="1_fixture"]
+[ext_resource type="Script" path="res://ui/components/FourToneChoiceControl.gd" id="2_choice"]
+[ext_resource type="Script" path="res://src/presentation/dialogue/EventDebugOverlayControl.gd" id="3_debug"]
+[ext_resource type="Shader" path="res://ui/theme/one_bit_post_process.gdshader" id="4_threshold"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_threshold"]
+shader = ExtResource("4_threshold")
+
+[node name="DialogueEventFixture" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+script = ExtResource("1_fixture")
+
+[node name="FourToneChoice" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 87.0
+offset_top = 35.0
+offset_right = 315.0
+offset_bottom = 159.0
+script = ExtResource("2_choice")
+
+[node name="EventDebugOverlay" type="Control" parent="."]
+unique_name_in_owner = true
+z_index = 90
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_debug")
+
+[node name="OneBitThreshold" type="ColorRect" parent="."]
+z_index = 100
+material = SubResource("ShaderMaterial_threshold")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="tone_confirmed" from="FourToneChoice" to="." method="_on_tone_confirmed"]

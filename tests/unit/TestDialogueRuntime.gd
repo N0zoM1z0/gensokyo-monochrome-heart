@@ -12,6 +12,7 @@ func run() -> Array[String]:
 		return ["could not load dialogue runtime content"]
 	_expect_named_formatting(failures)
 	_expect_grapheme_segmentation(failures)
+	_expect_pixel_wrapping(failures)
 	_expect_dialogue_presenter(failures)
 	_expect_backlog_bound(failures)
 	_expect_four_tone_focus(failures)
@@ -44,6 +45,18 @@ func _expect_grapheme_segmentation(failures: Array[String]) -> void:
 		failures.append("grapheme segmenter split a zero-width-joiner family")
 	if GraphemeSegmenter.segments("霊夢").size() != 2:
 		failures.append("grapheme segmenter corrupted Japanese character boundaries")
+
+
+func _expect_pixel_wrapping(failures: Array[String]) -> void:
+	var latin := UiFontRegistry.latin()
+	var english := PixelTextWrapper.wrap("SECOND CUP STILL WARM", latin, 96, 8, &"en")
+	if english.size() < 2 or not english[0].contains(" "):
+		failures.append("English pixel wrapper ignored word boundaries")
+	var japanese := PixelTextWrapper.wrap("二つ目の湯呑みは、まだ温かい。", UiFontRegistry.japanese(), 48, 8, &"ja")
+	for line: String in japanese:
+		if not line.is_empty() and PixelTextWrapper.JA_FORBIDDEN_LINE_START.contains(GraphemeSegmenter.segments(line)[0]):
+			failures.append("Japanese pixel wrapper orphaned closing punctuation")
+			break
 
 
 func _expect_dialogue_presenter(failures: Array[String]) -> void:

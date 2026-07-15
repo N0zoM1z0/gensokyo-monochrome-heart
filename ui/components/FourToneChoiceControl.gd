@@ -1,0 +1,159 @@
+class_name FourToneChoiceControl
+extends Control
+## One-bit four-tone selector whose focus identity survives localization changes.
+
+signal tone_confirmed(tone: StringName)
+
+const TONE_LABEL_KEYS: Dictionary[StringName, StringName] = {
+	&"direct": &"ui.dialogue.tone.direct",
+	&"playful": &"ui.dialogue.tone.playful",
+	&"patient": &"ui.dialogue.tone.patient",
+	&"defiant": &"ui.dialogue.tone.defiant",
+}
+
+var profile_id: StringName = &"A"
+var locale: StringName = &"en"
+var presenter := FourToneChoicePresenter.new()
+
+var _catalog := UiTextCatalog.new()
+var _latin_font: Font
+var _japanese_font: Font
+
+
+func _ready() -> void:
+	_catalog.load_default()
+	_latin_font = UiFontRegistry.latin()
+	_japanese_font = UiFontRegistry.japanese()
+	custom_minimum_size = Vector2(228, 124)
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	queue_redraw()
+
+
+func configure(
+	choice: EventChoiceState,
+	content: ContentRepository,
+	next_locale: StringName,
+	next_profile_id: StringName = &"A",
+	preferred_tone: StringName = &"direct"
+) -> void:
+	presenter = FourToneChoicePresenter.new(content)
+	presenter.configure(choice, next_locale, preferred_tone)
+	locale = next_locale
+	profile_id = next_profile_id
+	queue_redraw()
+
+
+func set_locale(next_locale: StringName) -> void:
+	locale = next_locale
+	presenter.switch_locale(next_locale)
+	queue_redraw()
+
+
+func set_profile(next_profile_id: StringName) -> void:
+	profile_id = next_profile_id
+	queue_redraw()
+
+
+func focused_tone() -> StringName:
+	return presenter.focused_tone
+
+
+func handle_semantic_action(action: StringName) -> bool:
+	match action:
+		GameInput.MOVE_UP, GameInput.MOVE_LEFT:
+			presenter.move(-1)
+			queue_redraw()
+			return true
+		GameInput.MOVE_DOWN, GameInput.MOVE_RIGHT:
+			presenter.move(1)
+			queue_redraw()
+			return true
+		GameInput.CONFIRM:
+			var tone := presenter.confirm()
+			if tone != &"":
+				tone_confirmed.emit(tone)
+			return tone != &""
+	return false
+
+
+func _gui_input(event: InputEvent) -> void:
+	for action: StringName in [
+		GameInput.MOVE_UP,
+		GameInput.MOVE_DOWN,
+		GameInput.MOVE_LEFT,
+		GameInput.MOVE_RIGHT,
+		GameInput.CONFIRM,
+	]:
+		if event.is_action_pressed(action) and handle_semantic_action(action):
+			accept_event()
+			return
+
+
+func _draw() -> void:
+	var profile := PresentationProfileRegistry.resolve(profile_id)
+	var background := profile.ink if profile.is_inverted else profile.paper
+	var foreground := profile.paper if profile.is_inverted else profile.ink
+	draw_rect(Rect2(Vector2.ZERO, size), background)
+	var options := presenter.presentations()
+	if options.is_empty():
+		return
+	var row_height := floori(size.y / float(options.size()))
+	for index: int in range(options.size()):
+		_draw_option(options[index], index, row_height, foreground, background)
+
+
+func _draw_option(
+	option: ChoiceOptionPresentation,
+	index: int,
+	row_height: int,
+	foreground: Color,
+	background: Color
+) -> void:
+	var top := index * row_height
+	var row_rect := Rect2(0, top, size.x, row_height - 2)
+	draw_rect(row_rect, foreground, false, 1.0)
+	var focused := option.tone == presenter.focused_tone
+	if focused:
+		draw_rect(row_rect.grow(-2), foreground, false, 1.0)
+		draw_colored_polygon(
+			PackedVector2Array([
+				Vector2(3, top + row_height / 2 - 3),
+				Vector2(8, top + row_height / 2),
+				Vector2(3, top + row_height / 2 + 3),
+			]),
+			foreground
+		)
+	if not option.is_available:
+		for x: int in range(0, int(size.x), 8):
+			draw_line(Vector2(x, top + row_height - 4), Vector2(x + 5, top + 1), foreground, 1.0)
+	_draw_tone_mark(option.tone, Vector2(13, top + 8), foreground, background)
+	var font := _japanese_font if locale == &"ja" else _latin_font
+	var tone_label := _catalog.text(TONE_LABEL_KEYS.get(option.tone, &"ui.common.unavailable"), locale)
+	draw_string(font, Vector2(29, top + 10), tone_label, HORIZONTAL_ALIGNMENT_LEFT, 58, 8, foreground)
+	var action_lines := PixelTextWrapper.wrap(option.text, font, size.x - 93, 8, locale, 2)
+	for line_index: int in range(action_lines.size()):
+		draw_string(
+			font,
+			Vector2(91, top + 10 + line_index * 10),
+			action_lines[line_index],
+			HORIZONTAL_ALIGNMENT_LEFT,
+			size.x - 95,
+			8,
+			foreground
+		)
+
+
+func _draw_tone_mark(tone: StringName, origin: Vector2, foreground: Color, background: Color) -> void:
+	match tone:
+		&"direct":
+			draw_line(origin, origin + Vector2(9, 0), foreground, 2.0)
+			draw_colored_polygon(PackedVector2Array([origin + Vector2(7, -3), origin + Vector2(12, 0), origin + Vector2(7, 3)]), foreground)
+		&"playful":
+			draw_colored_polygon(PackedVector2Array([origin + Vector2(5, -5), origin + Vector2(10, 0), origin + Vector2(5, 5), origin + Vector2(0, 0)]), foreground)
+			draw_colored_polygon(PackedVector2Array([origin + Vector2(5, -2), origin + Vector2(7, 0), origin + Vector2(5, 2), origin + Vector2(3, 0)]), background)
+		&"patient":
+			draw_rect(Rect2(origin, Vector2(10, 6)), foreground, false, 1.0)
+			draw_line(origin + Vector2(2, 8), origin + Vector2(8, 8), foreground, 1.0)
+		&"defiant":
+			draw_line(origin + Vector2(1, 5), origin + Vector2(1, -5), foreground, 2.0)
+			draw_colored_polygon(PackedVector2Array([origin + Vector2(3, -5), origin + Vector2(11, -2), origin + Vector2(3, 1)]), foreground)
