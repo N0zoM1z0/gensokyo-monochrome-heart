@@ -34,6 +34,16 @@ func _expect_time_grid_service(failures: Array[String]) -> void:
 	var host := MinigameHost.new()
 	if not host.load_minigame(TimeGridServiceSimulation.new(), _time_grid_context(1414), MinigameAssistSettings.new()):
 		failures.append("shared MinigameHost rejected Time Grid Service")
+	var queue_contract := TimeGridServiceSimulation.new()
+	queue_contract.configure(_time_grid_context(1515), MinigameAssistSettings.new())
+	var start := MinigameInputFrame.new()
+	start.confirm_pressed = true
+	queue_contract.step(start)
+	var moving_queue := MinigameInputFrame.new()
+	moving_queue.pour_pressed = true
+	queue_contract.step(moving_queue)
+	if queue_contract.state.queued_station >= 0:
+		failures.append("Time Grid accepted a queue outside stopped time")
 
 
 func _run_time_grid(seed: int, correct_stations: bool) -> TimeGridServiceSimulation:

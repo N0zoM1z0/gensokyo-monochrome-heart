@@ -53,7 +53,7 @@ func step(input: MinigameInputFrame) -> ModeResult:
 		if state.elapsed_ticks % 3 == 0:
 			state.stop_stock = mini(MAX_STOP_STOCK, state.stop_stock + 1)
 	_move_cursor(input.grid_direction)
-	if input.pour_pressed and state.queued_station < 0:
+	if input.pour_pressed and state.time_stopped and state.queued_station < 0:
 		state.queued_station = state.cursor.y * 3 + state.cursor.x
 	_resolve_current_task()
 	if state.task_index >= TASK_STATIONS.size():

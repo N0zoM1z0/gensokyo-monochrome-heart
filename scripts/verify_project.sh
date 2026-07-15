@@ -97,6 +97,14 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/TeaTemperatureActiveFixture.tscn \
 	--scene=res://tests/ui/fixtures/TeaTemperatureAssistFixture.tscn \
 	--scene=res://tests/ui/fixtures/TeaTemperatureResultFixture.tscn \
+	--scene=res://src/presentation/minigames/TimeGridServiceMode.tscn \
+	--scene=res://tests/ui/fixtures/TimeGridTutorialFixture.tscn \
+	--scene=res://tests/ui/fixtures/TimeGridActiveFixture.tscn \
+	--scene=res://tests/ui/fixtures/TimeGridStoppedFixture.tscn \
+	--scene=res://tests/ui/fixtures/TimeGridPausedFixture.tscn \
+	--scene=res://tests/ui/fixtures/TimeGridResultFixture.tscn \
+	--scene=res://tests/ui/fixtures/TimeGridLossFixture.tscn \
+	--scene=res://tests/ui/fixtures/TimeGridAssistFixture.tscn \
 	--scene=res://src/presentation/danmaku/BoundaryStainMode.tscn \
 	--scene=res://tests/ui/fixtures/BoundaryStainSpellFixture.tscn \
 	--scene=res://tests/ui/fixtures/BoundaryStainPhase1Fixture.tscn \
@@ -273,6 +281,7 @@ else
 	run_checked "M09 screenshot matrix" ./scripts/capture_m09_screenshots.sh
 	run_checked "M10 150 percent UI screenshot matrix" ./scripts/capture_m10_screenshots.sh
 	run_checked "M11 authoring screenshot matrix" ./scripts/capture_m11_screenshots.sh
+	run_checked "M12 Scarlet Devil Mansion screenshot matrix" ./scripts/capture_m12_screenshots.sh
 	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
 		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
 		--rendering-driver opengl3 \
