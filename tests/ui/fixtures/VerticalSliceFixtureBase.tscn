@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://tests/ui/fixtures/VerticalSliceFixture.gd" id="1_fixture"]
+[ext_resource type="PackedScene" path="res://src/presentation/slice/VerticalSliceMode.tscn" id="2_slice"]
+
+[node name="VerticalSliceFixture" type="Control"]
+custom_minimum_size = Vector2(320, 180)
+offset_right = 320.0
+offset_bottom = 180.0
+mouse_filter = 2
+script = ExtResource("1_fixture")
+
+[node name="VerticalSliceMode" parent="." instance=ExtResource("2_slice")]
+unique_name_in_owner = true

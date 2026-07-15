@@ -51,6 +51,9 @@ var _diagnostic := ""
 var _show_backlog: bool = false
 var _confirm_guard_frames: int = 0
 var _instant_text_for_test: bool = false
+var _fixture_comfort_override: bool = false
+var _fixture_reduced_motion: bool = false
+var _fixture_safe_flash: bool = false
 
 var _profile := PresentationProfileRegistry.resolve(&"A")
 var _catalog := UiTextCatalog.new()
@@ -193,6 +196,10 @@ func active_child_mode() -> GameMode:
 	return _active_mode
 
 
+func resolved_profile_id() -> StringName:
+	return _profile.profile_id
+
+
 func current_event_node_id() -> StringName:
 	return _event_result.node_id if _event_result != null else &""
 
@@ -213,6 +220,25 @@ func set_instant_text_for_test(enabled: bool) -> void:
 	_instant_text_for_test = enabled
 	if _dialogue != null:
 		_dialogue.instant_text = enabled
+
+
+func configure_fixture(
+	requested_profile: StringName,
+	locale: StringName,
+	forced_profile: StringName = &"",
+	is_reduced_motion: bool = false,
+	is_safe_flash: bool = false
+) -> void:
+	_profile = PresentationProfileRegistry.resolve(
+		forced_profile if forced_profile != &"" else requested_profile
+	)
+	_fixture_comfort_override = true
+	_fixture_reduced_motion = is_reduced_motion
+	_fixture_safe_flash = is_safe_flash
+	var localization := get_node_or_null("/root/LocalizationService")
+	if localization != null:
+		localization.set_locale(locale if locale in [&"en", &"ja"] else &"en", false)
+	queue_redraw()
 
 
 func arm_input_for_test() -> void:
@@ -650,10 +676,14 @@ func _current_locale() -> StringName:
 
 
 func _is_reduced_motion() -> bool:
+	if _fixture_comfort_override:
+		return _fixture_reduced_motion
 	return bool(_accessibility.is_reduced_motion) if _accessibility != null else false
 
 
 func _is_safe_flash() -> bool:
+	if _fixture_comfort_override:
+		return _fixture_safe_flash
 	return bool(_accessibility.is_safe_flash) if _accessibility != null else false
 
 

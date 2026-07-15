@@ -73,6 +73,19 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://src/presentation/shell/Main.tscn \
 	--scene=res://ui/screens/credits_screen.tscn \
 	--scene=res://src/presentation/slice/VerticalSliceMode.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceInvitationFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceMapFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceExplorationFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceDialogueFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceChoiceFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceTeaFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceDanmakuFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceFighterFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceAfterbeatFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceRewardFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceDayEndFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceJournalFixture.tscn \
+	--scene=res://tests/ui/fixtures/VerticalSliceReplayCompleteFixture.tscn \
 	--scene=res://tests/ui/fixtures/VisualFoundationFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueEventFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueChoiceFixture.tscn \
@@ -174,6 +187,7 @@ else
 	run_checked "M06 screenshot matrix" ./scripts/capture_m06_screenshots.sh
 	run_checked "M07 screenshot matrix" ./scripts/capture_m07_screenshots.sh
 	run_checked "M08 screenshot matrix" ./scripts/capture_m08_screenshots.sh
+	run_checked "M09 screenshot matrix" ./scripts/capture_m09_screenshots.sh
 	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
 		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
 		--rendering-driver opengl3 \
