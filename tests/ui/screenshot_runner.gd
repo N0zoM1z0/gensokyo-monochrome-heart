@@ -40,9 +40,14 @@ func _run() -> void:
 	var resolved_profile := options.profile_id
 	if fixture.has_method("resolved_profile_id"):
 		resolved_profile = fixture.call("resolved_profile_id")
+	# Give newly-created textures/MultiMeshes enough synchronized submissions to
+	# finish their first upload before reading the viewport. Without the final
+	# sync, software renderers can return a valid one-bit but incomplete frame.
+	for _warmup_frame: int in range(3):
+		await process_frame
+		RenderingServer.force_draw(false)
 	await process_frame
 	RenderingServer.force_draw(false)
-	await process_frame
 	var texture := viewport.get_texture()
 	if texture == null:
 		_fail("active rendering driver did not produce a viewport texture")

@@ -23,6 +23,7 @@ var assist_settings := FighterAssistSettings.new()
 var final_result: ModeResult
 
 var _profile: PresentationProfile = PresentationProfileRegistry.resolve(&"A")
+var _batch_renderer := FighterBatchRenderer.new()
 var _locale: StringName = &"en"
 var _catalog := UiTextCatalog.new()
 var _latin_font: Font
@@ -222,6 +223,14 @@ func rendered_projectile_count() -> int:
 	return runtime.projectiles.active_count if runtime != null else 0
 
 
+func rendered_effect_count() -> int:
+	return _stress_effects
+
+
+func rendered_fighter_count() -> int:
+	return 2 if runtime != null and runtime.states.size() == 2 else 0
+
+
 func capture_debug_state() -> Dictionary:
 	var debug := super.capture_debug_state()
 	debug.merge({
@@ -229,6 +238,8 @@ func capture_debug_state() -> Dictionary:
 		"tick": runtime.encounter_tick if runtime != null else -1,
 		"phase": runtime.phase_index if runtime != null else -1,
 		"projectiles": runtime.projectiles.active_count if runtime != null else -1,
+		"effects": _stress_effects,
+		"fighters": rendered_fighter_count(),
 		"player_move": String(runtime.states[0].current_move_id) if runtime != null else "",
 		"opponent_move": String(runtime.states[1].current_move_id) if runtime != null else "",
 		"hitbox": runtime.current_hitbox(0) if runtime != null else Rect2i(),
@@ -266,10 +277,12 @@ func _load_runtime() -> void:
 	host = FighterHost.new()
 	host.result_ready.connect(_on_result_ready)
 	host.spell_break.connect(_on_spell_break)
-	runtime = FighterDuelSimulation.new()
-	if not host.load_duel(runtime, definition, mode_context, settings, &"story"):
+	var next_runtime := FighterDuelSimulation.new()
+	if not host.load_duel(next_runtime, definition, mode_context, settings, &"story"):
+		runtime = null
 		push_error("Compact fighter host rejected its configuration")
 		return
+	runtime = next_runtime
 	final_result = null
 	_fixed_accumulator = 0.0
 	_intro_ticks_remaining = 45
@@ -623,29 +636,11 @@ func _draw_arena(foreground: Color, background: Color) -> void:
 		draw_line(Vector2(4, 143), Vector2(316, 143), foreground, 2.0)
 	else:
 		draw_line(Vector2(4, 143), Vector2(316, 143), foreground, 2.0)
-	for index: int in range(_stress_effects):
-		var x := 8 + posmod(index * 37, 302)
-		var y := 48 + posmod(index * 19, 82)
-		draw_rect(Rect2(x, y, 3, 3), foreground, false, 1.0)
+	_batch_renderer.draw_effects(self, _stress_effects, foreground)
 
 
-func _draw_projectiles(foreground: Color, background: Color) -> void:
-	for index: int in range(runtime.projectiles.capacity):
-		if runtime.projectiles.used[index] == 0:
-			continue
-		var position := Vector2(
-			roundi(runtime.projectiles.x_fp[index] / 256.0),
-			definition.ground_y - roundi(runtime.projectiles.y_fp[index] / 256.0)
-		)
-		match StringName(runtime.projectiles.family[index]):
-			&"star":
-				draw_line(position + Vector2(-2, 0), position + Vector2(2, 0), foreground, 1.0)
-				draw_line(position + Vector2(0, -2), position + Vector2(0, 2), foreground, 1.0)
-			&"laser":
-				draw_rect(Rect2(position + Vector2(-3, -1), Vector2(7, 3)), foreground)
-				draw_rect(Rect2(position + Vector2(-1, 0), Vector2(3, 1)), background)
-			_:
-				draw_rect(Rect2(position + Vector2(-1, -2), Vector2(3, 5)), foreground, false, 1.0)
+func _draw_projectiles(foreground: Color, _background: Color) -> void:
+	_batch_renderer.draw_projectiles(self, runtime.projectiles, definition.ground_y, foreground)
 
 
 func _draw_fighter(side: int) -> void:
@@ -837,7 +832,14 @@ func _draw_result_seals(origin: Vector2, foreground: Color, background: Color) -
 
 
 func _fighter_name(side: int) -> String:
-	var record := ContentDB.character(definition.fighters[side].character_id)
+	# Resolve the autoload through the tree so direct SceneTree test scripts do
+	# not depend on autoload identifiers being registered before scene parsing.
+	var database := get_node_or_null("/root/ContentDB")
+	var record: CharacterRecord = (
+		database.character(definition.fighters[side].character_id)
+		if database != null
+		else null
+	)
 	return record.display_name(_locale) if record != null else String(definition.fighters[side].id).get_slice(".", 1).to_upper()
 
 
