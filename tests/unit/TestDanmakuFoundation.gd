@@ -5,6 +5,7 @@ extends RefCounted
 const PATTERN_PATH := "res://content/danmaku/boundary_stain.json"
 const SCHEMA_PATH := "res://schemas/danmaku_pattern.schema.json"
 const REPLAY_PATH := "res://tests/fixtures/danmaku/boundary_stain_golden_replay.json"
+const KNIFE_PATTERN_PATH := "res://content/danmaku/missing_minute_knives.json"
 
 var _definition: DanmakuPatternDefinition
 
@@ -23,6 +24,7 @@ func run() -> Array[String]:
 	_expect_golden_replay(failures)
 	_expect_all_assist_tiers_clear(failures)
 	_expect_story_state_isolation(failures)
+	_expect_missing_minute_components(failures)
 	return failures
 
 
@@ -83,11 +85,36 @@ func _expect_packed_pool_and_safe_exhaustion(failures: Array[String]) -> void:
 		"res://src/presentation/danmaku/DanmakuBulletBatchRenderer.gd"
 	)
 	if (
-		DanmakuBulletBatchRenderer.Batch.COUNT != 8
+		DanmakuBulletBatchRenderer.Batch.COUNT != 10
 		or not renderer_source.contains("draw_multimesh")
 		or not renderer_source.contains("extends RefCounted")
 	):
-		failures.append("presentation lost its eight-batch MultiMesh/no-bullet-Node contract")
+		failures.append("presentation lost its ten-batch MultiMesh/no-bullet-Node contract")
+
+
+func _expect_missing_minute_components(failures: Array[String]) -> void:
+	var raw: Variant = JSON.parse_string(FileAccess.get_file_as_string(KNIFE_PATTERN_PATH))
+	var schema: Variant = JSON.parse_string(FileAccess.get_file_as_string(SCHEMA_PATH))
+	var schema_errors := JsonSchemaValidator.new().validate(raw, schema)
+	if not schema_errors.is_empty():
+		failures.append("missing-minute knife JSON failed its schema: %s" % [schema_errors])
+		return
+	var loader := DanmakuPatternLoader.new()
+	var knife_definition := loader.load_path(KNIFE_PATTERN_PATH)
+	if knife_definition == null or not loader.errors.is_empty():
+		failures.append("missing-minute knife pattern could not load: %s" % [loader.errors])
+		return
+	for component: StringName in [&"knife_lattice", &"clock_hand", &"stopped_release"]:
+		if not _contains_signature(knife_definition.emitter_signature(), component):
+			failures.append("missing-minute data omitted component %s" % component)
+	var simulation := BoundaryStainSimulation.new()
+	if not simulation.configure(knife_definition, _context(12121), DanmakuAssistSettings.new(), 512):
+		failures.append("generic danmaku simulation rejected missing-minute components")
+		return
+	for _tick: int in range(250):
+		simulation.step(DanmakuInputFrame.new())
+	if simulation.pool.total_spawned <= 0 or simulation.pool.untelegraphed_commit_count != 0:
+		failures.append("knife components did not emit warned deterministic bullets")
 
 
 func _expect_movement_pause_and_phase_retry(failures: Array[String]) -> void:

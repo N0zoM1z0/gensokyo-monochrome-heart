@@ -2,7 +2,14 @@ class_name DanmakuEmitterDefinition
 extends RefCounted
 ## Audited data-only emitter; pattern behavior is selected from a closed vocabulary.
 
-const PATTERN_TYPES := [&"lane_fan", &"offering_ring", &"safe_lane_grid"]
+const PATTERN_TYPES := [
+	&"lane_fan",
+	&"offering_ring",
+	&"safe_lane_grid",
+	&"knife_lattice",
+	&"clock_hand",
+	&"stopped_release",
+]
 
 var id: StringName
 var pattern_type: StringName

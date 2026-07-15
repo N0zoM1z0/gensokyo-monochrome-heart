@@ -197,6 +197,18 @@ func _make_bullet_spec(
 			var angle := deg_to_rad(emitter.angle_millidegrees / 1000.0) + slot * TAU / emitter.slot_count
 			spec.velocity_x_fp = roundi(cos(angle) * speed)
 			spec.velocity_y_fp = roundi(sin(angle) * speed)
+		&"clock_hand":
+			spec.x_fp = emitter.origin_x * FP
+			spec.y_fp = emitter.origin_y * FP
+			var hand_angle := deg_to_rad((emitter.angle_millidegrees + volley * 18000) / 1000.0) + slot * TAU / emitter.slot_count
+			spec.velocity_x_fp = roundi(cos(hand_angle) * speed)
+			spec.velocity_y_fp = roundi(sin(hand_angle) * speed)
+		&"knife_lattice", &"stopped_release":
+			spec.x_fp = roundi((8.0 + slot_ratio * (definition.arena_width - 16)) * FP)
+			spec.y_fp = (emitter.origin_y + (slot % 2) * 8) * FP
+			var sweep := -1 if posmod(slot + volley, 2) == 0 else 1
+			spec.velocity_x_fp = sweep * roundi(speed * (0.42 if emitter.pattern_type == &"knife_lattice" else 0.18))
+			spec.velocity_y_fp = speed
 		_:
 			spec.x_fp = roundi((8.0 + slot_ratio * (definition.arena_width - 16)) * FP)
 			spec.y_fp = emitter.origin_y * FP

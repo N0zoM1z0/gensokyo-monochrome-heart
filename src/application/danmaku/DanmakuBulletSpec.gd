@@ -6,6 +6,7 @@ enum Family {
 	AMULET,
 	OFFERING,
 	MEMORY,
+	KNIFE,
 }
 
 enum Polarity {

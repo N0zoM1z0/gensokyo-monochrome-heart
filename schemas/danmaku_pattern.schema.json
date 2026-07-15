@@ -51,7 +51,7 @@
       "required": ["id", "pattern", "start_tick", "interval_ticks", "volleys", "slot_count", "origin_x", "origin_y", "speed_pixels_per_tick", "angle_millidegrees", "telegraph_ticks", "lifetime_ticks", "family", "polarity", "safe_lane"],
       "properties": {
         "id": {"type": "string", "pattern": "^emit\\.[a-z0-9_.]+$"},
-        "pattern": {"enum": ["lane_fan", "offering_ring", "safe_lane_grid"]},
+        "pattern": {"enum": ["lane_fan", "offering_ring", "safe_lane_grid", "knife_lattice", "clock_hand", "stopped_release"]},
         "start_tick": {"type": "integer", "minimum": 0},
         "interval_ticks": {"type": "integer", "minimum": 1},
         "volleys": {"type": "integer", "minimum": 1},
@@ -62,7 +62,7 @@
         "angle_millidegrees": {"type": "integer"},
         "telegraph_ticks": {"type": "integer", "minimum": 1},
         "lifetime_ticks": {"type": "integer", "minimum": 1},
-        "family": {"enum": ["amulet", "offering", "memory"]},
+        "family": {"enum": ["amulet", "offering", "memory", "knife"]},
         "polarity": {"enum": ["ink", "paper"]},
         "safe_lane": {"type": "integer", "minimum": -1}
       }

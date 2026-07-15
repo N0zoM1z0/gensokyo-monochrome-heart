@@ -6,6 +6,7 @@ const FAMILY_CODES := {
 	"amulet": DanmakuBulletSpec.Family.AMULET,
 	"offering": DanmakuBulletSpec.Family.OFFERING,
 	"memory": DanmakuBulletSpec.Family.MEMORY,
+	"knife": DanmakuBulletSpec.Family.KNIFE,
 }
 const POLARITY_CODES := {
 	"ink": DanmakuBulletSpec.Polarity.INK,

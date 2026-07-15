@@ -1,6 +1,6 @@
 class_name DanmakuBulletBatchRenderer
 extends RefCounted
-## Eight texture batches over packed bullet data; never one Node or draw call per bullet.
+## Ten texture batches over packed bullet data; never one Node or draw call per bullet.
 
 enum Batch {
 	TELEGRAPH,
@@ -10,6 +10,8 @@ enum Batch {
 	OFFERING_PAPER,
 	MEMORY_INK,
 	MEMORY_PAPER,
+	KNIFE_INK,
+	KNIFE_PAPER,
 	DISSOLVE,
 	COUNT,
 }
@@ -107,8 +109,10 @@ func _batch_for(pool: DanmakuBulletPool, index: int) -> int:
 			return Batch.AMULET_PAPER if paper else Batch.AMULET_INK
 		DanmakuBulletSpec.Family.OFFERING:
 			return Batch.OFFERING_PAPER if paper else Batch.OFFERING_INK
-		_:
+		DanmakuBulletSpec.Family.MEMORY:
 			return Batch.MEMORY_PAPER if paper else Batch.MEMORY_INK
+		_:
+			return Batch.KNIFE_PAPER if paper else Batch.KNIFE_INK
 
 
 func _ensure_batches(capacity: int, foreground: Color) -> void:
@@ -157,6 +161,12 @@ func _make_texture(batch: int) -> Texture2D:
 				if batch == Batch.MEMORY_INK or offset != TEXTURE_CENTER:
 					_set_mask_pixel(image, offset, TEXTURE_CENTER)
 					_set_mask_pixel(image, TEXTURE_CENTER, offset)
+		Batch.KNIFE_INK, Batch.KNIFE_PAPER:
+			for offset: int in range(1, 6):
+				if batch == Batch.KNIFE_INK or offset != 3:
+					_set_mask_pixel(image, 5 - offset, offset)
+			_set_mask_pixel(image, 1, 5)
+			_set_mask_pixel(image, 2, 5)
 		Batch.DISSOLVE:
 			_set_mask_pixel(image, TEXTURE_CENTER, TEXTURE_CENTER)
 	return ImageTexture.create_from_image(image)

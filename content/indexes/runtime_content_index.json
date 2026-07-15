@@ -1,13 +1,13 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "845450596a0c4ec65baa52ee5531999f3d2eaef9cd16e1478559cd2b5ccfe0bb",
+  "content_hash": "7f1698a87119b9c004788d3326d0e0db2d935424342603ad1a5b823e4fcdb391",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 28,
     "dialogue_beats": 35,
-    "localization": 372,
+    "localization": 376,
     "music_cues": 89,
     "event_nodes": 70
   },
@@ -279,6 +279,10 @@
       "ui.danmaku.graze",
       "ui.danmaku.life",
       "ui.danmaku.margin",
+      "ui.danmaku.missing_minute.phase.clock_hands",
+      "ui.danmaku.missing_minute.phase.lattice",
+      "ui.danmaku.missing_minute.phase.release",
+      "ui.danmaku.missing_minute.title",
       "ui.danmaku.pause.accept_loss",
       "ui.danmaku.pause.assist_clear",
       "ui.danmaku.pause.assist_locked",
