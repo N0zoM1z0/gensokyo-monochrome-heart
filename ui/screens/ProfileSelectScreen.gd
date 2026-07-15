@@ -71,15 +71,23 @@ func _refresh_screen() -> void:
 	super._refresh_screen()
 	for index: int in range(rows.size()):
 		rows[index].set_profile(PROFILE_IDS[index])
+		if ui_scale_percent() > 100:
+			rows[index].custom_minimum_size = Vector2.ZERO
+			rows[index].position = Vector2(10 + (index % 2) * 152, 31 + floori(index / 2.0) * 68)
+			rows[index].size = Vector2(148, 64)
+		else:
+			rows[index].custom_minimum_size = Vector2(72, 96)
+			rows[index].position = Vector2(8 + index * 76, 36)
+			rows[index].size = Vector2(72, 96)
 
 
 func _draw_screen(profile: PresentationProfile) -> void:
 	var foreground := profile.paper if profile.is_inverted else profile.ink
 	draw_rect(Rect2(4, 4, 312, 172), foreground, false, 2.0)
-	_draw_localized(&"ui.profile.title", Vector2(8, 22), 304, HORIZONTAL_ALIGNMENT_CENTER)
+	_draw_localized(&"ui.profile.title", Vector2(8, 24 if ui_scale_percent() > 100 else 22), 304, HORIZONTAL_ALIGNMENT_CENTER)
 	var settings := get_node_or_null("/root/SettingsService")
 	var forced_profile: StringName = _fixture_forced_profile_id if _fixture_mode else (settings.forced_presentation_profile if settings != null else &"")
-	if forced_profile == &"A":
+	if forced_profile == &"A" and ui_scale_percent() == 100:
 		_draw_localized(&"ui.profile.forced_a", Vector2(8, 156), 304, HORIZONTAL_ALIGNMENT_CENTER)
-	else:
+	elif ui_scale_percent() == 100:
 		draw_line(Vector2(24, 152), Vector2(296, 152), foreground, 1.0)

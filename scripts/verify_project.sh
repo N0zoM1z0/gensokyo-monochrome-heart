@@ -191,6 +191,7 @@ else
 	run_checked "M07 screenshot matrix" ./scripts/capture_m07_screenshots.sh
 	run_checked "M08 screenshot matrix" ./scripts/capture_m08_screenshots.sh
 	run_checked "M09 screenshot matrix" ./scripts/capture_m09_screenshots.sh
+	run_checked "M10 150 percent UI screenshot matrix" ./scripts/capture_m10_screenshots.sh
 	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
 		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
 		--rendering-driver opengl3 \

@@ -2,6 +2,8 @@ class_name UiScreenBase
 extends Control
 ## Fixture-safe localized screen base that consumes semantic input only.
 
+const UI_SCALE_POLICY := preload("res://src/presentation/ui/UiScalePolicy.gd")
+
 signal command_requested(command_id: StringName, payload: Dictionary)
 
 const LIST_ROW_SCENE := preload("res://ui/components/list_row.tscn")
@@ -29,6 +31,7 @@ var _fixture_forced_profile_id: StringName = &""
 var _fixture_locale: StringName = &"en"
 var _fixture_reduced_motion: bool = false
 var _fixture_safe_flash: bool = false
+var _fixture_ui_scale_percent: int = 100
 var _active_device_name: StringName = &"keyboard"
 
 
@@ -83,6 +86,11 @@ func configure_fixture(
 	_refresh_screen()
 
 
+func set_ui_scale_fixture(percent: int) -> void:
+	_fixture_ui_scale_percent = UI_SCALE_POLICY.normalize(percent)
+	_refresh_screen()
+
+
 func resolved_profile_id() -> StringName:
 	return _active_profile_id()
 
@@ -106,6 +114,13 @@ func is_safe_flash() -> bool:
 		return _fixture_safe_flash
 	var settings := get_node_or_null("/root/SettingsService")
 	return settings.is_safe_flash if settings != null else false
+
+
+func ui_scale_percent() -> int:
+	if _fixture_mode:
+		return _fixture_ui_scale_percent
+	var accessibility := get_node_or_null("/root/AccessibilityState")
+	return UI_SCALE_POLICY.normalize(accessibility.ui_scale_percent) if accessibility != null else 100
 
 
 func current_focus_id() -> StringName:
@@ -197,6 +212,7 @@ func _refresh_screen() -> void:
 	for row: ListRow in rows:
 		row.set_locale(locale)
 		row.set_profile(profile_id)
+		row.set_ui_scale(ui_scale_percent())
 	for frame: PanelFrame in frames:
 		frame.set_profile(profile_id)
 	var glyph_service := get_node_or_null("/root/InputGlyphService")
@@ -204,6 +220,7 @@ func _refresh_screen() -> void:
 		var glyph_key: StringName = glyph_service.glyph_key(hint.action) if glyph_service != null else StringName("input.glyph.keyboard.%s" % ("menu" if hint.action == GameInput.PAUSE else "confirm"))
 		var binding_label: String = glyph_service.binding_text(hint.action, locale) if glyph_service != null else ""
 		hint.configure(hint.action, hint.verb_key, locale, profile_id, glyph_key, binding_label)
+		hint.set_ui_scale(ui_scale_percent())
 	_apply_focus()
 	queue_redraw()
 
@@ -261,9 +278,12 @@ func _draw_localized_wrapped(
 
 
 func _resolved_font_size(requested_size: int = 0) -> int:
+	var base_size: int
 	if active_locale() == &"ja":
-		return maxi(10, requested_size if requested_size > 0 else 12)
-	return requested_size if requested_size > 0 else 8
+		base_size = maxi(10, requested_size if requested_size > 0 else 12)
+	else:
+		base_size = requested_size if requested_size > 0 else 8
+	return UI_SCALE_POLICY.pixels(base_size, ui_scale_percent())
 
 
 func _text(key: StringName) -> String:
@@ -305,6 +325,7 @@ func _add_row(
 	row.size = rect.size
 	row.locale = active_locale()
 	row.profile_id = _active_profile_id()
+	row.ui_scale_percent = ui_scale_percent()
 	add_child(row)
 	rows.append(row)
 	return row
@@ -323,6 +344,7 @@ func _add_action_hint(
 	var glyph_key: StringName = glyph_service.glyph_key(action) if glyph_service != null else &"input.glyph.keyboard.confirm"
 	var binding_label: String = glyph_service.binding_text(action, active_locale()) if glyph_service != null else ""
 	hint.configure(action, verb_key, active_locale(), _active_profile_id(), glyph_key, binding_label)
+	hint.set_ui_scale(ui_scale_percent())
 	action_hints.append(hint)
 	return hint
 
@@ -364,6 +386,9 @@ func _connect_live_services() -> void:
 	var glyph_service := get_node_or_null("/root/InputGlyphService")
 	if glyph_service != null and not glyph_service.active_device_changed.is_connected(_on_device_changed):
 		glyph_service.active_device_changed.connect(_on_device_changed)
+	var accessibility := get_node_or_null("/root/AccessibilityState")
+	if accessibility != null and not accessibility.accessibility_changed.is_connected(_on_accessibility_changed):
+		accessibility.accessibility_changed.connect(_on_accessibility_changed)
 
 
 func _read_active_device() -> void:
@@ -385,3 +410,8 @@ func _on_profile_changed(_profile_id: StringName) -> void:
 func _on_device_changed(_device: int) -> void:
 	_read_active_device()
 	_apply_focus()
+
+
+func _on_accessibility_changed() -> void:
+	if not _fixture_mode:
+		_refresh_screen()

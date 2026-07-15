@@ -5,6 +5,7 @@ const CANVAS_SIZE := Vector2i(320, 180)
 const DEFAULT_SCENE := "res://tests/ui/fixtures/VisualFoundationFixture.tscn"
 const DEFAULT_OUTPUT := "res://tests/screenshots/generated/visual_foundation_A_en.png"
 const ONE_BIT_SHADER := preload("res://ui/theme/one_bit_post_process.gdshader")
+const UI_SCALE_POLICY := preload("res://src/presentation/ui/UiScalePolicy.gd")
 
 
 func _initialize() -> void:
@@ -37,6 +38,10 @@ func _run() -> void:
 			options.is_reduced_motion,
 			options.is_safe_flash
 		)
+	if fixture.has_method("set_ui_scale_fixture"):
+		fixture.call("set_ui_scale_fixture", options.ui_scale_percent)
+	if options.focus_id != &"" and fixture.has_method("restore_focus"):
+		fixture.call("restore_focus", options.focus_id)
 	_add_one_bit_threshold(viewport)
 	var resolved_profile := options.profile_id
 	if fixture.has_method("resolved_profile_id"):
@@ -77,8 +82,8 @@ func _run() -> void:
 		quit(1)
 		return
 	print(
-		"Screenshot fixture: scene=%s output=%s size=%s requested_profile=%s resolved_profile=%s locale=%s input=%s one_handed=%s"
-		% [options.scene_path, output_path, image.get_size(), options.profile_id, resolved_profile, options.locale, options.input_device, options.one_handed]
+		"Screenshot fixture: scene=%s output=%s size=%s requested_profile=%s resolved_profile=%s locale=%s input=%s one_handed=%s ui_scale=%d"
+		% [options.scene_path, output_path, image.get_size(), options.profile_id, resolved_profile, options.locale, options.input_device, options.one_handed, options.ui_scale_percent]
 	)
 	# Explicitly release the fixture tree before this short-lived process exits.
 	viewport.free()
@@ -139,6 +144,10 @@ func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:
 			options.input_device = argument.trim_prefix("--input-device=")
 		elif argument.begins_with("--one-handed="):
 			options.one_handed = argument.trim_prefix("--one-handed=")
+		elif argument.begins_with("--ui-scale="):
+			options.ui_scale_percent = UI_SCALE_POLICY.normalize(int(argument.trim_prefix("--ui-scale=")))
+		elif argument.begins_with("--focus-id="):
+			options.focus_id = StringName(argument.trim_prefix("--focus-id="))
 	return options
 
 
@@ -159,3 +168,5 @@ class ScreenshotOptions:
 	var is_safe_flash: bool = false
 	var input_device: String = "keyboard"
 	var one_handed: String = "off"
+	var ui_scale_percent: int = 100
+	var focus_id: StringName = &""

@@ -61,15 +61,16 @@ func _draw_screen(profile: PresentationProfile) -> void:
 	var foreground := profile.paper if profile.is_inverted else profile.ink
 	var background := profile.ink if profile.is_inverted else profile.paper
 	_draw_localized(&"ui.credits.title", Vector2(16, 25), 288, HORIZONTAL_ALIGNMENT_CENTER)
-	draw_rect(Rect2(12, 32, 296, 119), background)
-	draw_rect(Rect2(12, 32, 296, 119), foreground, false, 1.0)
+	var credit_frame := Rect2(12, 32, 296, 106) if ui_scale_percent() > 100 else Rect2(12, 32, 296, 119)
+	draw_rect(credit_frame, background)
+	draw_rect(credit_frame, foreground, false, 1.0)
 	var lines := _credit_lines()
 	var font := _japanese_font if active_locale() == &"ja" else _latin_font
 	var font_size := _credit_font_size()
 	var line_height := _credit_line_height()
 	for index: int in range(lines.size()):
 		var y := 54.0 + index * line_height - scroll_offset
-		if y < 42.0 or y > 145.0:
+		if y < 42.0 or y > (133.0 if ui_scale_percent() > 100 else 145.0):
 			continue
 		draw_string(
 			font,
@@ -84,7 +85,13 @@ func _draw_screen(profile: PresentationProfile) -> void:
 		draw_rect(Rect2(28, 79, 264, 24), background)
 		draw_rect(Rect2(28, 79, 264, 24), foreground, false, 1.0)
 		_draw_localized(&"ui.credits.complete", Vector2(34, 95), 252, HORIZONTAL_ALIGNMENT_CENTER, 10)
-	_draw_localized(&"ui.credits.controls", Vector2(18, 166), 198, HORIZONTAL_ALIGNMENT_LEFT, 10)
+	if ui_scale_percent() > 100:
+		_draw_localized_wrapped(&"ui.credits.controls", Rect2(18, 141, 190, 32), 2, 7)
+		if not action_hints.is_empty():
+			action_hints[0].position = Vector2(220, 145)
+			action_hints[0].size = Vector2(82, 22)
+	else:
+		_draw_localized(&"ui.credits.controls", Vector2(18, 166), 198, HORIZONTAL_ALIGNMENT_LEFT, 10)
 
 
 func _credit_lines() -> Array[String]:
@@ -100,7 +107,7 @@ func _credit_lines() -> Array[String]:
 			280,
 			font_size,
 			active_locale(),
-			CREDIT_MAX_LINES_PER_ENTRY
+			6 if ui_scale_percent() > 100 else CREDIT_MAX_LINES_PER_ENTRY
 		))
 		lines.append("")
 	if not lines.is_empty():
@@ -109,8 +116,8 @@ func _credit_lines() -> Array[String]:
 
 
 func _credit_font_size() -> int:
-	return 12 if active_locale() == &"ja" else 7
+	return UI_SCALE_POLICY.pixels(12 if active_locale() == &"ja" else 7, ui_scale_percent())
 
 
 func _credit_line_height() -> float:
-	return 14.0 if active_locale() == &"ja" else 10.0
+	return float(_credit_font_size() + 2)

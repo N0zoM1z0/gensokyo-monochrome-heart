@@ -1,6 +1,8 @@
 extends Node
 ## Stores presentation/gameplay assist presets without affecting story outcomes.
 
+const UI_SCALE_POLICY := preload("res://src/presentation/ui/UiScalePolicy.gd")
+
 signal accessibility_changed
 
 enum Preset {
@@ -21,6 +23,7 @@ var has_unlimited_story_retries: bool = false
 var game_speed_percent: int = 100
 var bullet_density_percent: int = 100
 var one_handed_preset: int = InputMapInstaller.OneHandedPreset.NONE
+var ui_scale_percent: int = 100
 
 
 func _ready() -> void:
@@ -114,17 +117,26 @@ func set_one_handed_preset(next_preset: int, should_persist: bool = true) -> voi
 	accessibility_changed.emit()
 
 
+func set_ui_scale_percent(next_percent: int, should_persist: bool = true) -> void:
+	ui_scale_percent = UI_SCALE_POLICY.normalize(next_percent)
+	if should_persist:
+		_save_preference()
+	accessibility_changed.emit()
+
+
 func restore_presentation(
 	reduced_motion: bool,
 	safe_flash: bool,
 	prior_preset: int,
 	prior_first_run: bool,
-	should_persist: bool = true
+	should_persist: bool = true,
+	restored_ui_scale_percent: int = 100
 ) -> void:
 	preset = clampi(prior_preset, Preset.ORIGINAL, Preset.CUSTOM) as Preset
 	is_first_run = prior_first_run
 	is_reduced_motion = reduced_motion
 	is_safe_flash = safe_flash
+	ui_scale_percent = UI_SCALE_POLICY.normalize(restored_ui_scale_percent)
 	_sync_presentation_settings()
 	if should_persist:
 		if is_first_run:
@@ -158,6 +170,7 @@ func _load_preference() -> void:
 		InputMapInstaller.OneHandedPreset.NONE,
 		InputMapInstaller.OneHandedPreset.RIGHT_HAND
 	)
+	ui_scale_percent = UI_SCALE_POLICY.normalize(int(config.get_value("accessibility", "ui_scale_percent", 100)))
 	InputMapInstaller.apply_one_handed_preset(one_handed_preset as InputMapInstaller.OneHandedPreset)
 
 
@@ -168,6 +181,7 @@ func _save_preference() -> void:
 	config.set_value("accessibility", "reduced_motion", is_reduced_motion)
 	config.set_value("accessibility", "safe_flash", is_safe_flash)
 	config.set_value("accessibility", "one_handed_preset", one_handed_preset)
+	config.set_value("accessibility", "ui_scale_percent", ui_scale_percent)
 	var error := config.save(CONFIG_PATH)
 	if error != OK:
 		push_error("Could not persist accessibility preference (error %d)" % error)

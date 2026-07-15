@@ -2,6 +2,8 @@ class_name ListRow
 extends Control
 ## One semantic focus target with localized label and optional textual status.
 
+const UI_SCALE_POLICY := preload("res://src/presentation/ui/UiScalePolicy.gd")
+
 @export var label_key: StringName
 @export var value_key: StringName
 @export var command_id: StringName
@@ -11,6 +13,7 @@ extends Control
 
 var locale: StringName = &"en"
 var is_focused: bool = false
+var ui_scale_percent: int = 100
 var _catalog := UiTextCatalog.new()
 var _latin_font: Font
 var _japanese_font: Font
@@ -51,6 +54,11 @@ func set_value_key(next_value_key: StringName) -> void:
 	queue_redraw()
 
 
+func set_ui_scale(next_percent: int) -> void:
+	ui_scale_percent = UI_SCALE_POLICY.normalize(next_percent)
+	queue_redraw()
+
+
 func _draw() -> void:
 	var profile := PresentationProfileRegistry.resolve(profile_id)
 	var background := profile.ink if profile.is_inverted else profile.paper
@@ -61,8 +69,9 @@ func _draw() -> void:
 	elif state == &"disabled":
 		draw_line(Vector2(10, size.y - 3), Vector2(size.x - 4, size.y - 3), foreground, 1.0)
 	var font := _japanese_font if locale == &"ja" else _latin_font
-	var font_size := 12 if locale == &"ja" else 8
-	var baseline := 13 if locale == &"ja" else 11
+	var base_font_size := 12 if locale == &"ja" else 8
+	var font_size: int = UI_SCALE_POLICY.pixels(base_font_size, ui_scale_percent)
+	var baseline := mini(size.y - 3.0, font_size + 1.0)
 	var label := _catalog.text(label_key, locale)
 	var label_width := size.x - 20
 	if value_key != &"":

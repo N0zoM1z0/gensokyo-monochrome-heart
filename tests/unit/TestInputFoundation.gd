@@ -4,6 +4,7 @@ extends RefCounted
 const ACCESSIBILITY_STATE_SCRIPT := preload("res://src/autoload/AccessibilityState.gd")
 const FOCUS_ROUTER_SCRIPT := preload("res://src/autoload/FocusRouter.gd")
 const INPUT_GLYPH_SERVICE_SCRIPT := preload("res://src/autoload/InputGlyphService.gd")
+const UI_SCALE_POLICY := preload("res://src/presentation/ui/UiScalePolicy.gd")
 
 
 func run() -> Array[String]:
@@ -130,14 +131,22 @@ func _validate_accessibility_presets(failures: Array[String]) -> void:
 	state.apply_preset(state.Preset.STORY, false)
 	if not state.has_simple_fighter_input or not state.has_unlimited_story_retries or state.bullet_density_percent != 70:
 		failures.append("Story accessibility preset does not apply its reviewed assists")
+	state.set_ui_scale_percent(150, false)
+	if state.preset != state.Preset.STORY or not state.has_simple_fighter_input:
+		failures.append("UI scale changed the active gameplay accessibility preset")
 	state.apply_preset(state.Preset.LOW_MOTION, false)
 	if not state.is_reduced_motion or not state.is_safe_flash:
 		failures.append("Low Motion preset does not enable reduced motion and safe flash")
 	state.apply_preset(state.Preset.ORIGINAL, false)
 	if state.is_reduced_motion or state.has_simple_fighter_input or state.game_speed_percent != 100:
 		failures.append("Original preset did not restore authored defaults")
+	state.set_ui_scale_percent(149, false)
+	if state.ui_scale_percent != 150 or UI_SCALE_POLICY.pixels(8, state.ui_scale_percent) != 12:
+		failures.append("150% UI scale did not normalize or produce integer pixel sizes")
+	if UI_SCALE_POLICY.next(150, 1) != 100 or UI_SCALE_POLICY.next(100, -1) != 150:
+		failures.append("UI scale choices did not wrap across the reviewed discrete values")
 	state.is_first_run = true
-	state.restore_presentation(false, false, state.Preset.ORIGINAL, true, false)
-	if not state.is_first_run:
+	state.restore_presentation(false, false, state.Preset.ORIGINAL, true, false, 125)
+	if not state.is_first_run or state.ui_scale_percent != 125:
 		failures.append("cancel-style accessibility restore consumed the first-run preset")
 	state.free()
