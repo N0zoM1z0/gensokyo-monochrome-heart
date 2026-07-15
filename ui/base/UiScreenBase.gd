@@ -223,50 +223,46 @@ func _draw_localized(
 	position: Vector2,
 	width: float = -1.0,
 	alignment: HorizontalAlignment = HORIZONTAL_ALIGNMENT_LEFT,
-	font_size: int = 8
+	font_size: int = 0
 ) -> void:
 	var profile := PresentationProfileRegistry.resolve(_active_profile_id())
 	var foreground := profile.paper if profile.is_inverted else profile.ink
 	var font := _japanese_font if active_locale() == &"ja" else _latin_font
-	draw_string(font, position, _text(key), alignment, width, font_size, foreground)
+	var resolved_size := _resolved_font_size(font_size)
+	draw_string(font, position, _text(key), alignment, width, resolved_size, foreground)
 
 
 func _draw_localized_wrapped(
 	key: StringName,
 	rect: Rect2,
 	maximum_lines: int = 2,
-	font_size: int = 8
+	font_size: int = 0
 ) -> void:
 	var profile := PresentationProfileRegistry.resolve(_active_profile_id())
 	var foreground := profile.paper if profile.is_inverted else profile.ink
 	var font := _japanese_font if active_locale() == &"ja" else _latin_font
-	var source := _text(key)
-	var lines: Array[String] = []
-	if font.get_string_size(source, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x <= rect.size.x:
-		lines.append(source)
-	else:
-		var current_line := ""
-		for word: String in source.split(" "):
-			var candidate := word if current_line.is_empty() else "%s %s" % [current_line, word]
-			if font.get_string_size(candidate, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x <= rect.size.x:
-				current_line = candidate
-			else:
-				if not current_line.is_empty():
-					lines.append(current_line)
-				current_line = word
-		if not current_line.is_empty() and lines.size() < maximum_lines:
-			lines.append(current_line)
-	var baseline_y := rect.position.y + font_size
+	var resolved_size := _resolved_font_size(font_size)
+	var lines := PixelTextWrapper.wrap(
+		_text(key), font, rect.size.x, resolved_size, active_locale(), maximum_lines
+	)
+	var line_height := resolved_size + 2
+	var baseline_y := rect.position.y + resolved_size
 	for index: int in range(mini(lines.size(), maximum_lines)):
 		draw_string(
 			font,
-			Vector2(rect.position.x, baseline_y + index * (font_size + 2)),
+			Vector2(rect.position.x, baseline_y + index * line_height),
 			lines[index],
 			HORIZONTAL_ALIGNMENT_CENTER,
 			rect.size.x,
-			font_size,
+			resolved_size,
 			foreground
 		)
+
+
+func _resolved_font_size(requested_size: int = 0) -> int:
+	if active_locale() == &"ja":
+		return maxi(10, requested_size if requested_size > 0 else 12)
+	return requested_size if requested_size > 0 else 8
 
 
 func _text(key: StringName) -> String:

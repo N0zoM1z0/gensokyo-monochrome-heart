@@ -23,7 +23,8 @@ func _draw() -> void:
 		&"profile.d":
 			draw_rect(Rect2(12, 14, size.x - 24, 36), foreground)
 	var font := _japanese_font if locale == &"ja" else _latin_font
-	var lines := _wrap_label(_catalog.text(label_key, locale), font, size.x - 12)
+	var font_size := 12 if locale == &"ja" else 8
+	var lines := PixelTextWrapper.wrap(_catalog.text(label_key, locale), font, size.x - 12, font_size, locale, 2)
 	var first_baseline := 80 if lines.size() == 1 else 72
 	for index: int in range(lines.size()):
 		draw_string(
@@ -32,25 +33,6 @@ func _draw() -> void:
 			lines[index],
 			HORIZONTAL_ALIGNMENT_CENTER,
 			size.x - 12,
-			8,
+			font_size,
 			foreground
 		)
-
-
-func _wrap_label(text: String, font: Font, maximum_width: float) -> Array[String]:
-	if font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, 8).x <= maximum_width:
-		return [text]
-	var lines: Array[String] = []
-	var current_line := ""
-	for word: String in text.split(" "):
-		var candidate := word if current_line.is_empty() else "%s %s" % [current_line, word]
-		if font.get_string_size(candidate, HORIZONTAL_ALIGNMENT_LEFT, -1, 8).x <= maximum_width:
-			current_line = candidate
-		elif lines.is_empty():
-			lines.append(current_line if not current_line.is_empty() else word)
-			current_line = word if not current_line.is_empty() else ""
-		else:
-			current_line = candidate
-	if not current_line.is_empty() and lines.size() < 2:
-		lines.append(current_line)
-	return lines

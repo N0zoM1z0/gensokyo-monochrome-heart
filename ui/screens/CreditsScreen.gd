@@ -4,7 +4,6 @@ extends UiScreenBase
 
 const DEFAULT_SCROLL_SPEED := 18.0
 const FAST_SCROLL_SPEED := 48.0
-const CREDIT_LINE_HEIGHT := 10.0
 const CREDIT_MAX_LINES_PER_ENTRY := 3
 const CREDIT_KEYS: Array[StringName] = [
 	&"ui.credits.fanwork",
@@ -34,7 +33,7 @@ func _process(delta: float) -> void:
 		return
 	var speed := FAST_SCROLL_SPEED if is_fast else DEFAULT_SCROLL_SPEED
 	scroll_offset += maxf(0.0, delta) * speed
-	var final_offset := maxf(0.0, _credit_lines().size() * CREDIT_LINE_HEIGHT - 52.0)
+	var final_offset := maxf(0.0, _credit_lines().size() * _credit_line_height() - 52.0)
 	if scroll_offset >= final_offset:
 		scroll_offset = final_offset
 		is_complete = true
@@ -66,8 +65,10 @@ func _draw_screen(profile: PresentationProfile) -> void:
 	draw_rect(Rect2(12, 32, 296, 119), foreground, false, 1.0)
 	var lines := _credit_lines()
 	var font := _japanese_font if active_locale() == &"ja" else _latin_font
+	var font_size := _credit_font_size()
+	var line_height := _credit_line_height()
 	for index: int in range(lines.size()):
-		var y := 54.0 + index * CREDIT_LINE_HEIGHT - scroll_offset
+		var y := 54.0 + index * line_height - scroll_offset
 		if y < 42.0 or y > 145.0:
 			continue
 		draw_string(
@@ -76,19 +77,20 @@ func _draw_screen(profile: PresentationProfile) -> void:
 			lines[index],
 			HORIZONTAL_ALIGNMENT_CENTER,
 			280,
-			7,
+			font_size,
 			foreground
 		)
 	if is_complete:
 		draw_rect(Rect2(28, 79, 264, 24), background)
 		draw_rect(Rect2(28, 79, 264, 24), foreground, false, 1.0)
-		_draw_localized(&"ui.credits.complete", Vector2(34, 94), 252, HORIZONTAL_ALIGNMENT_CENTER, 7)
-	_draw_localized(&"ui.credits.controls", Vector2(18, 165), 198, HORIZONTAL_ALIGNMENT_LEFT, 6)
+		_draw_localized(&"ui.credits.complete", Vector2(34, 95), 252, HORIZONTAL_ALIGNMENT_CENTER, 10)
+	_draw_localized(&"ui.credits.controls", Vector2(18, 166), 198, HORIZONTAL_ALIGNMENT_LEFT, 10)
 
 
 func _credit_lines() -> Array[String]:
 	var lines: Array[String] = []
 	var font := _japanese_font if active_locale() == &"ja" else _latin_font
+	var font_size := _credit_font_size()
 	if font == null:
 		return lines
 	for key: StringName in CREDIT_KEYS:
@@ -96,7 +98,7 @@ func _credit_lines() -> Array[String]:
 			_text(key),
 			font,
 			280,
-			7,
+			font_size,
 			active_locale(),
 			CREDIT_MAX_LINES_PER_ENTRY
 		))
@@ -104,3 +106,11 @@ func _credit_lines() -> Array[String]:
 	if not lines.is_empty():
 		lines.pop_back()
 	return lines
+
+
+func _credit_font_size() -> int:
+	return 12 if active_locale() == &"ja" else 7
+
+
+func _credit_line_height() -> float:
+	return 14.0 if active_locale() == &"ja" else 10.0

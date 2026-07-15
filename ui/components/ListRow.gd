@@ -61,9 +61,13 @@ func _draw() -> void:
 	elif state == &"disabled":
 		draw_line(Vector2(10, size.y - 3), Vector2(size.x - 4, size.y - 3), foreground, 1.0)
 	var font := _japanese_font if locale == &"ja" else _latin_font
+	var font_size := 12 if locale == &"ja" else 8
+	var baseline := 13 if locale == &"ja" else 11
 	var label := _catalog.text(label_key, locale)
-	draw_string(font, Vector2(12, 11), label, HORIZONTAL_ALIGNMENT_LEFT, size.x - 20, 8, foreground)
+	var label_width := size.x - 20
 	if value_key != &"":
 		var value := _catalog.text(value_key, locale)
-		var value_width := font.get_string_size(value, HORIZONTAL_ALIGNMENT_LEFT, -1, 8).x
-		draw_string(font, Vector2(size.x - value_width - 6, 11), value, HORIZONTAL_ALIGNMENT_LEFT, -1, 8, foreground)
+		var value_width := font.get_string_size(value, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x
+		label_width = maxf(24.0, size.x - value_width - 24.0)
+		draw_string(font, Vector2(size.x - value_width - 6, baseline), value, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, foreground)
+	draw_string(font, Vector2(12, baseline), label, HORIZONTAL_ALIGNMENT_LEFT, label_width, font_size, foreground)

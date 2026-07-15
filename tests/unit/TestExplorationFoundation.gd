@@ -142,11 +142,36 @@ func _expect_input_parity(failures: Array[String]) -> void:
 	if not _has_event_type(GameInput.COMPANION, InputEventKey) or not _has_event_type(GameInput.COMPANION, InputEventJoypadButton):
 		failures.append("remappable companion skill lacks keyboard/controller parity")
 	InputMapInstaller.apply_one_handed_preset(InputMapInstaller.OneHandedPreset.LEFT_HAND)
-	if not _has_key(GameInput.CONFIRM, KEY_SPACE) or not _has_key(GameInput.COMPANION, KEY_Q):
-		failures.append("left-handed exploration preset omitted confirm or companion skill")
+	var left_bindings: Dictionary[StringName, int] = {
+		GameInput.CONFIRM: KEY_SPACE, GameInput.SHOT: KEY_SPACE, GameInput.LIGHT: KEY_SPACE,
+		GameInput.CANCEL: KEY_QUOTELEFT, GameInput.FOCUS: KEY_Q, GameInput.HEAVY: KEY_Q,
+		GameInput.COMPANION: KEY_E, GameInput.SKILL: KEY_E, GameInput.BOMB: KEY_R,
+		GameInput.SPELL: KEY_R, GameInput.GUARD: KEY_SHIFT, GameInput.JOURNAL: KEY_TAB,
+		GameInput.MAP: KEY_F, GameInput.PAGE_LEFT: KEY_1, GameInput.PAGE_RIGHT: KEY_2,
+		GameInput.PAUSE: KEY_ESCAPE,
+	}
+	for action: StringName in left_bindings:
+		if not _has_key(action, left_bindings[action]):
+			failures.append("left-handed preset omitted %s" % action)
 	InputMapInstaller.apply_one_handed_preset(InputMapInstaller.OneHandedPreset.RIGHT_HAND)
-	if not _has_key(GameInput.CONFIRM, KEY_KP_0) or not _has_key(GameInput.COMPANION, KEY_KP_1):
-		failures.append("right-handed exploration preset omitted confirm or companion skill")
+	var right_bindings: Dictionary[StringName, int] = {
+		GameInput.CONFIRM: KEY_KP_0, GameInput.SHOT: KEY_KP_0, GameInput.LIGHT: KEY_KP_0,
+		GameInput.CANCEL: KEY_KP_PERIOD, GameInput.FOCUS: KEY_KP_1, GameInput.HEAVY: KEY_KP_1,
+		GameInput.COMPANION: KEY_KP_2, GameInput.SKILL: KEY_KP_2, GameInput.BOMB: KEY_KP_3,
+		GameInput.SPELL: KEY_KP_3, GameInput.GUARD: KEY_KP_ADD, GameInput.JOURNAL: KEY_KP_7,
+		GameInput.MAP: KEY_KP_9, GameInput.PAGE_LEFT: KEY_KP_4, GameInput.PAGE_RIGHT: KEY_KP_6,
+		GameInput.PAUSE: KEY_KP_SUBTRACT,
+	}
+	for action: StringName in right_bindings:
+		if not _has_key(action, right_bindings[action]):
+			failures.append("right-handed preset omitted %s" % action)
+	var tree := Engine.get_main_loop() as SceneTree
+	var accessibility := tree.root.get_node_or_null("AccessibilityState") if tree != null else null
+	if accessibility != null:
+		accessibility.set_one_handed_preset(InputMapInstaller.OneHandedPreset.LEFT_HAND, false)
+		if accessibility.one_handed_preset != InputMapInstaller.OneHandedPreset.LEFT_HAND or not _has_key(GameInput.SPELL, KEY_R):
+			failures.append("AccessibilityState did not apply the selected one-handed preset")
+		accessibility.set_one_handed_preset(InputMapInstaller.OneHandedPreset.NONE, false)
 	InputMapInstaller.install_defaults(true)
 
 

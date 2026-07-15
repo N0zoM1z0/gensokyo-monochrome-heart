@@ -271,6 +271,11 @@ func configure_fixture(
 	_fixture_comfort_override = true
 	_fixture_reduced_motion = is_reduced_motion
 	_fixture_safe_flash = is_safe_flash
+	if _accessibility != null:
+		_accessibility.apply_preset(
+			AccessibilityState.Preset.LOW_MOTION if is_reduced_motion else AccessibilityState.Preset.STORY,
+			false
+		)
 	var localization := get_node_or_null("/root/LocalizationService")
 	if localization != null:
 		localization.set_locale(locale if locale in [&"en", &"ja"] else &"en", false)

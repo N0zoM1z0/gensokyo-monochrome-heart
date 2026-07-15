@@ -33,6 +33,7 @@ func _draw() -> void:
 	var profile := PresentationProfileRegistry.resolve(profile_id)
 	var foreground := profile.paper if profile.is_inverted else profile.ink
 	var text := "%s %s" % [_catalog.text(glyph_key, locale), _catalog.text(verb_key, locale)]
-	draw_string(_font, Vector2(0, 9), text, HORIZONTAL_ALIGNMENT_LEFT, size.x, 8, foreground)
+	var font_size := 10 if locale == &"ja" else 8
+	draw_string(_font, Vector2(0, font_size), text, HORIZONTAL_ALIGNMENT_LEFT, size.x, font_size, foreground)
 	if state == &"blocked":
 		draw_line(Vector2(0, size.y - 1), Vector2(size.x, size.y - 1), foreground, 1.0)

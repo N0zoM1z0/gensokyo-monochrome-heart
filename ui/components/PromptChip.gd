@@ -47,7 +47,8 @@ func _draw() -> void:
 		draw_rect(Rect2(2, 2, size.x - 4, size.y - 4), foreground, false, 1.0)
 	_draw_shape(Vector2(8, size.y / 2), foreground, background)
 	var font := _japanese_font if locale == &"ja" else _latin_font
-	draw_string(font, Vector2(17, 10), _catalog.text(label_key, locale), HORIZONTAL_ALIGNMENT_LEFT, size.x - 20, 8, foreground)
+	var font_size := 10 if locale == &"ja" else 8
+	draw_string(font, Vector2(17, 11), _catalog.text(label_key, locale), HORIZONTAL_ALIGNMENT_LEFT, size.x - 20, font_size, foreground)
 
 
 func _draw_shape(origin: Vector2, foreground: Color, background: Color) -> void:

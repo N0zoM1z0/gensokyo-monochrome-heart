@@ -17,9 +17,11 @@ var _opening_reduced_motion: bool = false
 var _opening_safe_flash: bool = false
 var _opening_accessibility_preset: int = 0
 var _opening_accessibility_first_run: bool = true
+var _opening_one_handed_preset: int = InputMapInstaller.OneHandedPreset.NONE
 var _current_profile: StringName = &"A"
 var _current_reduced_motion: bool = false
 var _current_safe_flash: bool = false
+var _current_one_handed_preset: int = InputMapInstaller.OneHandedPreset.NONE
 var _low_motion_toggle: PixelToggle
 var _safe_flash_toggle: PixelToggle
 
@@ -35,19 +37,22 @@ func _build_screen() -> void:
 	_opening_safe_flash = settings.is_safe_flash if settings != null else false
 	_opening_accessibility_preset = int(accessibility.preset) if accessibility != null else 0
 	_opening_accessibility_first_run = accessibility.is_first_run if accessibility != null else true
+	_opening_one_handed_preset = accessibility.one_handed_preset if accessibility != null else InputMapInstaller.OneHandedPreset.NONE
 	_current_profile = _opening_profile
 	_current_reduced_motion = _opening_reduced_motion
 	_current_safe_flash = _opening_safe_flash
+	_current_one_handed_preset = _opening_one_handed_preset
 	_add_frame(Rect2(8, 8, 304, 164))
 	_add_row(&"ui.options.language", &"language", &"options.language", Rect2(16, 32, 288, 16))
-	_add_row(&"ui.options.profile", &"profile", &"options.profile", Rect2(16, 52, 288, 16))
-	_add_row(&"ui.options.low_motion", &"low_motion", &"options.low_motion", Rect2(16, 72, 288, 16))
-	_add_row(&"ui.options.safe_flash", &"safe_flash", &"options.safe_flash", Rect2(16, 92, 288, 16))
-	_add_row(&"ui.options.back", &"options_apply", &"options.back", Rect2(16, 116, 288, 16))
-	_low_motion_toggle = _add_toggle(Vector2(268, 74))
-	_safe_flash_toggle = _add_toggle(Vector2(268, 94))
-	_add_action_hint(GameInput.CONFIRM, &"ui.common.confirm", Rect2(16, 162, 92, 12))
-	_add_action_hint(GameInput.CANCEL, &"ui.common.cancel", Rect2(210, 162, 94, 12))
+	_add_row(&"ui.options.profile", &"profile", &"options.profile", Rect2(16, 50, 288, 16))
+	_add_row(&"ui.options.low_motion", &"low_motion", &"options.low_motion", Rect2(16, 68, 288, 16))
+	_add_row(&"ui.options.safe_flash", &"safe_flash", &"options.safe_flash", Rect2(16, 86, 288, 16))
+	_add_row(&"ui.options.one_handed", &"one_handed", &"options.one_handed", Rect2(16, 104, 288, 16))
+	_add_row(&"ui.options.back", &"options_apply", &"options.back", Rect2(16, 124, 288, 16))
+	_low_motion_toggle = _add_toggle(Vector2(268, 70))
+	_safe_flash_toggle = _add_toggle(Vector2(268, 88))
+	_add_action_hint(GameInput.CONFIRM, &"ui.common.confirm", Rect2(16, 159, 92, 12))
+	_add_action_hint(GameInput.CANCEL, &"ui.common.cancel", Rect2(210, 159, 94, 12))
 
 
 func _on_fixture_configured() -> void:
@@ -58,6 +63,8 @@ func _on_fixture_configured() -> void:
 	_current_profile = _fixture_profile_id
 	_current_reduced_motion = _fixture_reduced_motion
 	_current_safe_flash = _fixture_safe_flash
+	_opening_one_handed_preset = InputMapInstaller.OneHandedPreset.NONE
+	_current_one_handed_preset = InputMapInstaller.OneHandedPreset.NONE
 
 
 func _adjust_current(direction: int) -> bool:
@@ -73,6 +80,8 @@ func _adjust_current(direction: int) -> bool:
 			_apply_reduced_motion(not _current_reduced_motion)
 		&"safe_flash":
 			_apply_safe_flash(not _current_safe_flash)
+		&"one_handed":
+			_apply_one_handed(wrapi(_current_one_handed_preset + direction, 0, 3))
 		_:
 			return false
 	return true
@@ -92,13 +101,18 @@ func _handle_cancel() -> void:
 
 func _refresh_screen() -> void:
 	super._refresh_screen()
-	if rows.size() < 5:
+	if rows.size() < 6:
 		return
 	rows[0].set_value_key(&"ui.language.japanese" if active_locale() == &"ja" else &"ui.language.english")
 	var profile_index := maxi(0, PROFILE_IDS.find(_current_profile))
 	rows[1].set_value_key(PROFILE_KEYS[profile_index])
 	rows[2].set_value_key(&"ui.common.on" if _current_reduced_motion else &"ui.common.off")
 	rows[3].set_value_key(&"ui.common.on" if _current_safe_flash else &"ui.common.off")
+	rows[4].set_value_key([
+		&"ui.options.one_handed.off",
+		&"ui.options.one_handed.left",
+		&"ui.options.one_handed.right",
+	][_current_one_handed_preset])
 	if _low_motion_toggle != null:
 		_low_motion_toggle.set_value(_current_reduced_motion, _active_profile_id())
 	if _safe_flash_toggle != null:
@@ -108,8 +122,8 @@ func _refresh_screen() -> void:
 func _draw_screen(profile: PresentationProfile) -> void:
 	var foreground := profile.paper if profile.is_inverted else profile.ink
 	_draw_localized(&"ui.options.title", Vector2(12, 24), 296, HORIZONTAL_ALIGNMENT_CENTER)
-	draw_line(Vector2(16, 138), Vector2(304, 138), foreground, 1.0)
-	_draw_localized_wrapped(&"ui.options.help", Rect2(16, 141, 288, 20), 2)
+	draw_line(Vector2(16, 143), Vector2(304, 143), foreground, 1.0)
+	_draw_localized_wrapped(&"ui.options.help", Rect2(16, 145, 288, 18), 2, 10)
 
 
 func _add_toggle(position: Vector2) -> PixelToggle:
@@ -177,6 +191,15 @@ func _apply_safe_flash(enabled: bool) -> void:
 	_refresh_screen()
 
 
+func _apply_one_handed(next_preset: int) -> void:
+	_current_one_handed_preset = next_preset
+	if not _fixture_mode:
+		var accessibility := get_node_or_null("/root/AccessibilityState")
+		if accessibility != null:
+			accessibility.set_one_handed_preset(next_preset)
+	_refresh_screen()
+
+
 func _restore_opening_values() -> void:
 	if _fixture_mode:
 		_fixture_locale = _opening_locale
@@ -186,6 +209,7 @@ func _restore_opening_values() -> void:
 		_current_profile = _opening_profile
 		_current_reduced_motion = _opening_reduced_motion
 		_current_safe_flash = _opening_safe_flash
+		_current_one_handed_preset = _opening_one_handed_preset
 		_refresh_screen()
 		return
 	var localization := get_node_or_null("/root/LocalizationService")
@@ -205,7 +229,9 @@ func _restore_opening_values() -> void:
 			_opening_accessibility_preset,
 			_opening_accessibility_first_run
 		)
+		accessibility.set_one_handed_preset(_opening_one_handed_preset)
 	_current_profile = _opening_profile
 	_current_reduced_motion = _opening_reduced_motion
 	_current_safe_flash = _opening_safe_flash
+	_current_one_handed_preset = _opening_one_handed_preset
 	_refresh_screen()

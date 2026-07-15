@@ -20,6 +20,7 @@ var has_simple_fighter_input: bool = false
 var has_unlimited_story_retries: bool = false
 var game_speed_percent: int = 100
 var bullet_density_percent: int = 100
+var one_handed_preset: int = InputMapInstaller.OneHandedPreset.NONE
 
 
 func _ready() -> void:
@@ -101,6 +102,18 @@ func set_safe_flash(enabled: bool, should_persist: bool = true) -> void:
 	accessibility_changed.emit()
 
 
+func set_one_handed_preset(next_preset: int, should_persist: bool = true) -> void:
+	one_handed_preset = clampi(
+		next_preset,
+		InputMapInstaller.OneHandedPreset.NONE,
+		InputMapInstaller.OneHandedPreset.RIGHT_HAND
+	)
+	InputMapInstaller.apply_one_handed_preset(one_handed_preset as InputMapInstaller.OneHandedPreset)
+	if should_persist:
+		_save_preference()
+	accessibility_changed.emit()
+
+
 func restore_presentation(
 	reduced_motion: bool,
 	safe_flash: bool,
@@ -140,6 +153,12 @@ func _load_preference() -> void:
 		is_reduced_motion = bool(config.get_value("accessibility", "reduced_motion", false))
 		is_safe_flash = bool(config.get_value("accessibility", "safe_flash", false))
 		_sync_presentation_settings()
+	one_handed_preset = clampi(
+		int(config.get_value("accessibility", "one_handed_preset", InputMapInstaller.OneHandedPreset.NONE)),
+		InputMapInstaller.OneHandedPreset.NONE,
+		InputMapInstaller.OneHandedPreset.RIGHT_HAND
+	)
+	InputMapInstaller.apply_one_handed_preset(one_handed_preset as InputMapInstaller.OneHandedPreset)
 
 
 func _save_preference() -> void:
@@ -148,6 +167,7 @@ func _save_preference() -> void:
 	config.set_value("accessibility", "preset", preset)
 	config.set_value("accessibility", "reduced_motion", is_reduced_motion)
 	config.set_value("accessibility", "safe_flash", is_safe_flash)
+	config.set_value("accessibility", "one_handed_preset", one_handed_preset)
 	var error := config.save(CONFIG_PATH)
 	if error != OK:
 		push_error("Could not persist accessibility preference (error %d)" % error)
