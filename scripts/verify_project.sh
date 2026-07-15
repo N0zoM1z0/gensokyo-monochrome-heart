@@ -146,6 +146,8 @@ run_checked "M09 vertical slice integration" env XDG_DATA_HOME="$LOG_DIR/user-da
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m09_vertical_slice_flow.gd
 run_checked "M09 save and resume matrix" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m09_save_resume_matrix.gd
+run_checked "M09 accessibility route matrix" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m09_accessibility_matrix.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
