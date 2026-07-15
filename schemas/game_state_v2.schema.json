@@ -20,8 +20,8 @@
       "type": "object",
       "required": ["origin_id", "comfort_profile_id", "profile_seed"],
       "properties": {
-        "origin_id": {"type": "string"},
-        "comfort_profile_id": {"type": "string"},
+        "origin_id": {"type": "string", "pattern": "^origin\\."},
+        "comfort_profile_id": {"enum": ["accessibility.original", "accessibility.story", "accessibility.low_motion", "accessibility.custom"]},
         "profile_seed": {"type": "integer", "minimum": 1}
       },
       "additionalProperties": false

@@ -65,6 +65,8 @@ func _apply(state: GameState, command: GameCommand) -> CommandResult:
 		return _set_location(state, command)
 	if command is SetRouteIntentCommand:
 		return _set_route_intent(state, command)
+	if command is SetComfortProfileCommand:
+		return _set_comfort_profile(state, command)
 	return CommandResult.failure(
 		CommandResult.Code.INVALID_COMMAND,
 		command.command_id,
@@ -247,6 +249,15 @@ func _set_route_intent(state: GameState, command: SetRouteIntentCommand) -> Comm
 	if state.characters[command.character_id].route_intent == command.route_intent:
 		return _already_exists(command, "route intent is already %s" % command.route_intent)
 	state.characters[command.character_id].route_intent = command.route_intent
+	return CommandResult.success(command.command_id)
+
+
+func _set_comfort_profile(state: GameState, command: SetComfortProfileCommand) -> CommandResult:
+	if command.comfort_profile_id not in ProtagonistState.COMFORT_PROFILE_IDS:
+		return _invalid(command, "unknown comfort profile: %s" % command.comfort_profile_id)
+	if state.protagonist.comfort_profile_id == command.comfort_profile_id:
+		return _already_exists(command, "comfort profile is already %s" % command.comfort_profile_id)
+	state.protagonist.comfort_profile_id = command.comfort_profile_id
 	return CommandResult.success(command.command_id)
 
 

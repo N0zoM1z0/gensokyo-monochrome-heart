@@ -21,6 +21,10 @@ func validate(state: GameState) -> Array[String]:
 		errors.append("current location is absent from regions: %s" % state.current_location)
 	if state.protagonist == null or state.protagonist.profile_seed <= 0:
 		errors.append("protagonist profile seed must be positive")
+	elif not _matches(state.protagonist.origin_id, "^origin\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
+		errors.append("invalid protagonist origin: %s" % state.protagonist.origin_id)
+	elif state.protagonist.comfort_profile_id not in ProtagonistState.COMFORT_PROFILE_IDS:
+		errors.append("invalid comfort profile: %s" % state.protagonist.comfort_profile_id)
 	_validate_characters(state, errors)
 	_validate_regions(state, errors)
 	_validate_flags(state, errors)

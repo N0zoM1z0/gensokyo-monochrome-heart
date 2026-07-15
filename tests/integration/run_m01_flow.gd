@@ -45,9 +45,13 @@ func _prepare_services() -> void:
 		theme.set_native_profile(&"A")
 	var accessibility := root.get_node_or_null("AccessibilityState")
 	if accessibility != null:
+		accessibility.preset = AccessibilityState.Preset.ORIGINAL
 		accessibility.is_first_run = true
 		accessibility.is_reduced_motion = false
 		accessibility.is_safe_flash = false
+	var kernel := root.get_node_or_null("GameKernel")
+	if kernel != null:
+		kernel.clear_state()
 	var focus_router := root.get_node_or_null("FocusRouter")
 	if focus_router != null:
 		focus_router.clear()
@@ -101,6 +105,18 @@ func _verify_new_profile_to_mode() -> void:
 	var accessibility := root.get_node_or_null("AccessibilityState")
 	if accessibility == null or not accessibility.is_reduced_motion:
 		_fail("first-run Low Motion preset was not applied")
+	var kernel := root.get_node_or_null("GameKernel")
+	var state: Variant = kernel.state_snapshot() if kernel != null else null
+	if not state is GameState or state.profile_id != &"p02" or state.protagonist.comfort_profile_id != &"accessibility.low_motion":
+		_fail("Profile B and Low Motion did not initialize the shared typed GameState")
+	var save_service := root.get_node_or_null("SaveService")
+	var has_day_card := false
+	if save_service != null:
+		for card: SaveCardMetadata in save_service.list_cards(&"p02"):
+			if card.slot_id == &"auto_day":
+				has_day_card = true
+	if not has_day_card:
+		_fail("entering the first day did not produce the rolling day-start autosave")
 	var transition := shell.get_node("FixedResolutionRoot/GameViewport/TransitionCanvas/TransitionController") as TransitionController
 	if transition.last_style != TransitionOverlay.STYLE_BORDER_TICK:
 		_fail("Low Motion route still used the paper-fold transition")
@@ -155,6 +171,9 @@ func _verify_pause_return_to_title() -> void:
 		return
 	if paused or shell.has_open_pause():
 		_fail("return-to-title left the game paused or retained the modal")
+	var kernel := root.get_node_or_null("GameKernel")
+	if kernel != null and kernel.has_active_state():
+		_fail("return-to-title retained an active story state")
 
 
 func _press(action: StringName) -> void:

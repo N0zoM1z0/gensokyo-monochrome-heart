@@ -69,6 +69,18 @@ func apply_named_preset(preset_id: StringName, should_persist: bool = true) -> v
 			apply_preset(Preset.ORIGINAL, should_persist)
 
 
+func save_profile_id() -> StringName:
+	match preset:
+		Preset.STORY:
+			return &"accessibility.story"
+		Preset.LOW_MOTION:
+			return &"accessibility.low_motion"
+		Preset.CUSTOM:
+			return &"accessibility.custom"
+		_:
+			return &"accessibility.original"
+
+
 func set_reduced_motion(enabled: bool, should_persist: bool = true) -> void:
 	preset = Preset.CUSTOM
 	is_first_run = false

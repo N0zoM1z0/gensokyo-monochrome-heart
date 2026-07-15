@@ -79,6 +79,9 @@ func _on_route_completed(result: ScreenRouteResult) -> void:
 func _on_screen_command(command_id: StringName, payload: Dictionary) -> void:
 	match command_id:
 		&"new_profile":
+			var kernel := get_node_or_null("/root/GameKernel")
+			if kernel != null:
+				kernel.clear_state()
 			_push_primary_focus()
 			_route_primary.call_deferred(&"profile_select")
 		&"open_options":
@@ -126,24 +129,47 @@ func _route_back_from_primary() -> void:
 	await _route_primary(destination, {}, restore_focus)
 
 
-func _route_after_profile(_payload: Dictionary) -> void:
+func _route_after_profile(payload: Dictionary) -> void:
 	var accessibility := get_node_or_null("/root/AccessibilityState")
+	var comfort_profile_id: StringName = accessibility.save_profile_id() if accessibility != null else &"accessibility.original"
+	var presentation_profile_id := StringName(payload.get("profile_id", &""))
+	var story_profile_id := ProfileIdentityRules.story_profile_id(presentation_profile_id)
+	var kernel := get_node_or_null("/root/GameKernel")
+	if kernel == null:
+		push_error("New profile route blocked because GameKernel is unavailable.")
+		return
+	var created: Variant = kernel.create_new_profile(story_profile_id, comfort_profile_id)
+	if not created is CommandResult or not created.is_success():
+		push_error("New profile route blocked: %s" % [created.message if created is CommandResult else "unknown GameKernel result"])
+		return
 	if accessibility != null and accessibility.is_first_run:
 		await _route_primary(&"accessibility")
 	else:
-		var focus_router := get_node_or_null("/root/FocusRouter")
-		if focus_router != null:
-			focus_router.clear()
-		await _route_primary(&"foundation_mode")
+		await _enter_foundation_mode()
 
 
 func _apply_accessibility_and_enter_mode(payload: Dictionary) -> void:
 	var accessibility := get_node_or_null("/root/AccessibilityState")
 	if accessibility != null:
 		accessibility.apply_named_preset(StringName(payload.get("preset_id", &"original")))
+		var kernel := get_node_or_null("/root/GameKernel")
+		if kernel != null:
+			var result: Variant = kernel.dispatch(SetComfortProfileCommand.new(accessibility.save_profile_id()))
+			if not result is CommandResult or (not result.is_success() and result.code != CommandResult.Code.ALREADY_EXISTS):
+				push_error("Could not persist accessibility profile into GameState.")
+				return
+	await _enter_foundation_mode()
+
+
+func _enter_foundation_mode() -> void:
 	var focus_router := get_node_or_null("/root/FocusRouter")
 	if focus_router != null:
 		focus_router.clear()
+	var save_service := get_node_or_null("/root/SaveService")
+	if save_service != null:
+		var result: Variant = save_service.autosave(&"day_start")
+		if result is SaveOperationResult and not result.is_success():
+			push_warning("Day-start autosave failed: %s" % result.message)
 	await _route_primary(&"foundation_mode")
 
 
@@ -215,6 +241,9 @@ func _return_to_title_from_pause() -> void:
 	var focus_router := get_node_or_null("/root/FocusRouter")
 	if focus_router != null:
 		focus_router.clear()
+	var kernel := get_node_or_null("/root/GameKernel")
+	if kernel != null:
+		kernel.clear_state()
 	await _route_primary(&"title")
 
 

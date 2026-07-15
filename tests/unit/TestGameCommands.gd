@@ -18,6 +18,7 @@ func run() -> Array[String]:
 	_test_items(failures)
 	_test_keepsakes(failures)
 	_test_tea_blends(failures)
+	_test_comfort_profile(failures)
 	_test_time_location_route(failures)
 	_test_unsupported_and_invariant_rejection(failures)
 	_test_transactions(failures)
@@ -148,6 +149,22 @@ func _test_tea_blends(failures: Array[String]) -> void:
 	)
 	if state.inventory.selected_tea_blend_id != blend.blend_id or state.inventory.tea_blends[blend.blend_id].times_prepared != 1:
 		failures.append("Tea Blend selection did not persist its daily preparation")
+
+
+func _test_comfort_profile(failures: Array[String]) -> void:
+	var state := _fresh()
+	_expect_success(
+		"SetComfortProfileCommand positive",
+		_dispatcher.dispatch(state, SetComfortProfileCommand.new(&"accessibility.low_motion")),
+		failures
+	)
+	_expect_failure(
+		"SetComfortProfileCommand negative",
+		_dispatcher.dispatch(state, SetComfortProfileCommand.new(&"accessibility.unbounded")),
+		failures
+	)
+	if state.protagonist.comfort_profile_id != &"accessibility.low_motion":
+		failures.append("rejected comfort profile replaced the accepted preset")
 
 
 func _test_time_location_route(failures: Array[String]) -> void:
