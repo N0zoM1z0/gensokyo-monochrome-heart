@@ -62,6 +62,18 @@ func text_for_locale(key: StringName, requested_locale: StringName) -> String:
 	return _catalog.text(key, requested_locale)
 
 
+func formatted_text(key: StringName, arguments: Dictionary = {}) -> String:
+	return NamedTextFormatter.new().format(_catalog.text(key, locale), arguments).text
+
+
+func formatted_text_for_locale(
+	key: StringName,
+	requested_locale: StringName,
+	arguments: Dictionary = {}
+) -> String:
+	return NamedTextFormatter.new().format(_catalog.text(key, requested_locale), arguments).text
+
+
 func _save_preference() -> void:
 	var config := ConfigFile.new()
 	config.load(CONFIG_PATH)
