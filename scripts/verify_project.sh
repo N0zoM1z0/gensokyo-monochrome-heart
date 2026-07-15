@@ -91,7 +91,18 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/BoundaryStainResultFixture.tscn \
 	--scene=res://tests/ui/fixtures/BoundaryStainLossFixture.tscn \
 	--scene=res://tests/ui/fixtures/BoundaryStainAssistClearFixture.tscn \
-	--scene=res://tests/ui/fixtures/BoundaryStainStressFixture.tscn
+	--scene=res://tests/ui/fixtures/BoundaryStainStressFixture.tscn \
+	--scene=res://src/presentation/fighter/CompactFighterMode.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterIntroFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterActiveFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterHitboxFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterSpellBreakFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterDownFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterPausedFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterTrainingFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterResultWinFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterResultLossFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterStressFixture.tscn
 run_checked "release validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_release.gd -- --release
 run_checked "headless tests" "$GODOT_BIN" --headless --path . \
@@ -113,6 +124,8 @@ run_checked "M06 tea event integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m06_tea_event_flow.gd
 run_checked "M07 Boundary Stain event integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m07_boundary_stain_event_flow.gd
+run_checked "M08 fighter event integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m08_fighter_event_flow.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
@@ -156,6 +169,7 @@ else
 	run_checked "M05 screenshot matrix" ./scripts/capture_m05_screenshots.sh
 	run_checked "M06 screenshot matrix" ./scripts/capture_m06_screenshots.sh
 	run_checked "M07 screenshot matrix" ./scripts/capture_m07_screenshots.sh
+	run_checked "M08 screenshot matrix" ./scripts/capture_m08_screenshots.sh
 	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
 		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
 		--rendering-driver opengl3 \
@@ -163,6 +177,13 @@ else
 		--disable-vsync \
 		--path . \
 		--script res://tests/performance/run_m07_render_stress.gd
+	run_checked "M08 rendered fighter stress" "$GODOT_BIN" \
+		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
+		--rendering-driver opengl3 \
+		--audio-driver Dummy \
+		--disable-vsync \
+		--path . \
+		--script res://tests/performance/run_m08_fighter_render_stress.gd
 fi
 
 echo "Foundation verification passed."
