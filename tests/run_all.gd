@@ -8,6 +8,7 @@ func _initialize() -> void:
 		TestContentRepository.new(),
 		TestContentValidator.new(),
 		TestFontAssets.new(),
+		TestGameCommands.new(),
 		TestGameStateFoundation.new(),
 		TestInputFoundation.new(),
 		TestJsonSchemaValidator.new(),
