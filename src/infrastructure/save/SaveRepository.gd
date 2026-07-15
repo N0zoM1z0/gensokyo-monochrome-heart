@@ -89,12 +89,12 @@ func load(profile_id: StringName, slot_id: StringName) -> SaveOperationResult:
 	if not SaveSlotRules.is_valid(slot_id):
 		return _failure(SaveOperationResult.Code.INVALID_SLOT, "invalid save slot: %s" % slot_id)
 	var path := slot_path(profile_id, slot_id)
-	var current := _decode_envelope_file(path, profile_id)
+	var current := decode_envelope_file(path, profile_id)
 	if current.is_success():
 		current.card = load_card(profile_id, slot_id).card
 		return current
 	var backup := backup_path(profile_id, slot_id)
-	var recovered := _decode_envelope_file(backup, profile_id)
+	var recovered := decode_envelope_file(backup, profile_id)
 	if not recovered.is_success():
 		current.diagnostics.append("backup recovery failed: %s" % recovered.message)
 		current.diagnostics.append_array(recovered.diagnostics)
@@ -167,7 +167,7 @@ func profile_index_path(profile_id: StringName) -> String:
 	return "%s/%s/profile.json" % [root_path, profile_id]
 
 
-func _decode_envelope_file(path: String, expected_profile_id: StringName) -> SaveOperationResult:
+func decode_envelope_file(path: String, expected_profile_id: StringName = &"") -> SaveOperationResult:
 	if path.is_empty() or not FileAccess.file_exists(path):
 		return _failure(SaveOperationResult.Code.NOT_FOUND, "save file is missing", path)
 	var json := JSON.new()
@@ -187,7 +187,8 @@ func _decode_envelope_file(path: String, expected_profile_id: StringName) -> Sav
 	var profile_id := StringName(raw.profile_id)
 	var schema_version := int(raw.schema_version)
 	var payload: Dictionary = raw.payload
-	if profile_id != expected_profile_id or StringName(payload.get("profile_id", "")) != expected_profile_id:
+	var required_profile_id := expected_profile_id if expected_profile_id != &"" else profile_id
+	if profile_id != required_profile_id or StringName(payload.get("profile_id", "")) != required_profile_id:
 		return _failure(SaveOperationResult.Code.VERIFY_ERROR, "save profile identity mismatch", path)
 	if int(payload.get("schema_version", -1)) != schema_version:
 		return _failure(SaveOperationResult.Code.VERIFY_ERROR, "envelope and payload schema versions differ", path)
@@ -331,7 +332,7 @@ func _write_profile_index(profile_id: StringName, timestamp: String) -> Error:
 
 
 func _verify_envelope_path(path: String, profile_id: StringName) -> bool:
-	return _decode_envelope_file(path, profile_id).is_success()
+	return decode_envelope_file(path, profile_id).is_success()
 
 
 func _verify_card_path(path: String, profile_id: StringName, slot_id: StringName) -> bool:

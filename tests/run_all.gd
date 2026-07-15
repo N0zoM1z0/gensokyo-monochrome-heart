@@ -12,6 +12,7 @@ func _initialize() -> void:
 		TestGameKernelServices.new(),
 		TestGameStateCodec.new(),
 		TestGameStateFoundation.new(),
+		TestGameStateInspector.new(),
 		TestInputFoundation.new(),
 		TestJsonSchemaValidator.new(),
 		TestLocalizationFoundation.new(),

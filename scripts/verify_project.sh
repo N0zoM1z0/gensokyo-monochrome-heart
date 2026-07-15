@@ -76,6 +76,11 @@ run_checked "release validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_release.gd -- --release
 run_checked "headless tests" "$GODOT_BIN" --headless --path . \
 	--script res://tests/run_all.gd
+run_checked "M03 generated state inspector" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/inspect_state.gd -- --profile=p01
+run_checked "M03 migration fixture inspector" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/inspect_state.gd -- \
+	--fixture=res://tests/fixtures/saves/v1_route_affinity_payload.json
 run_checked "M01 navigation integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m01_flow.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
