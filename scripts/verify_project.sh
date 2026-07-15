@@ -118,7 +118,11 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/CompactFighterTrainingFixture.tscn \
 	--scene=res://tests/ui/fixtures/CompactFighterResultWinFixture.tscn \
 	--scene=res://tests/ui/fixtures/CompactFighterResultLossFixture.tscn \
-	--scene=res://tests/ui/fixtures/CompactFighterStressFixture.tscn
+	--scene=res://tests/ui/fixtures/CompactFighterStressFixture.tscn \
+	--scene=res://src/presentation/tools/BulletPatternLab.tscn \
+	--scene=res://tests/ui/fixtures/BulletPatternLabFixture.tscn \
+	--scene=res://tests/ui/fixtures/BulletPatternLabPhase3Fixture.tscn \
+	--scene=res://tests/ui/fixtures/BulletPatternLabHelpFixture.tscn
 run_checked "release validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_release.gd -- --release
 run_checked "headless tests" "$GODOT_BIN" --headless --path . \
@@ -171,6 +175,16 @@ run_checked "M11 registered screenshot delegation" "$GODOT_BIN" --headless --pat
 	--script res://src/tools/authoring_workbench.gd -- \
 	--action=screenshot --target=scene.fighter.hitbox \
 	--output="$LOG_DIR/m11-fighter-hitbox.png" --profile=A --locale=en --ui-scale=100
+run_checked "M11 Bullet Pattern Lab draft" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/bullet_pattern_lab.gd -- \
+	--action=duplicate --pattern-id=danmaku.lab.verification_fixture \
+	--output="$LOG_DIR/m11-bullet-pattern.json"
+run_checked "M11 Bullet Pattern Lab report" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/bullet_pattern_lab.gd -- \
+	--action=report --input="$LOG_DIR/m11-bullet-pattern.json"
+run_checked "M11 Bullet Pattern Lab simulation" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/bullet_pattern_lab.gd -- \
+	--action=smoke --input="$LOG_DIR/m11-bullet-pattern.json" --density=85 --speed=70
 run_checked "M11 event dependency report" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/author_event.gd -- \
 	--action=dependencies --bundle="$LOG_DIR/m11-authoring" \
@@ -257,6 +271,7 @@ else
 	run_checked "M08 screenshot matrix" ./scripts/capture_m08_screenshots.sh
 	run_checked "M09 screenshot matrix" ./scripts/capture_m09_screenshots.sh
 	run_checked "M10 150 percent UI screenshot matrix" ./scripts/capture_m10_screenshots.sh
+	run_checked "M11 authoring screenshot matrix" ./scripts/capture_m11_screenshots.sh
 	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
 		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
 		--rendering-driver opengl3 \

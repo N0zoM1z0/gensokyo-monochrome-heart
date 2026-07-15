@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://src/presentation/tools/BulletPatternLab.tscn" id="1_lab"]
+
+[node name="BulletPatternLabPhase3Fixture" instance=ExtResource("1_lab")]
+fixture_phase = 2
+fixture_ticks = 220
+fixture_density = "55"

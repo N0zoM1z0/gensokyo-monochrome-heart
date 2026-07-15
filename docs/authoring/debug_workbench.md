@@ -33,7 +33,7 @@ GODOT_BIN="$HOME/.local/bin/godot" scripts/authoring_workbench.sh \
 Useful targets include:
 
 - `scene.tea.tutorial`, `scene.tea.active`, and `scene.tea.assist`;
-- `scene.danmaku.live`, `scene.danmaku.phase1`, `scene.danmaku.focus`, and `scene.danmaku.stress`;
+- `scene.danmaku.live`, `scene.danmaku.phase1`, `scene.danmaku.focus`, `scene.danmaku.stress`, and `scene.danmaku.lab`;
 - `scene.fighter.live`, `scene.fighter.hitbox`, `scene.fighter.training`, and `scene.fighter.stress`.
 
 The live targets are playable. Review fixtures intentionally freeze or prepare a deterministic state.

@@ -17,6 +17,7 @@ func _init() -> void:
 	_register_scene(&"scene.danmaku.phase1", &"danmaku", "Boundary Stain phase 1", "res://tests/ui/fixtures/BoundaryStainPhase1Fixture.tscn", DANMAKU_DEFINITION, &"phase1", "Frozen phase-one review fixture")
 	_register_scene(&"scene.danmaku.focus", &"danmaku", "Boundary Stain focus", "res://tests/ui/fixtures/BoundaryStainFocusFixture.tscn", DANMAKU_DEFINITION, &"focus", "Focus hitbox and Margin review")
 	_register_scene(&"scene.danmaku.stress", &"danmaku", "Boundary Stain stress", "res://tests/ui/fixtures/BoundaryStainStressFixture.tscn", DANMAKU_DEFINITION, &"stress", "2,500-bullet renderer fixture")
+	_register_scene(&"scene.danmaku.lab", &"danmaku", "Bullet Pattern Lab", "res://src/presentation/tools/BulletPatternLab.tscn", DANMAKU_DEFINITION, &"lab", "Editable data-only pattern preview and telemetry")
 	_register_scene(&"scene.fighter.live", &"fighter", "Compact fighter live", "res://src/presentation/fighter/CompactFighterMode.tscn", FIGHTER_DEFINITION, &"live", "Playable Reimu and Marisa duel definition")
 	_register_scene(&"scene.fighter.hitbox", &"fighter", "Fighter hitbox viewer", "res://tests/ui/fixtures/CompactFighterHitboxFixture.tscn", FIGHTER_DEFINITION, &"hitbox", "Data-authored hitbox and hurtbox overlay")
 	_register_scene(&"scene.fighter.training", &"fighter", "Fighter training", "res://tests/ui/fixtures/CompactFighterTrainingFixture.tscn", FIGHTER_DEFINITION, &"training", "Input history, frame data, and combat boxes")

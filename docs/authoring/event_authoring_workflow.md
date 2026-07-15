@@ -107,4 +107,4 @@ The report uses the approved project fonts and the same English word wrapping an
 
 ## Current boundary
 
-The current M11 increments prove the duplicate/edit/validate/bilingual-preview acceptance path and provide draft dependency and localization width diagnostics. Publishing drafts into reviewed runtime content remains a deliberate review step. The wider M11 workbench—mode fixture launchers, Bullet Pattern Lab, fighter frame viewer, migration harness, and screenshot matrix UI—remains separate work so draft authoring does not bypass its future checks.
+The M11 toolset proves the duplicate/edit/validate/bilingual-preview acceptance path and provides draft dependency and localization width diagnostics. Publishing drafts into reviewed runtime content remains a deliberate review step. Fixture launchers, the Bullet Pattern Lab, fighter frame viewer, migration harness, screenshot runner, and legal-tone audition are available through the shared workbench; draft authoring does not bypass any of their production loaders or verification gates.
