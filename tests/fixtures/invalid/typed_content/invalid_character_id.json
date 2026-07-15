@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "characters": [
+    {
+      "id": "char.InvalidCase",
+      "slug": "invalid_case",
+      "display_name_en": "Invalid Case Fixture",
+      "display_name_ja": "無効IDフィクスチャ",
+      "faction_region": "Fixture",
+      "route_depth": "support",
+      "route_scope_note": "Exercises the stricter project stable-ID rule.",
+      "canon_confidence": "original",
+      "skills_document": "res://design/10_codex/CODEX_MASTER_TASKBOOK.md",
+      "tags": ["fixture"]
+    }
+  ]
+}

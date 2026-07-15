@@ -1,0 +1,893 @@
+{
+  "schema": "gmh-runtime-content-index-v1",
+  "content_revision": "2026.07.14.1",
+  "content_hash": "4445f0578a4b302532b9580312f8909a0bceb4ffae86d8c433bbfa27efd8da7d",
+  "counts": {
+    "characters": 71,
+    "locations": 19,
+    "events": 28,
+    "dialogue_beats": 4,
+    "localization": 67,
+    "music_cues": 89,
+    "event_nodes": 16
+  },
+  "ids": {
+    "characters": [
+      "char.alice_margatroid",
+      "char.aunn_komano",
+      "char.aya_shameimaru",
+      "char.byakuren_hijiri",
+      "char.chen",
+      "char.cirno",
+      "char.clownpiece",
+      "char.doremy_sweet",
+      "char.eiki_shiki_yamaxanadu",
+      "char.eirin_yagokoro",
+      "char.flandre_scarlet",
+      "char.fujiwara_no_mokou",
+      "char.hata_no_kokoro",
+      "char.hatate_himekaidou",
+      "char.hecatia_lapislazuli",
+      "char.hieda_no_akyuu",
+      "char.hina_kagiyama",
+      "char.hong_meiling",
+      "char.ichirin_kumoi",
+      "char.iku_nagae",
+      "char.joon_yorigami",
+      "char.junko",
+      "char.kaguya_houraisan",
+      "char.kanako_yasaka",
+      "char.kasen_ibaraki",
+      "char.keiki_haniyasushin",
+      "char.keine_kamishirasawa",
+      "char.koakuma",
+      "char.kogasa_tatara",
+      "char.koishi_komeiji",
+      "char.komachi_onozuka",
+      "char.kosuzu_motoori",
+      "char.marisa_kirisame",
+      "char.mayumi_joutouguu",
+      "char.minamitsu_murasa",
+      "char.momiji_inubashiri",
+      "char.mononobe_no_futo",
+      "char.nazrin",
+      "char.nitori_kawashiro",
+      "char.nue_houjuu",
+      "char.okina_matara",
+      "char.patchouli_knowledge",
+      "char.ran_yakumo",
+      "char.reimu_hakurei",
+      "char.reisen_udongein_inaba",
+      "char.remilia_scarlet",
+      "char.rin_kaenbyou",
+      "char.rinnosuke_morichika",
+      "char.sagume_kishin",
+      "char.saki_kurokoma",
+      "char.sakuya_izayoi",
+      "char.sanae_kochiya",
+      "char.satori_komeiji",
+      "char.seiga_kaku",
+      "char.shion_yorigami",
+      "char.suika_ibuki",
+      "char.sumireko_usami",
+      "char.suwako_moriya",
+      "char.tenshi_hinanawi",
+      "char.tewi_inaba",
+      "char.toyostomimi_no_miko",
+      "char.utsuho_reiuji",
+      "char.watatsuki_no_toyohime",
+      "char.watatsuki_no_yorihime",
+      "char.yachie_kicchou",
+      "char.yoshika_miyako",
+      "char.youmu_konpaku",
+      "char.yukari_yakumo",
+      "char.yuugi_hoshiguma",
+      "char.yuuka_kazami",
+      "char.yuyuko_saigyouji"
+    ],
+    "locations": [
+      "loc.animal_realm",
+      "loc.eientei",
+      "loc.forest_of_magic",
+      "loc.former_hell",
+      "loc.garden_sun",
+      "loc.hakugyokurou",
+      "loc.hakurei_shrine",
+      "loc.heaven",
+      "loc.hidden_doors",
+      "loc.human_village",
+      "loc.lunar_capital",
+      "loc.misty_lake",
+      "loc.moriya_shrine",
+      "loc.myouren_temple",
+      "loc.outside_world",
+      "loc.sanzu_higan",
+      "loc.scarlet_devil_mansion",
+      "loc.senkai",
+      "loc.youkai_mountain"
+    ],
+    "events": [
+      "evt.ein.burn_false_moon",
+      "evt.ein.five_impossibilities",
+      "evt.ein.four_dawns",
+      "evt.ein.patient_refuses",
+      "evt.ein.shortcut_seller",
+      "evt.fin.borders_back",
+      "evt.fin.margin_of_error",
+      "evt.fin.one_blank_page",
+      "evt.fin.public_hearing",
+      "evt.hgy.farewell_replay",
+      "evt.hgy.last_sweet",
+      "evt.hgy.petal_on_hold",
+      "evt.hgy.two_bodies_bridge",
+      "evt.hkr.empty_cushion",
+      "evt.hkr.offerings_without_owners",
+      "evt.hkr.return_before_borrowing",
+      "evt.hkr.spell_card_terms",
+      "evt.mtn.keyword_us",
+      "evt.mtn.measurable_faith",
+      "evt.mtn.patrol_against_nothing",
+      "evt.mtn.rumor_machine",
+      "evt.mtn.tomorrows_headline",
+      "evt.pro.phone_no_signal",
+      "evt.sdm.book_written_tomorrow",
+      "evt.sdm.breakable_point",
+      "evt.sdm.corridor_never_walked",
+      "evt.sdm.late_by_three_minutes",
+      "evt.sdm.small_chair"
+    ],
+    "dialogue_beats": [
+      "beat.hkr.empty_cushion.reimu.001",
+      "beat.hkr.empty_cushion.reimu.clear",
+      "beat.hkr.empty_cushion.reimu.excellent",
+      "beat.hkr.empty_cushion.reimu.loss"
+    ],
+    "localization": [
+      "accessibility.preset.custom",
+      "accessibility.preset.low_motion",
+      "accessibility.preset.original",
+      "accessibility.preset.story",
+      "choice.hkr.empty_cushion.defiant",
+      "choice.hkr.empty_cushion.direct",
+      "choice.hkr.empty_cushion.patient",
+      "choice.hkr.empty_cushion.playful",
+      "dlg.hkr.empty_cushion.reimu.001",
+      "dlg.hkr.empty_cushion.reimu.clear",
+      "dlg.hkr.empty_cushion.reimu.excellent",
+      "dlg.hkr.empty_cushion.reimu.loss",
+      "event.hkr.empty_cushion.title",
+      "input.glyph.keyboard.cancel",
+      "input.glyph.keyboard.confirm",
+      "input.glyph.keyboard.menu",
+      "input.glyph.keyboard.move",
+      "input.glyph.pad.cancel",
+      "input.glyph.pad.confirm",
+      "input.glyph.pad.menu",
+      "input.glyph.pad.move",
+      "input.glyph.pointer.cancel",
+      "input.glyph.pointer.confirm",
+      "input.glyph.pointer.menu",
+      "input.glyph.pointer.move",
+      "journal.hkr.empty_cushion.body",
+      "journal.hkr.empty_cushion.title",
+      "obj.hkr.find_second_cup",
+      "ui.accessibility.help",
+      "ui.accessibility.title",
+      "ui.common.back",
+      "ui.common.cancel",
+      "ui.common.confirm",
+      "ui.common.off",
+      "ui.common.on",
+      "ui.common.unavailable",
+      "ui.journal.open",
+      "ui.language.english",
+      "ui.language.japanese",
+      "ui.map.travel",
+      "ui.mode.body",
+      "ui.mode.pause_hint",
+      "ui.mode.title",
+      "ui.options.back",
+      "ui.options.help",
+      "ui.options.language",
+      "ui.options.low_motion",
+      "ui.options.profile",
+      "ui.options.safe_flash",
+      "ui.options.title",
+      "ui.pause.options",
+      "ui.pause.resume",
+      "ui.pause.return_title",
+      "ui.pause.title",
+      "ui.profile.a",
+      "ui.profile.b",
+      "ui.profile.c",
+      "ui.profile.d",
+      "ui.profile.forced_a",
+      "ui.profile.title",
+      "ui.title.continue",
+      "ui.title.logo",
+      "ui.title.new_profile",
+      "ui.title.options",
+      "ui.title.quit",
+      "ui.title.unofficial",
+      "ui.title.version"
+    ],
+    "music_cues": [
+      "mus_animal_realm",
+      "mus_archive_boss",
+      "mus_aya_afterbeat",
+      "mus_aya_chase",
+      "mus_bamboo_forest",
+      "mus_border_crossing",
+      "mus_byakuren",
+      "mus_chireiden",
+      "mus_clownpiece",
+      "mus_comedy_escalation",
+      "mus_dream_world",
+      "mus_eiki",
+      "mus_eirin_lab",
+      "mus_eirin_route",
+      "mus_ending",
+      "mus_false_moon",
+      "mus_festival",
+      "mus_flandre_event",
+      "mus_flower_field",
+      "mus_former_hell",
+      "mus_hakugyokurou",
+      "mus_heaven",
+      "mus_hecatia",
+      "mus_heian_alien",
+      "mus_hidden_doors",
+      "mus_hina_event",
+      "mus_iku_weather",
+      "mus_journal",
+      "mus_junko",
+      "mus_kaguya_afterbeat",
+      "mus_kaguya_errands",
+      "mus_kanako_policy",
+      "mus_keiki",
+      "mus_kogasa",
+      "mus_kokoro",
+      "mus_library",
+      "mus_lunar_entry",
+      "mus_lunatic_dreamer",
+      "mus_marisa_arrival",
+      "mus_marisa_night",
+      "mus_meiling_gate",
+      "mus_miko",
+      "mus_misty_lake",
+      "mus_mokou_firepath",
+      "mus_moriya_path",
+      "mus_mountain_base",
+      "mus_murasa",
+      "mus_nitori_workshop",
+      "mus_okina",
+      "mus_orin_cart",
+      "mus_patchouli_route",
+      "mus_prologue_outside",
+      "mus_quiet_afterbeat",
+      "mus_rain",
+      "mus_reactor",
+      "mus_reimu_private",
+      "mus_reisen_wave",
+      "mus_remilia_route",
+      "mus_route_threshold",
+      "mus_rumor",
+      "mus_sagume",
+      "mus_saki",
+      "mus_sakuya_clock",
+      "mus_sakuya_kitchen",
+      "mus_sanae_route",
+      "mus_sanzu",
+      "mus_satori_scene",
+      "mus_sdm_foyer",
+      "mus_seiga",
+      "mus_senkai",
+      "mus_shrine_day",
+      "mus_shrine_duel",
+      "mus_sumireko",
+      "mus_suwako_ritual",
+      "mus_temple",
+      "mus_tenshi_route",
+      "mus_tewi_shortcut",
+      "mus_title",
+      "mus_winter",
+      "mus_world_map_day",
+      "mus_world_map_night",
+      "mus_yachie",
+      "mus_youmu_afterbeat",
+      "mus_youmu_training",
+      "mus_yukari_private",
+      "mus_yuugi_trial",
+      "mus_yuuka",
+      "mus_yuyuko_banquet",
+      "mus_yuyuko_private"
+    ]
+  },
+  "dependencies": [
+    {
+      "source": "beat.hkr.empty_cushion.reimu.001",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.001",
+      "target": "dlg.hkr.empty_cushion.reimu.001",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.clear",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.clear",
+      "target": "dlg.hkr.empty_cushion.reimu.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.excellent",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.excellent",
+      "target": "dlg.hkr.empty_cushion.reimu.excellent",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.loss",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.empty_cushion.reimu.loss",
+      "target": "dlg.hkr.empty_cushion.reimu.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.empty_cushion.01",
+      "target": "choice.hkr.empty_cushion.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.empty_cushion.01",
+      "target": "choice.hkr.empty_cushion.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.empty_cushion.01",
+      "target": "choice.hkr.empty_cushion.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.empty_cushion.01",
+      "target": "choice.hkr.empty_cushion.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.burn_false_moon",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.burn_false_moon",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.burn_false_moon",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.five_impossibilities",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.five_impossibilities",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.four_dawns",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.four_dawns",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.patient_refuses",
+      "target": "char.eirin_yagokoro",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.patient_refuses",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.shortcut_seller",
+      "target": "char.tewi_inaba",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.shortcut_seller",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.fin.borders_back",
+      "target": "char.okina_matara",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.fin.borders_back",
+      "target": "char.yukari_yakumo",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.fin.borders_back",
+      "target": "loc.hidden_doors",
+      "kind": "location"
+    },
+    {
+      "source": "evt.fin.margin_of_error",
+      "target": "loc.hidden_doors",
+      "kind": "location"
+    },
+    {
+      "source": "evt.fin.one_blank_page",
+      "target": "loc.hakurei_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.fin.public_hearing",
+      "target": "char.aya_shameimaru",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.fin.public_hearing",
+      "target": "char.hieda_no_akyuu",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.fin.public_hearing",
+      "target": "char.kosuzu_motoori",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.fin.public_hearing",
+      "target": "loc.human_village",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.farewell_replay",
+      "target": "char.komachi_onozuka",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.farewell_replay",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.farewell_replay",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.last_sweet",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.last_sweet",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.petal_on_hold",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.petal_on_hold",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.two_bodies_bridge",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.two_bodies_bridge",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n001",
+      "target": "evt.hkr.empty_cushion.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n001",
+      "target": "mus_shrine_day",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n002",
+      "target": "evt.hkr.empty_cushion.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n002",
+      "target": "obj.hkr.find_second_cup",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n002",
+      "target": "prop.empty_cushion",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n002",
+      "target": "prop.unpaired_cup",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n003",
+      "target": "beat.hkr.empty_cushion.reimu.001",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n003",
+      "target": "evt.hkr.empty_cushion.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n004",
+      "target": "choice.hkr.empty_cushion.01",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n004",
+      "target": "evt.hkr.empty_cushion.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n004",
+      "target": "evt.hkr.empty_cushion.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n004",
+      "target": "evt.hkr.empty_cushion.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n004",
+      "target": "evt.hkr.empty_cushion.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n005",
+      "target": "evt.hkr.empty_cushion.node.n006a",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n005",
+      "target": "evt.hkr.empty_cushion.node.n006b",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n005",
+      "target": "evt.hkr.empty_cushion.node.n006c",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n005",
+      "target": "mini.shrine.tea_temperature",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006a",
+      "target": "beat.hkr.empty_cushion.reimu.excellent",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006a",
+      "target": "evt.hkr.empty_cushion.node.n007",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006b",
+      "target": "beat.hkr.empty_cushion.reimu.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006b",
+      "target": "evt.hkr.empty_cushion.node.n007",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006c",
+      "target": "beat.hkr.empty_cushion.reimu.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n006c",
+      "target": "evt.hkr.empty_cushion.node.n007",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007",
+      "target": "evt.hkr.empty_cushion.node.n008",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n007",
+      "target": "item.keepsake.unpaired_cup",
+      "kind": "item"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n008",
+      "target": "evt.hkr.empty_cushion.node.n009",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n008",
+      "target": "journal.hkr.empty_cushion",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n009",
+      "target": "evt.hkr.empty_cushion.node.n010",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_defiant",
+      "target": "evt.hkr.empty_cushion.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_direct",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_direct",
+      "target": "evt.hkr.empty_cushion.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_patient",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_patient",
+      "target": "evt.hkr.empty_cushion.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_playful",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.empty_cushion.node.n_playful",
+      "target": "evt.hkr.empty_cushion.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.empty_cushion",
+      "target": "char.reimu_hakurei",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hkr.empty_cushion",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.empty_cushion",
+      "target": "event.hkr.empty_cushion.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.empty_cushion",
+      "target": "evt.hkr.empty_cushion",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hkr.empty_cushion",
+      "target": "loc.hakurei_shrine.veranda",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hkr.empty_cushion",
+      "target": "loc.hakurei_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.offerings_without_owners",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.offerings_without_owners",
+      "target": "loc.hakurei_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.return_before_borrowing",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.return_before_borrowing",
+      "target": "char.patchouli_knowledge",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.return_before_borrowing",
+      "target": "loc.forest_of_magic",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.spell_card_terms",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.spell_card_terms",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.spell_card_terms",
+      "target": "loc.hakurei_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mtn.keyword_us",
+      "target": "char.hatate_himekaidou",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mtn.keyword_us",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mtn.measurable_faith",
+      "target": "char.kanako_yasaka",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith",
+      "target": "char.sanae_kochiya",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith",
+      "target": "loc.moriya_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mtn.patrol_against_nothing",
+      "target": "char.momiji_inubashiri",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mtn.patrol_against_nothing",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mtn.rumor_machine",
+      "target": "char.nitori_kawashiro",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mtn.rumor_machine",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline",
+      "target": "char.aya_shameimaru",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.pro.phone_no_signal",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pro.phone_no_signal",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pro.phone_no_signal",
+      "target": "loc.outside_world",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sdm.book_written_tomorrow",
+      "target": "char.koakuma",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.book_written_tomorrow",
+      "target": "char.patchouli_knowledge",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.book_written_tomorrow",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sdm.breakable_point",
+      "target": "char.flandre_scarlet",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.breakable_point",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sdm.corridor_never_walked",
+      "target": "char.hong_meiling",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.corridor_never_walked",
+      "target": "char.sakuya_izayoi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.corridor_never_walked",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes",
+      "target": "char.sakuya_izayoi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.late_by_three_minutes",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sdm.small_chair",
+      "target": "char.remilia_scarlet",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.small_chair",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gensokyo-monochrome-heart.invalid/schemas/dialogue_index.schema.json",
+  "title": "Gensokyo Monochrome Heart Dialogue Beat Index",
+  "type": "object",
+  "required": ["schema_version", "beats"],
+  "properties": {
+    "schema_version": {"type": "integer", "minimum": 1},
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "speaker_id",
+          "text_key",
+          "portrait",
+          "nonverbal_key",
+          "advance_policy",
+          "memory_tag"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^beat\\."},
+          "speaker_id": {"type": "string", "pattern": "^char\\."},
+          "text_key": {"type": "string"},
+          "portrait": {"type": "string"},
+          "nonverbal_key": {"type": "string"},
+          "advance_policy": {"enum": ["input", "auto", "instant"]},
+          "memory_tag": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

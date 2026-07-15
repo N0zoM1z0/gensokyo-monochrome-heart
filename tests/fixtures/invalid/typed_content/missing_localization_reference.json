@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "beats": [
+    {
+      "id": "beat.fixture.missing_localization",
+      "speaker_id": "char.reimu_hakurei",
+      "text_key": "dlg.fixture.does_not_exist",
+      "portrait": "fixture",
+      "nonverbal_key": "cue.fixture.none",
+      "advance_policy": "input",
+      "memory_tag": "fixture.missing_localization"
+    }
+  ]
+}

@@ -37,6 +37,7 @@ func validate_project() -> ContentValidationReport:
 	_validate_schema_instance(location_data, &"location_index.schema.json", LOCATION_PATH)
 	_validate_schema_instance(event_index_data, &"event_index.schema.json", EVENT_INDEX_PATH)
 	_validate_schema_instance(event_graph_data, &"event_graph.schema.json", EVENT_GRAPH_PATH)
+	_validate_schema_instance(dialogue_data, &"dialogue_index.schema.json", DIALOGUE_PATH)
 	_validate_schema_instance(ui_localization_data, &"ui_localization.schema.json", UI_LOCALIZATION_PATH)
 	_validate_localization()
 	_validate_ui_localization(ui_localization_data)
@@ -96,10 +97,12 @@ func _validate_schema_inventory() -> void:
 		"character_index.schema.json",
 		"event_graph.schema.json",
 		"event_index.schema.json",
+		"dialogue_index.schema.json",
 		"location_index.schema.json",
 		"minigame.schema.json",
 		"save_envelope.schema.json",
 		"ui_localization.schema.json",
+		"content_runtime_index.schema.json",
 	]
 	for filename: String in required:
 		var path := "%s/%s" % [SCHEMA_DIR, filename]

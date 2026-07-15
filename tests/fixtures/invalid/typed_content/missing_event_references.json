@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "evt.fixture.missing_references",
+      "legacy_id": "FIX-MISSING-REFS",
+      "title_en": "Missing Reference Fixture",
+      "location_id": "loc.fixture.missing",
+      "lead_character_ids": ["char.fixture.missing"],
+      "primary_mode": "dialogue",
+      "core_change": "none",
+      "status": "fixture",
+      "estimated_minutes": 1,
+      "comfort_tags": ["fixture"]
+    }
+  ]
+}

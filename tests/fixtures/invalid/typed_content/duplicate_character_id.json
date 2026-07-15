@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "characters": [
+    {
+      "id": "char.reimu_hakurei",
+      "slug": "duplicate_reimu_fixture",
+      "display_name_en": "Duplicate Reimu Fixture",
+      "display_name_ja": "重複霊夢フィクスチャ",
+      "faction_region": "Hakurei Shrine",
+      "route_depth": "deep",
+      "route_scope_note": "Must collide with the reviewed character index.",
+      "canon_confidence": "fixture",
+      "skills_document": "res://design/10_codex/CODEX_MASTER_TASKBOOK.md",
+      "tags": ["fixture"]
+    }
+  ]
+}
