@@ -593,6 +593,13 @@ func _start_journal_replay() -> void:
 		return
 	_working_state = source
 	_replay_source_canonical = GameStateCodec.new().canonical_state(source)
+	# A Journal replay is its own acceptance session. Reusing the day-session record
+	# array here retained every phase record across repeated replays.
+	_telemetry.begin_session(
+		source.profile_id,
+		_content.report.content_revision,
+		_content.report.content_hash
+	)
 	_start_authored_event(true)
 
 
@@ -601,7 +608,7 @@ func _finish_replay() -> void:
 	if not current is GameState or GameStateCodec.new().canonical_state(current) != _replay_source_canonical:
 		_fail("Journal replay mutated the active save")
 		return
-	_telemetry.complete_session()
+	_telemetry.complete_session(-1, true)
 	var write_result := _telemetry.write_local()
 	if not write_result.is_success():
 		_fail("local acceptance telemetry could not be committed")
