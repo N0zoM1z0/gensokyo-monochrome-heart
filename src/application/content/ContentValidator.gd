@@ -101,6 +101,7 @@ func _validate_schema_inventory() -> void:
 		"game_state_v2.schema.json",
 		"location_index.schema.json",
 		"minigame.schema.json",
+		"save_card.schema.json",
 		"save_envelope.schema.json",
 		"ui_localization.schema.json",
 		"content_runtime_index.schema.json",

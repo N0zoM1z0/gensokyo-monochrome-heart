@@ -22,7 +22,12 @@ static func stringify(value: Variant) -> String:
 			return "[%s]" % ",".join(values)
 		TYPE_STRING_NAME:
 			return JSON.stringify(String(value))
-		TYPE_NIL, TYPE_BOOL, TYPE_INT, TYPE_FLOAT, TYPE_STRING:
+		TYPE_FLOAT:
+			var number: float = value
+			if is_finite(number) and number == floor(number):
+				return JSON.stringify(int(number))
+			return JSON.stringify(number)
+		TYPE_NIL, TYPE_BOOL, TYPE_INT, TYPE_STRING:
 			return JSON.stringify(value)
 		_:
 			push_error("CanonicalJson cannot encode %s" % type_string(typeof(value)))

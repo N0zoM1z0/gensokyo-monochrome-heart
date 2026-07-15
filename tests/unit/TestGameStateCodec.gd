@@ -32,6 +32,11 @@ func _expect_canonical_json(failures: Array[String]) -> void:
 		failures.append("canonical JSON depends on Dictionary insertion order")
 	if CanonicalJson.sha256(first).length() != 64 or CanonicalJson.sha256(first) != CanonicalJson.sha256(second):
 		failures.append("canonical JSON SHA-256 is absent or nondeterministic")
+	var parsed: Variant = JSON.parse_string(JSON.stringify(first))
+	if not parsed is Dictionary or CanonicalJson.stringify(first) != CanonicalJson.stringify(parsed):
+		failures.append("canonical JSON changes when Godot parses integer tokens as integral floats")
+	if CanonicalJson.stringify({"fraction": 0.5}) == CanonicalJson.stringify({"fraction": 0}):
+		failures.append("canonical JSON collapsed a genuine fractional value")
 
 
 func _expect_schema_rejection(payload: Dictionary, codec: GameStateCodec, failures: Array[String]) -> void:

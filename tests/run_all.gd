@@ -18,6 +18,7 @@ func _initialize() -> void:
 		TestPresentationFoundation.new(),
 		TestReleasePlaceholderScanner.new(),
 		TestSaveMigrations.new(),
+		TestSaveRepository.new(),
 		TestScreenshotFixture.new(),
 		TestVisualValidators.new(),
 	]
