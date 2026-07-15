@@ -16,6 +16,7 @@ var _dialogue_beats: Dictionary[StringName, DialogueBeatRecord] = {}
 var _strings: Dictionary[StringName, ContentStringRecord] = {}
 var _music_cues: Dictionary[StringName, MusicCueRecord] = {}
 var _deferred: Dictionary[StringName, DeferredReferenceRecord] = {}
+var _event_graphs: Dictionary[StringName, EventGraphRecord] = {}
 var _global_id_sources: Dictionary[StringName, String] = {}
 
 
@@ -62,10 +63,14 @@ func load_sources(sources: ContentSourceSet = null) -> ContentLoadReport:
 	var deferred := parser.parse_deferred_references(active_sources.deferred_references_path)
 	for path: String in active_sources.supplemental_deferred_reference_paths:
 		deferred.append_array(parser.parse_deferred_references(path))
+	var event_graphs: Array[EventGraphRecord] = []
 	event_graph = parser.parse_event_graph(
 		active_sources.event_graph_path,
 		active_sources.event_graph_schema_path
 	)
+	event_graphs.append(event_graph)
+	for path: String in active_sources.supplemental_event_graph_paths:
+		event_graphs.append(parser.parse_event_graph(path, active_sources.event_graph_schema_path))
 	report.content_revision = manifest.content_revision
 	report.content_hash = ContentHashBuilder.new().compute(active_sources.content_paths(), report)
 	_index_records(
@@ -78,6 +83,7 @@ func load_sources(sources: ContentSourceSet = null) -> ContentLoadReport:
 		deferred,
 		active_sources
 	)
+	_index_event_graphs(event_graphs)
 	_validate_manifest_counts(active_sources)
 	_validate_references(active_sources)
 	_finalize_counts()
@@ -110,16 +116,23 @@ func localized_string(key: StringName) -> ContentStringRecord:
 
 
 func graph(graph_id: StringName) -> EventGraphRecord:
-	return event_graph if event_graph != null and event_graph.id == graph_id else null
+	return _event_graphs.get(graph_id)
 
 
 func choice(choice_id: StringName) -> ChoiceRecord:
-	if event_graph == null:
-		return null
-	for node: EventNodeRecord in event_graph.nodes:
-		if node.choice != null and node.choice.id == choice_id:
-			return node.choice
+	for graph_record: EventGraphRecord in all_event_graphs():
+		for node: EventNodeRecord in graph_record.nodes:
+			if node.choice != null and node.choice.id == choice_id:
+				return node.choice
 	return null
+
+
+func all_event_graphs() -> Array[EventGraphRecord]:
+	var result: Array[EventGraphRecord] = []
+	for graph_record: EventGraphRecord in _event_graphs.values():
+		result.append(graph_record)
+	result.sort_custom(_event_graph_less)
+	return result
 
 
 func all_characters() -> Array[CharacterRecord]:
@@ -291,7 +304,7 @@ func runtime_index_json() -> String:
 			"dialogue_beats": _dialogue_beats.size(),
 			"localization": _strings.size(),
 			"music_cues": _music_cues.size(),
-			"event_nodes": event_graph.nodes.size() if event_graph != null else 0,
+			"event_nodes": _event_node_count(),
 		},
 		"ids": {
 			"characters": _string_ids(_characters.keys()),
@@ -334,6 +347,7 @@ func _reset() -> void:
 	_strings.clear()
 	_music_cues.clear()
 	_deferred.clear()
+	_event_graphs.clear()
 	_global_id_sources.clear()
 
 
@@ -423,6 +437,16 @@ func _register(stable_id: StringName, source: String, registry: Dictionary, reco
 	dependency_graph.add_node(stable_id)
 
 
+func _index_event_graphs(graphs: Array[EventGraphRecord]) -> void:
+	for graph_record: EventGraphRecord in graphs:
+		if graph_record == null or graph_record.id == &"":
+			continue
+		if _event_graphs.has(graph_record.id):
+			report.add_error(&"rules", graph_record.source_path, "duplicate event graph", graph_record.id)
+			continue
+		_event_graphs[graph_record.id] = graph_record
+
+
 func _validate_id(stable_id: StringName, pattern: String, source: String) -> void:
 	var expression := RegEx.create_from_string(pattern)
 	if expression.search(String(stable_id)) == null:
@@ -460,32 +484,35 @@ func _validate_references(sources: ContentSourceSet) -> void:
 		var source_path := _source(beat.source_path, sources.dialogue_path)
 		_require_known(beat.id, beat.speaker_id, _characters.has(beat.speaker_id), &"speaker", source_path)
 		_require_known(beat.id, beat.text_key, _strings.has(beat.text_key), &"localization", source_path)
-	if event_graph == null:
-		return
-	var graph_source := _source(event_graph.source_path, sources.event_graph_path)
-	_require_known(event_graph.id, event_graph.id, _events.has(event_graph.id), &"event_index", graph_source)
-	_require_known(event_graph.id, event_graph.location_id, _locations.has(event_graph.location_id), &"location", graph_source)
-	_require_known(event_graph.id, event_graph.title_key, _strings.has(event_graph.title_key), &"localization", graph_source)
-	_require_deferred(event_graph.id, event_graph.spot_id, &"spot", graph_source)
-	for character_id: StringName in event_graph.cast:
-		_require_known(event_graph.id, character_id, _characters.has(character_id), &"cast", graph_source)
+	for graph_record: EventGraphRecord in all_event_graphs():
+		_validate_event_graph_references(graph_record, sources)
+
+
+func _validate_event_graph_references(graph_record: EventGraphRecord, sources: ContentSourceSet) -> void:
+	var graph_source := _source(graph_record.source_path, sources.event_graph_path)
+	_require_known(graph_record.id, graph_record.id, _events.has(graph_record.id), &"event_index", graph_source)
+	_require_known(graph_record.id, graph_record.location_id, _locations.has(graph_record.location_id), &"location", graph_source)
+	_require_known(graph_record.id, graph_record.title_key, _strings.has(graph_record.title_key), &"localization", graph_source)
+	_require_deferred(graph_record.id, graph_record.spot_id, &"spot", graph_source)
+	for character_id: StringName in graph_record.cast:
+		_require_known(graph_record.id, character_id, _characters.has(character_id), &"cast", graph_source)
 	var node_ids: Array[StringName] = []
-	for node: EventNodeRecord in event_graph.nodes:
+	for node: EventNodeRecord in graph_record.nodes:
 		node_ids.append(node.id)
-		dependency_graph.add_node(_node_graph_id(node.id))
-	if event_graph.entry_node_id not in node_ids:
-		report.add_error(&"references", graph_source, "entry node is missing", event_graph.id)
-	for node: EventNodeRecord in event_graph.nodes:
-		_validate_event_node(node, node_ids, graph_source)
-	_validate_graph_reachability(node_ids, graph_source)
-	for error: String in EventGraphValidator.new().validate(event_graph):
-		report.add_error(&"rules", graph_source, error, event_graph.id)
+		dependency_graph.add_node(_node_graph_id(graph_record, node.id))
+	if graph_record.entry_node_id not in node_ids:
+		report.add_error(&"references", graph_source, "entry node is missing", graph_record.id)
+	for node: EventNodeRecord in graph_record.nodes:
+		_validate_event_node(graph_record, node, node_ids, graph_source)
+	_validate_graph_reachability(graph_record, node_ids, graph_source)
+	for error: String in EventGraphValidator.new().validate(graph_record):
+		report.add_error(&"rules", graph_source, error, graph_record.id)
 
 
-func _validate_event_node(node: EventNodeRecord, node_ids: Array[StringName], source: String) -> void:
-	var owner := _node_graph_id(node.id)
+func _validate_event_node(graph_record: EventGraphRecord, node: EventNodeRecord, node_ids: Array[StringName], source: String) -> void:
+	var owner := _node_graph_id(graph_record, node.id)
 	for target: StringName in node.outgoing_node_ids():
-		_require_known(owner, _node_graph_id(target), target in node_ids, &"event_edge", source)
+		_require_known(owner, _node_graph_id(graph_record, target), target in node_ids, &"event_edge", source)
 	if node.music_state_id != &"":
 		_require_known(owner, node.music_state_id, _music_cues.has(node.music_state_id), &"music", source)
 	if node.objective_key != &"":
@@ -506,24 +533,26 @@ func _validate_event_node(node: EventNodeRecord, node_ids: Array[StringName], so
 		_require_deferred(owner, node.minigame_id, &"minigame", source)
 	if node.item_id != &"":
 		_require_deferred(owner, node.item_id, &"item", source)
+	if node.item_owner_character_id != &"":
+		_require_known(owner, node.item_owner_character_id, _characters.has(node.item_owner_character_id), &"item_owner", source)
 	if node.journal_entry_id != &"":
 		_require_deferred(owner, node.journal_entry_id, &"journal_entry", source)
 
 
-func _validate_graph_reachability(node_ids: Array[StringName], source: String) -> void:
+func _validate_graph_reachability(graph_record: EventGraphRecord, node_ids: Array[StringName], source: String) -> void:
 	var reachable: Array[StringName] = []
-	var pending: Array[StringName] = [event_graph.entry_node_id]
+	var pending: Array[StringName] = [graph_record.entry_node_id]
 	while not pending.is_empty():
 		var current: StringName = pending.pop_back()
 		if current in reachable or current not in node_ids:
 			continue
 		reachable.append(current)
-		var node := event_graph.node(current)
+		var node := graph_record.node(current)
 		if node != null:
 			pending.append_array(node.outgoing_node_ids())
 	for node_id: StringName in node_ids:
 		if node_id not in reachable:
-			report.add_error(&"references", source, "unreachable event node: %s" % node_id, event_graph.id)
+			report.add_error(&"references", source, "unreachable event node: %s" % node_id, graph_record.id)
 	report.record_check(&"references", node_ids.size())
 
 
@@ -557,8 +586,8 @@ func _require_deferred(
 		dependency_graph.add_edge(owner_id, target_id, kind)
 
 
-func _node_graph_id(node_id: StringName) -> StringName:
-	return StringName("%s.node.%s" % [event_graph.id, node_id])
+func _node_graph_id(graph_record: EventGraphRecord, node_id: StringName) -> StringName:
+	return StringName("%s.node.%s" % [graph_record.id, node_id])
 
 
 func _source(authored_path: String, fallback_path: String) -> String:
@@ -572,7 +601,14 @@ func _finalize_counts() -> void:
 	report.dialogue_count = _dialogue_beats.size()
 	report.localization_count = _strings.size()
 	report.music_cue_count = _music_cues.size()
-	report.event_node_count = event_graph.nodes.size() if event_graph != null else 0
+	report.event_node_count = _event_node_count()
+
+
+func _event_node_count() -> int:
+	var result := 0
+	for graph_record: EventGraphRecord in _event_graphs.values():
+		result += graph_record.nodes.size()
+	return result
 
 
 func _string_ids(ids: Array) -> Array[String]:
@@ -592,6 +628,10 @@ func _location_less(left: LocationRecord, right: LocationRecord) -> bool:
 
 
 func _event_less(left: EventIndexRecord, right: EventIndexRecord) -> bool:
+	return String(left.id) < String(right.id)
+
+
+func _event_graph_less(left: EventGraphRecord, right: EventGraphRecord) -> bool:
 	return String(left.id) < String(right.id)
 
 

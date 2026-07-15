@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "evt.sdm.late_by_three_minutes",
+  "title_key": "event.hkr.empty_cushion.title",
+  "location_id": "loc.scarlet_devil_mansion",
+  "spot_id": "loc.hakurei_shrine.veranda",
+  "cast": [
+    "char.sakuya_izayoi"
+  ],
+  "availability": [],
+  "entry_node": "n_end",
+  "nodes": {
+    "n_end": {
+      "type": "end_event",
+      "outcome": "fixture_complete"
+    }
+  },
+  "origin_tags": {
+    "canon": 1,
+    "fanon": 0,
+    "original": 1
+  },
+  "comfort_tags": []
+}

@@ -16,6 +16,7 @@ func run() -> Array[String]:
 	_expect_hash_and_cache(repository, failures)
 	_expect_queries(repository, failures)
 	_expect_reference_graph(repository, failures)
+	_expect_multiple_event_graphs(failures)
 	_expect_no_authored_dictionaries(repository, failures)
 	_expect_invalid_fixtures(failures)
 	return failures
@@ -113,6 +114,27 @@ func _expect_reference_graph(repository: ContentRepository, failures: Array[Stri
 		prior_key = edge.sort_key()
 
 
+func _expect_multiple_event_graphs(failures: Array[String]) -> void:
+	var sources := ContentSourceSet.new()
+	sources.enforce_manifest_counts = false
+	sources.supplemental_event_graph_paths.append("res://tests/fixtures/content/sdm_secondary_event_graph.json")
+	var repository := ContentRepository.new()
+	var report := repository.load_sources(sources)
+	if not report.is_success():
+		failures.append("secondary event graph failed typed loading: %s" % report.human_readable())
+		return
+	if repository.all_event_graphs().size() != 2:
+		failures.append("event graph catalog expected two records")
+	var sdm := repository.graph(&"evt.sdm.late_by_three_minutes")
+	if sdm == null or sdm.location_id != &"loc.scarlet_devil_mansion" or sdm.node(&"n_end") == null:
+		failures.append("stable graph lookup did not expose the SDM fixture")
+	if report.event_node_count != 37:
+		failures.append("event node aggregate expected 37, got %d" % report.event_node_count)
+	var parsed: Variant = JSON.parse_string(repository.runtime_index_json())
+	if not parsed is Dictionary or int(parsed.counts.event_nodes) != 37:
+		failures.append("runtime index did not aggregate multiple event graphs")
+
+
 func _expect_no_authored_dictionaries(repository: ContentRepository, failures: Array[String]) -> void:
 	var records: Array[RefCounted] = []
 	records.append_array(repository.all_characters())
@@ -121,8 +143,7 @@ func _expect_no_authored_dictionaries(repository: ContentRepository, failures: A
 	records.append_array(repository.all_dialogue_beats())
 	records.append_array(repository.all_localization())
 	records.append_array(repository.all_music_cues())
-	if repository.event_graph != null:
-		records.append(repository.event_graph)
+	records.append_array(repository.all_event_graphs())
 	var visited: Dictionary[int, bool] = {}
 	for record: RefCounted in records:
 		_inspect_typed_record(record, visited, failures)

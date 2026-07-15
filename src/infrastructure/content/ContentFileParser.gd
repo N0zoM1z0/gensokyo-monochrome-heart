@@ -319,7 +319,11 @@ func _parse_event_node(node_id: StringName, raw: Dictionary) -> EventNodeRecord:
 	node.interactable_ids = _names(raw.get("interactable_ids", []))
 	node.beat_id = _name(raw.get("beat_id", ""))
 	node.item_id = _name(raw.get("item_id", ""))
+	node.item_owner_character_id = _name(raw.get("owner_character_id", ""))
+	node.item_dialogue_tags = _names(raw.get("dialogue_tags", []))
 	node.journal_entry_id = _name(raw.get("entry_id", ""))
+	node.journal_entry_type = _name(raw.get("entry_type", "event_observation"))
+	node.journal_tags = _names(raw.get("tags", []))
 	node.outcome = _name(raw.get("outcome", ""))
 	if node.type == &"choice":
 		var options: Array[ChoiceOptionRecord] = []

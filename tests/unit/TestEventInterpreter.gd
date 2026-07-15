@@ -175,6 +175,8 @@ func _expect_full_branch(tone: StringName, failures: Array[String]) -> GameState
 		failures.append("%s branch did not atomically close and record the event" % tone)
 	if not state.inventory.keepsakes.has(&"item.keepsake.unpaired_cup"):
 		failures.append("%s branch did not grant the authored Keepsake" % tone)
+	elif state.inventory.keepsakes[&"item.keepsake.unpaired_cup"].dialogue_tags != [&"shrine.second_cup"]:
+		failures.append("%s branch did not infer the keepsake memory tag from authored dialogue" % tone)
 	if not state.journal.entries.has(&"journal.hkr.empty_cushion"):
 		failures.append("%s branch did not add the authored Journal observation" % tone)
 	if &"evt.hkr.empty_cushion" not in state.journal.replay_event_ids:

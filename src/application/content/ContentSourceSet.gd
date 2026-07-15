@@ -22,6 +22,7 @@ var enforce_manifest_counts: bool = true
 var supplemental_character_paths: Array[String] = []
 var supplemental_location_paths: Array[String] = []
 var supplemental_event_paths: Array[String] = []
+var supplemental_event_graph_paths: Array[String] = []
 var supplemental_dialogue_paths: Array[String] = []
 var supplemental_localization_paths: Array[String] = []
 var supplemental_ui_localization_paths: Array[String] = []
@@ -45,6 +46,7 @@ func content_paths() -> Array[String]:
 	paths.append_array(supplemental_character_paths)
 	paths.append_array(supplemental_location_paths)
 	paths.append_array(supplemental_event_paths)
+	paths.append_array(supplemental_event_graph_paths)
 	paths.append_array(supplemental_dialogue_paths)
 	paths.append_array(supplemental_localization_paths)
 	paths.append_array(supplemental_ui_localization_paths)

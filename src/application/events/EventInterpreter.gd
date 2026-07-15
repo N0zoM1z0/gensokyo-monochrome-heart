@@ -242,10 +242,17 @@ func _give_item(node: EventNodeRecord) -> CommandResult:
 		if String(node.item_id).begins_with("item.keepsake."):
 			var keepsake := KeepsakeState.new(node.item_id)
 			keepsake.source_event_id = _graph.id
-			keepsake.owner_character_id = _graph.cast[0] if not _graph.cast.is_empty() else &""
+			keepsake.owner_character_id = (
+				node.item_owner_character_id
+				if node.item_owner_character_id != &""
+				else _graph.cast[0] if not _graph.cast.is_empty() else &""
+			)
 			keepsake.acquired_day = _state.day
-			if _graph.id == &"evt.hkr.empty_cushion":
-				keepsake.dialogue_tags.append(&"shrine.second_cup")
+			keepsake.dialogue_tags = node.item_dialogue_tags.duplicate()
+			if keepsake.dialogue_tags.is_empty():
+				var inferred_tag := _first_authored_memory_tag()
+				if inferred_tag != &"":
+					keepsake.dialogue_tags.append(inferred_tag)
 			commands.append(GrantKeepsakeCommand.new(keepsake))
 		else:
 			commands.append(AddInventoryItemCommand.new(node.item_id, 1))
@@ -262,12 +269,14 @@ func _add_journal(node: EventNodeRecord) -> CommandResult:
 	if not _runtime.is_replay:
 		var entry := JournalEntryState.new(node.journal_entry_id)
 		entry.title_key = StringName("%s.title" % node.journal_entry_id)
-		entry.entry_type = &"event_observation"
+		entry.entry_type = node.journal_entry_type
 		entry.source_event_id = _graph.id
 		entry.discovered_day = _state.day
 		entry.observation_keys.append(StringName("%s.body" % node.journal_entry_id))
-		entry.tags.append(&"resonance")
-		entry.tags.append(&"quiet_object")
+		entry.tags = node.journal_tags.duplicate()
+		if entry.tags.is_empty():
+			entry.tags.append(&"resonance")
+			entry.tags.append(&"quiet_object")
 		commands.append(AddJournalEntryCommand.new(entry))
 		commands.append(UnlockJournalReplayCommand.new(_graph.id))
 	commands.append(SetEventPositionCommand.new(_graph.id, node.next_node_id))
@@ -357,6 +366,16 @@ func _record_command(command_id: StringName) -> void:
 	_runtime.last_command_ids.append(command_id)
 	while _runtime.last_command_ids.size() > MAX_COMMAND_HISTORY:
 		_runtime.last_command_ids.pop_front()
+
+
+func _first_authored_memory_tag() -> StringName:
+	for node: EventNodeRecord in _graph.nodes:
+		if node.beat_id == &"":
+			continue
+		var beat := _content.dialogue_beat(node.beat_id)
+		if beat != null and beat.memory_tag != &"":
+			return beat.memory_tag
+	return &""
 
 
 func _reset_yield_data() -> void:

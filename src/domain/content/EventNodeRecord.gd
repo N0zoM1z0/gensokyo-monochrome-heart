@@ -16,7 +16,11 @@ var target_band: StringName
 var cups: int
 var result_branches: Array[ModeResultBranchRecord] = []
 var item_id: StringName
+var item_owner_character_id: StringName
+var item_dialogue_tags: Array[StringName] = []
 var journal_entry_id: StringName
+var journal_entry_type: StringName = &"event_observation"
+var journal_tags: Array[StringName] = []
 var outcome: StringName
 
 
