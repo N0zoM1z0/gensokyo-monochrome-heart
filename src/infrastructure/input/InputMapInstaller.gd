@@ -9,9 +9,12 @@ enum OneHandedPreset {
 }
 
 const DEADZONE := 0.35
+static var active_one_handed_preset: OneHandedPreset = OneHandedPreset.NONE
 
 
 static func install_defaults(should_reset: bool = false) -> void:
+	if should_reset:
+		active_one_handed_preset = OneHandedPreset.NONE
 	for action: StringName in GameInput.ALL_ACTIONS:
 		if not InputMap.has_action(action):
 			InputMap.add_action(action, DEADZONE)
@@ -53,6 +56,7 @@ static func replace_binding(action: StringName, event: InputEvent) -> bool:
 
 static func apply_one_handed_preset(preset: OneHandedPreset) -> void:
 	install_defaults(true)
+	active_one_handed_preset = preset
 	match preset:
 		OneHandedPreset.LEFT_HAND:
 			_add_key(GameInput.CONFIRM, KEY_SPACE)

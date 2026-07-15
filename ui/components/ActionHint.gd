@@ -9,6 +9,7 @@ extends Control
 
 var locale: StringName = &"en"
 var glyph_key: StringName = &"input.glyph.keyboard.confirm"
+var binding_label: String = ""
 var _catalog := UiTextCatalog.new()
 var _font: Font
 
@@ -19,12 +20,13 @@ func _ready() -> void:
 	queue_redraw()
 
 
-func configure(next_action: StringName, next_verb_key: StringName, next_locale: StringName, next_profile: StringName, next_glyph_key: StringName) -> void:
+func configure(next_action: StringName, next_verb_key: StringName, next_locale: StringName, next_profile: StringName, next_glyph_key: StringName, next_binding_label: String = "") -> void:
 	action = next_action
 	verb_key = next_verb_key
 	locale = next_locale
 	profile_id = next_profile
 	glyph_key = next_glyph_key
+	binding_label = next_binding_label
 	_font = UiFontRegistry.japanese() if locale == &"ja" else UiFontRegistry.latin()
 	queue_redraw()
 
@@ -32,7 +34,8 @@ func configure(next_action: StringName, next_verb_key: StringName, next_locale: 
 func _draw() -> void:
 	var profile := PresentationProfileRegistry.resolve(profile_id)
 	var foreground := profile.paper if profile.is_inverted else profile.ink
-	var text := "%s %s" % [_catalog.text(glyph_key, locale), _catalog.text(verb_key, locale)]
+	var glyph := binding_label if not binding_label.is_empty() else _catalog.text(glyph_key, locale)
+	var text := "%s %s" % [glyph, _catalog.text(verb_key, locale)]
 	var font_size := 10 if locale == &"ja" else 8
 	draw_string(_font, Vector2(0, font_size), text, HORIZONTAL_ALIGNMENT_LEFT, size.x, font_size, foreground)
 	if state == &"blocked":

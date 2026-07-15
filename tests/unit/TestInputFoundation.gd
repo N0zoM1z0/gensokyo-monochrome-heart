@@ -60,11 +60,19 @@ func _validate_glyph_hot_swap(failures: Array[String]) -> void:
 		failures.append("controller event did not hot-swap the active glyph family")
 	if service.glyph_key(GameInput.CONFIRM) != &"input.glyph.pad.confirm":
 		failures.append("controller confirm glyph key is incorrect")
+	if service.binding_text(GameInput.CONFIRM) != "[A]":
+		failures.append("controller hint did not show the current Confirm binding")
 	var keyboard_event := InputEventKey.new()
 	keyboard_event.physical_keycode = KEY_Z
 	service.observe_event(keyboard_event)
 	if service.glyph_key(GameInput.CANCEL) != &"input.glyph.keyboard.cancel":
 		failures.append("keyboard cancel glyph key is incorrect after hot-swap")
+	if service.binding_text(GameInput.CANCEL) != "[X]":
+		failures.append("keyboard hint did not show the current Cancel binding")
+	InputMapInstaller.apply_one_handed_preset(InputMapInstaller.OneHandedPreset.LEFT_HAND)
+	if service.binding_text(GameInput.CONFIRM) != "[SPACE]" or service.binding_text(GameInput.SPELL) != "[R]":
+		failures.append("one-handed hint did not follow the active remapped binding")
+	InputMapInstaller.install_defaults(true)
 	service.free()
 
 

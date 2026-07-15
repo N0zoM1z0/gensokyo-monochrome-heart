@@ -202,7 +202,8 @@ func _refresh_screen() -> void:
 	var glyph_service := get_node_or_null("/root/InputGlyphService")
 	for hint: ActionHint in action_hints:
 		var glyph_key: StringName = glyph_service.glyph_key(hint.action) if glyph_service != null else StringName("input.glyph.keyboard.%s" % ("menu" if hint.action == GameInput.PAUSE else "confirm"))
-		hint.configure(hint.action, hint.verb_key, locale, profile_id, glyph_key)
+		var binding_label: String = glyph_service.binding_text(hint.action, locale) if glyph_service != null else ""
+		hint.configure(hint.action, hint.verb_key, locale, profile_id, glyph_key, binding_label)
 	_apply_focus()
 	queue_redraw()
 
@@ -320,7 +321,8 @@ func _add_action_hint(
 	add_child(hint)
 	var glyph_service := get_node_or_null("/root/InputGlyphService")
 	var glyph_key: StringName = glyph_service.glyph_key(action) if glyph_service != null else &"input.glyph.keyboard.confirm"
-	hint.configure(action, verb_key, active_locale(), _active_profile_id(), glyph_key)
+	var binding_label: String = glyph_service.binding_text(action, active_locale()) if glyph_service != null else ""
+	hint.configure(action, verb_key, active_locale(), _active_profile_id(), glyph_key, binding_label)
 	action_hints.append(hint)
 	return hint
 
