@@ -34,6 +34,8 @@ GMH_USE_CLASH=1 ./scripts/install_godot.sh
 ./scripts/verify_project.sh
 ```
 
+The verification gate checks the exact engine build, deterministic content/font sync, clean import, positive and negative validators, headless tests, smoke boot, release placeholder policy, and the 1× EN/JA screenshot matrix. On a display-less Linux runner, invoke it through `xvfb-run`; only explicitly diagnostic runs may set `GMH_SKIP_SCREENSHOTS=1`.
+
 The full workflow and acceptance gates are defined by the pinned taskbooks under `design/10_codex/`.
 
 ## Fan-work notice
