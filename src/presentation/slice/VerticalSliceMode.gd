@@ -833,7 +833,7 @@ func _draw_world_map(foreground: Color, background: Color) -> void:
 		_draw_wrapped(&"ui.slice.map.body", Rect2(146, 68, 158, 70), 4)
 		_draw_footer(&"ui.slice.map.confirm", foreground, background)
 		return
-	draw_rect(Rect2(14, 39, 204, 114), foreground, false, 1.0)
+	draw_rect(Rect2(14, 39, 190, 114), foreground, false, 1.0)
 	for point: Vector2 in [Vector2(42, 71), Vector2(72, 121), Vector2(109, 57), Vector2(155, 105), Vector2(190, 73)]:
 		draw_rect(Rect2(point, Vector2(3, 3)), foreground)
 	draw_line(Vector2(43, 72), Vector2(109, 58), foreground, 1.0)
@@ -845,8 +845,8 @@ func _draw_world_map(foreground: Color, background: Color) -> void:
 	draw_line(Vector2(100, 58), Vector2(118, 58), foreground, 1.0)
 	var location := _content.location(LOCATION_ID)
 	var location_name := location.display_name(_current_locale()) if location != null else ""
-	_draw_text(location_name, Vector2(229, 58), 76, HORIZONTAL_ALIGNMENT_CENTER)
-	_draw_wrapped(&"ui.slice.map.body", Rect2(228, 72, 78, 62), 5)
+	_draw_text(location_name, Vector2(207, 58), 98, HORIZONTAL_ALIGNMENT_CENTER, 6)
+	_draw_wrapped(&"ui.slice.map.body", Rect2(206, 72, 100, 62), 5)
 	_draw_footer(&"ui.slice.map.confirm", foreground, background)
 
 
