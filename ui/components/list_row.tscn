@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://ui/components/ListRow.gd" id="1_row"]
+[ext_resource type="PackedScene" path="res://ui/components/focus_marker.tscn" id="2_focus"]
+
+[node name="ListRow" type="Control" groups=["menu_row"]]
+custom_minimum_size = Vector2(48, 16)
+mouse_filter = 0
+script = ExtResource("1_row")
+
+[node name="FocusMarker" parent="." instance=ExtResource("2_focus")]
+layout_mode = 1

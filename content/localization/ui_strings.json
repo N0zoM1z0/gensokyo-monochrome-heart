@@ -1,6 +1,9 @@
 {
   "schema": "gmh-ui-localization-v1",
   "strings": [
+	{"key": "ui.accessibility.help", "en": "CHOOSE A PRESET. CHANGE IT ANY TIME.", "ja": "プリセットを選択。後から変更できます。"},
+	{"key": "ui.accessibility.title", "en": "ACCESSIBILITY PRESET", "ja": "アクセシビリティ設定"},
+	{"key": "ui.common.cancel", "en": "BACK", "ja": "もどる"},
     {"key": "ui.common.confirm", "en": "CONFIRM", "ja": "決定"},
     {"key": "ui.common.off", "en": "OFF", "ja": "オフ"},
     {"key": "ui.common.on", "en": "ON", "ja": "オン"},
@@ -14,6 +17,7 @@
     {"key": "ui.options.help", "en": "CHANGES PREVIEW LIVE. CANCEL RESTORES THE OPENING VALUES.", "ja": "変更はすぐ確認できます。キャンセルで元に戻します。"},
     {"key": "ui.options.language", "en": "LANGUAGE", "ja": "言語"},
     {"key": "ui.options.low_motion", "en": "LOW MOTION", "ja": "低モーション"},
+	{"key": "ui.options.profile", "en": "PRESENTATION", "ja": "表示スタイル"},
     {"key": "ui.options.safe_flash", "en": "SAFE FLASH", "ja": "安全な点滅"},
     {"key": "ui.options.title", "en": "OPTIONS", "ja": "オプション"},
     {"key": "ui.pause.options", "en": "OPTIONS", "ja": "オプション"},

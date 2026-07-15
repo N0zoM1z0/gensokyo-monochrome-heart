@@ -17,6 +17,8 @@ LocalizationService="*res://src/autoload/LocalizationService.gd"
 InputGlyphService="*res://src/autoload/InputGlyphService.gd"
 FocusRouter="*res://src/autoload/FocusRouter.gd"
 AccessibilityState="*res://src/autoload/AccessibilityState.gd"
+UiThemeRegistry="*res://src/autoload/UiThemeRegistry.gd"
+LocalizationMeasure="*res://src/autoload/LocalizationMeasure.gd"
 
 [display]
 

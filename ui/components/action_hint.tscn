@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/components/ActionHint.gd" id="1_hint"]
+
+[node name="ActionHint" type="Control"]
+custom_minimum_size = Vector2(36, 12)
+mouse_filter = 2
+script = ExtResource("1_hint")
