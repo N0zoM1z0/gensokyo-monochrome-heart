@@ -49,6 +49,7 @@ var _visual_cue_seconds: float = 0.0
 var _border_pulse_seconds: float = 0.0
 var _is_reduced_motion: bool = false
 var _is_safe_flash: bool = false
+var _no_flash_active: bool = false
 
 @onready var sfx_player: ProceduralSfxPlayer = %ProceduralSfxPlayer
 
@@ -192,6 +193,27 @@ func action_contract() -> PackedStringArray:
 	return PackedStringArray(ACTION_CONTRACT)
 
 
+func resolve_input_candidates(candidates: Array[StringName]) -> StringName:
+	if final_result != null or (runtime != null and runtime.is_paused):
+		return GameInput.first_matching(candidates, [
+			GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.CONFIRM,
+			GameInput.CANCEL, GameInput.PAUSE,
+		])
+	return GameInput.first_matching(candidates, [
+		GameInput.PAUSE,
+		GameInput.SHOT,
+		GameInput.FOCUS,
+		GameInput.BOMB,
+		GameInput.COMPANION,
+		GameInput.MOVE_UP,
+		GameInput.MOVE_DOWN,
+		GameInput.MOVE_LEFT,
+		GameInput.MOVE_RIGHT,
+		GameInput.CONFIRM,
+		GameInput.CANCEL,
+	])
+
+
 func current_result() -> ModeResult:
 	return final_result
 
@@ -223,8 +245,10 @@ func capture_debug_state() -> Dictionary:
 		"pool_capacity": runtime.pool.capacity if runtime != null else 0,
 		"intro_ticks": _intro_ticks_remaining,
 		"resume_countdown_ticks": _resume_countdown_ticks,
-		"paused": runtime.is_paused if runtime != null else false,
-		"result": String(final_result.result_tag) if final_result != null else "",
+			"paused": runtime.is_paused if runtime != null else false,
+			"no_flash": _no_flash_active,
+			"flash_border_active": _border_pulse_seconds > 0.0,
+			"result": String(final_result.result_tag) if final_result != null else "",
 	}, true)
 	return debug
 
@@ -246,6 +270,7 @@ func _load_runtime() -> void:
 		push_error("Boundary Stain pattern could not load: %s" % [loader.errors])
 		return
 	var settings := _resolved_assists()
+	_no_flash_active = settings.no_flash
 	host = DanmakuHost.new()
 	host.result_ready.connect(_on_result_ready)
 	host.phase_checkpoint.connect(_on_phase_checkpoint)
@@ -373,7 +398,7 @@ func _step_runtime(frame: DanmakuInputFrame) -> ModeResult:
 		_show_cue(&"ui.danmaku.visual.graze", &"sfx.danmaku.graze", 620.0, 0.045)
 	if runtime.state.bombs_used > previous_bombs:
 		_show_cue(&"ui.danmaku.visual.bomb", &"sfx.danmaku.bomb", 170.0, 0.18)
-		_border_pulse_seconds = 0.24
+		_border_pulse_seconds = 0.0 if _no_flash_active else 0.24
 	return result
 
 
@@ -498,7 +523,7 @@ func _draw_field_shell(foreground: Color, background: Color) -> void:
 	var font := _font()
 	draw_string(font, Vector2(8, 11), _catalog.text(runtime.current_phase().title_key, _locale), HORIZONTAL_ALIGNMENT_LEFT, 214, 7, foreground)
 	draw_string(font, Vector2(8, 175), _catalog.text(&"ui.danmaku.controls", _locale), HORIZONTAL_ALIGNMENT_CENTER, 304, 7, foreground)
-	if _border_pulse_seconds > 0.0:
+	if _border_pulse_seconds > 0.0 and not _no_flash_active:
 		draw_rect(FIELD_FRAME.grow(-2), foreground, false, 2.0)
 
 

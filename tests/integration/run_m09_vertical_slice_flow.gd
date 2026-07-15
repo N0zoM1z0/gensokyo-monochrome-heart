@@ -72,6 +72,10 @@ func _run() -> void:
 		and danmaku.assist_settings.no_flash,
 		"Story preset did not inject the complete Boundary Stain assist set"
 	)
+	_expect(
+		_slice.resolve_input_candidates([GameInput.CANCEL, GameInput.FOCUS, GameInput.HEAVY]) == GameInput.FOCUS,
+		"shared B/X binding did not resolve exclusively to Focus during danmaku"
+	)
 	_slice.music_player.advance_for_test(AdaptiveTestTonePlayer.BAR_SECONDS)
 	_expect(_slice.music_player.current_state_id == &"mus_border_crossing", "boundary music did not change at a bar boundary")
 	_expect(_slice.submit_mode_result_for_test(&"assist_clear", 3), "typed Assist Clear could not return from Boundary Stain")
@@ -89,6 +93,10 @@ func _run() -> void:
 		and fighter.assist_settings.auto_face
 		and fighter.assist_settings.no_flash,
 		"Story preset did not inject the complete compact-fighter assist set"
+	)
+	_expect(
+		_slice.resolve_input_candidates([GameInput.CANCEL, GameInput.FOCUS, GameInput.HEAVY]) == GameInput.HEAVY,
+		"shared B/X binding did not resolve exclusively to Heavy during the duel"
 	)
 	_slice.music_player.advance_for_test(AdaptiveTestTonePlayer.BAR_SECONDS)
 	_expect(_slice.music_player.current_state_id == &"mus_shrine_duel", "duel music did not change at a bar boundary")

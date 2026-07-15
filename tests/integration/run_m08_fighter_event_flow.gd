@@ -45,6 +45,7 @@ func _run_win_branch(graph: EventGraphRecord) -> void:
 	assists.hold_to_guard = true
 	assists.speed_percent = 70
 	assists.auto_face = true
+	assists.no_flash = true
 	var mode := MODE_SCENE.instantiate() as CompactFighterMode
 	if mode == null:
 		_failures.append("compact fighter Win scene could not be instantiated")
@@ -104,6 +105,11 @@ func _run_win_branch(graph: EventGraphRecord) -> void:
 	_expect(
 		mode.runtime.states[0].breaks_won == 1 and mode.current_result() == null,
 		"first forced Spell Break did not reset into the second phase"
+	)
+	_expect(
+		bool(mode.capture_debug_state().get("no_flash", false))
+		and not bool(mode.capture_debug_state().get("flash_border_active", true)),
+		"no-flash fighter still armed its high-contrast Spell Break border"
 	)
 	mode.force_spell_break_for_test(0)
 	var win := mode.current_result()

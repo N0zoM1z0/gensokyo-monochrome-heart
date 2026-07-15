@@ -254,6 +254,20 @@ func action_contract() -> PackedStringArray:
 	return PackedStringArray(ACTION_CONTRACT)
 
 
+func resolve_input_candidates(candidates: Array[StringName]) -> StringName:
+	return GameInput.first_matching(candidates, [
+		GameInput.FOCUS,
+		GameInput.COMPANION,
+		GameInput.JOURNAL,
+		GameInput.CONFIRM,
+		GameInput.MOVE_UP,
+		GameInput.MOVE_DOWN,
+		GameInput.MOVE_LEFT,
+		GameInput.MOVE_RIGHT,
+		GameInput.CANCEL,
+	])
+
+
 func capture_debug_state() -> Dictionary:
 	var state := super.capture_debug_state()
 	state.merge({

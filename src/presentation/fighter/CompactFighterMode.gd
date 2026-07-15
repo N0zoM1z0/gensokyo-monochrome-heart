@@ -46,6 +46,7 @@ var _input_history := PackedInt32Array()
 var _stress_effects: int = 0
 var _is_reduced_motion: bool = false
 var _is_safe_flash: bool = false
+var _no_flash_active: bool = false
 
 @onready var sfx_player: ProceduralSfxPlayer = %ProceduralSfxPlayer
 
@@ -203,6 +204,28 @@ func action_contract() -> PackedStringArray:
 	return PackedStringArray(ACTION_CONTRACT)
 
 
+func resolve_input_candidates(candidates: Array[StringName]) -> StringName:
+	if final_result != null or _training_overlay or (runtime != null and runtime.is_paused):
+		return GameInput.first_matching(candidates, [
+			GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.MOVE_LEFT,
+			GameInput.MOVE_RIGHT, GameInput.CONFIRM, GameInput.CANCEL, GameInput.PAUSE,
+		])
+	return GameInput.first_matching(candidates, [
+		GameInput.PAUSE,
+		GameInput.LIGHT,
+		GameInput.HEAVY,
+		GameInput.SKILL,
+		GameInput.SPELL,
+		GameInput.GUARD,
+		GameInput.MOVE_UP,
+		GameInput.MOVE_DOWN,
+		GameInput.MOVE_LEFT,
+		GameInput.MOVE_RIGHT,
+		GameInput.CONFIRM,
+		GameInput.CANCEL,
+	])
+
+
 func state_snapshot() -> String:
 	return runtime.canonical_snapshot() if runtime != null else ""
 
@@ -246,8 +269,10 @@ func capture_debug_state() -> Dictionary:
 		"hurtbox": runtime.current_hurtbox(0) if runtime != null else Rect2i(),
 		"paused": runtime.is_paused if runtime != null else false,
 		"training": _training_overlay,
-		"resume_countdown_ticks": _resume_countdown_ticks,
-		"result": String(final_result.result_tag) if final_result != null else "",
+			"resume_countdown_ticks": _resume_countdown_ticks,
+			"no_flash": _no_flash_active,
+			"flash_border_active": _border_stamp_seconds > 0.0,
+			"result": String(final_result.result_tag) if final_result != null else "",
 	}, true)
 	return debug
 
@@ -270,6 +295,7 @@ func _load_runtime() -> void:
 		return
 	var settings := assist_settings.duplicate_settings()
 	settings.no_flash = settings.no_flash or _is_safe_flash
+	_no_flash_active = settings.no_flash
 	settings.reduced_motion = settings.reduced_motion or _is_reduced_motion
 	if fixture_state in ["training", "stress"]:
 		settings.simple_inputs = true
@@ -424,7 +450,7 @@ func _step_runtime(
 			210.0,
 			0.07
 		)
-		_border_stamp_seconds = 0.18
+		_border_stamp_seconds = 0.0 if _no_flash_active else 0.18
 	if runtime.states[0].temperament >= old_player_temperament + 100:
 		_show_cue(&"ui.fighter.cue.neutral_reset", &"sfx.fighter.temperament", 520.0, 0.08)
 	if runtime.states[1].firepower_level > old_marisa_firepower:
@@ -512,7 +538,7 @@ func _on_spell_break(_checkpoint: String) -> void:
 	_break_banner_ticks = 30
 	checkpoint_requested.emit(&"fighter_spell_break")
 	_show_cue(&"ui.fighter.cue.spell_break", &"sfx.fighter.spell_break", 330.0, 0.15)
-	_border_stamp_seconds = 0.28
+	_border_stamp_seconds = 0.0 if _no_flash_active else 0.28
 	queue_redraw()
 
 
@@ -570,7 +596,7 @@ func _draw() -> void:
 		_draw_training(foreground, background)
 	if _resume_countdown_ticks > 0:
 		_draw_resume_countdown(foreground, background)
-	if _border_stamp_seconds > 0.0:
+	if _border_stamp_seconds > 0.0 and not _no_flash_active:
 		draw_rect(ARENA_FRAME.grow(-2), foreground, false, 2.0)
 
 

@@ -66,6 +66,16 @@ func _run_clear_branch(graph: EventGraphRecord) -> void:
 	var held := _input_frame(0, 0, true, true)
 	mode.step_fixture(120, held)
 	var deterministic_snapshot := mode.state_snapshot()
+	var bomb_frame := held.duplicate_frame()
+	bomb_frame.bomb_pressed = true
+	mode.step_fixture(1, bomb_frame)
+	_expect(
+		bool(mode.capture_debug_state().get("no_flash", false))
+		and not bool(mode.capture_debug_state().get("flash_border_active", true)),
+		"no-flash danmaku still armed its high-contrast border pulse"
+	)
+	mode.retry_phase_for_test()
+	mode.step_fixture(120, held)
 	mode.pause_for_test()
 	mode.step_fixture(60, held)
 	_expect(
@@ -92,7 +102,7 @@ func _run_clear_branch(graph: EventGraphRecord) -> void:
 		clear_result != null
 		and clear_result.result_tag == &"clear"
 		and clear_result.telemetry != null
-		and clear_result.telemetry.attempt_count == 3,
+		and clear_result.telemetry.attempt_count == 4,
 		"real Boundary Stain scene did not return a typed clear with retry telemetry"
 	)
 	_expect(

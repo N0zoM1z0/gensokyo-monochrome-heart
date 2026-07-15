@@ -17,6 +17,7 @@ var _is_resuming: bool = false
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	input_router.process_mode = Node.PROCESS_MODE_ALWAYS
+	input_router.set_action_candidate_resolver(_resolve_input_candidates)
 	input_router.semantic_action_pressed.connect(_on_semantic_action_pressed)
 	scene_router.route_completed.connect(_on_route_completed)
 	_boot.call_deferred()
@@ -297,3 +298,31 @@ func _pop_focus() -> StringName:
 func _release_active_inputs() -> void:
 	for action: StringName in GameInput.ALL_ACTIONS:
 		Input.action_release(action)
+
+
+func _resolve_input_candidates(candidates: Array[StringName]) -> StringName:
+	if modal_options_screen != null and is_instance_valid(modal_options_screen):
+		return _resolve_ui_candidates(candidates)
+	if pause_screen != null and is_instance_valid(pause_screen):
+		return _resolve_ui_candidates(candidates)
+	var active_screen := scene_router.current_screen
+	if active_screen != null and active_screen.has_method("resolve_input_candidates"):
+		return StringName(active_screen.call("resolve_input_candidates", candidates))
+	if scene_router.current_screen_id in [&"foundation_mode", &"vertical_slice"] and GameInput.PAUSE in candidates:
+		return GameInput.PAUSE
+	return _resolve_ui_candidates(candidates)
+
+
+func _resolve_ui_candidates(candidates: Array[StringName]) -> StringName:
+	return GameInput.first_matching(candidates, [
+		GameInput.MOVE_UP,
+		GameInput.MOVE_DOWN,
+		GameInput.MOVE_LEFT,
+		GameInput.MOVE_RIGHT,
+		GameInput.CONFIRM,
+		GameInput.CANCEL,
+		GameInput.PAGE_LEFT,
+		GameInput.PAGE_RIGHT,
+		GameInput.PAUSE,
+		GameInput.MENU,
+	])

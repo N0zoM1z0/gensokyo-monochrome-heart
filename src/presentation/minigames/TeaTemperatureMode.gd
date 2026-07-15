@@ -194,6 +194,24 @@ func action_contract() -> PackedStringArray:
 	return PackedStringArray(ACTION_CONTRACT)
 
 
+func resolve_input_candidates(candidates: Array[StringName]) -> StringName:
+	if tea == null:
+		return GameInput.first_matching(candidates, [GameInput.CONFIRM, GameInput.CANCEL])
+	if tea.is_paused or tea.state.phase in [TeaTemperatureState.Phase.TUTORIAL, TeaTemperatureState.Phase.RESULT]:
+		return GameInput.first_matching(candidates, [
+			GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.CONFIRM,
+			GameInput.CANCEL, GameInput.PAUSE,
+		])
+	return GameInput.first_matching(candidates, [
+		GameInput.PAUSE,
+		GameInput.FOCUS,
+		GameInput.CONFIRM,
+		GameInput.MOVE_LEFT,
+		GameInput.MOVE_RIGHT,
+		GameInput.CANCEL,
+	])
+
+
 func capture_debug_state() -> Dictionary:
 	var state := super.capture_debug_state()
 	state.merge({

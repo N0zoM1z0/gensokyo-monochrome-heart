@@ -11,6 +11,7 @@ func run() -> Array[String]:
 	_validate_input_map(failures)
 	_validate_fighter_keyboard_controller_bindings(failures)
 	_validate_glyph_hot_swap(failures)
+	_validate_contextual_action_arbitration(failures)
 	_validate_focus_stack(failures)
 	_validate_accessibility_presets(failures)
 	return failures
@@ -65,6 +66,42 @@ func _validate_glyph_hot_swap(failures: Array[String]) -> void:
 	if service.glyph_key(GameInput.CANCEL) != &"input.glyph.keyboard.cancel":
 		failures.append("keyboard cancel glyph key is incorrect after hot-swap")
 	service.free()
+
+
+func _validate_contextual_action_arbitration(failures: Array[String]) -> void:
+	InputMapInstaller.install_defaults(true)
+	var router := InputRouter.new()
+	var priorities: Array = [GameInput.FOCUS, GameInput.CANCEL, GameInput.HEAVY]
+	router.set_action_candidate_resolver(func(candidates: Array[StringName]) -> StringName:
+		return GameInput.first_matching(candidates, priorities)
+	)
+	var x_key := InputEventKey.new()
+	x_key.physical_keycode = KEY_X
+	x_key.pressed = true
+	var focus_actions := router.resolve_event_actions_for_test(x_key)
+	if focus_actions != [GameInput.FOCUS]:
+		failures.append("shared X binding emitted more than contextual Focus: %s" % [focus_actions])
+	priorities = [GameInput.HEAVY, GameInput.CANCEL, GameInput.FOCUS]
+	router.set_action_candidate_resolver(func(candidates: Array[StringName]) -> StringName:
+		return GameInput.first_matching(candidates, priorities)
+	)
+	var b_button := InputEventJoypadButton.new()
+	b_button.button_index = JOY_BUTTON_B
+	b_button.pressed = true
+	var heavy_actions := router.resolve_event_actions_for_test(b_button)
+	if heavy_actions != [GameInput.HEAVY]:
+		failures.append("shared controller B binding emitted more than contextual Heavy: %s" % [heavy_actions])
+	priorities = [GameInput.PAUSE, GameInput.CANCEL, GameInput.MENU]
+	router.set_action_candidate_resolver(func(candidates: Array[StringName]) -> StringName:
+		return GameInput.first_matching(candidates, priorities)
+	)
+	var escape_key := InputEventKey.new()
+	escape_key.physical_keycode = KEY_ESCAPE
+	escape_key.pressed = true
+	var pause_actions := router.resolve_event_actions_for_test(escape_key)
+	if pause_actions != [GameInput.PAUSE]:
+		failures.append("shared Escape binding emitted more than contextual Pause: %s" % [pause_actions])
+	router.free()
 
 
 func _validate_focus_stack(failures: Array[String]) -> void:

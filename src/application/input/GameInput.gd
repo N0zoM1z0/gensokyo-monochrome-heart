@@ -49,3 +49,11 @@ const ALL_ACTIONS := [
 	SPELL,
 	MENU,
 ]
+
+
+static func first_matching(candidates: Array[StringName], priorities: Array) -> StringName:
+	for action: Variant in priorities:
+		var action_id := StringName(action)
+		if action_id in candidates:
+			return action_id
+	return candidates[0] if not candidates.is_empty() else &""

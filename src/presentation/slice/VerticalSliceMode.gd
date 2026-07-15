@@ -164,6 +164,33 @@ func action_contract() -> PackedStringArray:
 	return PackedStringArray(ACTION_CONTRACT)
 
 
+func resolve_input_candidates(candidates: Array[StringName]) -> StringName:
+	if GameInput.PAUSE in candidates:
+		return GameInput.PAUSE
+	if _active_mode != null and _active_mode.has_method("resolve_input_candidates"):
+		return StringName(_active_mode.call("resolve_input_candidates", candidates))
+	match _phase:
+		Phase.EVENT_LINE:
+			return GameInput.first_matching(candidates, [
+				GameInput.PAGE_LEFT, GameInput.PAGE_RIGHT, GameInput.JOURNAL,
+				GameInput.FOCUS, GameInput.CONFIRM, GameInput.CANCEL,
+			])
+		Phase.EVENT_CHOICE:
+			return GameInput.first_matching(candidates, [
+				GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.MOVE_LEFT,
+				GameInput.MOVE_RIGHT, GameInput.CONFIRM, GameInput.CANCEL,
+			])
+		Phase.JOURNAL, Phase.REPLAY_COMPLETE:
+			return GameInput.first_matching(candidates, [
+				GameInput.PAGE_LEFT, GameInput.PAGE_RIGHT, GameInput.CONFIRM, GameInput.CANCEL,
+			])
+		_:
+			return GameInput.first_matching(candidates, [
+				GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.MOVE_LEFT,
+				GameInput.MOVE_RIGHT, GameInput.CONFIRM, GameInput.CANCEL,
+			])
+
+
 func phase_id() -> StringName:
 	match _phase:
 		Phase.INVITATION:
