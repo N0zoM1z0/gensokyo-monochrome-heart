@@ -4,7 +4,8 @@
 /build/
 /dist/
 /reports/generated/
-/tests/screenshots/generated/
+/tests/screenshots/generated/*
+!/tests/screenshots/generated/.gdignore
 /preparation/
 
 # Godot mistakes the reviewed data tables for translation catalogs. These

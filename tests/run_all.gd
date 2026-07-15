@@ -8,6 +8,7 @@ func _initialize() -> void:
 		TestFontAssets.new(),
 		TestJsonSchemaValidator.new(),
 		TestPresentationFoundation.new(),
+		TestScreenshotFixture.new(),
 		TestVisualValidators.new(),
 	]
 	var failures: Array[String] = []
