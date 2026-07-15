@@ -8,6 +8,7 @@ const EVENT_INDEX_PATH := "res://content/events/events.json"
 const EVENT_GRAPH_PATH := "res://content/events/sample_event_empty_cushion.json"
 const DIALOGUE_PATH := "res://content/dialogue/dialogue_samples.json"
 const LOCALIZATION_PATH := "res://content/localization/strings.csv"
+const UI_LOCALIZATION_PATH := "res://content/localization/ui_strings.json"
 const DEFERRED_PATH := "res://content/indexes/deferred_references.json"
 const SCHEMA_DIR := "res://schemas"
 
@@ -31,11 +32,14 @@ func validate_project() -> ContentValidationReport:
 	var event_index_data: Variant = _load_json(EVENT_INDEX_PATH)
 	var dialogue_data: Variant = _load_json(DIALOGUE_PATH)
 	var event_graph_data: Variant = _load_json(EVENT_GRAPH_PATH)
+	var ui_localization_data: Variant = _load_json(UI_LOCALIZATION_PATH)
 	_validate_schema_instance(character_data, &"character_index.schema.json", CHARACTER_PATH)
 	_validate_schema_instance(location_data, &"location_index.schema.json", LOCATION_PATH)
 	_validate_schema_instance(event_index_data, &"event_index.schema.json", EVENT_INDEX_PATH)
 	_validate_schema_instance(event_graph_data, &"event_graph.schema.json", EVENT_GRAPH_PATH)
+	_validate_schema_instance(ui_localization_data, &"ui_localization.schema.json", UI_LOCALIZATION_PATH)
 	_validate_localization()
+	_validate_ui_localization(ui_localization_data)
 	_validate_characters(character_data)
 	_validate_locations(location_data)
 	_validate_event_index(event_index_data)
@@ -95,6 +99,7 @@ func _validate_schema_inventory() -> void:
 		"location_index.schema.json",
 		"minigame.schema.json",
 		"save_envelope.schema.json",
+		"ui_localization.schema.json",
 	]
 	for filename: String in required:
 		var path := "%s/%s" % [SCHEMA_DIR, filename]
@@ -247,6 +252,20 @@ func _validate_localization() -> void:
 		else:
 			_localization[key] = true
 	_report.add_note("loaded %d bilingual localization keys" % _localization.size())
+
+
+func _validate_ui_localization(data: Variant) -> void:
+	var records: Array = _require_array(data, "strings", UI_LOCALIZATION_PATH)
+	for raw_record: Variant in records:
+		if not raw_record is Dictionary or not raw_record.has("key"):
+			_report.add_error("invalid UI localization record in %s" % UI_LOCALIZATION_PATH)
+			continue
+		var key := StringName(raw_record.key)
+		if _localization.has(key):
+			_report.add_error("duplicate localization key across catalogs: %s" % key)
+		else:
+			_localization[key] = true
+	_report.add_note("loaded %d total localization keys after UI catalog" % _localization.size())
 
 
 func _validate_event_graph(data: Variant) -> void:

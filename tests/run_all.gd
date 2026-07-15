@@ -6,7 +6,9 @@ func _initialize() -> void:
 	var suites: Array[RefCounted] = [
 		TestContentValidator.new(),
 		TestFontAssets.new(),
+		TestInputFoundation.new(),
 		TestJsonSchemaValidator.new(),
+		TestLocalizationFoundation.new(),
 		TestPresentationFoundation.new(),
 		TestReleasePlaceholderScanner.new(),
 		TestScreenshotFixture.new(),
