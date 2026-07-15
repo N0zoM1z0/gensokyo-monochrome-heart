@@ -79,6 +79,15 @@ func _expect_packed_pool_and_safe_exhaustion(failures: Array[String]) -> void:
 	var source := FileAccess.get_file_as_string("res://src/application/danmaku/DanmakuBulletPool.gd")
 	if source.contains("extends Node") or source.contains("Node2D"):
 		failures.append("bullet pool introduced a Node per bullet")
+	var renderer_source := FileAccess.get_file_as_string(
+		"res://src/presentation/danmaku/DanmakuBulletBatchRenderer.gd"
+	)
+	if (
+		DanmakuBulletBatchRenderer.Batch.COUNT != 8
+		or not renderer_source.contains("draw_multimesh")
+		or not renderer_source.contains("extends RefCounted")
+	):
+		failures.append("presentation lost its eight-batch MultiMesh/no-bullet-Node contract")
 
 
 func _expect_movement_pause_and_phase_retry(failures: Array[String]) -> void:

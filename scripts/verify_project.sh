@@ -79,7 +79,19 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://src/presentation/minigames/TeaTemperatureMode.tscn \
 	--scene=res://tests/ui/fixtures/TeaTemperatureActiveFixture.tscn \
 	--scene=res://tests/ui/fixtures/TeaTemperatureAssistFixture.tscn \
-	--scene=res://tests/ui/fixtures/TeaTemperatureResultFixture.tscn
+	--scene=res://tests/ui/fixtures/TeaTemperatureResultFixture.tscn \
+	--scene=res://src/presentation/danmaku/BoundaryStainMode.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainSpellFixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainPhase1Fixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainFocusFixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainBombFixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainPhase2Fixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainPhase3Fixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainPausedFixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainResultFixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainLossFixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainAssistClearFixture.tscn \
+	--scene=res://tests/ui/fixtures/BoundaryStainStressFixture.tscn
 run_checked "release validation" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_release.gd -- --release
 run_checked "headless tests" "$GODOT_BIN" --headless --path . \
@@ -99,6 +111,8 @@ run_checked "M05 exploration integration" env XDG_DATA_HOME="$LOG_DIR/user-data"
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m05_exploration_flow.gd
 run_checked "M06 tea event integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m06_tea_event_flow.gd
+run_checked "M07 Boundary Stain event integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m07_boundary_stain_event_flow.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
@@ -141,6 +155,14 @@ else
 	run_checked "M04 screenshot matrix" ./scripts/capture_m04_screenshots.sh
 	run_checked "M05 screenshot matrix" ./scripts/capture_m05_screenshots.sh
 	run_checked "M06 screenshot matrix" ./scripts/capture_m06_screenshots.sh
+	run_checked "M07 screenshot matrix" ./scripts/capture_m07_screenshots.sh
+	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
+		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
+		--rendering-driver opengl3 \
+		--audio-driver Dummy \
+		--disable-vsync \
+		--path . \
+		--script res://tests/performance/run_m07_render_stress.gd
 fi
 
 echo "Foundation verification passed."
