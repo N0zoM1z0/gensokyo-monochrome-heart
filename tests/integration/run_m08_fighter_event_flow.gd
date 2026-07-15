@@ -56,6 +56,24 @@ func _run_win_branch(graph: EventGraphRecord) -> void:
 	mode.mode_completed.connect(func(result: ModeResult) -> void: emitted_results.append(result))
 	get_root().add_child(mode)
 	await process_frame
+	var tutorial_snapshot := mode.state_snapshot()
+	await physics_frame
+	await physics_frame
+	_expect(
+		bool(mode.capture_debug_state().get("tutorial_waiting", false))
+		and mode.state_snapshot() == tutorial_snapshot,
+		"compact fighter advanced before the player confirmed its tutorial"
+	)
+	_expect(
+		mode.resolve_input_candidates([GameInput.LIGHT, GameInput.CONFIRM]) == GameInput.CONFIRM,
+		"fighter tutorial did not arbitrate the shared start/light binding as Confirm"
+	)
+	mode.handle_semantic_action(GameInput.CONFIRM)
+	_expect(
+		not bool(mode.capture_debug_state().get("tutorial_waiting", true))
+		and int(mode.capture_debug_state().get("start_release_ticks", 0)) == 3,
+		"fighter tutorial did not arm its start-button release guard"
+	)
 	mode.suspend()
 
 	_expect(

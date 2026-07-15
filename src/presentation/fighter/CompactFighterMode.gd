@@ -4,6 +4,7 @@ extends GameMode
 
 const DUEL_PATH := "res://content/fighter/reimu_marisa_duel.json"
 const FIXED_DELTA := 1.0 / float(FighterDuelSimulation.TICKS_PER_SECOND)
+const START_RELEASE_TICKS := 3
 const ARENA_FRAME := Rect2(4, 39, 312, 114)
 const FOOTER_FRAME := Rect2(4, 155, 312, 21)
 const ACTION_CONTRACT := [
@@ -30,6 +31,8 @@ var _latin_font: Font
 var _japanese_font: Font
 var _fixed_accumulator: float = 0.0
 var _intro_ticks_remaining: int = 45
+var _tutorial_waiting: bool = true
+var _start_release_ticks: int = 0
 var _break_banner_ticks: int = 0
 var _resume_countdown_ticks: int = 0
 var _pause_focus: int = 0
@@ -105,7 +108,14 @@ func _physics_process(delta: float) -> void:
 		return
 	_fixed_accumulator = minf(_fixed_accumulator + delta, FIXED_DELTA * 4.0)
 	while _fixed_accumulator >= FIXED_DELTA:
-		if _resume_countdown_ticks > 0:
+		if _tutorial_waiting:
+			pass
+		elif _start_release_ticks > 0:
+			if Input.is_action_pressed(GameInput.CONFIRM) or Input.is_action_pressed(GameInput.LIGHT):
+				_start_release_ticks = START_RELEASE_TICKS
+			else:
+				_start_release_ticks -= 1
+		elif _resume_countdown_ticks > 0:
 			_resume_countdown_ticks -= 1
 		elif _intro_ticks_remaining > 0:
 			_intro_ticks_remaining -= 1
@@ -139,6 +149,23 @@ func handle_semantic_action(action: StringName) -> bool:
 		return _handle_training_action(action)
 	if runtime.is_paused:
 		return _handle_pause_action(action)
+	if _tutorial_waiting:
+		if action == GameInput.CONFIRM:
+			_tutorial_waiting = false
+			_start_release_ticks = START_RELEASE_TICKS
+			_intro_ticks_remaining = 0
+			_queued_action = &""
+			queue_redraw()
+			return true
+		if action in [GameInput.PAUSE, GameInput.CANCEL]:
+			host.toggle_pause()
+			_pause_focus = 0
+			queue_redraw()
+			return true
+		return action in [
+			GameInput.LIGHT, GameInput.HEAVY, GameInput.SKILL, GameInput.SPELL, GameInput.GUARD,
+			GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT,
+		]
 	if action in [GameInput.LIGHT, GameInput.HEAVY, GameInput.SKILL, GameInput.SPELL]:
 		_queued_action = action
 		return true
@@ -205,6 +232,11 @@ func action_contract() -> PackedStringArray:
 
 
 func resolve_input_candidates(candidates: Array[StringName]) -> StringName:
+	if _tutorial_waiting:
+		return GameInput.first_matching(candidates, [
+			GameInput.CONFIRM, GameInput.LIGHT, GameInput.HEAVY, GameInput.SKILL,
+			GameInput.SPELL, GameInput.GUARD, GameInput.PAUSE, GameInput.CANCEL,
+		])
 	if final_result != null or _training_overlay or (runtime != null and runtime.is_paused):
 		return GameInput.first_matching(candidates, [
 			GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.MOVE_LEFT,
@@ -269,6 +301,8 @@ func capture_debug_state() -> Dictionary:
 		"hurtbox": runtime.current_hurtbox(0) if runtime != null else Rect2i(),
 		"paused": runtime.is_paused if runtime != null else false,
 		"training": _training_overlay,
+		"tutorial_waiting": _tutorial_waiting,
+		"start_release_ticks": _start_release_ticks,
 			"resume_countdown_ticks": _resume_countdown_ticks,
 			"no_flash": _no_flash_active,
 			"flash_border_active": _border_stamp_seconds > 0.0,
@@ -311,7 +345,9 @@ func _load_runtime() -> void:
 	runtime = next_runtime
 	final_result = null
 	_fixed_accumulator = 0.0
-	_intro_ticks_remaining = 45
+	_tutorial_waiting = fixture_state == "live"
+	_start_release_ticks = 0
+	_intro_ticks_remaining = 0 if _tutorial_waiting else 45
 	_break_banner_ticks = 0
 	_resume_countdown_ticks = 0
 	_pause_focus = 0
@@ -523,6 +559,8 @@ func _retry_duel() -> void:
 	final_result = null
 	_fixed_accumulator = 0.0
 	_intro_ticks_remaining = 18
+	_tutorial_waiting = false
+	_start_release_ticks = 0
 	_break_banner_ticks = 0
 	_resume_countdown_ticks = 0
 	_pause_focus = 0
@@ -584,7 +622,7 @@ func _draw() -> void:
 	if _show_combat_boxes:
 		_draw_combat_boxes(foreground)
 	_draw_footer(foreground, background)
-	if _intro_ticks_remaining > 0:
+	if _tutorial_waiting or _intro_ticks_remaining > 0:
 		_draw_intro(foreground, background)
 	if _break_banner_ticks > 0:
 		_draw_break_banner(foreground, background)
@@ -728,13 +766,16 @@ func _draw_footer(foreground: Color, background: Color) -> void:
 
 func _draw_intro(foreground: Color, background: Color) -> void:
 	var font := _font()
-	draw_rect(Rect2(29, 60, 262, 67), background)
-	draw_rect(Rect2(29, 60, 262, 67), foreground, false, 2.0)
+	var panel := Rect2(29, 55, 262, 77) if _tutorial_waiting else Rect2(29, 60, 262, 67)
+	draw_rect(panel, background)
+	draw_rect(panel, foreground, false, 2.0)
 	draw_string(font, Vector2(36, 76), _catalog.text(&"ui.fighter.terms.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 248, 9, foreground)
 	draw_string(font, Vector2(36, 91), _catalog.text(&"ui.fighter.intro.rule", _locale), HORIZONTAL_ALIGNMENT_CENTER, 248, 7, foreground)
 	var lines := PixelTextWrapper.wrap(_catalog.text(&"ui.fighter.intro.objective", _locale), font, 240, 7, _locale, 2)
 	for index: int in range(lines.size()):
 		draw_string(font, Vector2(40, 108 + index * 9), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 240, 7, foreground)
+	if _tutorial_waiting:
+		draw_string(font, Vector2(40, 127), _catalog.text(&"ui.fighter.intro.start", _locale), HORIZONTAL_ALIGNMENT_CENTER, 240, 7, foreground)
 
 
 func _draw_break_banner(foreground: Color, background: Color) -> void:

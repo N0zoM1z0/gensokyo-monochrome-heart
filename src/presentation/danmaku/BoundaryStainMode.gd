@@ -4,6 +4,7 @@ extends GameMode
 
 const PATTERN_PATH := "res://content/danmaku/boundary_stain.json"
 const FIXED_DELTA := 1.0 / float(BoundaryStainSimulation.TICKS_PER_SECOND)
+const START_RELEASE_TICKS := 3
 const FIELD_TITLE_FRAME := Rect2(4, 4, 224, 8)
 const FIELD_FRAME := Rect2(4, 12, 224, 152)
 const FIELD_ORIGIN := Vector2(4, 12)
@@ -38,6 +39,8 @@ var _japanese_font: Font
 var _batch_renderer := DanmakuBulletBatchRenderer.new()
 var _fixed_accumulator: float = 0.0
 var _intro_ticks_remaining: int = 60
+var _tutorial_waiting: bool = true
+var _start_release_ticks: int = 0
 var _bomb_queued: bool = false
 var _margin_queued: bool = false
 var _pause_focus: int = 0
@@ -108,7 +111,14 @@ func _physics_process(delta: float) -> void:
 		return
 	_fixed_accumulator = minf(_fixed_accumulator + delta, FIXED_DELTA * 4.0)
 	while _fixed_accumulator >= FIXED_DELTA:
-		if _resume_countdown_ticks > 0:
+		if _tutorial_waiting:
+			pass
+		elif _start_release_ticks > 0:
+			if Input.is_action_pressed(GameInput.CONFIRM) or Input.is_action_pressed(GameInput.SHOT):
+				_start_release_ticks = START_RELEASE_TICKS
+			else:
+				_start_release_ticks -= 1
+		elif _resume_countdown_ticks > 0:
 			_resume_countdown_ticks -= 1
 		elif _intro_ticks_remaining > 0:
 			_intro_ticks_remaining -= 1
@@ -146,6 +156,22 @@ func handle_semantic_action(action: StringName) -> bool:
 		return false
 	if runtime.is_paused:
 		return _handle_pause_action(action)
+	if _tutorial_waiting:
+		if action == GameInput.CONFIRM:
+			_tutorial_waiting = false
+			_start_release_ticks = START_RELEASE_TICKS
+			_intro_ticks_remaining = 0
+			queue_redraw()
+			return true
+		if action in [GameInput.PAUSE, GameInput.CANCEL]:
+			host.toggle_pause()
+			_pause_focus = 0
+			queue_redraw()
+			return true
+		return action in [
+			GameInput.SHOT, GameInput.FOCUS, GameInput.BOMB, GameInput.COMPANION,
+			GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT,
+		]
 	if action == GameInput.BOMB:
 		_bomb_queued = true
 		return true
@@ -194,6 +220,11 @@ func action_contract() -> PackedStringArray:
 
 
 func resolve_input_candidates(candidates: Array[StringName]) -> StringName:
+	if _tutorial_waiting:
+		return GameInput.first_matching(candidates, [
+			GameInput.CONFIRM, GameInput.SHOT, GameInput.FOCUS, GameInput.BOMB,
+			GameInput.COMPANION, GameInput.PAUSE, GameInput.CANCEL,
+		])
 	if final_result != null or (runtime != null and runtime.is_paused):
 		return GameInput.first_matching(candidates, [
 			GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.CONFIRM,
@@ -244,6 +275,8 @@ func capture_debug_state() -> Dictionary:
 		"committed": runtime.pool.committed_count if runtime != null else 0,
 		"pool_capacity": runtime.pool.capacity if runtime != null else 0,
 		"intro_ticks": _intro_ticks_remaining,
+		"tutorial_waiting": _tutorial_waiting,
+		"start_release_ticks": _start_release_ticks,
 		"resume_countdown_ticks": _resume_countdown_ticks,
 			"paused": runtime.is_paused if runtime != null else false,
 			"no_flash": _no_flash_active,
@@ -281,7 +314,9 @@ func _load_runtime() -> void:
 		return
 	final_result = null
 	_fixed_accumulator = 0.0
-	_intro_ticks_remaining = 60
+	_tutorial_waiting = fixture_state == "live"
+	_start_release_ticks = 0
+	_intro_ticks_remaining = 0 if _tutorial_waiting else 60
 	_bomb_queued = false
 	_margin_queued = false
 	_pause_focus = 0
@@ -441,6 +476,8 @@ func _retry_phase() -> void:
 	final_result = null
 	_fixed_accumulator = 0.0
 	_intro_ticks_remaining = 24
+	_tutorial_waiting = false
+	_start_release_ticks = 0
 	_bomb_queued = false
 	_margin_queued = false
 	_resume_countdown_ticks = 0
@@ -495,7 +532,7 @@ func _draw() -> void:
 	_batch_renderer.draw_field(self, runtime, FIELD_ORIGIN, FIELD_SIZE, foreground, background)
 	_draw_boss_and_player(foreground, background)
 	_draw_status_rail(foreground, background)
-	if _intro_ticks_remaining > 0:
+	if _tutorial_waiting or _intro_ticks_remaining > 0:
 		_draw_intro(foreground, background)
 	if _resume_countdown_ticks > 0:
 		_draw_resume_countdown(foreground, background)
@@ -570,14 +607,17 @@ func _draw_status_rail(foreground: Color, background: Color) -> void:
 
 func _draw_intro(foreground: Color, background: Color) -> void:
 	var font := _font()
-	draw_rect(Rect2(18, 38, 196, 55), background)
-	draw_rect(Rect2(18, 38, 196, 55), foreground, false, 2.0)
+	var panel := Rect2(18, 34, 196, 67) if _tutorial_waiting else Rect2(18, 38, 196, 55)
+	draw_rect(panel, background)
+	draw_rect(panel, foreground, false, 2.0)
 	draw_string(font, Vector2(25, 51), _catalog.text(&"ui.danmaku.telegraph", _locale), HORIZONTAL_ALIGNMENT_CENTER, 182, 7, foreground)
 	var title_lines := PixelTextWrapper.wrap(_catalog.text(runtime.current_phase().title_key, _locale), font, 180, 8, _locale, 2)
 	for index: int in range(title_lines.size()):
 		draw_string(font, Vector2(26, 66 + index * 9), title_lines[index], HORIZONTAL_ALIGNMENT_CENTER, 180, 8, foreground)
 	var teaching_key: StringName = [&"ui.danmaku.boundary.teach.amulet", &"ui.danmaku.boundary.teach.offering", &"ui.danmaku.boundary.teach.memory"][runtime.state.phase_index]
 	draw_string(font, Vector2(26, 88), _catalog.text(teaching_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 180, 7, foreground)
+	if _tutorial_waiting:
+		draw_string(font, Vector2(26, 98), _catalog.text(&"ui.danmaku.tutorial.start", _locale), HORIZONTAL_ALIGNMENT_CENTER, 180, 7, foreground)
 
 
 func _draw_visual_cue(foreground: Color, background: Color) -> void:
