@@ -154,6 +154,23 @@ run_expected_failure "M11 schema-invalid agent output" "missing required propert
 	"$GODOT_BIN" --headless --path . --script res://src/tools/character_authoring.gd -- \
 	--action=validate-output --character-id=char.reimu_hakurei \
 	--input=res://tests/fixtures/invalid/authoring/missing_agent_japanese.json
+run_checked "M11 debug workbench registry" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/authoring_workbench.gd -- --action=list
+run_checked "M11 save migration workbench" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/authoring_workbench.gd -- \
+	--action=inspect --target=save.v1_route_affinity
+run_checked "M11 legal test-tone audition" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/authoring_workbench.gd -- \
+	--action=smoke --target=tone.shrine_day
+for workbench_target in scene.tea.active scene.danmaku.phase1 scene.fighter.hitbox; do
+	run_checked "M11 fixture smoke ${workbench_target}" "$GODOT_BIN" --headless --path . \
+		--script res://src/tools/authoring_workbench.gd -- \
+		--action=smoke --target="$workbench_target"
+done
+run_checked "M11 registered screenshot delegation" "$GODOT_BIN" --headless --path . \
+	--script res://src/tools/authoring_workbench.gd -- \
+	--action=screenshot --target=scene.fighter.hitbox \
+	--output="$LOG_DIR/m11-fighter-hitbox.png" --profile=A --locale=en --ui-scale=100
 run_checked "M11 event dependency report" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/author_event.gd -- \
 	--action=dependencies --bundle="$LOG_DIR/m11-authoring" \

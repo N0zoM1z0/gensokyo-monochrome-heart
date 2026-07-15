@@ -4,6 +4,7 @@ extends SceneTree
 
 func _initialize() -> void:
 	var suites: Array[RefCounted] = [
+		TestAuthoringWorkbench.new(),
 		TestCharacterAuthoringService.new(),
 		TestContentDB.new(),
 		TestContentRepository.new(),
