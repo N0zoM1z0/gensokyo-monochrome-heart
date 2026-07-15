@@ -363,62 +363,62 @@ func _draw() -> void:
 
 func _draw_shell(foreground: Color, background: Color) -> void:
 	var font := _japanese_font if _locale == &"ja" else _latin_font
-	draw_rect(Rect2(4, 3, 312, 15), background)
-	draw_rect(Rect2(4, 3, 312, 15), foreground, false, 1.0)
-	draw_string(font, Vector2(8, 14), _catalog.text(&"ui.minigame.tea.title", _locale), HORIZONTAL_ALIGNMENT_LEFT, 230, 8, foreground)
+	draw_rect(Rect2(4, 2, 312, 17), background)
+	draw_rect(Rect2(4, 2, 312, 17), foreground, false, 1.0)
+	draw_string(font, Vector2(8, 15), _catalog.text(&"ui.minigame.tea.title", _locale), HORIZONTAL_ALIGNMENT_LEFT, 230, _compact_font_size(), foreground)
 	var step := 1
 	if tea != null:
 		step = 3 if tea.is_paused else tea.state.phase + 1
-		draw_string(font, Vector2(256, 14), "%d/3" % mini(step, 3), HORIZONTAL_ALIGNMENT_RIGHT, 54, 8, foreground)
-	draw_rect(Rect2(4, 162, 312, 15), background)
-	draw_rect(Rect2(4, 162, 312, 15), foreground, false, 1.0)
+		draw_string(font, Vector2(256, 15), "%d/3" % mini(step, 3), HORIZONTAL_ALIGNMENT_RIGHT, 54, _compact_font_size(), foreground)
+	draw_rect(Rect2(4, 160, 312, 18), background)
+	draw_rect(Rect2(4, 160, 312, 18), foreground, false, 1.0)
 	var footer := (
 		_catalog.text(&"ui.minigame.tea.result.continue", _locale)
 		if tea != null and tea.state.phase == TeaTemperatureState.Phase.RESULT
 		else _catalog.text(&"ui.minigame.tea.controls", _locale)
 	)
-	draw_string(font, Vector2(8, 173), footer, HORIZONTAL_ALIGNMENT_LEFT, 304, 8, foreground)
+	draw_string(font, Vector2(8, 174), footer, HORIZONTAL_ALIGNMENT_CENTER, 304, _compact_font_size(), foreground)
 
 
 func _draw_tutorial(foreground: Color, background: Color) -> void:
 	var font := _japanese_font if _locale == &"ja" else _latin_font
 	draw_rect(Rect2(10, 24, 300, 130), background)
 	draw_rect(Rect2(10, 24, 300, 130), foreground, false, 2.0)
-	draw_string(font, Vector2(18, 40), _catalog.text(&"ui.minigame.tea.objective", _locale), HORIZONTAL_ALIGNMENT_CENTER, 284, 8, foreground)
-	var body := PixelTextWrapper.wrap(_catalog.text(&"ui.minigame.tea.tutorial.body", _locale), font, 258, 8, _locale, 3)
+	draw_string(font, Vector2(18, 41), _catalog.text(&"ui.minigame.tea.objective", _locale), HORIZONTAL_ALIGNMENT_CENTER, 284, _body_font_size(), foreground)
+	var body := PixelTextWrapper.wrap(_catalog.text(&"ui.minigame.tea.tutorial.body", _locale), font, 270, _body_font_size(), _locale, 3)
 	for index: int in range(body.size()):
-		draw_string(font, Vector2(31, 59 + index * 11), body[index], HORIZONTAL_ALIGNMENT_CENTER, 258, 8, foreground)
-	_draw_three_cups(Vector2(77, 91), foreground, background)
-	var controls := PixelTextWrapper.wrap(_catalog.text(&"ui.minigame.tea.tutorial.controls", _locale), font, 280, 8, _locale, 2)
+		draw_string(font, Vector2(25, 59 + index * _body_line_height()), body[index], HORIZONTAL_ALIGNMENT_CENTER, 270, _body_font_size(), foreground)
+	_draw_three_cups(Vector2(77, 87), foreground, background)
+	var controls := PixelTextWrapper.wrap(_catalog.text(&"ui.minigame.tea.tutorial.controls", _locale), font, 280, _compact_font_size(), _locale, 2)
 	for index: int in range(controls.size()):
-		draw_string(font, Vector2(20, 130 + index * 11), controls[index], HORIZONTAL_ALIGNMENT_CENTER, 280, 8, foreground)
-	_draw_assist_marks(Vector2(16, 151), foreground)
+		draw_string(font, Vector2(20, 132 + index * 12), controls[index], HORIZONTAL_ALIGNMENT_CENTER, 280, _compact_font_size(), foreground)
+	_draw_assist_marks(Vector2(16, 152), foreground, 288, _compact_font_size())
 
 
 func _draw_active(foreground: Color, background: Color) -> void:
 	var font := _japanese_font if _locale == &"ja" else _latin_font
 	draw_rect(Rect2(9, 24, 302, 132), background)
 	draw_rect(Rect2(9, 24, 302, 132), foreground, false, 2.0)
-	draw_string(font, Vector2(17, 39), _catalog.text(&"ui.minigame.tea.objective", _locale), HORIZONTAL_ALIGNMENT_CENTER, 286, 8, foreground)
+	draw_string(font, Vector2(17, 40), _catalog.text(&"ui.minigame.tea.objective", _locale), HORIZONTAL_ALIGNMENT_CENTER, 286, _body_font_size(), foreground)
 	_draw_instrument(Rect2(42, 54, 64, 44), _catalog.text(&"ui.minigame.tea.heat", _locale), tea.state.kettle_heat, foreground, background)
 	_draw_instrument(Rect2(128, 54, 64, 44), _catalog.text(&"ui.minigame.tea.cup_one", _locale), tea.state.cup_temperatures[0], foreground, background)
 	_draw_instrument(Rect2(214, 54, 64, 44), _catalog.text(&"ui.minigame.tea.cup_two", _locale), tea.state.cup_temperatures[1], foreground, background)
 	_draw_steam(Vector2(74, 50), foreground)
-	_draw_assist_marks(Vector2(94, 50), foreground, 208, 7)
+	_draw_assist_marks(Vector2(94, 51), foreground, 208, _compact_font_size())
 	_draw_gauge(Rect2(48, 111, 224, 8), tea.state.kettle_heat, TeaTemperatureSimulation.MIN_HEAT, TeaTemperatureSimulation.MAX_HEAT, foreground, background, true)
-	draw_string(font, Vector2(12, 118), _catalog.text(&"ui.minigame.tea.heat", _locale), HORIZONTAL_ALIGNMENT_LEFT, 34, 8, foreground)
+	draw_string(font, Vector2(8, 119), _catalog.text(&"ui.minigame.tea.heat", _locale), HORIZONTAL_ALIGNMENT_LEFT, 38, _compact_font_size(), foreground)
 	_draw_gauge(Rect2(48, 126, 224, 8), tea.state.steep_ticks, 0, 360, foreground, background, false)
-	draw_string(font, Vector2(12, 133), _catalog.text(&"ui.minigame.tea.steep", _locale), HORIZONTAL_ALIGNMENT_LEFT, 34, 8, foreground)
+	draw_string(font, Vector2(8, 134), _catalog.text(&"ui.minigame.tea.steep", _locale), HORIZONTAL_ALIGNMENT_LEFT, 38, _compact_font_size(), foreground)
 	var pour_key := &"ui.minigame.tea.pour_ready" if tea.can_pour() else &"ui.minigame.tea.pour_wait"
-	draw_string(font, Vector2(18, 149), _catalog.text(pour_key, _locale), HORIZONTAL_ALIGNMENT_LEFT, 170, 8, foreground)
+	draw_string(font, Vector2(18, 150), _catalog.text(pour_key, _locale), HORIZONTAL_ALIGNMENT_LEFT, 190, _compact_font_size(), foreground)
 	var timer_text := (
 		_catalog.text(&"ui.minigame.tea.timer.off", _locale)
 		if tea.assists.no_timer
 		else "TIME %02d" % ceili(tea.state.remaining_ticks / 60.0)
 	)
-	draw_string(font, Vector2(220, 149), timer_text, HORIZONTAL_ALIGNMENT_RIGHT, 80, 8, foreground)
+	draw_string(font, Vector2(216, 150), timer_text, HORIZONTAL_ALIGNMENT_RIGHT, 84, _compact_font_size(), foreground)
 	if _visual_cue_seconds > 0.0:
-		draw_string(font, Vector2(110, 105), _catalog.text(_visual_cue_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 100, 8, foreground)
+		draw_string(font, Vector2(105, 106), _catalog.text(_visual_cue_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 110, _compact_font_size(), foreground)
 
 
 func _draw_pause(foreground: Color, background: Color) -> void:
@@ -426,7 +426,7 @@ func _draw_pause(foreground: Color, background: Color) -> void:
 	var font := _japanese_font if _locale == &"ja" else _latin_font
 	draw_rect(Rect2(62, 38, 196, 111), background)
 	draw_rect(Rect2(62, 38, 196, 111), foreground, false, 2.0)
-	draw_string(font, Vector2(70, 55), _catalog.text(&"ui.minigame.tea.paused", _locale), HORIZONTAL_ALIGNMENT_CENTER, 180, 8, foreground)
+	draw_string(font, Vector2(70, 56), _catalog.text(&"ui.minigame.tea.paused", _locale), HORIZONTAL_ALIGNMENT_CENTER, 180, _body_font_size(), foreground)
 	var keys: Array[StringName] = [
 		&"ui.minigame.tea.pause.resume",
 		&"ui.minigame.tea.pause.retry",
@@ -437,7 +437,7 @@ func _draw_pause(foreground: Color, background: Color) -> void:
 		draw_rect(rect, foreground, false, 1.0)
 		if index == _pause_focus:
 			draw_rect(rect.grow(-2), foreground, false, 1.0)
-		draw_string(font, Vector2(86, rect.position.y + 12), _catalog.text(keys[index], _locale), HORIZONTAL_ALIGNMENT_CENTER, 148, 8, foreground)
+		draw_string(font, Vector2(86, rect.position.y + 13), _catalog.text(keys[index], _locale), HORIZONTAL_ALIGNMENT_CENTER, 148, _body_font_size(), foreground)
 
 
 func _draw_result(foreground: Color, background: Color) -> void:
@@ -446,19 +446,19 @@ func _draw_result(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(18, 30, 284, 122), foreground, false, 2.0)
 	var tag := final_result.result_tag if final_result != null else tea.state.result_tag
 	var title_key := StringName("ui.dialogue.result.%s" % tag)
-	draw_string(font, Vector2(28, 49), _catalog.text(title_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 264, 8, foreground)
+	draw_string(font, Vector2(28, 50), _catalog.text(title_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 264, _body_font_size(), foreground)
 	_draw_result_stamp(Vector2(160, 79), tag, foreground, background)
 	var result_key := StringName("ui.minigame.tea.result.%s" % tag)
-	var lines := PixelTextWrapper.wrap(_catalog.text(result_key, _locale), font, 248, 8, _locale, 3)
+	var lines := PixelTextWrapper.wrap(_catalog.text(result_key, _locale), font, 248, _body_font_size(), _locale, 3)
 	for index: int in range(lines.size()):
-		draw_string(font, Vector2(36, 113 + index * 11), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 248, 8, foreground)
+		draw_string(font, Vector2(36, 113 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 248, _body_font_size(), foreground)
 	if final_result != null and final_result.used_assist:
 		_draw_assist_marks(Vector2(30, 145), foreground)
 
 
 func _draw_instrument(rect: Rect2, label: String, value: int, foreground: Color, background: Color) -> void:
 	var font := _japanese_font if _locale == &"ja" else _latin_font
-	draw_string(font, rect.position + Vector2(0, 9), label, HORIZONTAL_ALIGNMENT_CENTER, rect.size.x, 8, foreground)
+	draw_string(font, rect.position + Vector2(0, 10), label, HORIZONTAL_ALIGNMENT_CENTER, rect.size.x, _compact_font_size(), foreground)
 	var vessel := Rect2(rect.position + Vector2(7, 14), Vector2(rect.size.x - 14, 25))
 	draw_rect(vessel, foreground, false, 2.0)
 	if value < 0:
@@ -512,6 +512,7 @@ func _draw_assist_marks(
 	font_size: int = 8
 ) -> void:
 	var font := _japanese_font if _locale == &"ja" else _latin_font
+	var resolved_font_size := maxi(10, font_size) if _locale == &"ja" else font_size
 	var labels: Array[StringName] = []
 	if assist_settings.slower_heat_change:
 		labels.append(&"ui.minigame.tea.assist.slower_heat")
@@ -524,7 +525,7 @@ func _draw_assist_marks(
 	var text_parts: Array[String] = []
 	for key: StringName in labels:
 		text_parts.append(_catalog.text(key, _locale))
-	draw_string(font, origin, " / ".join(text_parts), HORIZONTAL_ALIGNMENT_LEFT, width, font_size, foreground)
+	draw_string(font, origin, " / ".join(text_parts), HORIZONTAL_ALIGNMENT_LEFT, width, resolved_font_size, foreground)
 
 
 func _draw_result_stamp(origin: Vector2, tag: StringName, foreground: Color, background: Color) -> void:
@@ -539,3 +540,15 @@ func _draw_result_stamp(origin: Vector2, tag: StringName, foreground: Color, bac
 		_:
 			draw_line(origin + Vector2(-9, -9), origin + Vector2(9, 9), foreground, 2.0)
 			draw_line(origin + Vector2(9, -9), origin + Vector2(-9, 9), foreground, 2.0)
+
+
+func _body_font_size() -> int:
+	return 12 if _locale == &"ja" else 8
+
+
+func _compact_font_size() -> int:
+	return 10 if _locale == &"ja" else 8
+
+
+func _body_line_height() -> int:
+	return 14 if _locale == &"ja" else 11

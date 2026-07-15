@@ -642,9 +642,9 @@ func _draw_hud(foreground: Color, background: Color) -> void:
 	var font := _font()
 	var player := runtime.states[0]
 	var opponent := runtime.states[1]
-	draw_string(font, Vector2(5, 9), _fighter_name(0), HORIZONTAL_ALIGNMENT_LEFT, 126, 7, foreground)
-	draw_string(font, Vector2(189, 9), _fighter_name(1), HORIZONTAL_ALIGNMENT_RIGHT, 126, 7, foreground)
-	draw_string(font, Vector2(134, 9), _catalog.text(&"ui.fighter.round", _locale), HORIZONTAL_ALIGNMENT_CENTER, 52, 6, foreground)
+	draw_string(font, Vector2(5, 10), _fighter_name(0), HORIZONTAL_ALIGNMENT_LEFT, 126, _hud_font_size(), foreground)
+	draw_string(font, Vector2(189, 10), _fighter_name(1), HORIZONTAL_ALIGNMENT_RIGHT, 126, _hud_font_size(), foreground)
+	draw_string(font, Vector2(134, 10), _catalog.text(&"ui.fighter.round", _locale), HORIZONTAL_ALIGNMENT_CENTER, 52, _small_font_size(), foreground)
 	_draw_mirrored_meter(Rect2(5, 13, 126, 7), player.vitality, player.vitality_notch, FighterState.MAX_VITALITY, false, foreground, background)
 	_draw_mirrored_meter(Rect2(189, 13, 126, 7), opponent.vitality, opponent.vitality_notch, FighterState.MAX_VITALITY, true, foreground, background)
 	_draw_mirrored_meter(Rect2(5, 24, 104, 5), player.temperament, player.temperament, FighterState.MAX_TEMPERAMENT, false, foreground, background)
@@ -657,7 +657,7 @@ func _draw_hud(foreground: Color, background: Color) -> void:
 				draw_rect(Rect2(x, 23, 7, 7), foreground)
 			else:
 				draw_rect(Rect2(x, 23, 7, 7), foreground, false, 1.0)
-	draw_string(font, Vector2(112, 36), _catalog.text(&"ui.fighter.terms.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 96, 7, foreground)
+	draw_string(font, Vector2(112, 37), _catalog.text(&"ui.fighter.terms.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 96, _hud_font_size(), foreground)
 
 
 func _draw_mirrored_meter(
@@ -743,8 +743,8 @@ func _draw_combat_boxes(foreground: Color) -> void:
 		if hitbox.size != Vector2i.ZERO:
 			draw_rect(Rect2(hitbox), foreground, false, 2.0)
 	var font := _font()
-	draw_string(font, Vector2(8, 50), _catalog.text(&"ui.fighter.hitbox", _locale), HORIZONTAL_ALIGNMENT_LEFT, 70, 6, foreground)
-	draw_string(font, Vector2(82, 50), _catalog.text(&"ui.fighter.hurtbox", _locale), HORIZONTAL_ALIGNMENT_LEFT, 70, 6, foreground)
+	draw_string(font, Vector2(8, 51), _catalog.text(&"ui.fighter.hitbox", _locale), HORIZONTAL_ALIGNMENT_LEFT, 70, _small_font_size(), foreground)
+	draw_string(font, Vector2(82, 51), _catalog.text(&"ui.fighter.hurtbox", _locale), HORIZONTAL_ALIGNMENT_LEFT, 70, _small_font_size(), foreground)
 
 
 func _draw_dashed_rect(rect: Rect2, color: Color) -> void:
@@ -760,59 +760,59 @@ func _draw_footer(foreground: Color, background: Color) -> void:
 	draw_rect(FOOTER_FRAME, background)
 	draw_rect(FOOTER_FRAME, foreground, false, 1.0)
 	var mode_key := &"ui.fighter.mode.simple" if runtime.assists.simple_inputs else &"ui.fighter.mode.motion"
-	draw_string(_font(), Vector2(8, 164), _catalog.text(&"ui.fighter.controls", _locale), HORIZONTAL_ALIGNMENT_CENTER, 304, 6, foreground)
-	draw_string(_font(), Vector2(8, 173), "%s · %d%%" % [_catalog.text(mode_key, _locale), runtime.assists.speed_percent], HORIZONTAL_ALIGNMENT_CENTER, 304, 6, foreground)
+	draw_string(_font(), Vector2(8, 165), _catalog.text(&"ui.fighter.controls", _locale), HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
+	draw_string(_font(), Vector2(8, 175), "%s / %d%%" % [_catalog.text(mode_key, _locale), runtime.assists.speed_percent], HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
 
 
 func _draw_intro(foreground: Color, background: Color) -> void:
 	var font := _font()
-	var panel := Rect2(29, 55, 262, 77) if _tutorial_waiting else Rect2(29, 60, 262, 67)
+	var panel := Rect2(19, 45, 282, 98) if _tutorial_waiting else Rect2(24, 51, 272, 84)
 	draw_rect(panel, background)
 	draw_rect(panel, foreground, false, 2.0)
-	draw_string(font, Vector2(36, 76), _catalog.text(&"ui.fighter.terms.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 248, 9, foreground)
-	draw_string(font, Vector2(36, 91), _catalog.text(&"ui.fighter.intro.rule", _locale), HORIZONTAL_ALIGNMENT_CENTER, 248, 7, foreground)
-	var lines := PixelTextWrapper.wrap(_catalog.text(&"ui.fighter.intro.objective", _locale), font, 240, 7, _locale, 2)
+	draw_string(font, Vector2(26, 68), _catalog.text(&"ui.fighter.terms.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 268, _title_font_size(), foreground)
+	draw_string(font, Vector2(26, 87), _catalog.text(&"ui.fighter.intro.rule", _locale), HORIZONTAL_ALIGNMENT_CENTER, 268, _body_font_size(), foreground)
+	var lines := PixelTextWrapper.wrap(_catalog.text(&"ui.fighter.intro.objective", _locale), font, 260, _body_font_size(), _locale, 2)
 	for index: int in range(lines.size()):
-		draw_string(font, Vector2(40, 108 + index * 9), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 240, 7, foreground)
+		draw_string(font, Vector2(30, 105 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
 	if _tutorial_waiting:
-		draw_string(font, Vector2(40, 127), _catalog.text(&"ui.fighter.intro.start", _locale), HORIZONTAL_ALIGNMENT_CENTER, 240, 7, foreground)
+		draw_string(font, Vector2(30, 136), _catalog.text(&"ui.fighter.intro.start", _locale), HORIZONTAL_ALIGNMENT_CENTER, 260, _body_font_size(), foreground)
 
 
 func _draw_break_banner(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(55, 72, 210, 38), background)
 	draw_rect(Rect2(55, 72, 210, 38), foreground, false, 2.0)
-	draw_string(_font(), Vector2(61, 89), _catalog.text(&"ui.fighter.break", _locale), HORIZONTAL_ALIGNMENT_CENTER, 198, 10, foreground)
-	draw_string(_font(), Vector2(61, 102), _catalog.text(&"ui.fighter.cue.spell_break", _locale), HORIZONTAL_ALIGNMENT_CENTER, 198, 7, foreground)
+	draw_string(_font(), Vector2(61, 89), _catalog.text(&"ui.fighter.break", _locale), HORIZONTAL_ALIGNMENT_CENTER, 198, _title_font_size(), foreground)
+	draw_string(_font(), Vector2(61, 104), _catalog.text(&"ui.fighter.cue.spell_break", _locale), HORIZONTAL_ALIGNMENT_CENTER, 198, _hud_font_size(), foreground)
 
 
 func _draw_visual_cue(foreground: Color, background: Color) -> void:
-	draw_rect(Rect2(86, 116, 148, 14), background)
-	draw_rect(Rect2(86, 116, 148, 14), foreground, false, 1.0)
-	draw_string(_font(), Vector2(90, 126), _catalog.text(_visual_cue_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 140, 7, foreground)
+	draw_rect(Rect2(80, 113, 160, 18), background)
+	draw_rect(Rect2(80, 113, 160, 18), foreground, false, 1.0)
+	draw_string(_font(), Vector2(85, 127), _catalog.text(_visual_cue_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 150, _hud_font_size(), foreground)
 
 
 func _draw_pause(foreground: Color, background: Color) -> void:
 	var font := _font()
-	draw_rect(Rect2(68, 48, 184, 100), background)
-	draw_rect(Rect2(68, 48, 184, 100), foreground, false, 2.0)
-	draw_string(font, Vector2(75, 64), _catalog.text(&"ui.fighter.paused", _locale), HORIZONTAL_ALIGNMENT_CENTER, 170, 8, foreground)
+	draw_rect(Rect2(58, 35, 204, 120), background)
+	draw_rect(Rect2(58, 35, 204, 120), foreground, false, 2.0)
+	draw_string(font, Vector2(65, 54), _catalog.text(&"ui.fighter.paused", _locale), HORIZONTAL_ALIGNMENT_CENTER, 190, _body_font_size(), foreground)
 	var keys: Array[StringName] = [
 		&"ui.fighter.pause.resume", &"ui.fighter.pause.retry",
 		&"ui.fighter.pause.accept_loss", &"ui.fighter.pause.training",
 	]
 	for index: int in range(keys.size()):
-		var rect := Rect2(82, 72 + index * 18, 156, 15)
+		var rect := Rect2(74, 63 + index * 21, 172, 18)
 		draw_rect(rect, foreground, false, 1.0)
 		if index == _pause_focus:
 			draw_rect(rect.grow(-2), foreground, false, 1.0)
-		draw_string(font, Vector2(86, rect.position.y + 11), _catalog.text(keys[index], _locale), HORIZONTAL_ALIGNMENT_CENTER, 148, 7, foreground)
+		draw_string(font, Vector2(79, rect.position.y + 14), _catalog.text(keys[index], _locale), HORIZONTAL_ALIGNMENT_CENTER, 162, _body_font_size(), foreground)
 
 
 func _draw_training(foreground: Color, background: Color) -> void:
 	var font := _font()
 	draw_rect(Rect2(7, 43, 306, 107), background)
 	draw_rect(Rect2(7, 43, 306, 107), foreground, false, 2.0)
-	draw_string(font, Vector2(12, 55), _catalog.text(&"ui.fighter.training.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 296, 7, foreground)
+	draw_string(font, Vector2(12, 56), _catalog.text(&"ui.fighter.training.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 296, _hud_font_size(), foreground)
 	var tabs: Array[StringName] = [
 		&"ui.fighter.training.commands", &"ui.fighter.training.dummy",
 		&"ui.fighter.training.display", &"ui.fighter.training.reset",
@@ -822,32 +822,33 @@ func _draw_training(foreground: Color, background: Color) -> void:
 		draw_rect(rect, foreground, false, 1.0)
 		if index == _training_tab:
 			draw_rect(rect.grow(-2), foreground, false, 1.0)
-		draw_string(font, Vector2(rect.position.x + 2, 69), _catalog.text(tabs[index], _locale), HORIZONTAL_ALIGNMENT_CENTER, 66, 6, foreground)
+		draw_string(font, Vector2(rect.position.x + 2, 70), _catalog.text(tabs[index], _locale), HORIZONTAL_ALIGNMENT_CENTER, 66, _small_font_size(), foreground)
 	var command_keys: Array[StringName] = [
 		&"ui.fighter.command.move", &"ui.fighter.command.jump", &"ui.fighter.command.light",
 		&"ui.fighter.command.heavy", &"ui.fighter.command.skill", &"ui.fighter.command.skill_forward",
 		&"ui.fighter.command.spell", &"ui.fighter.command.guard", &"ui.fighter.command.pause",
 	]
 	for index: int in range(command_keys.size()):
-		draw_string(font, Vector2(14, 80 + index * 7), _catalog.text(command_keys[index], _locale), HORIZONTAL_ALIGNMENT_LEFT, 132, 6, foreground)
+		var column := floori(index / 5.0)
+		var row := index % 5
+		draw_string(font, Vector2(14 + column * 67, 83 + row * 12), _catalog.text(command_keys[index], _locale), HORIZONTAL_ALIGNMENT_LEFT, 64, _small_font_size(), foreground)
 	draw_line(Vector2(151, 76), Vector2(151, 143), foreground, 1.0)
 	var state := runtime.states[0]
 	var move := definition.fighters[0].move_by_id(state.current_move_id)
-	draw_string(font, Vector2(157, 84), "FRAME %03d" % runtime.encounter_tick, HORIZONTAL_ALIGNMENT_LEFT, 148, 7, foreground)
-	draw_string(font, Vector2(157, 95), String(state.current_move_id if state.current_move_id != &"" else &"IDLE"), HORIZONTAL_ALIGNMENT_LEFT, 148, 6, foreground)
+	draw_string(font, Vector2(157, 84), "FRAME %03d" % runtime.encounter_tick, HORIZONTAL_ALIGNMENT_LEFT, 148, _hud_font_size(), foreground)
+	draw_string(font, Vector2(157, 98), String(state.current_move_id if state.current_move_id != &"" else &"IDLE"), HORIZONTAL_ALIGNMENT_LEFT, 148, _small_font_size(), foreground)
 	if move != null:
-		draw_string(font, Vector2(157, 105), "S %02d  A %02d  R %02d" % [move.startup_ticks, move.active_ticks, move.recovery_ticks], HORIZONTAL_ALIGNMENT_LEFT, 148, 6, foreground)
-	draw_string(font, Vector2(157, 116), _catalog.text(&"ui.fighter.training.hitboxes", _locale), HORIZONTAL_ALIGNMENT_LEFT, 148, 6, foreground)
-	draw_string(font, Vector2(157, 127), _catalog.text(&"ui.fighter.training.frame_step", _locale), HORIZONTAL_ALIGNMENT_LEFT, 148, 6, foreground)
-	draw_string(font, Vector2(157, 138), _catalog.text(&"ui.fighter.training.reset_position", _locale), HORIZONTAL_ALIGNMENT_LEFT, 148, 6, foreground)
-	draw_string(font, Vector2(12, 148), "%s  %s" % [_catalog.text(&"ui.fighter.training.input_history", _locale), _input_history_text()], HORIZONTAL_ALIGNMENT_LEFT, 294, 6, foreground)
+		draw_string(font, Vector2(157, 111), "S %02d  A %02d  R %02d" % [move.startup_ticks, move.active_ticks, move.recovery_ticks], HORIZONTAL_ALIGNMENT_LEFT, 148, _small_font_size(), foreground)
+	draw_string(font, Vector2(157, 124), _catalog.text(&"ui.fighter.training.hitboxes", _locale), HORIZONTAL_ALIGNMENT_LEFT, 148, _small_font_size(), foreground)
+	draw_string(font, Vector2(157, 137), _catalog.text(&"ui.fighter.training.frame_step", _locale), HORIZONTAL_ALIGNMENT_LEFT, 148, _small_font_size(), foreground)
+	draw_string(font, Vector2(12, 148), "%s  %s" % [_catalog.text(&"ui.fighter.training.input_history", _locale), _input_history_text()], HORIZONTAL_ALIGNMENT_LEFT, 294, _small_font_size(), foreground)
 
 
 func _input_history_text() -> String:
 	var labels := PackedStringArray()
 	for code: int in _input_history:
 		var frame := FighterInputFrame.decode(code)
-		var label := "·"
+		var label := "."
 		if frame.light_pressed:
 			label = "L"
 		elif frame.heavy_pressed:
@@ -877,13 +878,13 @@ func _draw_result(foreground: Color, background: Color) -> void:
 	var tag := final_result.result_tag
 	var title_key := StringName("ui.fighter.result.%s.title" % tag)
 	var reason_key := StringName("ui.fighter.result.%s.reason" % tag)
-	draw_string(font, Vector2(32, 42), _catalog.text(title_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 256, 9, foreground)
+	draw_string(font, Vector2(32, 43), _catalog.text(title_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 256, _title_font_size(), foreground)
 	_draw_result_seals(Vector2(160, 68), foreground, background)
-	var lines := PixelTextWrapper.wrap(_catalog.text(reason_key, _locale), font, 240, 7, _locale, 2)
+	var lines := PixelTextWrapper.wrap(_catalog.text(reason_key, _locale), font, 240, _body_font_size(), _locale, 2)
 	for index: int in range(lines.size()):
-		draw_string(font, Vector2(40, 99 + index * 9), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 240, 7, foreground)
-	draw_string(font, Vector2(36, 132), _catalog.text(&"ui.fighter.result.continue", _locale), HORIZONTAL_ALIGNMENT_LEFT, 170, 7, foreground)
-	draw_string(font, Vector2(176, 144), _catalog.text(&"ui.fighter.result.retry", _locale), HORIZONTAL_ALIGNMENT_RIGHT, 108, 7, foreground)
+		draw_string(font, Vector2(40, 101 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 240, _body_font_size(), foreground)
+	draw_string(font, Vector2(36, 136), _catalog.text(&"ui.fighter.result.continue", _locale), HORIZONTAL_ALIGNMENT_LEFT, 248, _hud_font_size(), foreground)
+	draw_string(font, Vector2(36, 148), _catalog.text(&"ui.fighter.result.retry", _locale), HORIZONTAL_ALIGNMENT_RIGHT, 248, _hud_font_size(), foreground)
 
 
 func _draw_result_seals(origin: Vector2, foreground: Color, background: Color) -> void:
@@ -912,3 +913,23 @@ func _fighter_name(side: int) -> String:
 
 func _font() -> Font:
 	return _japanese_font if _locale == &"ja" else _latin_font
+
+
+func _body_font_size() -> int:
+	return 12 if _locale == &"ja" else 8
+
+
+func _body_line_height() -> int:
+	return 14 if _locale == &"ja" else 9
+
+
+func _title_font_size() -> int:
+	return 14 if _locale == &"ja" else 10
+
+
+func _hud_font_size() -> int:
+	return 10 if _locale == &"ja" else 7
+
+
+func _small_font_size() -> int:
+	return 10 if _locale == &"ja" else 6

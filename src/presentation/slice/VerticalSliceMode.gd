@@ -21,7 +21,7 @@ const EVENT_ID: StringName = &"evt.hkr.empty_cushion"
 const LOCATION_ID: StringName = &"loc.hakurei_shrine"
 const JOURNAL_ID: StringName = &"journal.hkr.empty_cushion"
 const KEEPSAKE_ID: StringName = &"item.keepsake.unpaired_cup"
-const AFTERBEAT_RELEASE_FRAMES := 8
+const AFTERBEAT_RELEASE_FRAMES := 36
 const ACTION_CONTRACT := [
 	"move", "confirm", "cancel", "focus", "companion", "bomb", "journal", "map",
 	"page_left", "page_right", "pause", "shot", "guard", "light", "heavy", "skill", "spell",
@@ -791,43 +791,77 @@ func _draw_world_map(foreground: Color, background: Color) -> void:
 
 
 func _draw_event(foreground: Color, background: Color) -> void:
-	_draw_shrine_stage(foreground, background)
+	var is_afterbeat := _event_result != null and String(_event_result.node_id).begins_with("n_afterbeat")
+	if is_afterbeat:
+		_draw_afterbeat_stage(foreground, background)
+	else:
+		_draw_shrine_stage(foreground, background)
 	if _show_backlog:
 		_draw_backlog(foreground, background)
 		return
 	if _phase == Phase.EVENT_CHOICE:
-		draw_rect(Rect2(83, 5, 231, 25), background)
-		draw_rect(Rect2(83, 5, 231, 25), foreground, false, 2.0)
-		_draw_text(_ui(&"ui.dialogue.choose_intent"), Vector2(91, 20), 215, HORIZONTAL_ALIGNMENT_CENTER)
+		draw_rect(Rect2(14, 5, 292, 25), background)
+		draw_rect(Rect2(14, 5, 292, 25), foreground, false, 2.0)
+		_draw_text(_ui(&"ui.dialogue.choose_intent"), Vector2(22, 21), 276, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 		return
 	if _dialogue == null or _dialogue.current == null:
 		return
-	var panel := Rect2(83, 95, 231, 78)
+	var panel := Rect2(55, 78, 259, 95) if _current_locale() == &"ja" else Rect2(83, 95, 231, 78)
 	draw_rect(panel, background)
 	draw_rect(panel, foreground, false, 2.0)
-	draw_rect(Rect2(91, 87, 76, 12), background)
-	draw_rect(Rect2(91, 87, 76, 12), foreground, false, 1.0)
-	_draw_text(_dialogue.current.speaker_name, Vector2(95, 97), 68)
+	var name_tag := Rect2(panel.position.x + 8, panel.position.y - 14, 86, 16)
+	draw_rect(name_tag, background)
+	draw_rect(name_tag, foreground, false, 1.0)
+	_draw_text(
+		_dialogue.current.speaker_name,
+		name_tag.position + Vector2(4, 12),
+		78,
+		HORIZONTAL_ALIGNMENT_LEFT,
+		_body_font_size()
+	)
+	var text_width := panel.size.x - 20
 	var lines := PixelTextWrapper.wrap(
-		_dialogue.current.visible_text(), _font(), 211, 8, _current_locale(), 4 if _current_locale() == &"ja" else 3
+		_dialogue.current.visible_text(),
+		_font(),
+		text_width,
+		_body_font_size(),
+		_current_locale(),
+		4 if _current_locale() == &"ja" else 3
 	)
 	for index: int in range(lines.size()):
-		_draw_text(lines[index], Vector2(93, 113 + index * 11), 211)
-	var auto_key := &"ui.dialogue.auto_on" if _dialogue.auto_mode else &"ui.dialogue.auto_off"
-	_draw_text(_ui(auto_key), Vector2(91, 168), 102)
-	_draw_text(_ui(&"ui.dialogue.backlog"), Vector2(244, 168), 62, HORIZONTAL_ALIGNMENT_RIGHT)
-	if _confirm_guard_frames > 0:
-		_draw_text(_ui(&"ui.slice.afterbeat.settle"), Vector2(172, 89), 136, HORIZONTAL_ALIGNMENT_RIGHT)
+		_draw_text(
+			lines[index],
+			panel.position + Vector2(10, 25 + index * _body_line_height()),
+			text_width,
+			HORIZONTAL_ALIGNMENT_LEFT,
+			_body_font_size()
+		)
+	if not is_afterbeat:
+		var auto_key := &"ui.dialogue.auto_on" if _dialogue.auto_mode else &"ui.dialogue.auto_off"
+		_draw_text(_ui(auto_key), panel.position + Vector2(8, panel.size.y - 5), 112, HORIZONTAL_ALIGNMENT_LEFT, _chrome_font_size())
+		_draw_text(_ui(&"ui.dialogue.backlog"), panel.position + Vector2(panel.size.x - 76, panel.size.y - 5), 66, HORIZONTAL_ALIGNMENT_RIGHT, _chrome_font_size())
 
 
 func _draw_reward(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.reward.header", foreground, background)
-	_draw_two_cups(Vector2(54, 62), foreground)
-	draw_rect(Rect2(29, 105, 126, 19), foreground, false, 2.0)
-	_draw_text(_resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text, Vector2(35, 118), 114, HORIZONTAL_ALIGNMENT_CENTER)
-	_draw_wrapped(&"ui.slice.reward.body", Rect2(172, 55, 123, 31), 3)
-	_draw_text(_resolver.resolve(&"journal.hkr.empty_cushion.body", _current_locale()).text, Vector2(170, 101), 128, HORIZONTAL_ALIGNMENT_CENTER)
+	draw_rect(Rect2(22, 49, 130, 92), foreground, false, 1.0)
+	_draw_unpaired_cup(Vector2(72, 64), foreground)
+	_draw_text(_ui(&"ui.slice.reward.keepsake"), Vector2(30, 105), 114, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+	_draw_wrapped(&"ui.slice.reward.item_name", Rect2(30, 109, 114, 28), 2)
+	draw_rect(Rect2(160, 49, 138, 92), foreground, false, 1.0)
+	_draw_journal_mark(Vector2(209, 60), foreground)
+	_draw_text(_ui(&"ui.slice.reward.journal_added"), Vector2(168, 103), 122, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+	var title_lines := PixelTextWrapper.wrap(
+		_resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text,
+		_font(),
+		122,
+		_body_font_size(),
+		_current_locale(),
+		2
+	)
+	for index: int in range(title_lines.size()):
+		_draw_text(title_lines[index], Vector2(168, 119 + index * _body_line_height()), 122, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
 	_draw_footer(&"ui.slice.reward.confirm", foreground, background)
 
 
@@ -846,21 +880,20 @@ func _draw_journal(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.journal.header", foreground, background)
 	draw_rect(Rect2(18, 44, 284, 100), foreground, false, 2.0)
-	draw_line(Vector2(160, 45), Vector2(160, 143), foreground, 1.0)
-	_draw_text(_resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text, Vector2(27, 60), 124, HORIZONTAL_ALIGNMENT_CENTER)
+	_draw_text(_resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text, Vector2(30, 61), 260, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
 	var journal_body := _resolver.resolve(&"journal.hkr.empty_cushion.body", _current_locale()).text
-	var lines := PixelTextWrapper.wrap(journal_body, _font(), 116, 8, _current_locale(), 5)
+	var lines := PixelTextWrapper.wrap(journal_body, _font(), 260, _body_font_size(), _current_locale(), 4)
 	for index: int in range(lines.size()):
-		_draw_text(lines[index], Vector2(31, 77 + index * 11), 116, HORIZONTAL_ALIGNMENT_CENTER)
-	_draw_two_cups(Vector2(198, 62), foreground)
-	_draw_wrapped(&"ui.slice.journal.replay_body", Rect2(177, 99, 108, 30), 3)
+		_draw_text(lines[index], Vector2(30, 79 + index * _body_line_height()), 260, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
+	draw_rect(Rect2(27, 125, 266, 15), foreground, false, 1.0)
+	_draw_text(_ui(&"ui.slice.journal.replay_body"), Vector2(32, 137), 256, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 	_draw_footer(&"ui.slice.journal.confirm", foreground, background)
 
 
 func _draw_replay_complete(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.replay_complete.header", foreground, background)
-	_draw_two_cups(Vector2(118, 72), foreground)
+	_draw_unpaired_cup(Vector2(145, 69), foreground)
 	_draw_wrapped(&"ui.slice.replay_complete.body", Rect2(50, 112, 220, 24), 2)
 	_draw_footer(&"ui.slice.replay_complete.confirm", foreground, background)
 
@@ -886,12 +919,12 @@ func _draw_backlog(foreground: Color, background: Color) -> void:
 	_draw_text(_ui(&"ui.dialogue.backlog"), Vector2(13, 20), 294)
 	var y := 35
 	var entries := _dialogue.backlog.entries if _dialogue != null else []
-	var first := maxi(0, entries.size() - 10)
+	var first := maxi(0, entries.size() - (6 if _current_locale() == &"ja" else 10))
 	for index: int in range(first, entries.size()):
 		var text := entries[index].render(_resolver, _current_locale())
-		for line: String in PixelTextWrapper.wrap(text, _font(), 286, 8, _current_locale(), 2):
-			_draw_text(line, Vector2(17, y), 286)
-			y += 11
+		for line: String in PixelTextWrapper.wrap(text, _font(), 286, _body_font_size(), _current_locale(), 2):
+			_draw_text(line, Vector2(17, y), 286, HORIZONTAL_ALIGNMENT_LEFT, _body_font_size())
+			y += _body_line_height()
 			if y > 157:
 				break
 	_draw_text(_ui(&"ui.slice.backlog.close"), Vector2(13, 169), 294)
@@ -913,6 +946,14 @@ func _draw_shrine_stage(foreground: Color, background: Color) -> void:
 	draw_line(Vector2(49, 81), Vector2(55, 82), foreground, 1.0)
 
 
+func _draw_afterbeat_stage(foreground: Color, background: Color) -> void:
+	draw_line(Vector2(0, 99), Vector2(320, 99), foreground, 1.0)
+	draw_rect(Rect2(13, 71, 34, 19), foreground, false, 2.0)
+	draw_line(Vector2(18, 94), Vector2(42, 94), foreground, 1.0)
+	_draw_unpaired_cup(Vector2(92, 74), foreground)
+	draw_line(Vector2(132, 84), Vector2(150, 84), foreground, 1.0)
+
+
 func _draw_frame(foreground: Color) -> void:
 	draw_rect(Rect2(8, 8, 304, 164), foreground, false, 2.0)
 
@@ -920,19 +961,25 @@ func _draw_frame(foreground: Color) -> void:
 func _draw_header(key: StringName, foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(17, 18, 286, 23), background)
 	draw_rect(Rect2(17, 18, 286, 23), foreground, false, 1.0)
-	_draw_text(_ui(key), Vector2(23, 33), 274, HORIZONTAL_ALIGNMENT_CENTER)
+	_draw_text(_ui(key), Vector2(23, 34), 274, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 
 
 func _draw_footer(key: StringName, foreground: Color, background: Color) -> void:
-	draw_rect(Rect2(16, 151, 288, 15), background)
-	draw_rect(Rect2(16, 151, 288, 15), foreground, false, 1.0)
-	_draw_text(_ui(key), Vector2(21, 162), 278, HORIZONTAL_ALIGNMENT_CENTER)
+	draw_rect(Rect2(16, 149, 288, 18), background)
+	draw_rect(Rect2(16, 149, 288, 18), foreground, false, 1.0)
+	_draw_text(_ui(key), Vector2(21, 163), 278, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 
 
 func _draw_wrapped(key: StringName, rect: Rect2, maximum_lines: int) -> void:
-	var lines := PixelTextWrapper.wrap(_ui(key), _font(), rect.size.x, 8, _current_locale(), maximum_lines)
+	var lines := PixelTextWrapper.wrap(_ui(key), _font(), rect.size.x, _body_font_size(), _current_locale(), maximum_lines)
 	for index: int in range(lines.size()):
-		_draw_text(lines[index], rect.position + Vector2(0, 8 + index * 11), rect.size.x, HORIZONTAL_ALIGNMENT_CENTER)
+		_draw_text(
+			lines[index],
+			rect.position + Vector2(0, _body_font_size() + index * _body_line_height()),
+			rect.size.x,
+			HORIZONTAL_ALIGNMENT_CENTER,
+			_body_font_size()
+		)
 
 
 func _draw_text(
@@ -940,19 +987,38 @@ func _draw_text(
 	position: Vector2,
 	width: float,
 	alignment: HorizontalAlignment = HORIZONTAL_ALIGNMENT_LEFT,
-	font_size: int = 8
+	font_size: int = 0
 ) -> void:
 	var foreground := _profile.paper if _profile.is_inverted else _profile.ink
-	draw_string(_font(), position, text, alignment, width, font_size, foreground)
+	var resolved_size := _body_font_size() if font_size <= 0 else font_size
+	if _current_locale() == &"ja":
+		resolved_size = maxi(10, resolved_size)
+	draw_string(_font(), position, text, alignment, width, resolved_size, foreground)
 
 
-func _draw_two_cups(origin: Vector2, foreground: Color) -> void:
-	for offset: Vector2 in [Vector2(0, 0), Vector2(45, 0)]:
-		draw_rect(Rect2(origin + offset, Vector2(22, 14)), foreground, false, 2.0)
-		draw_rect(Rect2(origin + offset + Vector2(21, 3), Vector2(7, 7)), foreground, false, 2.0)
-		draw_line(origin + offset + Vector2(3, 18), origin + offset + Vector2(19, 18), foreground, 2.0)
-	draw_line(origin + Vector2(29, 7), origin + Vector2(39, 7), foreground, 1.0)
-	draw_colored_polygon(PackedVector2Array([origin + Vector2(36, 4), origin + Vector2(41, 7), origin + Vector2(36, 10)]), foreground)
+func _draw_unpaired_cup(origin: Vector2, foreground: Color) -> void:
+	draw_rect(Rect2(origin, Vector2(22, 14)), foreground, false, 2.0)
+	draw_rect(Rect2(origin + Vector2(21, 3), Vector2(7, 7)), foreground, false, 2.0)
+	draw_line(origin + Vector2(3, 18), origin + Vector2(19, 18), foreground, 2.0)
+
+
+func _draw_journal_mark(origin: Vector2, foreground: Color) -> void:
+	draw_rect(Rect2(origin, Vector2(28, 28)), foreground, false, 2.0)
+	draw_line(origin + Vector2(6, 7), origin + Vector2(22, 7), foreground, 1.0)
+	draw_line(origin + Vector2(6, 13), origin + Vector2(22, 13), foreground, 1.0)
+	draw_line(origin + Vector2(6, 19), origin + Vector2(18, 19), foreground, 1.0)
+
+
+func _body_font_size() -> int:
+	return 12 if _current_locale() == &"ja" else 8
+
+
+func _chrome_font_size() -> int:
+	return 10 if _current_locale() == &"ja" else 7
+
+
+func _body_line_height() -> int:
+	return 14 if _current_locale() == &"ja" else 11
 
 
 func _font() -> Font:

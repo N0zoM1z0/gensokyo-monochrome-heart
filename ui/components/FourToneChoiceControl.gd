@@ -24,7 +24,7 @@ func _ready() -> void:
 	_catalog.load_default()
 	_latin_font = UiFontRegistry.latin()
 	_japanese_font = UiFontRegistry.japanese()
-	custom_minimum_size = Vector2(228, 124)
+	custom_minimum_size = Vector2(292, 126)
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	queue_redraw()
 
@@ -128,17 +128,20 @@ func _draw_option(
 			draw_line(Vector2(x, top + row_height - 4), Vector2(x + 5, top + 1), foreground, 1.0)
 	_draw_tone_mark(option.tone, Vector2(13, top + 8), foreground, background)
 	var font := _japanese_font if locale == &"ja" else _latin_font
+	var body_size := 12 if locale == &"ja" else 8
+	var tone_size := 10 if locale == &"ja" else 8
+	var line_height := 13 if locale == &"ja" else 10
 	var tone_label := _catalog.text(TONE_LABEL_KEYS.get(option.tone, &"ui.common.unavailable"), locale)
-	draw_string(font, Vector2(29, top + 10), tone_label, HORIZONTAL_ALIGNMENT_LEFT, 58, 8, foreground)
-	var action_lines := PixelTextWrapper.wrap(option.text, font, size.x - 93, 8, locale, 2)
+	draw_string(font, Vector2(29, top + 12), tone_label, HORIZONTAL_ALIGNMENT_LEFT, 54, tone_size, foreground)
+	var action_lines := PixelTextWrapper.wrap(option.text, font, size.x - 91, body_size, locale, 2)
 	for line_index: int in range(action_lines.size()):
 		draw_string(
 			font,
-			Vector2(91, top + 10 + line_index * 10),
+			Vector2(87, top + 12 + line_index * line_height),
 			action_lines[line_index],
 			HORIZONTAL_ALIGNMENT_LEFT,
-			size.x - 95,
-			8,
+			size.x - 91,
+			body_size,
 			foreground
 		)
 
