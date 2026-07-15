@@ -269,6 +269,7 @@ func _add_journal(node: EventNodeRecord) -> CommandResult:
 		entry.tags.append(&"resonance")
 		entry.tags.append(&"quiet_object")
 		commands.append(AddJournalEntryCommand.new(entry))
+		commands.append(UnlockJournalReplayCommand.new(_graph.id))
 	commands.append(SetEventPositionCommand.new(_graph.id, node.next_node_id))
 	var result := _commit_commands(commands)
 	if result.is_success():

@@ -177,6 +177,8 @@ func _expect_full_branch(tone: StringName, failures: Array[String]) -> GameState
 		failures.append("%s branch did not grant the authored Keepsake" % tone)
 	if not state.journal.entries.has(&"journal.hkr.empty_cushion"):
 		failures.append("%s branch did not add the authored Journal observation" % tone)
+	if &"evt.hkr.empty_cushion" not in state.journal.replay_event_ids:
+		failures.append("%s branch did not unlock the event's Journal replay" % tone)
 	if not state.flags.has(&"evt.hkr.empty_cushion.complete") or state.flags[&"evt.hkr.empty_cushion.complete"].value() != true:
 		failures.append("%s branch did not commit the authored completion flag" % tone)
 	return state

@@ -47,6 +47,8 @@ func _apply(state: GameState, command: GameCommand) -> CommandResult:
 		return _add_journal_entry(state, command)
 	if command is MarkJournalEntryReadCommand:
 		return _mark_journal_read(state, command)
+	if command is UnlockJournalReplayCommand:
+		return _unlock_journal_replay(state, command)
 	if command is AddInventoryItemCommand:
 		return _add_inventory_item(state, command)
 	if command is RemoveInventoryItemCommand:
@@ -145,6 +147,16 @@ func _mark_journal_read(state: GameState, command: MarkJournalEntryReadCommand) 
 	if state.journal.entries[command.entry_id].is_read:
 		return _already_exists(command, "Journal entry is already read: %s" % command.entry_id)
 	state.journal.entries[command.entry_id].is_read = true
+	return CommandResult.success(command.command_id)
+
+
+func _unlock_journal_replay(state: GameState, command: UnlockJournalReplayCommand) -> CommandResult:
+	if not _matches(command.event_id, "^evt\\."):
+		return _invalid(command, "Journal replay requires a valid event ID")
+	if command.event_id in state.journal.replay_event_ids:
+		return _already_exists(command, "Journal replay is already unlocked: %s" % command.event_id)
+	state.journal.replay_event_ids.append(command.event_id)
+	state.journal.replay_event_ids.sort_custom(_id_less)
 	return CommandResult.success(command.command_id)
 
 

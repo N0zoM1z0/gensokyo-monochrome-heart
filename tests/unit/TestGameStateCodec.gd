@@ -98,6 +98,7 @@ func _create_rich_state() -> GameState:
 	entry.source_event_id = &"evt.hkr.empty_cushion"
 	entry.observation_keys = [&"dlg.hkr.empty_cushion.reimu.001", &"cue.reimu.look_at_cup"]
 	dispatcher.dispatch(state, AddJournalEntryCommand.new(entry))
+	dispatcher.dispatch(state, UnlockJournalReplayCommand.new(&"evt.hkr.empty_cushion"))
 	dispatcher.dispatch(state, SetRouteIntentCommand.new(&"char.reimu_hakurei", &"friendship"))
 	dispatcher.dispatch(state, SetLocationCommand.new(&"loc.hakurei_shrine"))
 	state.active_event_id = &"evt.hkr.empty_cushion"

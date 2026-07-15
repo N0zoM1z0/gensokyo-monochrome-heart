@@ -90,6 +90,23 @@ func _test_journal(failures: Array[String]) -> void:
 	)
 	if not state.journal.entries[entry.entry_id].is_read:
 		failures.append("Journal read command did not preserve its committed fact")
+	_expect_success(
+		"UnlockJournalReplayCommand positive",
+		_dispatcher.dispatch(state, UnlockJournalReplayCommand.new(&"evt.hkr.empty_cushion")),
+		failures
+	)
+	_expect_failure(
+		"UnlockJournalReplayCommand duplicate",
+		_dispatcher.dispatch(state, UnlockJournalReplayCommand.new(&"evt.hkr.empty_cushion")),
+		failures
+	)
+	_expect_failure(
+		"UnlockJournalReplayCommand invalid",
+		_dispatcher.dispatch(state, UnlockJournalReplayCommand.new(&"journal.not_an_event")),
+		failures
+	)
+	if state.journal.replay_event_ids != [&"evt.hkr.empty_cushion"]:
+		failures.append("Journal replay command did not preserve its stable event index")
 
 
 func _test_items(failures: Array[String]) -> void:
