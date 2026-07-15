@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "evt.pro.phone_no_signal",
+      "legacy_id": "EVT-001",
+      "title_en": "The Phone With No Signal",
+      "location_id": "loc.outside_world",
+      "lead_character_ids": [
+        "char.reimu_hakurei",
+        "char.marisa_kirisame"
+      ],
+      "primary_mode": "exploration",
+      "core_change": "protagonist returns",
+      "status": "planned",
+      "estimated_minutes": 12,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.hkr.empty_cushion",
+      "legacy_id": "EVT-002",
+      "title_en": "The Empty Cushion",
+      "location_id": "loc.hakurei_shrine",
+      "lead_character_ids": [
+        "char.reimu_hakurei"
+      ],
+      "primary_mode": "minigame",
+      "core_change": "trust seed",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.hkr.offerings_without_owners",
+      "legacy_id": "EVT-003",
+      "title_en": "Offerings Without Owners",
+      "location_id": "loc.hakurei_shrine",
+      "lead_character_ids": [
+        "char.reimu_hakurei"
+      ],
+      "primary_mode": "danmaku",
+      "core_change": "memory objects introduced",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.hkr.return_before_borrowing",
+      "legacy_id": "EVT-004",
+      "title_en": "Return Before Borrowing",
+      "location_id": "loc.forest_of_magic",
+      "lead_character_ids": [
+        "char.marisa_kirisame",
+        "char.patchouli_knowledge"
+      ],
+      "primary_mode": "exploration",
+      "core_change": "borrowing conflict",
+      "status": "planned",
+      "estimated_minutes": 12,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.hkr.spell_card_terms",
+      "legacy_id": "EVT-005",
+      "title_en": "Spell-Card Terms",
+      "location_id": "loc.hakurei_shrine",
+      "lead_character_ids": [
+        "char.reimu_hakurei",
+        "char.marisa_kirisame"
+      ],
+      "primary_mode": "duel",
+      "core_change": "combat tutorial",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.sdm.late_by_three_minutes",
+      "legacy_id": "EVT-006",
+      "title_en": "Late by Three Minutes",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.sakuya_izayoi"
+      ],
+      "primary_mode": "minigame",
+      "core_change": "missing-minute clue",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.sdm.corridor_never_walked",
+      "legacy_id": "EVT-007",
+      "title_en": "The Corridor That Is Never Walked",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.sakuya_izayoi",
+        "char.hong_meiling"
+      ],
+      "primary_mode": "exploration",
+      "core_change": "erased mistake",
+      "status": "planned",
+      "estimated_minutes": 12,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.sdm.book_written_tomorrow",
+      "legacy_id": "EVT-008",
+      "title_en": "A Book Written Tomorrow",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.patchouli_knowledge",
+        "char.koakuma"
+      ],
+      "primary_mode": "puzzle",
+      "core_change": "predictive archive",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.sdm.small_chair",
+      "legacy_id": "EVT-009",
+      "title_en": "The Small Chair",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.remilia_scarlet"
+      ],
+      "primary_mode": "dialogue",
+      "core_change": "public/private mask",
+      "status": "planned",
+      "estimated_minutes": 12,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.sdm.breakable_point",
+      "legacy_id": "EVT-010",
+      "title_en": "Breakable Point",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.flandre_scarlet"
+      ],
+      "primary_mode": "danmaku",
+      "core_change": "archive weakness",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.mtn.tomorrows_headline",
+      "legacy_id": "EVT-011",
+      "title_en": "Tomorrow's Headline",
+      "location_id": "loc.youkai_mountain",
+      "lead_character_ids": [
+        "char.aya_shameimaru"
+      ],
+      "primary_mode": "photo_danmaku",
+      "core_change": "future publication",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.mtn.keyword_us",
+      "legacy_id": "EVT-012",
+      "title_en": "Keyword: Us",
+      "location_id": "loc.youkai_mountain",
+      "lead_character_ids": [
+        "char.hatate_himekaidou"
+      ],
+      "primary_mode": "minigame",
+      "core_change": "thoughtography loop",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.mtn.patrol_against_nothing",
+      "legacy_id": "EVT-013",
+      "title_en": "Patrol Against Nothing",
+      "location_id": "loc.youkai_mountain",
+      "lead_character_ids": [
+        "char.momiji_inubashiri"
+      ],
+      "primary_mode": "exploration",
+      "core_change": "hierarchy pressure",
+      "status": "planned",
+      "estimated_minutes": 12,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.mtn.rumor_machine",
+      "legacy_id": "EVT-014",
+      "title_en": "A Machine for Repeating Rumors",
+      "location_id": "loc.youkai_mountain",
+      "lead_character_ids": [
+        "char.nitori_kawashiro"
+      ],
+      "primary_mode": "puzzle",
+      "core_change": "rumor amplification",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.mtn.measurable_faith",
+      "legacy_id": "EVT-015",
+      "title_en": "Measurable Faith",
+      "location_id": "loc.moriya_shrine",
+      "lead_character_ids": [
+        "char.sanae_kochiya",
+        "char.kanako_yasaka"
+      ],
+      "primary_mode": "festival_minigame",
+      "core_change": "publicity conflict",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.ein.four_dawns",
+      "legacy_id": "EVT-016",
+      "title_en": "The Corridor With Four Dawns",
+      "location_id": "loc.eientei",
+      "lead_character_ids": [
+        "char.reisen_udongein_inaba"
+      ],
+      "primary_mode": "exploration",
+      "core_change": "loop topology",
+      "status": "planned",
+      "estimated_minutes": 12,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.ein.patient_refuses",
+      "legacy_id": "EVT-017",
+      "title_en": "The Patient Who Refuses",
+      "location_id": "loc.eientei",
+      "lead_character_ids": [
+        "char.eirin_yagokoro"
+      ],
+      "primary_mode": "triage_minigame",
+      "core_change": "consent theme",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.ein.five_impossibilities",
+      "legacy_id": "EVT-018",
+      "title_en": "Five Possible Impossibilities",
+      "location_id": "loc.eientei",
+      "lead_character_ids": [
+        "char.kaguya_houraisan"
+      ],
+      "primary_mode": "multi_minigame",
+      "core_change": "route test",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.ein.shortcut_seller",
+      "legacy_id": "EVT-019",
+      "title_en": "Shortcut Seller",
+      "location_id": "loc.eientei",
+      "lead_character_ids": [
+        "char.tewi_inaba"
+      ],
+      "primary_mode": "choice_puzzle",
+      "core_change": "luck and trust",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.ein.burn_false_moon",
+      "legacy_id": "EVT-020",
+      "title_en": "Burn the False Moon",
+      "location_id": "loc.eientei",
+      "lead_character_ids": [
+        "char.fujiwara_no_mokou",
+        "char.kaguya_houraisan"
+      ],
+      "primary_mode": "danmaku",
+      "core_change": "eternity conflict",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.hgy.petal_on_hold",
+      "legacy_id": "EVT-021",
+      "title_en": "Petal on Hold",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": [
+        "char.youmu_konpaku"
+      ],
+      "primary_mode": "exploration",
+      "core_change": "release theme",
+      "status": "planned",
+      "estimated_minutes": 12,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.hgy.last_sweet",
+      "legacy_id": "EVT-022",
+      "title_en": "The Last Sweet",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": [
+        "char.yuyuko_saigyouji"
+      ],
+      "primary_mode": "banquet_minigame",
+      "core_change": "finite appetite",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.hgy.two_bodies_bridge",
+      "legacy_id": "EVT-023",
+      "title_en": "Two Bodies Cross One Bridge",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": [
+        "char.youmu_konpaku"
+      ],
+      "primary_mode": "paired_puzzle",
+      "core_change": "delegation",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.hgy.farewell_replay",
+      "legacy_id": "EVT-024",
+      "title_en": "Farewell Replay",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": [
+        "char.yuyuko_saigyouji",
+        "char.komachi_onozuka"
+      ],
+      "primary_mode": "danmaku",
+      "core_change": "spirits cannot leave",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.fin.public_hearing",
+      "legacy_id": "EVT-025",
+      "title_en": "Public Hearing",
+      "location_id": "loc.human_village",
+      "lead_character_ids": [
+        "char.hieda_no_akyuu",
+        "char.kosuzu_motoori",
+        "char.aya_shameimaru"
+      ],
+      "primary_mode": "dialogue_trial",
+      "core_change": "archive ethics",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.fin.borders_back",
+      "legacy_id": "EVT-026",
+      "title_en": "The Border’s Back",
+      "location_id": "loc.hidden_doors",
+      "lead_character_ids": [
+        "char.yukari_yakumo",
+        "char.okina_matara"
+      ],
+      "primary_mode": "boundary_puzzle",
+      "core_change": "sage conflict",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.fin.margin_of_error",
+      "legacy_id": "EVT-027",
+      "title_en": "Margin of Error",
+      "location_id": "loc.hidden_doors",
+      "lead_character_ids": [],
+      "primary_mode": "final_danmaku",
+      "core_change": "archive defeated",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    },
+    {
+      "id": "evt.fin.one_blank_page",
+      "legacy_id": "EVT-028",
+      "title_en": "One Blank Page",
+      "location_id": "loc.hakurei_shrine",
+      "lead_character_ids": [],
+      "primary_mode": "ending",
+      "core_change": "memory rules selected",
+      "status": "planned",
+      "estimated_minutes": 18,
+      "comfort_tags": []
+    }
+  ]
+}

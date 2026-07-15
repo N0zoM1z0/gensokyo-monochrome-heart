@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Event Graph",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "location_id",
+    "entry_node",
+    "nodes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^evt\\."
+    },
+    "title_key": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string",
+      "pattern": "^loc\\."
+    },
+    "spot_id": {
+      "type": "string"
+    },
+    "cast": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^char\\."
+      }
+    },
+    "availability": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "entry_node": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "music_state",
+              "exploration_objective",
+              "line",
+              "choice",
+              "effects",
+              "start_minigame",
+              "start_danmaku",
+              "start_duel",
+              "give_item",
+              "journal_entry",
+              "end_event"
+            ]
+          }
+        }
+      }
+    },
+    "origin_tags": {
+      "type": "object"
+    },
+    "comfort_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

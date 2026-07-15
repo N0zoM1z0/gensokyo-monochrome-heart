@@ -1,0 +1,28 @@
+{
+  "package_schema_version": 1,
+  "content_revision": "2026.07.14.1",
+  "counts": {
+    "characters": 71,
+    "locations": 19,
+    "events": 28,
+    "localization_rows": 15
+  },
+  "files": [
+    "characters.json",
+    "locations.json",
+    "events.json",
+    "sample_event_empty_cushion.json",
+    "dialogue_samples.json",
+    "localization/strings.csv",
+    "music_cues.csv"
+  ],
+  "schemas": [
+    "character_agent_output.schema.json",
+    "character_index.schema.json",
+    "event_graph.schema.json",
+    "event_index.schema.json",
+    "location_index.schema.json",
+    "minigame.schema.json",
+    "save_envelope.schema.json"
+  ]
+}

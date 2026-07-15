@@ -1,0 +1,47 @@
+{
+  "schema": "gmh-deferred-reference-v1",
+  "references": [
+    {
+      "id": "loc.hakurei_shrine.veranda",
+      "kind": "spot",
+      "target_milestone": "M02",
+      "reason": "The starter package indexes regions but does not yet define typed spot records."
+    },
+    {
+      "id": "prop.unpaired_cup",
+      "kind": "interactable",
+      "target_milestone": "M05",
+      "reason": "The shrine exploration fixture will author the prop contract."
+    },
+    {
+      "id": "prop.empty_cushion",
+      "kind": "interactable",
+      "target_milestone": "M05",
+      "reason": "The shrine exploration fixture will author the prop contract."
+    },
+    {
+      "id": "mini.shrine.tea_temperature",
+      "kind": "minigame",
+      "target_milestone": "M06",
+      "reason": "The sample graph intentionally precedes the Tea Temperature implementation record."
+    },
+    {
+      "id": "item.keepsake.unpaired_cup",
+      "kind": "item",
+      "target_milestone": "M03",
+      "reason": "The shared inventory and Keepsake records arrive with GameState."
+    },
+    {
+      "id": "journal.hkr.empty_cushion",
+      "kind": "journal_entry",
+      "target_milestone": "M03",
+      "reason": "The Journal data model arrives with GameState."
+    },
+    {
+      "id": "mus_shrine_day",
+      "kind": "music_state",
+      "target_milestone": "M02",
+      "reason": "The starter cue sheet contains planning cues rather than runtime music-state records."
+    }
+  ]
+}

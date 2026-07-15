@@ -7,7 +7,14 @@
 /tests/screenshots/generated/
 /preparation/
 
+# Godot mistakes the reviewed data tables for translation catalogs. These
+# auto-import products are disposable; the source CSV files remain canonical.
+/content/**/*.csv.import
+/content/**/*.translation
+
 *.log
+*.py[cod]
 *.tmp
 *.swp
 *~
+__pycache__/

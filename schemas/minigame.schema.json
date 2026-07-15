@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Minigame Definition",
+  "type": "object",
+  "required": [
+    "id",
+    "scene",
+    "duration_seconds",
+    "controls",
+    "assists",
+    "result_bands"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^mini\\."
+    },
+    "scene": {
+      "type": "string"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assists": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "result_bands": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    }
+  },
+  "additionalProperties": false
+}

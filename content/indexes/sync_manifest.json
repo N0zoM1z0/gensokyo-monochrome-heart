@@ -1,0 +1,91 @@
+{
+  "schema": "gmh-design-content-sync-v1",
+  "source_revision": "2026.07.14.1",
+  "files": [
+    {
+      "source": "design/09_data/characters.json",
+      "destination": "content/characters/characters.json",
+      "sha256": "ef675b467bd8da10f930f6f82b7daee94612d1d68b003459c0ce48e495bdb5d2"
+    },
+    {
+      "source": "design/09_data/dialogue_samples.json",
+      "destination": "content/dialogue/dialogue_samples.json",
+      "sha256": "23064b94ca06ee8c261b225a2bde020cc9548233f1c9f1728741fe7947bd96d5"
+    },
+    {
+      "source": "design/09_data/events.json",
+      "destination": "content/events/events.json",
+      "sha256": "42d48d2f5030b3ed4a7bd25061ed66eebfabaf5554ade9cd1a5b87a1fdc331b3"
+    },
+    {
+      "source": "design/09_data/sample_event_empty_cushion.json",
+      "destination": "content/events/sample_event_empty_cushion.json",
+      "sha256": "e7e58a9aa860707fb3060eeca2294b7f90414f9af0cacb6e43ab654d00e0b674"
+    },
+    {
+      "source": "design/09_data/content_index.json",
+      "destination": "content/indexes/design_content_index.json",
+      "sha256": "d227e4b75cb37c36335f73a2e253311bdc9f036265c0df5fb353d62ebcc13817"
+    },
+    {
+      "source": "design/09_data/localization/en.csv",
+      "destination": "content/localization/en.csv",
+      "sha256": "eb18c658a5688f02c00585a90d67b9f3f44e8d34761a02027ca1a40824a7c30f"
+    },
+    {
+      "source": "design/09_data/localization/ja.csv",
+      "destination": "content/localization/ja.csv",
+      "sha256": "3099b2e6da5cbec3e4e24bbba84427ca2c9418d533332f76b421d3061b0645f3"
+    },
+    {
+      "source": "design/09_data/localization/strings.csv",
+      "destination": "content/localization/strings.csv",
+      "sha256": "eb234fc77a31a4b219c528d40a443d7c2fd5a284963013f6bdd7220ef98dea31"
+    },
+    {
+      "source": "design/09_data/locations.json",
+      "destination": "content/locations/locations.json",
+      "sha256": "ded81786c420c837057ad803dda23bcb704e93bf445ae0cb9309cf45efbd21fe"
+    },
+    {
+      "source": "design/09_data/music_cues.csv",
+      "destination": "content/music/music_cues.csv",
+      "sha256": "2034e6fcf365ea0a02e49777171afb17b046af5c59e6576a3d81608b16abed2f"
+    },
+    {
+      "source": "design/09_data/schemas/character_agent_output.schema.json",
+      "destination": "schemas/character_agent_output.schema.json",
+      "sha256": "16c74251fabadd96b88c056fe378dfd6c59b7aad176d9e95e6efbdecfa1b19f5"
+    },
+    {
+      "source": "design/09_data/schemas/character_index.schema.json",
+      "destination": "schemas/character_index.schema.json",
+      "sha256": "8af99d8bffd8665049dcd60c8fff770b544be26f13205b3bab419146579400cd"
+    },
+    {
+      "source": "design/09_data/schemas/event_graph.schema.json",
+      "destination": "schemas/event_graph.schema.json",
+      "sha256": "76a38edade1bf582df30dd3525f7a0007c4c3aadc96a5195f6a0132a973daaa1"
+    },
+    {
+      "source": "design/09_data/schemas/event_index.schema.json",
+      "destination": "schemas/event_index.schema.json",
+      "sha256": "bf4f6a387cd200a570d81f3b534ad31942b1a22f88fd788018f9deb10a5f0015"
+    },
+    {
+      "source": "design/09_data/schemas/location_index.schema.json",
+      "destination": "schemas/location_index.schema.json",
+      "sha256": "9d34e2a134867c9f402d29def9d09c1c7844a9a0e48a91aae8b13e9a8c804527"
+    },
+    {
+      "source": "design/09_data/schemas/minigame.schema.json",
+      "destination": "schemas/minigame.schema.json",
+      "sha256": "1b9e7711f7ad2eece9d7aa913332acfb7932c731219d3f04d2ecf1ae5a27924e"
+    },
+    {
+      "source": "design/09_data/schemas/save_envelope.schema.json",
+      "destination": "schemas/save_envelope.schema.json",
+      "sha256": "81d732e3f2f12f1b475497ac2e60d81e5067514e3a34e5c970674910daead8f6"
+    }
+  ]
+}

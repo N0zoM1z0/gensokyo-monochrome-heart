@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Location Index",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "locations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer"
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "display_name_en",
+          "bible_path",
+          "map_position",
+          "thesis"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^loc\\."
+          },
+          "display_name_en": {
+            "type": "string"
+          },
+          "display_name_ja": {
+            "type": "string"
+          },
+          "bible_path": {
+            "type": "string"
+          },
+          "map_position": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "thesis": {
+            "type": "string"
+          },
+          "launch_tier": {
+            "enum": [
+              "headline",
+              "expansion"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+﻿key,context,speaker,en,ja,max_width_px,origin
+event.hkr.empty_cushion.title,event title,,The Empty Cushion,空いたままの座布団,180,Original
+obj.hkr.find_second_cup,objective,,Find why a second cup is warm.,二つ目の湯呑みが温かい理由を探す。,200,Original
+dlg.hkr.empty_cushion.reimu.001,private dialogue,Reimu,I didn't wait. I simply hadn't put the second cup away yet.,待ってないわ。二つ目の湯呑みを片づけてなかっただけ。,214,Original
+choice.hkr.empty_cushion.direct,tone choice,,Ask why it is still warm.,まだ温かい理由を聞く。,188,Original
+choice.hkr.empty_cushion.playful,tone choice,,Praise the cup for waiting patiently.,辛抱強く待った湯呑みを褒める。,200,Original
+choice.hkr.empty_cushion.patient,tone choice,,Pour tea and leave the empty place open.,何も正さず、お茶を注いで席を空けておく。,210,Original
+choice.hkr.empty_cushion.defiant,tone choice,,"Say the shrine remembers, even if she will not.",本人が認めなくても、神社は覚えていると言う。,214,Original
+dlg.hkr.empty_cushion.reimu.excellent,private dialogue,Reimu,...You remembered the temperature. Sit down before it changes.,……温度まで覚えてたのね。変わる前に座りなさい。,214,Original
+dlg.hkr.empty_cushion.reimu.clear,private dialogue,Reimu,That is fine. Hand me the other cup.,それでいいわ。もう一つの湯呑みを取って。,214,Original
+dlg.hkr.empty_cushion.reimu.loss,private dialogue,Reimu,Too hot. Move over; I will fix it.,熱すぎ。ちょっとどいて、私が直す。,214,Original
+journal.hkr.empty_cushion.title,journal title,,The Empty Second Cup,空いた二つ目の湯呑み,180,Original
+journal.hkr.empty_cushion.body,journal body,,The cup was warm before I arrived. The cushion is no longer stored away.,着く前から湯呑みは温かかった。座布団はもう片づけられていない。,260,Original
+ui.map.travel,button,,Travel,移動,48,UI
+ui.common.back,button,,Back,戻る,48,UI
+ui.journal.open,button,,Journal,手帳,64,UI
