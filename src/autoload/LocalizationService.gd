@@ -16,16 +16,29 @@ func _ready() -> void:
 
 
 func initialize() -> bool:
-	if not _catalog.load_default():
-		for error: String in _catalog.errors:
+	var candidate := UiTextCatalog.new()
+	if not candidate.load_default():
+		for error: String in candidate.errors:
 			push_error(error)
 		return false
+	_catalog = candidate
 	var config := ConfigFile.new()
 	if config.load(CONFIG_PATH) == OK:
 		var stored_locale := StringName(config.get_value("localization", "locale", "en"))
 		locale = stored_locale if stored_locale in VALID_LOCALES else &"en"
 		has_selected_language = bool(config.get_value("localization", "selected", false))
 	TranslationServer.set_locale(locale)
+	return true
+
+
+func reload_catalog() -> bool:
+	var candidate := UiTextCatalog.new()
+	if not candidate.load_default():
+		for error: String in candidate.errors:
+			push_error(error)
+		return false
+	_catalog = candidate
+	locale_changed.emit(locale)
 	return true
 
 

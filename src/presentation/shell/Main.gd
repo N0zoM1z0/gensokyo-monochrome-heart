@@ -23,6 +23,13 @@ func _ready() -> void:
 
 
 func _boot() -> void:
+	var content_db := get_node_or_null("/root/ContentDB")
+	if content_db == null or not content_db.is_loaded():
+		var diagnostic := "ContentDB singleton is unavailable."
+		if content_db != null and content_db.last_report() != null:
+			diagnostic = content_db.last_report().human_readable()
+		push_error("Title route blocked because authored content is invalid:\n%s" % diagnostic)
+		return
 	await _route_primary(&"title")
 
 
@@ -62,6 +69,9 @@ func _on_semantic_action_pressed(action: StringName) -> void:
 
 
 func _on_route_completed(result: ScreenRouteResult) -> void:
+	var content_db := get_node_or_null("/root/ContentDB")
+	if content_db != null:
+		content_db.set_active_mode(result.screen_id)
 	if result.screen != null and result.screen.has_signal("command_requested"):
 		result.screen.connect("command_requested", _on_screen_command)
 
