@@ -13,7 +13,7 @@ func _run(graph: EventGraphRecord, intent: StringName, tone: StringName, outcome
 	var interpreter := EventInterpreter.new(); var result := interpreter.start(graph, state, _content); result = interpreter.advance_line(); result = interpreter.advance_line()
 	_expect(result.choice != null and result.choice.options.size() == 4, "%s did not see four explicit futures" % intent); result = interpreter.choose_tone(tone); _expect(result.node_id == StringName("n_%s" % intent), "%s did not reach its future line" % intent)
 	result = interpreter.advance_line(); _expect(result.status == EventInterpreterResult.Status.END and result.outcome == outcome, "%s did not complete its authored Promise" % intent)
-	_expect(state.characters[YOUMU].route_stage == 7 and state.characters[YOUMU].route_intent == intent, "%s did not persist stage seven and intent" % intent); _expect(state.journal.entries.has(&"journal.hgy.promise"), "%s omitted Promise Journal evidence" % intent)
+	_expect(state.characters[YOUMU].route_stage == 7 and state.characters[YOUMU].route_intent == intent, "%s did not persist stage seven and intent" % intent); _expect(state.journal.entries.has(StringName("journal.hgy.promise.%s" % intent)), "%s omitted Promise Journal evidence" % intent)
 func _state(profile_id: StringName) -> GameState:
 	var characters: Array[StringName] = []; for character: CharacterRecord in _content.all_characters(): characters.append(character.id)
 	var locations: Array[StringName] = []; for location: LocationRecord in _content.all_locations(): locations.append(location.id)

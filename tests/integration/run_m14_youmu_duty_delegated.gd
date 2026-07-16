@@ -18,9 +18,12 @@ func _run(graph: EventGraphRecord, tone: StringName, index: int) -> void:
 	_expect(result.choice != null and result.choice.options.size() == 4, "%s did not reach four delegation responses" % tone)
 	result = interpreter.choose_tone(tone); _expect(result.node_id == StringName("n_%s_line" % tone), "%s did not reach its boundary response" % tone)
 	result = interpreter.advance_line(); result = interpreter.advance_line()
-	_expect(result.status == EventInterpreterResult.Status.END and result.outcome == &"east_path_watched_without_command", "%s did not finish delegated watch" % tone)
+	var expected_outcome: StringName = &"watch_declined_with_observation" if tone == &"defiant" else &"east_path_watched_without_command"
+	_expect(result.status == EventInterpreterResult.Status.END and result.outcome == expected_outcome, "%s did not finish delegated watch" % tone)
 	_expect(state.characters[YOUMU].route_stage == 3, "%s did not advance Youmu to stage three" % tone)
-	_expect(state.journal.entries.has(&"journal.hgy.duty_delegated"), "%s omitted delegation Journal evidence" % tone)
+	var journal_id: StringName = &"journal.hgy.duty_delegated.declined" if tone == &"defiant" else &"journal.hgy.duty_delegated"
+	_expect(state.journal.entries.has(journal_id), "%s omitted delegation Journal evidence" % tone)
+	_expect(state.event_flags.has(&"flag.route.youmu.delegation_declined") if tone == &"defiant" else state.event_flags.has(&"flag.route.youmu.delegation_accepted"), "%s did not persist the correct delegation boundary" % tone)
 
 func _state(profile_id: StringName) -> GameState:
 	var characters: Array[StringName] = []; for character: CharacterRecord in _content.all_characters(): characters.append(character.id)

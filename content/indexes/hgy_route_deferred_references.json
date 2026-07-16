@@ -18,6 +18,7 @@
     {"id": "prop.hgy.unraked_east_path", "kind": "interactable", "target_milestone": "M14", "reason": "A deliberately visible path whose care does not require command."},
     {"id": "prop.hgy.garden_bell", "kind": "interactable", "target_milestone": "M14", "reason": "Youmu's check-in signal rather than an order bell."},
     {"id": "journal.hgy.duty_delegated", "kind": "journal_entry", "target_milestone": "M14", "reason": "A single garden watch is delegated with a return point and no role claim."},
+    {"id": "journal.hgy.duty_delegated.declined", "kind": "journal_entry", "target_milestone": "M14", "reason": "The player may decline the watch while offering an observation, without taking Youmu's decision from her."},
     {"id": "loc.hakugyokurou.training_yard", "kind": "spot", "target_milestone": "M14", "reason": "Youmu notices she is treating a relational disagreement like a training assignment."},
     {"id": "prop.hgy.unfinished_cut","kind":"interactable","target_milestone":"M14","reason":"A deliberately incomplete practice cut."},
     {"id": "prop.hgy.training_board","kind":"interactable","target_milestone":"M14","reason":"Board that cannot produce an instruction for an emotion."},
@@ -33,6 +34,9 @@
     {"id":"loc.hakugyokurou.morning_training_ground","kind":"spot","target_milestone":"M14","reason":"Youmu's promise begins with a practice sword and an optional morning."},
     {"id":"prop.hgy.practice_sword","kind":"interactable","target_milestone":"M14","reason":"Friendship promise: shared practice by invitation."},
     {"id":"prop.hgy.unmarked_morning","kind":"interactable","target_milestone":"M14","reason":"A future left chosen rather than scheduled as duty."},
-    {"id":"journal.hgy.promise","kind":"journal_entry","target_milestone":"M14","reason":"Youmu's final explicit route intent."}
+    {"id":"journal.hgy.promise.friendship","kind":"journal_entry","target_milestone":"M14","reason":"Youmu's friendship future: shared practice without evaluation."},
+    {"id":"journal.hgy.promise.romance","kind":"journal_entry","target_milestone":"M14","reason":"Youmu names a feeling she will not call failure."},
+    {"id":"journal.hgy.promise.postponed","kind":"journal_entry","target_milestone":"M14","reason":"The morning remains open rather than an unfinished order."},
+    {"id":"journal.hgy.promise.undecided","kind":"journal_entry","target_milestone":"M14","reason":"Uncertainty can arrive at walking pace."}
   ]
 }

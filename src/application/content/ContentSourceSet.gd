@@ -129,7 +129,7 @@ var supplemental_deferred_reference_paths: Array[String] = [
 ]
 var expected_supplemental_event_count: int = 25
 var expected_supplemental_dialogue_count: int = 235
-var expected_supplemental_localization_count: int = 466
+var expected_supplemental_localization_count: int = 474
 
 
 func content_paths() -> Array[String]:

@@ -11,5 +11,11 @@ dlg.hgy.promise.friendship,dialogue,char.youmu_konpaku,"Then we will train as fr
 dlg.hgy.promise.romance,dialogue,char.youmu_konpaku,"There are things I cannot cut. I would like to stop calling that a failure, especially when I am with you.",「私には切れないものがあります。それを失敗と呼ぶのはやめたいです。特に、あなたといる時は。」,248,Original
 dlg.hgy.promise.postponed,dialogue,char.youmu_konpaku,"That is acceptable. An open morning is not an unfinished command.",「それで構いません。空いた朝は、未完の命令ではありません。」,248,Original
 dlg.hgy.promise.undecided,dialogue,char.youmu_konpaku,"Then neither of us has to march first. The future can arrive at walking pace.",「では、どちらも先に行進しなくていい。未来は歩く速さで来てもいいです。」,248,Original
-journal.hgy.promise.title,journal_title,,What the Sword Cannot Finish,剣では終えられないこと,248,Original
-journal.hgy.promise.body,journal_body,,Youmu offered a future without turning it into duty. Friendship, romance, postponement, and uncertainty each left the next morning chosen rather than ordered.,妖夢は未来を役目にせずに差し出した。友情、恋愛、保留、未定のどれもが、次の朝を命令ではなく選ばれたものにした。,248,Original
+journal.hgy.promise.friendship.title,journal_title,,A Morning of Practice,朝の稽古,248,Original
+journal.hgy.promise.friendship.body,journal_body,,Youmu offered a practice sword and a morning of training as friends without turning either into an evaluation.,妖夢は、どちらも評価にせず、友人として稽古刀と朝稽古を差し出した。,248,Original
+journal.hgy.promise.romance.title,journal_title,,What She Will Not Cut Away,切り捨てないもの,248,Original
+journal.hgy.promise.romance.body,journal_body,,Youmu named feelings she cannot cut away and chose not to call them failure.,妖夢は切り捨てられない気持ちを言葉にし、それを失敗と呼ばないことを選んだ。,248,Original
+journal.hgy.promise.postponed.title,journal_title,,The Morning Left Open,空けたままの朝,248,Original
+journal.hgy.promise.postponed.body,journal_body,,The morning stayed open without being an unfinished order.,その朝は、未完の命令にならないまま空けておかれた。,248,Original
+journal.hgy.promise.undecided.title,journal_title,,A Future at Walking Pace,歩く速さの未来,248,Original
+journal.hgy.promise.undecided.body,journal_body,,Neither future was ordered forward. Youmu allowed uncertainty to arrive at walking pace.,どちらの未来にも先へ進む命令はなかった。妖夢は未定が歩く速さで来ることを許した。,248,Original
