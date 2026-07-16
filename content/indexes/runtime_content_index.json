@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "1191bc5b3e8b9fb1092098c801196bfcfad5d0f68f0cc62edb452c2e23856883",
+  "content_hash": "ae23ab2410316247c8a17e13cec75bf6978efc682a52102fbfbd0b3dfbad8843",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 54,
-    "dialogue_beats": 261,
-    "localization": 1083,
+    "events": 55,
+    "dialogue_beats": 271,
+    "localization": 1101,
     "music_cues": 89,
-    "event_nodes": 625
+    "event_nodes": 647
   },
   "ids": {
     "characters": [
@@ -108,6 +108,7 @@
     ],
     "events": [
       "evt.aya.exclusive_interview",
+      "evt.aya.wind_frame_graze",
       "evt.ein.burn_false_moon",
       "evt.ein.five_impossibilities",
       "evt.ein.four_dawns",
@@ -170,6 +171,16 @@
       "beat.aya.exclusive_interview.patient",
       "beat.aya.exclusive_interview.playful",
       "beat.aya.exclusive_interview.terms",
+      "beat.aya.wind_frame_graze.after",
+      "beat.aya.wind_frame_graze.assist",
+      "beat.aya.wind_frame_graze.clear",
+      "beat.aya.wind_frame_graze.defiant",
+      "beat.aya.wind_frame_graze.direct",
+      "beat.aya.wind_frame_graze.frame",
+      "beat.aya.wind_frame_graze.intro",
+      "beat.aya.wind_frame_graze.loss",
+      "beat.aya.wind_frame_graze.patient",
+      "beat.aya.wind_frame_graze.playful",
       "beat.hgy.duty.after",
       "beat.hgy.duty.defiant",
       "beat.hgy.duty.direct",
@@ -434,6 +445,10 @@
       "choice.aya.exclusive_interview.direct",
       "choice.aya.exclusive_interview.patient",
       "choice.aya.exclusive_interview.playful",
+      "choice.aya.wind_frame_graze.defiant",
+      "choice.aya.wind_frame_graze.direct",
+      "choice.aya.wind_frame_graze.patient",
+      "choice.aya.wind_frame_graze.playful",
       "choice.hgy.duty.defiant",
       "choice.hgy.duty.direct",
       "choice.hgy.duty.patient",
@@ -557,6 +572,16 @@
       "dlg.aya.exclusive_interview.patient",
       "dlg.aya.exclusive_interview.playful",
       "dlg.aya.exclusive_interview.terms",
+      "dlg.aya.wind_frame_graze.after",
+      "dlg.aya.wind_frame_graze.assist",
+      "dlg.aya.wind_frame_graze.clear",
+      "dlg.aya.wind_frame_graze.defiant",
+      "dlg.aya.wind_frame_graze.direct",
+      "dlg.aya.wind_frame_graze.frame",
+      "dlg.aya.wind_frame_graze.intro",
+      "dlg.aya.wind_frame_graze.loss",
+      "dlg.aya.wind_frame_graze.patient",
+      "dlg.aya.wind_frame_graze.playful",
       "dlg.hgy.duty.after",
       "dlg.hgy.duty.defiant",
       "dlg.hgy.duty.direct",
@@ -812,6 +837,7 @@
       "dlg.sdm.promise.romance",
       "dlg.sdm.promise.undecided",
       "event.aya.exclusive_interview.title",
+      "event.aya.wind_frame_graze.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
       "event.hgy.farewell_will_not_fall.title",
@@ -855,6 +881,8 @@
       "input.glyph.pointer.move",
       "journal.aya.exclusive_interview.body",
       "journal.aya.exclusive_interview.title",
+      "journal.aya.wind_frame_graze.body",
+      "journal.aya.wind_frame_graze.title",
       "journal.hgy.cutting_wrong_problem.body",
       "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
@@ -926,6 +954,7 @@
       "journal.sdm.promise.body",
       "journal.sdm.promise.title",
       "obj.aya.exclusive_interview.mark_record",
+      "obj.aya.wind_frame_graze.exit",
       "obj.ein.cross_four_dawns",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
@@ -4164,6 +4193,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.aya.wind_frame_graze.response",
+      "target": "choice.aya.wind_frame_graze.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.wind_frame_graze.response",
+      "target": "choice.aya.wind_frame_graze.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.wind_frame_graze.response",
+      "target": "choice.aya.wind_frame_graze.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.wind_frame_graze.response",
+      "target": "choice.aya.wind_frame_graze.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hgy.duty.response",
       "target": "choice.hgy.duty.defiant",
       "kind": "localization"
@@ -4955,6 +5004,281 @@
     },
     {
       "source": "evt.aya.exclusive_interview",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n001",
+      "target": "evt.aya.wind_frame_graze.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n001",
+      "target": "mus_aya_chase",
+      "kind": "music"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n002",
+      "target": "evt.aya.wind_frame_graze.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n002",
+      "target": "obj.aya.wind_frame_graze.exit",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n002",
+      "target": "prop.aya.frame_marker",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n002",
+      "target": "prop.aya.safe_landing",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n003",
+      "target": "beat.aya.wind_frame_graze.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n003",
+      "target": "evt.aya.wind_frame_graze.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n004",
+      "target": "beat.aya.wind_frame_graze.frame",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n004",
+      "target": "evt.aya.wind_frame_graze.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n005",
+      "target": "choice.aya.wind_frame_graze.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n005",
+      "target": "evt.aya.wind_frame_graze.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n005",
+      "target": "evt.aya.wind_frame_graze.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n005",
+      "target": "evt.aya.wind_frame_graze.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n005",
+      "target": "evt.aya.wind_frame_graze.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_after_music",
+      "target": "evt.aya.wind_frame_graze.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_after_music",
+      "target": "mus_aya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_after",
+      "target": "beat.aya.wind_frame_graze.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_after",
+      "target": "evt.aya.wind_frame_graze.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_assist",
+      "target": "beat.aya.wind_frame_graze.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_assist",
+      "target": "evt.aya.wind_frame_graze.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_clear",
+      "target": "beat.aya.wind_frame_graze.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_clear",
+      "target": "evt.aya.wind_frame_graze.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "target": "danmaku.mtn.tomorrows_headline",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "target": "evt.aya.wind_frame_graze.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "target": "evt.aya.wind_frame_graze.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "target": "evt.aya.wind_frame_graze.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_defiant_line",
+      "target": "beat.aya.wind_frame_graze.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_defiant_line",
+      "target": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_defiant",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_defiant",
+      "target": "evt.aya.wind_frame_graze.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_direct_line",
+      "target": "beat.aya.wind_frame_graze.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_direct_line",
+      "target": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_direct",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_direct",
+      "target": "evt.aya.wind_frame_graze.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_effects",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_effects",
+      "target": "evt.aya.wind_frame_graze.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_journal",
+      "target": "evt.aya.wind_frame_graze.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_journal",
+      "target": "journal.aya.wind_frame_graze",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_loss",
+      "target": "beat.aya.wind_frame_graze.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_loss",
+      "target": "evt.aya.wind_frame_graze.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_patient_line",
+      "target": "beat.aya.wind_frame_graze.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_patient_line",
+      "target": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_patient",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_patient",
+      "target": "evt.aya.wind_frame_graze.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_playful_line",
+      "target": "beat.aya.wind_frame_graze.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_playful_line",
+      "target": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_playful",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_playful",
+      "target": "evt.aya.wind_frame_graze.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze",
+      "target": "char.aya_shameimaru",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze",
+      "target": "char.aya_shameimaru",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze",
+      "target": "event.aya.wind_frame_graze.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze",
+      "target": "evt.aya.wind_frame_graze",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze",
+      "target": "loc.youkai_mountain.wind_ridge",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze",
       "target": "loc.youkai_mountain",
       "kind": "location"
     },
