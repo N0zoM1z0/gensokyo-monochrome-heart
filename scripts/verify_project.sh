@@ -318,6 +318,8 @@ run_checked "M13 Five Impossible Errands integration" env XDG_DATA_HOME="$LOG_DI
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_five_impossible_errands.gd
 run_checked "M13 Soul Garden integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_soul_garden.gd
+run_checked "M13 five-region campaign backbone" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_campaign_backbone.gd
 run_checked "M13 Tomorrow's Headline event integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_tomorrows_headline_event_flow.gd
 run_checked "M13 Youkai Mountain vertical slice integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \

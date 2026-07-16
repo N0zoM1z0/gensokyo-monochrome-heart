@@ -7,6 +7,7 @@ func _initialize() -> void:
 		TestArchivePrototype.new(),
 		TestAuthoringWorkbench.new(),
 		TestBulletPatternLab.new(),
+		TestCampaignBackbone.new(),
 		TestCampaignConsequences.new(),
 		TestCharacterAuthoringService.new(),
 		TestContentDB.new(),

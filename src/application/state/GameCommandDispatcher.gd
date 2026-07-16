@@ -79,6 +79,8 @@ func _apply(state: GameState, command: GameCommand) -> CommandResult:
 		return _set_event_position(state, command)
 	if command is CompleteEventCommand:
 		return _complete_event(state, command)
+	if command is AdvanceChapterCommand:
+		return _advance_chapter(state, command)
 	return CommandResult.failure(
 		CommandResult.Code.INVALID_COMMAND,
 		command.command_id,
@@ -373,6 +375,25 @@ func _complete_event(state: GameState, command: CompleteEventCommand) -> Command
 	state.completed_event_ids.sort_custom(_id_less)
 	state.active_event_id = &""
 	state.active_event_node_id = &""
+	return CommandResult.success(command.command_id)
+
+
+func _advance_chapter(state: GameState, command: AdvanceChapterCommand) -> CommandResult:
+	if (
+		not _matches(command.expected_chapter_id, "^chapter\\.[1-9][0-9]*$")
+		or not _matches(command.next_chapter_id, "^chapter\\.[1-9][0-9]*$")
+	):
+		return _invalid(command, "campaign chapter IDs must be numbered")
+	if state.chapter_id != command.expected_chapter_id:
+		return _invalid(command, "chapter changed before transition: expected %s, got %s" % [
+			command.expected_chapter_id,
+			state.chapter_id,
+		])
+	var opening_rank := String(command.expected_chapter_id).trim_prefix("chapter.").to_int()
+	var next_rank := String(command.next_chapter_id).trim_prefix("chapter.").to_int()
+	if next_rank != opening_rank + 1:
+		return _invalid(command, "campaign chapters must advance exactly once")
+	state.chapter_id = command.next_chapter_id
 	return CommandResult.success(command.command_id)
 
 
