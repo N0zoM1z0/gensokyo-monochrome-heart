@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.ein.short_lived_guest.choose,objective,,Choose how to answer Kaguya's question about a mortal future.,輝夜の、限りある未来についての問いにどう答えるか選ぶ。,208,Original
+event.ein.short_lived_guest.title,event_title,,The Short-Lived Guest,短命の客人,208,Original
+choice.ein.short_lived_guest.direct,choice,,Say you cannot promise equal years, but can name the next meeting honestly.,同じ年月は約束できないが、次に会う時は正直に決められると言う。,248,Original
+choice.ein.short_lived_guest.playful,choice,,Propose one small contest for the next tea, without disguising the hard part.,難しいことを隠さず、次のお茶で小さな勝負をしようと提案する。,248,Original
+choice.ein.short_lived_guest.patient,choice,,Let the silence remain without filling it with forever.,永遠という言葉で埋めず、沈黙をそのままにする。,248,Original
+choice.ein.short_lived_guest.defiant,choice,,Refuse to make a mortal future into proof of devotion or a debt.,限りある未来を、献身の証明や負債にすることを断る。,248,Original
+dlg.ein.short_lived_guest.intro,dialogue,char.kaguya_houraisan,"The calendar is very patient with people who need reminding that it does not negotiate. Your tea will cool; your years will do other things.",「暦は交渉しないことを忘れがちな人にも、とても辛抱強い。あなたのお茶は冷めるし、あなたの年月も別のことをするわ。」,248,Original
+dlg.ein.short_lived_guest.question,dialogue,char.kaguya_houraisan,"Do not offer to become what you are not. I have heard eternity used as a ribbon around so many cages. What can you actually give this morning?","自分でないものになろうと申し出ないで。永遠という言葉が、いくつもの檻の飾りに使われるのを見てきたわ。今朝、あなたに実際に差し出せるものは何？",248,Original
+dlg.ein.short_lived_guest.direct,dialogue,char.kaguya_houraisan,"Next week, then. You have not made the difference between us disappear; you have made room for one meeting inside it. That is more exacting, and kinder.",「それなら来週。私たちの違いを消したのではない。その中に、一度会う場所を作ったのね。そちらの方が厳密で、優しいわ。」,248,Original
+dlg.ein.short_lived_guest.playful,dialogue,char.kaguya_houraisan,"A contest to find one new thing before the tea cools? Delightfully finite. We will not pretend the difficult part is a joke, but we need not let it drink all the tea.",「お茶が冷めるまでに新しいものを一つ見つける勝負？　見事に有限ね。難しいところを冗談のふりはしない。でも、お茶を全部飲ませる必要もないわ。」,248,Original
+dlg.ein.short_lived_guest.patient,dialogue,char.kaguya_houraisan,"Thank you. This silence does not ask you to become eternal, and it does not ask me to make your future smaller so that I can bear it.",「ありがとう。この沈黙は、あなたに永遠になれとは言わないし、私が耐えられるようにあなたの未来を小さくしろとも言わない。」,248,Original
+dlg.ein.short_lived_guest.defiant,dialogue,char.kaguya_houraisan,"Precisely. A short life is not an invoice I may present to you, and your concern is not a test you must pass. Leave the account book closed.",「その通り。短い命は、私があなたに差し出せる請求書ではない。あなたの気遣いも、合格しなければならない試験ではない。帳簿は閉じたままにしましょう。」,248,Original
+dlg.ein.short_lived_guest.after,dialogue,char.kaguya_houraisan,"Morning will end. That is exactly why it deserves our attention. Pour the tea before it cools beyond recognition.",「朝は終わる。だからこそ、注意を向ける価値がある。見分けがつかなくなる前に、お茶を注いで。」,248,Original
+journal.ein.short_lived_guest.title,journal_title,,One Honest Appointment,一つの正直な約束,248,Original
+journal.ein.short_lived_guest.body,journal_body,,Kaguya did not ask for an equal lifespan or a borrowed eternity. The next meeting could be named plainly, while the difference between their futures remained real and unowned.,輝夜は同じ寿命も、借りた永遠も求めなかった。未来の違いを現実のまま誰のものにもせず、次に会う時だけを率直に決められた。,248,Original

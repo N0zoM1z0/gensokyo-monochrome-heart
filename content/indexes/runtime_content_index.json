@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "8be5fa99bf8aa8e6db4000c332e028cfa8d32b89a194fbf0dffb0e1686de88c1",
+  "content_hash": "a8b32deb3758661be0ba19475e77867385c0620ffe4a2dbc53965c90a19a6328",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 62,
-    "dialogue_beats": 329,
-    "localization": 1235,
+    "events": 63,
+    "dialogue_beats": 336,
+    "localization": 1250,
     "music_cues": 89,
-    "event_nodes": 797
+    "event_nodes": 814
   },
   "ids": {
     "characters": [
@@ -120,6 +120,7 @@
       "evt.ein.four_dawns",
       "evt.ein.game_with_no_continue",
       "evt.ein.patient_refuses",
+      "evt.ein.short_lived_guest",
       "evt.ein.shortcut_seller",
       "evt.fin.borders_back",
       "evt.fin.margin_of_error",
@@ -246,6 +247,13 @@
       "beat.ein.game_with_no_continue.loss",
       "beat.ein.game_with_no_continue.patient",
       "beat.ein.game_with_no_continue.playful",
+      "beat.ein.short_lived_guest.after",
+      "beat.ein.short_lived_guest.defiant",
+      "beat.ein.short_lived_guest.direct",
+      "beat.ein.short_lived_guest.intro",
+      "beat.ein.short_lived_guest.patient",
+      "beat.ein.short_lived_guest.playful",
+      "beat.ein.short_lived_guest.question",
       "beat.hgy.duty.after",
       "beat.hgy.duty.defiant",
       "beat.hgy.duty.direct",
@@ -548,6 +556,10 @@
       "choice.ein.game_with_no_continue.direct",
       "choice.ein.game_with_no_continue.patient",
       "choice.ein.game_with_no_continue.playful",
+      "choice.ein.short_lived_guest.defiant",
+      "choice.ein.short_lived_guest.direct",
+      "choice.ein.short_lived_guest.patient",
+      "choice.ein.short_lived_guest.playful",
       "choice.hgy.duty.defiant",
       "choice.hgy.duty.direct",
       "choice.hgy.duty.patient",
@@ -739,6 +751,13 @@
       "dlg.ein.game_with_no_continue.loss",
       "dlg.ein.game_with_no_continue.patient",
       "dlg.ein.game_with_no_continue.playful",
+      "dlg.ein.short_lived_guest.after",
+      "dlg.ein.short_lived_guest.defiant",
+      "dlg.ein.short_lived_guest.direct",
+      "dlg.ein.short_lived_guest.intro",
+      "dlg.ein.short_lived_guest.patient",
+      "dlg.ein.short_lived_guest.playful",
+      "dlg.ein.short_lived_guest.question",
       "dlg.hgy.duty.after",
       "dlg.hgy.duty.defiant",
       "dlg.hgy.duty.direct",
@@ -1003,6 +1022,7 @@
       "event.ein.elegance_and_boredom.title",
       "event.ein.five_impossibilities.title",
       "event.ein.game_with_no_continue.title",
+      "event.ein.short_lived_guest.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
       "event.hgy.farewell_will_not_fall.title",
@@ -1074,6 +1094,8 @@
       "journal.ein.five_impossibilities.title",
       "journal.ein.game_with_no_continue.body",
       "journal.ein.game_with_no_continue.title",
+      "journal.ein.short_lived_guest.body",
+      "journal.ein.short_lived_guest.title",
       "journal.hgy.cutting_wrong_problem.body",
       "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
@@ -1155,6 +1177,7 @@
       "obj.ein.elegance_and_boredom.host",
       "obj.ein.five_impossibilities.answer",
       "obj.ein.game_with_no_continue.choose",
+      "obj.ein.short_lived_guest.choose",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
       "obj.hgy.farewell.release",
@@ -1831,6 +1854,76 @@
     ]
   },
   "dependencies": [
+    {
+      "source": "beat.ein.short_lived_guest.after",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.after",
+      "target": "dlg.ein.short_lived_guest.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.defiant",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.defiant",
+      "target": "dlg.ein.short_lived_guest.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.direct",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.direct",
+      "target": "dlg.ein.short_lived_guest.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.intro",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.intro",
+      "target": "dlg.ein.short_lived_guest.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.patient",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.patient",
+      "target": "dlg.ein.short_lived_guest.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.playful",
+      "target": "dlg.ein.short_lived_guest.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.question",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.short_lived_guest.question",
+      "target": "dlg.ein.short_lived_guest.question",
+      "kind": "localization"
+    },
     {
       "source": "beat.hgy.duty.after",
       "target": "char.youmu_konpaku",
@@ -4579,6 +4672,26 @@
     {
       "source": "choice.ein.game_with_no_continue.response",
       "target": "choice.ein.game_with_no_continue.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.short_lived_guest.response",
+      "target": "choice.ein.short_lived_guest.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.short_lived_guest.response",
+      "target": "choice.ein.short_lived_guest.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.short_lived_guest.response",
+      "target": "choice.ein.short_lived_guest.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.short_lived_guest.response",
+      "target": "choice.ein.short_lived_guest.playful",
       "kind": "localization"
     },
     {
@@ -7493,6 +7606,221 @@
     },
     {
       "source": "evt.ein.patient_refuses",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n001",
+      "target": "evt.ein.short_lived_guest.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n001",
+      "target": "mus_kaguya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n002",
+      "target": "evt.ein.short_lived_guest.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n002",
+      "target": "obj.ein.short_lived_guest.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n002",
+      "target": "prop.ein.morning_tea",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n002",
+      "target": "prop.ein.unmarked_calendar",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n003",
+      "target": "beat.ein.short_lived_guest.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n003",
+      "target": "evt.ein.short_lived_guest.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n004",
+      "target": "beat.ein.short_lived_guest.question",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n004",
+      "target": "evt.ein.short_lived_guest.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n005",
+      "target": "choice.ein.short_lived_guest.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n005",
+      "target": "evt.ein.short_lived_guest.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n005",
+      "target": "evt.ein.short_lived_guest.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n005",
+      "target": "evt.ein.short_lived_guest.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n005",
+      "target": "evt.ein.short_lived_guest.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_after",
+      "target": "beat.ein.short_lived_guest.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_after",
+      "target": "evt.ein.short_lived_guest.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_defiant_line",
+      "target": "beat.ein.short_lived_guest.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_defiant_line",
+      "target": "evt.ein.short_lived_guest.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_defiant",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_defiant",
+      "target": "evt.ein.short_lived_guest.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_direct_line",
+      "target": "beat.ein.short_lived_guest.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_direct_line",
+      "target": "evt.ein.short_lived_guest.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_direct",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_direct",
+      "target": "evt.ein.short_lived_guest.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_effects",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_effects",
+      "target": "evt.ein.short_lived_guest.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_journal",
+      "target": "evt.ein.short_lived_guest.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_journal",
+      "target": "journal.ein.short_lived_guest",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_patient_line",
+      "target": "beat.ein.short_lived_guest.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_patient_line",
+      "target": "evt.ein.short_lived_guest.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_patient",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_patient",
+      "target": "evt.ein.short_lived_guest.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_playful_line",
+      "target": "beat.ein.short_lived_guest.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_playful_line",
+      "target": "evt.ein.short_lived_guest.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.short_lived_guest.node.n_playful",
+      "target": "evt.ein.short_lived_guest.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.short_lived_guest",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.ein.short_lived_guest",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.short_lived_guest",
+      "target": "event.ein.short_lived_guest.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.short_lived_guest",
+      "target": "evt.ein.short_lived_guest",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.ein.short_lived_guest",
+      "target": "loc.eientei.morning_veranda",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.ein.short_lived_guest",
       "target": "loc.eientei",
       "kind": "location"
     },
