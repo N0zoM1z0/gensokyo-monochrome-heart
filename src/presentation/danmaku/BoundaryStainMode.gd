@@ -28,8 +28,8 @@ const ACTION_CONTRACT := [
 @export var default_event_id: StringName = &"evt.hkr.offerings_without_owners"
 @export var pause_title_key: StringName = &"ui.danmaku.paused"
 @export var result_text_prefix := "ui.danmaku.result"
-@export_enum("standard", "photo_frame") var simulation_component := "standard"
-@export_enum("shrine", "mountain_wind") var field_component := "shrine"
+@export_enum("standard", "photo_frame", "archive_adaptive") var simulation_component := "standard"
+@export_enum("shrine", "mountain_wind", "archive_core") var field_component := "shrine"
 @export var companion_action_key: StringName = &"ui.input.margin"
 @export var teaching_keys: Array[StringName] = [
 	&"ui.danmaku.boundary.teach.amulet",
@@ -316,6 +316,7 @@ func _load_runtime() -> void:
 	if definition == null or not loader.errors.is_empty():
 		push_error("Danmaku pattern could not load: %s" % [loader.errors])
 		return
+	definition = _adapt_definition(definition)
 	var settings := _resolved_assists()
 	_no_flash_active = settings.no_flash
 	host = DanmakuHost.new()
@@ -343,6 +344,10 @@ func _load_runtime() -> void:
 	_fixture_frozen = fixture_state != "live"
 	_prepare_fixture_state()
 	queue_redraw()
+
+
+func _adapt_definition(source: DanmakuPatternDefinition) -> DanmakuPatternDefinition:
+	return source
 
 
 func _resolved_assists() -> DanmakuAssistSettings:
@@ -564,6 +569,7 @@ func _draw() -> void:
 	_batch_renderer.draw_field(self, runtime, FIELD_ORIGIN, FIELD_SIZE, foreground, background)
 	_draw_interaction_overlay(foreground)
 	_draw_boss_and_player(foreground, background)
+	_draw_mode_overlay(foreground, background)
 	_draw_status_rail(foreground, background)
 	if _tutorial_waiting or _intro_ticks_remaining > 0:
 		_draw_intro(foreground, background)
@@ -607,6 +613,16 @@ func _draw_field_shell(foreground: Color, background: Color) -> void:
 
 func _draw_field_landmark(foreground: Color) -> void:
 	match StringName(field_component):
+		&"archive_core":
+			# Machine-straight index columns retain one-frame-late broken echoes.
+			for x: int in range(18, 219, 25):
+				draw_line(Vector2(x, 34), Vector2(x, 151), foreground, 1.0)
+				for y: int in range(42, 145, 18):
+					draw_line(Vector2(x, y), Vector2(x + 8, y), foreground, 1.0)
+			for y: int in range(52, 145, 23):
+				draw_line(Vector2(10, y), Vector2(221, y), foreground, 1.0)
+			draw_rect(Rect2(94, 71, 46, 55), foreground, false, 1.0)
+			draw_rect(Rect2(97, 73, 46, 55), foreground, false, 1.0)
 		&"mountain_wind":
 			draw_line(Vector2(14, 151), Vector2(67, 83), foreground, 1.0)
 			draw_line(Vector2(67, 83), Vector2(112, 151), foreground, 1.0)
@@ -622,6 +638,10 @@ func _draw_field_landmark(foreground: Color) -> void:
 			draw_line(Vector2(34, 151), Vector2(34, 119), foreground, 1.0)
 			draw_line(Vector2(198, 151), Vector2(198, 119), foreground, 1.0)
 			draw_line(Vector2(26, 122), Vector2(206, 122), foreground, 1.0)
+
+
+func _draw_mode_overlay(_foreground: Color, _background: Color) -> void:
+	pass
 
 
 func _draw_interaction_overlay(foreground: Color) -> void:

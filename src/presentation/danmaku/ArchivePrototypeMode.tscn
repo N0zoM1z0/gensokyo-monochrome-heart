@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://src/presentation/danmaku/BoundaryStainMode.tscn" id="1_base"]
+[ext_resource type="Script" path="res://src/presentation/danmaku/ArchivePrototypeMode.gd" id="2_script"]
+
+[node name="ArchivePrototypeMode" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+pattern_path = "res://content/danmaku/archive_margin_of_error.json"
+default_mode_id = &"danmaku.fin.margin_of_error"
+default_event_id = &"evt.fin.margin_of_error"
+result_text_prefix = "ui.danmaku.result"
+simulation_component = "archive_adaptive"
+field_component = "archive_core"

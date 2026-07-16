@@ -8,6 +8,7 @@ const SCENE_PATHS := {
 	&"danmaku.hkr.boundary_stain": "res://src/presentation/danmaku/BoundaryStainMode.tscn",
 	&"danmaku.sdm.missing_minute_knives": "res://src/presentation/danmaku/MissingMinuteKnivesMode.tscn",
 	&"danmaku.mtn.tomorrows_headline": "res://src/presentation/danmaku/TomorrowsHeadlineMode.tscn",
+	&"danmaku.fin.margin_of_error": "res://src/presentation/danmaku/ArchivePrototypeMode.tscn",
 	&"duel.hkr.spell_card_terms": "res://src/presentation/fighter/CompactFighterMode.tscn",
 }
 

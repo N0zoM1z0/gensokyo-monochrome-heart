@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "danmaku.fin.margin_of_error",
+  "title_key": "ui.archive.title",
+  "arena": {"width": 224, "height": 152},
+  "phases": [
+    {
+      "id": "phase.archive.indexed_habit",
+      "title_key": "ui.archive.phase.indexed_habit",
+      "duration_ticks": 360,
+      "boss_integrity": 180,
+      "teaching_ticks": 96,
+      "transform_tick": 192,
+      "safe_lane": 4,
+      "emitters": [
+        {"id": "emit.archive.recalled_frame", "pattern": "safe_lane_grid", "start_tick": 30, "interval_ticks": 48, "volleys": 6, "slot_count": 11, "origin_x": 112, "origin_y": 10, "speed_pixels_per_tick": 0.78, "angle_millidegrees": 90000, "telegraph_ticks": 42, "lifetime_ticks": 290, "family": "memory", "polarity": "paper", "safe_lane": 4},
+        {"id": "emit.archive.index_marks", "pattern": "lane_fan", "start_tick": 198, "interval_ticks": 42, "volleys": 4, "slot_count": 9, "origin_x": 112, "origin_y": 18, "speed_pixels_per_tick": 0.84, "angle_millidegrees": 90000, "telegraph_ticks": 30, "lifetime_ticks": 270, "family": "amulet", "polarity": "ink", "safe_lane": -1}
+      ]
+    },
+    {
+      "id": "phase.archive.composite_shift",
+      "title_key": "ui.archive.phase.composite_shift",
+      "duration_ticks": 360,
+      "boss_integrity": 180,
+      "teaching_ticks": 96,
+      "transform_tick": 192,
+      "safe_lane": 5,
+      "emitters": [
+        {"id": "emit.archive.shifted_index", "pattern": "safe_lane_grid", "start_tick": 30, "interval_ticks": 54, "volleys": 6, "slot_count": 11, "origin_x": 112, "origin_y": 10, "speed_pixels_per_tick": 0.88, "angle_millidegrees": 90000, "telegraph_ticks": 42, "lifetime_ticks": 280, "family": "memory", "polarity": "ink", "safe_lane": 5},
+        {"id": "emit.archive.composite_ring", "pattern": "offering_ring", "start_tick": 198, "interval_ticks": 48, "volleys": 4, "slot_count": 10, "origin_x": 112, "origin_y": 46, "speed_pixels_per_tick": 0.76, "angle_millidegrees": 9000, "telegraph_ticks": 36, "lifetime_ticks": 270, "family": "offering", "polarity": "paper", "safe_lane": -1}
+      ]
+    },
+    {
+      "id": "phase.archive.margin_error",
+      "title_key": "ui.archive.phase.margin_error",
+      "duration_ticks": 360,
+      "boss_integrity": 180,
+      "teaching_ticks": 96,
+      "transform_tick": 180,
+      "safe_lane": 5,
+      "emitters": [
+        {"id": "emit.archive.familiar_lane", "pattern": "safe_lane_grid", "start_tick": 30, "interval_ticks": 45, "volleys": 7, "slot_count": 11, "origin_x": 112, "origin_y": 10, "speed_pixels_per_tick": 0.94, "angle_millidegrees": 90000, "telegraph_ticks": 42, "lifetime_ticks": 270, "family": "memory", "polarity": "paper", "safe_lane": 5},
+        {"id": "emit.archive.handwritten_error", "pattern": "lane_fan", "start_tick": 198, "interval_ticks": 42, "volleys": 4, "slot_count": 12, "origin_x": 112, "origin_y": 18, "speed_pixels_per_tick": 1.0, "angle_millidegrees": 90000, "telegraph_ticks": 36, "lifetime_ticks": 250, "family": "amulet", "polarity": "ink", "safe_lane": -1}
+      ]
+    }
+  ]
+}

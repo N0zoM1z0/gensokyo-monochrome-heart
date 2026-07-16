@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://src/presentation/danmaku/ArchivePrototypeMode.tscn" id="1_mode"]
+
+[node name="ArchiveRemovalFixture" instance=ExtResource("1_mode")]
+fixture_state = "phase3"
+fixture_strategy_tags = Array[StringName]([&"strategy.photo_frame"])
+archive_fixture_after_removal = true

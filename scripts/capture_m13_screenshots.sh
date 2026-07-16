@@ -46,6 +46,9 @@ capture_pair m13_mountain_slice_patrol res://tests/ui/fixtures/MountainSlicePatr
 capture_pair m13_mountain_slice_camera_lowered res://tests/ui/fixtures/MountainSliceCameraLoweredFixture.tscn
 capture_pair m13_mountain_slice_reward res://tests/ui/fixtures/MountainSliceRewardFixture.tscn
 capture_pair m13_mountain_slice_journal res://tests/ui/fixtures/MountainSliceJournalFixture.tscn
+capture_pair m13_archive_tutorial res://tests/ui/fixtures/ArchiveTutorialFixture.tscn
+capture_pair m13_archive_familiar res://tests/ui/fixtures/ArchiveFamiliarFixture.tscn
+capture_pair m13_archive_removal res://tests/ui/fixtures/ArchiveRemovalFixture.tscn
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated

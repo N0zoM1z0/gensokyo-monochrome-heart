@@ -5,6 +5,7 @@ extends RefCounted
 const COMPONENT_SCRIPTS := {
 	&"standard": preload("res://src/application/danmaku/BoundaryStainSimulation.gd"),
 	&"photo_frame": preload("res://src/application/danmaku/PhotoGrazeSimulation.gd"),
+	&"archive_adaptive": preload("res://src/application/danmaku/ArchiveAdaptiveSimulation.gd"),
 }
 
 
