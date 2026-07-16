@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.ein.endless_night_offer.choose,objective,,Choose how to answer the Archive's perfect-night offer.,文庫が差し出す完璧な夜にどう答えるか選ぶ。,208,Original
+event.ein.endless_night_offer.title,event_title,,The Endless Night Offer,終わらない夜の誘い,208,Original
+choice.ein.endless_night_offer.direct,choice,,Say a copied night is not the night you shared.,写された夜は、二人で過ごした夜ではないと言う。,248,Original
+choice.ein.endless_night_offer.playful,choice,,Ask what surprise tomorrow could offer a night that never ends.,終わらない夜に、明日はどんな驚きを渡せるのか尋ねる。,248,Original
+choice.ein.endless_night_offer.patient,choice,,Wait and leave the shutter for Kaguya to open herself.,待ち、窓を開けることを輝夜自身に任せる。,248,Original
+choice.ein.endless_night_offer.defiant,choice,,Refuse a record that wants to fix either of you in one scene.,二人を一つの場面に固定したがる記録を拒む。,248,Original
+dlg.ein.endless_night_offer.offer,dialogue,char.kaguya_houraisan,"The Archive is unusually generous tonight. It offers to preserve this exact evening: the moon, the room, your next breath, and mine.",「今夜の文庫は、ずいぶん気前がいいわ。この夜をそっくり残すそうよ。月も、部屋も、あなたの次の息も、私のも。」,248,Original
+dlg.ein.endless_night_offer.hesitation,dialogue,char.kaguya_houraisan,"It would be effortless to let the night continue. That is what makes the offer impolite. It asks us to mistake an enclosure for a gift.",「夜を続けさせるのは、たやすいこと。それがこの誘いを無作法にするの。囲いを贈り物と取り違えろと言っている。」,248,Original
+dlg.ein.endless_night_offer.direct,dialogue,char.kaguya_houraisan,"Precisely. A copy might remember our arrangement, but it cannot be the evening in which we chose it. I will not substitute one for the other.",「その通り。写しは私たちの配置を覚えるかもしれない。でも、私たちがそれを選んだ夜にはなれない。取り替えはしないわ。」,248,Original
+dlg.ein.endless_night_offer.playful,dialogue,char.kaguya_houraisan,"Tomorrow would be terribly underemployed. Let it bring one inconvenience, one surprise, perhaps one badly timed bird. The night has had its turn.",「明日はひどく手持ち無沙汰になるでしょうね。不便を一つ、驚きを一つ、たぶん間の悪い鳥を一羽、持ってきてもらいましょう。夜はもう番を終えた。」,248,Original
+dlg.ein.endless_night_offer.patient,dialogue,char.kaguya_houraisan,"You did not take the decision from me. Good. Then I may give it freely: I choose the shutter, the cold air, and the dawn that will not ask to be preserved.",「あなたは決定を私から取り上げなかった。いいことね。なら、私は自由に選べる。窓も、冷たい空気も、残されることを求めない夜明けも。」,248,Original
+dlg.ein.endless_night_offer.defiant,dialogue,char.kaguya_houraisan,"No archive gets to author us into stillness. It may keep its lens; we will keep the right to become inconveniently different by morning.",「文庫に、私たちを静止した物語に書かせはしない。レンズは持っていけばいい。私たちは朝までに、不都合なほど違ってしまう権利を持つ。」,248,Original
+dlg.ein.endless_night_offer.after,dialogue,char.kaguya_houraisan,"There. The first light is less elegant than the moon, perhaps, but it has the manners to arrive only once.",「ほら。最初の光は月ほど優雅ではないかもしれない。でも、一度だけ訪れる礼儀は持っているわ。」,248,Original
+journal.ein.endless_night_offer.title,journal_title,,The Shutter Opened,開かれた雨戸,248,Original
+journal.ein.endless_night_offer.body,journal_body,,The Archive offered to keep one evening perfect forever. Kaguya did not make the player decide for her; she opened the shutter herself and let a single, unrepeatable dawn arrive.,文庫は一つの夜を永遠に完璧なまま残そうとした。輝夜は決定を相手に任せず、自分で雨戸を開け、一度きりで繰り返せない夜明けを迎えた。,248,Original

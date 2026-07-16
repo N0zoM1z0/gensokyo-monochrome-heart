@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "db5ec6564ed50af084b6280a87e80225ceedfc0142565470aa3c5ed3bbb3645e",
+  "content_hash": "b2bcc8cc7b85daae4a444cb90a933d65ca1c234fbec2169fee3393516ef2f74f",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 64,
-    "dialogue_beats": 343,
-    "localization": 1265,
+    "events": 65,
+    "dialogue_beats": 350,
+    "localization": 1280,
     "music_cues": 89,
-    "event_nodes": 831
+    "event_nodes": 848
   },
   "ids": {
     "characters": [
@@ -116,6 +116,7 @@
       "evt.aya.wind_frame_graze",
       "evt.ein.burn_false_moon",
       "evt.ein.elegance_and_boredom",
+      "evt.ein.endless_night_offer",
       "evt.ein.five_impossibilities",
       "evt.ein.four_dawns",
       "evt.ein.game_with_no_continue",
@@ -234,6 +235,13 @@
       "beat.ein.elegance_and_boredom.intro",
       "beat.ein.elegance_and_boredom.patient",
       "beat.ein.elegance_and_boredom.playful",
+      "beat.ein.endless_night_offer.after",
+      "beat.ein.endless_night_offer.defiant",
+      "beat.ein.endless_night_offer.direct",
+      "beat.ein.endless_night_offer.hesitation",
+      "beat.ein.endless_night_offer.offer",
+      "beat.ein.endless_night_offer.patient",
+      "beat.ein.endless_night_offer.playful",
       "beat.ein.five_impossibilities.after",
       "beat.ein.five_impossibilities.defiant",
       "beat.ein.five_impossibilities.direct",
@@ -556,6 +564,10 @@
       "choice.ein.elegance_and_boredom.direct",
       "choice.ein.elegance_and_boredom.patient",
       "choice.ein.elegance_and_boredom.playful",
+      "choice.ein.endless_night_offer.defiant",
+      "choice.ein.endless_night_offer.direct",
+      "choice.ein.endless_night_offer.patient",
+      "choice.ein.endless_night_offer.playful",
       "choice.ein.five_impossibilities.defiant",
       "choice.ein.five_impossibilities.direct",
       "choice.ein.five_impossibilities.patient",
@@ -749,6 +761,13 @@
       "dlg.ein.elegance_and_boredom.intro",
       "dlg.ein.elegance_and_boredom.patient",
       "dlg.ein.elegance_and_boredom.playful",
+      "dlg.ein.endless_night_offer.after",
+      "dlg.ein.endless_night_offer.defiant",
+      "dlg.ein.endless_night_offer.direct",
+      "dlg.ein.endless_night_offer.hesitation",
+      "dlg.ein.endless_night_offer.offer",
+      "dlg.ein.endless_night_offer.patient",
+      "dlg.ein.endless_night_offer.playful",
       "dlg.ein.five_impossibilities.after",
       "dlg.ein.five_impossibilities.defiant",
       "dlg.ein.five_impossibilities.direct",
@@ -1039,6 +1058,7 @@
       "event.aya.tomorrows_front_page.title",
       "event.aya.wind_frame_graze.title",
       "event.ein.elegance_and_boredom.title",
+      "event.ein.endless_night_offer.title",
       "event.ein.five_impossibilities.title",
       "event.ein.game_with_no_continue.title",
       "event.ein.mokou_uninvited_honesty.title",
@@ -1110,6 +1130,8 @@
       "journal.aya.wind_frame_graze.withdrawn.title",
       "journal.ein.elegance_and_boredom.body",
       "journal.ein.elegance_and_boredom.title",
+      "journal.ein.endless_night_offer.body",
+      "journal.ein.endless_night_offer.title",
       "journal.ein.five_impossibilities.body",
       "journal.ein.five_impossibilities.title",
       "journal.ein.game_with_no_continue.body",
@@ -1197,6 +1219,7 @@
       "obj.aya.wind_frame_graze.exit",
       "obj.ein.cross_four_dawns",
       "obj.ein.elegance_and_boredom.host",
+      "obj.ein.endless_night_offer.choose",
       "obj.ein.five_impossibilities.answer",
       "obj.ein.game_with_no_continue.choose",
       "obj.ein.mokou_uninvited_honesty.choose",
@@ -1877,6 +1900,76 @@
     ]
   },
   "dependencies": [
+    {
+      "source": "beat.ein.endless_night_offer.after",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.after",
+      "target": "dlg.ein.endless_night_offer.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.defiant",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.defiant",
+      "target": "dlg.ein.endless_night_offer.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.direct",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.direct",
+      "target": "dlg.ein.endless_night_offer.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.hesitation",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.hesitation",
+      "target": "dlg.ein.endless_night_offer.hesitation",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.offer",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.offer",
+      "target": "dlg.ein.endless_night_offer.offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.patient",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.patient",
+      "target": "dlg.ein.endless_night_offer.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.endless_night_offer.playful",
+      "target": "dlg.ein.endless_night_offer.playful",
+      "kind": "localization"
+    },
     {
       "source": "beat.ein.mokou_uninvited_honesty.after",
       "target": "char.fujiwara_no_mokou",
@@ -4728,6 +4821,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.ein.endless_night_offer.response",
+      "target": "choice.ein.endless_night_offer.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.endless_night_offer.response",
+      "target": "choice.ein.endless_night_offer.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.endless_night_offer.response",
+      "target": "choice.ein.endless_night_offer.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.endless_night_offer.response",
+      "target": "choice.ein.endless_night_offer.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.ein.five_impossibilities.response",
       "target": "choice.ein.five_impossibilities.defiant",
       "kind": "localization"
@@ -7274,6 +7387,221 @@
     },
     {
       "source": "evt.ein.elegance_and_boredom",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n001",
+      "target": "evt.ein.endless_night_offer.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n001",
+      "target": "mus_kaguya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n002",
+      "target": "evt.ein.endless_night_offer.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n002",
+      "target": "obj.ein.endless_night_offer.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n002",
+      "target": "prop.ein.archive_moon_lens",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n002",
+      "target": "prop.ein.dawn_shutter",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n003",
+      "target": "beat.ein.endless_night_offer.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n003",
+      "target": "evt.ein.endless_night_offer.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n004",
+      "target": "beat.ein.endless_night_offer.hesitation",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n004",
+      "target": "evt.ein.endless_night_offer.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n005",
+      "target": "choice.ein.endless_night_offer.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n005",
+      "target": "evt.ein.endless_night_offer.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n005",
+      "target": "evt.ein.endless_night_offer.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n005",
+      "target": "evt.ein.endless_night_offer.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n005",
+      "target": "evt.ein.endless_night_offer.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_after",
+      "target": "beat.ein.endless_night_offer.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_after",
+      "target": "evt.ein.endless_night_offer.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_defiant_line",
+      "target": "beat.ein.endless_night_offer.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_defiant_line",
+      "target": "evt.ein.endless_night_offer.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_defiant",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_defiant",
+      "target": "evt.ein.endless_night_offer.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_direct_line",
+      "target": "beat.ein.endless_night_offer.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_direct_line",
+      "target": "evt.ein.endless_night_offer.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_direct",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_direct",
+      "target": "evt.ein.endless_night_offer.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_effects",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_effects",
+      "target": "evt.ein.endless_night_offer.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_journal",
+      "target": "evt.ein.endless_night_offer.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_journal",
+      "target": "journal.ein.endless_night_offer",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_patient_line",
+      "target": "beat.ein.endless_night_offer.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_patient_line",
+      "target": "evt.ein.endless_night_offer.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_patient",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_patient",
+      "target": "evt.ein.endless_night_offer.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_playful_line",
+      "target": "beat.ein.endless_night_offer.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_playful_line",
+      "target": "evt.ein.endless_night_offer.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.endless_night_offer.node.n_playful",
+      "target": "evt.ein.endless_night_offer.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.endless_night_offer",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.ein.endless_night_offer",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.endless_night_offer",
+      "target": "event.ein.endless_night_offer.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.endless_night_offer",
+      "target": "evt.ein.endless_night_offer",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.ein.endless_night_offer",
+      "target": "loc.eientei.archive_moon_room",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.ein.endless_night_offer",
       "target": "loc.eientei",
       "kind": "location"
     },

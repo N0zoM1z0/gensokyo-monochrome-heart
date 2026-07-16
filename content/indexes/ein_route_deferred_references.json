@@ -1,1 +1,149 @@
-{"schema":"gmh-deferred-references-v1","references":[{"id":"loc.eientei.bamboo_gate","kind":"spot","target_milestone":"M14","reason":"Kaguya's route begins at a bamboo gate where an impossible request has a visible exit."},{"id":"prop.ein.impossible_tablet","kind":"interactable","target_milestone":"M14","reason":"A tablet makes Kaguya's five requests material without treating them as compulsory tests."},{"id":"prop.ein.open_bamboo_gate","kind":"interactable","target_milestone":"M14","reason":"The open gate makes refusal and continued presence visible in the route's first scene."},{"id":"journal.ein.five_impossibilities","kind":"journal_entry","target_milestone":"M14","reason":"Kaguya's first route journal records that a request remains safe only when it has an exit."},{"id":"loc.eientei.moonlit_reception","kind":"spot","target_milestone":"M14","reason":"Kaguya chooses how to host a reception without having to perform a fixed princess persona."},{"id":"prop.ein.guest_list","kind":"interactable","target_milestone":"M14","reason":"The guest list separates a chosen welcome from a compulsory performance."},{"id":"prop.ein.unset_place","kind":"interactable","target_milestone":"M14","reason":"An unset chair keeps the reception able to change with its guests."},{"id":"journal.ein.elegance_and_boredom","kind":"journal_entry","target_milestone":"M14","reason":"Kaguya records hospitality as a choice rather than an obligation of rank."},{"id":"loc.eientei.lantern_room","kind":"spot","target_milestone":"M14","reason":"Kaguya lets a one-life board game end in a quiet room rather than resetting its outcome."},{"id":"prop.ein.one_life_board","kind":"interactable","target_milestone":"M14","reason":"The board has one authored game and no compelled replay."},{"id":"prop.ein.returned_piece","kind":"interactable","target_milestone":"M14","reason":"A returned piece visibly marks that the finished game is not rewound."},{"id":"journal.ein.game_with_no_continue","kind":"journal_entry","target_milestone":"M14","reason":"Kaguya records finite loss without turning it into punishment or a lesson owed."},{"id":"loc.eientei.morning_veranda","kind":"spot","target_milestone":"M14","reason":"A veranda at dawn makes the limited duration of a shared morning visible without demanding an eternal answer."},{"id":"prop.ein.morning_tea","kind":"interactable","target_milestone":"M14","reason":"Tea cooling on the veranda lets the route name a near, finite appointment rather than promise equivalent lifespans."},{"id":"prop.ein.unmarked_calendar","kind":"interactable","target_milestone":"M14","reason":"An unmarked calendar lets Kaguya and the protagonist make one honest plan without pretending time is owned."},{"id":"journal.ein.short_lived_guest","kind":"journal_entry","target_milestone":"M14","reason":"Kaguya records that a mortal future is neither a debt nor a reason to make a false eternal promise."},{"id":"loc.eientei.smoke_clearing","kind":"spot","target_milestone":"M14","reason":"A bamboo clearing after Mokou's arrival keeps the immortal rivalry in public space rather than making it a private possession test."},{"id":"prop.ein.singed_bamboo","kind":"interactable","target_milestone":"M14","reason":"Singed bamboo records that the rivals' old conflict has physical consequences without treating violence as romance."},{"id":"prop.ein.unopened_tea_flask","kind":"interactable","target_milestone":"M14","reason":"An unopened flask gives Mokou room to leave without participating in Eientei's hospitality."},{"id":"journal.ein.mokou_uninvited_honesty","kind":"journal_entry","target_milestone":"M14","reason":"The journal records that neither immortal may turn another person's finite life into a token in their rivalry."}]}
+{
+  "schema": "gmh-deferred-references-v1",
+  "references": [
+    {
+      "id": "loc.eientei.bamboo_gate",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "Kaguya's route begins at a bamboo gate where an impossible request has a visible exit."
+    },
+    {
+      "id": "prop.ein.impossible_tablet",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A tablet makes Kaguya's five requests material without treating them as compulsory tests."
+    },
+    {
+      "id": "prop.ein.open_bamboo_gate",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "The open gate makes refusal and continued presence visible in the route's first scene."
+    },
+    {
+      "id": "journal.ein.five_impossibilities",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Kaguya's first route journal records that a request remains safe only when it has an exit."
+    },
+    {
+      "id": "loc.eientei.moonlit_reception",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "Kaguya chooses how to host a reception without having to perform a fixed princess persona."
+    },
+    {
+      "id": "prop.ein.guest_list",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "The guest list separates a chosen welcome from a compulsory performance."
+    },
+    {
+      "id": "prop.ein.unset_place",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An unset chair keeps the reception able to change with its guests."
+    },
+    {
+      "id": "journal.ein.elegance_and_boredom",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Kaguya records hospitality as a choice rather than an obligation of rank."
+    },
+    {
+      "id": "loc.eientei.lantern_room",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "Kaguya lets a one-life board game end in a quiet room rather than resetting its outcome."
+    },
+    {
+      "id": "prop.ein.one_life_board",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "The board has one authored game and no compelled replay."
+    },
+    {
+      "id": "prop.ein.returned_piece",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A returned piece visibly marks that the finished game is not rewound."
+    },
+    {
+      "id": "journal.ein.game_with_no_continue",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Kaguya records finite loss without turning it into punishment or a lesson owed."
+    },
+    {
+      "id": "loc.eientei.morning_veranda",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A veranda at dawn makes the limited duration of a shared morning visible without demanding an eternal answer."
+    },
+    {
+      "id": "prop.ein.morning_tea",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Tea cooling on the veranda lets the route name a near, finite appointment rather than promise equivalent lifespans."
+    },
+    {
+      "id": "prop.ein.unmarked_calendar",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An unmarked calendar lets Kaguya and the protagonist make one honest plan without pretending time is owned."
+    },
+    {
+      "id": "journal.ein.short_lived_guest",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Kaguya records that a mortal future is neither a debt nor a reason to make a false eternal promise."
+    },
+    {
+      "id": "loc.eientei.smoke_clearing",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A bamboo clearing after Mokou's arrival keeps the immortal rivalry in public space rather than making it a private possession test."
+    },
+    {
+      "id": "prop.ein.singed_bamboo",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Singed bamboo records that the rivals' old conflict has physical consequences without treating violence as romance."
+    },
+    {
+      "id": "prop.ein.unopened_tea_flask",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An unopened flask gives Mokou room to leave without participating in Eientei's hospitality."
+    },
+    {
+      "id": "journal.ein.mokou_uninvited_honesty",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records that neither immortal may turn another person's finite life into a token in their rivalry."
+    },
+    {
+      "id": "loc.eientei.archive_moon_room",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "The Archive offers a preserved evening beside a shutter Kaguya can choose to open to dawn."
+    },
+    {
+      "id": "prop.ein.archive_moon_lens",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "The lens offers a perfect preserved evening without claiming that preservation is presence."
+    },
+    {
+      "id": "prop.ein.dawn_shutter",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "The shutter makes Kaguya’s decision to admit daylight visible and hers."
+    },
+    {
+      "id": "journal.ein.endless_night_offer",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Kaguya records an evening kept by living through its end, not by letting the Archive repeat it."
+    }
+  ]
+}
