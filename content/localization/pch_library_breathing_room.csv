@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.pch.library_breathing_room.choose,objective,,Choose how to help stabilize the library's air and shelves.,図書館の空気と書架をどう安定させるか選ぶ。,208,Original
+event.pch.library_breathing_room.title,event_title,,Library Breathing Room,図書館の呼吸する場所,208,Original
+choice.pch.library_breathing_room.direct,choice,,Ask which elemental shelf can be moved without spreading dust.,埃を広げずに動かせる元素棚を尋ねる。,248,Original
+choice.pch.library_breathing_room.playful,choice,,Suggest labeling the disagreeing elements before they argue again.,言い争う前に、仲の悪い元素へ札を付けようと提案する。,248,Original
+choice.pch.library_breathing_room.patient,choice,,Wait for Patchouli to set the pace and take only the task she names.,輝夜ではなく、パチュリーが決めた速度と作業だけを受け取る。,248,Original
+choice.pch.library_breathing_room.defiant,choice,,Refuse to rush her recovery or turn her limits into a puzzle to win.,回復を急がせたり、限界を勝つための謎にしたりすることを断る。,248,Original
+dlg.pch.library_breathing_room.intro,dialogue,char.patchouli_knowledge,"The dust ward and the fire shelf disagree. The library is reacting to both, which is inconveniently democratic.",「防塵結界と火の棚が噛み合わない。図書館が両方に反応している。面倒なほど民主的ね。」,248,Original
+dlg.pch.library_breathing_room.problem,dialogue,char.patchouli_knowledge,"I can correct it. That does not mean I should spend the same amount of energy on every correction. Read the margins before moving anything.",「直せるわ。でも、どの修正にも同じだけの力を使うべきという意味じゃない。何か動かす前に余白を読みなさい。」,248,Original
+dlg.pch.library_breathing_room.direct,dialogue,char.patchouli_knowledge,"The blue-marked shelf. A precise question saves both time and a second cleanup. Put the ward there; I will handle the reaction.",「青印の棚。正確な質問は時間も二度目の片付けも省く。結界はそこに置いて。反応は私が処理する。」,248,Original
+dlg.pch.library_breathing_room.playful,dialogue,char.patchouli_knowledge,"They are not arguing. They are following incompatible instructions with admirable persistence. Your label is still useful.",「喧嘩しているわけじゃない。両立しない指示を、立派なほど粘り強く守っているだけ。札はそれでも役に立つ。」,248,Original
+dlg.pch.library_breathing_room.patient,dialogue,char.patchouli_knowledge,"Good. I will say when the next shelf is safe. Silence is preferable to helpful improvisation here.",「いい。次の棚が安全になったら私が言う。ここでは、善意の即興より沈黙の方がまし。」,248,Original
+dlg.pch.library_breathing_room.defiant,dialogue,char.patchouli_knowledge,"Correct. My limits are parameters, not a test prompt. We solve the room that exists, at the pace that keeps it standing.",「その通り。私の限界はパラメータであって、試験問題じゃない。今ある部屋を、倒れない速度で解く。」,248,Original
+dlg.pch.library_breathing_room.after,dialogue,char.patchouli_knowledge,"There. The air can move again. Do not mistake a usable room for a reason to fill it with questions.",「これで空気はまた動ける。使える部屋になったからといって、質問で満たしていい理由にはならないわ。」,248,Original
+journal.pch.library_breathing_room.title,journal_title,,Margins That Let Air Through,空気を通す余白,248,Original
+journal.pch.library_breathing_room.body,journal_body,,Patchouli restored the library by budgeting effort rather than proving endurance. The protagonist learned that a precise task and a respected pause can both keep a room usable.,パチュリーは耐久力を証明するのでなく、力を配分して図書館を戻した。正確な作業と尊重された休止のどちらも、部屋を使えるまま保てると主人公は学んだ。,248,Original

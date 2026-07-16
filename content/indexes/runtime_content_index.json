@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "65fba37ba1e6375412da2a33586afe4a470db7514df64409450ca3553b72e6ad",
+  "content_hash": "89c388200d2e3d814e5064a6a977d979765107c4548e57e3982574ba519616a7",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 66,
-    "dialogue_beats": 356,
-    "localization": 1300,
+    "events": 67,
+    "dialogue_beats": 363,
+    "localization": 1315,
     "music_cues": 89,
-    "event_nodes": 869
+    "event_nodes": 886
   },
   "ids": {
     "characters": [
@@ -161,6 +161,7 @@
       "evt.mtn.patrol_against_nothing",
       "evt.mtn.rumor_machine",
       "evt.mtn.tomorrows_headline",
+      "evt.pch.library_breathing_room",
       "evt.pro.phone_no_signal",
       "evt.sdm.book_written_tomorrow",
       "evt.sdm.breakable_point",
@@ -474,6 +475,13 @@
       "beat.mtn.headline.aya.patient",
       "beat.mtn.headline.aya.photo_origin",
       "beat.mtn.headline.aya.playful",
+      "beat.pch.library_breathing_room.after",
+      "beat.pch.library_breathing_room.defiant",
+      "beat.pch.library_breathing_room.direct",
+      "beat.pch.library_breathing_room.intro",
+      "beat.pch.library_breathing_room.patient",
+      "beat.pch.library_breathing_room.playful",
+      "beat.pch.library_breathing_room.problem",
       "beat.sdm.consent.after",
       "beat.sdm.consent.boundary",
       "beat.sdm.consent.defiant",
@@ -683,6 +691,10 @@
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
       "choice.mtn.headline.playful",
+      "choice.pch.library_breathing_room.defiant",
+      "choice.pch.library_breathing_room.direct",
+      "choice.pch.library_breathing_room.patient",
+      "choice.pch.library_breathing_room.playful",
       "choice.sdm.consent.defiant",
       "choice.sdm.consent.direct",
       "choice.sdm.consent.patient",
@@ -1010,6 +1022,13 @@
       "dlg.mtn.headline.aya.patient",
       "dlg.mtn.headline.aya.photo_origin",
       "dlg.mtn.headline.aya.playful",
+      "dlg.pch.library_breathing_room.after",
+      "dlg.pch.library_breathing_room.defiant",
+      "dlg.pch.library_breathing_room.direct",
+      "dlg.pch.library_breathing_room.intro",
+      "dlg.pch.library_breathing_room.patient",
+      "dlg.pch.library_breathing_room.playful",
+      "dlg.pch.library_breathing_room.problem",
       "dlg.sdm.consent.after",
       "dlg.sdm.consent.boundary",
       "dlg.sdm.consent.defiant",
@@ -1103,6 +1122,7 @@
       "event.mrs.shelf_marked_later.title",
       "event.mrs.talent_bad_conversation.title",
       "event.mtn.tomorrows_headline.title",
+      "event.pch.library_breathing_room.title",
       "event.sdm.competence_not_consent.title",
       "event.sdm.corridor_no_dust.title",
       "event.sdm.favor_cannot_optimize.title",
@@ -1222,6 +1242,8 @@
       "journal.mrs.talent_bad_conversation.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
+      "journal.pch.library_breathing_room.body",
+      "journal.pch.library_breathing_room.title",
       "journal.sdm.competence_not_consent.body",
       "journal.sdm.competence_not_consent.title",
       "journal.sdm.corridor_no_dust.body",
@@ -1273,6 +1295,7 @@
       "obj.mrs.shelf.wait",
       "obj.mrs.talent.stop_comparison",
       "obj.mtn.trace_tomorrows_photo",
+      "obj.pch.library_breathing_room.choose",
       "obj.sdm.competence_not_consent.ask",
       "obj.sdm.corridor_no_dust.walk_once",
       "obj.sdm.favor_cannot_optimize.choose",
@@ -4168,6 +4191,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.pch.library_breathing_room.after",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.after",
+      "target": "dlg.pch.library_breathing_room.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.defiant",
+      "target": "dlg.pch.library_breathing_room.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.direct",
+      "target": "dlg.pch.library_breathing_room.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.intro",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.intro",
+      "target": "dlg.pch.library_breathing_room.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.patient",
+      "target": "dlg.pch.library_breathing_room.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.playful",
+      "target": "dlg.pch.library_breathing_room.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.problem",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.library_breathing_room.problem",
+      "target": "dlg.pch.library_breathing_room.problem",
+      "kind": "localization"
+    },
+    {
       "source": "beat.sdm.consent.after",
       "target": "char.sakuya_izayoi",
       "kind": "speaker"
@@ -5465,6 +5558,26 @@
     {
       "source": "choice.mtn.headline.boundary",
       "target": "choice.mtn.headline.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.library_breathing_room.response",
+      "target": "choice.pch.library_breathing_room.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.library_breathing_room.response",
+      "target": "choice.pch.library_breathing_room.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.library_breathing_room.response",
+      "target": "choice.pch.library_breathing_room.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.library_breathing_room.response",
+      "target": "choice.pch.library_breathing_room.playful",
       "kind": "localization"
     },
     {
@@ -14740,6 +14853,221 @@
     {
       "source": "evt.mtn.tomorrows_headline",
       "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n001",
+      "target": "evt.pch.library_breathing_room.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n001",
+      "target": "mus_patchouli_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n002",
+      "target": "evt.pch.library_breathing_room.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n002",
+      "target": "obj.pch.library_breathing_room.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n002",
+      "target": "prop.pch.dust_ward",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n002",
+      "target": "prop.pch.element_shelf",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n003",
+      "target": "beat.pch.library_breathing_room.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n003",
+      "target": "evt.pch.library_breathing_room.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n004",
+      "target": "beat.pch.library_breathing_room.problem",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n004",
+      "target": "evt.pch.library_breathing_room.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n005",
+      "target": "choice.pch.library_breathing_room.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n005",
+      "target": "evt.pch.library_breathing_room.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n005",
+      "target": "evt.pch.library_breathing_room.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n005",
+      "target": "evt.pch.library_breathing_room.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n005",
+      "target": "evt.pch.library_breathing_room.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_after",
+      "target": "beat.pch.library_breathing_room.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_after",
+      "target": "evt.pch.library_breathing_room.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_defiant_line",
+      "target": "beat.pch.library_breathing_room.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_defiant_line",
+      "target": "evt.pch.library_breathing_room.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_defiant",
+      "target": "evt.pch.library_breathing_room.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_direct_line",
+      "target": "beat.pch.library_breathing_room.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_direct_line",
+      "target": "evt.pch.library_breathing_room.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_direct",
+      "target": "evt.pch.library_breathing_room.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_effects",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_effects",
+      "target": "evt.pch.library_breathing_room.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_journal",
+      "target": "evt.pch.library_breathing_room.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_journal",
+      "target": "journal.pch.library_breathing_room",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_patient_line",
+      "target": "beat.pch.library_breathing_room.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_patient_line",
+      "target": "evt.pch.library_breathing_room.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_patient",
+      "target": "evt.pch.library_breathing_room.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_playful_line",
+      "target": "beat.pch.library_breathing_room.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_playful_line",
+      "target": "evt.pch.library_breathing_room.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.library_breathing_room.node.n_playful",
+      "target": "evt.pch.library_breathing_room.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.library_breathing_room",
+      "target": "char.patchouli_knowledge",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.pch.library_breathing_room",
+      "target": "char.patchouli_knowledge",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pch.library_breathing_room",
+      "target": "event.pch.library_breathing_room.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.library_breathing_room",
+      "target": "evt.pch.library_breathing_room",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.pch.library_breathing_room",
+      "target": "loc.scarlet_devil_mansion.voile_airwell",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.pch.library_breathing_room",
+      "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },
     {
