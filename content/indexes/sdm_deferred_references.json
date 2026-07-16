@@ -6,6 +6,7 @@
     {"id":"loc.scarlet_devil_mansion.kitchen_after_hours","kind":"spot","target_milestone":"M14","reason":"Sakuya's deliberately chosen midnight work."},
     {"id":"loc.scarlet_devil_mansion.service_stair","kind":"spot","target_milestone":"M14","reason":"A presumed service task becomes Sakuya's consent boundary."},
     {"id":"loc.scarlet_devil_mansion.private_teahouse","kind":"spot","target_milestone":"M14","reason":"Sakuya asks for a non-optimizable tea preference."},
+    {"id":"loc.scarlet_devil_mansion.clock_gallery","kind":"spot","target_milestone":"M14","reason":"Archive offers Sakuya a stopped minute."},
     {"id":"prop.sdm.offset_clock","kind":"interactable","target_milestone":"M12","reason":"Clock Corridor exploration evidence."},
     {"id":"prop.sdm.reset_tray","kind":"interactable","target_milestone":"M12","reason":"Kitchen/corridor missing-minute evidence."},
     {"id":"prop.sdm.unwalked_corridor","kind":"interactable","target_milestone":"M14","reason":"Repeatedly reset corridor evidence."},
@@ -20,13 +21,17 @@
     {"id":"prop.sdm.remilia_tea_pair","kind":"interactable","target_milestone":"M14","reason":"Two equally efficient tea choices."},
     {"id":"prop.sdm.unread_preference_card","kind":"interactable","target_milestone":"M14","reason":"Record that cannot replace present preference."},
     {"id":"prop.sdm.service_bell","kind":"interactable","target_milestone":"M14","reason":"Service remains Sakuya's chosen favor."},
+    {"id":"prop.archive_stopped_minute","kind":"interactable","target_milestone":"M14","reason":"Archive's sealed perfect minute."},
+    {"id":"prop.sdm.clock_gallery","kind":"interactable","target_milestone":"M14","reason":"Moving-time refusal setting."},
+    {"id":"prop.sdm.open_window","kind":"interactable","target_milestone":"M14","reason":"World continues outside the stopped minute."},
     {"id":"mini.sdm.time_grid_service","kind":"minigame","target_milestone":"M12","reason":"Deterministic time-grid service runtime."},
     {"id":"danmaku.sdm.missing_minute_knives","kind":"minigame","target_milestone":"M12","reason":"Knife-lattice escalation runtime."},
     {"id":"item.keepsake.unfinished_checklist","kind":"item","target_milestone":"M12","reason":"Sakuya route keepsake granted by the event graph."},
     {"id":"journal.sdm.missing_minute","kind":"journal_entry","target_milestone":"M12","reason":"Missing-minute observation and replay entry."},
     {"id":"journal.sdm.corridor_no_dust","kind":"journal_entry","target_milestone":"M14","reason":"Sakuya's choice to let labor remain witnessed."},
     {"id":"journal.sdm.kitchen_after_midnight","kind":"journal_entry","target_milestone":"M14","reason":"Permission-based help after service."},
-    {"id":"journal.sdm.competence_not_consent","kind":"journal_entry","target_milestone":"M14","reason":"A presumed task is returned to consent."}
-    ,{"id":"journal.sdm.favor_cannot_optimize","kind":"journal_entry","target_milestone":"M14","reason":"Preference is requested without becoming a procedure."}
+    {"id":"journal.sdm.competence_not_consent","kind":"journal_entry","target_milestone":"M14","reason":"A presumed task is returned to consent."},
+    {"id":"journal.sdm.favor_cannot_optimize","kind":"journal_entry","target_milestone":"M14","reason":"Preference is requested without becoming a procedure."},
+    {"id":"journal.sdm.missing_minute_returned","kind":"journal_entry","target_milestone":"M14","reason":"Sakuya returns the Archive's stopped minute to moving time."}
   ]
 }
