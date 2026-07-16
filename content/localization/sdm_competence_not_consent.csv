@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.sdm.competence_not_consent.ask,objective,,Ask before treating Sakuya's skill as an available task.,咲夜の手際を頼める仕事と決めつける前に聞く。,208,Original
+event.sdm.competence_not_consent.title,event_title,,Competence Is Not Consent,有能さは同意ではない,208,Original
+choice.sdm.consent.direct,choice,,Ask whether the extra place setting is wanted.,余分な席の用意が望まれているか尋ねる。,248,Original
+choice.sdm.consent.playful,choice,,Joke that Sakuya can fit one more task into any second.,咲夜ならどの一秒にも仕事を一つ増やせると冗談を言う。,248,Original
+choice.sdm.consent.patient,choice,,Wait until Sakuya says what may be taken away.,咲夜が片づけてよい物を言うまで待つ。,248,Original
+choice.sdm.consent.defiant,choice,,Say efficiency does not make her labor public property.,効率が良くても彼女の労働が皆の物になるわけではないと言う。,248,Original
+dlg.sdm.consent.intro,dialogue,char.sakuya_izayoi,"Someone added a fourth place setting to tomorrow's service. They assumed I would find the minute.",「誰かが明日の給仕に四つ目の席を足しました。私なら一分を見つけると思ったのでしょう。」,248,Original
+dlg.sdm.consent.boundary,dialogue,char.sakuya_izayoi,"I can make room. That does not mean I agreed to make it.",「余地を作ることはできます。でも、作ることに同意したわけではありません。」,248,Original
+dlg.sdm.consent.direct,dialogue,char.sakuya_izayoi,"Thank you. I will ask the guest, then decide whether the place is set.",「ありがとうございます。お客様に聞いてから、席を用意するか決めます。」,248,Original
+dlg.sdm.consent.playful,dialogue,char.sakuya_izayoi,"That is the joke people use before handing me their unfinished work. Please do not repeat it.",「未完成の仕事を渡す前に、皆さんが使う冗談です。繰り返さないでください。」,248,Original
+dlg.sdm.consent.patient,dialogue,char.sakuya_izayoi,"The bell may stay. The setting may go. I appreciate the distinction.",「ベルは残して構いません。席の用意は下げてください。その区別に感謝します。」,248,Original
+dlg.sdm.consent.defiant,dialogue,char.sakuya_izayoi,"Exactly. A well-kept house still needs its workers to be asked.",「その通りです。よく整った屋敷でも、働く者には尋ねる必要があります。」,248,Original
+dlg.sdm.consent.after,dialogue,char.sakuya_izayoi,"The empty place can remain empty. A schedule is allowed to admit it does not know yet.",「空いた席は空いたままで構いません。予定表も、まだ分からないことを認めてよいのです。」,248,Original
+journal.sdm.competence_not_consent.title,journal_title,,The Unassigned Minute,割り当てない一分,248,Original
+journal.sdm.competence_not_consent.body,journal_body,,Sakuya named the difference between being able to make time and agreeing to surrender it. The extra place setting became a question, not an order.,咲夜は時間を作れることと、それを差し出すことに同意することの違いを名づけた。余分な席は命令ではなく、問いになった。,248,Original
