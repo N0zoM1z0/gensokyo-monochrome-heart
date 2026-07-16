@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "9bdb855789027e0350beee7ba233b1b25e67ade42d2d7eb4437275b686df5cad",
+  "content_hash": "7a36154b292227230bbd6806ab47214cd20c62479d1a00ba57ab01bd669ce172",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 34,
-    "dialogue_beats": 118,
-    "localization": 748,
+    "events": 35,
+    "dialogue_beats": 125,
+    "localization": 768,
     "music_cues": 89,
-    "event_nodes": 256
+    "event_nodes": 273
   },
   "ids": {
     "characters": [
@@ -130,6 +130,7 @@
       "evt.hkr.spell_card_terms",
       "evt.hkr.unasked_rescue",
       "evt.mrs.crash_landing",
+      "evt.mrs.field_notes",
       "evt.mtn.keyword_us",
       "evt.mtn.measurable_faith",
       "evt.mtn.patrol_against_nothing",
@@ -233,6 +234,13 @@
       "beat.mrs.crash.playful",
       "beat.mrs.crash.rough",
       "beat.mrs.crash.work",
+      "beat.mrs.notes.after",
+      "beat.mrs.notes.defiant",
+      "beat.mrs.notes.direct",
+      "beat.mrs.notes.intro",
+      "beat.mrs.notes.patient",
+      "beat.mrs.notes.playful",
+      "beat.mrs.notes.work",
       "beat.mtn.headline.aya.after_01",
       "beat.mtn.headline.aya.after_02",
       "beat.mtn.headline.aya.danmaku_assist",
@@ -299,6 +307,10 @@
       "choice.mrs.crash.direct",
       "choice.mrs.crash.patient",
       "choice.mrs.crash.playful",
+      "choice.mrs.notes.defiant",
+      "choice.mrs.notes.direct",
+      "choice.mrs.notes.patient",
+      "choice.mrs.notes.playful",
       "choice.mtn.headline.defiant",
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
@@ -397,6 +409,13 @@
       "dlg.mrs.crash.playful",
       "dlg.mrs.crash.rough",
       "dlg.mrs.crash.work",
+      "dlg.mrs.notes.after",
+      "dlg.mrs.notes.defiant",
+      "dlg.mrs.notes.direct",
+      "dlg.mrs.notes.intro",
+      "dlg.mrs.notes.patient",
+      "dlg.mrs.notes.playful",
+      "dlg.mrs.notes.work",
       "dlg.mtn.headline.aya.after_01",
       "dlg.mtn.headline.aya.after_02",
       "dlg.mtn.headline.aya.danmaku_assist",
@@ -433,6 +452,7 @@
       "event.hkr.shrine_not_guesthouse.title",
       "event.hkr.unasked_rescue.title",
       "event.mrs.crash_landing.title",
+      "event.mrs.field_notes.title",
       "event.mtn.tomorrows_headline.title",
       "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
@@ -463,6 +483,8 @@
       "journal.hkr.unasked_rescue.title",
       "journal.mrs.crash_landing.body",
       "journal.mrs.crash_landing.title",
+      "journal.mrs.field_notes.body",
+      "journal.mrs.field_notes.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
       "journal.sdm.missing_minute.body",
@@ -476,6 +498,7 @@
       "obj.hkr.shrine_not_guesthouse.check_veranda",
       "obj.hkr.unasked_rescue.hold_veranda",
       "obj.mrs.crash.secure_cargo",
+      "obj.mrs.field_notes.read_marks",
       "obj.mtn.trace_tomorrows_photo",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
@@ -745,6 +768,11 @@
       "ui.language.english",
       "ui.language.japanese",
       "ui.map.travel",
+      "ui.minigame.broom_backseat.begin",
+      "ui.minigame.broom_backseat.result",
+      "ui.minigame.broom_backseat.status",
+      "ui.minigame.broom_backseat.title",
+      "ui.minigame.broom_backseat.tutorial",
       "ui.minigame.errands.active.footer",
       "ui.minigame.errands.approach.clever",
       "ui.minigame.errands.approach.clever.guide",
@@ -2006,6 +2034,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.mrs.notes.after",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.notes.after",
+      "target": "dlg.mrs.notes.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.notes.defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.notes.defiant",
+      "target": "dlg.mrs.notes.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.notes.direct",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.notes.direct",
+      "target": "dlg.mrs.notes.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.notes.intro",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.notes.intro",
+      "target": "dlg.mrs.notes.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.notes.patient",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.notes.patient",
+      "target": "dlg.mrs.notes.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.notes.playful",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.notes.playful",
+      "target": "dlg.mrs.notes.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.notes.work",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.notes.work",
+      "target": "dlg.mrs.notes.work",
+      "kind": "localization"
+    },
+    {
       "source": "beat.mtn.headline.aya.after_01",
       "target": "char.aya_shameimaru",
       "kind": "speaker"
@@ -2443,6 +2541,26 @@
     {
       "source": "choice.mrs.crash.response",
       "target": "choice.mrs.crash.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.notes.answer",
+      "target": "choice.mrs.notes.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.notes.answer",
+      "target": "choice.mrs.notes.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.notes.answer",
+      "target": "choice.mrs.notes.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.notes.answer",
+      "target": "choice.mrs.notes.playful",
       "kind": "localization"
     },
     {
@@ -5047,6 +5165,221 @@
     },
     {
       "source": "evt.mrs.crash_landing",
+      "target": "loc.forest_of_magic",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n001",
+      "target": "evt.mrs.field_notes.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n001",
+      "target": "mus_marisa_night",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n002",
+      "target": "evt.mrs.field_notes.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n002",
+      "target": "obj.mrs.field_notes.read_marks",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n002",
+      "target": "prop.marisa_field_notes",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n002",
+      "target": "prop.mushroom_marker",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n003",
+      "target": "beat.mrs.notes.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n003",
+      "target": "evt.mrs.field_notes.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n004",
+      "target": "beat.mrs.notes.work",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n004",
+      "target": "evt.mrs.field_notes.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n005",
+      "target": "choice.mrs.notes.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n005",
+      "target": "evt.mrs.field_notes.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n005",
+      "target": "evt.mrs.field_notes.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n005",
+      "target": "evt.mrs.field_notes.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n005",
+      "target": "evt.mrs.field_notes.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_after",
+      "target": "beat.mrs.notes.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_after",
+      "target": "evt.mrs.field_notes.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_defiant_line",
+      "target": "beat.mrs.notes.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_defiant_line",
+      "target": "evt.mrs.field_notes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_defiant",
+      "target": "evt.mrs.field_notes.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_direct_line",
+      "target": "beat.mrs.notes.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_direct_line",
+      "target": "evt.mrs.field_notes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_direct",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_direct",
+      "target": "evt.mrs.field_notes.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_effects",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_effects",
+      "target": "evt.mrs.field_notes.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_journal",
+      "target": "evt.mrs.field_notes.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_journal",
+      "target": "journal.mrs.field_notes",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_patient_line",
+      "target": "beat.mrs.notes.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_patient_line",
+      "target": "evt.mrs.field_notes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_patient",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_patient",
+      "target": "evt.mrs.field_notes.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_playful_line",
+      "target": "beat.mrs.notes.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_playful_line",
+      "target": "evt.mrs.field_notes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_playful",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.field_notes.node.n_playful",
+      "target": "evt.mrs.field_notes.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.field_notes",
+      "target": "char.marisa_kirisame",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.mrs.field_notes",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mrs.field_notes",
+      "target": "event.mrs.field_notes.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.field_notes",
+      "target": "evt.mrs.field_notes",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.mrs.field_notes",
+      "target": "loc.forest_of_magic.mushroom_field",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.mrs.field_notes",
       "target": "loc.forest_of_magic",
       "kind": "location"
     },
