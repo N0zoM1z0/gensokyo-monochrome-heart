@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "0e37e3e25f5f2943af25c0b43f569ef6ae495ec044828972599f30c75fc07408",
+  "content_hash": "e5f533995cce994d31ee5aa1e459c83e2725c4e9c404f5b5ded1bd6a1a3c65b0",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 37,
-    "dialogue_beats": 139,
-    "localization": 798,
+    "events": 38,
+    "dialogue_beats": 148,
+    "localization": 815,
     "music_cues": 89,
-    "event_nodes": 307
+    "event_nodes": 327
   },
   "ids": {
     "characters": [
@@ -131,6 +131,7 @@
       "evt.hkr.unasked_rescue",
       "evt.mrs.crash_landing",
       "evt.mrs.field_notes",
+      "evt.mrs.rescue_looks_like_race",
       "evt.mrs.shelf_marked_later",
       "evt.mrs.talent_bad_conversation",
       "evt.mtn.keyword_us",
@@ -243,6 +244,15 @@
       "beat.mrs.notes.patient",
       "beat.mrs.notes.playful",
       "beat.mrs.notes.work",
+      "beat.mrs.rescue.after",
+      "beat.mrs.rescue.assist",
+      "beat.mrs.rescue.clear",
+      "beat.mrs.rescue.defiant",
+      "beat.mrs.rescue.direct",
+      "beat.mrs.rescue.intro",
+      "beat.mrs.rescue.patient",
+      "beat.mrs.rescue.playful",
+      "beat.mrs.rescue.protect",
       "beat.mrs.shelf.after",
       "beat.mrs.shelf.boundary",
       "beat.mrs.shelf.defiant",
@@ -327,6 +337,10 @@
       "choice.mrs.notes.direct",
       "choice.mrs.notes.patient",
       "choice.mrs.notes.playful",
+      "choice.mrs.rescue.defiant",
+      "choice.mrs.rescue.direct",
+      "choice.mrs.rescue.patient",
+      "choice.mrs.rescue.playful",
       "choice.mrs.shelf.defiant",
       "choice.mrs.shelf.direct",
       "choice.mrs.shelf.patient",
@@ -440,6 +454,15 @@
       "dlg.mrs.notes.patient",
       "dlg.mrs.notes.playful",
       "dlg.mrs.notes.work",
+      "dlg.mrs.rescue.after",
+      "dlg.mrs.rescue.assist",
+      "dlg.mrs.rescue.clear",
+      "dlg.mrs.rescue.defiant",
+      "dlg.mrs.rescue.direct",
+      "dlg.mrs.rescue.intro",
+      "dlg.mrs.rescue.patient",
+      "dlg.mrs.rescue.playful",
+      "dlg.mrs.rescue.protect",
       "dlg.mrs.shelf.after",
       "dlg.mrs.shelf.boundary",
       "dlg.mrs.shelf.defiant",
@@ -491,6 +514,7 @@
       "event.hkr.unasked_rescue.title",
       "event.mrs.crash_landing.title",
       "event.mrs.field_notes.title",
+      "event.mrs.rescue_looks_like_race.title",
       "event.mrs.shelf_marked_later.title",
       "event.mrs.talent_bad_conversation.title",
       "event.mtn.tomorrows_headline.title",
@@ -525,6 +549,8 @@
       "journal.mrs.crash_landing.title",
       "journal.mrs.field_notes.body",
       "journal.mrs.field_notes.title",
+      "journal.mrs.rescue_looks_like_race.body",
+      "journal.mrs.rescue_looks_like_race.title",
       "journal.mrs.shelf_marked_later.body",
       "journal.mrs.shelf_marked_later.title",
       "journal.mrs.talent_bad_conversation.body",
@@ -543,6 +569,7 @@
       "obj.hkr.unasked_rescue.hold_veranda",
       "obj.mrs.crash.secure_cargo",
       "obj.mrs.field_notes.read_marks",
+      "obj.mrs.rescue.hold_cargo",
       "obj.mrs.shelf.wait",
       "obj.mrs.talent.stop_comparison",
       "obj.mtn.trace_tomorrows_photo",
@@ -2150,6 +2177,96 @@
       "kind": "localization"
     },
     {
+      "source": "beat.mrs.rescue.after",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.after",
+      "target": "dlg.mrs.rescue.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.rescue.assist",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.assist",
+      "target": "dlg.mrs.rescue.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.rescue.clear",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.clear",
+      "target": "dlg.mrs.rescue.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.rescue.defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.defiant",
+      "target": "dlg.mrs.rescue.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.rescue.direct",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.direct",
+      "target": "dlg.mrs.rescue.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.rescue.intro",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.intro",
+      "target": "dlg.mrs.rescue.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.rescue.patient",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.patient",
+      "target": "dlg.mrs.rescue.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.rescue.playful",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.playful",
+      "target": "dlg.mrs.rescue.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.rescue.protect",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.rescue.protect",
+      "target": "dlg.mrs.rescue.protect",
+      "kind": "localization"
+    },
+    {
       "source": "beat.mrs.shelf.after",
       "target": "char.marisa_kirisame",
       "kind": "speaker"
@@ -2747,6 +2864,26 @@
     {
       "source": "choice.mrs.notes.answer",
       "target": "choice.mrs.notes.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.rescue.answer",
+      "target": "choice.mrs.rescue.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.rescue.answer",
+      "target": "choice.mrs.rescue.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.rescue.answer",
+      "target": "choice.mrs.rescue.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.rescue.answer",
+      "target": "choice.mrs.rescue.playful",
       "kind": "localization"
     },
     {
@@ -5606,6 +5743,256 @@
     },
     {
       "source": "evt.mrs.field_notes",
+      "target": "loc.forest_of_magic",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n001",
+      "target": "evt.mrs.rescue_looks_like_race.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n001",
+      "target": "mus_marisa_arrival",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n002",
+      "target": "evt.mrs.rescue_looks_like_race.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n002",
+      "target": "obj.mrs.rescue.hold_cargo",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n002",
+      "target": "prop.forest_wind_marker",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n002",
+      "target": "prop.marisa_broom",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n003",
+      "target": "beat.mrs.rescue.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n003",
+      "target": "evt.mrs.rescue_looks_like_race.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n004",
+      "target": "beat.mrs.rescue.protect",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n004",
+      "target": "evt.mrs.rescue_looks_like_race.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n005",
+      "target": "choice.mrs.rescue.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n005",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n005",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n005",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n005",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_after",
+      "target": "beat.mrs.rescue.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_after",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_assist",
+      "target": "beat.mrs.rescue.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_assist",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_broom",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_broom",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_broom",
+      "target": "mini.mrs.broom_backseat",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_clear",
+      "target": "beat.mrs.rescue.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_clear",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_defiant_line",
+      "target": "beat.mrs.rescue.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_defiant_line",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_broom",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_defiant",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_direct_line",
+      "target": "beat.mrs.rescue.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_direct_line",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_broom",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_direct",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_direct",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_effects",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_effects",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_journal",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_journal",
+      "target": "journal.mrs.rescue_looks_like_race",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_patient_line",
+      "target": "beat.mrs.rescue.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_patient_line",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_broom",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_patient",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_patient",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_playful_line",
+      "target": "beat.mrs.rescue.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_playful_line",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_broom",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_playful",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race.node.n_playful",
+      "target": "evt.mrs.rescue_looks_like_race.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race",
+      "target": "char.marisa_kirisame",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race",
+      "target": "event.mrs.rescue_looks_like_race.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race",
+      "target": "evt.mrs.rescue_looks_like_race",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race",
+      "target": "loc.forest_of_magic.forest_edge",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.mrs.rescue_looks_like_race",
       "target": "loc.forest_of_magic",
       "kind": "location"
     },

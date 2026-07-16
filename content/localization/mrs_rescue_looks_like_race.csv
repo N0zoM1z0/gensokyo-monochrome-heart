@@ -1,0 +1,18 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.mrs.rescue.hold_cargo,objective,,Hold the cargo while the wind turns.,風が曲がる間、荷物を支える。,208,Original
+event.mrs.rescue_looks_like_race.title,event_title,,The Rescue That Looks Like a Race,競走に見える救助,208,Original
+choice.mrs.rescue.direct,choice,,Ask where Marisa needs the cargo balanced.,荷物をどこで支えればいいか聞く。,248,Original
+choice.mrs.rescue.playful,choice,,Call it a race only after everyone lands.,全員着地してから競走と呼ぼうと言う。,248,Original
+choice.mrs.rescue.patient,choice,,Wait for her to say the wind has passed.,風が過ぎたと彼女が言うまで待つ。,248,Original
+choice.mrs.rescue.defiant,choice,,Say getting home matters more than winning.,勝つより帰る方が大事だと言う。,248,Original
+dlg.mrs.rescue.intro,dialogue,char.marisa_kirisame,"Wind lane collapsed. Hold tight; I am taking the ugly route.",「風の道が潰れた。しっかり持て。醜い方の道を行く。」,248,Original
+dlg.mrs.rescue.protect,dialogue,char.marisa_kirisame,"No speeches. I have you. Tell me when the cargo pulls left.",「演説はなし。つかまってろ。荷物が左へ引いたら言え。」,248,Original
+dlg.mrs.rescue.direct,dialogue,char.marisa_kirisame,"Near my elbow. Good—now the broom can turn without throwing either of us.",「肘の近くだ。いいぞ、これで箒が二人とも振り落とさずに曲がれる。」,248,Original
+dlg.mrs.rescue.playful,dialogue,char.marisa_kirisame,"Fine. We can call it a race after the ground stops trying to eat us.",「いいぜ。地面が私たちを食べようとやめてから、競走って呼ぼう。」,248,Original
+dlg.mrs.rescue.patient,dialogue,char.marisa_kirisame,"Not yet. Wait for my count. Then breathe.",「まだ。私が数えるまで待て。それから息をしろ。」,248,Original
+dlg.mrs.rescue.defiant,dialogue,char.marisa_kirisame,"Exactly. Winning is useless if I have to leave someone behind to prove it.",「その通り。誰かを置いてきて証明する勝ちなんて、役に立たない。」,248,Original
+dlg.mrs.rescue.clear,dialogue,char.marisa_kirisame,"Clean turn. That was not me rescuing you. That was us getting home.",「きれいに曲がれた。私が助けたんじゃない。二人で帰ったんだ。」,248,Original
+dlg.mrs.rescue.assist,dialogue,char.marisa_kirisame,"Rough landing, safe landing. We can repack the books; we do not owe the storm a performance.",「荒い着地でも、安全な着地。本は詰め直せる。嵐に見せ場を返す義理はない。」,248,Original
+dlg.mrs.rescue.after,dialogue,char.marisa_kirisame,"Do not thank me like I bought you. Next time, call the left pull again.",「私が買ったみたいに礼を言うな。次も左への引きを教えろ。」,248,Original
+journal.mrs.rescue_looks_like_race.title,journal_title,,The Way Home Was Shared,帰り道は二人のもの,248,Original
+journal.mrs.rescue_looks_like_race.body,journal_body,,Marisa made the weather look like a race only after everyone was safe. The rescue did not create a debt; it made the next dangerous turn easier to name together.,魔理沙は皆が安全になってから、天気を競走のように見せた。救助は借りを作らず、次の危険な曲がり角を二人で言えるようにした。,248,Original
