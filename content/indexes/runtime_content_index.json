@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "e242d01ac2af5153efa235d5ff83dd7f2d88b867b90c7d2c6fb0d21e66a40686",
+  "content_hash": "1842cb85262bf684319b60f4a33975ea2ad3a6ec2a9b55088806402213d55eb7",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 31,
-    "dialogue_beats": 91,
-    "localization": 693,
+    "events": 32,
+    "dialogue_beats": 102,
+    "localization": 712,
     "music_cues": 89,
-    "event_nodes": 189
+    "event_nodes": 211
   },
   "ids": {
     "characters": [
@@ -123,6 +123,7 @@
       "evt.hkr.day_nothing_happens",
       "evt.hkr.empty_cushion",
       "evt.hkr.offerings_without_owners",
+      "evt.hkr.perfectly_recorded_tea",
       "evt.hkr.return_before_borrowing",
       "evt.hkr.shrine_not_guesthouse",
       "evt.hkr.spell_card_terms",
@@ -191,6 +192,17 @@
       "beat.hkr.quiet.reimu.patient",
       "beat.hkr.quiet.reimu.playful",
       "beat.hkr.quiet.reimu.tea_cold",
+      "beat.hkr.recorded_tea.reimu.after",
+      "beat.hkr.recorded_tea.reimu.brew",
+      "beat.hkr.recorded_tea.reimu.clear",
+      "beat.hkr.recorded_tea.reimu.defiant",
+      "beat.hkr.recorded_tea.reimu.direct",
+      "beat.hkr.recorded_tea.reimu.excellent",
+      "beat.hkr.recorded_tea.reimu.loss",
+      "beat.hkr.recorded_tea.reimu.offer",
+      "beat.hkr.recorded_tea.reimu.patient",
+      "beat.hkr.recorded_tea.reimu.playful",
+      "beat.hkr.recorded_tea.reimu.refusal",
       "beat.hkr.rescue.reimu.after",
       "beat.hkr.rescue.reimu.assist",
       "beat.hkr.rescue.reimu.clear",
@@ -253,6 +265,10 @@
       "choice.hkr.quiet.direct",
       "choice.hkr.quiet.patient",
       "choice.hkr.quiet.playful",
+      "choice.hkr.recorded_tea.defiant",
+      "choice.hkr.recorded_tea.direct",
+      "choice.hkr.recorded_tea.patient",
+      "choice.hkr.recorded_tea.playful",
       "choice.hkr.rescue.defiant",
       "choice.hkr.rescue.direct",
       "choice.hkr.rescue.patient",
@@ -316,6 +332,17 @@
       "dlg.hkr.quiet.reimu.patient",
       "dlg.hkr.quiet.reimu.playful",
       "dlg.hkr.quiet.reimu.tea_cold",
+      "dlg.hkr.recorded_tea.reimu.after",
+      "dlg.hkr.recorded_tea.reimu.brew",
+      "dlg.hkr.recorded_tea.reimu.clear",
+      "dlg.hkr.recorded_tea.reimu.defiant",
+      "dlg.hkr.recorded_tea.reimu.direct",
+      "dlg.hkr.recorded_tea.reimu.excellent",
+      "dlg.hkr.recorded_tea.reimu.loss",
+      "dlg.hkr.recorded_tea.reimu.offer",
+      "dlg.hkr.recorded_tea.reimu.patient",
+      "dlg.hkr.recorded_tea.reimu.playful",
+      "dlg.hkr.recorded_tea.reimu.refusal",
       "dlg.hkr.rescue.reimu.after",
       "dlg.hkr.rescue.reimu.assist",
       "dlg.hkr.rescue.reimu.clear",
@@ -359,6 +386,7 @@
       "event.hkr.day_nothing_happens.title",
       "event.hkr.empty_cushion.title",
       "event.hkr.offerings_without_owners.title",
+      "event.hkr.perfectly_recorded_tea.title",
       "event.hkr.shrine_not_guesthouse.title",
       "event.hkr.unasked_rescue.title",
       "event.mtn.tomorrows_headline.title",
@@ -381,6 +409,8 @@
       "journal.hkr.empty_cushion.title",
       "journal.hkr.offerings_without_owners.body",
       "journal.hkr.offerings_without_owners.title",
+      "journal.hkr.perfectly_recorded_tea.body",
+      "journal.hkr.perfectly_recorded_tea.title",
       "journal.hkr.shrine_not_guesthouse.body",
       "journal.hkr.shrine_not_guesthouse.title",
       "journal.hkr.unasked_rescue.body",
@@ -393,6 +423,7 @@
       "obj.hkr.day_nothing_happens.enter",
       "obj.hkr.find_second_cup",
       "obj.hkr.offerings.inspect_box",
+      "obj.hkr.recorded_tea.set_cups",
       "obj.hkr.shrine_not_guesthouse.check_veranda",
       "obj.hkr.unasked_rescue.hold_veranda",
       "obj.mtn.trace_tomorrows_photo",
@@ -1531,6 +1562,116 @@
       "kind": "localization"
     },
     {
+      "source": "beat.hkr.recorded_tea.reimu.after",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.after",
+      "target": "dlg.hkr.recorded_tea.reimu.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.brew",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.brew",
+      "target": "dlg.hkr.recorded_tea.reimu.brew",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.clear",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.clear",
+      "target": "dlg.hkr.recorded_tea.reimu.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.defiant",
+      "target": "dlg.hkr.recorded_tea.reimu.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.direct",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.direct",
+      "target": "dlg.hkr.recorded_tea.reimu.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.excellent",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.excellent",
+      "target": "dlg.hkr.recorded_tea.reimu.excellent",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.loss",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.loss",
+      "target": "dlg.hkr.recorded_tea.reimu.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.offer",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.offer",
+      "target": "dlg.hkr.recorded_tea.reimu.offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.patient",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.patient",
+      "target": "dlg.hkr.recorded_tea.reimu.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.playful",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.playful",
+      "target": "dlg.hkr.recorded_tea.reimu.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.refusal",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.recorded_tea.reimu.refusal",
+      "target": "dlg.hkr.recorded_tea.reimu.refusal",
+      "kind": "localization"
+    },
+    {
       "source": "beat.hkr.rescue.reimu.after",
       "target": "char.reimu_hakurei",
       "kind": "speaker"
@@ -2008,6 +2149,26 @@
     {
       "source": "choice.hkr.quiet.work",
       "target": "choice.hkr.quiet.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.recorded_tea.answer",
+      "target": "choice.hkr.recorded_tea.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.recorded_tea.answer",
+      "target": "choice.hkr.recorded_tea.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.recorded_tea.answer",
+      "target": "choice.hkr.recorded_tea.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.recorded_tea.answer",
+      "target": "choice.hkr.recorded_tea.playful",
       "kind": "localization"
     },
     {
@@ -3202,6 +3363,286 @@
     },
     {
       "source": "evt.hkr.offerings_without_owners",
+      "target": "loc.hakurei_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n001",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n001",
+      "target": "mus_reimu_private",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n002",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n002",
+      "target": "obj.hkr.recorded_tea.set_cups",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n002",
+      "target": "prop.paper_screen",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n002",
+      "target": "prop.second_cushion",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n002",
+      "target": "prop.shrine_broom",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n003",
+      "target": "beat.hkr.recorded_tea.reimu.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n003",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n004",
+      "target": "beat.hkr.recorded_tea.reimu.refusal",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n004",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n005",
+      "target": "choice.hkr.recorded_tea.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n005",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n005",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n005",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n005",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n006",
+      "target": "beat.hkr.recorded_tea.reimu.brew",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n006",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_tea",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_after",
+      "target": "beat.hkr.recorded_tea.reimu.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_after",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_clear",
+      "target": "beat.hkr.recorded_tea.reimu.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_clear",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_defiant_line",
+      "target": "beat.hkr.recorded_tea.reimu.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_defiant_line",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_defiant",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_direct_line",
+      "target": "beat.hkr.recorded_tea.reimu.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_direct_line",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_direct",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_direct",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_effects",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_effects",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_excellent",
+      "target": "beat.hkr.recorded_tea.reimu.excellent",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_excellent",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_journal",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_journal",
+      "target": "journal.hkr.perfectly_recorded_tea",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_loss",
+      "target": "beat.hkr.recorded_tea.reimu.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_loss",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_patient_line",
+      "target": "beat.hkr.recorded_tea.reimu.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_patient_line",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_patient",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_patient",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_playful_line",
+      "target": "beat.hkr.recorded_tea.reimu.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_playful_line",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_playful",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_playful",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_tea",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_tea",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_excellent",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_tea",
+      "target": "evt.hkr.perfectly_recorded_tea.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea.node.n_tea",
+      "target": "mini.shrine.tea_temperature",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea",
+      "target": "char.reimu_hakurei",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea",
+      "target": "event.hkr.perfectly_recorded_tea.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea",
+      "target": "evt.hkr.perfectly_recorded_tea",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea",
+      "target": "loc.hakurei_shrine.sitting_room",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hkr.perfectly_recorded_tea",
       "target": "loc.hakurei_shrine",
       "kind": "location"
     },

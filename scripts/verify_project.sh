@@ -347,6 +347,8 @@ run_checked "M14 Reimu guesthouse boundary event" env XDG_DATA_HOME="$LOG_DIR/us
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_guesthouse_event.gd
 run_checked "M14 Reimu unasked rescue event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_unasked_rescue_event.gd
+run_checked "M14 Reimu perfectly recorded tea event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_recorded_tea_event.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

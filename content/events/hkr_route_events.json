@@ -30,6 +30,12 @@
       "location_id":"loc.hakurei_shrine", "lead_character_ids":["char.reimu_hakurei"], "primary_mode":"danmaku",
       "core_change":"protection is accepted as mutual repair rather than a debt", "status":"authored", "estimated_minutes":11,
       "comfort_tags":["assist_clear","loss_continues","no_timer_repair"]
+    },
+    {
+      "id":"evt.hkr.perfectly_recorded_tea", "legacy_id":"EVT-HKR-RTE-006", "title_en":"Perfectly Recorded Tea",
+      "location_id":"loc.hakurei_shrine", "lead_character_ids":["char.reimu_hakurei"], "primary_mode":"minigame",
+      "core_change":"a quiet afternoon is kept finite rather than preserved", "status":"authored", "estimated_minutes":9,
+      "comfort_tags":["no_timer","wide_target","loss_continues"]
     }
   ]
 }
