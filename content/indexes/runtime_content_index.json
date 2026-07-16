@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "cd5d1016111d37d56c5fd31df09831661f549f88deed07c8deb5e390d380ee70",
+  "content_hash": "ea149293dcb19788f27ad9765471cd704e6e25e4ce744d89c712c5fe0b93a549",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 56,
-    "dialogue_beats": 278,
-    "localization": 1116,
+    "events": 57,
+    "dialogue_beats": 285,
+    "localization": 1131,
     "music_cues": 89,
-    "event_nodes": 664
+    "event_nodes": 681
   },
   "ids": {
     "characters": [
@@ -109,6 +109,7 @@
     "events": [
       "evt.aya.exclusive_interview",
       "evt.aya.hidden_folder",
+      "evt.aya.story_published_too_soon",
       "evt.aya.wind_frame_graze",
       "evt.ein.burn_false_moon",
       "evt.ein.five_impossibilities",
@@ -179,6 +180,13 @@
       "beat.aya.hidden_folder.patient",
       "beat.aya.hidden_folder.playful",
       "beat.aya.hidden_folder.record",
+      "beat.aya.story_published_too_soon.after",
+      "beat.aya.story_published_too_soon.defiant",
+      "beat.aya.story_published_too_soon.direct",
+      "beat.aya.story_published_too_soon.harm",
+      "beat.aya.story_published_too_soon.intro",
+      "beat.aya.story_published_too_soon.patient",
+      "beat.aya.story_published_too_soon.playful",
       "beat.aya.wind_frame_graze.after",
       "beat.aya.wind_frame_graze.assist",
       "beat.aya.wind_frame_graze.clear",
@@ -457,6 +465,10 @@
       "choice.aya.hidden_folder.direct",
       "choice.aya.hidden_folder.patient",
       "choice.aya.hidden_folder.playful",
+      "choice.aya.story_published_too_soon.defiant",
+      "choice.aya.story_published_too_soon.direct",
+      "choice.aya.story_published_too_soon.patient",
+      "choice.aya.story_published_too_soon.playful",
       "choice.aya.wind_frame_graze.defiant",
       "choice.aya.wind_frame_graze.direct",
       "choice.aya.wind_frame_graze.patient",
@@ -591,6 +603,13 @@
       "dlg.aya.hidden_folder.patient",
       "dlg.aya.hidden_folder.playful",
       "dlg.aya.hidden_folder.record",
+      "dlg.aya.story_published_too_soon.after",
+      "dlg.aya.story_published_too_soon.defiant",
+      "dlg.aya.story_published_too_soon.direct",
+      "dlg.aya.story_published_too_soon.harm",
+      "dlg.aya.story_published_too_soon.intro",
+      "dlg.aya.story_published_too_soon.patient",
+      "dlg.aya.story_published_too_soon.playful",
       "dlg.aya.wind_frame_graze.after",
       "dlg.aya.wind_frame_graze.assist",
       "dlg.aya.wind_frame_graze.clear",
@@ -857,6 +876,7 @@
       "dlg.sdm.promise.undecided",
       "event.aya.exclusive_interview.title",
       "event.aya.hidden_folder.title",
+      "event.aya.story_published_too_soon.title",
       "event.aya.wind_frame_graze.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -903,6 +923,8 @@
       "journal.aya.exclusive_interview.title",
       "journal.aya.hidden_folder.body",
       "journal.aya.hidden_folder.title",
+      "journal.aya.story_published_too_soon.body",
+      "journal.aya.story_published_too_soon.title",
       "journal.aya.wind_frame_graze.body",
       "journal.aya.wind_frame_graze.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -977,6 +999,7 @@
       "journal.sdm.promise.title",
       "obj.aya.exclusive_interview.mark_record",
       "obj.aya.hidden_folder.review",
+      "obj.aya.story_published_too_soon.correct",
       "obj.aya.wind_frame_graze.exit",
       "obj.ein.cross_four_dawns",
       "obj.hgy.cutting_wrong_problem.listen",
@@ -4236,6 +4259,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.aya.story_published_too_soon.response",
+      "target": "choice.aya.story_published_too_soon.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.story_published_too_soon.response",
+      "target": "choice.aya.story_published_too_soon.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.story_published_too_soon.response",
+      "target": "choice.aya.story_published_too_soon.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.story_published_too_soon.response",
+      "target": "choice.aya.story_published_too_soon.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.aya.wind_frame_graze.response",
       "target": "choice.aya.wind_frame_graze.defiant",
       "kind": "localization"
@@ -5262,6 +5305,221 @@
     },
     {
       "source": "evt.aya.hidden_folder",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n001",
+      "target": "evt.aya.story_published_too_soon.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n001",
+      "target": "mus_mountain_base",
+      "kind": "music"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n002",
+      "target": "evt.aya.story_published_too_soon.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n002",
+      "target": "obj.aya.story_published_too_soon.correct",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n002",
+      "target": "prop.aya.correction_board",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n002",
+      "target": "prop.aya.premature_notice",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n003",
+      "target": "beat.aya.story_published_too_soon.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n003",
+      "target": "evt.aya.story_published_too_soon.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n004",
+      "target": "beat.aya.story_published_too_soon.harm",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n004",
+      "target": "evt.aya.story_published_too_soon.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n005",
+      "target": "choice.aya.story_published_too_soon.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n005",
+      "target": "evt.aya.story_published_too_soon.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n005",
+      "target": "evt.aya.story_published_too_soon.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n005",
+      "target": "evt.aya.story_published_too_soon.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n005",
+      "target": "evt.aya.story_published_too_soon.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_after",
+      "target": "beat.aya.story_published_too_soon.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_after",
+      "target": "evt.aya.story_published_too_soon.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_defiant_line",
+      "target": "beat.aya.story_published_too_soon.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_defiant_line",
+      "target": "evt.aya.story_published_too_soon.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_defiant",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_defiant",
+      "target": "evt.aya.story_published_too_soon.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_direct_line",
+      "target": "beat.aya.story_published_too_soon.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_direct_line",
+      "target": "evt.aya.story_published_too_soon.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_direct",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_direct",
+      "target": "evt.aya.story_published_too_soon.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_effects",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_effects",
+      "target": "evt.aya.story_published_too_soon.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_journal",
+      "target": "evt.aya.story_published_too_soon.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_journal",
+      "target": "journal.aya.story_published_too_soon",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_patient_line",
+      "target": "beat.aya.story_published_too_soon.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_patient_line",
+      "target": "evt.aya.story_published_too_soon.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_patient",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_patient",
+      "target": "evt.aya.story_published_too_soon.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_playful_line",
+      "target": "beat.aya.story_published_too_soon.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_playful_line",
+      "target": "evt.aya.story_published_too_soon.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_playful",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon.node.n_playful",
+      "target": "evt.aya.story_published_too_soon.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon",
+      "target": "char.aya_shameimaru",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon",
+      "target": "char.aya_shameimaru",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon",
+      "target": "event.aya.story_published_too_soon.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon",
+      "target": "evt.aya.story_published_too_soon",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon",
+      "target": "loc.youkai_mountain.tengu_village_threshold",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.aya.story_published_too_soon",
       "target": "loc.youkai_mountain",
       "kind": "location"
     },
