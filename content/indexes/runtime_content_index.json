@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "e87f508eacf1354fd23e889366d7a26357a48214f2c0a16d1712721743168816",
+  "content_hash": "0c66f2a2665b52b575ac816561826511dff66409e73276f669732120e77dd591",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 28,
-    "dialogue_beats": 35,
-    "localization": 445,
+    "dialogue_beats": 47,
+    "localization": 464,
     "music_cues": 89,
-    "event_nodes": 70
+    "event_nodes": 96
   },
   "ids": {
     "characters": [
@@ -156,6 +156,18 @@
       "beat.hkr.empty_cushion.reimu.patient",
       "beat.hkr.empty_cushion.reimu.playful",
       "beat.hkr.empty_cushion.reimu.stain",
+      "beat.mtn.headline.aya.after_01",
+      "beat.mtn.headline.aya.after_02",
+      "beat.mtn.headline.aya.danmaku_assist",
+      "beat.mtn.headline.aya.danmaku_clear",
+      "beat.mtn.headline.aya.danmaku_loss",
+      "beat.mtn.headline.aya.defiant",
+      "beat.mtn.headline.aya.direct",
+      "beat.mtn.headline.aya.evidence",
+      "beat.mtn.headline.aya.intro",
+      "beat.mtn.headline.aya.patient",
+      "beat.mtn.headline.aya.photo_origin",
+      "beat.mtn.headline.aya.playful",
       "beat.sdm.late.patchouli.teaser",
       "beat.sdm.late.remilia.private",
       "beat.sdm.late.remilia.public",
@@ -182,6 +194,10 @@
       "choice.hkr.empty_cushion.direct",
       "choice.hkr.empty_cushion.patient",
       "choice.hkr.empty_cushion.playful",
+      "choice.mtn.headline.defiant",
+      "choice.mtn.headline.direct",
+      "choice.mtn.headline.patient",
+      "choice.mtn.headline.playful",
       "choice.sdm.late.defiant",
       "choice.sdm.late.direct",
       "choice.sdm.late.patient",
@@ -205,6 +221,18 @@
       "dlg.hkr.empty_cushion.reimu.patient",
       "dlg.hkr.empty_cushion.reimu.playful",
       "dlg.hkr.empty_cushion.reimu.stain",
+      "dlg.mtn.headline.aya.after_01",
+      "dlg.mtn.headline.aya.after_02",
+      "dlg.mtn.headline.aya.danmaku_assist",
+      "dlg.mtn.headline.aya.danmaku_clear",
+      "dlg.mtn.headline.aya.danmaku_loss",
+      "dlg.mtn.headline.aya.defiant",
+      "dlg.mtn.headline.aya.direct",
+      "dlg.mtn.headline.aya.evidence",
+      "dlg.mtn.headline.aya.intro",
+      "dlg.mtn.headline.aya.patient",
+      "dlg.mtn.headline.aya.photo_origin",
+      "dlg.mtn.headline.aya.playful",
       "dlg.sdm.late.patchouli.teaser",
       "dlg.sdm.late.remilia.private",
       "dlg.sdm.late.remilia.public",
@@ -222,6 +250,7 @@
       "dlg.sdm.late.sakuya.service_excellent",
       "dlg.sdm.late.sakuya.service_loss",
       "event.hkr.empty_cushion.title",
+      "event.mtn.tomorrows_headline.title",
       "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
       "input.glyph.keyboard.confirm",
@@ -237,6 +266,8 @@
       "input.glyph.pointer.move",
       "journal.hkr.empty_cushion.body",
       "journal.hkr.empty_cushion.title",
+      "journal.mtn.tomorrows_headline.body",
+      "journal.mtn.tomorrows_headline.title",
       "journal.sdm.missing_minute.body",
       "journal.sdm.missing_minute.title",
       "obj.hkr.find_second_cup",
@@ -904,6 +935,126 @@
       "kind": "localization"
     },
     {
+      "source": "beat.mtn.headline.aya.after_01",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.after_01",
+      "target": "dlg.mtn.headline.aya.after_01",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.after_02",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.after_02",
+      "target": "dlg.mtn.headline.aya.after_02",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.danmaku_assist",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.danmaku_assist",
+      "target": "dlg.mtn.headline.aya.danmaku_assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.danmaku_clear",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.danmaku_clear",
+      "target": "dlg.mtn.headline.aya.danmaku_clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.danmaku_loss",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.danmaku_loss",
+      "target": "dlg.mtn.headline.aya.danmaku_loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.defiant",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.defiant",
+      "target": "dlg.mtn.headline.aya.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.direct",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.direct",
+      "target": "dlg.mtn.headline.aya.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.evidence",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.evidence",
+      "target": "dlg.mtn.headline.aya.evidence",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.intro",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.intro",
+      "target": "dlg.mtn.headline.aya.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.patient",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.patient",
+      "target": "dlg.mtn.headline.aya.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.photo_origin",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.photo_origin",
+      "target": "dlg.mtn.headline.aya.photo_origin",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.headline.aya.playful",
+      "target": "char.aya_shameimaru",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.headline.aya.playful",
+      "target": "dlg.mtn.headline.aya.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.sdm.late.patchouli.teaser",
       "target": "char.patchouli_knowledge",
       "kind": "speaker"
@@ -1081,6 +1232,26 @@
     {
       "source": "choice.hkr.empty_cushion.01",
       "target": "choice.hkr.empty_cushion.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mtn.headline.boundary",
+      "target": "choice.mtn.headline.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mtn.headline.boundary",
+      "target": "choice.mtn.headline.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mtn.headline.boundary",
+      "target": "choice.mtn.headline.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mtn.headline.boundary",
+      "target": "choice.mtn.headline.playful",
       "kind": "localization"
     },
     {
@@ -1764,9 +1935,314 @@
       "kind": "location"
     },
     {
+      "source": "evt.mtn.tomorrows_headline.node.n001",
+      "target": "evt.mtn.tomorrows_headline.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n001",
+      "target": "mus_mountain_base",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n002",
+      "target": "evt.mtn.tomorrows_headline.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n002",
+      "target": "obj.mtn.trace_tomorrows_photo",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n002",
+      "target": "prop.mtn.intact_guardrail",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n002",
+      "target": "prop.mtn.tomorrow_paper",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n003",
+      "target": "beat.mtn.headline.aya.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n003",
+      "target": "evt.mtn.tomorrows_headline.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n004",
+      "target": "beat.mtn.headline.aya.evidence",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n004",
+      "target": "evt.mtn.tomorrows_headline.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n005",
+      "target": "choice.mtn.headline.boundary",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n005",
+      "target": "evt.mtn.tomorrows_headline.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n005",
+      "target": "evt.mtn.tomorrows_headline.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n005",
+      "target": "evt.mtn.tomorrows_headline.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n005",
+      "target": "evt.mtn.tomorrows_headline.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_after_01",
+      "target": "beat.mtn.headline.aya.after_01",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_after_01",
+      "target": "evt.mtn.tomorrows_headline.node.n_after_02",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_after_02",
+      "target": "beat.mtn.headline.aya.after_02",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_after_02",
+      "target": "evt.mtn.tomorrows_headline.node.n_item",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_after_music",
+      "target": "evt.mtn.tomorrows_headline.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_after_music",
+      "target": "mus_aya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_chase_music",
+      "target": "evt.mtn.tomorrows_headline.node.n_danmaku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_chase_music",
+      "target": "mus_aya_chase",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku_assist",
+      "target": "beat.mtn.headline.aya.danmaku_assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku_assist",
+      "target": "evt.mtn.tomorrows_headline.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku_clear",
+      "target": "beat.mtn.headline.aya.danmaku_clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku_clear",
+      "target": "evt.mtn.tomorrows_headline.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku_loss",
+      "target": "beat.mtn.headline.aya.danmaku_loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku_loss",
+      "target": "evt.mtn.tomorrows_headline.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku",
+      "target": "danmaku.mtn.tomorrows_headline",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku",
+      "target": "evt.mtn.tomorrows_headline.node.n_danmaku_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku",
+      "target": "evt.mtn.tomorrows_headline.node.n_danmaku_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_danmaku",
+      "target": "evt.mtn.tomorrows_headline.node.n_danmaku_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_defiant_line",
+      "target": "beat.mtn.headline.aya.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_defiant_line",
+      "target": "evt.mtn.tomorrows_headline.node.n_photo_origin",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_defiant",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_defiant",
+      "target": "evt.mtn.tomorrows_headline.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_direct_line",
+      "target": "beat.mtn.headline.aya.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_direct_line",
+      "target": "evt.mtn.tomorrows_headline.node.n_photo_origin",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_direct",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_direct",
+      "target": "evt.mtn.tomorrows_headline.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_effects",
+      "target": "evt.mtn.tomorrows_headline.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_item",
+      "target": "char.aya_shameimaru",
+      "kind": "item_owner"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_item",
+      "target": "evt.mtn.tomorrows_headline.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_item",
+      "target": "item.keepsake.unprinted_caption",
+      "kind": "item"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_journal",
+      "target": "evt.mtn.tomorrows_headline.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_journal",
+      "target": "journal.mtn.tomorrows_headline",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_patient_line",
+      "target": "beat.mtn.headline.aya.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_patient_line",
+      "target": "evt.mtn.tomorrows_headline.node.n_photo_origin",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_patient",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_patient",
+      "target": "evt.mtn.tomorrows_headline.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_photo_origin",
+      "target": "beat.mtn.headline.aya.photo_origin",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_photo_origin",
+      "target": "evt.mtn.tomorrows_headline.node.n_chase_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_playful_line",
+      "target": "beat.mtn.headline.aya.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_playful_line",
+      "target": "evt.mtn.tomorrows_headline.node.n_photo_origin",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_playful",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_playful",
+      "target": "evt.mtn.tomorrows_headline.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline",
+      "target": "char.aya_shameimaru",
+      "kind": "cast"
+    },
+    {
       "source": "evt.mtn.tomorrows_headline",
       "target": "char.aya_shameimaru",
       "kind": "lead_character"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline",
+      "target": "event.mtn.tomorrows_headline.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline",
+      "target": "evt.mtn.tomorrows_headline",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline",
+      "target": "loc.youkai_mountain.wind_ridge",
+      "kind": "spot"
     },
     {
       "source": "evt.mtn.tomorrows_headline",

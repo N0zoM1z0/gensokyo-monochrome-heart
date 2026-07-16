@@ -1,0 +1,11 @@
+{
+  "schema": "gmh-deferred-references-v1",
+  "references": [
+    {"id":"loc.youkai_mountain.wind_ridge","kind":"spot","target_milestone":"M13","reason":"Wind Ridge exploration composition owns the event entry volume."},
+    {"id":"prop.mtn.tomorrow_paper","kind":"interactable","target_milestone":"M13","reason":"The future newspaper is the first mountain evidence observation."},
+    {"id":"prop.mtn.intact_guardrail","kind":"interactable","target_milestone":"M13","reason":"The intact rail contradicts the printed future photograph."},
+    {"id":"danmaku.mtn.tomorrows_headline","kind":"minigame","target_milestone":"M13","reason":"Deterministic Wind-Frame photo-graze runtime."},
+    {"id":"item.keepsake.unprinted_caption","kind":"item","target_milestone":"M13","reason":"Aya's withheld caption records the honored publication boundary."},
+    {"id":"journal.mtn.tomorrows_headline","kind":"journal_entry","target_milestone":"M13","reason":"Future-photo observation and replay entry."}
+  ]
+}

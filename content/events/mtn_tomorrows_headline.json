@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "id": "evt.mtn.tomorrows_headline",
+  "title_key": "event.mtn.tomorrows_headline.title",
+  "location_id": "loc.youkai_mountain",
+  "spot_id": "loc.youkai_mountain.wind_ridge",
+  "cast": ["char.aya_shameimaru"],
+  "availability": [
+    {"predicate": "chapter_at_least", "value": "chapter.1"},
+    {"predicate": "flag_false", "key": "evt.mtn.tomorrows_headline.complete"},
+    {"predicate": "time_in", "values": ["day", "dusk"]}
+  ],
+  "entry_node": "n001",
+  "nodes": {
+    "n001": {"type": "music_state", "state": "mus_mountain_base", "next": "n002"},
+    "n002": {"type": "exploration_objective", "objective_key": "obj.mtn.trace_tomorrows_photo", "interactable_ids": ["prop.mtn.tomorrow_paper", "prop.mtn.intact_guardrail"], "next": "n003"},
+    "n003": {"type": "line", "beat_id": "beat.mtn.headline.aya.intro", "next": "n004"},
+    "n004": {"type": "line", "beat_id": "beat.mtn.headline.aya.evidence", "next": "n005"},
+    "n005": {"type": "choice", "choice_id": "choice.mtn.headline.boundary", "options": [
+      {"tone": "direct", "text_key": "choice.mtn.headline.direct", "next": "n_direct"},
+      {"tone": "playful", "text_key": "choice.mtn.headline.playful", "next": "n_playful"},
+      {"tone": "patient", "text_key": "choice.mtn.headline.patient", "next": "n_patient"},
+      {"tone": "defiant", "text_key": "choice.mtn.headline.defiant", "next": "n_defiant"}
+    ]},
+    "n_direct": {"type": "effects", "effects": [
+      {"op": "relationship", "character_id": "char.aya_shameimaru", "facet": "respect", "delta": 1},
+      {"op": "set_flag", "key": "flag.mtn.headline.boundary.off_record", "value": true}
+    ], "next": "n_direct_line"},
+    "n_playful": {"type": "effects", "effects": [
+      {"op": "relationship", "character_id": "char.aya_shameimaru", "facet": "spark", "delta": 1},
+      {"op": "set_flag", "key": "flag.mtn.headline.boundary.correction", "value": true}
+    ], "next": "n_playful_line"},
+    "n_patient": {"type": "effects", "effects": [
+      {"op": "relationship", "character_id": "char.aya_shameimaru", "facet": "ease", "delta": 1},
+      {"op": "set_flag", "key": "flag.mtn.headline.boundary.inspect_first", "value": true}
+    ], "next": "n_patient_line"},
+    "n_defiant": {"type": "effects", "effects": [
+      {"op": "relationship", "character_id": "char.aya_shameimaru", "facet": "strain", "delta": 1},
+      {"op": "set_flag", "key": "flag.mtn.headline.boundary.causal_challenge", "value": true}
+    ], "next": "n_defiant_line"},
+    "n_direct_line": {"type": "line", "beat_id": "beat.mtn.headline.aya.direct", "next": "n_photo_origin"},
+    "n_playful_line": {"type": "line", "beat_id": "beat.mtn.headline.aya.playful", "next": "n_photo_origin"},
+    "n_patient_line": {"type": "line", "beat_id": "beat.mtn.headline.aya.patient", "next": "n_photo_origin"},
+    "n_defiant_line": {"type": "line", "beat_id": "beat.mtn.headline.aya.defiant", "next": "n_photo_origin"},
+    "n_photo_origin": {"type": "line", "beat_id": "beat.mtn.headline.aya.photo_origin", "next": "n_chase_music"},
+    "n_chase_music": {"type": "music_state", "state": "mus_aya_chase", "next": "n_danmaku"},
+    "n_danmaku": {"type": "start_danmaku", "minigame_id": "danmaku.mtn.tomorrows_headline", "result_branches": {"clear": "n_danmaku_clear", "assist_clear": "n_danmaku_assist", "loss": "n_danmaku_loss"}},
+    "n_danmaku_clear": {"type": "line", "beat_id": "beat.mtn.headline.aya.danmaku_clear", "next": "n_after_music"},
+    "n_danmaku_assist": {"type": "line", "beat_id": "beat.mtn.headline.aya.danmaku_assist", "next": "n_after_music"},
+    "n_danmaku_loss": {"type": "line", "beat_id": "beat.mtn.headline.aya.danmaku_loss", "next": "n_after_music"},
+    "n_after_music": {"type": "music_state", "state": "mus_aya_afterbeat", "next": "n_after_01"},
+    "n_after_01": {"type": "line", "beat_id": "beat.mtn.headline.aya.after_01", "next": "n_after_02"},
+    "n_after_02": {"type": "line", "beat_id": "beat.mtn.headline.aya.after_02", "next": "n_item"},
+    "n_item": {"type": "give_item", "item_id": "item.keepsake.unprinted_caption", "owner_character_id": "char.aya_shameimaru", "dialogue_tags": ["mtn.tomorrows_headline", "boundary.off_record"], "next": "n_journal"},
+    "n_journal": {"type": "journal_entry", "entry_id": "journal.mtn.tomorrows_headline", "entry_type": "event_observation", "tags": ["future_photo", "publication_boundary", "prediction_loop"], "next": "n_effects"},
+    "n_effects": {"type": "effects", "effects": [
+      {"op": "set_flag", "key": "flag.mtn.prediction_performance.observed", "value": true},
+      {"op": "set_flag", "key": "flag.mtn.headline.withheld", "value": true},
+      {"op": "set_flag", "key": "evt.mtn.tomorrows_headline.complete", "value": true}
+    ], "next": "n_end"},
+    "n_end": {"type": "end_event", "outcome": "headline_withheld_pending_correction"}
+  },
+  "origin_tags": {"canon": 3, "fanon": 0, "original": 9},
+  "comfort_tags": ["low_motion_available", "no_flash_available", "publication_consent"]
+}

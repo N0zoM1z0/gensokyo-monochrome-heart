@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "beats": [
+    {"id":"beat.mtn.headline.aya.intro","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.intro","portrait":"public_reporter","nonverbal_key":"cue.aya_lower_camera","advance_policy":"input","memory_tag":"mtn.future_photo"},
+    {"id":"beat.mtn.headline.aya.evidence","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.evidence","portrait":"public_measured","nonverbal_key":"cue.aya_show_uncropped_plate","advance_policy":"input","memory_tag":"mtn.future_photo"},
+    {"id":"beat.mtn.headline.aya.direct","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.direct","portrait":"private_professional","nonverbal_key":"cue.aya_close_notebook","advance_policy":"input","memory_tag":"mtn.publication_boundary"},
+    {"id":"beat.mtn.headline.aya.playful","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.playful","portrait":"public_amused","nonverbal_key":"cue.aya_mark_correction","advance_policy":"input","memory_tag":"mtn.publication_boundary"},
+    {"id":"beat.mtn.headline.aya.patient","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.patient","portrait":"private_thoughtful","nonverbal_key":"cue.aya_offer_full_frame","advance_policy":"input","memory_tag":"mtn.publication_boundary"},
+    {"id":"beat.mtn.headline.aya.defiant","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.defiant","portrait":"private_sharp","nonverbal_key":"cue.aya_stop_smiling","advance_policy":"input","memory_tag":"mtn.publication_boundary"},
+    {"id":"beat.mtn.headline.aya.photo_origin","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.photo_origin","portrait":"working_alert","nonverbal_key":"cue.aya_compare_safe_routes","advance_policy":"input","memory_tag":"mtn.prediction_loop"},
+    {"id":"beat.mtn.headline.aya.danmaku_clear","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.danmaku_clear","portrait":"working_impressed","nonverbal_key":"cue.aya_keep_frame_private","advance_policy":"input","memory_tag":"mtn.wind_frame"},
+    {"id":"beat.mtn.headline.aya.danmaku_assist","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.danmaku_assist","portrait":"working_measured","nonverbal_key":"cue.aya_widen_frame","advance_policy":"input","memory_tag":"mtn.wind_frame"},
+    {"id":"beat.mtn.headline.aya.danmaku_loss","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.danmaku_loss","portrait":"private_concern","nonverbal_key":"cue.aya_end_chase","advance_policy":"input","memory_tag":"mtn.wind_frame"},
+    {"id":"beat.mtn.headline.aya.after_01","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.after_01","portrait":"private_thoughtful","nonverbal_key":"cue.aya_read_patrol_order","advance_policy":"input","memory_tag":"mtn.prediction_loop"},
+    {"id":"beat.mtn.headline.aya.after_02","speaker_id":"char.aya_shameimaru","text_key":"dlg.mtn.headline.aya.after_02","portrait":"private_resolved","nonverbal_key":"cue.aya_lower_camera","advance_policy":"input","memory_tag":"mtn.unprinted_caption"}
+  ]
+}
