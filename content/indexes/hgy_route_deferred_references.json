@@ -25,6 +25,10 @@
     {"id":"loc.hakugyokurou.dining_room","kind":"spot","target_milestone":"M14","reason":"Yuyuko makes room for Youmu to finish a meal."},
     {"id":"prop.hgy.cooling_soup","kind":"interactable","target_milestone":"M14","reason":"The meal is allowed to be eaten warm rather than abandoned."},
     {"id":"prop.hgy.yuyuko_garden_hat","kind":"interactable","target_milestone":"M14","reason":"Yuyuko visibly chooses to take the short garden watch."},
-    {"id":"journal.hgy.meal_she_finishes","kind":"journal_entry","target_milestone":"M14","reason":"A completed meal without duty becoming a punishment or debt."}
+    {"id":"journal.hgy.meal_she_finishes","kind":"journal_entry","target_milestone":"M14","reason":"A completed meal without duty becoming a punishment or debt."},
+    {"id":"loc.hakugyokurou.falling_petal_court","kind":"spot","target_milestone":"M14","reason":"Archive-stilled petals and spirits wait for Youmu's choice to release them."},
+    {"id":"prop.archive_still_petal","kind":"interactable","target_milestone":"M14","reason":"The Archive's suspended petal which no longer gets to land."},
+    {"id":"prop.archive_waiting_spirit","kind":"interactable","target_milestone":"M14","reason":"A farewell held still by the Archive."},
+    {"id":"journal.hgy.farewell_will_not_fall","kind":"journal_entry","target_milestone":"M14","reason":"Youmu guards an ending by allowing it to happen."}
   ]
 }

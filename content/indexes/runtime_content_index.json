@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "bf16a246f9f69508ae844215fec050dae8caa3db811dd2c940cb1c275234b75a",
+  "content_hash": "5bcd453a3b7ca8301a6b0ca4e0af21a4fcee9215cb6c4863673cd881f4446a0d",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 51,
-    "dialogue_beats": 241,
-    "localization": 1031,
+    "events": 52,
+    "dialogue_beats": 248,
+    "localization": 1046,
     "music_cues": 89,
-    "event_nodes": 566
+    "event_nodes": 583
   },
   "ids": {
     "characters": [
@@ -119,6 +119,7 @@
       "evt.hgy.cutting_wrong_problem",
       "evt.hgy.duty_delegated",
       "evt.hgy.farewell_replay",
+      "evt.hgy.farewell_will_not_fall",
       "evt.hgy.garden_shift",
       "evt.hgy.last_sweet",
       "evt.hgy.meal_she_finishes",
@@ -167,6 +168,13 @@
       "beat.hgy.duty.patient",
       "beat.hgy.duty.playful",
       "beat.hgy.duty.request",
+      "beat.hgy.farewell.after",
+      "beat.hgy.farewell.defiant",
+      "beat.hgy.farewell.direct",
+      "beat.hgy.farewell.offer",
+      "beat.hgy.farewell.patient",
+      "beat.hgy.farewell.playful",
+      "beat.hgy.farewell.refusal",
       "beat.hgy.garden_shift.after",
       "beat.hgy.garden_shift.clear",
       "beat.hgy.garden_shift.defiant",
@@ -411,6 +419,10 @@
       "choice.hgy.duty.direct",
       "choice.hgy.duty.patient",
       "choice.hgy.duty.playful",
+      "choice.hgy.farewell.defiant",
+      "choice.hgy.farewell.direct",
+      "choice.hgy.farewell.patient",
+      "choice.hgy.farewell.playful",
       "choice.hgy.garden_shift.defiant",
       "choice.hgy.garden_shift.direct",
       "choice.hgy.garden_shift.patient",
@@ -522,6 +534,13 @@
       "dlg.hgy.duty.patient",
       "dlg.hgy.duty.playful",
       "dlg.hgy.duty.request",
+      "dlg.hgy.farewell.after",
+      "dlg.hgy.farewell.defiant",
+      "dlg.hgy.farewell.direct",
+      "dlg.hgy.farewell.offer",
+      "dlg.hgy.farewell.patient",
+      "dlg.hgy.farewell.playful",
+      "dlg.hgy.farewell.refusal",
       "dlg.hgy.garden_shift.after",
       "dlg.hgy.garden_shift.clear",
       "dlg.hgy.garden_shift.defiant",
@@ -758,6 +777,7 @@
       "dlg.sdm.promise.undecided",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
+      "event.hgy.farewell_will_not_fall.title",
       "event.hgy.garden_shift.title",
       "event.hgy.meal_she_finishes.title",
       "event.hgy.two_bodies.title",
@@ -799,6 +819,8 @@
       "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
       "journal.hgy.duty_delegated.title",
+      "journal.hgy.farewell_will_not_fall.body",
+      "journal.hgy.farewell_will_not_fall.title",
       "journal.hgy.garden_shift.body",
       "journal.hgy.garden_shift.title",
       "journal.hgy.garden_shift.withdrawn.body",
@@ -856,6 +878,7 @@
       "obj.ein.cross_four_dawns",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
+      "obj.hgy.farewell.release",
       "obj.hgy.garden_shift.match",
       "obj.hgy.meal_she_finishes.sit",
       "obj.hgy.two_bodies.cross",
@@ -1596,6 +1619,76 @@
     {
       "source": "beat.hgy.duty.request",
       "target": "dlg.hgy.duty.request",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.farewell.after",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.farewell.after",
+      "target": "dlg.hgy.farewell.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.farewell.defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.farewell.defiant",
+      "target": "dlg.hgy.farewell.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.farewell.direct",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.farewell.direct",
+      "target": "dlg.hgy.farewell.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.farewell.offer",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.farewell.offer",
+      "target": "dlg.hgy.farewell.offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.farewell.patient",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.farewell.patient",
+      "target": "dlg.hgy.farewell.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.farewell.playful",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.farewell.playful",
+      "target": "dlg.hgy.farewell.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.farewell.refusal",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.farewell.refusal",
+      "target": "dlg.hgy.farewell.refusal",
       "kind": "localization"
     },
     {
@@ -3959,6 +4052,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.hgy.farewell.response",
+      "target": "choice.hgy.farewell.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.farewell.response",
+      "target": "choice.hgy.farewell.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.farewell.response",
+      "target": "choice.hgy.farewell.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.farewell.response",
+      "target": "choice.hgy.farewell.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hgy.garden_shift.response",
       "target": "choice.hgy.garden_shift.defiant",
       "kind": "localization"
@@ -5020,6 +5133,221 @@
     },
     {
       "source": "evt.hgy.farewell_replay",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n001",
+      "target": "evt.hgy.farewell_will_not_fall.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n001",
+      "target": "mus_youmu_training",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n002",
+      "target": "evt.hgy.farewell_will_not_fall.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n002",
+      "target": "obj.hgy.farewell.release",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n002",
+      "target": "prop.archive_still_petal",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n002",
+      "target": "prop.archive_waiting_spirit",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n003",
+      "target": "beat.hgy.farewell.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n003",
+      "target": "evt.hgy.farewell_will_not_fall.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n004",
+      "target": "beat.hgy.farewell.refusal",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n004",
+      "target": "evt.hgy.farewell_will_not_fall.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n005",
+      "target": "choice.hgy.farewell.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n005",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n005",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n005",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n005",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_after",
+      "target": "beat.hgy.farewell.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_after",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_defiant_line",
+      "target": "beat.hgy.farewell.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_defiant_line",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_defiant",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_direct_line",
+      "target": "beat.hgy.farewell.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_direct_line",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_direct",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_direct",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_effects",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_effects",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_journal",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_journal",
+      "target": "journal.hgy.farewell_will_not_fall",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_patient_line",
+      "target": "beat.hgy.farewell.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_patient_line",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_patient",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_patient",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_playful_line",
+      "target": "beat.hgy.farewell.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_playful_line",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_playful",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall.node.n_playful",
+      "target": "evt.hgy.farewell_will_not_fall.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall",
+      "target": "char.youmu_konpaku",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall",
+      "target": "event.hgy.farewell_will_not_fall.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall",
+      "target": "evt.hgy.farewell_will_not_fall",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall",
+      "target": "loc.hakugyokurou.falling_petal_court",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hgy.farewell_will_not_fall",
       "target": "loc.hakugyokurou",
       "kind": "location"
     },

@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.hgy.farewell.release,objective,,Stay with Youmu until the petal and spirit may move again.,花びらと魂が再び動けるまで、妖夢のそばにいる。,208,Original
+event.hgy.farewell_will_not_fall.title,event_title,,A Farewell That Will Not Fall,落ちない別れ,208,Original
+choice.hgy.farewell.direct,choice,,Say guarding can include stepping aside.,守ることには一歩退くことも含まれると言う。,248,Original
+choice.hgy.farewell.playful,choice,,Say the petal looks tired of posing.,花びらはポーズに疲れていそうだと言う。,248,Original
+choice.hgy.farewell.patient,choice,,Ask what the waiting spirit needs from a guard.,待つ魂が守り手に何を求めているか聞く。,248,Original
+choice.hgy.farewell.defiant,choice,,Say stillness is not safety when it refuses an ending.,終わりを拒む静止は安全ではないと言う。,248,Original
+dlg.hgy.farewell.offer,dialogue,char.youmu_konpaku,"The Archive has kept this petal from landing and this spirit from leaving. Nothing can be lost while they remain here.",「アーカイブはこの花びらを落ちず、この魂を去らずに留めています。ここにいる限り、何も失われません。」,248,Original
+dlg.hgy.farewell.refusal,dialogue,char.youmu_konpaku,"But nothing can finish either. I thought guarding meant preventing that moment. I was wrong.",「でも、何も終われません。守るとは、その瞬間を防ぐことだと思っていました。違いました。」,248,Original
+dlg.hgy.farewell.direct,dialogue,char.youmu_konpaku,"Yes. I can guard the space around an ending without standing in its way.",「はい。終わりの周りを守れても、その道を塞がずにいられます。」,248,Original
+dlg.hgy.farewell.playful,dialogue,char.youmu_konpaku,"It has been very still. Even a petal deserves to stop performing eventually.",「ずっと静かすぎました。花びらだって、いつか演じるのをやめていいはずです。」,248,Original
+dlg.hgy.farewell.patient,dialogue,char.youmu_konpaku,"Perhaps only room. A guard can make room without deciding who must remain.",「たぶん、余地だけです。守り手は、誰が残るべきか決めずに余地を作れます。」,248,Original
+dlg.hgy.farewell.defiant,dialogue,char.youmu_konpaku,"Then I will not call this protection. I will cut the Archive's hold and let the farewell be real.",「なら、これは守りとは呼びません。アーカイブの留めを切り、別れを本物にします。」,248,Original
+dlg.hgy.farewell.after,dialogue,char.youmu_konpaku,"The petal fell. The spirit left. I did not fail to guard them; I guarded the chance for both to end.",「花びらは落ち、魂は去りました。守れなかったのではありません。両方が終われる機会を守ったのです。」,248,Original
+journal.hgy.farewell_will_not_fall.title,journal_title,,The Petal That Landed,落ちた花びら,248,Original
+journal.hgy.farewell_will_not_fall.body,journal_body,,Youmu refused an Archive that could keep every farewell motionless. Guarding became making room for a petal to land and a spirit to leave.,妖夢はすべての別れを止めたままにするアーカイブを拒んだ。守ることは、花びらが落ち、魂が去る余地を作ることになった。,248,Original

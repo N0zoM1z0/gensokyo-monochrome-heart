@@ -60,6 +60,18 @@
       "status": "authored",
       "estimated_minutes": 9,
       "comfort_tags": ["no_timer", "rest_without_penalty", "duty_remains_chosen"]
+    },
+    {
+      "id": "evt.hgy.farewell_will_not_fall",
+      "legacy_id": "EVT-HGY-RTE-006",
+      "title_en": "A Farewell That Will Not Fall",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": ["char.youmu_konpaku"],
+      "primary_mode": "dialogue",
+      "core_change": "Youmu refuses the Archive's unmoving petals and spirits, choosing to guard their ending instead of preserving them forever.",
+      "status": "authored",
+      "estimated_minutes": 9,
+      "comfort_tags": ["no_timer", "archive_refusal", "no_route_lockout"]
     }
   ]
 }
