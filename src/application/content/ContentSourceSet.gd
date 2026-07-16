@@ -62,6 +62,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/aya_story_published_too_soon.json",
 	"res://content/events/aya_camera_down.json",
 	"res://content/events/aya_tomorrows_front_page.json",
+	"res://content/events/aya_promise.json",
 	"res://content/events/mtn_tomorrows_headline.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
@@ -98,6 +99,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/aya_story_published_too_soon.json",
 	"res://content/dialogue/aya_camera_down.json",
 	"res://content/dialogue/aya_tomorrows_front_page.json",
+	"res://content/dialogue/aya_promise.json",
 	"res://content/dialogue/mtn_tomorrows_headline.json",
 ]
 var supplemental_localization_paths: Array[String] = [
@@ -134,6 +136,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/aya_story_published_too_soon.csv",
 	"res://content/localization/aya_camera_down.csv",
 	"res://content/localization/aya_tomorrows_front_page.csv",
+	"res://content/localization/aya_promise.csv",
 	"res://content/localization/mtn_tomorrows_headline.csv",
 	"res://content/localization/ein_four_dawns.csv",
 ]
@@ -147,9 +150,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/aya_route_deferred_references.json",
 	"res://content/indexes/mtn_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 31
-var expected_supplemental_dialogue_count: int = 280
-var expected_supplemental_localization_count: int = 567
+var expected_supplemental_event_count: int = 32
+var expected_supplemental_dialogue_count: int = 286
+var expected_supplemental_localization_count: int = 587
 
 
 func content_paths() -> Array[String]:

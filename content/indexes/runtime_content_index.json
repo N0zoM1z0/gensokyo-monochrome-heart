@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "67611d579437d4c7a5fd15de895a5dc86c38a0781f6b37ed518f29cd251696e1",
+  "content_hash": "798355e7bebc15b05ab2096982ad07b4b30928eeeaf5da6442405497a4514fdc",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 59,
-    "dialogue_beats": 299,
-    "localization": 1161,
+    "events": 60,
+    "dialogue_beats": 305,
+    "localization": 1181,
     "music_cues": 89,
-    "event_nodes": 715
+    "event_nodes": 736
   },
   "ids": {
     "characters": [
@@ -110,6 +110,7 @@
       "evt.aya.camera_down",
       "evt.aya.exclusive_interview",
       "evt.aya.hidden_folder",
+      "evt.aya.promise",
       "evt.aya.story_published_too_soon",
       "evt.aya.tomorrows_front_page",
       "evt.aya.wind_frame_graze",
@@ -189,6 +190,12 @@
       "beat.aya.hidden_folder.patient",
       "beat.aya.hidden_folder.playful",
       "beat.aya.hidden_folder.record",
+      "beat.aya.promise.ask",
+      "beat.aya.promise.friendship",
+      "beat.aya.promise.intro",
+      "beat.aya.promise.postponed",
+      "beat.aya.promise.romance",
+      "beat.aya.promise.undecided",
       "beat.aya.story_published_too_soon.after",
       "beat.aya.story_published_too_soon.defiant",
       "beat.aya.story_published_too_soon.direct",
@@ -485,6 +492,10 @@
       "choice.aya.hidden_folder.direct",
       "choice.aya.hidden_folder.patient",
       "choice.aya.hidden_folder.playful",
+      "choice.aya.promise.friendship",
+      "choice.aya.promise.postponed",
+      "choice.aya.promise.romance",
+      "choice.aya.promise.undecided",
       "choice.aya.story_published_too_soon.defiant",
       "choice.aya.story_published_too_soon.direct",
       "choice.aya.story_published_too_soon.patient",
@@ -634,6 +645,12 @@
       "dlg.aya.hidden_folder.patient",
       "dlg.aya.hidden_folder.playful",
       "dlg.aya.hidden_folder.record",
+      "dlg.aya.promise.ask",
+      "dlg.aya.promise.friendship",
+      "dlg.aya.promise.intro",
+      "dlg.aya.promise.postponed",
+      "dlg.aya.promise.romance",
+      "dlg.aya.promise.undecided",
       "dlg.aya.story_published_too_soon.after",
       "dlg.aya.story_published_too_soon.defiant",
       "dlg.aya.story_published_too_soon.direct",
@@ -915,6 +932,7 @@
       "event.aya.camera_down.title",
       "event.aya.exclusive_interview.title",
       "event.aya.hidden_folder.title",
+      "event.aya.promise.title",
       "event.aya.story_published_too_soon.title",
       "event.aya.tomorrows_front_page.title",
       "event.aya.wind_frame_graze.title",
@@ -965,6 +983,14 @@
       "journal.aya.exclusive_interview.title",
       "journal.aya.hidden_folder.body",
       "journal.aya.hidden_folder.title",
+      "journal.aya.promise.friendship.body",
+      "journal.aya.promise.friendship.title",
+      "journal.aya.promise.postponed.body",
+      "journal.aya.promise.postponed.title",
+      "journal.aya.promise.romance.body",
+      "journal.aya.promise.romance.title",
+      "journal.aya.promise.undecided.body",
+      "journal.aya.promise.undecided.title",
       "journal.aya.story_published_too_soon.body",
       "journal.aya.story_published_too_soon.title",
       "journal.aya.tomorrows_front_page.body",
@@ -1044,6 +1070,7 @@
       "obj.aya.camera_down.wait",
       "obj.aya.exclusive_interview.mark_record",
       "obj.aya.hidden_folder.review",
+      "obj.aya.promise.choose",
       "obj.aya.story_published_too_soon.correct",
       "obj.aya.tomorrows_front_page.withhold",
       "obj.aya.wind_frame_graze.exit",
@@ -4325,6 +4352,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.aya.promise.intent",
+      "target": "choice.aya.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.promise.intent",
+      "target": "choice.aya.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.promise.intent",
+      "target": "choice.aya.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.promise.intent",
+      "target": "choice.aya.promise.undecided",
+      "kind": "localization"
+    },
+    {
       "source": "choice.aya.story_published_too_soon.response",
       "target": "choice.aya.story_published_too_soon.defiant",
       "kind": "localization"
@@ -5606,6 +5653,231 @@
     },
     {
       "source": "evt.aya.hidden_folder",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.aya.promise.node.n001",
+      "target": "evt.aya.promise.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n001",
+      "target": "mus_aya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.aya.promise.node.n002",
+      "target": "evt.aya.promise.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n002",
+      "target": "obj.aya.promise.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.promise.node.n002",
+      "target": "prop.aya.blank_byline",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.promise.node.n002",
+      "target": "prop.aya.capped_camera",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.promise.node.n003",
+      "target": "beat.aya.promise.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.promise.node.n003",
+      "target": "evt.aya.promise.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n004",
+      "target": "beat.aya.promise.ask",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.promise.node.n004",
+      "target": "evt.aya.promise.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n005",
+      "target": "choice.aya.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.aya.promise.node.n005",
+      "target": "evt.aya.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n005",
+      "target": "evt.aya.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n005",
+      "target": "evt.aya.promise.node.n_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n005",
+      "target": "evt.aya.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_friendship",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_friendship",
+      "target": "evt.aya.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_postponed",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_postponed",
+      "target": "evt.aya.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_romance",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_romance",
+      "target": "evt.aya.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_undecided",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_undecided",
+      "target": "evt.aya.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_friendship",
+      "target": "beat.aya.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.promise.node.n_friendship",
+      "target": "evt.aya.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_friendship",
+      "target": "evt.aya.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_friendship",
+      "target": "journal.aya.promise.friendship",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_postponed",
+      "target": "evt.aya.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_postponed",
+      "target": "journal.aya.promise.postponed",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_romance",
+      "target": "evt.aya.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_romance",
+      "target": "journal.aya.promise.romance",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_undecided",
+      "target": "evt.aya.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_undecided",
+      "target": "journal.aya.promise.undecided",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.promise.node.n_postponed",
+      "target": "beat.aya.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.promise.node.n_postponed",
+      "target": "evt.aya.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_romance",
+      "target": "beat.aya.promise.romance",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.promise.node.n_romance",
+      "target": "evt.aya.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_undecided",
+      "target": "beat.aya.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.promise.node.n_undecided",
+      "target": "evt.aya.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise",
+      "target": "char.aya_shameimaru",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.aya.promise",
+      "target": "char.aya_shameimaru",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.aya.promise",
+      "target": "event.aya.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.promise",
+      "target": "evt.aya.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.aya.promise",
+      "target": "loc.youkai_mountain.bunbunmaru_roof",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.aya.promise",
       "target": "loc.youkai_mountain",
       "kind": "location"
     },

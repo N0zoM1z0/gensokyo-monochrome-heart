@@ -1,0 +1,21 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.aya.promise.choose,objective,,Choose what future you and Aya may name without printing it.,文と名づけても印刷しない未来を選ぶ。,208,Original
+event.aya.promise.title,event_title,,The Photograph Not Printed,掲載されない写真,208,Original
+choice.aya.promise.friendship,choice,,Share a byline on the corrective article.,訂正記事の署名を共にする。,248,Original
+choice.aya.promise.romance,choice,,Say yes to a portrait only after Aya asks permission.,文が許可を尋ねた後にだけ、肖像を撮ることに同意する。,248,Original
+choice.aya.promise.postponed,choice,,Leave the label open and let the next story arrive later.,名前を決めず、次の物語を後で迎える。,248,Original
+choice.aya.promise.undecided,choice,,Say neither of you needs to claim the future tonight.,今夜、どちらも未来を自分のものにしなくていいと言う。,248,Original
+dlg.aya.promise.intro,dialogue,char.aya_shameimaru,"I brought a blank byline and a capped camera. Both are invitations, not evidence. I would like to choose what comes next with you.",「空白の署名と、キャップをしたカメラを持ってきました。どちらも証拠ではなく、誘いです。次に何が来るか、あなたと選びたいです。」,248,Original
+dlg.aya.promise.ask,dialogue,char.aya_shameimaru,"No headline, no inference. What may I call this future when we are the only people listening?",「見出しも、推測もなしです。二人だけが聞いている時、この未来を何と呼んでいいですか。」,248,Original
+dlg.aya.promise.friendship,dialogue,char.aya_shameimaru,"Then your name goes beside mine on the correction. Not as a source, not as a subject: as the person who helped make it answerable.",「では訂正記事で、あなたの名前を私の隣に置きます。情報源でも題材でもなく、記事を責任あるものにしてくれた人として。」,248,Original
+dlg.aya.promise.romance,dialogue,char.aya_shameimaru,"May I take one portrait? No caption, no circulation. If you say yes, the first approved print stays with me.",「肖像を一枚、撮ってもいいですか。説明も、配布もなしで。あなたがいいと言うなら、最初に許された一枚は私が持っておきます。」,248,Original
+dlg.aya.promise.postponed,dialogue,char.aya_shameimaru,"Good. A blank caption is not unfinished work. We can let the next line arrive when it has something honest to say.",「いいですね。空白の説明文は未完の仕事ではありません。正直に言えることができた時に、次の一行を迎えましょう。」,248,Original
+dlg.aya.promise.undecided,dialogue,char.aya_shameimaru,"Then no one claims it tonight. I will not turn uncertainty into a scoop, and you do not have to turn it into an answer.",「では今夜は、誰もそれを自分のものにしません。私は未定を特ダネにせず、あなたは答えにしなくていいです。」,248,Original
+journal.aya.promise.friendship.title,journal_title,,A Byline for Two,二人の署名,248,Original
+journal.aya.promise.friendship.body,journal_body,,Aya offered a shared byline on the corrective article: collaboration without turning either person into a source or subject.,文は訂正記事の共同署名を差し出した。どちらも情報源や題材にせずに行う協力だった。,248,Original
+journal.aya.promise.romance.title,journal_title,,The First Approved Print,最初に許された一枚,248,Original
+journal.aya.promise.romance.body,journal_body,,Aya asked before taking a portrait and kept the first approved print private. The image followed consent rather than creating it.,文は肖像を撮る前に尋ね、最初に許された一枚を私的なまま持った。像は同意を作るのでなく、同意に従った。,248,Original
+journal.aya.promise.postponed.title,journal_title,,The Caption Left Blank,空白の説明文,248,Original
+journal.aya.promise.postponed.body,journal_body,,The future was left unnamed without becoming unfinished work. Aya let the next honest line arrive later.,未来は未完の仕事にされず、名づけないまま残された。文は次の正直な一行を後で迎えることにした。,248,Original
+journal.aya.promise.undecided.title,journal_title,,No Claim Tonight,今夜は主張しない,248,Original
+journal.aya.promise.undecided.body,journal_body,,Neither person claimed the future. Aya refused to turn uncertainty into a scoop or an answer.,どちらも未来を自分のものにしなかった。文は未定を特ダネにも答えにも変えなかった。,248,Original
