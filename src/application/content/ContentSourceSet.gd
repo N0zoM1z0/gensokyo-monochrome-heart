@@ -46,6 +46,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/sdm_competence_not_consent.json",
 	"res://content/events/sdm_favor_cannot_optimize.json",
 	"res://content/events/sdm_missing_minute.json",
+	"res://content/events/sdm_promise.json",
 	"res://content/events/mtn_tomorrows_headline.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
@@ -68,6 +69,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/sdm_competence_not_consent.json",
 	"res://content/dialogue/sdm_favor_cannot_optimize.json",
 	"res://content/dialogue/sdm_missing_minute.json",
+	"res://content/dialogue/sdm_promise.json",
 	"res://content/dialogue/mtn_tomorrows_headline.json",
 ]
 var supplemental_localization_paths: Array[String] = [
@@ -90,6 +92,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/sdm_competence_not_consent.csv",
 	"res://content/localization/sdm_favor_cannot_optimize.csv",
 	"res://content/localization/sdm_missing_minute.csv",
+	"res://content/localization/sdm_promise.csv",
 	"res://content/localization/mtn_tomorrows_headline.csv",
 	"res://content/localization/ein_four_dawns.csv",
 ]
@@ -101,9 +104,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/sdm_deferred_references.json",
 	"res://content/indexes/mtn_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 17
-var expected_supplemental_dialogue_count: int = 177
-var expected_supplemental_localization_count: int = 340
+var expected_supplemental_event_count: int = 18
+var expected_supplemental_dialogue_count: int = 183
+var expected_supplemental_localization_count: int = 354
 
 
 func content_paths() -> Array[String]:

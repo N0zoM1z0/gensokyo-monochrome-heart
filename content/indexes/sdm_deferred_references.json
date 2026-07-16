@@ -4,6 +4,8 @@
     {"id":"loc.scarlet_devil_mansion.foyer","kind":"spot","target_milestone":"M12","reason":"SDM foyer composition owns the event entry volume."},
     {"id":"loc.scarlet_devil_mansion.north_corridor","kind":"spot","target_milestone":"M14","reason":"Sakuya's corridor is deliberately left walkable after repeated time corrections."},
     {"id":"loc.scarlet_devil_mansion.kitchen_after_hours","kind":"spot","target_milestone":"M14","reason":"Sakuya's deliberately chosen midnight work."},
+    {"id":"prop.sdm.unmarked_evening","kind":"interactable","target_milestone":"M14","reason":"Sakuya's intentionally unscheduled evening."},
+    {"id":"prop.sdm.watch_ribbon","kind":"interactable","target_milestone":"M14","reason":"Promise key ribbon."},
     {"id":"loc.scarlet_devil_mansion.service_stair","kind":"spot","target_milestone":"M14","reason":"A presumed service task becomes Sakuya's consent boundary."},
     {"id":"loc.scarlet_devil_mansion.private_teahouse","kind":"spot","target_milestone":"M14","reason":"Sakuya asks for a non-optimizable tea preference."},
     {"id":"loc.scarlet_devil_mansion.clock_gallery","kind":"spot","target_milestone":"M14","reason":"Archive offers Sakuya a stopped minute."},
@@ -33,5 +35,6 @@
     {"id":"journal.sdm.competence_not_consent","kind":"journal_entry","target_milestone":"M14","reason":"A presumed task is returned to consent."},
     {"id":"journal.sdm.favor_cannot_optimize","kind":"journal_entry","target_milestone":"M14","reason":"Preference is requested without becoming a procedure."},
     {"id":"journal.sdm.missing_minute_returned","kind":"journal_entry","target_milestone":"M14","reason":"Sakuya returns the Archive's stopped minute to moving time."}
+    ,{"id":"journal.sdm.promise","kind":"journal_entry","target_milestone":"M14","reason":"Chosen future without service or obligation."}
   ]
 }
