@@ -29,6 +29,10 @@
     {"id":"loc.hakugyokurou.falling_petal_court","kind":"spot","target_milestone":"M14","reason":"Archive-stilled petals and spirits wait for Youmu's choice to release them."},
     {"id":"prop.archive_still_petal","kind":"interactable","target_milestone":"M14","reason":"The Archive's suspended petal which no longer gets to land."},
     {"id":"prop.archive_waiting_spirit","kind":"interactable","target_milestone":"M14","reason":"A farewell held still by the Archive."},
-    {"id":"journal.hgy.farewell_will_not_fall","kind":"journal_entry","target_milestone":"M14","reason":"Youmu guards an ending by allowing it to happen."}
+    {"id":"journal.hgy.farewell_will_not_fall","kind":"journal_entry","target_milestone":"M14","reason":"Youmu guards an ending by allowing it to happen."},
+    {"id":"loc.hakugyokurou.morning_training_ground","kind":"spot","target_milestone":"M14","reason":"Youmu's promise begins with a practice sword and an optional morning."},
+    {"id":"prop.hgy.practice_sword","kind":"interactable","target_milestone":"M14","reason":"Friendship promise: shared practice by invitation."},
+    {"id":"prop.hgy.unmarked_morning","kind":"interactable","target_milestone":"M14","reason":"A future left chosen rather than scheduled as duty."},
+    {"id":"journal.hgy.promise","kind":"journal_entry","target_milestone":"M14","reason":"Youmu's final explicit route intent."}
   ]
 }

@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "5bcd453a3b7ca8301a6b0ca4e0af21a4fcee9215cb6c4863673cd881f4446a0d",
+  "content_hash": "f370d56eb4db6ab12505245da746333e0792fc967e8648b9cb73df0e312b17e0",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 52,
-    "dialogue_beats": 248,
-    "localization": 1046,
+    "events": 53,
+    "dialogue_beats": 254,
+    "localization": 1060,
     "music_cues": 89,
-    "event_nodes": 583
+    "event_nodes": 604
   },
   "ids": {
     "characters": [
@@ -124,6 +124,7 @@
       "evt.hgy.last_sweet",
       "evt.hgy.meal_she_finishes",
       "evt.hgy.petal_on_hold",
+      "evt.hgy.promise",
       "evt.hgy.two_bodies_bridge",
       "evt.hgy.two_bodies_one_embarrassment",
       "evt.hkr.day_nothing_happens",
@@ -191,6 +192,12 @@
       "beat.hgy.meal.playful",
       "beat.hgy.meal.youmu_hesitate",
       "beat.hgy.meal.yuyuko_offer",
+      "beat.hgy.promise.choice",
+      "beat.hgy.promise.friendship",
+      "beat.hgy.promise.intro",
+      "beat.hgy.promise.postponed",
+      "beat.hgy.promise.romance",
+      "beat.hgy.promise.undecided",
       "beat.hgy.two_bodies.after",
       "beat.hgy.two_bodies.clear",
       "beat.hgy.two_bodies.defiant",
@@ -431,6 +438,10 @@
       "choice.hgy.meal.direct",
       "choice.hgy.meal.patient",
       "choice.hgy.meal.playful",
+      "choice.hgy.promise.friendship",
+      "choice.hgy.promise.postponed",
+      "choice.hgy.promise.romance",
+      "choice.hgy.promise.undecided",
       "choice.hgy.two_bodies.defiant",
       "choice.hgy.two_bodies.direct",
       "choice.hgy.two_bodies.patient",
@@ -557,6 +568,12 @@
       "dlg.hgy.meal.playful",
       "dlg.hgy.meal.youmu_hesitate",
       "dlg.hgy.meal.yuyuko_offer",
+      "dlg.hgy.promise.choice",
+      "dlg.hgy.promise.friendship",
+      "dlg.hgy.promise.intro",
+      "dlg.hgy.promise.postponed",
+      "dlg.hgy.promise.romance",
+      "dlg.hgy.promise.undecided",
       "dlg.hgy.two_bodies.after",
       "dlg.hgy.two_bodies.clear",
       "dlg.hgy.two_bodies.defiant",
@@ -780,6 +797,7 @@
       "event.hgy.farewell_will_not_fall.title",
       "event.hgy.garden_shift.title",
       "event.hgy.meal_she_finishes.title",
+      "event.hgy.promise.title",
       "event.hgy.two_bodies.title",
       "event.hkr.day_nothing_happens.title",
       "event.hkr.empty_cushion.title",
@@ -827,6 +845,8 @@
       "journal.hgy.garden_shift.withdrawn.title",
       "journal.hgy.meal_she_finishes.body",
       "journal.hgy.meal_she_finishes.title",
+      "journal.hgy.promise.body",
+      "journal.hgy.promise.title",
       "journal.hgy.two_bodies.body",
       "journal.hgy.two_bodies.title",
       "journal.hgy.two_bodies.withdrawn.body",
@@ -881,6 +901,7 @@
       "obj.hgy.farewell.release",
       "obj.hgy.garden_shift.match",
       "obj.hgy.meal_she_finishes.sit",
+      "obj.hgy.promise.wait",
       "obj.hgy.two_bodies.cross",
       "obj.hkr.day_nothing_happens.enter",
       "obj.hkr.find_second_cup",
@@ -1849,6 +1870,66 @@
     {
       "source": "beat.hgy.meal.yuyuko_offer",
       "target": "dlg.hgy.meal.yuyuko_offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.promise.choice",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.promise.choice",
+      "target": "dlg.hgy.promise.choice",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.promise.friendship",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.promise.friendship",
+      "target": "dlg.hgy.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.promise.intro",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.promise.intro",
+      "target": "dlg.hgy.promise.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.promise.postponed",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.promise.postponed",
+      "target": "dlg.hgy.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.promise.romance",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.promise.romance",
+      "target": "dlg.hgy.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.promise.undecided",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.promise.undecided",
+      "target": "dlg.hgy.promise.undecided",
       "kind": "localization"
     },
     {
@@ -4112,6 +4193,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.hgy.promise.intent",
+      "target": "choice.hgy.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.promise.intent",
+      "target": "choice.hgy.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.promise.intent",
+      "target": "choice.hgy.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.promise.intent",
+      "target": "choice.hgy.promise.undecided",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hgy.two_bodies.response",
       "target": "choice.hgy.two_bodies.defiant",
       "kind": "localization"
@@ -5868,6 +5969,231 @@
     },
     {
       "source": "evt.hgy.petal_on_hold",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.promise.node.n001",
+      "target": "evt.hgy.promise.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n001",
+      "target": "mus_youmu_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hgy.promise.node.n002",
+      "target": "evt.hgy.promise.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n002",
+      "target": "obj.hgy.promise.wait",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.promise.node.n002",
+      "target": "prop.hgy.practice_sword",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.promise.node.n002",
+      "target": "prop.hgy.unmarked_morning",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.promise.node.n003",
+      "target": "beat.hgy.promise.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.promise.node.n003",
+      "target": "evt.hgy.promise.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n004",
+      "target": "beat.hgy.promise.choice",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.promise.node.n004",
+      "target": "evt.hgy.promise.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n005",
+      "target": "choice.hgy.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hgy.promise.node.n005",
+      "target": "evt.hgy.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n005",
+      "target": "evt.hgy.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n005",
+      "target": "evt.hgy.promise.node.n_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n005",
+      "target": "evt.hgy.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_effects_friendship",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_effects_friendship",
+      "target": "evt.hgy.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_effects_postponed",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_effects_postponed",
+      "target": "evt.hgy.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_effects_romance",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_effects_romance",
+      "target": "evt.hgy.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_effects_undecided",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_effects_undecided",
+      "target": "evt.hgy.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_friendship",
+      "target": "beat.hgy.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_friendship",
+      "target": "evt.hgy.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_journal_friendship",
+      "target": "evt.hgy.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_journal_friendship",
+      "target": "journal.hgy.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_journal_postponed",
+      "target": "evt.hgy.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_journal_postponed",
+      "target": "journal.hgy.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_journal_romance",
+      "target": "evt.hgy.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_journal_romance",
+      "target": "journal.hgy.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_journal_undecided",
+      "target": "evt.hgy.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_journal_undecided",
+      "target": "journal.hgy.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_postponed",
+      "target": "beat.hgy.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_postponed",
+      "target": "evt.hgy.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_romance",
+      "target": "beat.hgy.promise.romance",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_romance",
+      "target": "evt.hgy.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_undecided",
+      "target": "beat.hgy.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.promise.node.n_undecided",
+      "target": "evt.hgy.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.promise",
+      "target": "char.youmu_konpaku",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hgy.promise",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.promise",
+      "target": "event.hgy.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.promise",
+      "target": "evt.hgy.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hgy.promise",
+      "target": "loc.hakugyokurou.morning_training_ground",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hgy.promise",
       "target": "loc.hakugyokurou",
       "kind": "location"
     },

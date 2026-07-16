@@ -52,6 +52,7 @@ func configure(
 		&"choice.hkr.promise.intent",
 		&"choice.mrs.promise.intent",
 		&"choice.sdm.promise.intent",
+		&"choice.hgy.promise.intent",
 	]
 	locale = next_locale
 	profile_id = next_profile_id

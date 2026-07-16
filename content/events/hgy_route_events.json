@@ -72,6 +72,18 @@
       "status": "authored",
       "estimated_minutes": 9,
       "comfort_tags": ["no_timer", "archive_refusal", "no_route_lockout"]
+    },
+    {
+      "id": "evt.hgy.promise",
+      "legacy_id": "EVT-HGY-RTE-007",
+      "title_en": "What the Sword Cannot Finish",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": ["char.youmu_konpaku"],
+      "primary_mode": "dialogue",
+      "core_change": "Youmu offers a chosen future where practice, romance, postponement, and uncertainty are named without making any one of them a duty.",
+      "status": "authored",
+      "estimated_minutes": 7,
+      "comfort_tags": ["no_timer", "no_failure", "route_intent_explicit"]
     }
   ]
 }

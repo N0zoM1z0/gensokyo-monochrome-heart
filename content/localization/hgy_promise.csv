@@ -1,0 +1,15 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.hgy.promise.wait,objective,,Wait for Youmu to name a morning that belongs to no duty.,妖夢が役目に属さない朝を言葉にするまで待つ。,208,Original
+event.hgy.promise.title,event_title,,What the Sword Cannot Finish,剣では終えられないこと,208,Original
+choice.hgy.promise.friendship,choice,,Accept a practice sword and a morning training invitation as friends.,友人として、稽古刀と朝稽古の誘いを受ける。,248,Original
+choice.hgy.promise.romance,choice,,Say there are feelings no sword needs to cut away.,剣で切り捨てなくていい気持ちがあると言う。,248,Original
+choice.hgy.promise.postponed,choice,,Leave the morning open without naming what it means yet.,意味をまだ決めず、その朝を空けたままにする。,248,Original
+choice.hgy.promise.undecided,choice,,Say the future does not need marching orders tonight.,未来に今夜、行進命令は要らないと言う。,248,Original
+dlg.hgy.promise.intro,dialogue,char.youmu_konpaku,"I brought a practice sword, not a plan. The morning after next is empty, if you would like to meet it with me.",「稽古刀を持ってきました。計画ではありません。よろしければ、明後日の朝は空いています。一緒に迎えませんか。」,248,Original
+dlg.hgy.promise.choice,dialogue,char.youmu_konpaku,"I can ask without turning it into a duty. What would you choose for that morning?",「役目にせずに聞けます。その朝を、どう選びますか。」,248,Original
+dlg.hgy.promise.friendship,dialogue,char.youmu_konpaku,"Then we will train as friends. I will bring two wooden swords and no evaluation sheet.",「では友人として稽古しましょう。木刀を二本持っていきます。評価表は持ちません。」,248,Original
+dlg.hgy.promise.romance,dialogue,char.youmu_konpaku,"There are things I cannot cut. I would like to stop calling that a failure, especially when I am with you.",「私には切れないものがあります。それを失敗と呼ぶのはやめたいです。特に、あなたといる時は。」,248,Original
+dlg.hgy.promise.postponed,dialogue,char.youmu_konpaku,"That is acceptable. An open morning is not an unfinished command.",「それで構いません。空いた朝は、未完の命令ではありません。」,248,Original
+dlg.hgy.promise.undecided,dialogue,char.youmu_konpaku,"Then neither of us has to march first. The future can arrive at walking pace.",「では、どちらも先に行進しなくていい。未来は歩く速さで来てもいいです。」,248,Original
+journal.hgy.promise.title,journal_title,,What the Sword Cannot Finish,剣では終えられないこと,248,Original
+journal.hgy.promise.body,journal_body,,Youmu offered a future without turning it into duty. Friendship, romance, postponement, and uncertainty each left the next morning chosen rather than ordered.,妖夢は未来を役目にせずに差し出した。友情、恋愛、保留、未定のどれもが、次の朝を命令ではなく選ばれたものにした。,248,Original
