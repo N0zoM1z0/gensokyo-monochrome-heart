@@ -12,6 +12,18 @@
       "status": "authored",
       "estimated_minutes": 8,
       "comfort_tags": ["no_timer", "low_motion", "no_failure"]
+    },
+    {
+      "id": "evt.hkr.shrine_not_guesthouse",
+      "legacy_id": "EVT-HKR-RTE-004",
+      "title_en": "A Shrine Is Not a Home, Except When It Is",
+      "location_id": "loc.hakurei_shrine",
+      "lead_character_ids": ["char.reimu_hakurei"],
+      "primary_mode": "danmaku",
+      "core_change": "the shrine's welcome and its boundary labor are named separately",
+      "status": "authored",
+      "estimated_minutes": 10,
+      "comfort_tags": ["assist_clear", "loss_continues", "no_route_lockout"]
     }
   ]
 }

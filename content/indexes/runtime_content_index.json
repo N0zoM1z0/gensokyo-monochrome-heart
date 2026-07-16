@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "3ac2b56f4cf2aa783ab38eb582d361bbfbd57dc80113c93064661f339e6ee1c2",
+  "content_hash": "45315afce0cad95a88a78200242561d7bfbcb7f1682074e2a2890042f4c595c5",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 29,
-    "dialogue_beats": 68,
-    "localization": 654,
+    "events": 30,
+    "dialogue_beats": 79,
+    "localization": 673,
     "music_cues": 89,
-    "event_nodes": 141
+    "event_nodes": 165
   },
   "ids": {
     "characters": [
@@ -124,6 +124,7 @@
       "evt.hkr.empty_cushion",
       "evt.hkr.offerings_without_owners",
       "evt.hkr.return_before_borrowing",
+      "evt.hkr.shrine_not_guesthouse",
       "evt.hkr.spell_card_terms",
       "evt.mtn.keyword_us",
       "evt.mtn.measurable_faith",
@@ -157,6 +158,17 @@
       "beat.hkr.empty_cushion.reimu.patient",
       "beat.hkr.empty_cushion.reimu.playful",
       "beat.hkr.empty_cushion.reimu.stain",
+      "beat.hkr.guesthouse.reimu.after",
+      "beat.hkr.guesthouse.reimu.assignment",
+      "beat.hkr.guesthouse.reimu.assist",
+      "beat.hkr.guesthouse.reimu.boundary",
+      "beat.hkr.guesthouse.reimu.clear",
+      "beat.hkr.guesthouse.reimu.defiant",
+      "beat.hkr.guesthouse.reimu.direct",
+      "beat.hkr.guesthouse.reimu.intro",
+      "beat.hkr.guesthouse.reimu.loss",
+      "beat.hkr.guesthouse.reimu.patient",
+      "beat.hkr.guesthouse.reimu.playful",
       "beat.hkr.offerings.reimu.after_01",
       "beat.hkr.offerings.reimu.after_02",
       "beat.hkr.offerings.reimu.assist",
@@ -216,6 +228,10 @@
       "choice.hkr.empty_cushion.direct",
       "choice.hkr.empty_cushion.patient",
       "choice.hkr.empty_cushion.playful",
+      "choice.hkr.guesthouse.defiant",
+      "choice.hkr.guesthouse.direct",
+      "choice.hkr.guesthouse.patient",
+      "choice.hkr.guesthouse.playful",
       "choice.hkr.offerings.defiant",
       "choice.hkr.offerings.direct",
       "choice.hkr.offerings.patient",
@@ -251,6 +267,17 @@
       "dlg.hkr.empty_cushion.reimu.patient",
       "dlg.hkr.empty_cushion.reimu.playful",
       "dlg.hkr.empty_cushion.reimu.stain",
+      "dlg.hkr.guesthouse.reimu.after",
+      "dlg.hkr.guesthouse.reimu.assignment",
+      "dlg.hkr.guesthouse.reimu.assist",
+      "dlg.hkr.guesthouse.reimu.boundary",
+      "dlg.hkr.guesthouse.reimu.clear",
+      "dlg.hkr.guesthouse.reimu.defiant",
+      "dlg.hkr.guesthouse.reimu.direct",
+      "dlg.hkr.guesthouse.reimu.intro",
+      "dlg.hkr.guesthouse.reimu.loss",
+      "dlg.hkr.guesthouse.reimu.patient",
+      "dlg.hkr.guesthouse.reimu.playful",
       "dlg.hkr.offerings.reimu.after_01",
       "dlg.hkr.offerings.reimu.after_02",
       "dlg.hkr.offerings.reimu.assist",
@@ -303,6 +330,7 @@
       "event.hkr.day_nothing_happens.title",
       "event.hkr.empty_cushion.title",
       "event.hkr.offerings_without_owners.title",
+      "event.hkr.shrine_not_guesthouse.title",
       "event.mtn.tomorrows_headline.title",
       "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
@@ -323,6 +351,8 @@
       "journal.hkr.empty_cushion.title",
       "journal.hkr.offerings_without_owners.body",
       "journal.hkr.offerings_without_owners.title",
+      "journal.hkr.shrine_not_guesthouse.body",
+      "journal.hkr.shrine_not_guesthouse.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
       "journal.sdm.missing_minute.body",
@@ -331,6 +361,7 @@
       "obj.hkr.day_nothing_happens.enter",
       "obj.hkr.find_second_cup",
       "obj.hkr.offerings.inspect_box",
+      "obj.hkr.shrine_not_guesthouse.check_veranda",
       "obj.mtn.trace_tomorrows_photo",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
@@ -1147,6 +1178,116 @@
       "kind": "localization"
     },
     {
+      "source": "beat.hkr.guesthouse.reimu.after",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.after",
+      "target": "dlg.hkr.guesthouse.reimu.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.assignment",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.assignment",
+      "target": "dlg.hkr.guesthouse.reimu.assignment",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.assist",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.assist",
+      "target": "dlg.hkr.guesthouse.reimu.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.boundary",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.boundary",
+      "target": "dlg.hkr.guesthouse.reimu.boundary",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.clear",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.clear",
+      "target": "dlg.hkr.guesthouse.reimu.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.defiant",
+      "target": "dlg.hkr.guesthouse.reimu.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.direct",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.direct",
+      "target": "dlg.hkr.guesthouse.reimu.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.intro",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.intro",
+      "target": "dlg.hkr.guesthouse.reimu.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.loss",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.loss",
+      "target": "dlg.hkr.guesthouse.reimu.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.patient",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.patient",
+      "target": "dlg.hkr.guesthouse.reimu.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.playful",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.guesthouse.reimu.playful",
+      "target": "dlg.hkr.guesthouse.reimu.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.hkr.offerings.reimu.after_01",
       "target": "char.reimu_hakurei",
       "kind": "speaker"
@@ -1654,6 +1795,26 @@
     {
       "source": "choice.hkr.empty_cushion.01",
       "target": "choice.hkr.empty_cushion.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.guesthouse.answer",
+      "target": "choice.hkr.guesthouse.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.guesthouse.answer",
+      "target": "choice.hkr.guesthouse.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.guesthouse.answer",
+      "target": "choice.hkr.guesthouse.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.guesthouse.answer",
+      "target": "choice.hkr.guesthouse.playful",
       "kind": "localization"
     },
     {
@@ -2884,6 +3045,306 @@
     {
       "source": "evt.hkr.return_before_borrowing",
       "target": "loc.forest_of_magic",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n001",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n001",
+      "target": "mus_reimu_private",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n002",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n002",
+      "target": "obj.hkr.shrine_not_guesthouse.check_veranda",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n002",
+      "target": "prop.boundary_thread",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n002",
+      "target": "prop.second_cushion",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n002",
+      "target": "prop.shrine_broom",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n003",
+      "target": "beat.hkr.guesthouse.reimu.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n003",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n004",
+      "target": "beat.hkr.guesthouse.reimu.boundary",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n004",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n005",
+      "target": "choice.hkr.guesthouse.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n005",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n005",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n005",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n005",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n006",
+      "target": "beat.hkr.guesthouse.reimu.assignment",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n006",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n007",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n007",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n008",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n007",
+      "target": "mus_border_crossing",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n008",
+      "target": "danmaku.hkr.boundary_stain",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n008",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n008",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n008",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n009",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n010",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n009",
+      "target": "mus_reimu_private",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n010",
+      "target": "beat.hkr.guesthouse.reimu.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n010",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_assist",
+      "target": "beat.hkr.guesthouse.reimu.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_assist",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n009",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_clear",
+      "target": "beat.hkr.guesthouse.reimu.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_clear",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n009",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_defiant_line",
+      "target": "beat.hkr.guesthouse.reimu.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_defiant_line",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_defiant",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_direct_line",
+      "target": "beat.hkr.guesthouse.reimu.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_direct_line",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_direct",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_direct",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_effects",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_effects",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_journal",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_journal",
+      "target": "journal.hkr.shrine_not_guesthouse",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_loss",
+      "target": "beat.hkr.guesthouse.reimu.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_loss",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n009",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_patient_line",
+      "target": "beat.hkr.guesthouse.reimu.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_patient_line",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_patient",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_patient",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_playful_line",
+      "target": "beat.hkr.guesthouse.reimu.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_playful_line",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_playful",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse.node.n_playful",
+      "target": "evt.hkr.shrine_not_guesthouse.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse",
+      "target": "char.reimu_hakurei",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse",
+      "target": "event.hkr.shrine_not_guesthouse.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse",
+      "target": "evt.hkr.shrine_not_guesthouse",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse",
+      "target": "loc.hakurei_shrine.veranda",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hkr.shrine_not_guesthouse",
+      "target": "loc.hakurei_shrine",
       "kind": "location"
     },
     {

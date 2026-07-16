@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "evt.hkr.shrine_not_guesthouse",
+  "title_key": "event.hkr.shrine_not_guesthouse.title",
+  "location_id": "loc.hakurei_shrine",
+  "spot_id": "loc.hakurei_shrine.veranda",
+  "cast": ["char.reimu_hakurei"],
+  "availability": [
+    {"predicate": "chapter_at_least", "value": "chapter.1"},
+    {"predicate": "event_completed", "value": "evt.hkr.day_nothing_happens"},
+    {"predicate": "flag_false", "key": "evt.hkr.shrine_not_guesthouse.complete"},
+    {"predicate": "time_in", "values": ["dusk", "night"]}
+  ],
+  "entry_node": "n001",
+  "nodes": {
+    "n001": {"type": "music_state", "state": "mus_reimu_private", "next": "n002"},
+    "n002": {"type": "exploration_objective", "objective_key": "obj.hkr.shrine_not_guesthouse.check_veranda", "interactable_ids": ["prop.boundary_thread", "prop.shrine_broom", "prop.second_cushion"], "next": "n003"},
+    "n003": {"type": "line", "beat_id": "beat.hkr.guesthouse.reimu.intro", "next": "n004"},
+    "n004": {"type": "line", "beat_id": "beat.hkr.guesthouse.reimu.boundary", "next": "n005"},
+    "n005": {"type": "choice", "choice_id": "choice.hkr.guesthouse.answer", "options": [
+      {"tone": "direct", "text_key": "choice.hkr.guesthouse.direct", "next": "n_direct"},
+      {"tone": "playful", "text_key": "choice.hkr.guesthouse.playful", "next": "n_playful"},
+      {"tone": "patient", "text_key": "choice.hkr.guesthouse.patient", "next": "n_patient"},
+      {"tone": "defiant", "text_key": "choice.hkr.guesthouse.defiant", "next": "n_defiant"}
+    ]},
+    "n_direct": {"type": "effects", "effects": [{"op":"relationship","character_id":"char.reimu_hakurei","facet":"respect","delta":1},{"op":"set_flag","key":"flag.route.reimu.boundary.admitted_refuge","value":true}], "next":"n_direct_line"},
+    "n_playful": {"type": "effects", "effects": [{"op":"relationship","character_id":"char.reimu_hakurei","facet":"strain","delta":1},{"op":"set_flag","key":"flag.route.reimu.boundary.joked_past_labor","value":true}], "next":"n_playful_line"},
+    "n_patient": {"type": "effects", "effects": [{"op":"relationship","character_id":"char.reimu_hakurei","facet":"ease","delta":1},{"op":"set_flag","key":"flag.route.reimu.boundary.asked_for_work","value":true}], "next":"n_patient_line"},
+    "n_defiant": {"type": "effects", "effects": [{"op":"relationship","character_id":"char.reimu_hakurei","facet":"respect","delta":1},{"op":"relationship","character_id":"char.reimu_hakurei","facet":"strain","delta":1},{"op":"set_flag","key":"flag.route.reimu.boundary.named_uneven_burden","value":true}], "next":"n_defiant_line"},
+    "n_direct_line": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.direct","next":"n006"},
+    "n_playful_line": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.playful","next":"n006"},
+    "n_patient_line": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.patient","next":"n006"},
+    "n_defiant_line": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.defiant","next":"n006"},
+    "n006": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.assignment","next":"n007"},
+    "n007": {"type":"music_state","state":"mus_border_crossing","next":"n008"},
+    "n008": {"type":"start_danmaku","minigame_id":"danmaku.hkr.boundary_stain","result_branches":{"clear":"n_clear","assist_clear":"n_assist","loss":"n_loss"}},
+    "n_clear": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.clear","next":"n009"},
+    "n_assist": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.assist","next":"n009"},
+    "n_loss": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.loss","next":"n009"},
+    "n009": {"type":"music_state","state":"mus_reimu_private","next":"n010"},
+    "n010": {"type":"line","beat_id":"beat.hkr.guesthouse.reimu.after","next":"n_journal"},
+    "n_journal": {"type":"journal_entry","entry_id":"journal.hkr.shrine_not_guesthouse","entry_type":"route_observation","tags":["boundary_labor","welcome_not_entitlement","shared_repair"],"next":"n_effects"},
+    "n_effects": {"type":"effects","effects":[{"op":"route_stage","character_id":"char.reimu_hakurei","stage":3},{"op":"set_flag","key":"flag.route.reimu.boundary_labor_shared","value":true},{"op":"set_flag","key":"evt.hkr.shrine_not_guesthouse.complete","value":true}],"next":"n_end"},
+    "n_end": {"type":"end_event","outcome":"welcome_named_without_claiming_the_shrine"}
+  },
+  "origin_tags": {"canon":2,"fanon":0,"original":12},
+  "comfort_tags": ["assist_clear","loss_continues","no_route_lockout"]
+}

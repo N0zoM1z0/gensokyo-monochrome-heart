@@ -12,5 +12,6 @@
     {"id":"prop.second_cushion","kind":"interactable","target_milestone":"M14","reason":"The unchanged second cushion carries the quiet afterbeat."},
     {"id":"mini.hkr.quiet_chore","kind":"minigame","target_milestone":"M14","reason":"Deterministic sweep, mend, and silence-tolerance runtime."},
     {"id":"journal.hkr.day_nothing_happens","kind":"journal_entry","target_milestone":"M14","reason":"The third Reimu route observation records an ordinary afternoon without performance."}
+    ,{"id":"journal.hkr.shrine_not_guesthouse","kind":"journal_entry","target_milestone":"M14","reason":"The boundary-test observation distinguishes welcome from unpaid shrine duty."}
   ]
 }

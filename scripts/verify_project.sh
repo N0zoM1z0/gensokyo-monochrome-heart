@@ -343,6 +343,8 @@ run_checked "M14 Reimu The Day Nothing Happens event" env XDG_DATA_HOME="$LOG_DI
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_quiet_day_event.gd
 run_checked "M14 Reimu route progression persistence" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_route_progression.gd
+run_checked "M14 Reimu guesthouse boundary event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_guesthouse_event.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
