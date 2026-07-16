@@ -352,6 +352,8 @@ run_checked "M14 Reimu perfectly recorded tea event" env XDG_DATA_HOME="$LOG_DIR
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_recorded_tea_event.gd
 run_checked "M14 Reimu Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_promise_event.gd
+run_checked "M14 Marisa Crash Landing event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_marisa_crash_landing.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

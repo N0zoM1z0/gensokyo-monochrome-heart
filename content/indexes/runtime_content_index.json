@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "712cf551737e5c136ce2f76bd6194e91f5db248990f46613d0e952f22cf6237c",
+  "content_hash": "9bdb855789027e0350beee7ba233b1b25e67ade42d2d7eb4437275b686df5cad",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 33,
-    "dialogue_beats": 109,
-    "localization": 731,
+    "events": 34,
+    "dialogue_beats": 118,
+    "localization": 748,
     "music_cues": 89,
-    "event_nodes": 236
+    "event_nodes": 256
   },
   "ids": {
     "characters": [
@@ -129,6 +129,7 @@
       "evt.hkr.shrine_not_guesthouse",
       "evt.hkr.spell_card_terms",
       "evt.hkr.unasked_rescue",
+      "evt.mrs.crash_landing",
       "evt.mtn.keyword_us",
       "evt.mtn.measurable_faith",
       "evt.mtn.patrol_against_nothing",
@@ -223,6 +224,15 @@
       "beat.hkr.rescue.reimu.playful",
       "beat.hkr.rescue.reimu.protect",
       "beat.hkr.rescue.reimu.repair",
+      "beat.mrs.crash.after",
+      "beat.mrs.crash.clear",
+      "beat.mrs.crash.defiant",
+      "beat.mrs.crash.direct",
+      "beat.mrs.crash.intro",
+      "beat.mrs.crash.patient",
+      "beat.mrs.crash.playful",
+      "beat.mrs.crash.rough",
+      "beat.mrs.crash.work",
       "beat.mtn.headline.aya.after_01",
       "beat.mtn.headline.aya.after_02",
       "beat.mtn.headline.aya.danmaku_assist",
@@ -285,6 +295,10 @@
       "choice.hkr.rescue.direct",
       "choice.hkr.rescue.patient",
       "choice.hkr.rescue.playful",
+      "choice.mrs.crash.defiant",
+      "choice.mrs.crash.direct",
+      "choice.mrs.crash.patient",
+      "choice.mrs.crash.playful",
       "choice.mtn.headline.defiant",
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
@@ -374,6 +388,15 @@
       "dlg.hkr.rescue.reimu.playful",
       "dlg.hkr.rescue.reimu.protect",
       "dlg.hkr.rescue.reimu.repair",
+      "dlg.mrs.crash.after",
+      "dlg.mrs.crash.clear",
+      "dlg.mrs.crash.defiant",
+      "dlg.mrs.crash.direct",
+      "dlg.mrs.crash.intro",
+      "dlg.mrs.crash.patient",
+      "dlg.mrs.crash.playful",
+      "dlg.mrs.crash.rough",
+      "dlg.mrs.crash.work",
       "dlg.mtn.headline.aya.after_01",
       "dlg.mtn.headline.aya.after_02",
       "dlg.mtn.headline.aya.danmaku_assist",
@@ -409,6 +432,7 @@
       "event.hkr.promise.title",
       "event.hkr.shrine_not_guesthouse.title",
       "event.hkr.unasked_rescue.title",
+      "event.mrs.crash_landing.title",
       "event.mtn.tomorrows_headline.title",
       "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
@@ -437,6 +461,8 @@
       "journal.hkr.shrine_not_guesthouse.title",
       "journal.hkr.unasked_rescue.body",
       "journal.hkr.unasked_rescue.title",
+      "journal.mrs.crash_landing.body",
+      "journal.mrs.crash_landing.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
       "journal.sdm.missing_minute.body",
@@ -449,6 +475,7 @@
       "obj.hkr.recorded_tea.set_cups",
       "obj.hkr.shrine_not_guesthouse.check_veranda",
       "obj.hkr.unasked_rescue.hold_veranda",
+      "obj.mrs.crash.secure_cargo",
       "obj.mtn.trace_tomorrows_photo",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
@@ -1889,6 +1916,96 @@
       "kind": "localization"
     },
     {
+      "source": "beat.mrs.crash.after",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.after",
+      "target": "dlg.mrs.crash.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.crash.clear",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.clear",
+      "target": "dlg.mrs.crash.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.crash.defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.defiant",
+      "target": "dlg.mrs.crash.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.crash.direct",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.direct",
+      "target": "dlg.mrs.crash.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.crash.intro",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.intro",
+      "target": "dlg.mrs.crash.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.crash.patient",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.patient",
+      "target": "dlg.mrs.crash.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.crash.playful",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.playful",
+      "target": "dlg.mrs.crash.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.crash.rough",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.rough",
+      "target": "dlg.mrs.crash.rough",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.crash.work",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.crash.work",
+      "target": "dlg.mrs.crash.work",
+      "kind": "localization"
+    },
+    {
       "source": "beat.mtn.headline.aya.after_01",
       "target": "char.aya_shameimaru",
       "kind": "speaker"
@@ -2306,6 +2423,26 @@
     {
       "source": "choice.hkr.rescue.answer",
       "target": "choice.hkr.rescue.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.crash.response",
+      "target": "choice.mrs.crash.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.crash.response",
+      "target": "choice.mrs.crash.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.crash.response",
+      "target": "choice.mrs.crash.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.crash.response",
+      "target": "choice.mrs.crash.playful",
       "kind": "localization"
     },
     {
@@ -4661,6 +4798,256 @@
     {
       "source": "evt.hkr.unasked_rescue",
       "target": "loc.hakurei_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n001",
+      "target": "evt.mrs.crash_landing.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n001",
+      "target": "mus_marisa_arrival",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n002",
+      "target": "evt.mrs.crash_landing.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n002",
+      "target": "obj.mrs.crash.secure_cargo",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n002",
+      "target": "prop.marisa_broom",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n002",
+      "target": "prop.marisa_cargo",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n003",
+      "target": "beat.mrs.crash.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n003",
+      "target": "evt.mrs.crash_landing.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n004",
+      "target": "beat.mrs.crash.work",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n004",
+      "target": "evt.mrs.crash_landing.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n005",
+      "target": "choice.mrs.crash.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n005",
+      "target": "evt.mrs.crash_landing.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n005",
+      "target": "evt.mrs.crash_landing.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n005",
+      "target": "evt.mrs.crash_landing.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n005",
+      "target": "evt.mrs.crash_landing.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_after",
+      "target": "beat.mrs.crash.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_after",
+      "target": "evt.mrs.crash_landing.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_broom",
+      "target": "evt.mrs.crash_landing.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_broom",
+      "target": "evt.mrs.crash_landing.node.n_rough",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_broom",
+      "target": "mini.mrs.broom_backseat",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_clear",
+      "target": "beat.mrs.crash.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_clear",
+      "target": "evt.mrs.crash_landing.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_defiant_line",
+      "target": "beat.mrs.crash.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_defiant_line",
+      "target": "evt.mrs.crash_landing.node.n_broom",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_defiant",
+      "target": "evt.mrs.crash_landing.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_direct_line",
+      "target": "beat.mrs.crash.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_direct_line",
+      "target": "evt.mrs.crash_landing.node.n_broom",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_direct",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_direct",
+      "target": "evt.mrs.crash_landing.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_effects",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_effects",
+      "target": "evt.mrs.crash_landing.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_journal",
+      "target": "evt.mrs.crash_landing.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_journal",
+      "target": "journal.mrs.crash_landing",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_patient_line",
+      "target": "beat.mrs.crash.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_patient_line",
+      "target": "evt.mrs.crash_landing.node.n_broom",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_patient",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_patient",
+      "target": "evt.mrs.crash_landing.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_playful_line",
+      "target": "beat.mrs.crash.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_playful_line",
+      "target": "evt.mrs.crash_landing.node.n_broom",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_playful",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_playful",
+      "target": "evt.mrs.crash_landing.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_rough",
+      "target": "beat.mrs.crash.rough",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.crash_landing.node.n_rough",
+      "target": "evt.mrs.crash_landing.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.crash_landing",
+      "target": "char.marisa_kirisame",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.mrs.crash_landing",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mrs.crash_landing",
+      "target": "event.mrs.crash_landing.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.crash_landing",
+      "target": "evt.mrs.crash_landing",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.mrs.crash_landing",
+      "target": "loc.forest_of_magic.forest_edge",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.mrs.crash_landing",
+      "target": "loc.forest_of_magic",
       "kind": "location"
     },
     {
