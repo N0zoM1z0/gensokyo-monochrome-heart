@@ -17,6 +17,10 @@
     {"id": "loc.hakugyokurou.east_garden_path", "kind": "spot", "target_milestone": "M14", "reason": "The small path Youmu chooses to delegate for one garden watch."},
     {"id": "prop.hgy.unraked_east_path", "kind": "interactable", "target_milestone": "M14", "reason": "A deliberately visible path whose care does not require command."},
     {"id": "prop.hgy.garden_bell", "kind": "interactable", "target_milestone": "M14", "reason": "Youmu's check-in signal rather than an order bell."},
-    {"id": "journal.hgy.duty_delegated", "kind": "journal_entry", "target_milestone": "M14", "reason": "A single garden watch is delegated with a return point and no role claim."}
+    {"id": "journal.hgy.duty_delegated", "kind": "journal_entry", "target_milestone": "M14", "reason": "A single garden watch is delegated with a return point and no role claim."},
+    {"id": "loc.hakugyokurou.training_yard", "kind": "spot", "target_milestone": "M14", "reason": "Youmu notices she is treating a relational disagreement like a training assignment."},
+    {"id": "prop.hgy.unfinished_cut","kind":"interactable","target_milestone":"M14","reason":"A deliberately incomplete practice cut."},
+    {"id": "prop.hgy.training_board","kind":"interactable","target_milestone":"M14","reason":"Board that cannot produce an instruction for an emotion."},
+    {"id": "journal.hgy.cutting_wrong_problem","kind":"journal_entry","target_milestone":"M14","reason":"Conflict remains open without turning the player into Youmu's commander."}
   ]
 }

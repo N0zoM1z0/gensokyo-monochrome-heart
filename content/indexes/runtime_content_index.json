@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "b05738b5d82f91269b98abec736db5ecfafd0da290a8bdcdbdeef3daa15d98a9",
+  "content_hash": "3632d79469836e45ccf4febc613148dc8491573c771f50a365ff872676faf873",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 49,
-    "dialogue_beats": 227,
-    "localization": 1001,
+    "events": 50,
+    "dialogue_beats": 234,
+    "localization": 1016,
     "music_cues": 89,
-    "event_nodes": 532
+    "event_nodes": 549
   },
   "ids": {
     "characters": [
@@ -116,6 +116,7 @@
       "evt.fin.margin_of_error",
       "evt.fin.one_blank_page",
       "evt.fin.public_hearing",
+      "evt.hgy.cutting_wrong_problem",
       "evt.hgy.duty_delegated",
       "evt.hgy.farewell_replay",
       "evt.hgy.garden_shift",
@@ -183,6 +184,13 @@
       "beat.hgy.two_bodies.patient",
       "beat.hgy.two_bodies.playful",
       "beat.hgy.two_bodies.withdrawn",
+      "beat.hgy.wrong_cut.after",
+      "beat.hgy.wrong_cut.defiant",
+      "beat.hgy.wrong_cut.direct",
+      "beat.hgy.wrong_cut.intro",
+      "beat.hgy.wrong_cut.patient",
+      "beat.hgy.wrong_cut.playful",
+      "beat.hgy.wrong_cut.request",
       "beat.hkr.empty_cushion.marisa.terms_intro",
       "beat.hkr.empty_cushion.reimu.001",
       "beat.hkr.empty_cushion.reimu.afterbeat_01",
@@ -403,6 +411,10 @@
       "choice.hgy.two_bodies.direct",
       "choice.hgy.two_bodies.patient",
       "choice.hgy.two_bodies.playful",
+      "choice.hgy.wrong_cut.defiant",
+      "choice.hgy.wrong_cut.direct",
+      "choice.hgy.wrong_cut.patient",
+      "choice.hgy.wrong_cut.playful",
       "choice.hkr.empty_cushion.defiant",
       "choice.hkr.empty_cushion.direct",
       "choice.hkr.empty_cushion.patient",
@@ -516,6 +528,13 @@
       "dlg.hgy.two_bodies.patient",
       "dlg.hgy.two_bodies.playful",
       "dlg.hgy.two_bodies.withdrawn",
+      "dlg.hgy.wrong_cut.after",
+      "dlg.hgy.wrong_cut.defiant",
+      "dlg.hgy.wrong_cut.direct",
+      "dlg.hgy.wrong_cut.intro",
+      "dlg.hgy.wrong_cut.patient",
+      "dlg.hgy.wrong_cut.playful",
+      "dlg.hgy.wrong_cut.request",
       "dlg.hkr.empty_cushion.marisa.terms_intro",
       "dlg.hkr.empty_cushion.reimu.001",
       "dlg.hkr.empty_cushion.reimu.afterbeat_01",
@@ -718,6 +737,7 @@
       "dlg.sdm.promise.postponed",
       "dlg.sdm.promise.romance",
       "dlg.sdm.promise.undecided",
+      "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
       "event.hgy.garden_shift.title",
       "event.hgy.two_bodies.title",
@@ -755,6 +775,8 @@
       "input.glyph.pointer.confirm",
       "input.glyph.pointer.menu",
       "input.glyph.pointer.move",
+      "journal.hgy.cutting_wrong_problem.body",
+      "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
       "journal.hgy.duty_delegated.title",
       "journal.hgy.garden_shift.body",
@@ -810,6 +832,7 @@
       "journal.sdm.promise.body",
       "journal.sdm.promise.title",
       "obj.ein.cross_four_dawns",
+      "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
       "obj.hgy.garden_shift.match",
       "obj.hgy.two_bodies.cross",
@@ -1730,6 +1753,76 @@
     {
       "source": "beat.hgy.two_bodies.withdrawn",
       "target": "dlg.hgy.two_bodies.withdrawn",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.after",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.after",
+      "target": "dlg.hgy.wrong_cut.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.defiant",
+      "target": "dlg.hgy.wrong_cut.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.direct",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.direct",
+      "target": "dlg.hgy.wrong_cut.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.intro",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.intro",
+      "target": "dlg.hgy.wrong_cut.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.patient",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.patient",
+      "target": "dlg.hgy.wrong_cut.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.playful",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.playful",
+      "target": "dlg.hgy.wrong_cut.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.request",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.wrong_cut.request",
+      "target": "dlg.hgy.wrong_cut.request",
       "kind": "localization"
     },
     {
@@ -3813,6 +3906,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.hgy.wrong_cut.response",
+      "target": "choice.hgy.wrong_cut.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.wrong_cut.response",
+      "target": "choice.hgy.wrong_cut.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.wrong_cut.response",
+      "target": "choice.hgy.wrong_cut.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.wrong_cut.response",
+      "target": "choice.hgy.wrong_cut.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hkr.empty_cushion.01",
       "target": "choice.hkr.empty_cushion.defiant",
       "kind": "localization"
@@ -4350,6 +4463,221 @@
     {
       "source": "evt.fin.public_hearing",
       "target": "loc.human_village",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n001",
+      "target": "evt.hgy.cutting_wrong_problem.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n001",
+      "target": "mus_youmu_training",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n002",
+      "target": "evt.hgy.cutting_wrong_problem.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n002",
+      "target": "obj.hgy.cutting_wrong_problem.listen",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n002",
+      "target": "prop.hgy.training_board",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n002",
+      "target": "prop.hgy.unfinished_cut",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n003",
+      "target": "beat.hgy.wrong_cut.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n003",
+      "target": "evt.hgy.cutting_wrong_problem.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n004",
+      "target": "beat.hgy.wrong_cut.request",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n004",
+      "target": "evt.hgy.cutting_wrong_problem.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n005",
+      "target": "choice.hgy.wrong_cut.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n005",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n005",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n005",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n005",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_after",
+      "target": "beat.hgy.wrong_cut.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_after",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_defiant_line",
+      "target": "beat.hgy.wrong_cut.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_defiant_line",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_defiant",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_direct_line",
+      "target": "beat.hgy.wrong_cut.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_direct_line",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_direct",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_direct",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_effects",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_effects",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_journal",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_journal",
+      "target": "journal.hgy.cutting_wrong_problem",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_patient_line",
+      "target": "beat.hgy.wrong_cut.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_patient_line",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_patient",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_patient",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_playful_line",
+      "target": "beat.hgy.wrong_cut.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_playful_line",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_playful",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem.node.n_playful",
+      "target": "evt.hgy.cutting_wrong_problem.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem",
+      "target": "char.youmu_konpaku",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem",
+      "target": "event.hgy.cutting_wrong_problem.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem",
+      "target": "evt.hgy.cutting_wrong_problem",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem",
+      "target": "loc.hakugyokurou.training_yard",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hgy.cutting_wrong_problem",
+      "target": "loc.hakugyokurou",
       "kind": "location"
     },
     {

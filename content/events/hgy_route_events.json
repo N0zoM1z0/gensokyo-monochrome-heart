@@ -36,6 +36,18 @@
       "status": "authored",
       "estimated_minutes": 8,
       "comfort_tags": ["no_timer", "delegation_is_explicit", "no_role_pressure"]
+    },
+    {
+      "id": "evt.hgy.cutting_wrong_problem",
+      "legacy_id": "EVT-HGY-RTE-004",
+      "title_en": "Cutting the Wrong Problem",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": ["char.youmu_konpaku"],
+      "primary_mode": "dialogue",
+      "core_change": "Youmu cannot solve a disagreement by assigning herself a corrective task, and the player refuses the role of commander.",
+      "status": "authored",
+      "estimated_minutes": 9,
+      "comfort_tags": ["no_timer", "conflict_continues", "no_route_lockout"]
     }
   ]
 }
