@@ -113,7 +113,12 @@ func _validate_inventory(inventory: InventoryState, errors: Array[String]) -> vo
 func _validate_rumors(state: GameState, errors: Array[String]) -> void:
 	for rumor_id: StringName in state.rumors:
 		var rumor := state.rumors[rumor_id]
-		if rumor == null or rumor.rumor_id != rumor_id or rumor.claim_key == &"":
+		if (
+			rumor == null
+			or rumor.rumor_id != rumor_id
+			or not _matches(rumor_id, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$")
+			or not _matches(rumor.claim_key, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$")
+		):
 			errors.append("invalid rumor state: %s" % rumor_id)
 			continue
 		if rumor.reliability_milli < 0 or rumor.reliability_milli > 1000:

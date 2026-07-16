@@ -41,6 +41,8 @@ func _apply(state: GameState, command: GameCommand) -> CommandResult:
 		return _adjust_relationship(state, command)
 	if command is AddRumorCommand:
 		return _add_rumor(state, command)
+	if command is MutateRumorCommand:
+		return _mutate_rumor(state, command)
 	if command is SetRumorStatusCommand:
 		return _set_rumor_status(state, command)
 	if command is AddJournalEntryCommand:
@@ -102,7 +104,11 @@ func _adjust_relationship(state: GameState, command: AdjustRelationshipCommand) 
 
 func _add_rumor(state: GameState, command: AddRumorCommand) -> CommandResult:
 	var rumor := command.rumor
-	if rumor == null or rumor.rumor_id == &"" or rumor.claim_key == &"":
+	if (
+		rumor == null
+		or not _matches(rumor.rumor_id, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$")
+		or not _matches(rumor.claim_key, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$")
+	):
 		return _invalid(command, "rumor ID and claim key are required")
 	if state.rumors.has(rumor.rumor_id):
 		return _already_exists(command, "rumor already exists: %s" % rumor.rumor_id)
@@ -115,6 +121,28 @@ func _add_rumor(state: GameState, command: AddRumorCommand) -> CommandResult:
 	if rumor.acquired_day < 1 or rumor.acquired_day > state.day:
 		return _invalid(command, "rumor acquisition day is invalid")
 	state.rumors[rumor.rumor_id] = rumor.duplicate_state()
+	return CommandResult.success(command.command_id)
+
+
+func _mutate_rumor(state: GameState, command: MutateRumorCommand) -> CommandResult:
+	if not state.rumors.has(command.rumor_id):
+		return _not_found(command, "unknown rumor: %s" % command.rumor_id)
+	var rumor := state.rumors[command.rumor_id]
+	if (
+		not _matches(command.next_claim_key, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$")
+		or command.next_claim_key == rumor.claim_key
+		or command.reliability_delta_milli == 0
+		or absi(command.reliability_delta_milli) > 500
+		or command.next_privacy not in RumorState.PRIVACY_VALUES
+	):
+		return _invalid(command, "rumor mutation claim, reliability delta, or privacy is invalid")
+	var next_reliability: int = rumor.reliability_milli + command.reliability_delta_milli
+	if next_reliability < 0 or next_reliability > 1000:
+		return _invalid(command, "rumor mutation reliability must remain within 0..1000")
+	rumor.claim_key = command.next_claim_key
+	rumor.reliability_milli = next_reliability
+	rumor.privacy = command.next_privacy
+	rumor.mutation_count += 1
 	return CommandResult.success(command.command_id)
 
 

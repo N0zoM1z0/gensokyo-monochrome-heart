@@ -59,8 +59,43 @@ func _test_rumors(failures: Array[String]) -> void:
 	var rumor := _rumor_fixture()
 	_expect_success("AddRumorCommand positive", _dispatcher.dispatch(state, AddRumorCommand.new(rumor)), failures)
 	_expect_failure("AddRumorCommand negative", _dispatcher.dispatch(state, AddRumorCommand.new(rumor)), failures)
+	if state.rumors[rumor.rumor_id].confidence_label() != &"reported":
+		failures.append("unresolved low-confidence rumor did not expose Reported")
 	_expect_success(
-		"SetRumorStatusCommand positive",
+		"MutateRumorCommand positive",
+		_dispatcher.dispatch(state, MutateRumorCommand.new(
+			rumor.rumor_id,
+			&"rumor.fixture.missing_minute.retold",
+			200,
+			&"public"
+		)),
+		failures
+	)
+	var mutated := state.rumors[rumor.rumor_id]
+	if mutated.mutation_count != 1 or mutated.reliability_milli != 750 or mutated.confidence_label() != &"seen":
+		failures.append("rumor mutation did not update count, reliability, and Seen label")
+	var accepted_claim := mutated.claim_key
+	_expect_failure(
+		"MutateRumorCommand out of range",
+		_dispatcher.dispatch(state, MutateRumorCommand.new(
+			rumor.rumor_id,
+			&"rumor.fixture.missing_minute.overstated",
+			500,
+			&"public"
+		)),
+		failures
+	)
+	if mutated.claim_key != accepted_claim or mutated.mutation_count != 1:
+		failures.append("rejected rumor mutation changed the accepted claim")
+	_expect_success(
+		"SetRumorStatusCommand contradicted",
+		_dispatcher.dispatch(state, SetRumorStatusCommand.new(rumor.rumor_id, &"refuted")),
+		failures
+	)
+	if state.rumors[rumor.rumor_id].confidence_label() != &"contradicted":
+		failures.append("refuted rumor did not expose Contradicted")
+	_expect_success(
+		"SetRumorStatusCommand resolved",
 		_dispatcher.dispatch(state, SetRumorStatusCommand.new(rumor.rumor_id, &"corrected")),
 		failures
 	)
@@ -69,7 +104,7 @@ func _test_rumors(failures: Array[String]) -> void:
 		_dispatcher.dispatch(state, SetRumorStatusCommand.new(rumor.rumor_id, &"invented")),
 		failures
 	)
-	if state.rumors[rumor.rumor_id].status != &"corrected":
+	if state.rumors[rumor.rumor_id].status != &"corrected" or state.rumors[rumor.rumor_id].confidence_label() != &"resolved":
 		failures.append("rejected rumor status command changed the accepted status")
 
 

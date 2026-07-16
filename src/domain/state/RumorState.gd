@@ -29,3 +29,7 @@ func duplicate_state() -> RumorState:
 	copy.status = status
 	copy.acquired_day = acquired_day
 	return copy
+
+
+func confidence_label() -> StringName:
+	return RumorConfidenceRules.label_for(self)
