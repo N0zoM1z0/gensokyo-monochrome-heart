@@ -67,6 +67,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/mtn_tomorrows_headline.json",
 	"res://content/events/ein_five_impossibilities.json",
 	"res://content/events/ein_elegance_and_boredom.json",
+	"res://content/events/ein_game_with_no_continue.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -106,6 +107,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/mtn_tomorrows_headline.json",
 	"res://content/dialogue/ein_five_impossibilities.json",
 	"res://content/dialogue/ein_elegance_and_boredom.json",
+	"res://content/dialogue/ein_game_with_no_continue.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -146,6 +148,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/ein_four_dawns.csv",
 	"res://content/localization/ein_five_impossibilities.csv",
 	"res://content/localization/ein_elegance_and_boredom.csv",
+	"res://content/localization/ein_game_with_no_continue.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -158,9 +161,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/mtn_deferred_references.json",
 	"res://content/indexes/ein_route_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 33
-var expected_supplemental_dialogue_count: int = 303
-var expected_supplemental_localization_count: int = 626
+var expected_supplemental_event_count: int = 34
+var expected_supplemental_dialogue_count: int = 310
+var expected_supplemental_localization_count: int = 641
 
 
 func content_paths() -> Array[String]:
