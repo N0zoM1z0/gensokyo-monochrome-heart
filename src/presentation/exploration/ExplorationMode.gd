@@ -16,7 +16,8 @@ const ACTION_CONTRACT := [
 
 @export var fixture_show_focus: bool = false
 @export var fixture_show_companion: bool = false
-@export_enum("hakurei_veranda", "mansion_service") var spot_component := "hakurei_veranda"
+@export var fixture_complete_objective: bool = false
+@export_enum("hakurei_veranda", "mansion_service", "mountain_trail") var spot_component := "hakurei_veranda"
 @export var fixture_start_x: float = -1.0
 var exploration_context: ExplorationModeContext
 var spot_definition := HakureiVerandaSpotFactory.build()
@@ -297,7 +298,7 @@ func _default_context() -> ExplorationModeContext:
 	context.objective_id = spot_definition.objective_id
 	context.companion_id = spot_definition.companion_id
 	context.story_navigation_hints = true
-	context.companion_skill_enabled = true
+	context.companion_skill_enabled = spot_definition.companion_id != &""
 	return context
 
 
@@ -316,6 +317,9 @@ func _reset_spot() -> void:
 	interaction_registry = ExplorationInteractionRegistry.new()
 	objective_tracker = ExplorationObjectiveTracker.new()
 	objective_tracker.configure(exploration_context.objective_id, spot_definition.required_sequence)
+	if fixture_complete_objective:
+		for target_id: StringName in spot_definition.required_sequence:
+			objective_tracker.observe(target_id)
 	trigger_registry = ExplorationTriggerRegistry.new()
 	for trigger: ExplorationEventTrigger in spot_definition.event_triggers:
 		trigger_registry.register(trigger)
@@ -341,7 +345,7 @@ func _reset_spot() -> void:
 
 
 func _build_spot_definition() -> ExplorationSpotDefinition:
-	return MansionServiceSpotFactory.build() if spot_component == "mansion_service" else HakureiVerandaSpotFactory.build()
+	return ExplorationSpotRegistry.build(StringName(spot_component))
 
 
 func _build_registry() -> void:
@@ -352,7 +356,7 @@ func _build_registry() -> void:
 func _step_motor(sample: ExplorationMotorInput) -> void:
 	motor.step(motor_state, sample)
 	if motor.consume_footstep(motor_state):
-		sfx_player.play_cue(_sfx_cue(&"sfx.step.wood"))
+		sfx_player.play_cue(_sfx_cue(spot_definition.footstep_sfx_id))
 	_refresh_camera()
 	_refresh_prompt()
 	_refresh_float_preview()
@@ -404,6 +408,7 @@ func _refresh_prompt() -> void:
 	if _current_interactable == null or (_current_interactable.interactable_id == &"char.marisa_kirisame" and not _marisa_entered):
 		_current_interactable = null
 		prompt_chip.visible = false
+		_refresh_footer_text()
 		return
 	var screen_position := _current_interactable.world_position - Vector2(_camera_x, 32)
 	prompt_chip.position = Vector2(
@@ -420,6 +425,7 @@ func _refresh_prompt() -> void:
 		required
 	)
 	prompt_chip.visible = true
+	_refresh_footer_text()
 
 
 func _refresh_float_preview() -> void:
@@ -440,13 +446,22 @@ func _refresh_text_cache() -> void:
 		if objective_tracker.is_complete()
 		else _resolver.resolve(objective_key, _locale).text
 	)
-	_footer_text = "  ".join([
-		"%s %s" % [input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT), _catalog.text(&"ui.input.move", _locale)],
-		input_hint(GameInput.CONFIRM, _catalog.text(&"ui.input.observe", _locale)),
-		input_hint(GameInput.JOURNAL, _catalog.text(&"ui.input.journal", _locale)),
-	])
+	_refresh_footer_text()
 	_hint_text = _catalog.text(spot_definition.hint_key, _locale)
 	_companion_text = _catalog.text(spot_definition.companion_key, _locale)
+
+
+func _refresh_footer_text() -> void:
+	var confirm_label_key := (
+		_current_interactable.action.prompt_key
+		if _current_interactable != null
+		else &"ui.input.observe"
+	)
+	_footer_text = "  ".join([
+		"%s %s" % [input_axis_binding(GameInput.MOVE_LEFT, GameInput.MOVE_RIGHT), _catalog.text(&"ui.input.move", _locale)],
+		input_hint(GameInput.CONFIRM, _catalog.text(confirm_label_key, _locale)),
+		input_hint(GameInput.JOURNAL, _catalog.text(&"ui.input.journal", _locale)),
+	])
 
 
 func _sfx_cue(cue_id: StringName) -> ExplorationSfxCue:
@@ -455,6 +470,14 @@ func _sfx_cue(cue_id: StringName) -> ExplorationSfxCue:
 			return ExplorationSfxCue.new(cue_id, &"ui.sfx.cup", 420.0, 0.09)
 		&"sfx.door.wood":
 			return ExplorationSfxCue.new(cue_id, &"ui.sfx.door", 210.0, 0.14)
+		&"sfx.paper.rustle":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.paper", 520.0, 0.07)
+		&"sfx.wind.gust":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.wind", 175.0, 0.18)
+		&"sfx.camera.shutter":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.shutter", 840.0, 0.05)
+		&"sfx.step.stone":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.stone_step", 110.0, 0.05)
 		_:
 			return ExplorationSfxCue.new(&"sfx.step.wood", &"ui.sfx.wood_step", 140.0, 0.06)
 
@@ -479,10 +502,13 @@ func _draw() -> void:
 
 
 func _draw_world(foreground: Color, background: Color) -> void:
-	if spot_definition.environment_style == &"mansion_service":
-		_draw_mansion_world(foreground, background)
-		return
-	_draw_shrine_world(foreground, background)
+	match spot_definition.environment_style:
+		&"mansion_service":
+			_draw_mansion_world(foreground, background)
+		&"mountain_trail":
+			_draw_mountain_world(foreground, background)
+		_:
+			_draw_shrine_world(foreground, background)
 
 
 func _draw_shrine_world(foreground: Color, background: Color) -> void:
@@ -541,6 +567,79 @@ func _draw_mansion_world(foreground: Color, background: Color) -> void:
 	_draw_sakuya(Vector2(552 + offset, 130), foreground, background)
 
 
+func _draw_mountain_world(foreground: Color, background: Color) -> void:
+	var offset := -_camera_x
+	# Two large silhouettes preserve quiet sky while establishing steep elevation.
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(0 + offset, 136), Vector2(0 + offset, 74), Vector2(42 + offset, 31),
+		Vector2(98 + offset, 136),
+	]), foreground)
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(356 + offset, 136), Vector2(430 + offset, 48), Vector2(508 + offset, 136),
+	]), foreground)
+	# The waterfall is a solid white column inside the dark cliff, never dithered.
+	draw_rect(Rect2(36 + offset, 45, 13, 83), background)
+	for y: int in range(49, 126, 11):
+		draw_line(Vector2(39 + offset, y), Vector2(46 + offset, y + 5), foreground, 1.0)
+	draw_rect(Rect2(8 + offset, 136, 616, 5), foreground)
+	for x: int in range(70, 620, 42):
+		draw_line(Vector2(x + offset, 137), Vector2(x + 12 + offset, 137), background, 1.0)
+	# Paper, intact guardrail, rope bridge, patrol notice, and camera perch mirror
+	# the typed interaction anchors in the spot packet.
+	_draw_newspaper(Vector2(118 + offset, 130), foreground, background)
+	for rail_x: int in [204, 222, 240]:
+		draw_line(Vector2(rail_x + offset, 109), Vector2(rail_x + offset, 137), foreground, 2.0)
+	draw_line(Vector2(200 + offset, 112), Vector2(244 + offset, 112), foreground, 2.0)
+	for bridge_x: int in range(274, 343, 10):
+		draw_line(Vector2(bridge_x + offset, 132), Vector2(bridge_x + 7 + offset, 134), foreground, 1.0)
+	draw_line(Vector2(270 + offset, 113), Vector2(348 + offset, 119), foreground, 1.0)
+	draw_line(Vector2(270 + offset, 132), Vector2(348 + offset, 136), foreground, 2.0)
+	draw_rect(Rect2(382 + offset, 91, 25, 33), background)
+	draw_rect(Rect2(382 + offset, 91, 25, 33), foreground, false, 2.0)
+	for line_y: int in [98, 104, 110]:
+		draw_line(Vector2(387 + offset, line_y), Vector2(402 + offset, line_y), foreground, 1.0)
+	draw_line(Vector2(470 + offset, 91), Vector2(470 + offset, 137), foreground, 3.0)
+	draw_rect(Rect2(456 + offset, 91, 29, 5), foreground)
+	_draw_aya(Vector2(552 + offset, 130), foreground, background)
+	var name_font := _japanese_font if _locale == &"ja" else _latin_font
+	draw_string(
+		name_font,
+		Vector2(534 + offset, 88),
+		_catalog.text(&"ui.exploration.mtn.aya_name", _locale),
+		HORIZONTAL_ALIGNMENT_CENTER,
+		36,
+		_hud_font_size(),
+		foreground
+	)
+	# Distant crow silhouettes use broad spacing and stay out of the HUD bands.
+	for crow: Vector2 in [Vector2(174, 48), Vector2(202, 62), Vector2(532, 55)]:
+		draw_line(crow + Vector2(offset, 0), crow + Vector2(offset - 4, -3), foreground, 1.0)
+		draw_line(crow + Vector2(offset, 0), crow + Vector2(offset + 4, -3), foreground, 1.0)
+
+
+func _draw_newspaper(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(position + Vector2(-9, -13), Vector2(18, 14)), background)
+	draw_rect(Rect2(position + Vector2(-9, -13), Vector2(18, 14)), foreground, false, 1.0)
+	draw_rect(Rect2(position + Vector2(-6, -10), Vector2(5, 5)), foreground, false, 1.0)
+	for y: int in [-9, -5, -1]:
+		draw_line(position + Vector2(2, y), position + Vector2(7, y), foreground, 1.0)
+
+
+func _draw_aya(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_colored_polygon(PackedVector2Array([
+		position + Vector2(-9, 0), position + Vector2(-7, -23), position + Vector2(0, -32),
+		position + Vector2(7, -23), position + Vector2(9, 0),
+	]), foreground)
+	draw_rect(Rect2(position + Vector2(-3, -27), Vector2(6, 7)), background)
+	draw_colored_polygon(PackedVector2Array([
+		position + Vector2(-12, -30), position + Vector2(0, -38), position + Vector2(13, -30),
+	]), foreground)
+	# A lowered camera makes the event hook readable without implying consent.
+	draw_rect(Rect2(position + Vector2(8, -17), Vector2(10, 7)), foreground, false, 2.0)
+	draw_circle(position + Vector2(13, -14), 2.0, foreground, false, 1.0)
+	draw_line(position + Vector2(6, -18), position + Vector2(10, -15), foreground, 1.0)
+
+
 func _draw_clock(position: Vector2, foreground: Color, background: Color) -> void:
 	draw_circle(position, 14, foreground)
 	draw_circle(position, 11, background)
@@ -567,9 +666,12 @@ func _draw_hud(foreground: Color, background: Color) -> void:
 	var header_frame := Rect2(4, 3, 312, 19) if ui_scale_percent() > 100 else Rect2(4, 3, 312, 14)
 	draw_rect(header_frame, background)
 	draw_rect(header_frame, foreground, false, 1.0)
-	draw_string(font, Vector2(8, header_frame.position.y + font_size + 1), _header_text, HORIZONTAL_ALIGNMENT_LEFT, 238, font_size, foreground)
+	var labeled_counter := spot_definition.counter_label_key != &""
+	draw_string(font, Vector2(8, header_frame.position.y + font_size + 1), _header_text, HORIZONTAL_ALIGNMENT_LEFT, 198 if labeled_counter else 238, font_size, foreground)
 	var counter := "%d/%d" % [objective_tracker.current_step, objective_tracker.required_sequence.size()]
-	draw_string(font, Vector2(252, header_frame.position.y + font_size + 1), counter, HORIZONTAL_ALIGNMENT_RIGHT, 58, font_size, foreground)
+	if labeled_counter:
+		counter = "%s %s" % [_catalog.text(spot_definition.counter_label_key, _locale), counter]
+	draw_string(font, Vector2(208 if labeled_counter else 252, header_frame.position.y + font_size + 1), counter, HORIZONTAL_ALIGNMENT_RIGHT, 102 if labeled_counter else 58, font_size, foreground)
 	var footer_frame := Rect2(4, 151, 312, 26) if ui_scale_percent() > 100 else Rect2(4, 162, 312, 15)
 	draw_rect(footer_frame, background)
 	draw_rect(footer_frame, foreground, false, 1.0)

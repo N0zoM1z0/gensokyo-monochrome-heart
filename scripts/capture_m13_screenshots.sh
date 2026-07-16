@@ -38,6 +38,8 @@ capture_pair() {
 capture_pair m13_photo_tutorial res://tests/ui/fixtures/TomorrowsHeadlineTutorialFixture.tscn
 capture_pair m13_photo_active res://tests/ui/fixtures/TomorrowsHeadlineActiveFixture.tscn
 capture_pair m13_photo_capture res://tests/ui/fixtures/TomorrowsHeadlineCaptureFixture.tscn
+capture_pair m13_mountain_trail res://tests/ui/fixtures/YoukaiMountainTrailFixture.tscn
+capture_pair m13_mountain_threshold res://tests/ui/fixtures/YoukaiMountainThresholdFixture.tscn
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated

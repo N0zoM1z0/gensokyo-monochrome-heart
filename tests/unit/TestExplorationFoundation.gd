@@ -11,7 +11,50 @@ func run() -> Array[String]:
 	_expect_companion_hint_and_feedback(failures)
 	_expect_input_parity(failures)
 	_expect_mansion_service_spot(failures)
+	_expect_youkai_mountain_spot(failures)
 	return failures
+
+
+func _expect_youkai_mountain_spot(failures: Array[String]) -> void:
+	var spot := ExplorationSpotRegistry.build(&"mountain_trail")
+	if (
+		spot.environment_style != &"mountain_trail"
+		or spot.location_id != &"loc.youkai_mountain"
+		or spot.required_sequence != [&"prop.mtn.tomorrow_paper", &"prop.mtn.intact_guardrail"]
+	):
+		failures.append("mountain trail registry lost its typed location or evidence sequence")
+	if spot.interactables.size() != 6 or spot.event_triggers.size() != 1:
+		failures.append("mountain trail omitted authored evidence or Aya's event volume")
+	else:
+		var trigger := spot.event_triggers[0]
+		if (
+			trigger.event_id != &"evt.mtn.tomorrows_headline"
+			or trigger.required_objective_id != spot.objective_id
+		):
+			failures.append("mountain trail did not gate Aya's headline handoff on both clues")
+	var tracker := ExplorationObjectiveTracker.new()
+	tracker.configure(spot.objective_id, spot.required_sequence)
+	tracker.observe(&"prop.mtn.tomorrow_paper")
+	tracker.observe(&"prop.mtn.intact_guardrail")
+	var triggers := ExplorationTriggerRegistry.new()
+	triggers.register(spot.event_triggers[0])
+	if triggers.resolve(Vector2(552, 130), &"") != null:
+		failures.append("Aya headline handoff fired before the evidence objective completed")
+	var resolved := triggers.resolve(Vector2(552, 130), tracker.objective_id)
+	if resolved == null or resolved.event_id != &"evt.mtn.tomorrows_headline":
+		failures.append("completed mountain evidence did not resolve Aya's event handoff")
+	var motor := ExplorationMotor.new()
+	motor.world_bounds = spot.world_bounds
+	motor.floor_y = spot.floor_y
+	motor.solid_obstacles = spot.solid_obstacles.duplicate()
+	var state := ExplorationMotorState.new()
+	state.position = spot.start_position
+	var move_right := ExplorationMotorInput.new()
+	move_right.horizontal_axis = 1.0
+	for _frame: int in range(600):
+		motor.step(state, move_right)
+	if state.position.x < 540.0:
+		failures.append("mountain evidence route requires an undisclosed hop to reach Aya")
 
 
 func _expect_mansion_service_spot(failures: Array[String]) -> void:

@@ -133,6 +133,9 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://src/presentation/exploration/MansionServiceExplorationMode.tscn \
 	--scene=res://tests/ui/fixtures/MansionServiceExplorationFixture.tscn \
 	--scene=res://tests/ui/fixtures/MansionServiceKitchenFixture.tscn \
+	--scene=res://src/presentation/exploration/YoukaiMountainExplorationMode.tscn \
+	--scene=res://tests/ui/fixtures/YoukaiMountainTrailFixture.tscn \
+	--scene=res://tests/ui/fixtures/YoukaiMountainThresholdFixture.tscn \
 	--scene=res://src/presentation/slice/ScarletDevilMansionSliceMode.tscn \
 	--scene=res://tests/ui/fixtures/MansionSliceFixtureBase.tscn \
 	--scene=res://tests/ui/fixtures/MansionSliceInvitationFixture.tscn \
@@ -288,6 +291,8 @@ run_checked "M12 SDM save and resume matrix" env XDG_DATA_HOME="$LOG_DIR/user-da
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m12_sdm_save_resume_matrix.gd
 run_checked "M12 SDM accessibility matrix" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m12_sdm_accessibility_matrix.gd
+run_checked "M13 Youkai Mountain exploration integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_mountain_exploration_flow.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

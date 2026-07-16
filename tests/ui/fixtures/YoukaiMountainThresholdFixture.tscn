@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://src/presentation/exploration/YoukaiMountainExplorationMode.tscn" id="1_mode"]
+
+[node name="YoukaiMountainThresholdFixture" instance=ExtResource("1_mode")]
+fixture_complete_objective = true
+fixture_start_x = 520.0
