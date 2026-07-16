@@ -74,6 +74,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/ein_endless_night_offer.json",
 	"res://content/events/ein_promise.json",
 	"res://content/events/pch_library_breathing_room.json",
+	"res://content/events/pch_question_worth_asking.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -119,6 +120,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/ein_endless_night_offer.json",
 	"res://content/dialogue/ein_promise.json",
 	"res://content/dialogue/pch_library_breathing_room.json",
+	"res://content/dialogue/pch_question_worth_asking.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -165,6 +167,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/ein_endless_night_offer.csv",
 	"res://content/localization/ein_promise.csv",
 	"res://content/localization/pch_library_breathing_room.csv",
+	"res://content/localization/pch_question_worth_asking.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -178,9 +181,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/ein_route_deferred_references.json",
 	"res://content/indexes/pch_route_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 39
-var expected_supplemental_dialogue_count: int = 344
-var expected_supplemental_localization_count: int = 721
+var expected_supplemental_event_count: int = 40
+var expected_supplemental_dialogue_count: int = 351
+var expected_supplemental_localization_count: int = 736
 
 
 func content_paths() -> Array[String]:

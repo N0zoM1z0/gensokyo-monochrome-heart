@@ -1,1 +1,41 @@
-{"schema_version":1,"events":[{"id":"evt.pch.library_breathing_room","legacy_id":"EVT-PAT-01","title_en":"Library Breathing Room","location_id":"loc.scarlet_devil_mansion","lead_character_ids":["char.patchouli_knowledge"],"primary_mode":"choice_puzzle","core_change":"limited energy respected","status":"implemented","estimated_minutes":14,"comfort_tags":["no_timer","physical_limits_respected","no_health_gag"]}]}
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "evt.pch.library_breathing_room",
+      "legacy_id": "EVT-PAT-01",
+      "title_en": "Library Breathing Room",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.patchouli_knowledge"
+      ],
+      "primary_mode": "choice_puzzle",
+      "core_change": "limited energy respected",
+      "status": "implemented",
+      "estimated_minutes": 14,
+      "comfort_tags": [
+        "no_timer",
+        "physical_limits_respected",
+        "no_health_gag"
+      ]
+    },
+    {
+      "id": "evt.pch.question_worth_asking",
+      "legacy_id": "EVT-PAT-02",
+      "title_en": "A Question Worth Asking",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.patchouli_knowledge"
+      ],
+      "primary_mode": "choice_puzzle",
+      "core_change": "precise curiosity",
+      "status": "implemented",
+      "estimated_minutes": 12,
+      "comfort_tags": [
+        "no_timer",
+        "no_knowledge_shaming",
+        "question_boundary"
+      ]
+    }
+  ]
+}

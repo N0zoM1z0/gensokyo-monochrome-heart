@@ -1,1 +1,53 @@
-{"schema":"gmh-deferred-references-v1","references":[{"id":"loc.scarlet_devil_mansion.voile_airwell","kind":"spot","target_milestone":"M14","reason":"An airwell lets the library's elemental logistics become a visible, ventilated problem."},{"id":"prop.pch.dust_ward","kind":"interactable","target_milestone":"M14","reason":"A dust ward makes careful library maintenance actionable without turning Patchouli's limits into a gag."},{"id":"prop.pch.element_shelf","kind":"interactable","target_milestone":"M14","reason":"An elemental shelf supports precise questions and safe placement."},{"id":"journal.pch.library_breathing_room","kind":"journal_entry","target_milestone":"M14","reason":"The first route observation records effort budgeting and a respected pause."}]}
+{
+  "schema": "gmh-deferred-references-v1",
+  "references": [
+    {
+      "id": "loc.scarlet_devil_mansion.voile_airwell",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "An airwell lets the library's elemental logistics become a visible, ventilated problem."
+    },
+    {
+      "id": "prop.pch.dust_ward",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A dust ward makes careful library maintenance actionable without turning Patchouli's limits into a gag."
+    },
+    {
+      "id": "prop.pch.element_shelf",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An elemental shelf supports precise questions and safe placement."
+    },
+    {
+      "id": "journal.pch.library_breathing_room",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The first route observation records effort budgeting and a respected pause."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.annotation_table",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "An annotation table makes the quality and scope of a question visible."
+    },
+    {
+      "id": "prop.pch.open_margin",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A margin records an exact question without demanding an immediate answer."
+    },
+    {
+      "id": "prop.pch.closed_catalog",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A closed catalog makes trivia and access boundaries explicit."
+    },
+    {
+      "id": "journal.pch.question_worth_asking",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records curiosity that respects a question’s scope and the right not to answer."
+    }
+  ]
+}
