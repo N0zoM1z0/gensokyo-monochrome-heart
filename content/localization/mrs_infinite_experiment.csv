@@ -8,9 +8,9 @@ choice.mrs.archive.defiant,choice,,Say perfect recall is not the same as discove
 dlg.mrs.archive.offer,dialogue,char.reimu_hakurei,"The Archive can keep every failed spell for you. You would never lose a lesson again.",「アーカイブは失敗した術を全部残せる。もう教訓を失わずに済む。」,248,Original
 dlg.mrs.archive.refusal,dialogue,char.marisa_kirisame,"Then the next lesson would arrive already solved. That is not mine.",「それじゃ次の教訓は、もう解かれた形で届く。それは私のじゃない。」,248,Original
 dlg.mrs.archive.direct,dialogue,char.marisa_kirisame,"Exactly. I want to meet the turn before I know it.",「その通り。分かる前の曲がり角に会いたい。」,248,Original
-dlg.mrs.archive.playful,dialogue,char.marisa_kirisame,"If it can make tea, it can still not drink the bad cup for me.",「お茶を淹れられても、まずい一杯を私の代わりに飲めはしない。」,248,Original
+dlg.mrs.archive.playful,dialogue,char.marisa_kirisame,"If it can make tea, it still cannot drink the bad cup for me.",「お茶を淹れられても、まずい一杯を私の代わりに飲めはしない。」,248,Original
 dlg.mrs.archive.patient,dialogue,char.marisa_kirisame,"The surprise. The part where I notice I was wrong and choose again.",「驚きだ。間違ってたと気づいて、もう一度選ぶ部分。」,248,Original
 dlg.mrs.archive.defiant,dialogue,char.marisa_kirisame,"Right. A record is useful. A record that walks ahead of me is a leash.",「そうだ。記録は役に立つ。私の前を歩く記録は、綱になる。」,248,Original
-dlg.mrs.archive.after,dialogue,char.marisa_kirisame,"I will keep my notes. The blank after them stays mine.",「記録は持っていく。その後の空白は、私のままにする。」,248,Original
+dlg.mrs.archive.after,dialogue,char.marisa_kirisame,"I will keep my notes. The blank after them stays mine.",「自分のノートは持っていく。その後の空白は、私のままにする。」,248,Original
 journal.mrs.infinite_experiment.title,journal_title,,The Blank After the Notes,記録の後の空白,248,Original
 journal.mrs.infinite_experiment.body,journal_body,,Marisa kept her records but refused a copy that could make every failure familiar. Discovery needed a blank space that no archive could walk through first.,魔理沙は記録を持ち続けたが、すべての失敗を見慣れたものにする写しを拒んだ。発見には、どんなアーカイブも先に歩けない空白が必要だった。,248,Original

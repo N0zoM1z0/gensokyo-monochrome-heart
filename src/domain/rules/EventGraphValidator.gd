@@ -100,7 +100,7 @@ func _validate_shape(node: EventNodeRecord, errors: Array[String]) -> void:
 			elif effect.operation == &"route_intent":
 				if not _matches_id(effect.character_id, "^char\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
 					errors.append("effects node %s has invalid route-intent character %s" % [node.id, effect.character_id])
-				if effect.route_intent not in [&"friendship", &"romance", &"postponed"]:
+				if effect.route_intent not in CharacterState.ROUTE_INTENTS:
 					errors.append("effects node %s has invalid route intent %s" % [node.id, effect.route_intent])
 			elif effect.operation == &"add_rumor":
 				if not _matches_id(effect.rumor_id, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):

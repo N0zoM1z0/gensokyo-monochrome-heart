@@ -37,6 +37,10 @@ func configure_fixture(requested_profile: StringName, locale: StringName, forced
 	_locale = locale if locale in [&"en", &"ja"] else &"en"
 	if is_node_ready(): _load_runtime()
 
+func configure_assists(settings: MinigameAssistSettings) -> void:
+	assist_settings = settings.duplicate_settings() if settings != null else MinigameAssistSettings.new()
+	if is_node_ready(): _load_runtime()
+
 func handle_semantic_action(action: StringName) -> bool:
 	if broom == null: return false
 	if action in [GameInput.PAUSE, GameInput.CANCEL] and broom.state.phase != BroomBackseatState.Phase.RESULT:
@@ -82,6 +86,10 @@ func _draw() -> void:
 	var fg := _profile.paper if _profile.is_inverted else _profile.ink
 	draw_rect(Rect2(0, 0, 320, 180), bg); draw_rect(Rect2(4, 3, 312, 174), fg, false, 1.0)
 	_draw_text(&"ui.minigame.broom_backseat.title", Vector2(10, 17), 300, fg)
+	if broom.is_paused:
+		_draw_text(&"ui.minigame.broom_backseat.paused", Vector2(20, 83), 280, fg)
+		_draw_text(&"ui.minigame.broom_backseat.resume", Vector2(20, 105), 280, fg)
+		return
 	if broom.state.phase == BroomBackseatState.Phase.TUTORIAL:
 		_draw_text(&"ui.minigame.broom_backseat.tutorial", Vector2(20, 58), 280, fg); _draw_text(&"ui.minigame.broom_backseat.begin", Vector2(20, 165), 280, fg); return
 	for x: int in [64, 160, 256]: draw_line(Vector2(x, 44), Vector2(x, 134), fg, 1.0)
@@ -90,9 +98,11 @@ func _draw() -> void:
 	var target_x: int = [64, 160, 256][broom.target_lane() + 1]
 	draw_rect(Rect2(target_x - 14, 53, 28, 18), fg, false, 2.0); draw_rect(Rect2(lane_x - 10, 102, 20, 12), fg)
 	_draw_text(&"ui.minigame.broom_backseat.status", Vector2(16, 151), 288, fg, [broom.state.checkpoint_index + 1, BroomBackseatSimulation.TARGET_LANES.size()])
+	if broom.state.phase == BroomBackseatState.Phase.ACTIVE and broom.state.last_landing != &"":
+		_draw_text(&"ui.minigame.broom_backseat.landing.%s" % broom.state.last_landing, Vector2(16, 166), 288, fg)
 	if broom.state.phase == BroomBackseatState.Phase.RESULT: _draw_text(&"ui.minigame.broom_backseat.result", Vector2(16, 166), 288, fg)
 
 func _draw_text(key: StringName, position: Vector2, width: float, color: Color, values: Array = []) -> void:
 	var text := _catalog.text(key, _locale)
 	for index: int in range(values.size()): text = text.replace("{%d}" % index, str(values[index]))
-	draw_string(_japanese_font if _locale == &"ja" else _latin_font, position, text, HORIZONTAL_ALIGNMENT_CENTER, width, 8, color)
+	draw_string(_japanese_font if _locale == &"ja" else _latin_font, position, text, HORIZONTAL_ALIGNMENT_CENTER, width, 10 if _locale == &"ja" else 8, color)

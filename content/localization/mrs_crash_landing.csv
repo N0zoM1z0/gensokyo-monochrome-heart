@@ -8,10 +8,10 @@ choice.mrs.crash.defiant,choice,,Say a fast landing still needs a safe passenger
 dlg.mrs.crash.intro,dialogue,char.marisa_kirisame,"Catch the blue one. That book bites when it is embarrassed.",「青いのを取ってくれ。あの本、照れると噛むんだ。」,248,Original
 dlg.mrs.crash.work,dialogue,char.marisa_kirisame,"Three borrowed books, one thing I promised to return, and no time to make this look graceful.",「借りた本が三冊、返すって約束した物が一つ。優雅に見せる時間はないぜ。」,248,Original
 dlg.mrs.crash.direct,dialogue,char.marisa_kirisame,"The return goes first. Borrowing only stays funny if I remember the way back.",「返す物が先。借りるのが冗談で済むのは、帰り道を覚えてる時だけだ。」,248,Original
-dlg.mrs.crash.playful,dialogue,char.marisa_kirisame,"Deal. Hold the bag tight; careful is a direction, not a speed.",「成立。鞄をしっかり持て。慎重ってのは速度じゃなくて方向だぜ。」,248,Original
+dlg.mrs.crash.playful,dialogue,char.marisa_kirisame,"Deal. Hold the bag tight; careful is a direction, not a speed.",「決まりだ。鞄をしっかり持て。慎重ってのは速度じゃなくて方向だぜ。」,248,Original
 dlg.mrs.crash.patient,dialogue,char.marisa_kirisame,"Fine. The list is real. The scribbles are where I learned not to crash twice.",「いいぜ。一覧は本物だ。落書きは二度同じ墜落をしないための記録。」,248,Original
-dlg.mrs.crash.defiant,dialogue,char.marisa_kirisame,"Fair. You call the cargo; I call the wind. Nobody gets thrown out to prove a point.",「もっともだ。荷物はお前が見る、風は私が見る。意地を張って誰も振り落とさない。」,248,Original
-dlg.mrs.crash.clear,dialogue,char.marisa_kirisame,"That was clean. You have the hands for a backseat job.",「きれいだった。後ろの席の仕事、手が向いてるな。」,248,Original
+dlg.mrs.crash.defiant,dialogue,char.marisa_kirisame,"Fair. You call the cargo; I call the wind. Nobody gets thrown out to prove a point.",「もっともだ。荷物はお前が見る、風は私が見る。ただ意地を証明するために、誰も振り落とさない。」,248,Original
+dlg.mrs.crash.clear,dialogue,char.marisa_kirisame,"That was clean. You have the hands for a backseat job.",「きれいだった。後ろの席の仕事に向いてるな。」,248,Original
 dlg.mrs.crash.rough,dialogue,char.marisa_kirisame,"Rough is fine. We landed, the books are whole, and now we write down why.",「荒っぽくてもいい。着いたし、本は無事。次は理由を書けばいい。」,248,Original
 dlg.mrs.crash.after,dialogue,char.marisa_kirisame,"Here. This was not mine to keep. The rest can wait until I ask.",「ほら。これは私が持ってていい物じゃない。残りは、聞いてからにする。」,248,Original
 journal.mrs.crash_landing.title,journal_title,,Return Before Borrowing,借りる前に返す,248,Original

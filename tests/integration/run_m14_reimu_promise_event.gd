@@ -21,6 +21,8 @@ func _initialize() -> void:
 
 func _run(graph: EventGraphRecord, intent: StringName, tone: StringName, expected_outcome: StringName, flag_id: StringName) -> void:
 	var state := _state(StringName("p148%d" % _intent_index(intent)))
+	if intent == &"undecided":
+		GameCommandDispatcher.new().dispatch(state, SetRouteIntentCommand.new(REIMU_ID, &"romance"))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	_expect(not result.is_error(), "%s could not start Promise: %s" % [intent, result.diagnostic])

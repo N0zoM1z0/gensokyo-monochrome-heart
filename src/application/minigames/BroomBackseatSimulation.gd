@@ -53,8 +53,10 @@ func target_lane() -> int:
 func _land_checkpoint() -> void:
 	if state.cargo_lane == target_lane() or assists.wider_timing_window:
 		state.safe_landings += 1
+		state.last_landing = &"safe"
 	else:
 		state.rough_landings += 1
+		state.last_landing = &"rough"
 	state.checkpoint_index += 1
 	if state.checkpoint_index >= TARGET_LANES.size():
 		_finish(&"clear" if state.rough_landings == 0 else &"assist_clear")

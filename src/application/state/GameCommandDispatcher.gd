@@ -333,8 +333,8 @@ func _record_strategy_use(state: GameState, command: RecordStrategyUseCommand) -
 func _set_route_intent(state: GameState, command: SetRouteIntentCommand) -> CommandResult:
 	if not state.characters.has(command.character_id):
 		return _not_found(command, "unknown character: %s" % command.character_id)
-	if command.route_intent not in CharacterState.ROUTE_INTENTS or command.route_intent == &"undecided":
-		return _invalid(command, "route intent must be friendship, romance, or postponed")
+	if command.route_intent not in CharacterState.ROUTE_INTENTS:
+		return _invalid(command, "route intent must be friendship, romance, postponed, or undecided")
 	if state.characters[command.character_id].route_intent == command.route_intent:
 		return _already_exists(command, "route intent is already %s" % command.route_intent)
 	state.characters[command.character_id].route_intent = command.route_intent

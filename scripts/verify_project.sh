@@ -365,6 +365,8 @@ run_checked "M14 Marisa weather rescue event" env XDG_DATA_HOME="$LOG_DIR/user-d
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_marisa_rescue_event.gd
 run_checked "M14 Marisa infinite experiment event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_marisa_infinite_experiment.gd
+run_checked "M14 Marisa Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_marisa_promise_event.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

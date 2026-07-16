@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "7d8fe7482dfc28b94a28ba3cf09e373227430540ba11c5e828c9c5a5302638f1",
+  "content_hash": "1ac45eab97cee0c0c0e86e702e455634e617d3c81ad2c44935d6c7b7d6a8a144",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 39,
-    "dialogue_beats": 155,
-    "localization": 830,
+    "events": 40,
+    "dialogue_beats": 161,
+    "localization": 848,
     "music_cues": 89,
-    "event_nodes": 344
+    "event_nodes": 365
   },
   "ids": {
     "characters": [
@@ -132,6 +132,7 @@
       "evt.mrs.crash_landing",
       "evt.mrs.field_notes",
       "evt.mrs.infinite_experiment",
+      "evt.mrs.promise",
       "evt.mrs.rescue_looks_like_race",
       "evt.mrs.shelf_marked_later",
       "evt.mrs.talent_bad_conversation",
@@ -252,6 +253,12 @@
       "beat.mrs.notes.patient",
       "beat.mrs.notes.playful",
       "beat.mrs.notes.work",
+      "beat.mrs.promise.choice",
+      "beat.mrs.promise.friendship",
+      "beat.mrs.promise.intro",
+      "beat.mrs.promise.postponed",
+      "beat.mrs.promise.romance",
+      "beat.mrs.promise.undecided",
       "beat.mrs.rescue.after",
       "beat.mrs.rescue.assist",
       "beat.mrs.rescue.clear",
@@ -349,6 +356,10 @@
       "choice.mrs.notes.direct",
       "choice.mrs.notes.patient",
       "choice.mrs.notes.playful",
+      "choice.mrs.promise.friendship",
+      "choice.mrs.promise.postponed",
+      "choice.mrs.promise.romance",
+      "choice.mrs.promise.undecided",
       "choice.mrs.rescue.defiant",
       "choice.mrs.rescue.direct",
       "choice.mrs.rescue.patient",
@@ -473,6 +484,12 @@
       "dlg.mrs.notes.patient",
       "dlg.mrs.notes.playful",
       "dlg.mrs.notes.work",
+      "dlg.mrs.promise.choice",
+      "dlg.mrs.promise.friendship",
+      "dlg.mrs.promise.intro",
+      "dlg.mrs.promise.postponed",
+      "dlg.mrs.promise.romance",
+      "dlg.mrs.promise.undecided",
       "dlg.mrs.rescue.after",
       "dlg.mrs.rescue.assist",
       "dlg.mrs.rescue.clear",
@@ -534,6 +551,7 @@
       "event.mrs.crash_landing.title",
       "event.mrs.field_notes.title",
       "event.mrs.infinite_experiment.title",
+      "event.mrs.promise.title",
       "event.mrs.rescue_looks_like_race.title",
       "event.mrs.shelf_marked_later.title",
       "event.mrs.talent_bad_conversation.title",
@@ -571,6 +589,8 @@
       "journal.mrs.field_notes.title",
       "journal.mrs.infinite_experiment.body",
       "journal.mrs.infinite_experiment.title",
+      "journal.mrs.promise.body",
+      "journal.mrs.promise.title",
       "journal.mrs.rescue_looks_like_race.body",
       "journal.mrs.rescue_looks_like_race.title",
       "journal.mrs.shelf_marked_later.body",
@@ -592,6 +612,7 @@
       "obj.mrs.archive.leave_copy",
       "obj.mrs.crash.secure_cargo",
       "obj.mrs.field_notes.read_marks",
+      "obj.mrs.promise.take_broom",
       "obj.mrs.rescue.hold_cargo",
       "obj.mrs.shelf.wait",
       "obj.mrs.talent.stop_comparison",
@@ -865,7 +886,11 @@
       "ui.language.japanese",
       "ui.map.travel",
       "ui.minigame.broom_backseat.begin",
+      "ui.minigame.broom_backseat.landing.rough",
+      "ui.minigame.broom_backseat.landing.safe",
+      "ui.minigame.broom_backseat.paused",
       "ui.minigame.broom_backseat.result",
+      "ui.minigame.broom_backseat.resume",
       "ui.minigame.broom_backseat.status",
       "ui.minigame.broom_backseat.title",
       "ui.minigame.broom_backseat.tutorial",
@@ -2071,7 +2096,7 @@
     },
     {
       "source": "beat.mrs.archive.offer",
-      "target": "char.marisa_kirisame",
+      "target": "char.reimu_hakurei",
       "kind": "speaker"
     },
     {
@@ -2267,6 +2292,66 @@
     {
       "source": "beat.mrs.notes.work",
       "target": "dlg.mrs.notes.work",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.promise.choice",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.promise.choice",
+      "target": "dlg.mrs.promise.choice",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.promise.friendship",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.promise.friendship",
+      "target": "dlg.mrs.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.promise.intro",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.promise.intro",
+      "target": "dlg.mrs.promise.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.promise.postponed",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.promise.postponed",
+      "target": "dlg.mrs.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.promise.romance",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.promise.romance",
+      "target": "dlg.mrs.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.promise.undecided",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.promise.undecided",
+      "target": "dlg.mrs.promise.undecided",
       "kind": "localization"
     },
     {
@@ -2977,6 +3062,26 @@
     {
       "source": "choice.mrs.notes.answer",
       "target": "choice.mrs.notes.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.promise.intent",
+      "target": "choice.mrs.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.promise.intent",
+      "target": "choice.mrs.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.promise.intent",
+      "target": "choice.mrs.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.promise.intent",
+      "target": "choice.mrs.promise.undecided",
       "kind": "localization"
     },
     {
@@ -6056,6 +6161,11 @@
     },
     {
       "source": "evt.mrs.infinite_experiment",
+      "target": "char.reimu_hakurei",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment",
       "target": "event.mrs.infinite_experiment.title",
       "kind": "localization"
     },
@@ -6071,6 +6181,231 @@
     },
     {
       "source": "evt.mrs.infinite_experiment",
+      "target": "loc.forest_of_magic",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mrs.promise.node.n001",
+      "target": "evt.mrs.promise.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n001",
+      "target": "mus_marisa_night",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mrs.promise.node.n002",
+      "target": "evt.mrs.promise.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n002",
+      "target": "obj.mrs.promise.take_broom",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.promise.node.n002",
+      "target": "prop.marisa_broom",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.promise.node.n002",
+      "target": "prop.marisa_returned_keepsake",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.promise.node.n003",
+      "target": "beat.mrs.promise.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.promise.node.n003",
+      "target": "evt.mrs.promise.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n004",
+      "target": "beat.mrs.promise.choice",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.promise.node.n004",
+      "target": "evt.mrs.promise.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n005",
+      "target": "choice.mrs.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.mrs.promise.node.n005",
+      "target": "evt.mrs.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n005",
+      "target": "evt.mrs.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n005",
+      "target": "evt.mrs.promise.node.n_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n005",
+      "target": "evt.mrs.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_effects_friendship",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_effects_friendship",
+      "target": "evt.mrs.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_effects_postponed",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_effects_postponed",
+      "target": "evt.mrs.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_effects_romance",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_effects_romance",
+      "target": "evt.mrs.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_effects_undecided",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_effects_undecided",
+      "target": "evt.mrs.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_friendship",
+      "target": "beat.mrs.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_friendship",
+      "target": "evt.mrs.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_journal_friendship",
+      "target": "evt.mrs.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_journal_friendship",
+      "target": "journal.mrs.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_journal_postponed",
+      "target": "evt.mrs.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_journal_postponed",
+      "target": "journal.mrs.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_journal_romance",
+      "target": "evt.mrs.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_journal_romance",
+      "target": "journal.mrs.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_journal_undecided",
+      "target": "evt.mrs.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_journal_undecided",
+      "target": "journal.mrs.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_postponed",
+      "target": "beat.mrs.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_postponed",
+      "target": "evt.mrs.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_romance",
+      "target": "beat.mrs.promise.romance",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_romance",
+      "target": "evt.mrs.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_undecided",
+      "target": "beat.mrs.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.promise.node.n_undecided",
+      "target": "evt.mrs.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.promise",
+      "target": "char.marisa_kirisame",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.mrs.promise",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mrs.promise",
+      "target": "event.mrs.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.promise",
+      "target": "evt.mrs.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.mrs.promise",
+      "target": "loc.forest_of_magic.forest_edge",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.mrs.promise",
       "target": "loc.forest_of_magic",
       "kind": "location"
     },
