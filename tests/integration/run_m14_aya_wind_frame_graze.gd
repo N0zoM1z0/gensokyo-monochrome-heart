@@ -9,8 +9,9 @@ var _failures: Array[String] = []
 func _initialize() -> void:
 	if not _content.load_sources().is_success(): _finish(["Wind-Frame Graze content could not load"]); return
 	var tones: Array[StringName] = [&"direct", &"playful", &"patient", &"defiant"]
-	var results: Array[StringName] = [&"clear", &"assist_clear", &"loss", &"clear"]
-	for index: int in range(tones.size()): _run(_content.graph(EVENT_ID), tones[index], results[index], index)
+	var results: Array[StringName] = [&"clear", &"assist_clear", &"loss", &""]
+	for index: int in range(tones.size()):
+		_run(_content.graph(EVENT_ID), tones[index], results[index], index)
 	_finish(_failures)
 
 func _run(graph: EventGraphRecord, tone: StringName, mode_tag: StringName, index: int) -> void:
@@ -20,6 +21,13 @@ func _run(graph: EventGraphRecord, tone: StringName, mode_tag: StringName, index
 	_expect(result.choice != null and result.choice.options.size() == 4, "%s did not reach four framing boundaries" % tone)
 	result = interpreter.choose_tone(tone); _expect(result.node_id == StringName("n_%s_line" % tone), "%s did not reach its framing response" % tone)
 	result = interpreter.advance_line()
+	if tone == &"defiant":
+		_expect(result.status == EventInterpreterResult.Status.WAIT_INPUT and result.node_id == &"n_withdrawn", "defiant did not reach its camera-down afterbeat")
+		result = interpreter.advance_line()
+		_expect(result.status == EventInterpreterResult.Status.END and result.outcome == &"wind_frame_declined_with_camera_down", "defiant did not complete without entering the photo-chase")
+		_expect(state.characters[AYA].route_stage == 2 and state.journal.entries.has(&"journal.aya.wind_frame_graze.withdrawn"), "defiant did not preserve the consent-respecting withdrawal")
+		_expect(state.flags.has(&"flag.route.aya.wind_frame_practiced"), "defiant did not persist camera-down practice")
+		return
 	_expect(result.status == EventInterpreterResult.Status.WAIT_MODE and result.mode_context.mode_id == &"danmaku.mtn.tomorrows_headline", "%s did not reach accessible Wind-Frame" % tone)
 	result = interpreter.resume_mode(ModeResult.new(mode_tag)); var expected_node: StringName
 	match mode_tag:

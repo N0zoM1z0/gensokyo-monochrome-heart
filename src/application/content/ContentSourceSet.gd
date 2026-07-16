@@ -151,8 +151,8 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/mtn_deferred_references.json",
 ]
 var expected_supplemental_event_count: int = 32
-var expected_supplemental_dialogue_count: int = 286
-var expected_supplemental_localization_count: int = 587
+var expected_supplemental_dialogue_count: int = 289
+var expected_supplemental_localization_count: int = 596
 
 
 func content_paths() -> Array[String]:

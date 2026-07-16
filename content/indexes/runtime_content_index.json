@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "798355e7bebc15b05ab2096982ad07b4b30928eeeaf5da6442405497a4514fdc",
+  "content_hash": "fc19e16e3efe8d57071445579d963b68519c8598351993d10b5853ac316375a3",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 60,
-    "dialogue_beats": 305,
-    "localization": 1181,
+    "dialogue_beats": 308,
+    "localization": 1190,
     "music_cues": 89,
-    "event_nodes": 736
+    "event_nodes": 746
   },
   "ids": {
     "characters": [
@@ -195,6 +195,8 @@
       "beat.aya.promise.intro",
       "beat.aya.promise.postponed",
       "beat.aya.promise.romance",
+      "beat.aya.promise.romance_approved",
+      "beat.aya.promise.romance_declined",
       "beat.aya.promise.undecided",
       "beat.aya.story_published_too_soon.after",
       "beat.aya.story_published_too_soon.defiant",
@@ -220,6 +222,7 @@
       "beat.aya.wind_frame_graze.loss",
       "beat.aya.wind_frame_graze.patient",
       "beat.aya.wind_frame_graze.playful",
+      "beat.aya.wind_frame_graze.withdrawn",
       "beat.hgy.duty.after",
       "beat.hgy.duty.defiant",
       "beat.hgy.duty.direct",
@@ -495,6 +498,8 @@
       "choice.aya.promise.friendship",
       "choice.aya.promise.postponed",
       "choice.aya.promise.romance",
+      "choice.aya.promise.romance_no",
+      "choice.aya.promise.romance_yes",
       "choice.aya.promise.undecided",
       "choice.aya.story_published_too_soon.defiant",
       "choice.aya.story_published_too_soon.direct",
@@ -650,6 +655,8 @@
       "dlg.aya.promise.intro",
       "dlg.aya.promise.postponed",
       "dlg.aya.promise.romance",
+      "dlg.aya.promise.romance_approved",
+      "dlg.aya.promise.romance_declined",
       "dlg.aya.promise.undecided",
       "dlg.aya.story_published_too_soon.after",
       "dlg.aya.story_published_too_soon.defiant",
@@ -675,6 +682,7 @@
       "dlg.aya.wind_frame_graze.loss",
       "dlg.aya.wind_frame_graze.patient",
       "dlg.aya.wind_frame_graze.playful",
+      "dlg.aya.wind_frame_graze.withdrawn",
       "dlg.hgy.duty.after",
       "dlg.hgy.duty.defiant",
       "dlg.hgy.duty.direct",
@@ -989,6 +997,8 @@
       "journal.aya.promise.postponed.title",
       "journal.aya.promise.romance.body",
       "journal.aya.promise.romance.title",
+      "journal.aya.promise.romance_declined.body",
+      "journal.aya.promise.romance_declined.title",
       "journal.aya.promise.undecided.body",
       "journal.aya.promise.undecided.title",
       "journal.aya.story_published_too_soon.body",
@@ -997,6 +1007,8 @@
       "journal.aya.tomorrows_front_page.title",
       "journal.aya.wind_frame_graze.body",
       "journal.aya.wind_frame_graze.title",
+      "journal.aya.wind_frame_graze.withdrawn.body",
+      "journal.aya.wind_frame_graze.withdrawn.title",
       "journal.hgy.cutting_wrong_problem.body",
       "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
@@ -4372,6 +4384,16 @@
       "kind": "localization"
     },
     {
+      "source": "choice.aya.promise.romance_consent",
+      "target": "choice.aya.promise.romance_no",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.promise.romance_consent",
+      "target": "choice.aya.promise.romance_yes",
+      "kind": "localization"
+    },
+    {
       "source": "choice.aya.story_published_too_soon.response",
       "target": "choice.aya.story_published_too_soon.defiant",
       "kind": "localization"
@@ -5752,6 +5774,16 @@
       "kind": "event_edge"
     },
     {
+      "source": "evt.aya.promise.node.n_effects_romance_declined",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.promise.node.n_effects_romance_declined",
+      "target": "evt.aya.promise.node.n_end_romance_declined",
+      "kind": "event_edge"
+    },
+    {
       "source": "evt.aya.promise.node.n_effects_romance",
       "target": "char.aya_shameimaru",
       "kind": "effect_character"
@@ -5802,6 +5834,16 @@
       "kind": "journal_entry"
     },
     {
+      "source": "evt.aya.promise.node.n_journal_romance_declined",
+      "target": "evt.aya.promise.node.n_effects_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_journal_romance_declined",
+      "target": "journal.aya.promise.romance_declined",
+      "kind": "journal_entry"
+    },
+    {
       "source": "evt.aya.promise.node.n_journal_romance",
       "target": "evt.aya.promise.node.n_effects_romance",
       "kind": "event_edge"
@@ -5832,13 +5874,48 @@
       "kind": "event_edge"
     },
     {
+      "source": "evt.aya.promise.node.n_romance_approved",
+      "target": "beat.aya.promise.romance_approved",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.promise.node.n_romance_approved",
+      "target": "evt.aya.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_romance_consent",
+      "target": "choice.aya.promise.romance_consent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.aya.promise.node.n_romance_consent",
+      "target": "evt.aya.promise.node.n_romance_approved",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_romance_consent",
+      "target": "evt.aya.promise.node.n_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.promise.node.n_romance_declined",
+      "target": "beat.aya.promise.romance_declined",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.promise.node.n_romance_declined",
+      "target": "evt.aya.promise.node.n_journal_romance_declined",
+      "kind": "event_edge"
+    },
+    {
       "source": "evt.aya.promise.node.n_romance",
       "target": "beat.aya.promise.romance",
       "kind": "dialogue_beat"
     },
     {
       "source": "evt.aya.promise.node.n_romance",
-      "target": "evt.aya.promise.node.n_journal_romance",
+      "target": "evt.aya.promise.node.n_romance_consent",
       "kind": "event_edge"
     },
     {
@@ -6453,7 +6530,7 @@
     },
     {
       "source": "evt.aya.wind_frame_graze.node.n_defiant_line",
-      "target": "evt.aya.wind_frame_graze.node.n_danmaku",
+      "target": "evt.aya.wind_frame_graze.node.n_withdrawn",
       "kind": "event_edge"
     },
     {
@@ -6487,6 +6564,16 @@
       "kind": "event_edge"
     },
     {
+      "source": "evt.aya.wind_frame_graze.node.n_effects_withdrawn",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_effects_withdrawn",
+      "target": "evt.aya.wind_frame_graze.node.n_end_withdrawn",
+      "kind": "event_edge"
+    },
+    {
       "source": "evt.aya.wind_frame_graze.node.n_effects",
       "target": "char.aya_shameimaru",
       "kind": "effect_character"
@@ -6495,6 +6582,16 @@
       "source": "evt.aya.wind_frame_graze.node.n_effects",
       "target": "evt.aya.wind_frame_graze.node.n_end",
       "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_journal_withdrawn",
+      "target": "evt.aya.wind_frame_graze.node.n_effects_withdrawn",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_journal_withdrawn",
+      "target": "journal.aya.wind_frame_graze.withdrawn",
+      "kind": "journal_entry"
     },
     {
       "source": "evt.aya.wind_frame_graze.node.n_journal",
@@ -6554,6 +6651,16 @@
     {
       "source": "evt.aya.wind_frame_graze.node.n_playful",
       "target": "evt.aya.wind_frame_graze.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_withdrawn",
+      "target": "beat.aya.wind_frame_graze.withdrawn",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.wind_frame_graze.node.n_withdrawn",
+      "target": "evt.aya.wind_frame_graze.node.n_journal_withdrawn",
       "kind": "event_edge"
     },
     {
