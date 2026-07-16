@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "a8b32deb3758661be0ba19475e77867385c0620ffe4a2dbc53965c90a19a6328",
+  "content_hash": "db5ec6564ed50af084b6280a87e80225ceedfc0142565470aa3c5ed3bbb3645e",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 63,
-    "dialogue_beats": 336,
-    "localization": 1250,
+    "events": 64,
+    "dialogue_beats": 343,
+    "localization": 1265,
     "music_cues": 89,
-    "event_nodes": 814
+    "event_nodes": 831
   },
   "ids": {
     "characters": [
@@ -119,6 +119,7 @@
       "evt.ein.five_impossibilities",
       "evt.ein.four_dawns",
       "evt.ein.game_with_no_continue",
+      "evt.ein.mokou_uninvited_honesty",
       "evt.ein.patient_refuses",
       "evt.ein.short_lived_guest",
       "evt.ein.shortcut_seller",
@@ -247,6 +248,13 @@
       "beat.ein.game_with_no_continue.loss",
       "beat.ein.game_with_no_continue.patient",
       "beat.ein.game_with_no_continue.playful",
+      "beat.ein.mokou_uninvited_honesty.after",
+      "beat.ein.mokou_uninvited_honesty.defiant",
+      "beat.ein.mokou_uninvited_honesty.direct",
+      "beat.ein.mokou_uninvited_honesty.intro",
+      "beat.ein.mokou_uninvited_honesty.patient",
+      "beat.ein.mokou_uninvited_honesty.playful",
+      "beat.ein.mokou_uninvited_honesty.rivalry",
       "beat.ein.short_lived_guest.after",
       "beat.ein.short_lived_guest.defiant",
       "beat.ein.short_lived_guest.direct",
@@ -556,6 +564,10 @@
       "choice.ein.game_with_no_continue.direct",
       "choice.ein.game_with_no_continue.patient",
       "choice.ein.game_with_no_continue.playful",
+      "choice.ein.mokou_uninvited_honesty.defiant",
+      "choice.ein.mokou_uninvited_honesty.direct",
+      "choice.ein.mokou_uninvited_honesty.patient",
+      "choice.ein.mokou_uninvited_honesty.playful",
       "choice.ein.short_lived_guest.defiant",
       "choice.ein.short_lived_guest.direct",
       "choice.ein.short_lived_guest.patient",
@@ -751,6 +763,13 @@
       "dlg.ein.game_with_no_continue.loss",
       "dlg.ein.game_with_no_continue.patient",
       "dlg.ein.game_with_no_continue.playful",
+      "dlg.ein.mokou_uninvited_honesty.after",
+      "dlg.ein.mokou_uninvited_honesty.defiant",
+      "dlg.ein.mokou_uninvited_honesty.direct",
+      "dlg.ein.mokou_uninvited_honesty.intro",
+      "dlg.ein.mokou_uninvited_honesty.patient",
+      "dlg.ein.mokou_uninvited_honesty.playful",
+      "dlg.ein.mokou_uninvited_honesty.rivalry",
       "dlg.ein.short_lived_guest.after",
       "dlg.ein.short_lived_guest.defiant",
       "dlg.ein.short_lived_guest.direct",
@@ -1022,6 +1041,7 @@
       "event.ein.elegance_and_boredom.title",
       "event.ein.five_impossibilities.title",
       "event.ein.game_with_no_continue.title",
+      "event.ein.mokou_uninvited_honesty.title",
       "event.ein.short_lived_guest.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -1094,6 +1114,8 @@
       "journal.ein.five_impossibilities.title",
       "journal.ein.game_with_no_continue.body",
       "journal.ein.game_with_no_continue.title",
+      "journal.ein.mokou_uninvited_honesty.body",
+      "journal.ein.mokou_uninvited_honesty.title",
       "journal.ein.short_lived_guest.body",
       "journal.ein.short_lived_guest.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -1177,6 +1199,7 @@
       "obj.ein.elegance_and_boredom.host",
       "obj.ein.five_impossibilities.answer",
       "obj.ein.game_with_no_continue.choose",
+      "obj.ein.mokou_uninvited_honesty.choose",
       "obj.ein.short_lived_guest.choose",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
@@ -1854,6 +1877,76 @@
     ]
   },
   "dependencies": [
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.after",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.after",
+      "target": "dlg.ein.mokou_uninvited_honesty.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.defiant",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.defiant",
+      "target": "dlg.ein.mokou_uninvited_honesty.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.direct",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.direct",
+      "target": "dlg.ein.mokou_uninvited_honesty.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.intro",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.intro",
+      "target": "dlg.ein.mokou_uninvited_honesty.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.patient",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.patient",
+      "target": "dlg.ein.mokou_uninvited_honesty.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.playful",
+      "target": "dlg.ein.mokou_uninvited_honesty.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.rivalry",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.mokou_uninvited_honesty.rivalry",
+      "target": "dlg.ein.mokou_uninvited_honesty.rivalry",
+      "kind": "localization"
+    },
     {
       "source": "beat.ein.short_lived_guest.after",
       "target": "char.kaguya_houraisan",
@@ -4672,6 +4765,26 @@
     {
       "source": "choice.ein.game_with_no_continue.response",
       "target": "choice.ein.game_with_no_continue.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.mokou_uninvited_honesty.response",
+      "target": "choice.ein.mokou_uninvited_honesty.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.mokou_uninvited_honesty.response",
+      "target": "choice.ein.mokou_uninvited_honesty.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.mokou_uninvited_honesty.response",
+      "target": "choice.ein.mokou_uninvited_honesty.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.mokou_uninvited_honesty.response",
+      "target": "choice.ein.mokou_uninvited_honesty.playful",
       "kind": "localization"
     },
     {
@@ -7596,6 +7709,251 @@
     },
     {
       "source": "evt.ein.game_with_no_continue",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n001",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n001",
+      "target": "mus_kaguya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n002",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n002",
+      "target": "obj.ein.mokou_uninvited_honesty.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n002",
+      "target": "prop.ein.singed_bamboo",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n002",
+      "target": "prop.ein.unopened_tea_flask",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n003",
+      "target": "beat.ein.mokou_uninvited_honesty.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n003",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n004",
+      "target": "beat.ein.mokou_uninvited_honesty.rivalry",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n004",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n005",
+      "target": "choice.ein.mokou_uninvited_honesty.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n005",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n005",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n005",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n005",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_after",
+      "target": "beat.ein.mokou_uninvited_honesty.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_after",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_defiant_line",
+      "target": "beat.ein.mokou_uninvited_honesty.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_defiant_line",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_defiant",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_defiant",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_defiant",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_direct_line",
+      "target": "beat.ein.mokou_uninvited_honesty.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_direct_line",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_direct",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_direct",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_direct",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_effects",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_effects",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_journal",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_journal",
+      "target": "journal.ein.mokou_uninvited_honesty",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_patient_line",
+      "target": "beat.ein.mokou_uninvited_honesty.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_patient_line",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_patient",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_patient",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_patient",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_playful_line",
+      "target": "beat.ein.mokou_uninvited_honesty.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_playful_line",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_playful",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty.node.n_playful",
+      "target": "evt.ein.mokou_uninvited_honesty.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty",
+      "target": "char.fujiwara_no_mokou",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty",
+      "target": "event.ein.mokou_uninvited_honesty.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty",
+      "target": "evt.ein.mokou_uninvited_honesty",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty",
+      "target": "loc.eientei.smoke_clearing",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.ein.mokou_uninvited_honesty",
       "target": "loc.eientei",
       "kind": "location"
     },
