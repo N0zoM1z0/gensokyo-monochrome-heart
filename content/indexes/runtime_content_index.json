@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "fc19e16e3efe8d57071445579d963b68519c8598351993d10b5853ac316375a3",
+  "content_hash": "96c13b5c964fc8961c66bb2d4bc64739afc4440f454e51e44a10bd6805985665",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 60,
-    "dialogue_beats": 308,
-    "localization": 1190,
+    "dialogue_beats": 315,
+    "localization": 1205,
     "music_cues": 89,
-    "event_nodes": 746
+    "event_nodes": 763
   },
   "ids": {
     "characters": [
@@ -223,6 +223,13 @@
       "beat.aya.wind_frame_graze.patient",
       "beat.aya.wind_frame_graze.playful",
       "beat.aya.wind_frame_graze.withdrawn",
+      "beat.ein.five_impossibilities.after",
+      "beat.ein.five_impossibilities.defiant",
+      "beat.ein.five_impossibilities.direct",
+      "beat.ein.five_impossibilities.intro",
+      "beat.ein.five_impossibilities.patient",
+      "beat.ein.five_impossibilities.playful",
+      "beat.ein.five_impossibilities.terms",
       "beat.hgy.duty.after",
       "beat.hgy.duty.defiant",
       "beat.hgy.duty.direct",
@@ -513,6 +520,10 @@
       "choice.aya.wind_frame_graze.direct",
       "choice.aya.wind_frame_graze.patient",
       "choice.aya.wind_frame_graze.playful",
+      "choice.ein.five_impossibilities.defiant",
+      "choice.ein.five_impossibilities.direct",
+      "choice.ein.five_impossibilities.patient",
+      "choice.ein.five_impossibilities.playful",
       "choice.hgy.duty.defiant",
       "choice.hgy.duty.direct",
       "choice.hgy.duty.patient",
@@ -683,6 +694,13 @@
       "dlg.aya.wind_frame_graze.patient",
       "dlg.aya.wind_frame_graze.playful",
       "dlg.aya.wind_frame_graze.withdrawn",
+      "dlg.ein.five_impossibilities.after",
+      "dlg.ein.five_impossibilities.defiant",
+      "dlg.ein.five_impossibilities.direct",
+      "dlg.ein.five_impossibilities.intro",
+      "dlg.ein.five_impossibilities.patient",
+      "dlg.ein.five_impossibilities.playful",
+      "dlg.ein.five_impossibilities.terms",
       "dlg.hgy.duty.after",
       "dlg.hgy.duty.defiant",
       "dlg.hgy.duty.direct",
@@ -944,6 +962,7 @@
       "event.aya.story_published_too_soon.title",
       "event.aya.tomorrows_front_page.title",
       "event.aya.wind_frame_graze.title",
+      "event.ein.five_impossibilities.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
       "event.hgy.farewell_will_not_fall.title",
@@ -1009,6 +1028,8 @@
       "journal.aya.wind_frame_graze.title",
       "journal.aya.wind_frame_graze.withdrawn.body",
       "journal.aya.wind_frame_graze.withdrawn.title",
+      "journal.ein.five_impossibilities.body",
+      "journal.ein.five_impossibilities.title",
       "journal.hgy.cutting_wrong_problem.body",
       "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
@@ -1087,6 +1108,7 @@
       "obj.aya.tomorrows_front_page.withhold",
       "obj.aya.wind_frame_graze.exit",
       "obj.ein.cross_four_dawns",
+      "obj.ein.five_impossibilities.answer",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
       "obj.hgy.farewell.release",
@@ -4454,6 +4476,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.ein.five_impossibilities.response",
+      "target": "choice.ein.five_impossibilities.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.five_impossibilities.response",
+      "target": "choice.ein.five_impossibilities.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.five_impossibilities.response",
+      "target": "choice.ein.five_impossibilities.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.five_impossibilities.response",
+      "target": "choice.ein.five_impossibilities.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hgy.duty.response",
       "target": "choice.hgy.duty.defiant",
       "kind": "localization"
@@ -6709,9 +6751,209 @@
       "kind": "location"
     },
     {
+      "source": "evt.ein.five_impossibilities.node.n001",
+      "target": "evt.ein.five_impossibilities.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n001",
+      "target": "mus_kaguya_errands",
+      "kind": "music"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n002",
+      "target": "evt.ein.five_impossibilities.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n002",
+      "target": "obj.ein.five_impossibilities.answer",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n002",
+      "target": "prop.ein.impossible_tablet",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n002",
+      "target": "prop.ein.open_bamboo_gate",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n003",
+      "target": "beat.ein.five_impossibilities.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n003",
+      "target": "evt.ein.five_impossibilities.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n004",
+      "target": "beat.ein.five_impossibilities.terms",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n004",
+      "target": "evt.ein.five_impossibilities.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n005",
+      "target": "choice.ein.five_impossibilities.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n005",
+      "target": "evt.ein.five_impossibilities.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n005",
+      "target": "evt.ein.five_impossibilities.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n005",
+      "target": "evt.ein.five_impossibilities.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n005",
+      "target": "evt.ein.five_impossibilities.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_after",
+      "target": "beat.ein.five_impossibilities.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_after",
+      "target": "evt.ein.five_impossibilities.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_defiant_line",
+      "target": "beat.ein.five_impossibilities.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_defiant_line",
+      "target": "evt.ein.five_impossibilities.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_defiant",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_defiant",
+      "target": "evt.ein.five_impossibilities.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_direct_line",
+      "target": "beat.ein.five_impossibilities.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_direct_line",
+      "target": "evt.ein.five_impossibilities.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_direct",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_direct",
+      "target": "evt.ein.five_impossibilities.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_effects",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_effects",
+      "target": "evt.ein.five_impossibilities.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_journal",
+      "target": "evt.ein.five_impossibilities.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_journal",
+      "target": "journal.ein.five_impossibilities",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_patient_line",
+      "target": "beat.ein.five_impossibilities.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_patient_line",
+      "target": "evt.ein.five_impossibilities.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_patient",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_patient",
+      "target": "evt.ein.five_impossibilities.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_playful_line",
+      "target": "beat.ein.five_impossibilities.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_playful_line",
+      "target": "evt.ein.five_impossibilities.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.five_impossibilities.node.n_playful",
+      "target": "evt.ein.five_impossibilities.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.five_impossibilities",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
       "source": "evt.ein.five_impossibilities",
       "target": "char.kaguya_houraisan",
       "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.five_impossibilities",
+      "target": "event.ein.five_impossibilities.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.five_impossibilities",
+      "target": "loc.eientei.bamboo_gate",
+      "kind": "spot"
     },
     {
       "source": "evt.ein.five_impossibilities",

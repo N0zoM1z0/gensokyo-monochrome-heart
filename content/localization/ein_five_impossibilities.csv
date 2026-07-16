@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.ein.five_impossibilities.answer,objective,,Choose how to answer Kaguya's impossible request.,輝夜の難題にどう答えるか選ぶ。,208,Original
+event.ein.five_impossibilities.title,event_title,,Five Impossible Errands,五つの難題,208,Original
+choice.ein.five_impossibilities.direct,choice,,Ask which request would actually help Eientei today.,今日の永遠亭に本当に役立つ難題はどれか尋ねる。,248,Original
+choice.ein.five_impossibilities.playful,choice,,Offer a clever answer, but ask whether she wants a game or a favor.,気の利いた答えを出しつつ、遊びが欲しいのか頼み事があるのか尋ねる。,248,Original
+choice.ein.five_impossibilities.patient,choice,,Ask what each impossible thing means to her before choosing one.,選ぶ前に、それぞれの難題が輝夜に何を意味するのか尋ねる。,248,Original
+choice.ein.five_impossibilities.defiant,choice,,Refuse to prove your worth through a request designed to be impossible.,不可能に作られた難題で自分の価値を証明することは断る。,248,Original
+dlg.ein.five_impossibilities.intro,dialogue,char.kaguya_houraisan,"Five tablets, five errands, and not one sensible answer among them. I thought the bamboo gate deserved a little ceremony before dusk.",「札は五枚、難題も五つ。そしてまともな答えは一つもないわ。夕暮れ前の竹の門には、少しくらい儀式があってもいいでしょう。」,248,Original
+dlg.ein.five_impossibilities.terms,dialogue,char.kaguya_houraisan,"You may solve one literally, answer it sideways, or decline it. A request that cannot survive refusal is only a trap wearing court clothes.",「文字どおりに解いても、横から答えても、断ってもいいの。断りに耐えられない願いは、宮廷の服を着た罠でしかないわ。」,248,Original
+dlg.ein.five_impossibilities.direct,dialogue,char.kaguya_houraisan,"Useful? How unfashionably practical. Still, Eientei does need the gate latch mended before rain. I prefer an answer that notices the room it is in.",「役に立つもの、ですって。なんて流行遅れに実際的なの。でも永遠亭には、雨の前に門の掛け金を直す必要があるわ。私は、その場を見ている答えの方が好き。」,248,Original
+dlg.ein.five_impossibilities.playful,dialogue,char.kaguya_houraisan,"A game or a favor? At last, someone asks before performing. Today it is a game, and it may end whenever it stops being amusing.",「遊びか頼み事か、ですって？　演じる前に尋ねる人がようやく現れたわ。今日は遊びよ。面白くなくなった時には、いつでも終わっていいの。」,248,Original
+dlg.ein.five_impossibilities.patient,dialogue,char.kaguya_houraisan,"The jeweled branch means a life chosen for display. The fire-rat robe means a life that never wears through. Neither is a prize I want to hand you.",「玉の枝は、見せるために選ばれた人生。火鼠の衣は、決して擦り切れない人生。どちらも、あなたに渡したい賞品ではないの。」,248,Original
+dlg.ein.five_impossibilities.defiant,dialogue,char.kaguya_houraisan,"Excellent. Refusal with a reason is rarer than any treasure. You may stay at the gate without earning the right to be here.",「結構。理由のある拒絶は、どんな宝より珍しいわ。ここにいる権利を稼がなくても、門のそばにいていいの。」,248,Original
+dlg.ein.five_impossibilities.after,dialogue,char.kaguya_houraisan,"Then the first errand is complete: we found its exit. Come inside before the light changes; no evening owes us a second version of itself.",「では最初の難題は終わり。出口を見つけたもの。明かりが変わる前に中へ入りましょう。どの夕べも、自分の二度目を私たちに負ってはいないから。」,248,Original
+journal.ein.five_impossibilities.title,journal_title,,An Errand With an Exit,出口のある難題,248,Original
+journal.ein.five_impossibilities.body,journal_body,,Kaguya offered an impossible request without making it a test of worth. A literal answer, a clever answer, a question, or a refusal could all leave the gate open.,輝夜は不可能な難題を出したが、それを価値の試験にはしなかった。文字どおりの答えも、気の利いた答えも、問いも、拒絶も、門を開いたままにできた。,248,Original

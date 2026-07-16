@@ -64,6 +64,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/aya_tomorrows_front_page.json",
 	"res://content/events/aya_promise.json",
 	"res://content/events/mtn_tomorrows_headline.json",
+	"res://content/events/ein_five_impossibilities.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -101,6 +102,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/aya_tomorrows_front_page.json",
 	"res://content/dialogue/aya_promise.json",
 	"res://content/dialogue/mtn_tomorrows_headline.json",
+	"res://content/dialogue/ein_five_impossibilities.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -139,6 +141,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/aya_promise.csv",
 	"res://content/localization/mtn_tomorrows_headline.csv",
 	"res://content/localization/ein_four_dawns.csv",
+	"res://content/localization/ein_five_impossibilities.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -149,10 +152,11 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/hgy_route_deferred_references.json",
 	"res://content/indexes/aya_route_deferred_references.json",
 	"res://content/indexes/mtn_deferred_references.json",
+	"res://content/indexes/ein_route_deferred_references.json",
 ]
 var expected_supplemental_event_count: int = 32
-var expected_supplemental_dialogue_count: int = 289
-var expected_supplemental_localization_count: int = 596
+var expected_supplemental_dialogue_count: int = 296
+var expected_supplemental_localization_count: int = 611
 
 
 func content_paths() -> Array[String]:
