@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "9b4dc5e03d4eda20d7aeee36f3161339dc0dab13b4dfec1dc6075388e2512bfd",
+  "content_hash": "972817f8409febef7af50d7e6bfb132082b54dc24c7949b0e6782941ac96760f",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 41,
-    "dialogue_beats": 168,
-    "localization": 863,
+    "events": 42,
+    "dialogue_beats": 175,
+    "localization": 878,
     "music_cues": 89,
-    "event_nodes": 382
+    "event_nodes": 399
   },
   "ids": {
     "characters": [
@@ -146,6 +146,7 @@
       "evt.sdm.breakable_point",
       "evt.sdm.corridor_never_walked",
       "evt.sdm.corridor_no_dust",
+      "evt.sdm.kitchen_after_midnight",
       "evt.sdm.late_by_three_minutes",
       "evt.sdm.small_chair"
     ],
@@ -302,6 +303,13 @@
       "beat.sdm.corridor.patient",
       "beat.sdm.corridor.playful",
       "beat.sdm.corridor.reset",
+      "beat.sdm.kitchen.after",
+      "beat.sdm.kitchen.defiant",
+      "beat.sdm.kitchen.direct",
+      "beat.sdm.kitchen.intro",
+      "beat.sdm.kitchen.patient",
+      "beat.sdm.kitchen.playful",
+      "beat.sdm.kitchen.work",
       "beat.sdm.late.patchouli.teaser",
       "beat.sdm.late.remilia.private",
       "beat.sdm.late.remilia.public",
@@ -388,6 +396,10 @@
       "choice.sdm.corridor.direct",
       "choice.sdm.corridor.patient",
       "choice.sdm.corridor.playful",
+      "choice.sdm.kitchen.defiant",
+      "choice.sdm.kitchen.direct",
+      "choice.sdm.kitchen.patient",
+      "choice.sdm.kitchen.playful",
       "choice.sdm.late.defiant",
       "choice.sdm.late.direct",
       "choice.sdm.late.patient",
@@ -544,6 +556,13 @@
       "dlg.sdm.corridor.patient",
       "dlg.sdm.corridor.playful",
       "dlg.sdm.corridor.reset",
+      "dlg.sdm.kitchen.after",
+      "dlg.sdm.kitchen.defiant",
+      "dlg.sdm.kitchen.direct",
+      "dlg.sdm.kitchen.intro",
+      "dlg.sdm.kitchen.patient",
+      "dlg.sdm.kitchen.playful",
+      "dlg.sdm.kitchen.work",
       "dlg.sdm.late.patchouli.teaser",
       "dlg.sdm.late.remilia.private",
       "dlg.sdm.late.remilia.public",
@@ -576,6 +595,7 @@
       "event.mrs.talent_bad_conversation.title",
       "event.mtn.tomorrows_headline.title",
       "event.sdm.corridor_no_dust.title",
+      "event.sdm.kitchen_after_midnight.title",
       "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
       "input.glyph.keyboard.confirm",
@@ -621,6 +641,8 @@
       "journal.mtn.tomorrows_headline.title",
       "journal.sdm.corridor_no_dust.body",
       "journal.sdm.corridor_no_dust.title",
+      "journal.sdm.kitchen_after_midnight.body",
+      "journal.sdm.kitchen_after_midnight.title",
       "journal.sdm.missing_minute.body",
       "journal.sdm.missing_minute.title",
       "obj.ein.cross_four_dawns",
@@ -640,6 +662,7 @@
       "obj.mrs.talent.stop_comparison",
       "obj.mtn.trace_tomorrows_photo",
       "obj.sdm.corridor_no_dust.walk_once",
+      "obj.sdm.kitchen_after_midnight.wait",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
       "rumor.mtn.tomorrows_headline.withheld_correction",
@@ -2798,6 +2821,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sdm.kitchen.after",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.kitchen.after",
+      "target": "dlg.sdm.kitchen.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.kitchen.defiant",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.kitchen.defiant",
+      "target": "dlg.sdm.kitchen.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.kitchen.direct",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.kitchen.direct",
+      "target": "dlg.sdm.kitchen.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.kitchen.intro",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.kitchen.intro",
+      "target": "dlg.sdm.kitchen.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.kitchen.patient",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.kitchen.patient",
+      "target": "dlg.sdm.kitchen.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.kitchen.playful",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.kitchen.playful",
+      "target": "dlg.sdm.kitchen.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.kitchen.work",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.kitchen.work",
+      "target": "dlg.sdm.kitchen.work",
+      "kind": "localization"
+    },
+    {
       "source": "beat.sdm.late.patchouli.teaser",
       "target": "char.patchouli_knowledge",
       "kind": "speaker"
@@ -3275,6 +3368,26 @@
     {
       "source": "choice.sdm.corridor.answer",
       "target": "choice.sdm.corridor.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.kitchen.answer",
+      "target": "choice.sdm.kitchen.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.kitchen.answer",
+      "target": "choice.sdm.kitchen.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.kitchen.answer",
+      "target": "choice.sdm.kitchen.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.kitchen.answer",
+      "target": "choice.sdm.kitchen.playful",
       "kind": "localization"
     },
     {
@@ -7854,6 +7967,226 @@
     },
     {
       "source": "evt.sdm.corridor_no_dust",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n001",
+      "target": "evt.sdm.kitchen_after_midnight.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n001",
+      "target": "mus_sakuya_kitchen",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n002",
+      "target": "evt.sdm.kitchen_after_midnight.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n002",
+      "target": "obj.sdm.kitchen_after_midnight.wait",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n002",
+      "target": "prop.sdm.closed_service_door",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n002",
+      "target": "prop.sdm.kitchen_clock",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n002",
+      "target": "prop.sdm.unserved_tea",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n003",
+      "target": "beat.sdm.kitchen.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n003",
+      "target": "evt.sdm.kitchen_after_midnight.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n004",
+      "target": "beat.sdm.kitchen.work",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n004",
+      "target": "evt.sdm.kitchen_after_midnight.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n005",
+      "target": "choice.sdm.kitchen.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n005",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n005",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n005",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n005",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_after",
+      "target": "beat.sdm.kitchen.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_after",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_defiant_line",
+      "target": "beat.sdm.kitchen.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_defiant_line",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_defiant",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_defiant",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_direct_line",
+      "target": "beat.sdm.kitchen.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_direct_line",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_direct",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_direct",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_effects",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_effects",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_journal",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_journal",
+      "target": "journal.sdm.kitchen_after_midnight",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_patient_line",
+      "target": "beat.sdm.kitchen.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_patient_line",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_patient",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_patient",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_playful_line",
+      "target": "beat.sdm.kitchen.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_playful_line",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_playful",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight.node.n_playful",
+      "target": "evt.sdm.kitchen_after_midnight.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight",
+      "target": "char.sakuya_izayoi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight",
+      "target": "char.sakuya_izayoi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight",
+      "target": "event.sdm.kitchen_after_midnight.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight",
+      "target": "evt.sdm.kitchen_after_midnight",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight",
+      "target": "loc.scarlet_devil_mansion.kitchen_after_hours",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.sdm.kitchen_after_midnight",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },

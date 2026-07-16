@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.sdm.kitchen_after_midnight.wait,objective,,Wait for Sakuya to name a task she wants shared.,咲夜が共有したい作業を口にするまで待つ。,208,Original
+event.sdm.kitchen_after_midnight.title,event_title,,Kitchen After Midnight,真夜中の厨房,208,Original
+choice.sdm.kitchen.direct,choice,,Ask whether one cup may be prepared together.,一杯だけ一緒に用意してよいか尋ねる。,248,Original
+choice.sdm.kitchen.playful,choice,,Ask whether the clock has been charged for overtime.,時計に残業代を請求したのかと聞く。,248,Original
+choice.sdm.kitchen.patient,choice,,Wait until Sakuya offers a towel or a cup.,咲夜が布巾かカップを差し出すまで待つ。,248,Original
+choice.sdm.kitchen.defiant,choice,,Say her speed is not permission to assign her more work.,彼女が速いからといって仕事を増やしてよい理由にはならないと言う。,248,Original
+dlg.sdm.kitchen.intro,dialogue,char.sakuya_izayoi,"The guests are asleep. These cups are for tomorrow, not an audience.",「お客様はお休みです。このカップは観客のためではなく、明日のためにあります。」,248,Original
+dlg.sdm.kitchen.work,dialogue,char.sakuya_izayoi,"Please do not rescue the kitchen from me. I chose this task after the service ended.",「厨房を私から救おうとはしないでください。給仕が終わってから、この仕事を選びました。」,248,Original
+dlg.sdm.kitchen.direct,dialogue,char.sakuya_izayoi,"One cup, then. You may warm it; I will decide when it is poured.",「では一杯だけ。温めるのはお願いできます。注ぐ時は私が決めます。」,248,Original
+dlg.sdm.kitchen.playful,dialogue,char.sakuya_izayoi,"It submitted a complaint at midnight. I filed it under impossible requests.",「時計は零時に苦情を出しました。不可能な依頼として処理しました。」,248,Original
+dlg.sdm.kitchen.patient,dialogue,char.sakuya_izayoi,"Thank you for waiting. Here; the towel is yours to use, not an instruction.",「待ってくださって、ありがとうございます。どうぞ。布巾は使っていただくためのものです。命令ではありません。」,248,Original
+dlg.sdm.kitchen.defiant,dialogue,char.sakuya_izayoi,"Precisely. Competence is not an open appointment book.",「その通りです。手際の良さは、予定を勝手に埋めてよいという意味ではありません。」,248,Original
+dlg.sdm.kitchen.after,dialogue,char.sakuya_izayoi,"Leave the second cup where it is. If I want company, I will pour it.",「二つ目のカップは、そこに置いてください。誰かと飲みたければ、私が注ぎます。」,248,Original
+journal.sdm.kitchen_after_midnight.title,journal_title,,Work Chosen After Service,給仕の後に選んだ仕事,248,Original
+journal.sdm.kitchen_after_midnight.body,journal_body,,Sakuya's midnight work was neither a performance nor an invitation to take over. Help became possible only after she named what could be shared.,咲夜の真夜中の仕事は、見せ場でも引き継ぎの招待でもなかった。何を共有できるか彼女が口にしてから、手伝いは可能になった。,248,Original

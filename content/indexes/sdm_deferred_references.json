@@ -3,15 +3,20 @@
   "references": [
     {"id":"loc.scarlet_devil_mansion.foyer","kind":"spot","target_milestone":"M12","reason":"SDM foyer composition owns the event entry volume."},
     {"id":"loc.scarlet_devil_mansion.north_corridor","kind":"spot","target_milestone":"M14","reason":"Sakuya's corridor is deliberately left walkable after repeated time corrections."},
+    {"id":"loc.scarlet_devil_mansion.kitchen_after_hours","kind":"spot","target_milestone":"M14","reason":"Sakuya's deliberately chosen midnight work."},
     {"id":"prop.sdm.offset_clock","kind":"interactable","target_milestone":"M12","reason":"Clock Corridor exploration evidence."},
     {"id":"prop.sdm.reset_tray","kind":"interactable","target_milestone":"M12","reason":"Kitchen/corridor missing-minute evidence."},
     {"id":"prop.sdm.unwalked_corridor","kind":"interactable","target_milestone":"M14","reason":"Repeatedly reset corridor evidence."},
     {"id":"prop.sdm.dust_line","kind":"interactable","target_milestone":"M14","reason":"Visible labor evidence."},
     {"id":"prop.sdm.meiling_bell","kind":"interactable","target_milestone":"M14","reason":"Meiling's witnessed route through the corridor."},
+    {"id":"prop.sdm.unserved_tea","kind":"interactable","target_milestone":"M14","reason":"Quiet kitchen labor outside service."},
+    {"id":"prop.sdm.kitchen_clock","kind":"interactable","target_milestone":"M14","reason":"Overtime joke and midnight timing context."},
+    {"id":"prop.sdm.closed_service_door","kind":"interactable","target_milestone":"M14","reason":"Private work boundary."},
     {"id":"mini.sdm.time_grid_service","kind":"minigame","target_milestone":"M12","reason":"Deterministic time-grid service runtime."},
     {"id":"danmaku.sdm.missing_minute_knives","kind":"minigame","target_milestone":"M12","reason":"Knife-lattice escalation runtime."},
     {"id":"item.keepsake.unfinished_checklist","kind":"item","target_milestone":"M12","reason":"Sakuya route keepsake granted by the event graph."},
     {"id":"journal.sdm.missing_minute","kind":"journal_entry","target_milestone":"M12","reason":"Missing-minute observation and replay entry."},
     {"id":"journal.sdm.corridor_no_dust","kind":"journal_entry","target_milestone":"M14","reason":"Sakuya's choice to let labor remain witnessed."}
+    ,{"id":"journal.sdm.kitchen_after_midnight","kind":"journal_entry","target_milestone":"M14","reason":"Permission-based help after service."}
   ]
 }
