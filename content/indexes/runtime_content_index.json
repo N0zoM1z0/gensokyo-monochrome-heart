@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "ae8020dad4fc7e1fedd4466f37d209dee7e9c0440c9bbbfff42df3f10799a7fe",
+  "content_hash": "ea37c1f942760d24cf8920717c61c61bc847bc1ae62ae86732b8a0a213f45e43",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 45,
-    "dialogue_beats": 196,
-    "localization": 923,
+    "events": 46,
+    "dialogue_beats": 202,
+    "localization": 937,
     "music_cues": 89,
-    "event_nodes": 450
+    "event_nodes": 471
   },
   "ids": {
     "characters": [
@@ -151,6 +151,7 @@
       "evt.sdm.kitchen_after_midnight",
       "evt.sdm.late_by_three_minutes",
       "evt.sdm.missing_minute",
+      "evt.sdm.promise",
       "evt.sdm.small_chair"
     ],
     "dialogue_beats": [
@@ -349,7 +350,13 @@
       "beat.sdm.minute.offer",
       "beat.sdm.minute.patient",
       "beat.sdm.minute.playful",
-      "beat.sdm.minute.refusal"
+      "beat.sdm.minute.refusal",
+      "beat.sdm.promise.choice",
+      "beat.sdm.promise.friendship",
+      "beat.sdm.promise.intro",
+      "beat.sdm.promise.postponed",
+      "beat.sdm.promise.romance",
+      "beat.sdm.promise.undecided"
     ],
     "localization": [
       "accessibility.preset.custom",
@@ -440,6 +447,10 @@
       "choice.sdm.minute.direct",
       "choice.sdm.minute.patient",
       "choice.sdm.minute.playful",
+      "choice.sdm.promise.friendship",
+      "choice.sdm.promise.postponed",
+      "choice.sdm.promise.romance",
+      "choice.sdm.promise.undecided",
       "dlg.hkr.empty_cushion.marisa.terms_intro",
       "dlg.hkr.empty_cushion.reimu.001",
       "dlg.hkr.empty_cushion.reimu.afterbeat_01",
@@ -636,6 +647,12 @@
       "dlg.sdm.minute.patient",
       "dlg.sdm.minute.playful",
       "dlg.sdm.minute.refusal",
+      "dlg.sdm.promise.choice",
+      "dlg.sdm.promise.friendship",
+      "dlg.sdm.promise.intro",
+      "dlg.sdm.promise.postponed",
+      "dlg.sdm.promise.romance",
+      "dlg.sdm.promise.undecided",
       "event.hkr.day_nothing_happens.title",
       "event.hkr.empty_cushion.title",
       "event.hkr.offerings_without_owners.title",
@@ -657,6 +674,7 @@
       "event.sdm.kitchen_after_midnight.title",
       "event.sdm.late_by_three_minutes.title",
       "event.sdm.missing_minute.title",
+      "event.sdm.promise.title",
       "input.glyph.keyboard.cancel",
       "input.glyph.keyboard.confirm",
       "input.glyph.keyboard.menu",
@@ -711,6 +729,8 @@
       "journal.sdm.missing_minute.title",
       "journal.sdm.missing_minute_returned.body",
       "journal.sdm.missing_minute_returned.title",
+      "journal.sdm.promise.body",
+      "journal.sdm.promise.title",
       "obj.ein.cross_four_dawns",
       "obj.hkr.day_nothing_happens.enter",
       "obj.hkr.find_second_cup",
@@ -732,6 +752,7 @@
       "obj.sdm.favor_cannot_optimize.choose",
       "obj.sdm.kitchen_after_midnight.wait",
       "obj.sdm.missing_minute.leave",
+      "obj.sdm.promise.wait",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
       "rumor.mtn.tomorrows_headline.withheld_correction",
@@ -3330,6 +3351,66 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sdm.promise.choice",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.promise.choice",
+      "target": "dlg.sdm.promise.choice",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.promise.friendship",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.promise.friendship",
+      "target": "dlg.sdm.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.promise.intro",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.promise.intro",
+      "target": "dlg.sdm.promise.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.promise.postponed",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.promise.postponed",
+      "target": "dlg.sdm.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.promise.romance",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.promise.romance",
+      "target": "dlg.sdm.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.promise.undecided",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.promise.undecided",
+      "target": "dlg.sdm.promise.undecided",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hkr.empty_cushion.01",
       "target": "choice.hkr.empty_cushion.defiant",
       "kind": "localization"
@@ -3747,6 +3828,26 @@
     {
       "source": "choice.sdm.minute.answer",
       "target": "choice.sdm.minute.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.promise.intent",
+      "target": "choice.sdm.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.promise.intent",
+      "target": "choice.sdm.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.promise.intent",
+      "target": "choice.sdm.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.promise.intent",
+      "target": "choice.sdm.promise.undecided",
       "kind": "localization"
     },
     {
@@ -9621,6 +9722,231 @@
     },
     {
       "source": "evt.sdm.missing_minute",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sdm.promise.node.n001",
+      "target": "evt.sdm.promise.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n001",
+      "target": "mus_sakuya_kitchen",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.promise.node.n002",
+      "target": "evt.sdm.promise.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n002",
+      "target": "obj.sdm.promise.wait",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.promise.node.n002",
+      "target": "prop.sdm.unmarked_evening",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.promise.node.n002",
+      "target": "prop.sdm.watch_ribbon",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.promise.node.n003",
+      "target": "beat.sdm.promise.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.promise.node.n003",
+      "target": "evt.sdm.promise.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n004",
+      "target": "beat.sdm.promise.choice",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.promise.node.n004",
+      "target": "evt.sdm.promise.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n005",
+      "target": "choice.sdm.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sdm.promise.node.n005",
+      "target": "evt.sdm.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n005",
+      "target": "evt.sdm.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n005",
+      "target": "evt.sdm.promise.node.n_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n005",
+      "target": "evt.sdm.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_effects_friendship",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_effects_friendship",
+      "target": "evt.sdm.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_effects_postponed",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_effects_postponed",
+      "target": "evt.sdm.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_effects_romance",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_effects_romance",
+      "target": "evt.sdm.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_effects_undecided",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_effects_undecided",
+      "target": "evt.sdm.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_friendship",
+      "target": "beat.sdm.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_friendship",
+      "target": "evt.sdm.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_journal_friendship",
+      "target": "evt.sdm.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_journal_friendship",
+      "target": "journal.sdm.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_journal_postponed",
+      "target": "evt.sdm.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_journal_postponed",
+      "target": "journal.sdm.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_journal_romance",
+      "target": "evt.sdm.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_journal_romance",
+      "target": "journal.sdm.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_journal_undecided",
+      "target": "evt.sdm.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_journal_undecided",
+      "target": "journal.sdm.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_postponed",
+      "target": "beat.sdm.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_postponed",
+      "target": "evt.sdm.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_romance",
+      "target": "beat.sdm.promise.romance",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_romance",
+      "target": "evt.sdm.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_undecided",
+      "target": "beat.sdm.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.promise.node.n_undecided",
+      "target": "evt.sdm.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.promise",
+      "target": "char.sakuya_izayoi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sdm.promise",
+      "target": "char.sakuya_izayoi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.promise",
+      "target": "event.sdm.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.promise",
+      "target": "evt.sdm.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sdm.promise",
+      "target": "loc.scarlet_devil_mansion.kitchen_after_hours",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.sdm.promise",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },

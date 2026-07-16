@@ -51,6 +51,7 @@ func configure(
 	_uses_route_intent_labels = choice != null and choice.choice_id in [
 		&"choice.hkr.promise.intent",
 		&"choice.mrs.promise.intent",
+		&"choice.sdm.promise.intent",
 	]
 	locale = next_locale
 	profile_id = next_profile_id
