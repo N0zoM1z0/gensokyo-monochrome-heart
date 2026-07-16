@@ -40,6 +40,7 @@ capture_pair m14_reimu_offerings_choice res://tests/ui/fixtures/ReimuOfferingsCh
 capture_pair m14_reimu_quiet_line res://tests/ui/fixtures/ReimuQuietLineFixture.tscn
 capture_pair m14_reimu_quiet_choice res://tests/ui/fixtures/ReimuQuietChoiceFixture.tscn
 capture_pair m14_reimu_promise_choice res://tests/ui/fixtures/ReimuPromiseChoiceFixture.tscn
+capture_pair m14_marisa_broom_tutorial res://tests/ui/fixtures/BroomBackseatTutorialFixture.tscn
 capture_pair m14_reimu_quiet_tutorial res://tests/ui/fixtures/QuietChoreTutorialFixture.tscn
 capture_pair m14_reimu_quiet_sit res://tests/ui/fixtures/QuietChoreSitFixture.tscn
 capture_pair m14_reimu_quiet_story_pulse res://tests/ui/fixtures/QuietChoreStoryPulseFixture.tscn

@@ -528,7 +528,7 @@
     {"key": "input.glyph.pointer.move", "en": "[POINTER]", "ja": "[ポインター]"},
     {"key": "ui.minigame.quiet_chore.title", "en": "THE DAY NOTHING HAPPENS", "ja": "何も起きない日"},
 	{"key":"ui.minigame.broom_backseat.title","en":"BROOM BACKSEAT","ja":"箒の後ろ席"},
-	{"key":"ui.minigame.broom_backseat.tutorial","en":"MOVE THE CARGO TO THE MARK. ROUGH LANDINGS CONTINUE.","ja":"荷物を印へ動かす。荒い着陸でも続く。"},
+	{"key":"ui.minigame.broom_backseat.tutorial","en":"MOVE CARGO TO THE MARK. ROUGH IS OK.","ja":"荷物を印へ動かす。荒い着陸でも続く。"},
 	{"key":"ui.minigame.broom_backseat.begin","en":"CONFIRM  TAKE THE CARGO","ja":"決定　荷物を預かる"},
 	{"key":"ui.minigame.broom_backseat.status","en":"LANDING {0} / {1}  LEFT/RIGHT MOVE  CONFIRM LAND","ja":"着陸 {0} / {1}　左右で動かす　決定で着陸"},
 	{"key":"ui.minigame.broom_backseat.result","en":"CARGO DELIVERED  CONFIRM CONTINUE","ja":"荷物を届けた　決定で続ける"},

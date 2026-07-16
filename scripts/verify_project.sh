@@ -121,6 +121,7 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/ReimuQuietLineFixture.tscn \
 	--scene=res://tests/ui/fixtures/ReimuQuietChoiceFixture.tscn \
 	--scene=res://tests/ui/fixtures/ReimuPromiseChoiceFixture.tscn \
+	--scene=res://tests/ui/fixtures/BroomBackseatTutorialFixture.tscn \
 	--scene=res://src/presentation/minigames/QuietChoreMode.tscn \
 	--scene=res://tests/ui/fixtures/QuietChoreTutorialFixture.tscn \
 	--scene=res://tests/ui/fixtures/QuietChoreSitFixture.tscn \
