@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "9a8d7e15422cf837f3bef330240affc8ecac3bae9d1c723dd042034e811984f6",
+  "content_hash": "e74bf287c615ebd96780e1889efc7bddc42fd835c85dc488e6c00839fce55db9",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 47,
-    "dialogue_beats": 211,
-    "localization": 956,
+    "events": 48,
+    "dialogue_beats": 220,
+    "localization": 986,
     "music_cues": 89,
-    "event_nodes": 493
+    "event_nodes": 515
   },
   "ids": {
     "characters": [
@@ -121,6 +121,7 @@
       "evt.hgy.last_sweet",
       "evt.hgy.petal_on_hold",
       "evt.hgy.two_bodies_bridge",
+      "evt.hgy.two_bodies_one_embarrassment",
       "evt.hkr.day_nothing_happens",
       "evt.hkr.empty_cushion",
       "evt.hkr.offerings_without_owners",
@@ -165,6 +166,15 @@
       "beat.hgy.garden_shift.playful",
       "beat.hgy.garden_shift.withdrawn",
       "beat.hgy.garden_shift.work",
+      "beat.hgy.two_bodies.after",
+      "beat.hgy.two_bodies.clear",
+      "beat.hgy.two_bodies.defiant",
+      "beat.hgy.two_bodies.direct",
+      "beat.hgy.two_bodies.explain",
+      "beat.hgy.two_bodies.intro",
+      "beat.hgy.two_bodies.patient",
+      "beat.hgy.two_bodies.playful",
+      "beat.hgy.two_bodies.withdrawn",
       "beat.hkr.empty_cushion.marisa.terms_intro",
       "beat.hkr.empty_cushion.reimu.001",
       "beat.hkr.empty_cushion.reimu.afterbeat_01",
@@ -377,6 +387,10 @@
       "choice.hgy.garden_shift.direct",
       "choice.hgy.garden_shift.patient",
       "choice.hgy.garden_shift.playful",
+      "choice.hgy.two_bodies.defiant",
+      "choice.hgy.two_bodies.direct",
+      "choice.hgy.two_bodies.patient",
+      "choice.hgy.two_bodies.playful",
       "choice.hkr.empty_cushion.defiant",
       "choice.hkr.empty_cushion.direct",
       "choice.hkr.empty_cushion.patient",
@@ -474,6 +488,15 @@
       "dlg.hgy.garden_shift.playful",
       "dlg.hgy.garden_shift.withdrawn",
       "dlg.hgy.garden_shift.work",
+      "dlg.hgy.two_bodies.after",
+      "dlg.hgy.two_bodies.clear",
+      "dlg.hgy.two_bodies.defiant",
+      "dlg.hgy.two_bodies.direct",
+      "dlg.hgy.two_bodies.explain",
+      "dlg.hgy.two_bodies.intro",
+      "dlg.hgy.two_bodies.patient",
+      "dlg.hgy.two_bodies.playful",
+      "dlg.hgy.two_bodies.withdrawn",
       "dlg.hkr.empty_cushion.marisa.terms_intro",
       "dlg.hkr.empty_cushion.reimu.001",
       "dlg.hkr.empty_cushion.reimu.afterbeat_01",
@@ -677,6 +700,7 @@
       "dlg.sdm.promise.romance",
       "dlg.sdm.promise.undecided",
       "event.hgy.garden_shift.title",
+      "event.hgy.two_bodies.title",
       "event.hkr.day_nothing_happens.title",
       "event.hkr.empty_cushion.title",
       "event.hkr.offerings_without_owners.title",
@@ -715,6 +739,10 @@
       "journal.hgy.garden_shift.title",
       "journal.hgy.garden_shift.withdrawn.body",
       "journal.hgy.garden_shift.withdrawn.title",
+      "journal.hgy.two_bodies.body",
+      "journal.hgy.two_bodies.title",
+      "journal.hgy.two_bodies.withdrawn.body",
+      "journal.hgy.two_bodies.withdrawn.title",
       "journal.hkr.day_nothing_happens.body",
       "journal.hkr.day_nothing_happens.title",
       "journal.hkr.empty_cushion.body",
@@ -761,6 +789,7 @@
       "journal.sdm.promise.title",
       "obj.ein.cross_four_dawns",
       "obj.hgy.garden_shift.match",
+      "obj.hgy.two_bodies.cross",
       "obj.hkr.day_nothing_happens.enter",
       "obj.hkr.find_second_cup",
       "obj.hkr.offerings.inspect_box",
@@ -1122,6 +1151,17 @@
       "ui.minigame.errands.tutorial.body",
       "ui.minigame.errands.tutorial.footer",
       "ui.minigame.errands.tutorial.header",
+      "ui.minigame.half_phantom.active",
+      "ui.minigame.half_phantom.begin",
+      "ui.minigame.half_phantom.body.phantom",
+      "ui.minigame.half_phantom.body.youmu",
+      "ui.minigame.half_phantom.objective",
+      "ui.minigame.half_phantom.pause_help",
+      "ui.minigame.half_phantom.paused",
+      "ui.minigame.half_phantom.result.clear",
+      "ui.minigame.half_phantom.result.withdrawn",
+      "ui.minigame.half_phantom.title",
+      "ui.minigame.half_phantom.tutorial",
       "ui.minigame.quiet_chore.active.footer",
       "ui.minigame.quiet_chore.mend",
       "ui.minigame.quiet_chore.objective",
@@ -1507,6 +1547,96 @@
     {
       "source": "beat.hgy.garden_shift.work",
       "target": "dlg.hgy.garden_shift.work",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.after",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.after",
+      "target": "dlg.hgy.two_bodies.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.clear",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.clear",
+      "target": "dlg.hgy.two_bodies.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.defiant",
+      "target": "dlg.hgy.two_bodies.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.direct",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.direct",
+      "target": "dlg.hgy.two_bodies.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.explain",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.explain",
+      "target": "dlg.hgy.two_bodies.explain",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.intro",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.intro",
+      "target": "dlg.hgy.two_bodies.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.patient",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.patient",
+      "target": "dlg.hgy.two_bodies.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.playful",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.playful",
+      "target": "dlg.hgy.two_bodies.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.two_bodies.withdrawn",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.two_bodies.withdrawn",
+      "target": "dlg.hgy.two_bodies.withdrawn",
       "kind": "localization"
     },
     {
@@ -3550,6 +3680,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.hgy.two_bodies.response",
+      "target": "choice.hgy.two_bodies.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.two_bodies.response",
+      "target": "choice.hgy.two_bodies.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.two_bodies.response",
+      "target": "choice.hgy.two_bodies.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.two_bodies.response",
+      "target": "choice.hgy.two_bodies.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hkr.empty_cushion.01",
       "target": "choice.hkr.empty_cushion.defiant",
       "kind": "localization"
@@ -4406,6 +4556,276 @@
     },
     {
       "source": "evt.hgy.two_bodies_bridge",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n001",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n001",
+      "target": "mus_youmu_training",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n002",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n002",
+      "target": "obj.hgy.two_bodies.cross",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n002",
+      "target": "prop.hgy.bridge_human_mark",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n002",
+      "target": "prop.hgy.bridge_phantom_mark",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n003",
+      "target": "beat.hgy.two_bodies.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n003",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n004",
+      "target": "beat.hgy.two_bodies.explain",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n004",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n005",
+      "target": "choice.hgy.two_bodies.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n005",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n005",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n005",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n005",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_after_music",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_after_music",
+      "target": "mus_youmu_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_after",
+      "target": "beat.hgy.two_bodies.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_after",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_balance",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_balance",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_withdrawn",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_balance",
+      "target": "mini.hgy.half_phantom_balance",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_clear",
+      "target": "beat.hgy.two_bodies.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_clear",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_journal_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_defiant_line",
+      "target": "beat.hgy.two_bodies.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_defiant_line",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_balance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_defiant",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_direct_line",
+      "target": "beat.hgy.two_bodies.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_direct_line",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_balance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_direct",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_direct",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_effects",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_effects",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_journal_clear",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_journal_clear",
+      "target": "journal.hgy.two_bodies",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_journal_withdrawn",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_after_music",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_journal_withdrawn",
+      "target": "journal.hgy.two_bodies.withdrawn",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_patient_line",
+      "target": "beat.hgy.two_bodies.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_patient_line",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_balance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_patient",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_patient",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_playful_line",
+      "target": "beat.hgy.two_bodies.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_playful_line",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_balance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_playful",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_playful",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_withdrawn",
+      "target": "beat.hgy.two_bodies.withdrawn",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment.node.n_withdrawn",
+      "target": "evt.hgy.two_bodies_one_embarrassment.node.n_journal_withdrawn",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment",
+      "target": "char.youmu_konpaku",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment",
+      "target": "event.hgy.two_bodies.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment",
+      "target": "evt.hgy.two_bodies_one_embarrassment",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment",
+      "target": "loc.hakugyokurou.narrow_bridge",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hgy.two_bodies_one_embarrassment",
       "target": "loc.hakugyokurou",
       "kind": "location"
     },

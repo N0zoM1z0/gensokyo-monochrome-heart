@@ -12,6 +12,18 @@
       "status": "authored",
       "estimated_minutes": 9,
       "comfort_tags": ["no_timer", "withdrawal_continues", "slower_pace_assist"]
+    },
+    {
+      "id": "evt.hgy.two_bodies_one_embarrassment",
+      "legacy_id": "EVT-HGY-RTE-002",
+      "title_en": "Two Bodies, One Embarrassment",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": ["char.youmu_konpaku"],
+      "primary_mode": "minigame",
+      "core_change": "Youmu lets her human and phantom halves cross separately instead of treating their difference as a mistake to command away.",
+      "status": "authored",
+      "estimated_minutes": 9,
+      "comfort_tags": ["no_timer", "withdrawal_continues", "no_body_shame"]
     }
   ]
 }

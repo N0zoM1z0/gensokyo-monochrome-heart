@@ -7,6 +7,12 @@
     {"id": "prop.hgy.memorial_bell", "kind": "interactable", "target_milestone": "M14", "reason": "East-cherry memorial marker for Soul Garden."},
     {"id": "mini.hgy.soul_garden", "kind": "minigame", "target_milestone": "M13", "reason": "Implemented Soul Garden matching runtime."},
     {"id": "journal.hgy.garden_shift", "kind": "journal_entry", "target_milestone": "M14", "reason": "Care work, release, and Youmu's first route stage."},
-    {"id": "journal.hgy.garden_shift.withdrawn", "kind": "journal_entry", "target_milestone": "M14", "reason": "The player may end the Garden Shift without turning care into a score."}
+    {"id": "journal.hgy.garden_shift.withdrawn", "kind": "journal_entry", "target_milestone": "M14", "reason": "The player may end the Garden Shift without turning care into a score."},
+    {"id": "loc.hakugyokurou.narrow_bridge", "kind": "spot", "target_milestone": "M14", "reason": "A narrow bridge makes Youmu's two bodies visible without making either one a joke."},
+    {"id": "prop.hgy.bridge_human_mark", "kind": "interactable", "target_milestone": "M14", "reason": "Youmu's opposite bridge destination."},
+    {"id": "prop.hgy.bridge_phantom_mark", "kind": "interactable", "target_milestone": "M14", "reason": "Half-phantom opposite bridge destination."},
+    {"id": "mini.hgy.half_phantom_balance", "kind": "minigame", "target_milestone": "M14", "reason": "Implemented paired-body bridge runtime."},
+    {"id": "journal.hgy.two_bodies", "kind": "journal_entry", "target_milestone": "M14", "reason": "Youmu's dual nature is coordinated, not corrected."},
+    {"id": "journal.hgy.two_bodies.withdrawn", "kind": "journal_entry", "target_milestone": "M14", "reason": "The bridge may be left for another day without shame."}
   ]
 }

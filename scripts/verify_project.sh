@@ -153,6 +153,7 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/SoulGardenMismatchFixture.tscn \
 	--scene=res://tests/ui/fixtures/SoulGardenPausedFixture.tscn \
 	--scene=res://tests/ui/fixtures/SoulGardenResultFixture.tscn \
+	--scene=res://src/presentation/minigames/HalfPhantomBalanceMode.tscn \
 	--scene=res://src/presentation/exploration/MansionServiceExplorationMode.tscn \
 	--scene=res://tests/ui/fixtures/MansionServiceExplorationFixture.tscn \
 	--scene=res://tests/ui/fixtures/MansionServiceKitchenFixture.tscn \
@@ -382,6 +383,10 @@ run_checked "M14 Sakuya Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sakuya_promise_event.gd
 run_checked "M14 Youmu Garden Shift event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_garden_shift.gd
+run_checked "M14 Youmu paired-body bridge event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_two_bodies.gd
+run_checked "M14 Half-Phantom Balance runtime" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_half_phantom_balance.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

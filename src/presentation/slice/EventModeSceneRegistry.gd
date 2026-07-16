@@ -7,6 +7,7 @@ const SCENE_PATHS := {
 	&"mini.sdm.time_grid_service": "res://src/presentation/minigames/TimeGridServiceMode.tscn",
 	&"mini.ein.five_impossible_errands": "res://src/presentation/minigames/FiveImpossibleErrandsMode.tscn",
 	&"mini.hgy.soul_garden": "res://src/presentation/minigames/SoulGardenMode.tscn",
+	&"mini.hgy.half_phantom_balance": "res://src/presentation/minigames/HalfPhantomBalanceMode.tscn",
 	&"mini.hkr.quiet_chore": "res://src/presentation/minigames/QuietChoreMode.tscn",
 	&"mini.mrs.broom_backseat": "res://src/presentation/minigames/BroomBackseatMode.tscn",
 	&"danmaku.hkr.boundary_stain": "res://src/presentation/danmaku/BoundaryStainMode.tscn",

@@ -45,6 +45,7 @@ capture_pair m14_reimu_quiet_tutorial res://tests/ui/fixtures/QuietChoreTutorial
 capture_pair m14_reimu_quiet_sit res://tests/ui/fixtures/QuietChoreSitFixture.tscn
 capture_pair m14_reimu_quiet_story_pulse res://tests/ui/fixtures/QuietChoreStoryPulseFixture.tscn
 capture_pair m14_reimu_quiet_result res://tests/ui/fixtures/QuietChoreResultFixture.tscn
+capture_pair m14_youmu_half_phantom_tutorial res://src/presentation/minigames/HalfPhantomBalanceMode.tscn
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated
