@@ -26,6 +26,7 @@ var supplemental_event_paths: Array[String] = [
 	"res://content/events/mrs_route_events.json",
 	"res://content/events/sdm_route_events.json",
 	"res://content/events/hgy_route_events.json",
+	"res://content/events/aya_route_events.json",
 ]
 var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/hkr_day_nothing_happens.json",
@@ -55,6 +56,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/hgy_meal_she_finishes.json",
 	"res://content/events/hgy_farewell_will_not_fall.json",
 	"res://content/events/hgy_promise.json",
+	"res://content/events/aya_exclusive_interview.json",
 	"res://content/events/mtn_tomorrows_headline.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
@@ -85,6 +87,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hgy_meal_she_finishes.json",
 	"res://content/dialogue/hgy_farewell_will_not_fall.json",
 	"res://content/dialogue/hgy_promise.json",
+	"res://content/dialogue/aya_exclusive_interview.json",
 	"res://content/dialogue/mtn_tomorrows_headline.json",
 ]
 var supplemental_localization_paths: Array[String] = [
@@ -115,6 +118,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hgy_meal_she_finishes.csv",
 	"res://content/localization/hgy_farewell_will_not_fall.csv",
 	"res://content/localization/hgy_promise.csv",
+	"res://content/localization/aya_exclusive_interview.csv",
 	"res://content/localization/mtn_tomorrows_headline.csv",
 	"res://content/localization/ein_four_dawns.csv",
 ]
@@ -125,11 +129,12 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/mrs_route_deferred_references.json",
 	"res://content/indexes/sdm_deferred_references.json",
 	"res://content/indexes/hgy_route_deferred_references.json",
+	"res://content/indexes/aya_route_deferred_references.json",
 	"res://content/indexes/mtn_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 25
-var expected_supplemental_dialogue_count: int = 235
-var expected_supplemental_localization_count: int = 474
+var expected_supplemental_event_count: int = 26
+var expected_supplemental_dialogue_count: int = 242
+var expected_supplemental_localization_count: int = 489
 
 
 func content_paths() -> Array[String]:
