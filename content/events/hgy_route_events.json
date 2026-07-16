@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "evt.hgy.garden_shift",
+      "legacy_id": "EVT-HGY-RTE-001",
+      "title_en": "Garden Shift",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": ["char.youmu_konpaku"],
+      "primary_mode": "minigame",
+      "core_change": "Youmu lets the player witness care work as matching and release, not as a combat drill to optimize.",
+      "status": "authored",
+      "estimated_minutes": 9,
+      "comfort_tags": ["no_timer", "withdrawal_continues", "slower_pace_assist"]
+    }
+  ]
+}

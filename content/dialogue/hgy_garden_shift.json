@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "beats": [
+    {"id": "beat.hgy.garden_shift.intro", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.intro", "portrait": "working_neutral", "nonverbal_key": "cue.youmu_check_phantom", "advance_policy": "input", "memory_tag": "garden.shift_begins"},
+    {"id": "beat.hgy.garden_shift.work", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.work", "portrait": "working_neutral", "nonverbal_key": "cue.youmu_mark_memorials", "advance_policy": "input", "memory_tag": "garden.memorial_order"},
+    {"id": "beat.hgy.garden_shift.direct", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.direct", "portrait": "working_neutral", "nonverbal_key": "cue.youmu_offer_map", "advance_policy": "input", "memory_tag": "garden.shared_watch"},
+    {"id": "beat.hgy.garden_shift.playful", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.playful", "portrait": "quiet_amused", "nonverbal_key": "cue.youmu_correct_posture", "advance_policy": "input", "memory_tag": "garden.gentle_comedy"},
+    {"id": "beat.hgy.garden_shift.patient", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.patient", "portrait": "private_neutral", "nonverbal_key": "cue.youmu_point_memorial", "advance_policy": "input", "memory_tag": "garden.shared_watch"},
+    {"id": "beat.hgy.garden_shift.defiant", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.defiant", "portrait": "working_sharp", "nonverbal_key": "cue.youmu_lower_sword_hand", "advance_policy": "input", "memory_tag": "garden.order_questioned"},
+    {"id": "beat.hgy.garden_shift.clear", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.clear", "portrait": "quiet_amused", "nonverbal_key": "cue.youmu_watch_spirits_leave", "advance_policy": "input", "memory_tag": "garden.release_witnessed"},
+    {"id": "beat.hgy.garden_shift.withdrawn", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.withdrawn", "portrait": "private_neutral", "nonverbal_key": "cue.youmu_sheathe_sword", "advance_policy": "input", "memory_tag": "garden.pause_allowed"},
+    {"id": "beat.hgy.garden_shift.after", "speaker_id": "char.youmu_konpaku", "text_key": "dlg.hgy.garden_shift.after", "portrait": "private_neutral", "nonverbal_key": "cue.youmu_rewrite_schedule", "advance_policy": "input", "memory_tag": "garden.care_not_drill"}
+  ]
+}

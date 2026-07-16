@@ -5,7 +5,7 @@ extends GameMode
 const ACTION_CONTRACT := ["move", "confirm", "cancel", "pause"]
 const FIXED_DELTA := 1.0 / 60.0
 
-@export_enum("tutorial", "active", "carried", "mismatch", "result") var fixture_state := "tutorial"
+@export_enum("tutorial", "active", "carried", "mismatch", "paused", "result") var fixture_state := "tutorial"
 
 var host := MinigameHost.new()
 var garden := SoulGardenSimulation.new()
@@ -81,8 +81,13 @@ func handle_semantic_action(action: StringName) -> bool:
 	if garden == null:
 		return false
 	if garden.is_paused:
-		if action in [GameInput.CONFIRM, GameInput.CANCEL, GameInput.PAUSE]:
+		if action in [GameInput.CONFIRM, GameInput.PAUSE]:
 			host.toggle_pause()
+			queue_redraw()
+			return true
+		if action == GameInput.CANCEL:
+			host.toggle_pause()
+			host.accept_loss()
 			queue_redraw()
 			return true
 		return false
@@ -181,6 +186,8 @@ func _prepare_fixture_state() -> void:
 			_confirm_for_test()
 			move_cursor_for_test(SoulGardenSimulation.TREE_COLUMNS[1])
 			_confirm_for_test()
+		"paused":
+			host.toggle_pause()
 		"result":
 			for index: int in range(3):
 				move_cursor_for_test(garden.state.spirit_columns[index])
@@ -306,10 +313,10 @@ func _draw_result(foreground: Color, background: Color) -> void:
 
 
 func _draw_pause(foreground: Color, background: Color) -> void:
-	draw_rect(Rect2(58, 61, 204, 55), background)
-	draw_rect(Rect2(58, 61, 204, 55), foreground, false, 2.0)
+	draw_rect(Rect2(52, 55, 216, 67), background)
+	draw_rect(Rect2(52, 55, 216, 67), foreground, false, 2.0)
 	draw_string(_font(), Vector2(68, 83), _t(&"ui.minigame.soul_garden.paused"), HORIZONTAL_ALIGNMENT_CENTER, 184, _title_size(), foreground)
-	_draw_wrapped(&"ui.minigame.soul_garden.pause.body", Rect2(68, 91, 184, 20), 2, foreground, true)
+	_draw_wrapped(&"ui.minigame.soul_garden.pause.body", Rect2(64, 89, 192, 28), 2, foreground, true)
 
 
 func _draw_memorial_tree(index: int, x: float, foreground: Color, background: Color) -> void:

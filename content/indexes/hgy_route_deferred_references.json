@@ -1,0 +1,12 @@
+{
+  "schema": "gmh-deferred-references-v1",
+  "references": [
+    {"id": "loc.hakugyokurou.soul_garden", "kind": "spot", "target_milestone": "M14", "reason": "Youmu's memorial garden shift takes place among the mapped trees."},
+    {"id": "prop.hgy.memorial_fan", "kind": "interactable", "target_milestone": "M14", "reason": "West-pine memorial marker for Soul Garden."},
+    {"id": "prop.hgy.memorial_cup", "kind": "interactable", "target_milestone": "M14", "reason": "Middle-plum memorial marker for Soul Garden."},
+    {"id": "prop.hgy.memorial_bell", "kind": "interactable", "target_milestone": "M14", "reason": "East-cherry memorial marker for Soul Garden."},
+    {"id": "mini.hgy.soul_garden", "kind": "minigame", "target_milestone": "M13", "reason": "Implemented Soul Garden matching runtime."},
+    {"id": "journal.hgy.garden_shift", "kind": "journal_entry", "target_milestone": "M14", "reason": "Care work, release, and Youmu's first route stage."},
+    {"id": "journal.hgy.garden_shift.withdrawn", "kind": "journal_entry", "target_milestone": "M14", "reason": "The player may end the Garden Shift without turning care into a score."}
+  ]
+}

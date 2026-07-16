@@ -151,6 +151,7 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/SoulGardenActiveFixture.tscn \
 	--scene=res://tests/ui/fixtures/SoulGardenCarriedFixture.tscn \
 	--scene=res://tests/ui/fixtures/SoulGardenMismatchFixture.tscn \
+	--scene=res://tests/ui/fixtures/SoulGardenPausedFixture.tscn \
 	--scene=res://tests/ui/fixtures/SoulGardenResultFixture.tscn \
 	--scene=res://src/presentation/exploration/MansionServiceExplorationMode.tscn \
 	--scene=res://tests/ui/fixtures/MansionServiceExplorationFixture.tscn \
@@ -379,6 +380,8 @@ run_checked "M14 Sakuya missing-minute event" env XDG_DATA_HOME="$LOG_DIR/user-d
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sakuya_missing_minute_event.gd
 run_checked "M14 Sakuya Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sakuya_promise_event.gd
+run_checked "M14 Youmu Garden Shift event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_garden_shift.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

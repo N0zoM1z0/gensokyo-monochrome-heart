@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "evt.hgy.garden_shift",
+  "title_key": "event.hgy.garden_shift.title",
+  "location_id": "loc.hakugyokurou",
+  "spot_id": "loc.hakugyokurou.soul_garden",
+  "cast": ["char.youmu_konpaku"],
+  "availability": [
+    {"predicate": "chapter_at_least", "value": "chapter.1"},
+    {"predicate": "flag_false", "key": "evt.hgy.garden_shift.complete"}
+  ],
+  "entry_node": "n001",
+  "nodes": {
+    "n001": {"type": "music_state", "state": "mus_youmu_training", "next": "n003"},
+    "n002": {"type": "exploration_objective", "objective_key": "obj.hgy.garden_shift.match", "interactable_ids": ["prop.hgy.memorial_fan", "prop.hgy.memorial_cup", "prop.hgy.memorial_bell"], "next": "n005"},
+    "n003": {"type": "line", "beat_id": "beat.hgy.garden_shift.intro", "next": "n004"},
+    "n004": {"type": "line", "beat_id": "beat.hgy.garden_shift.work", "next": "n002"},
+    "n005": {"type": "choice", "choice_id": "choice.hgy.garden_shift.response", "options": [
+      {"tone": "direct", "text_key": "choice.hgy.garden_shift.direct", "next": "n_direct"},
+      {"tone": "playful", "text_key": "choice.hgy.garden_shift.playful", "next": "n_playful"},
+      {"tone": "patient", "text_key": "choice.hgy.garden_shift.patient", "next": "n_patient"},
+      {"tone": "defiant", "text_key": "choice.hgy.garden_shift.defiant", "next": "n_defiant"}
+    ]},
+    "n_direct": {"type": "effects", "effects": [{"op": "relationship", "character_id": "char.youmu_konpaku", "facet": "respect", "delta": 1}], "next": "n_direct_line"},
+    "n_playful": {"type": "effects", "effects": [{"op": "relationship", "character_id": "char.youmu_konpaku", "facet": "spark", "delta": 1}], "next": "n_playful_line"},
+    "n_patient": {"type": "effects", "effects": [{"op": "relationship", "character_id": "char.youmu_konpaku", "facet": "ease", "delta": 1}], "next": "n_patient_line"},
+    "n_defiant": {"type": "effects", "effects": [{"op": "relationship", "character_id": "char.youmu_konpaku", "facet": "respect", "delta": 1}, {"op": "relationship", "character_id": "char.youmu_konpaku", "facet": "strain", "delta": 1}], "next": "n_defiant_line"},
+    "n_direct_line": {"type": "line", "beat_id": "beat.hgy.garden_shift.direct", "next": "n_soul_garden"},
+    "n_playful_line": {"type": "line", "beat_id": "beat.hgy.garden_shift.playful", "next": "n_soul_garden"},
+    "n_patient_line": {"type": "line", "beat_id": "beat.hgy.garden_shift.patient", "next": "n_soul_garden"},
+    "n_defiant_line": {"type": "line", "beat_id": "beat.hgy.garden_shift.defiant", "next": "n_soul_garden"},
+    "n_soul_garden": {"type": "start_minigame", "minigame_id": "mini.hgy.soul_garden", "result_branches": {"clear": "n_clear", "withdrawn": "n_withdrawn"}},
+    "n_clear": {"type": "line", "beat_id": "beat.hgy.garden_shift.clear", "next": "n_journal_clear"},
+    "n_withdrawn": {"type": "line", "beat_id": "beat.hgy.garden_shift.withdrawn", "next": "n_journal_withdrawn"},
+    "n_journal_clear": {"type": "journal_entry", "entry_id": "journal.hgy.garden_shift", "entry_type": "route_observation", "tags": ["care_not_combat", "memorial_release", "garden_shift"], "next": "n_after_music"},
+    "n_journal_withdrawn": {"type": "journal_entry", "entry_id": "journal.hgy.garden_shift.withdrawn", "entry_type": "route_observation", "tags": ["care_not_combat", "pause_allowed", "garden_shift"], "next": "n_after_music"},
+    "n_after_music": {"type": "music_state", "state": "mus_youmu_afterbeat", "next": "n_after"},
+    "n_after": {"type": "line", "beat_id": "beat.hgy.garden_shift.after", "next": "n_effects"},
+    "n_effects": {"type": "effects", "effects": [
+      {"op": "route_stage", "character_id": "char.youmu_konpaku", "stage": 1},
+      {"op": "set_flag", "key": "flag.route.youmu.garden_work_witnessed", "value": true},
+      {"op": "set_flag", "key": "evt.hgy.garden_shift.complete", "value": true}
+    ], "next": "n_end"},
+    "n_end": {"type": "end_event", "outcome": "garden_shift_shared_without_a_drill"}
+  },
+  "origin_tags": {"canon": 3, "fanon": 0, "original": 10},
+  "comfort_tags": ["no_timer", "withdrawal_continues", "slower_pace_assist"]
+}
