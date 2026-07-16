@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "e5f533995cce994d31ee5aa1e459c83e2725c4e9c404f5b5ded1bd6a1a3c65b0",
+  "content_hash": "7d8fe7482dfc28b94a28ba3cf09e373227430540ba11c5e828c9c5a5302638f1",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 38,
-    "dialogue_beats": 148,
-    "localization": 815,
+    "events": 39,
+    "dialogue_beats": 155,
+    "localization": 830,
     "music_cues": 89,
-    "event_nodes": 327
+    "event_nodes": 344
   },
   "ids": {
     "characters": [
@@ -131,6 +131,7 @@
       "evt.hkr.unasked_rescue",
       "evt.mrs.crash_landing",
       "evt.mrs.field_notes",
+      "evt.mrs.infinite_experiment",
       "evt.mrs.rescue_looks_like_race",
       "evt.mrs.shelf_marked_later",
       "evt.mrs.talent_bad_conversation",
@@ -228,6 +229,13 @@
       "beat.hkr.rescue.reimu.playful",
       "beat.hkr.rescue.reimu.protect",
       "beat.hkr.rescue.reimu.repair",
+      "beat.mrs.archive.after",
+      "beat.mrs.archive.defiant",
+      "beat.mrs.archive.direct",
+      "beat.mrs.archive.offer",
+      "beat.mrs.archive.patient",
+      "beat.mrs.archive.playful",
+      "beat.mrs.archive.refusal",
       "beat.mrs.crash.after",
       "beat.mrs.crash.clear",
       "beat.mrs.crash.defiant",
@@ -329,6 +337,10 @@
       "choice.hkr.rescue.direct",
       "choice.hkr.rescue.patient",
       "choice.hkr.rescue.playful",
+      "choice.mrs.archive.defiant",
+      "choice.mrs.archive.direct",
+      "choice.mrs.archive.patient",
+      "choice.mrs.archive.playful",
       "choice.mrs.crash.defiant",
       "choice.mrs.crash.direct",
       "choice.mrs.crash.patient",
@@ -438,6 +450,13 @@
       "dlg.hkr.rescue.reimu.playful",
       "dlg.hkr.rescue.reimu.protect",
       "dlg.hkr.rescue.reimu.repair",
+      "dlg.mrs.archive.after",
+      "dlg.mrs.archive.defiant",
+      "dlg.mrs.archive.direct",
+      "dlg.mrs.archive.offer",
+      "dlg.mrs.archive.patient",
+      "dlg.mrs.archive.playful",
+      "dlg.mrs.archive.refusal",
       "dlg.mrs.crash.after",
       "dlg.mrs.crash.clear",
       "dlg.mrs.crash.defiant",
@@ -514,6 +533,7 @@
       "event.hkr.unasked_rescue.title",
       "event.mrs.crash_landing.title",
       "event.mrs.field_notes.title",
+      "event.mrs.infinite_experiment.title",
       "event.mrs.rescue_looks_like_race.title",
       "event.mrs.shelf_marked_later.title",
       "event.mrs.talent_bad_conversation.title",
@@ -549,6 +569,8 @@
       "journal.mrs.crash_landing.title",
       "journal.mrs.field_notes.body",
       "journal.mrs.field_notes.title",
+      "journal.mrs.infinite_experiment.body",
+      "journal.mrs.infinite_experiment.title",
       "journal.mrs.rescue_looks_like_race.body",
       "journal.mrs.rescue_looks_like_race.title",
       "journal.mrs.shelf_marked_later.body",
@@ -567,6 +589,7 @@
       "obj.hkr.recorded_tea.set_cups",
       "obj.hkr.shrine_not_guesthouse.check_veranda",
       "obj.hkr.unasked_rescue.hold_veranda",
+      "obj.mrs.archive.leave_copy",
       "obj.mrs.crash.secure_cargo",
       "obj.mrs.field_notes.read_marks",
       "obj.mrs.rescue.hold_cargo",
@@ -2017,6 +2040,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.mrs.archive.after",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.archive.after",
+      "target": "dlg.mrs.archive.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.archive.defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.archive.defiant",
+      "target": "dlg.mrs.archive.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.archive.direct",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.archive.direct",
+      "target": "dlg.mrs.archive.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.archive.offer",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.archive.offer",
+      "target": "dlg.mrs.archive.offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.archive.patient",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.archive.patient",
+      "target": "dlg.mrs.archive.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.archive.playful",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.archive.playful",
+      "target": "dlg.mrs.archive.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.archive.refusal",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.archive.refusal",
+      "target": "dlg.mrs.archive.refusal",
+      "kind": "localization"
+    },
+    {
       "source": "beat.mrs.crash.after",
       "target": "char.marisa_kirisame",
       "kind": "speaker"
@@ -2824,6 +2917,26 @@
     {
       "source": "choice.hkr.rescue.answer",
       "target": "choice.hkr.rescue.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.archive.answer",
+      "target": "choice.mrs.archive.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.archive.answer",
+      "target": "choice.mrs.archive.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.archive.answer",
+      "target": "choice.mrs.archive.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.archive.answer",
+      "target": "choice.mrs.archive.playful",
       "kind": "localization"
     },
     {
@@ -5743,6 +5856,221 @@
     },
     {
       "source": "evt.mrs.field_notes",
+      "target": "loc.forest_of_magic",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n001",
+      "target": "evt.mrs.infinite_experiment.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n001",
+      "target": "mus_marisa_night",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n002",
+      "target": "evt.mrs.infinite_experiment.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n002",
+      "target": "obj.mrs.archive.leave_copy",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n002",
+      "target": "prop.archive_failure_copy",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n002",
+      "target": "prop.marisa_field_notes",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n003",
+      "target": "beat.mrs.archive.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n003",
+      "target": "evt.mrs.infinite_experiment.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n004",
+      "target": "beat.mrs.archive.refusal",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n004",
+      "target": "evt.mrs.infinite_experiment.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n005",
+      "target": "choice.mrs.archive.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n005",
+      "target": "evt.mrs.infinite_experiment.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n005",
+      "target": "evt.mrs.infinite_experiment.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n005",
+      "target": "evt.mrs.infinite_experiment.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n005",
+      "target": "evt.mrs.infinite_experiment.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_after",
+      "target": "beat.mrs.archive.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_after",
+      "target": "evt.mrs.infinite_experiment.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_defiant_line",
+      "target": "beat.mrs.archive.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_defiant_line",
+      "target": "evt.mrs.infinite_experiment.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_defiant",
+      "target": "evt.mrs.infinite_experiment.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_direct_line",
+      "target": "beat.mrs.archive.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_direct_line",
+      "target": "evt.mrs.infinite_experiment.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_direct",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_direct",
+      "target": "evt.mrs.infinite_experiment.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_effects",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_effects",
+      "target": "evt.mrs.infinite_experiment.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_journal",
+      "target": "evt.mrs.infinite_experiment.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_journal",
+      "target": "journal.mrs.infinite_experiment",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_patient_line",
+      "target": "beat.mrs.archive.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_patient_line",
+      "target": "evt.mrs.infinite_experiment.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_patient",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_patient",
+      "target": "evt.mrs.infinite_experiment.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_playful_line",
+      "target": "beat.mrs.archive.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_playful_line",
+      "target": "evt.mrs.infinite_experiment.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_playful",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment.node.n_playful",
+      "target": "evt.mrs.infinite_experiment.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment",
+      "target": "char.marisa_kirisame",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment",
+      "target": "event.mrs.infinite_experiment.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment",
+      "target": "evt.mrs.infinite_experiment",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment",
+      "target": "loc.forest_of_magic.mushroom_field",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.mrs.infinite_experiment",
       "target": "loc.forest_of_magic",
       "kind": "location"
     },

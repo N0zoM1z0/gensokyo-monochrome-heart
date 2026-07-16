@@ -37,6 +37,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/mrs_shelf_marked_later.json",
 	"res://content/events/mrs_talent_bad_conversation.json",
 	"res://content/events/mrs_rescue_looks_like_race.json",
+	"res://content/events/mrs_infinite_experiment.json",
 	"res://content/events/sdm_late_by_three_minutes.json",
 	"res://content/events/mtn_tomorrows_headline.json",
 ]
@@ -52,6 +53,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/mrs_shelf_marked_later.json",
 	"res://content/dialogue/mrs_talent_bad_conversation.json",
 	"res://content/dialogue/mrs_rescue_looks_like_race.json",
+	"res://content/dialogue/mrs_infinite_experiment.json",
 	"res://content/dialogue/sdm_late_by_three_minutes.json",
 	"res://content/dialogue/mtn_tomorrows_headline.json",
 ]
@@ -67,6 +69,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/mrs_shelf_marked_later.csv",
 	"res://content/localization/mrs_talent_bad_conversation.csv",
 	"res://content/localization/mrs_rescue_looks_like_race.csv",
+	"res://content/localization/mrs_infinite_experiment.csv",
 	"res://content/localization/sdm_late_by_three_minutes.csv",
 	"res://content/localization/mtn_tomorrows_headline.csv",
 	"res://content/localization/ein_four_dawns.csv",
@@ -79,9 +82,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/sdm_deferred_references.json",
 	"res://content/indexes/mtn_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 10
-var expected_supplemental_dialogue_count: int = 129
-var expected_supplemental_localization_count: int = 236
+var expected_supplemental_event_count: int = 11
+var expected_supplemental_dialogue_count: int = 136
+var expected_supplemental_localization_count: int = 251
 
 
 func content_paths() -> Array[String]:
