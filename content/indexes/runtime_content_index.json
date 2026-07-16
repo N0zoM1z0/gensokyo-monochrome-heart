@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "45315afce0cad95a88a78200242561d7bfbcb7f1682074e2a2890042f4c595c5",
+  "content_hash": "e242d01ac2af5153efa235d5ff83dd7f2d88b867b90c7d2c6fb0d21e66a40686",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 30,
-    "dialogue_beats": 79,
-    "localization": 673,
+    "events": 31,
+    "dialogue_beats": 91,
+    "localization": 693,
     "music_cues": 89,
-    "event_nodes": 165
+    "event_nodes": 189
   },
   "ids": {
     "characters": [
@@ -126,6 +126,7 @@
       "evt.hkr.return_before_borrowing",
       "evt.hkr.shrine_not_guesthouse",
       "evt.hkr.spell_card_terms",
+      "evt.hkr.unasked_rescue",
       "evt.mtn.keyword_us",
       "evt.mtn.measurable_faith",
       "evt.mtn.patrol_against_nothing",
@@ -190,6 +191,18 @@
       "beat.hkr.quiet.reimu.patient",
       "beat.hkr.quiet.reimu.playful",
       "beat.hkr.quiet.reimu.tea_cold",
+      "beat.hkr.rescue.reimu.after",
+      "beat.hkr.rescue.reimu.assist",
+      "beat.hkr.rescue.reimu.clear",
+      "beat.hkr.rescue.reimu.collapse",
+      "beat.hkr.rescue.reimu.defiant",
+      "beat.hkr.rescue.reimu.direct",
+      "beat.hkr.rescue.reimu.loss",
+      "beat.hkr.rescue.reimu.no_debt",
+      "beat.hkr.rescue.reimu.patient",
+      "beat.hkr.rescue.reimu.playful",
+      "beat.hkr.rescue.reimu.protect",
+      "beat.hkr.rescue.reimu.repair",
       "beat.mtn.headline.aya.after_01",
       "beat.mtn.headline.aya.after_02",
       "beat.mtn.headline.aya.danmaku_assist",
@@ -240,6 +253,10 @@
       "choice.hkr.quiet.direct",
       "choice.hkr.quiet.patient",
       "choice.hkr.quiet.playful",
+      "choice.hkr.rescue.defiant",
+      "choice.hkr.rescue.direct",
+      "choice.hkr.rescue.patient",
+      "choice.hkr.rescue.playful",
       "choice.mtn.headline.defiant",
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
@@ -299,6 +316,18 @@
       "dlg.hkr.quiet.reimu.patient",
       "dlg.hkr.quiet.reimu.playful",
       "dlg.hkr.quiet.reimu.tea_cold",
+      "dlg.hkr.rescue.reimu.after",
+      "dlg.hkr.rescue.reimu.assist",
+      "dlg.hkr.rescue.reimu.clear",
+      "dlg.hkr.rescue.reimu.collapse",
+      "dlg.hkr.rescue.reimu.defiant",
+      "dlg.hkr.rescue.reimu.direct",
+      "dlg.hkr.rescue.reimu.loss",
+      "dlg.hkr.rescue.reimu.no_debt",
+      "dlg.hkr.rescue.reimu.patient",
+      "dlg.hkr.rescue.reimu.playful",
+      "dlg.hkr.rescue.reimu.protect",
+      "dlg.hkr.rescue.reimu.repair",
       "dlg.mtn.headline.aya.after_01",
       "dlg.mtn.headline.aya.after_02",
       "dlg.mtn.headline.aya.danmaku_assist",
@@ -331,6 +360,7 @@
       "event.hkr.empty_cushion.title",
       "event.hkr.offerings_without_owners.title",
       "event.hkr.shrine_not_guesthouse.title",
+      "event.hkr.unasked_rescue.title",
       "event.mtn.tomorrows_headline.title",
       "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
@@ -353,6 +383,8 @@
       "journal.hkr.offerings_without_owners.title",
       "journal.hkr.shrine_not_guesthouse.body",
       "journal.hkr.shrine_not_guesthouse.title",
+      "journal.hkr.unasked_rescue.body",
+      "journal.hkr.unasked_rescue.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
       "journal.sdm.missing_minute.body",
@@ -362,6 +394,7 @@
       "obj.hkr.find_second_cup",
       "obj.hkr.offerings.inspect_box",
       "obj.hkr.shrine_not_guesthouse.check_veranda",
+      "obj.hkr.unasked_rescue.hold_veranda",
       "obj.mtn.trace_tomorrows_photo",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
@@ -1498,6 +1531,126 @@
       "kind": "localization"
     },
     {
+      "source": "beat.hkr.rescue.reimu.after",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.after",
+      "target": "dlg.hkr.rescue.reimu.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.assist",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.assist",
+      "target": "dlg.hkr.rescue.reimu.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.clear",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.clear",
+      "target": "dlg.hkr.rescue.reimu.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.collapse",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.collapse",
+      "target": "dlg.hkr.rescue.reimu.collapse",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.defiant",
+      "target": "dlg.hkr.rescue.reimu.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.direct",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.direct",
+      "target": "dlg.hkr.rescue.reimu.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.loss",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.loss",
+      "target": "dlg.hkr.rescue.reimu.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.no_debt",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.no_debt",
+      "target": "dlg.hkr.rescue.reimu.no_debt",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.patient",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.patient",
+      "target": "dlg.hkr.rescue.reimu.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.playful",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.playful",
+      "target": "dlg.hkr.rescue.reimu.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.protect",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.protect",
+      "target": "dlg.hkr.rescue.reimu.protect",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.repair",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.rescue.reimu.repair",
+      "target": "dlg.hkr.rescue.reimu.repair",
+      "kind": "localization"
+    },
+    {
       "source": "beat.mtn.headline.aya.after_01",
       "target": "char.aya_shameimaru",
       "kind": "speaker"
@@ -1855,6 +2008,26 @@
     {
       "source": "choice.hkr.quiet.work",
       "target": "choice.hkr.quiet.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.rescue.answer",
+      "target": "choice.hkr.rescue.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.rescue.answer",
+      "target": "choice.hkr.rescue.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.rescue.answer",
+      "target": "choice.hkr.rescue.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.rescue.answer",
+      "target": "choice.hkr.rescue.playful",
       "kind": "localization"
     },
     {
@@ -3359,6 +3532,306 @@
     },
     {
       "source": "evt.hkr.spell_card_terms",
+      "target": "loc.hakurei_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n001",
+      "target": "evt.hkr.unasked_rescue.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n001",
+      "target": "mus_border_crossing",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n002",
+      "target": "evt.hkr.unasked_rescue.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n002",
+      "target": "obj.hkr.unasked_rescue.hold_veranda",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n002",
+      "target": "prop.boundary_thread",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n002",
+      "target": "prop.second_cushion",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n002",
+      "target": "prop.shrine_broom",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n003",
+      "target": "beat.hkr.rescue.reimu.collapse",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n003",
+      "target": "evt.hkr.unasked_rescue.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n004",
+      "target": "beat.hkr.rescue.reimu.protect",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n004",
+      "target": "evt.hkr.unasked_rescue.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n005",
+      "target": "choice.hkr.rescue.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n005",
+      "target": "evt.hkr.unasked_rescue.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n005",
+      "target": "evt.hkr.unasked_rescue.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n005",
+      "target": "evt.hkr.unasked_rescue.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n005",
+      "target": "evt.hkr.unasked_rescue.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n006",
+      "target": "beat.hkr.rescue.reimu.no_debt",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n006",
+      "target": "evt.hkr.unasked_rescue.node.n_danmaku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_after",
+      "target": "beat.hkr.rescue.reimu.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_after",
+      "target": "evt.hkr.unasked_rescue.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_assist",
+      "target": "beat.hkr.rescue.reimu.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_assist",
+      "target": "evt.hkr.unasked_rescue.node.n_repair",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_clear",
+      "target": "beat.hkr.rescue.reimu.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_clear",
+      "target": "evt.hkr.unasked_rescue.node.n_repair",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_danmaku",
+      "target": "danmaku.hkr.boundary_stain",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_danmaku",
+      "target": "evt.hkr.unasked_rescue.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_danmaku",
+      "target": "evt.hkr.unasked_rescue.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_danmaku",
+      "target": "evt.hkr.unasked_rescue.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_defiant_line",
+      "target": "beat.hkr.rescue.reimu.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_defiant_line",
+      "target": "evt.hkr.unasked_rescue.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_defiant",
+      "target": "evt.hkr.unasked_rescue.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_direct_line",
+      "target": "beat.hkr.rescue.reimu.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_direct_line",
+      "target": "evt.hkr.unasked_rescue.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_direct",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_direct",
+      "target": "evt.hkr.unasked_rescue.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_effects",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_effects",
+      "target": "evt.hkr.unasked_rescue.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_journal",
+      "target": "evt.hkr.unasked_rescue.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_journal",
+      "target": "journal.hkr.unasked_rescue",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_loss",
+      "target": "beat.hkr.rescue.reimu.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_loss",
+      "target": "evt.hkr.unasked_rescue.node.n_repair",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_patient_line",
+      "target": "beat.hkr.rescue.reimu.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_patient_line",
+      "target": "evt.hkr.unasked_rescue.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_patient",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_patient",
+      "target": "evt.hkr.unasked_rescue.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_playful_line",
+      "target": "beat.hkr.rescue.reimu.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_playful_line",
+      "target": "evt.hkr.unasked_rescue.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_playful",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_playful",
+      "target": "evt.hkr.unasked_rescue.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_quiet_chore",
+      "target": "evt.hkr.unasked_rescue.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_quiet_chore",
+      "target": "mini.hkr.quiet_chore",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_repair",
+      "target": "beat.hkr.rescue.reimu.repair",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue.node.n_repair",
+      "target": "evt.hkr.unasked_rescue.node.n_quiet_chore",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue",
+      "target": "char.reimu_hakurei",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue",
+      "target": "event.hkr.unasked_rescue.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue",
+      "target": "evt.hkr.unasked_rescue",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue",
+      "target": "loc.hakurei_shrine.veranda",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hkr.unasked_rescue",
       "target": "loc.hakurei_shrine",
       "kind": "location"
     },

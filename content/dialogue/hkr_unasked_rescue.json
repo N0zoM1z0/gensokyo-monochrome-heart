@@ -1,0 +1,14 @@
+{"schema_version":1,"beats":[
+{"id":"beat.hkr.rescue.reimu.collapse","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.collapse","portrait":"working_alert","nonverbal_key":"cue.reimu_raise_gohei","advance_policy":"input","memory_tag":"shrine.boundary_labor"},
+{"id":"beat.hkr.rescue.reimu.protect","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.protect","portrait":"working_sharp","nonverbal_key":"cue.reimu_push_safe_side","advance_policy":"input","memory_tag":"shrine.protection"},
+{"id":"beat.hkr.rescue.reimu.direct","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.direct","portrait":"working_neutral","nonverbal_key":"cue.reimu_mark_safe_lane","advance_policy":"input","memory_tag":"shrine.shared_work"},
+{"id":"beat.hkr.rescue.reimu.playful","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.playful","portrait":"quiet_amused","nonverbal_key":"cue.reimu_stop_sorting","advance_policy":"input","memory_tag":"shrine.shared_work"},
+{"id":"beat.hkr.rescue.reimu.patient","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.patient","portrait":"working_neutral","nonverbal_key":"cue.reimu_hand_broom","advance_policy":"input","memory_tag":"shrine.shared_work"},
+{"id":"beat.hkr.rescue.reimu.defiant","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.defiant","portrait":"working_sharp","nonverbal_key":"cue.reimu_point_boundary_side","advance_policy":"input","memory_tag":"shrine.boundary_labor"},
+{"id":"beat.hkr.rescue.reimu.no_debt","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.no_debt","portrait":"working_neutral","nonverbal_key":"cue.reimu_mark_safe_lane","advance_policy":"input","memory_tag":"shrine.protection"},
+{"id":"beat.hkr.rescue.reimu.clear","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.clear","portrait":"quiet_amused","nonverbal_key":"cue.reimu_reseal_box","advance_policy":"input","memory_tag":"shrine.shared_work"},
+{"id":"beat.hkr.rescue.reimu.assist","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.assist","portrait":"working_neutral","nonverbal_key":"cue.reimu_widen_seal","advance_policy":"input","memory_tag":"shrine.shared_work"},
+{"id":"beat.hkr.rescue.reimu.loss","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.loss","portrait":"private_neutral","nonverbal_key":"cue.reimu_take_front_line","advance_policy":"input","memory_tag":"shrine.shared_work"},
+{"id":"beat.hkr.rescue.reimu.repair","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.repair","portrait":"private_neutral","nonverbal_key":"cue.reimu_hand_broom","advance_policy":"input","memory_tag":"shrine.shared_work"},
+{"id":"beat.hkr.rescue.reimu.after","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.rescue.reimu.after","portrait":"private_neutral","nonverbal_key":"cue.reimu_leave_second_broom","advance_policy":"input","memory_tag":"shrine.open_door"}
+]}

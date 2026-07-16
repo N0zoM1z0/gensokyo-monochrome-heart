@@ -24,6 +24,12 @@
       "status": "authored",
       "estimated_minutes": 10,
       "comfort_tags": ["assist_clear", "loss_continues", "no_route_lockout"]
+    },
+    {
+      "id":"evt.hkr.unasked_rescue", "legacy_id":"EVT-HKR-RTE-005", "title_en":"The Unasked Rescue",
+      "location_id":"loc.hakurei_shrine", "lead_character_ids":["char.reimu_hakurei"], "primary_mode":"danmaku",
+      "core_change":"protection is accepted as mutual repair rather than a debt", "status":"authored", "estimated_minutes":11,
+      "comfort_tags":["assist_clear","loss_continues","no_timer_repair"]
     }
   ]
 }
