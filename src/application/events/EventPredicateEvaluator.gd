@@ -11,6 +11,7 @@ const SUPPORTED: Array[StringName] = [
 	&"event_not_completed",
 	&"has_item",
 	&"relationship_band_at_least",
+	&"route_intent_is",
 ]
 
 
@@ -54,6 +55,11 @@ func evaluate(predicate: AvailabilityPredicateRecord, state: GameState) -> Predi
 					predicate.band,
 				]
 			)
+		&"route_intent_is":
+			if not state.characters.has(predicate.character_id):
+				return _result(predicate, false, "character %s is absent" % predicate.character_id)
+			var intent_matches := state.characters[predicate.character_id].route_intent == predicate.value
+			return _result(predicate, intent_matches, "%s route intent is %s; requires %s" % [predicate.character_id, state.characters[predicate.character_id].route_intent, predicate.value])
 		_:
 			return _result(predicate, false, "unsupported predicate %s" % predicate.predicate)
 

@@ -71,6 +71,14 @@ func _expect_predicates_and_choice_resolution(failures: Array[String]) -> void:
 	RelationshipFacetRules.set_value(state.characters[&"char.reimu_hakurei"].relationship, &"trust", 3)
 	if not evaluator.evaluate(relationship_gate, state).passed:
 		failures.append("relationship predicate did not accept the high semantic band")
+	var friendship_gate := AvailabilityPredicateRecord.new(
+		&"route_intent_is", &"friendship", &"", [], &"char.reimu_hakurei"
+	)
+	if evaluator.evaluate(friendship_gate, state).passed:
+		failures.append("route-intent predicate accepted an undecided route")
+	state.characters[&"char.reimu_hakurei"].route_intent = &"friendship"
+	if not evaluator.evaluate(friendship_gate, state).passed:
+		failures.append("route-intent predicate rejected the matching declared route")
 
 
 func _expect_full_branch(tone: StringName, failures: Array[String]) -> GameState:
