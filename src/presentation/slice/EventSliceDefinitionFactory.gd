@@ -2,7 +2,7 @@ class_name EventSliceDefinitionFactory
 extends RefCounted
 ## Region composition edge. Shared slice behavior consumes only this packet.
 
-const COMPONENTS := [&"hakurei_shrine", &"scarlet_devil_mansion"]
+const COMPONENTS := [&"hakurei_shrine", &"scarlet_devil_mansion", &"youkai_mountain"]
 
 
 static func build(component_id: StringName) -> EventSliceDefinition:
@@ -11,6 +11,8 @@ static func build(component_id: StringName) -> EventSliceDefinition:
 	match definition.component_id:
 		&"scarlet_devil_mansion":
 			_configure_mansion(definition)
+		&"youkai_mountain":
+			_configure_mountain(definition)
 		_:
 			_configure_shrine(definition)
 	return definition
@@ -105,3 +107,50 @@ static func _configure_mansion(definition: EventSliceDefinition) -> void:
 	definition.reward_item_name_key = &"ui.slice.sdm.reward.item_name"
 	definition.complete_header_key = &"ui.slice.sdm.complete.header"
 	definition.complete_body_key = &"ui.slice.sdm.complete.body"
+
+
+static func _configure_mountain(definition: EventSliceDefinition) -> void:
+	definition.event_id = &"evt.mtn.tomorrows_headline"
+	definition.location_id = &"loc.youkai_mountain"
+	definition.journal_id = &"journal.mtn.tomorrows_headline"
+	definition.keepsake_id = &"item.keepsake.unprinted_caption"
+	definition.exploration_scene_path = "res://src/presentation/exploration/YoukaiMountainExplorationMode.tscn"
+	definition.exploration_mode_id = &"explore.mtn.wind_ridge"
+	definition.spot_id = &"loc.youkai_mountain.wind_ridge"
+	definition.objective_id = &"obj.mtn.trace_tomorrows_photo"
+	definition.companion_id = &""
+	definition.exploration_target_ids = [&"prop.mtn.tomorrow_paper", &"prop.mtn.intact_guardrail"]
+	definition.exploration_trigger_position = Vector2(552, 130)
+	definition.visible_character_ids = [
+		&"char.aya_shameimaru",
+		&"char.hatate_himekaidou",
+		&"char.momiji_inubashiri",
+		&"char.nitori_kawashiro",
+		&"char.sanae_kochiya",
+	]
+	definition.initial_music_id = &"mus_mountain_base"
+	definition.default_stage_component = &"mountain_report"
+	definition.afterbeat_node_prefixes = ["n_after_"]
+	definition.stage_components = {
+		&"n_direct_line": &"mountain_boundary",
+		&"n_playful_line": &"mountain_boundary",
+		&"n_patient_line": &"mountain_boundary",
+		&"n_defiant_line": &"mountain_boundary",
+		&"n_photo_origin": &"mountain_route",
+		&"n_danmaku_clear": &"mountain_new_frame",
+		&"n_danmaku_assist": &"mountain_new_frame",
+		&"n_danmaku_loss": &"mountain_new_frame",
+		&"n_after_01": &"mountain_patrol",
+		&"n_after_02": &"mountain_camera_lowered",
+	}
+	definition.invitation_component = &"newspaper"
+	definition.reward_component = &"caption"
+	definition.map_marker = Vector2(190, 73)
+	definition.invitation_header_key = &"ui.slice.mtn.invitation.header"
+	definition.invitation_body_key = &"ui.slice.mtn.invitation.body"
+	definition.invitation_confirm_key = &"ui.slice.mtn.invitation.confirm"
+	definition.map_body_key = &"ui.slice.mtn.map.body"
+	definition.map_confirm_key = &"ui.slice.mtn.map.confirm"
+	definition.reward_item_name_key = &"ui.slice.mtn.reward.item_name"
+	definition.complete_header_key = &"ui.slice.mtn.complete.header"
+	definition.complete_body_key = &"ui.slice.mtn.complete.body"

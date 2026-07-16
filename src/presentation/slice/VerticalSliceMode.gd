@@ -23,7 +23,7 @@ const ACTION_CONTRACT := [
 	"page_left", "page_right", "pause", "shot", "guard", "light", "heavy", "skill", "spell",
 ]
 
-@export_enum("hakurei_shrine", "scarlet_devil_mansion") var slice_component := "hakurei_shrine"
+@export_enum("hakurei_shrine", "scarlet_devil_mansion", "youkai_mountain") var slice_component := "hakurei_shrine"
 
 var _phase: Phase = Phase.ERROR
 var _definition := EventSliceDefinitionFactory.build(&"hakurei_shrine")
@@ -1061,6 +1061,12 @@ func _draw_event_stage(component_id: StringName, foreground: Color, background: 
 			_draw_mansion_library_stage(foreground, background)
 		&"mansion_balcony_public", &"mansion_balcony_private":
 			_draw_mansion_balcony_stage(component_id == &"mansion_balcony_private", foreground, background)
+		&"mountain_report", &"mountain_boundary", &"mountain_route", &"mountain_new_frame":
+			_draw_mountain_report_stage(component_id, foreground, background)
+		&"mountain_patrol":
+			_draw_mountain_patrol_stage(foreground, background)
+		&"mountain_camera_lowered":
+			_draw_mountain_camera_lowered_stage(foreground, background)
 		_:
 			_draw_shrine_stage(foreground, background)
 
@@ -1155,6 +1161,98 @@ func _draw_mansion_balcony_stage(is_private: bool, foreground: Color, background
 		draw_rect(Rect2(239, 18, 54, 45), foreground, false, 2.0)
 
 
+func _draw_mountain_report_stage(component_id: StringName, foreground: Color, background: Color) -> void:
+	_draw_mountain_depths(foreground, background)
+	_draw_aya_reporter(Vector2(39, 45), component_id == &"mountain_report", foreground, background)
+	match component_id:
+		&"mountain_boundary":
+			draw_rect(Rect2(11, 15, 29, 19), foreground, false, 1.0)
+			draw_line(Vector2(16, 21), Vector2(35, 21), foreground, 1.0)
+			draw_line(Vector2(16, 27), Vector2(29, 27), foreground, 1.0)
+		&"mountain_route":
+			for index: int in range(4):
+				var start := Vector2(10, 18 + index * 7)
+				draw_line(start, start + Vector2(27, 5 if index % 2 == 0 else -4), foreground, 1.0)
+		&"mountain_new_frame":
+			draw_rect(Rect2(8, 12, 33, 25), foreground, false, 2.0)
+			draw_line(Vector2(14, 31), Vector2(35, 18), foreground, 1.0)
+			draw_circle(Vector2(30, 20), 3, foreground, false, 1.0)
+
+
+func _draw_mountain_patrol_stage(foreground: Color, background: Color) -> void:
+	_draw_mountain_depths(foreground, background)
+	# Aya keeps the frame raised while Momiji's shield marks the closed printed route.
+	_draw_aya_reporter(Vector2(38, 45), true, foreground, background)
+	draw_circle(Vector2(15, 25), 10, foreground)
+	draw_circle(Vector2(15, 25), 7, background)
+	draw_line(Vector2(9, 19), Vector2(21, 31), foreground, 1.0)
+	draw_line(Vector2(21, 19), Vector2(9, 31), foreground, 1.0)
+	draw_rect(Rect2(66, 48, 4, 50), foreground)
+	draw_rect(Rect2(109, 48, 4, 50), foreground)
+	draw_line(Vector2(68, 57), Vector2(111, 76), foreground, 3.0)
+	draw_line(Vector2(68, 76), Vector2(111, 57), foreground, 3.0)
+
+
+func _draw_mountain_camera_lowered_stage(foreground: Color, background: Color) -> void:
+	_draw_mountain_depths(foreground, background)
+	_draw_aya_reporter(Vector2(39, 45), false, foreground, background)
+	# Silent regional network: Hatate's frame, Momiji's shield,
+	# Nitori's pipe, and Sanae's gohei. These are context, not speakers.
+	draw_rect(Rect2(116, 21, 19, 14), foreground, false, 1.0)
+	draw_circle(Vector2(126, 28), 3, foreground, false, 1.0)
+	draw_circle(Vector2(151, 28), 8, foreground, false, 1.0)
+	draw_line(Vector2(147, 22), Vector2(155, 34), foreground, 1.0)
+	draw_line(Vector2(155, 22), Vector2(147, 34), foreground, 1.0)
+	draw_line(Vector2(170, 19), Vector2(170, 36), foreground, 3.0)
+	draw_line(Vector2(170, 20), Vector2(185, 20), foreground, 3.0)
+	draw_line(Vector2(183, 20), Vector2(183, 31), foreground, 3.0)
+	draw_line(Vector2(204, 17), Vector2(204, 37), foreground, 2.0)
+	draw_line(Vector2(198, 22), Vector2(210, 22), foreground, 1.0)
+	draw_line(Vector2(198, 28), Vector2(210, 28), foreground, 1.0)
+
+
+func _draw_mountain_depths(foreground: Color, background: Color) -> void:
+	# FAR summit, MID waterfall, PLAY ledge, and FRONT rope line.
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(0, 65), Vector2(45, 25), Vector2(76, 46), Vector2(119, 12),
+		Vector2(164, 57), Vector2(215, 23), Vector2(272, 63), Vector2(320, 34),
+		Vector2(320, 101), Vector2(0, 101),
+	]), foreground)
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(8, 65), Vector2(46, 33), Vector2(77, 54), Vector2(119, 21),
+		Vector2(162, 66), Vector2(215, 32), Vector2(271, 72), Vector2(320, 44),
+		Vector2(320, 93), Vector2(0, 93),
+	]), background)
+	for x: int in [224, 229, 236, 242]:
+		draw_line(Vector2(x, 31), Vector2(x, 94), foreground, 2.0 if x in [224, 242] else 1.0)
+	for x: int in range(6, 318, 13):
+		draw_line(Vector2(x, 95), Vector2(x + 8, 88), foreground, 1.0)
+	draw_line(Vector2(0, 99), Vector2(320, 99), foreground, 2.0)
+	draw_line(Vector2(3, 72), Vector2(111, 50), foreground, 1.0)
+	draw_line(Vector2(111, 50), Vector2(177, 72), foreground, 1.0)
+
+
+func _draw_aya_reporter(origin: Vector2, camera_raised: bool, foreground: Color, background: Color) -> void:
+	draw_circle(origin, 10, foreground)
+	draw_colored_polygon(PackedVector2Array([
+		origin + Vector2(-13, -7), origin + Vector2(0, -16), origin + Vector2(13, -7),
+	]), foreground)
+	draw_colored_polygon(PackedVector2Array([
+		origin + Vector2(-8, 9), origin + Vector2(-15, 43), origin + Vector2(15, 43), origin + Vector2(8, 9),
+	]), foreground)
+	for side: int in [-1, 1]:
+		draw_colored_polygon(PackedVector2Array([
+			origin + Vector2(side * 7, 15), origin + Vector2(side * 23, 7),
+			origin + Vector2(side * 16, 31),
+		]), foreground)
+	var camera_origin := origin + (Vector2(-8, -2) if camera_raised else Vector2(-22, 29))
+	draw_rect(Rect2(camera_origin, Vector2(16, 11)), background)
+	draw_rect(Rect2(camera_origin, Vector2(16, 11)), foreground, false, 2.0)
+	draw_circle(camera_origin + Vector2(8, 5), 3, foreground, false, 1.0)
+	if not camera_raised:
+		draw_line(origin + Vector2(-8, 10), camera_origin + Vector2(2, 1), foreground, 1.0)
+
+
 func _draw_frame(foreground: Color) -> void:
 	draw_rect(Rect2(8, 8, 304, 164), foreground, false, 2.0)
 
@@ -1205,6 +1303,17 @@ func _draw_text(
 
 func _draw_invitation_art(rect: Rect2, foreground: Color, background: Color) -> void:
 	draw_rect(rect, foreground, false, 2.0)
+	if _definition.invitation_component == &"newspaper":
+		var paper := Rect2(rect.position + Vector2(9, 6), rect.size - Vector2(18, 12))
+		draw_rect(paper, foreground, false, 1.0)
+		draw_line(paper.position + Vector2(4, 6), Vector2(paper.end.x - 4, paper.position.y + 6), foreground, 2.0)
+		var photo := Rect2(paper.position + Vector2(4, 11), Vector2(paper.size.x * 0.43, paper.size.y - 15))
+		draw_rect(photo, foreground, false, 1.0)
+		draw_line(photo.position + Vector2(3, photo.size.y - 3), photo.end - Vector2(3, 3), foreground, 1.0)
+		for line_index: int in range(3):
+			var y := paper.position.y + 14 + line_index * 6
+			draw_line(Vector2(photo.end.x + 5, y), Vector2(paper.end.x - 4, y), foreground, 1.0)
+		return
 	if _definition.invitation_component == &"schedule":
 		var sheet := Rect2(rect.position + Vector2(18, 7), rect.size - Vector2(36, 14))
 		draw_rect(sheet, foreground, false, 1.0)
@@ -1222,10 +1331,13 @@ func _draw_invitation_art(rect: Rect2, foreground: Color, background: Color) -> 
 
 
 func _draw_reward_icon(origin: Vector2, foreground: Color) -> void:
-	if _definition.reward_component == &"checklist":
-		_draw_checklist(origin, foreground)
-	else:
-		_draw_unpaired_cup(origin, foreground)
+	match _definition.reward_component:
+		&"checklist":
+			_draw_checklist(origin, foreground)
+		&"caption":
+			_draw_unprinted_caption(origin, foreground)
+		_:
+			_draw_unpaired_cup(origin, foreground)
 
 
 func _draw_unpaired_cup(origin: Vector2, foreground: Color) -> void:
@@ -1242,6 +1354,15 @@ func _draw_checklist(origin: Vector2, foreground: Color) -> void:
 		if index < 2:
 			draw_line(Vector2(origin.x + 6, y - 1), Vector2(origin.x + 8, y + 1), foreground, 1.0)
 		draw_line(Vector2(origin.x + 12, y - 1), Vector2(origin.x + 22, y - 1), foreground, 1.0)
+
+
+func _draw_unprinted_caption(origin: Vector2, foreground: Color) -> void:
+	draw_rect(Rect2(origin, Vector2(31, 24)), foreground, false, 2.0)
+	draw_rect(Rect2(origin + Vector2(4, 4), Vector2(10, 8)), foreground, false, 1.0)
+	draw_line(origin + Vector2(17, 5), origin + Vector2(27, 5), foreground, 1.0)
+	draw_line(origin + Vector2(17, 10), origin + Vector2(25, 10), foreground, 1.0)
+	draw_line(origin + Vector2(4, 18), origin + Vector2(27, 18), foreground, 2.0)
+	draw_line(origin + Vector2(6, 16), origin + Vector2(25, 20), foreground, 1.0)
 
 
 func _draw_journal_mark(origin: Vector2, foreground: Color) -> void:

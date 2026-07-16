@@ -1,7 +1,7 @@
 key,context,speaker,en,ja,max_width_px,origin
 obj.mtn.trace_tomorrows_photo,objective,,Read tomorrow's paper. Check the rail in it.,明日の新聞を読み、写った柵を確かめる。,208,Original
 event.mtn.tomorrows_headline.title,event_title,,Tomorrow's Headline,明日の見出し,208,Original
-choice.mtn.headline.direct,choice,,Keep my face and name out of print.,顔も名前も載せないでと告げる。,248,Original
+choice.mtn.headline.direct,choice,,Do not print my face or name.,顔も名前も載せないでと告げる。,248,Original
 choice.mtn.headline.playful,choice,,Ask whether tomorrow accepts corrections before breakfast.,明日は朝食前の訂正を受け付けるか聞く。,248,Original
 choice.mtn.headline.patient,choice,,Ask to see the uncropped frame before naming it.,意味を決める前に切り抜く前の写真を見せてと頼む。,248,Original
 choice.mtn.headline.defiant,choice,,Say the headline may be teaching people to make it true.,その見出しが現実にする方法を教えていると指摘する。,248,Original
@@ -15,7 +15,7 @@ dlg.mtn.headline.aya.photo_origin,dialogue,char.aya_shameimaru,"Every safe route
 dlg.mtn.headline.aya.danmaku_clear,dialogue,char.aya_shameimaru,"You made a gap the paper never named. That is our first genuinely new fact.",新聞が一度も記さなかった隙間を作りました。これが最初の、本当に新しい事実です。,248,Original
 dlg.mtn.headline.aya.danmaku_assist,dialogue,char.aya_shameimaru,"The wider frame shows the same contradiction. The printed route did not own your movement.",広い画角でも同じ矛盾が写っています。印刷された道は、あなたの動きを支配できませんでした。,248,Original
 dlg.mtn.headline.aya.danmaku_loss,dialogue,char.aya_shameimaru,"Stop. A missed photograph is not consent to become tomorrow's accident.",止めます。撮れなかった写真は、明日の事故になることへの同意ではありません。,248,Original
-dlg.mtn.headline.aya.after_01,dialogue,char.aya_shameimaru,"The patrol closed the printed path because my paper called it dangerous. Then everyone took the rail.",新聞が危険だと書いたため、哨戒隊が掲載された道を閉じました。それで皆が柵側を通った。,248,Original
-dlg.mtn.headline.aya.after_02,dialogue,char.aya_shameimaru,"Camera down. No face, no name. I publish the correction after the route changes—not before.",カメラを下ろします。顔も名前も載せません。道が変わった後に訂正を出します。先回りはしません。,248,Original
+dlg.mtn.headline.aya.after_01,dialogue,char.aya_shameimaru,"My paper called the path dangerous, so the patrol closed it. Everyone took the rail instead.",新聞が危険だと書いたため、哨戒隊が掲載された道を閉じました。それで皆が柵側を通った。,248,Original
+dlg.mtn.headline.aya.after_02,dialogue,char.aya_shameimaru,"Camera down. No face, no name. I publish the correction only after the route changes.",カメラを下ろします。顔も名前も載せません。道が変わった後に訂正を出します。先回りはしません。,248,Original
 journal.mtn.tomorrows_headline.title,journal_title,,The Caption Not Printed,掲載されなかった説明文,248,Original
-journal.mtn.tomorrows_headline.body,journal_body,,"Aya's future photograph changed the patrol route and taught people to perform its accident. She honored the publication boundary, withheld the identifying caption, and will correct the story only after the route changes.",文の未来写真が哨戒路を変え、人々に事故を再現させていた。文は掲載条件を守り、人物を特定する説明文を伏せ、道が変わってから訂正すると約束した。,248,Original
+journal.mtn.tomorrows_headline.body,journal_body,,"Aya's future photo made people perform the accident. She honored your boundary and withheld your identity, promising a correction after the route changed.",文の未来写真が哨戒路を変え、人々に事故を再現させていた。文は掲載条件を守り、人物を特定する説明文を伏せ、道が変わってから訂正すると約束した。,248,Original

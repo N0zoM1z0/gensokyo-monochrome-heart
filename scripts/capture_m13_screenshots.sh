@@ -40,6 +40,12 @@ capture_pair m13_photo_active res://tests/ui/fixtures/TomorrowsHeadlineActiveFix
 capture_pair m13_photo_capture res://tests/ui/fixtures/TomorrowsHeadlineCaptureFixture.tscn
 capture_pair m13_mountain_trail res://tests/ui/fixtures/YoukaiMountainTrailFixture.tscn
 capture_pair m13_mountain_threshold res://tests/ui/fixtures/YoukaiMountainThresholdFixture.tscn
+capture_pair m13_mountain_slice_invitation res://tests/ui/fixtures/MountainSliceInvitationFixture.tscn
+capture_pair m13_mountain_slice_choice res://tests/ui/fixtures/MountainSliceChoiceFixture.tscn
+capture_pair m13_mountain_slice_patrol res://tests/ui/fixtures/MountainSlicePatrolFixture.tscn
+capture_pair m13_mountain_slice_camera_lowered res://tests/ui/fixtures/MountainSliceCameraLoweredFixture.tscn
+capture_pair m13_mountain_slice_reward res://tests/ui/fixtures/MountainSliceRewardFixture.tscn
+capture_pair m13_mountain_slice_journal res://tests/ui/fixtures/MountainSliceJournalFixture.tscn
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated
