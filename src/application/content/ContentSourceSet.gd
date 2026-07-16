@@ -23,14 +23,17 @@ var supplemental_character_paths: Array[String] = []
 var supplemental_location_paths: Array[String] = []
 var supplemental_event_paths: Array[String] = []
 var supplemental_event_graph_paths: Array[String] = [
+	"res://content/events/hkr_offerings_without_owners.json",
 	"res://content/events/sdm_late_by_three_minutes.json",
 	"res://content/events/mtn_tomorrows_headline.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
+	"res://content/dialogue/hkr_offerings_without_owners.json",
 	"res://content/dialogue/sdm_late_by_three_minutes.json",
 	"res://content/dialogue/mtn_tomorrows_headline.json",
 ]
 var supplemental_localization_paths: Array[String] = [
+	"res://content/localization/hkr_offerings_without_owners.csv",
 	"res://content/localization/sdm_late_by_three_minutes.csv",
 	"res://content/localization/mtn_tomorrows_headline.csv",
 	"res://content/localization/ein_four_dawns.csv",
@@ -38,11 +41,12 @@ var supplemental_localization_paths: Array[String] = [
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
 var supplemental_deferred_reference_paths: Array[String] = [
+	"res://content/indexes/hkr_route_deferred_references.json",
 	"res://content/indexes/sdm_deferred_references.json",
 	"res://content/indexes/mtn_deferred_references.json",
 ]
-var expected_supplemental_dialogue_count: int = 28
-var expected_supplemental_localization_count: int = 47
+var expected_supplemental_dialogue_count: int = 40
+var expected_supplemental_localization_count: int = 67
 
 
 func content_paths() -> Array[String]:

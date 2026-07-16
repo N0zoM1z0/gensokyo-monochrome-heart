@@ -21,12 +21,12 @@ const ACTION_CONTRACT := [
 	"page_left",
 	"page_right",
 ]
-const EVENT_ID: StringName = &"evt.hkr.empty_cushion"
 const TEA_MODE_RESULTS: Array[StringName] = [&"excellent", &"clear", &"loss"]
 const DANMAKU_MODE_RESULTS: Array[StringName] = [&"clear", &"assist_clear", &"loss"]
 const FIGHTER_MODE_RESULTS: Array[StringName] = [&"win", &"loss"]
 
 @export var fixture_start_at_choice: bool = false
+@export var fixture_event_id: StringName = &"evt.hkr.empty_cushion"
 
 var _profile: PresentationProfile = PresentationProfileRegistry.resolve(&"A")
 var _locale: StringName = &"en"
@@ -224,10 +224,13 @@ func _restart() -> void:
 	choice_control.visible = false
 	choice_control.set_profile(_profile.profile_id)
 	debug_overlay.set_overlay_enabled(false)
-	_accept_interpreter_result(_interpreter.start(_content.graph(EVENT_ID), _state, _content))
-	if fixture_start_at_choice and _phase == Phase.LINE:
-		_dialogue.confirm()
-		_accept_interpreter_result(_interpreter.advance_line())
+	_accept_interpreter_result(_interpreter.start(_content.graph(fixture_event_id), _state, _content))
+	if fixture_start_at_choice:
+		var guard := 0
+		while _phase == Phase.LINE and guard < 8:
+			_dialogue.confirm()
+			_accept_interpreter_result(_interpreter.advance_line())
+			guard += 1
 	queue_redraw()
 
 
@@ -242,6 +245,10 @@ func _create_event_state() -> GameState:
 	state.chapter_id = &"chapter.1"
 	state.time_slot = &"day"
 	GameCommandDispatcher.new().dispatch(state, SetLocationCommand.new(&"loc.hakurei_shrine"))
+	if fixture_event_id == &"evt.hkr.offerings_without_owners":
+		var dispatcher := GameCommandDispatcher.new()
+		dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.hkr.empty_cushion", &"n_fixture_predecessor"))
+		dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.hkr.empty_cushion", &"complete"))
 	return state
 
 
@@ -342,10 +349,10 @@ func _draw_dialogue(foreground: Color, background: Color) -> void:
 	var panel := Rect2(83, 96, 231, 76)
 	draw_rect(panel, background)
 	draw_rect(panel, foreground, false, 2.0)
-	draw_rect(Rect2(91, 88, 76, 12), background)
-	draw_rect(Rect2(91, 88, 76, 12), foreground, false, 1.0)
+	draw_rect(Rect2(91, 88, 84, 12), background)
+	draw_rect(Rect2(91, 88, 84, 12), foreground, false, 1.0)
 	var font := _japanese_font if _locale == &"ja" else _latin_font
-	draw_string(font, Vector2(95, 97), _dialogue.current.speaker_name, HORIZONTAL_ALIGNMENT_LEFT, 68, 8, foreground)
+	draw_string(font, Vector2(95, 97), _dialogue.current.speaker_name, HORIZONTAL_ALIGNMENT_LEFT, 76, 8, foreground)
 	var maximum_lines := 4 if _locale == &"ja" else 3
 	var lines := PixelTextWrapper.wrap(_dialogue.current.visible_text(), font, 211, 8, _locale, maximum_lines)
 	for index: int in range(lines.size()):
@@ -358,14 +365,27 @@ func _draw_dialogue(foreground: Color, background: Color) -> void:
 
 
 func _draw_choice_header(foreground: Color, background: Color) -> void:
-	draw_rect(Rect2(87, 7, 227, 24), background)
-	draw_rect(Rect2(87, 7, 227, 24), foreground, false, 2.0)
+	draw_rect(Rect2(23, 4, 292, 30), background)
+	draw_rect(Rect2(23, 4, 292, 30), foreground, false, 2.0)
 	var font := _japanese_font if _locale == &"ja" else _latin_font
-	draw_string(font, Vector2(94, 17), _catalog.text(&"ui.dialogue.choose_intent", _locale), HORIZONTAL_ALIGNMENT_LEFT, 88, 8, foreground)
-	var cue := _resolver.resolve(&"obj.hkr.find_second_cup", _locale).text
+	draw_string(font, Vector2(30, 17), _catalog.text(&"ui.dialogue.choose_intent", _locale), HORIZONTAL_ALIGNMENT_LEFT, 78, 8, foreground)
+	var objective_key := _event_objective_key()
+	var cue := _resolver.resolve(objective_key, _locale).text if objective_key != &"" else ""
 	var cue_text := cue.to_upper() if _locale == &"en" else cue
-	draw_string(font, Vector2(181, 17), cue_text, HORIZONTAL_ALIGNMENT_RIGHT, 126, 8, foreground)
-	draw_string(font, Vector2(92, 176), _catalog.text(&"ui.dialogue.backlog", _locale), HORIZONTAL_ALIGNMENT_LEFT, 48, 8, foreground)
+	var cue_lines := PixelTextWrapper.wrap(cue_text, font, 194, 8, _locale, 2)
+	for index: int in range(cue_lines.size()):
+		draw_string(font, Vector2(113, 15 + index * 10), cue_lines[index], HORIZONTAL_ALIGNMENT_RIGHT, 194, 8, foreground)
+	draw_string(font, Vector2(28, 176), _catalog.text(&"ui.dialogue.backlog", _locale), HORIZONTAL_ALIGNMENT_LEFT, 48, 8, foreground)
+
+
+func _event_objective_key() -> StringName:
+	var graph := _content.graph(fixture_event_id) if _content != null else null
+	if graph == null:
+		return &""
+	for node: EventNodeRecord in graph.nodes:
+		if node.objective_key != &"":
+			return node.objective_key
+	return &""
 
 
 func _draw_mock_mode(foreground: Color, background: Color) -> void:

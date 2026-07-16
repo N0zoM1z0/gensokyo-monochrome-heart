@@ -20,10 +20,10 @@ script = ExtResource("1_fixture")
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = 87.0
-offset_top = 35.0
+offset_left = 23.0
+offset_top = 38.0
 offset_right = 315.0
-offset_bottom = 159.0
+offset_bottom = 164.0
 script = ExtResource("2_choice")
 
 [node name="EventDebugOverlay" type="Control" parent="."]

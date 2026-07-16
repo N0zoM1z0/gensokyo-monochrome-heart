@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "beats": [
+    {"id":"beat.hkr.offerings.reimu.intro","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.intro","portrait":"working_neutral","nonverbal_key":"cue.reimu.empty_donation_box","advance_policy":"input","memory_tag":"shrine.memory_offerings"},
+    {"id":"beat.hkr.offerings.reimu.duty","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.duty","portrait":"working_irritated","nonverbal_key":"cue.reimu.sort_offerings","advance_policy":"input","memory_tag":"shrine.proper_function"},
+    {"id":"beat.hkr.offerings.reimu.direct","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.direct","portrait":"working_neutral","nonverbal_key":"cue.reimu.divide_trays","advance_policy":"input","memory_tag":"shrine.proper_function"},
+    {"id":"beat.hkr.offerings.reimu.playful","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.playful","portrait":"quiet_amused","nonverbal_key":"cue.reimu.ignore_coin_joke","advance_policy":"input","memory_tag":"shrine.proper_function"},
+    {"id":"beat.hkr.offerings.reimu.patient","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.patient","portrait":"private_neutral","nonverbal_key":"cue.reimu_point_boundary_side","advance_policy":"input","memory_tag":"shrine.shared_work"},
+    {"id":"beat.hkr.offerings.reimu.defiant","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.defiant","portrait":"working_sharp","nonverbal_key":"cue.reimu_stop_sorting","advance_policy":"input","memory_tag":"shrine.proper_function"},
+    {"id":"beat.hkr.offerings.reimu.pattern","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.pattern","portrait":"working_alert","nonverbal_key":"cue.reimu_raise_gohei","advance_policy":"input","memory_tag":"shrine.memory_offerings"},
+    {"id":"beat.hkr.offerings.reimu.clear","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.clear","portrait":"quiet_amused","nonverbal_key":"cue.reimu_reseal_box","advance_policy":"input","memory_tag":"shrine.shared_work"},
+    {"id":"beat.hkr.offerings.reimu.assist","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.assist","portrait":"working_neutral","nonverbal_key":"cue.reimu_widen_seal","advance_policy":"input","memory_tag":"shrine.shared_work"},
+    {"id":"beat.hkr.offerings.reimu.loss","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.loss","portrait":"private_neutral","nonverbal_key":"cue.reimu_take_front_line","advance_policy":"input","memory_tag":"shrine.shared_work"},
+    {"id":"beat.hkr.offerings.reimu.after_01","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.after_01","portrait":"working_neutral","nonverbal_key":"cue.reimu_return_memory_token","advance_policy":"input","memory_tag":"shrine.owner_unknown"},
+    {"id":"beat.hkr.offerings.reimu.after_02","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.offerings.reimu.after_02","portrait":"private_neutral","nonverbal_key":"cue.reimu_leave_second_broom","advance_policy":"input","memory_tag":"shrine.shared_work"}
+  ]
+}

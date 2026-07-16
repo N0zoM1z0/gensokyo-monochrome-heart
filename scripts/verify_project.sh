@@ -116,6 +116,8 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/VisualFoundationFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueEventFixture.tscn \
 	--scene=res://tests/ui/fixtures/DialogueChoiceFixture.tscn \
+	--scene=res://tests/ui/fixtures/ReimuOfferingsLineFixture.tscn \
+	--scene=res://tests/ui/fixtures/ReimuOfferingsChoiceFixture.tscn \
 	--scene=res://src/presentation/exploration/ExplorationMode.tscn \
 	--scene=res://tests/ui/fixtures/ExplorationFocusFixture.tscn \
 	--scene=res://src/presentation/minigames/TeaTemperatureMode.tscn \
@@ -328,6 +330,8 @@ run_checked "M13 Youkai Mountain save and resume matrix" env XDG_DATA_HOME="$LOG
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_mountain_save_resume_matrix.gd
 run_checked "M13 recorded-strategy Archive prototype" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_archive_prototype.gd
+run_checked "M14 Reimu Offerings Without Owners event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_offerings_event.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
@@ -377,6 +381,7 @@ else
 	run_checked "M11 authoring screenshot matrix" ./scripts/capture_m11_screenshots.sh
 	run_checked "M12 Scarlet Devil Mansion screenshot matrix" ./scripts/capture_m12_screenshots.sh
 	run_checked "M13 Wind-Frame, mountain, and Archive screenshot matrix" ./scripts/capture_m13_screenshots.sh
+	run_checked "M14 Reimu route screenshot matrix" ./scripts/capture_m14_screenshots.sh
 	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
 		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
 		--rendering-driver opengl3 \

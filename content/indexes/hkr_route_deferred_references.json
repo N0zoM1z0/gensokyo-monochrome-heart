@@ -1,0 +1,10 @@
+{
+  "schema": "gmh-deferred-references-v1",
+  "references": [
+    {"id":"loc.hakurei_shrine.donation_box","kind":"spot","target_milestone":"M14","reason":"Reimu route composition owns the donation-box event volume."},
+    {"id":"prop.donation_box","kind":"interactable","target_milestone":"M14","reason":"The shrine donation box anchors the ownerless-offering objective."},
+    {"id":"prop.memory_offering","kind":"interactable","target_milestone":"M14","reason":"A locale-free memory token is sorted during shrine work."},
+    {"id":"prop.boundary_thread","kind":"interactable","target_milestone":"M14","reason":"Visible boundary residue distinguishes shrine duty from ordinary cleaning."},
+    {"id":"journal.hkr.offerings_without_owners","kind":"journal_entry","target_milestone":"M14","reason":"The second Reimu route observation records her independent shrine work."}
+  ]
+}
