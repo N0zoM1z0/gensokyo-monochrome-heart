@@ -245,10 +245,13 @@ func _create_event_state() -> GameState:
 	state.chapter_id = &"chapter.1"
 	state.time_slot = &"day"
 	GameCommandDispatcher.new().dispatch(state, SetLocationCommand.new(&"loc.hakurei_shrine"))
-	if fixture_event_id == &"evt.hkr.offerings_without_owners":
+	if fixture_event_id in [&"evt.hkr.offerings_without_owners", &"evt.hkr.day_nothing_happens"]:
 		var dispatcher := GameCommandDispatcher.new()
 		dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.hkr.empty_cushion", &"n_fixture_predecessor"))
 		dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.hkr.empty_cushion", &"complete"))
+		if fixture_event_id == &"evt.hkr.day_nothing_happens":
+			dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.hkr.offerings_without_owners", &"n_fixture_predecessor"))
+			dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.hkr.offerings_without_owners", &"complete"))
 	return state
 
 

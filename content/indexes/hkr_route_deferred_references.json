@@ -5,6 +5,12 @@
     {"id":"prop.donation_box","kind":"interactable","target_milestone":"M14","reason":"The shrine donation box anchors the ownerless-offering objective."},
     {"id":"prop.memory_offering","kind":"interactable","target_milestone":"M14","reason":"A locale-free memory token is sorted during shrine work."},
     {"id":"prop.boundary_thread","kind":"interactable","target_milestone":"M14","reason":"Visible boundary residue distinguishes shrine duty from ordinary cleaning."},
-    {"id":"journal.hkr.offerings_without_owners","kind":"journal_entry","target_milestone":"M14","reason":"The second Reimu route observation records her independent shrine work."}
+    {"id":"journal.hkr.offerings_without_owners","kind":"journal_entry","target_milestone":"M14","reason":"The second Reimu route observation records her independent shrine work."},
+    {"id":"loc.hakurei_shrine.sitting_room","kind":"spot","target_milestone":"M14","reason":"The no-slot private-habit event stays inside the shrine's ordinary room."},
+    {"id":"prop.shrine_broom","kind":"interactable","target_milestone":"M14","reason":"Alternating broom strokes begin the quiet chore routine."},
+    {"id":"prop.paper_screen","kind":"interactable","target_milestone":"M14","reason":"Three paper seams make Reimu's private routine concrete."},
+    {"id":"prop.second_cushion","kind":"interactable","target_milestone":"M14","reason":"The unchanged second cushion carries the quiet afterbeat."},
+    {"id":"mini.hkr.quiet_chore","kind":"minigame","target_milestone":"M14","reason":"Deterministic sweep, mend, and silence-tolerance runtime."},
+    {"id":"journal.hkr.day_nothing_happens","kind":"journal_entry","target_milestone":"M14","reason":"The third Reimu route observation records an ordinary afternoon without performance."}
   ]
 }

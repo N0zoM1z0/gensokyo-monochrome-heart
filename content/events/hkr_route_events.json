@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "evt.hkr.day_nothing_happens",
+      "legacy_id": "EVT-HKR-RTE-003",
+      "title_en": "The Day Nothing Happens",
+      "location_id": "loc.hakurei_shrine",
+      "lead_character_ids": ["char.reimu_hakurei"],
+      "primary_mode": "minigame",
+      "core_change": "shared silence becomes a private habit",
+      "status": "authored",
+      "estimated_minutes": 8,
+      "comfort_tags": ["no_timer", "low_motion", "no_failure"]
+    }
+  ]
+}

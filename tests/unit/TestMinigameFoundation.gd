@@ -15,7 +15,92 @@ func run() -> Array[String]:
 	_expect_time_grid_service(failures)
 	_expect_five_impossible_errands(failures)
 	_expect_soul_garden_release(failures)
+	_expect_quiet_chore(failures)
 	return failures
+
+
+func _expect_quiet_chore(failures: Array[String]) -> void:
+	var definition := QuietChoreDefinition.new()
+	if not definition.validation_errors().is_empty():
+		failures.append("Quiet Chore does not satisfy the shared minigame contract")
+	var game := QuietChoreSimulation.new()
+	game.configure(_quiet_chore_context(), MinigameAssistSettings.new())
+	var confirm := MinigameInputFrame.new()
+	confirm.confirm_pressed = true
+	game.step(confirm)
+	for stroke: int in range(QuietChoreSimulation.REQUIRED_SWEEP_STROKES):
+		var sweep := MinigameInputFrame.new()
+		sweep.grid_direction.x = -1 if stroke % 2 == 0 else 1
+		game.step(sweep)
+	for _seam: int in range(QuietChoreSimulation.REQUIRED_MENDED_SEAMS):
+		game.step(confirm)
+	if game.state.phase != QuietChoreState.Phase.SIT:
+		failures.append("Quiet Chore did not progress from sweep and mend into sitting")
+	for _tick: int in range(QuietChoreSimulation.STANDARD_SILENCE_TICKS - 1):
+		game.step(MinigameInputFrame.new())
+	game.step(confirm)
+	if game.state.silence_ticks != 0 or game.state.interruptions != 1 or game.final_result != null:
+		failures.append("Quiet Chore did not reset silence after player input")
+	for _tick: int in range(QuietChoreSimulation.STANDARD_SILENCE_TICKS):
+		game.step(MinigameInputFrame.new())
+	if game.final_result == null or game.final_result.result_tag != &"clear":
+		failures.append("Quiet Chore advanced without a deterministic silence clear")
+	elif &"quiet_chore.silence_tolerated" not in game.final_result.outcome_tags:
+		failures.append("Quiet Chore result omitted semantic silence evidence")
+	var repeated := _run_quiet_chore(false)
+	var repeated_again := _run_quiet_chore(false)
+	if repeated.final_result.telemetry.final_state_hash != repeated_again.final_result.telemetry.final_state_hash:
+		failures.append("Quiet Chore produced nondeterministic telemetry")
+	var story := _run_quiet_chore(true)
+	if story.state.silence_ticks != QuietChoreSimulation.STORY_SILENCE_TICKS or not story.final_result.used_assist:
+		failures.append("Quiet Chore Story pacing did not preserve the same clear with shorter waiting")
+	var drift_safe := QuietChoreSimulation.new()
+	var drift_settings := MinigameAssistSettings.new()
+	drift_settings.slower_pace = true
+	drift_safe.configure(_quiet_chore_context(), drift_settings)
+	_advance_quiet_chore_to_sit(drift_safe)
+	for _pulse: int in range(4):
+		for _tick: int in range(30):
+			drift_safe.step(MinigameInputFrame.new())
+		drift_safe.step(confirm)
+	if drift_safe.final_result == null or drift_safe.state.interruptions != 3:
+		failures.append("Quiet Chore Story input pulses erased progress or caused a soft lock")
+	if EventModeSceneRegistry.new().scene_for(&"mini.hkr.quiet_chore") == null:
+		failures.append("Quiet Chore mode is not reachable through the event scene registry")
+
+
+func _run_quiet_chore(story_pacing: bool) -> QuietChoreSimulation:
+	var game := QuietChoreSimulation.new()
+	var settings := MinigameAssistSettings.new()
+	settings.slower_pace = story_pacing
+	game.configure(_quiet_chore_context(), settings)
+	_advance_quiet_chore_to_sit(game)
+	var required := QuietChoreSimulation.STORY_SILENCE_TICKS if story_pacing else QuietChoreSimulation.STANDARD_SILENCE_TICKS
+	for _tick: int in range(required):
+		game.step(MinigameInputFrame.new())
+	return game
+
+
+func _advance_quiet_chore_to_sit(game: QuietChoreSimulation) -> void:
+	var confirm := MinigameInputFrame.new()
+	confirm.confirm_pressed = true
+	game.step(confirm)
+	for stroke: int in range(QuietChoreSimulation.REQUIRED_SWEEP_STROKES):
+		var sweep := MinigameInputFrame.new()
+		sweep.grid_direction.x = -1 if stroke % 2 == 0 else 1
+		game.step(sweep)
+	for _seam: int in range(QuietChoreSimulation.REQUIRED_MENDED_SEAMS):
+		game.step(confirm)
+
+
+func _quiet_chore_context() -> ModeContext:
+	var context := ModeContext.new()
+	context.mode_type = &"start_minigame"
+	context.mode_id = &"mini.hkr.quiet_chore"
+	context.event_id = &"evt.hkr.day_nothing_happens"
+	context.node_id = &"n_quiet_chore"
+	context.deterministic_seed = 14031
+	return context
 
 
 func _expect_soul_garden_release(failures: Array[String]) -> void:

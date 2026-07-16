@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "beats": [
+    {"id":"beat.hkr.quiet.reimu.intro","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.intro","portrait":"private_neutral","nonverbal_key":"cue.reimu_set_down_broom","advance_policy":"input","memory_tag":"shrine.ordinary_afternoon"},
+    {"id":"beat.hkr.quiet.reimu.no_incident","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.no_incident","portrait":"quiet_amused","nonverbal_key":"cue.reimu_check_clear_sky","advance_policy":"input","memory_tag":"shrine.no_incident"},
+    {"id":"beat.hkr.quiet.reimu.direct","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.direct","portrait":"working_neutral","nonverbal_key":"cue.reimu_nod_to_far_side","advance_policy":"input","memory_tag":"shrine.shared_work"},
+    {"id":"beat.hkr.quiet.reimu.playful","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.playful","portrait":"quiet_amused","nonverbal_key":"cue.reimu_lift_cup_first","advance_policy":"input","memory_tag":"shrine.shared_silence"},
+    {"id":"beat.hkr.quiet.reimu.patient","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.patient","portrait":"private_neutral","nonverbal_key":"cue.reimu_point_without_looking","advance_policy":"input","memory_tag":"shrine.shared_rhythm"},
+    {"id":"beat.hkr.quiet.reimu.defiant","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.defiant","portrait":"working_sharp","nonverbal_key":"cue.reimu_offer_paper_square","advance_policy":"input","memory_tag":"shrine.work_standard"},
+    {"id":"beat.hkr.quiet.reimu.begin","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.begin","portrait":"working_neutral","nonverbal_key":"cue.reimu_begin_sweeping","advance_policy":"input","memory_tag":"shrine.ordinary_afternoon"},
+    {"id":"beat.hkr.quiet.reimu.tea_cold","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.tea_cold","portrait":"private_neutral","nonverbal_key":"cue.reimu_touch_cold_cup","advance_policy":"input","memory_tag":"shrine.shared_silence"},
+    {"id":"beat.hkr.quiet.reimu.after","speaker_id":"char.reimu_hakurei","text_key":"dlg.hkr.quiet.reimu.after","portrait":"quiet_amused","nonverbal_key":"cue.reimu_leave_cushions_in_place","advance_policy":"input","memory_tag":"shrine.ordinary_afternoon"}
+  ]
+}

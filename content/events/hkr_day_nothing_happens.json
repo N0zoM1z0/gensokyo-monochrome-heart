@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "evt.hkr.day_nothing_happens",
+  "title_key": "event.hkr.day_nothing_happens.title",
+  "location_id": "loc.hakurei_shrine",
+  "spot_id": "loc.hakurei_shrine.sitting_room",
+  "cast": ["char.reimu_hakurei"],
+  "availability": [
+    {"predicate": "chapter_at_least", "value": "chapter.1"},
+    {"predicate": "event_completed", "value": "evt.hkr.offerings_without_owners"},
+    {"predicate": "flag_false", "key": "evt.hkr.day_nothing_happens.complete"}
+  ],
+  "entry_node": "n001",
+  "nodes": {
+    "n001": {"type": "music_state", "state": "mus_reimu_private", "next": "n002"},
+    "n002": {"type": "exploration_objective", "objective_key": "obj.hkr.day_nothing_happens.enter", "interactable_ids": ["prop.shrine_broom", "prop.paper_screen", "prop.second_cushion"], "next": "n003"},
+    "n003": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.intro", "next": "n004"},
+    "n004": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.no_incident", "next": "n005"},
+    "n005": {"type": "choice", "choice_id": "choice.hkr.quiet.work", "options": [
+      {"tone": "direct", "text_key": "choice.hkr.quiet.direct", "next": "n_direct"},
+      {"tone": "playful", "text_key": "choice.hkr.quiet.playful", "next": "n_playful"},
+      {"tone": "patient", "text_key": "choice.hkr.quiet.patient", "next": "n_patient"},
+      {"tone": "defiant", "text_key": "choice.hkr.quiet.defiant", "next": "n_defiant"}
+    ]},
+    "n_direct": {"type": "effects", "effects": [
+      {"op": "relationship", "character_id": "char.reimu_hakurei", "facet": "respect", "delta": 1},
+      {"op": "set_flag", "key": "flag.route.reimu.quiet.direct_work", "value": true}
+    ], "next": "n_direct_line"},
+    "n_playful": {"type": "effects", "effects": [
+      {"op": "relationship", "character_id": "char.reimu_hakurei", "facet": "spark", "delta": 1},
+      {"op": "set_flag", "key": "flag.route.reimu.quiet.silence_bet", "value": true}
+    ], "next": "n_playful_line"},
+    "n_patient": {"type": "effects", "effects": [
+      {"op": "relationship", "character_id": "char.reimu_hakurei", "facet": "ease", "delta": 1},
+      {"op": "set_flag", "key": "flag.route.reimu.quiet.followed_rhythm", "value": true}
+    ], "next": "n_patient_line"},
+    "n_defiant": {"type": "effects", "effects": [
+      {"op": "relationship", "character_id": "char.reimu_hakurei", "facet": "respect", "delta": 1},
+      {"op": "relationship", "character_id": "char.reimu_hakurei", "facet": "strain", "delta": 1},
+      {"op": "set_flag", "key": "flag.route.reimu.quiet.patch_challenged", "value": true}
+    ], "next": "n_defiant_line"},
+    "n_direct_line": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.direct", "next": "n006"},
+    "n_playful_line": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.playful", "next": "n006"},
+    "n_patient_line": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.patient", "next": "n006"},
+    "n_defiant_line": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.defiant", "next": "n006"},
+    "n006": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.begin", "next": "n_quiet_chore"},
+    "n_quiet_chore": {"type": "start_minigame", "minigame_id": "mini.hkr.quiet_chore", "result_branches": {"clear": "n007"}},
+    "n007": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.tea_cold", "next": "n008"},
+    "n008": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.after", "next": "n_journal"},
+    "n_journal": {"type": "journal_entry", "entry_id": "journal.hkr.day_nothing_happens", "entry_type": "route_observation", "tags": ["private_habit", "shared_silence", "ordinary_shrine_work"], "next": "n_effects"},
+    "n_effects": {"type": "effects", "effects": [
+      {"op": "set_flag", "key": "flag.route.reimu.silence_tolerated", "value": true},
+      {"op": "set_flag", "key": "flag.route.reimu.private_habit_seen", "value": true},
+      {"op": "set_flag", "key": "evt.hkr.day_nothing_happens.complete", "value": true}
+    ], "next": "n_end"},
+    "n_end": {"type": "end_event", "outcome": "ordinary_afternoon_shared_without_performance"}
+  },
+  "origin_tags": {"canon": 2, "fanon": 0, "original": 11},
+  "comfort_tags": ["no_timer", "no_failure", "low_motion_available", "silence_is_explicit_not_timed_guesswork"]
+}

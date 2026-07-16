@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://tests/ui/fixtures/DialogueEventFixture.tscn" id="1_dialogue"]
+
+[node name="ReimuQuietChoiceFixture" instance=ExtResource("1_dialogue")]
+fixture_start_at_choice = true
+fixture_event_id = &"evt.hkr.day_nothing_happens"

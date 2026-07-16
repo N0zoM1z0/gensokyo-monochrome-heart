@@ -459,7 +459,7 @@ func _validate_manifest_counts(sources: ContentSourceSet) -> void:
 		return
 	_check_count("characters", _characters.size(), manifest.expected_characters, sources.manifest_path)
 	_check_count("locations", _locations.size(), manifest.expected_locations, sources.manifest_path)
-	_check_count("events", _events.size(), manifest.expected_events, sources.manifest_path)
+	_check_count("events", _events.size(), manifest.expected_events + sources.expected_supplemental_event_count, sources.manifest_path)
 	var authored_string_count := 0
 	for record: ContentStringRecord in _strings.values():
 		if record.context != &"ui":

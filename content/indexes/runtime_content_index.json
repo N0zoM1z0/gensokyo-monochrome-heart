@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "7c253e81475c03895bbb50545a08c2e9d84287b8a1bff6c3ff4864a95331e8a8",
+  "content_hash": "554f6a2cfc765673aedeab3f07f8c04a473e5817cb4f5d2c954742f8bc5313ec",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 28,
-    "dialogue_beats": 59,
-    "localization": 618,
+    "events": 29,
+    "dialogue_beats": 68,
+    "localization": 654,
     "music_cues": 89,
-    "event_nodes": 121
+    "event_nodes": 141
   },
   "ids": {
     "characters": [
@@ -120,6 +120,7 @@
       "evt.hgy.last_sweet",
       "evt.hgy.petal_on_hold",
       "evt.hgy.two_bodies_bridge",
+      "evt.hkr.day_nothing_happens",
       "evt.hkr.empty_cushion",
       "evt.hkr.offerings_without_owners",
       "evt.hkr.return_before_borrowing",
@@ -168,6 +169,15 @@
       "beat.hkr.offerings.reimu.patient",
       "beat.hkr.offerings.reimu.pattern",
       "beat.hkr.offerings.reimu.playful",
+      "beat.hkr.quiet.reimu.after",
+      "beat.hkr.quiet.reimu.begin",
+      "beat.hkr.quiet.reimu.defiant",
+      "beat.hkr.quiet.reimu.direct",
+      "beat.hkr.quiet.reimu.intro",
+      "beat.hkr.quiet.reimu.no_incident",
+      "beat.hkr.quiet.reimu.patient",
+      "beat.hkr.quiet.reimu.playful",
+      "beat.hkr.quiet.reimu.tea_cold",
       "beat.mtn.headline.aya.after_01",
       "beat.mtn.headline.aya.after_02",
       "beat.mtn.headline.aya.danmaku_assist",
@@ -210,6 +220,10 @@
       "choice.hkr.offerings.direct",
       "choice.hkr.offerings.patient",
       "choice.hkr.offerings.playful",
+      "choice.hkr.quiet.defiant",
+      "choice.hkr.quiet.direct",
+      "choice.hkr.quiet.patient",
+      "choice.hkr.quiet.playful",
       "choice.mtn.headline.defiant",
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
@@ -249,6 +263,15 @@
       "dlg.hkr.offerings.reimu.patient",
       "dlg.hkr.offerings.reimu.pattern",
       "dlg.hkr.offerings.reimu.playful",
+      "dlg.hkr.quiet.reimu.after",
+      "dlg.hkr.quiet.reimu.begin",
+      "dlg.hkr.quiet.reimu.defiant",
+      "dlg.hkr.quiet.reimu.direct",
+      "dlg.hkr.quiet.reimu.intro",
+      "dlg.hkr.quiet.reimu.no_incident",
+      "dlg.hkr.quiet.reimu.patient",
+      "dlg.hkr.quiet.reimu.playful",
+      "dlg.hkr.quiet.reimu.tea_cold",
       "dlg.mtn.headline.aya.after_01",
       "dlg.mtn.headline.aya.after_02",
       "dlg.mtn.headline.aya.danmaku_assist",
@@ -277,6 +300,7 @@
       "dlg.sdm.late.sakuya.service_clear",
       "dlg.sdm.late.sakuya.service_excellent",
       "dlg.sdm.late.sakuya.service_loss",
+      "event.hkr.day_nothing_happens.title",
       "event.hkr.empty_cushion.title",
       "event.hkr.offerings_without_owners.title",
       "event.mtn.tomorrows_headline.title",
@@ -293,6 +317,8 @@
       "input.glyph.pointer.confirm",
       "input.glyph.pointer.menu",
       "input.glyph.pointer.move",
+      "journal.hkr.day_nothing_happens.body",
+      "journal.hkr.day_nothing_happens.title",
       "journal.hkr.empty_cushion.body",
       "journal.hkr.empty_cushion.title",
       "journal.hkr.offerings_without_owners.body",
@@ -302,6 +328,7 @@
       "journal.sdm.missing_minute.body",
       "journal.sdm.missing_minute.title",
       "obj.ein.cross_four_dawns",
+      "obj.hkr.day_nothing_happens.enter",
       "obj.hkr.find_second_cup",
       "obj.hkr.offerings.inspect_box",
       "obj.mtn.trace_tomorrows_photo",
@@ -632,6 +659,25 @@
       "ui.minigame.errands.tutorial.body",
       "ui.minigame.errands.tutorial.footer",
       "ui.minigame.errands.tutorial.header",
+      "ui.minigame.quiet_chore.active.footer",
+      "ui.minigame.quiet_chore.mend",
+      "ui.minigame.quiet_chore.objective",
+      "ui.minigame.quiet_chore.pause.body",
+      "ui.minigame.quiet_chore.paused",
+      "ui.minigame.quiet_chore.result.body",
+      "ui.minigame.quiet_chore.result.footer",
+      "ui.minigame.quiet_chore.result.header",
+      "ui.minigame.quiet_chore.sit",
+      "ui.minigame.quiet_chore.sit.interrupted",
+      "ui.minigame.quiet_chore.sit.story",
+      "ui.minigame.quiet_chore.step.0",
+      "ui.minigame.quiet_chore.step.1",
+      "ui.minigame.quiet_chore.step.2",
+      "ui.minigame.quiet_chore.sweep",
+      "ui.minigame.quiet_chore.title",
+      "ui.minigame.quiet_chore.tutorial.body",
+      "ui.minigame.quiet_chore.tutorial.footer",
+      "ui.minigame.quiet_chore.tutorial.header",
       "ui.minigame.soul_garden.active.footer",
       "ui.minigame.soul_garden.instruction.collect",
       "ui.minigame.soul_garden.instruction.release",
@@ -1221,6 +1267,96 @@
       "kind": "localization"
     },
     {
+      "source": "beat.hkr.quiet.reimu.after",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.after",
+      "target": "dlg.hkr.quiet.reimu.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.begin",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.begin",
+      "target": "dlg.hkr.quiet.reimu.begin",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.defiant",
+      "target": "dlg.hkr.quiet.reimu.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.direct",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.direct",
+      "target": "dlg.hkr.quiet.reimu.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.intro",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.intro",
+      "target": "dlg.hkr.quiet.reimu.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.no_incident",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.no_incident",
+      "target": "dlg.hkr.quiet.reimu.no_incident",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.patient",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.patient",
+      "target": "dlg.hkr.quiet.reimu.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.playful",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.playful",
+      "target": "dlg.hkr.quiet.reimu.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.tea_cold",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.quiet.reimu.tea_cold",
+      "target": "dlg.hkr.quiet.reimu.tea_cold",
+      "kind": "localization"
+    },
+    {
       "source": "beat.mtn.headline.aya.after_01",
       "target": "char.aya_shameimaru",
       "kind": "speaker"
@@ -1541,6 +1677,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.hkr.quiet.work",
+      "target": "choice.hkr.quiet.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.quiet.work",
+      "target": "choice.hkr.quiet.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.quiet.work",
+      "target": "choice.hkr.quiet.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.quiet.work",
+      "target": "choice.hkr.quiet.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.mtn.headline.boundary",
       "target": "choice.mtn.headline.defiant",
       "kind": "localization"
@@ -1723,6 +1879,251 @@
     {
       "source": "evt.hgy.two_bodies_bridge",
       "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n001",
+      "target": "evt.hkr.day_nothing_happens.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n001",
+      "target": "mus_reimu_private",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n002",
+      "target": "evt.hkr.day_nothing_happens.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n002",
+      "target": "obj.hkr.day_nothing_happens.enter",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n002",
+      "target": "prop.paper_screen",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n002",
+      "target": "prop.second_cushion",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n002",
+      "target": "prop.shrine_broom",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n003",
+      "target": "beat.hkr.quiet.reimu.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n003",
+      "target": "evt.hkr.day_nothing_happens.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n004",
+      "target": "beat.hkr.quiet.reimu.no_incident",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n004",
+      "target": "evt.hkr.day_nothing_happens.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n005",
+      "target": "choice.hkr.quiet.work",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n005",
+      "target": "evt.hkr.day_nothing_happens.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n005",
+      "target": "evt.hkr.day_nothing_happens.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n005",
+      "target": "evt.hkr.day_nothing_happens.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n005",
+      "target": "evt.hkr.day_nothing_happens.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n006",
+      "target": "beat.hkr.quiet.reimu.begin",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n006",
+      "target": "evt.hkr.day_nothing_happens.node.n_quiet_chore",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n007",
+      "target": "beat.hkr.quiet.reimu.tea_cold",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n007",
+      "target": "evt.hkr.day_nothing_happens.node.n008",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n008",
+      "target": "beat.hkr.quiet.reimu.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n008",
+      "target": "evt.hkr.day_nothing_happens.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_defiant_line",
+      "target": "beat.hkr.quiet.reimu.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_defiant_line",
+      "target": "evt.hkr.day_nothing_happens.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_defiant",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_defiant",
+      "target": "evt.hkr.day_nothing_happens.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_direct_line",
+      "target": "beat.hkr.quiet.reimu.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_direct_line",
+      "target": "evt.hkr.day_nothing_happens.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_direct",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_direct",
+      "target": "evt.hkr.day_nothing_happens.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_effects",
+      "target": "evt.hkr.day_nothing_happens.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_journal",
+      "target": "evt.hkr.day_nothing_happens.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_journal",
+      "target": "journal.hkr.day_nothing_happens",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_patient_line",
+      "target": "beat.hkr.quiet.reimu.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_patient_line",
+      "target": "evt.hkr.day_nothing_happens.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_patient",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_patient",
+      "target": "evt.hkr.day_nothing_happens.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_playful_line",
+      "target": "beat.hkr.quiet.reimu.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_playful_line",
+      "target": "evt.hkr.day_nothing_happens.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_playful",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_playful",
+      "target": "evt.hkr.day_nothing_happens.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_quiet_chore",
+      "target": "evt.hkr.day_nothing_happens.node.n007",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_quiet_chore",
+      "target": "mini.hkr.quiet_chore",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens",
+      "target": "char.reimu_hakurei",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens",
+      "target": "event.hkr.day_nothing_happens.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens",
+      "target": "evt.hkr.day_nothing_happens",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens",
+      "target": "loc.hakurei_shrine.sitting_room",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens",
+      "target": "loc.hakurei_shrine",
       "kind": "location"
     },
     {

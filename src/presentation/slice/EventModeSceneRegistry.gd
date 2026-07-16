@@ -7,6 +7,7 @@ const SCENE_PATHS := {
 	&"mini.sdm.time_grid_service": "res://src/presentation/minigames/TimeGridServiceMode.tscn",
 	&"mini.ein.five_impossible_errands": "res://src/presentation/minigames/FiveImpossibleErrandsMode.tscn",
 	&"mini.hgy.soul_garden": "res://src/presentation/minigames/SoulGardenMode.tscn",
+	&"mini.hkr.quiet_chore": "res://src/presentation/minigames/QuietChoreMode.tscn",
 	&"danmaku.hkr.boundary_stain": "res://src/presentation/danmaku/BoundaryStainMode.tscn",
 	&"danmaku.sdm.missing_minute_knives": "res://src/presentation/danmaku/MissingMinuteKnivesMode.tscn",
 	&"danmaku.mtn.tomorrows_headline": "res://src/presentation/danmaku/TomorrowsHeadlineMode.tscn",

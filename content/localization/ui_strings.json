@@ -521,6 +521,25 @@
     {"key": "input.glyph.pointer.cancel", "en": "[RIGHT CLICK]", "ja": "[右クリック]"},
     {"key": "input.glyph.pointer.confirm", "en": "[LEFT CLICK]", "ja": "[左クリック]"},
     {"key": "input.glyph.pointer.menu", "en": "[MENU]", "ja": "[メニュー]"},
-    {"key": "input.glyph.pointer.move", "en": "[POINTER]", "ja": "[ポインター]"}
+    {"key": "input.glyph.pointer.move", "en": "[POINTER]", "ja": "[ポインター]"},
+    {"key": "ui.minigame.quiet_chore.title", "en": "THE DAY NOTHING HAPPENS", "ja": "何も起きない日"},
+    {"key": "ui.minigame.quiet_chore.objective", "en": "Sweep, mend, then let the room stay quiet.", "ja": "掃き、障子を直し、それから部屋を静かにしておく。"},
+    {"key": "ui.minigame.quiet_chore.tutorial.header", "en": "NO INCIDENT NEEDS SOLVING.", "ja": "解決すべき異変はない。"},
+    {"key": "ui.minigame.quiet_chore.tutorial.body", "en": "Alternate directions to sweep. Confirm each paper seam. When you sit, leave the controls alone.", "ja": "左右交互に掃き、決定で障子の継ぎ目を直す。座ったら、操作せずにいる。"},
+    {"key": "ui.minigame.quiet_chore.tutorial.footer", "en": "CONFIRM  BEGIN AN ORDINARY AFTERNOON", "ja": "決定　いつもの午後を始める"},
+    {"key": "ui.minigame.quiet_chore.step.0", "en": "SWEEP", "ja": "掃く"},
+    {"key": "ui.minigame.quiet_chore.step.1", "en": "MEND", "ja": "直す"},
+    {"key": "ui.minigame.quiet_chore.step.2", "en": "SIT", "ja": "座る"},
+    {"key": "ui.minigame.quiet_chore.sweep", "en": "MOVE LEFT / RIGHT IN TURN", "ja": "左右を交互に押す"},
+    {"key": "ui.minigame.quiet_chore.mend", "en": "CONFIRM EACH PAPER SEAM", "ja": "決定で紙の継ぎ目を直す"},
+    {"key": "ui.minigame.quiet_chore.sit", "en": "LET THE SILENCE FINISH", "ja": "静けさが満ちるのを待つ"},
+    {"key": "ui.minigame.quiet_chore.sit.interrupted", "en": "SILENCE INTERRUPTED / BEGIN AGAIN", "ja": "静けさが途切れた／もう一度待つ"},
+    {"key": "ui.minigame.quiet_chore.sit.story", "en": "STORY: INPUT PAUSES / PROGRESS STAYS", "ja": "ストーリー：入力で止まる／進み具合は残る"},
+    {"key": "ui.minigame.quiet_chore.active.footer", "en": "PAUSE MENU / SILENCE HAS NO SCORE", "ja": "一時停止／静けさに点数はない"},
+    {"key": "ui.minigame.quiet_chore.paused", "en": "THE AFTERNOON WAITS", "ja": "午後は待っている"},
+    {"key": "ui.minigame.quiet_chore.pause.body", "en": "Confirm, Cancel, or Pause to return.", "ja": "決定・取消・一時停止で戻る。"},
+    {"key": "ui.minigame.quiet_chore.result.header", "en": "NOTHING HAPPENED", "ja": "何も起きなかった"},
+    {"key": "ui.minigame.quiet_chore.result.body", "en": "Clean room. Cold tea. Neither needed an audience.", "ja": "部屋はきれい。\nお茶は冷めた。\n観客はいらない。"},
+    {"key": "ui.minigame.quiet_chore.result.footer", "en": "CONFIRM  RETURN TO THE VERANDA", "ja": "決定　縁側へ戻る"}
   ]
 }

@@ -527,6 +527,8 @@ func _spawn_mechanical_mode(context: ModeContext) -> void:
 		(mode as TeaTemperatureMode).configure_assists(_tea_assists())
 	elif mode is SoulGardenMode:
 		(mode as SoulGardenMode).configure_assists(_tea_assists())
+	elif mode is QuietChoreMode:
+		(mode as QuietChoreMode).configure_assists(_tea_assists())
 	elif mode is BoundaryStainMode:
 		(mode as BoundaryStainMode).configure_assists(_danmaku_assists())
 	elif mode is CompactFighterMode:

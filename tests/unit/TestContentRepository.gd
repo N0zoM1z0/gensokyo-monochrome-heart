@@ -32,7 +32,7 @@ func _expect_counts(report: ContentLoadReport, failures: Array[String]) -> void:
 		report.music_cue_count,
 		report.event_node_count,
 	]
-	var expected := [71, 19, 28, 59, 618, 89, 121]
+	var expected := [71, 19, 29, 68, 654, 89, 141]
 	if actual != expected:
 		failures.append("typed starter counts differ: expected %s, got %s" % [expected, actual])
 	if not report.human_readable().contains("content_hash=%s" % report.content_hash):
@@ -80,8 +80,8 @@ func _expect_queries(repository: ContentRepository, failures: Array[String]) -> 
 		failures.append("headline location query expected 5 records")
 	if repository.events_by_mode(&"danmaku").size() != 4:
 		failures.append("danmaku event query expected 4 records")
-	if repository.dialogue_by_speaker(&"char.reimu_hakurei").size() != 30:
-		failures.append("Reimu dialogue query expected 30 authored route beats")
+	if repository.dialogue_by_speaker(&"char.reimu_hakurei").size() != 39:
+		failures.append("Reimu dialogue query expected 39 authored route beats")
 	if repository.dialogue_by_speaker(&"char.marisa_kirisame").size() != 1:
 		failures.append("Marisa dialogue query expected the duel-introduction beat")
 	if repository.music_by_priority(&"A").size() != 44:
@@ -120,8 +120,11 @@ func _expect_multiple_event_graphs(failures: Array[String]) -> void:
 	if not report.is_success():
 		failures.append("secondary event graph failed typed loading: %s" % report.human_readable())
 		return
-	if repository.all_event_graphs().size() != 4:
-		failures.append("event graph catalog expected four records")
+	if repository.all_event_graphs().size() != 5:
+		failures.append("event graph catalog expected five records")
+	var quiet_day := repository.graph(&"evt.hkr.day_nothing_happens")
+	if quiet_day == null or quiet_day.location_id != &"loc.hakurei_shrine" or quiet_day.node(&"n_quiet_chore") == null:
+		failures.append("stable graph lookup did not expose The Day Nothing Happens")
 	var offerings := repository.graph(&"evt.hkr.offerings_without_owners")
 	if offerings == null or offerings.location_id != &"loc.hakurei_shrine" or offerings.node(&"n_end") == null:
 		failures.append("stable graph lookup did not expose Offerings Without Owners")
@@ -131,10 +134,10 @@ func _expect_multiple_event_graphs(failures: Array[String]) -> void:
 	var mountain := repository.graph(&"evt.mtn.tomorrows_headline")
 	if mountain == null or mountain.location_id != &"loc.youkai_mountain" or mountain.node(&"n_danmaku") == null:
 		failures.append("stable graph lookup did not expose Tomorrow's Headline")
-	if report.event_node_count != 121:
-		failures.append("event node aggregate expected 121, got %d" % report.event_node_count)
+	if report.event_node_count != 141:
+		failures.append("event node aggregate expected 141, got %d" % report.event_node_count)
 	var parsed: Variant = JSON.parse_string(repository.runtime_index_json())
-	if not parsed is Dictionary or int(parsed.counts.event_nodes) != 121:
+	if not parsed is Dictionary or int(parsed.counts.event_nodes) != 141:
 		failures.append("runtime index did not aggregate multiple event graphs")
 
 

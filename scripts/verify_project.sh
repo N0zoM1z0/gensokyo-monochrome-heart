@@ -118,6 +118,13 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/DialogueChoiceFixture.tscn \
 	--scene=res://tests/ui/fixtures/ReimuOfferingsLineFixture.tscn \
 	--scene=res://tests/ui/fixtures/ReimuOfferingsChoiceFixture.tscn \
+	--scene=res://tests/ui/fixtures/ReimuQuietLineFixture.tscn \
+	--scene=res://tests/ui/fixtures/ReimuQuietChoiceFixture.tscn \
+	--scene=res://src/presentation/minigames/QuietChoreMode.tscn \
+	--scene=res://tests/ui/fixtures/QuietChoreTutorialFixture.tscn \
+	--scene=res://tests/ui/fixtures/QuietChoreSitFixture.tscn \
+	--scene=res://tests/ui/fixtures/QuietChoreStoryPulseFixture.tscn \
+	--scene=res://tests/ui/fixtures/QuietChoreResultFixture.tscn \
 	--scene=res://src/presentation/exploration/ExplorationMode.tscn \
 	--scene=res://tests/ui/fixtures/ExplorationFocusFixture.tscn \
 	--scene=res://src/presentation/minigames/TeaTemperatureMode.tscn \
@@ -332,6 +339,8 @@ run_checked "M13 recorded-strategy Archive prototype" env XDG_DATA_HOME="$LOG_DI
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_archive_prototype.gd
 run_checked "M14 Reimu Offerings Without Owners event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_offerings_event.gd
+run_checked "M14 Reimu The Day Nothing Happens event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_quiet_day_event.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
