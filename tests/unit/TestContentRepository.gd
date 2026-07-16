@@ -32,7 +32,7 @@ func _expect_counts(report: ContentLoadReport, failures: Array[String]) -> void:
 		report.music_cue_count,
 		report.event_node_count,
 	]
-	var expected := [71, 19, 28, 35, 408, 89, 70]
+	var expected := [71, 19, 28, 35, 427, 89, 70]
 	if actual != expected:
 		failures.append("typed starter counts differ: expected %s, got %s" % [expected, actual])
 	if not report.human_readable().contains("content_hash=%s" % report.content_hash):

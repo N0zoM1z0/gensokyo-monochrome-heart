@@ -132,6 +132,28 @@ func graze_radius_fp() -> int:
 	return GRAZE_RADIUS_FP + (LARGE_GRAZE_BONUS_FP if assists.larger_graze_radius else 0)
 
 
+func interaction_component_id() -> StringName:
+	return &"margin_corridor"
+
+
+func interaction_count() -> int:
+	# Standard Margin corridors have no separate presentation cue. Specialized
+	# interactions (such as the photo frame) opt in by overriding this counter.
+	return 0
+
+
+func interaction_cue_key() -> StringName:
+	return &"ui.danmaku.visual.bomb"
+
+
+func interaction_cue_value() -> int:
+	return -1
+
+
+func interaction_frame_size_pixels() -> Vector2i:
+	return Vector2i.ZERO
+
+
 func safe_lane_preview() -> int:
 	if not assists.safe_lane_preview or current_phase() == null:
 		return -1

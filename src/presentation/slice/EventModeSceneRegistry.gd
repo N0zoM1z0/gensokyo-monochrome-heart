@@ -7,6 +7,7 @@ const SCENE_PATHS := {
 	&"mini.sdm.time_grid_service": "res://src/presentation/minigames/TimeGridServiceMode.tscn",
 	&"danmaku.hkr.boundary_stain": "res://src/presentation/danmaku/BoundaryStainMode.tscn",
 	&"danmaku.sdm.missing_minute_knives": "res://src/presentation/danmaku/MissingMinuteKnivesMode.tscn",
+	&"danmaku.mtn.tomorrows_headline": "res://src/presentation/danmaku/TomorrowsHeadlineMode.tscn",
 	&"duel.hkr.spell_card_terms": "res://src/presentation/fighter/CompactFighterMode.tscn",
 }
 

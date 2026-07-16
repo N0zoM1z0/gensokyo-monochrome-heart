@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://src/presentation/danmaku/BoundaryStainMode.tscn" id="1_base"]
+
+[node name="TomorrowsHeadlineMode" instance=ExtResource("1_base")]
+pattern_path = "res://content/danmaku/tomorrows_headline.json"
+default_mode_id = &"danmaku.mtn.tomorrows_headline"
+default_event_id = &"evt.mtn.tomorrows_headline"
+pause_title_key = &"ui.danmaku.photo.paused"
+result_text_prefix = "ui.danmaku.photo.result"
+simulation_component = "photo_frame"
+field_component = "mountain_wind"
+companion_action_key = &"ui.danmaku.photo.capture"
+teaching_keys = Array[StringName]([&"ui.danmaku.photo.teach.future_frame", &"ui.danmaku.photo.teach.keyword_gale", &"ui.danmaku.photo.teach.published_path"])

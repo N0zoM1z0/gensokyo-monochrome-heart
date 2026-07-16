@@ -6,6 +6,7 @@ const PATTERN_PATH := "res://content/danmaku/boundary_stain.json"
 const SCHEMA_PATH := "res://schemas/danmaku_pattern.schema.json"
 const REPLAY_PATH := "res://tests/fixtures/danmaku/boundary_stain_golden_replay.json"
 const KNIFE_PATTERN_PATH := "res://content/danmaku/missing_minute_knives.json"
+const PHOTO_PATTERN_PATH := "res://content/danmaku/tomorrows_headline.json"
 
 var _definition: DanmakuPatternDefinition
 
@@ -25,6 +26,7 @@ func run() -> Array[String]:
 	_expect_all_assist_tiers_clear(failures)
 	_expect_story_state_isolation(failures)
 	_expect_missing_minute_components(failures)
+	_expect_photo_graze_component(failures)
 	return failures
 
 
@@ -120,6 +122,67 @@ func _expect_missing_minute_components(failures: Array[String]) -> void:
 	var accepted := simulation.accept_loss()
 	if accepted == null or accepted.outcome_tags[0] != knife_definition.id:
 		failures.append("generic danmaku result retained a boundary-specific outcome tag")
+
+
+func _expect_photo_graze_component(failures: Array[String]) -> void:
+	var raw: Variant = JSON.parse_string(FileAccess.get_file_as_string(PHOTO_PATTERN_PATH))
+	var schema: Variant = JSON.parse_string(FileAccess.get_file_as_string(SCHEMA_PATH))
+	var schema_errors := JsonSchemaValidator.new().validate(raw, schema)
+	if not schema_errors.is_empty():
+		failures.append("Tomorrow's Headline JSON failed its schema: %s" % [schema_errors])
+		return
+	var loader := DanmakuPatternLoader.new()
+	var photo_definition := loader.load_path(PHOTO_PATTERN_PATH)
+	if photo_definition == null or not loader.errors.is_empty():
+		failures.append("Tomorrow's Headline pattern could not load: %s" % [loader.errors])
+		return
+	var simulation := DanmakuSimulationRegistry.new().create(&"photo_frame")
+	if not simulation is PhotoGrazeSimulation or not simulation.configure(
+		photo_definition,
+		_context(13131),
+		DanmakuAssistSettings.new(),
+		512
+	):
+		failures.append("photo-frame registry component rejected Tomorrow's Headline")
+		return
+	simulation.state.player_x_fp = 0
+	simulation.state.player_y_fp = 0
+	simulation.step(DanmakuInputFrame.new())
+	if (
+		simulation.state.player_x_fp < PhotoGrazeSimulation.FRAME_HALF_WIDTH_FP
+		or simulation.state.player_y_fp < PhotoGrazeSimulation.FRAME_HALF_HEIGHT_FP
+	):
+		failures.append("photo-frame center was not clamped to keep all four edges visible")
+	simulation.pool.clear(true)
+	for offset: Vector2i in [Vector2i(-10, -8), Vector2i(8, -5), Vector2i(14, 10), Vector2i(30, 0)]:
+		var spec := DanmakuBulletSpec.new()
+		spec.x_fp = simulation.state.player_x_fp + offset.x * BoundaryStainSimulation.FP
+		spec.y_fp = simulation.state.player_y_fp + offset.y * BoundaryStainSimulation.FP
+		spec.velocity_y_fp = 1
+		spec.telegraph_ticks = 1
+		spec.lifetime_ticks = 60
+		simulation.pool.spawn(spec)
+	simulation.step(DanmakuInputFrame.new())
+	simulation.state.margin = BoundaryStainSimulation.MARGIN_ACTION_COST
+	var capture := DanmakuInputFrame.new()
+	capture.margin_pressed = true
+	simulation.step(capture)
+	var photo := simulation as PhotoGrazeSimulation
+	if photo.photo_attempt_count != 1 or photo.captured_bullet_count != 3:
+		failures.append("movable photo frame did not capture exactly the three enclosed bullets")
+	if photo.state.margin != 0 or photo.state.margin_spent != BoundaryStainSimulation.MARGIN_ACTION_COST:
+		failures.append("photo capture did not spend the shared Margin resource")
+	photo.retry_phase()
+	if (
+		photo.photo_attempt_count != 0
+		or photo.captured_bullet_count != 0
+		or photo.empty_frame_count != 0
+		or photo.last_capture_count != 0
+	):
+		failures.append("photo counters did not restore to the deterministic phase-open snapshot")
+	var accepted := photo.accept_loss()
+	if accepted == null or &"strategy.photo_frame" not in accepted.outcome_tags:
+		failures.append("photo-graze result omitted its locale-free Archive strategy tag")
 
 
 func _expect_movement_pause_and_phase_retry(failures: Array[String]) -> void:

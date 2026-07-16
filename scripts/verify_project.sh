@@ -163,6 +163,10 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/BoundaryStainLossFixture.tscn \
 	--scene=res://tests/ui/fixtures/BoundaryStainAssistClearFixture.tscn \
 	--scene=res://tests/ui/fixtures/BoundaryStainStressFixture.tscn \
+	--scene=res://src/presentation/danmaku/TomorrowsHeadlineMode.tscn \
+	--scene=res://tests/ui/fixtures/TomorrowsHeadlineTutorialFixture.tscn \
+	--scene=res://tests/ui/fixtures/TomorrowsHeadlineActiveFixture.tscn \
+	--scene=res://tests/ui/fixtures/TomorrowsHeadlineCaptureFixture.tscn \
 	--scene=res://src/presentation/fighter/CompactFighterMode.tscn \
 	--scene=res://tests/ui/fixtures/CompactFighterIntroFixture.tscn \
 	--scene=res://tests/ui/fixtures/CompactFighterActiveFixture.tscn \
@@ -332,6 +336,7 @@ else
 	run_checked "M10 150 percent UI screenshot matrix" ./scripts/capture_m10_screenshots.sh
 	run_checked "M11 authoring screenshot matrix" ./scripts/capture_m11_screenshots.sh
 	run_checked "M12 Scarlet Devil Mansion screenshot matrix" ./scripts/capture_m12_screenshots.sh
+	run_checked "M13 Wind-Frame photo-graze screenshot matrix" ./scripts/capture_m13_screenshots.sh
 	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
 		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
 		--rendering-driver opengl3 \

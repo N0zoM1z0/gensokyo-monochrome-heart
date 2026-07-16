@@ -21,13 +21,16 @@ const ACTION_CONTRACT := [
 	"cancel",
 ]
 
-@export_enum("live", "spell", "phase1", "focus", "bomb", "phase2", "phase3", "paused", "result", "loss", "assist_clear", "stress") var fixture_state: String = "live"
+@export_enum("live", "spell", "phase1", "focus", "bomb", "interaction", "phase2", "phase3", "paused", "result", "loss", "assist_clear", "stress") var fixture_state: String = "live"
 @export_enum("100", "85", "70", "55") var fixture_density: String = "100"
 @export_file("*.json") var pattern_path := "res://content/danmaku/boundary_stain.json"
 @export var default_mode_id: StringName = &"danmaku.hkr.boundary_stain"
 @export var default_event_id: StringName = &"evt.hkr.offerings_without_owners"
 @export var pause_title_key: StringName = &"ui.danmaku.paused"
 @export var result_text_prefix := "ui.danmaku.result"
+@export_enum("standard", "photo_frame") var simulation_component := "standard"
+@export_enum("shrine", "mountain_wind") var field_component := "shrine"
+@export var companion_action_key: StringName = &"ui.input.margin"
 @export var teaching_keys: Array[StringName] = [
 	&"ui.danmaku.boundary.teach.amulet",
 	&"ui.danmaku.boundary.teach.offering",
@@ -318,7 +321,7 @@ func _load_runtime() -> void:
 	host = DanmakuHost.new()
 	host.result_ready.connect(_on_result_ready)
 	host.phase_checkpoint.connect(_on_phase_checkpoint)
-	runtime = BoundaryStainSimulation.new()
+	runtime = DanmakuSimulationRegistry.new().create(StringName(simulation_component))
 	var capacity := 2500 if fixture_state == "stress" else 512
 	if not host.load_encounter(runtime, definition, mode_context, settings, capacity):
 		push_error("Danmaku runtime rejected its configuration")
@@ -375,6 +378,18 @@ func _prepare_fixture_state() -> void:
 			var bomb := held.duplicate_frame()
 			bomb.bomb_pressed = true
 			_step_runtime(bomb)
+		"interaction":
+			_intro_ticks_remaining = 0
+			step_fixture(170, held)
+			for index: int in range(runtime.pool.capacity):
+				if runtime.pool.used[index] != 0 and runtime.pool.lifecycle[index] == DanmakuBulletPool.Lifecycle.COMMITTED:
+					runtime.state.player_x_fp = runtime.pool.x_fp[index]
+					runtime.state.player_y_fp = runtime.pool.y_fp[index]
+					break
+			runtime.state.margin = BoundaryStainSimulation.MARGIN_ACTION_COST
+			var interaction := held.duplicate_frame()
+			interaction.margin_pressed = true
+			_step_runtime(interaction)
 		"phase2":
 			_intro_ticks_remaining = 0
 			step_fixture(510, held)
@@ -441,12 +456,15 @@ func _step_runtime(frame: DanmakuInputFrame) -> ModeResult:
 	_last_shot_held = frame.shot_held
 	var previous_graze := runtime.state.graze_count
 	var previous_bombs := runtime.state.bombs_used
+	var previous_interactions := runtime.interaction_count()
 	var result := host.step(frame)
 	if runtime.state.graze_count > previous_graze and runtime.state.graze_count % 5 == 1:
 		_show_cue(&"ui.danmaku.visual.graze", &"sfx.danmaku.graze", 620.0, 0.045)
 	if runtime.state.bombs_used > previous_bombs:
 		_show_cue(&"ui.danmaku.visual.bomb", &"sfx.danmaku.bomb", 170.0, 0.18)
 		_border_pulse_seconds = 0.0 if _no_flash_active else 0.24
+	if runtime.interaction_count() > previous_interactions:
+		_show_cue(runtime.interaction_cue_key(), &"sfx.danmaku.photo", 840.0, 0.06)
 	return result
 
 
@@ -544,6 +562,7 @@ func _draw() -> void:
 	_draw_field_shell(foreground, background)
 	_batch_renderer.draw_safe_lane(self, runtime, FIELD_ORIGIN, FIELD_SIZE, foreground)
 	_batch_renderer.draw_field(self, runtime, FIELD_ORIGIN, FIELD_SIZE, foreground, background)
+	_draw_interaction_overlay(foreground)
 	_draw_boss_and_player(foreground, background)
 	_draw_status_rail(foreground, background)
 	if _tutorial_waiting or _intro_ticks_remaining > 0:
@@ -566,11 +585,7 @@ func _draw_field_shell(foreground: Color, background: Color) -> void:
 	draw_rect(FOOTER_FRAME, background)
 	draw_rect(FOOTER_FRAME, foreground, false, 1.0)
 	if not runtime.state.focus_held and runtime.assists.background_dim_percent < 80:
-		# Sparse shrine geometry never shares the bullets' compact frequency.
-		draw_line(Vector2(22, 151), Vector2(210, 151), foreground, 1.0)
-		draw_line(Vector2(34, 151), Vector2(34, 119), foreground, 1.0)
-		draw_line(Vector2(198, 151), Vector2(198, 119), foreground, 1.0)
-		draw_line(Vector2(26, 122), Vector2(206, 122), foreground, 1.0)
+		_draw_field_landmark(foreground)
 	var font := _font()
 	draw_string(font, Vector2(8, 11), _catalog.text(runtime.current_phase().title_key, _locale), HORIZONTAL_ALIGNMENT_LEFT, 190, _hud_font_size(), foreground)
 	draw_string(_latin_font, Vector2(198, 11), "%d/3" % (runtime.state.phase_index + 1), HORIZONTAL_ALIGNMENT_RIGHT, 24, 7, foreground)
@@ -582,12 +597,42 @@ func _draw_field_shell(foreground: Color, background: Color) -> void:
 		input_hint(GameInput.SHOT, _catalog.text(&"ui.input.shot", _locale)),
 		input_hint(GameInput.FOCUS, _catalog.text(&"ui.input.focus", _locale)),
 		input_hint(GameInput.BOMB, _catalog.text(&"ui.input.bomb", _locale)),
-		input_hint(GameInput.COMPANION, _catalog.text(&"ui.input.margin", _locale)),
+		input_hint(GameInput.COMPANION, _catalog.text(companion_action_key, _locale)),
 		"%s %s" % [_compact_pause_binding(), _catalog.text(&"ui.input.pause", _locale)],
 	])
 	draw_string(font, Vector2(8, 176), controls, HORIZONTAL_ALIGNMENT_CENTER, 304, _hud_font_size(), foreground)
 	if _border_pulse_seconds > 0.0 and not _no_flash_active:
 		draw_rect(FIELD_FRAME.grow(-2), foreground, false, 2.0)
+
+
+func _draw_field_landmark(foreground: Color) -> void:
+	match StringName(field_component):
+		&"mountain_wind":
+			draw_line(Vector2(14, 151), Vector2(67, 83), foreground, 1.0)
+			draw_line(Vector2(67, 83), Vector2(112, 151), foreground, 1.0)
+			draw_line(Vector2(108, 151), Vector2(158, 63), foreground, 1.0)
+			draw_line(Vector2(158, 63), Vector2(218, 151), foreground, 1.0)
+			for y: int in range(70, 151, 7):
+				draw_line(Vector2(154, y), Vector2(160, y + 4), foreground, 1.0)
+			for y: int in range(91, 143, 13):
+				draw_line(Vector2(24, y), Vector2(55, y - 8), foreground, 1.0)
+		_:
+			# Sparse shrine geometry never shares the bullets' compact frequency.
+			draw_line(Vector2(22, 151), Vector2(210, 151), foreground, 1.0)
+			draw_line(Vector2(34, 151), Vector2(34, 119), foreground, 1.0)
+			draw_line(Vector2(198, 151), Vector2(198, 119), foreground, 1.0)
+			draw_line(Vector2(26, 122), Vector2(206, 122), foreground, 1.0)
+
+
+func _draw_interaction_overlay(foreground: Color) -> void:
+	if runtime.interaction_component_id() != &"photo_frame":
+		return
+	var frame_size := runtime.interaction_frame_size_pixels()
+	var player := _display_position(runtime.state.player_x_fp, runtime.state.player_y_fp)
+	var rect := Rect2(player - Vector2(frame_size) / 2.0, Vector2(frame_size))
+	draw_rect(rect, foreground, false, 1.0)
+	for corner: Vector2 in [rect.position, Vector2(rect.end.x, rect.position.y), rect.end, Vector2(rect.position.x, rect.end.y)]:
+		draw_circle(corner, 1.0, foreground)
 
 
 func _draw_boss_and_player(foreground: Color, background: Color) -> void:
@@ -630,8 +675,29 @@ func _draw_status_rail(foreground: Color, background: Color) -> void:
 	draw_string(font, Vector2(233, 109), _catalog.text(&"ui.danmaku.score", _locale), HORIZONTAL_ALIGNMENT_LEFT, 78, _hud_font_size(), foreground)
 	draw_string(font, Vector2(233, 121), "%07d" % runtime.state.score, HORIZONTAL_ALIGNMENT_RIGHT, 78, _hud_font_size(), foreground)
 	draw_string(font, Vector2(233, 134), _catalog.text(&"ui.danmaku.margin", _locale), HORIZONTAL_ALIGNMENT_LEFT, 78, _hud_font_size(), foreground)
-	_draw_gauge(Rect2(234, 138, 76, 7), runtime.state.margin, BoundaryStainSimulation.MAX_MARGIN, foreground, background)
-	draw_string(font, Vector2(233, 158), "%d%% / %d%%" % [runtime.assists.density_percent, runtime.assists.bullet_speed_percent], HORIZONTAL_ALIGNMENT_CENTER, 78, _hud_font_size(), foreground)
+	var margin_rect := Rect2(234, 138, 76, 7)
+	_draw_gauge(margin_rect, runtime.state.margin, BoundaryStainSimulation.MAX_MARGIN, foreground, background)
+	if runtime.interaction_component_id() == &"photo_frame":
+		var threshold_x := margin_rect.position.x + roundi(
+			margin_rect.size.x * BoundaryStainSimulation.MARGIN_ACTION_COST / float(BoundaryStainSimulation.MAX_MARGIN)
+		)
+		draw_line(Vector2(threshold_x, 137), Vector2(threshold_x, 146), foreground, 1.0)
+		var ready_key := (
+			&"ui.danmaku.photo.ready"
+			if runtime.state.margin >= BoundaryStainSimulation.MARGIN_ACTION_COST
+			else &"ui.danmaku.photo.need_margin"
+		)
+		draw_string(
+			font,
+			Vector2(233, 158),
+			input_hint(GameInput.COMPANION, _catalog.text(ready_key, _locale)),
+			HORIZONTAL_ALIGNMENT_CENTER,
+			78,
+			_hud_font_size(),
+			foreground
+		)
+	else:
+		draw_string(font, Vector2(233, 158), "%d%% / %d%%" % [runtime.assists.density_percent, runtime.assists.bullet_speed_percent], HORIZONTAL_ALIGNMENT_CENTER, 78, _hud_font_size(), foreground)
 
 
 func _draw_intro(foreground: Color, background: Color) -> void:
@@ -674,12 +740,23 @@ func _draw_large_text_tutorial(font: Font, foreground: Color, background: Color)
 	draw_string(font, Vector2(16, 129), input_hint(GameInput.SHOT, _catalog.text(&"ui.input.shot", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
 	draw_string(font, Vector2(164, 129), input_hint(GameInput.FOCUS, _catalog.text(&"ui.input.focus", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
 	draw_string(font, Vector2(16, 147), input_hint(GameInput.BOMB, _catalog.text(&"ui.input.bomb", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
-	draw_string(font, Vector2(164, 147), input_hint(GameInput.COMPANION, _catalog.text(&"ui.input.margin", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
+	draw_string(font, Vector2(164, 147), input_hint(GameInput.COMPANION, _catalog.text(companion_action_key, _locale)), HORIZONTAL_ALIGNMENT_CENTER, 140, control_size, foreground)
 	draw_string(font, Vector2(16, 169), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.danmaku.tutorial.start", _locale)), HORIZONTAL_ALIGNMENT_CENTER, 288, control_size, foreground)
 
 
 func _draw_visual_cue(foreground: Color, background: Color) -> void:
 	var font := _font()
+	if runtime.interaction_component_id() == &"photo_frame" and _visual_cue_key in [
+		&"ui.danmaku.photo.visual.captured",
+		&"ui.danmaku.photo.visual.empty",
+	]:
+		draw_rect(FOOTER_FRAME, background)
+		draw_rect(FOOTER_FRAME, foreground, false, 1.0)
+		var message := _catalog.text(_visual_cue_key, _locale)
+		if runtime.interaction_cue_value() > 0:
+			message = "%s: %d" % [message, runtime.interaction_cue_value()]
+		draw_string(font, Vector2(8, 176), message, HORIZONTAL_ALIGNMENT_CENTER, 304, _hud_font_size(), foreground)
+		return
 	draw_rect(Rect2(45, 95, 142, 18), background)
 	draw_rect(Rect2(45, 95, 142, 18), foreground, false, 1.0)
 	draw_string(font, Vector2(50, 109), _catalog.text(_visual_cue_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 132, _hud_font_size(), foreground)
