@@ -17,7 +17,7 @@ const ACTION_CONTRACT := [
 @export var fixture_show_focus: bool = false
 @export var fixture_show_companion: bool = false
 @export var fixture_complete_objective: bool = false
-@export_enum("hakurei_veranda", "mansion_service", "mountain_trail") var spot_component := "hakurei_veranda"
+@export_enum("hakurei_veranda", "mansion_service", "mountain_trail", "bamboo_four_dawns") var spot_component := "hakurei_veranda"
 @export var fixture_start_x: float = -1.0
 var exploration_context: ExplorationModeContext
 var spot_definition := HakureiVerandaSpotFactory.build()
@@ -28,6 +28,7 @@ var objective_tracker := ExplorationObjectiveTracker.new()
 var trigger_registry := ExplorationTriggerRegistry.new()
 var float_preview := IntuitiveFloatPreview.new()
 var hint_timer := ExplorationHintTimer.new()
+var loop_topology: ExplorationLoopTopology
 
 var _profile: PresentationProfile = PresentationProfileRegistry.resolve(&"A")
 var _locale: StringName = &"en"
@@ -285,6 +286,9 @@ func capture_debug_state() -> Dictionary:
 		"objective_complete": objective_tracker.is_complete(),
 		"triggered_event_id": String(_triggered_event_id),
 		"registry_queries": interaction_registry.query_count,
+		"topology_iteration": loop_topology.current_iteration() if loop_topology != null else -1,
+		"topology_primed": loop_topology.primed_for_exit() if loop_topology != null else false,
+		"topology_crossings": loop_topology.crossing_count() if loop_topology != null else 0,
 	}, true)
 	return state
 
@@ -327,6 +331,7 @@ func _reset_spot() -> void:
 	float_preview.is_enabled = exploration_context.companion_skill_enabled
 	hint_timer = ExplorationHintTimer.new()
 	hint_timer.story_hints_enabled = exploration_context.story_navigation_hints
+	loop_topology = ExplorationLoopTopologyRegistry.create(spot_definition.topology_component)
 	_build_registry()
 	_fixed_accumulator = 0.0
 	_hop_queued = false
@@ -354,9 +359,11 @@ func _build_registry() -> void:
 
 
 func _step_motor(sample: ExplorationMotorInput) -> void:
+	var opening_x := motor_state.position.x
 	motor.step(motor_state, sample)
 	if motor.consume_footstep(motor_state):
 		sfx_player.play_cue(_sfx_cue(spot_definition.footstep_sfx_id))
+	_resolve_loop_seam(opening_x)
 	_refresh_camera()
 	_refresh_prompt()
 	_refresh_float_preview()
@@ -365,7 +372,14 @@ func _step_motor(sample: ExplorationMotorInput) -> void:
 
 func _interact(interactable: ExplorationInteractable) -> void:
 	var action := interactable.action
-	var progress := objective_tracker.observe(action.target_id)
+	var progress := ExplorationObjectiveProgress.new()
+	progress.total_steps = objective_tracker.required_sequence.size()
+	progress.current_step = objective_tracker.current_step
+	progress.target_id = action.target_id
+	if loop_topology != null:
+		progress.accepted_step = loop_topology.observe_anchor(action.target_id)
+	else:
+		progress = objective_tracker.observe(action.target_id)
 	if progress.accepted_step:
 		hint_timer.reset_after_progress()
 		_hint_visible = false
@@ -381,6 +395,33 @@ func _interact(interactable: ExplorationInteractable) -> void:
 	_refresh_prompt()
 	_resolve_trigger()
 	queue_redraw()
+
+
+func _resolve_loop_seam(opening_x: float) -> void:
+	if (
+		loop_topology == null
+		or spot_definition.loop_exit_x <= spot_definition.loop_entry_x
+		or opening_x >= spot_definition.loop_exit_x
+		or motor_state.position.x < spot_definition.loop_exit_x
+	):
+		return
+	var transition := loop_topology.cross_exit()
+	if transition.advanced:
+		var progress := objective_tracker.observe(transition.accepted_anchor_id)
+		if progress.completed_now:
+			_note_text = _catalog.text(spot_definition.complete_key, _locale)
+		else:
+			_note_text = _catalog.text(&"ui.exploration.ein.loop.advance", _locale)
+		hint_timer.reset_after_progress()
+		_hint_visible = false
+	else:
+		_note_text = _catalog.text(&"ui.exploration.ein.loop.retry", _locale)
+	_note_seconds = 3.0
+	sfx_player.play_cue(_sfx_cue(&"sfx.ein.loop"))
+	if not transition.completed:
+		motor_state.position.x = spot_definition.loop_entry_x
+		motor_state.velocity.x = 0.0
+	_refresh_text_cache()
 
 
 func _resolve_trigger() -> void:
@@ -478,13 +519,23 @@ func _sfx_cue(cue_id: StringName) -> ExplorationSfxCue:
 			return ExplorationSfxCue.new(cue_id, &"ui.sfx.shutter", 840.0, 0.05)
 		&"sfx.step.stone":
 			return ExplorationSfxCue.new(cue_id, &"ui.sfx.stone_step", 110.0, 0.05)
+		&"sfx.ein.chime":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.ein.chime", 660.0, 0.10)
+		&"sfx.ein.medicine":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.ein.medicine", 480.0, 0.06)
+		&"sfx.ein.knock":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.ein.knock", 240.0, 0.08)
+		&"sfx.ein.bird":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.ein.bird", 760.0, 0.08)
+		&"sfx.ein.loop":
+			return ExplorationSfxCue.new(cue_id, &"ui.sfx.ein.loop", 330.0, 0.12)
 		_:
 			return ExplorationSfxCue.new(&"sfx.step.wood", &"ui.sfx.wood_step", 140.0, 0.06)
 
 
-func _on_sfx_cue_played(_cue_id: StringName, visual_key: StringName) -> void:
+func _on_sfx_cue_played(cue_id: StringName, visual_key: StringName) -> void:
 	_sfx_text = _catalog.text(visual_key, _locale)
-	_sfx_seconds = 0.8
+	_sfx_seconds = 3.0 if String(cue_id).begins_with("sfx.ein.") else 0.8
 
 
 func _draw() -> void:
@@ -507,6 +558,8 @@ func _draw_world(foreground: Color, background: Color) -> void:
 			_draw_mansion_world(foreground, background)
 		&"mountain_trail":
 			_draw_mountain_world(foreground, background)
+		&"bamboo_loop":
+			_draw_bamboo_loop_world(foreground, background)
 		_:
 			_draw_shrine_world(foreground, background)
 
@@ -617,6 +670,92 @@ func _draw_mountain_world(foreground: Color, background: Color) -> void:
 		draw_line(crow + Vector2(offset, 0), crow + Vector2(offset + 4, -3), foreground, 1.0)
 
 
+func _draw_bamboo_loop_world(foreground: Color, background: Color) -> void:
+	var offset := -_camera_x
+	var dawn := loop_topology.current_iteration() if loop_topology != null else 0
+	# One moon shifts by a small, countable amount each loop; broad empty sky stays readable.
+	draw_circle(Vector2(72 + offset + dawn * 9, 48 + dawn * 3), 19, foreground)
+	draw_circle(Vector2(78 + offset + dawn * 9, 45 + dawn * 3), 17, background)
+	for x: int in range(18, 636, 38):
+		var sway := posmod(floori(x / 38.0) + dawn, 3) - 1
+		draw_rect(Rect2(x + offset + sway, 37, 7, 101), foreground)
+		for notch: int in range(dawn + 1):
+			draw_line(
+				Vector2(x + offset + sway, 60 + notch * 8),
+				Vector2(x + offset + sway + 6, 63 + notch * 8),
+				background,
+				1.0
+			)
+	# Eientei's gate remains the stable horizontal cut through unreliable verticals.
+	draw_rect(Rect2(548 + offset, 72, 76, 66), background)
+	draw_rect(Rect2(548 + offset, 72, 76, 6), foreground)
+	draw_rect(Rect2(552 + offset, 78, 5, 60), foreground)
+	draw_rect(Rect2(615 + offset, 78, 5, 60), foreground)
+	draw_rect(Rect2(8 + offset, 136, 616, 5), foreground)
+	_draw_eientei_chime(Vector2(148 + offset, 116), foreground, background)
+	_draw_eientei_medicine(Vector2(272 + offset, 124), foreground, background)
+	_draw_eientei_rabbit_panel(Vector2(396 + offset, 128), foreground, background)
+	_draw_eientei_bird_lattice(Vector2(514 + offset, 112), foreground, background)
+	_draw_expected_bamboo_anchor(offset, foreground, background)
+	# Reisen waits beyond the final seam; her ears are also a shape-only route landmark.
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(596 + offset, 130), Vector2(598 + offset, 99), Vector2(602 + offset, 72),
+		Vector2(606 + offset, 102), Vector2(610 + offset, 74), Vector2(612 + offset, 130),
+	]), foreground)
+	draw_rect(Rect2(598 + offset, 104, 12, 27), background)
+
+
+func _draw_expected_bamboo_anchor(offset: float, foreground: Color, background: Color) -> void:
+	if loop_topology == null or loop_topology.current_iteration() >= 4:
+		return
+	var positions := [Vector2(148, 116), Vector2(272, 124), Vector2(396, 128), Vector2(514, 112)]
+	var center: Vector2 = positions[loop_topology.current_iteration()] + Vector2(offset, -17)
+	# Corner brackets identify the next mark without audio; a check persists while held.
+	for corner: Vector2 in [Vector2(-12, -18), Vector2(8, -18), Vector2(-12, 14), Vector2(8, 14)]:
+		var origin := center + corner
+		draw_rect(Rect2(origin, Vector2(5, 2)), foreground)
+		draw_rect(Rect2(origin, Vector2(2, 5)), foreground)
+	if loop_topology.primed_for_exit():
+		draw_rect(Rect2(center - Vector2(8, 8), Vector2(17, 17)), background)
+		draw_rect(Rect2(center - Vector2(8, 8), Vector2(17, 17)), foreground, false, 2.0)
+		draw_line(center + Vector2(-4, 0), center + Vector2(-1, 4), foreground, 2.0)
+		draw_line(center + Vector2(-1, 4), center + Vector2(5, -4), foreground, 2.0)
+
+
+func _draw_eientei_chime(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_line(position + Vector2(0, -34), position + Vector2(0, -18), foreground, 1.0)
+	draw_colored_polygon(PackedVector2Array([
+		position + Vector2(-7, -18), position + Vector2(7, -18), position + Vector2(4, -7), position + Vector2(-4, -7),
+	]), foreground)
+	draw_rect(Rect2(position + Vector2(-2, -15), Vector2(4, 6)), background)
+	draw_line(position + Vector2(0, -7), position + Vector2(0, 0), foreground, 1.0)
+
+
+func _draw_eientei_medicine(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(position + Vector2(-12, -28), Vector2(24, 29)), foreground, false, 2.0)
+	for x: int in [-7, 0, 7]:
+		draw_rect(Rect2(position + Vector2(x - 2, -13), Vector2(5, 12)), background)
+		draw_rect(Rect2(position + Vector2(x - 2, -13), Vector2(5, 12)), foreground, false, 1.0)
+		draw_rect(Rect2(position + Vector2(x - 1, -16), Vector2(3, 3)), foreground)
+
+
+func _draw_eientei_rabbit_panel(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(position + Vector2(-13, -34), Vector2(26, 35)), background)
+	draw_rect(Rect2(position + Vector2(-13, -34), Vector2(26, 35)), foreground, false, 2.0)
+	draw_line(position + Vector2(-5, -19), position + Vector2(-5, -31), foreground, 3.0)
+	draw_line(position + Vector2(5, -19), position + Vector2(5, -31), foreground, 3.0)
+	draw_circle(position + Vector2(0, -14), 6, foreground, false, 1.0)
+
+
+func _draw_eientei_bird_lattice(position: Vector2, foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(position + Vector2(-13, -38), Vector2(26, 39)), background)
+	draw_rect(Rect2(position + Vector2(-13, -38), Vector2(26, 39)), foreground, false, 1.0)
+	for x: int in [-7, 0, 7]:
+		draw_line(position + Vector2(x, -37), position + Vector2(x, 0), foreground, 1.0)
+	draw_line(position + Vector2(-8, -18), position + Vector2(0, -23), foreground, 1.0)
+	draw_line(position + Vector2(0, -23), position + Vector2(8, -18), foreground, 1.0)
+
+
 func _draw_newspaper(position: Vector2, foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(position + Vector2(-9, -13), Vector2(18, 14)), background)
 	draw_rect(Rect2(position + Vector2(-9, -13), Vector2(18, 14)), foreground, false, 1.0)
@@ -668,10 +807,20 @@ func _draw_hud(foreground: Color, background: Color) -> void:
 	draw_rect(header_frame, foreground, false, 1.0)
 	var labeled_counter := spot_definition.counter_label_key != &""
 	draw_string(font, Vector2(8, header_frame.position.y + font_size + 1), _header_text, HORIZONTAL_ALIGNMENT_LEFT, 198 if labeled_counter else 238, font_size, foreground)
-	var counter := "%d/%d" % [objective_tracker.current_step, objective_tracker.required_sequence.size()]
+	var counter_current := objective_tracker.current_step
+	if loop_topology != null and loop_topology.total_iterations() > 0:
+		counter_current = mini(loop_topology.current_iteration() + 1, loop_topology.total_iterations())
+	var counter := "%d/%d" % [counter_current, objective_tracker.required_sequence.size()]
 	if labeled_counter:
 		counter = "%s %s" % [_catalog.text(spot_definition.counter_label_key, _locale), counter]
+	if loop_topology != null and loop_topology.primed_for_exit():
+		counter = "%s %s" % [counter, _catalog.text(&"ui.exploration.ein.held", _locale)]
 	draw_string(font, Vector2(208 if labeled_counter else 252, header_frame.position.y + font_size + 1), counter, HORIZONTAL_ALIGNMENT_RIGHT, 102 if labeled_counter else 58, font_size, foreground)
+	if loop_topology != null and loop_topology.primed_for_exit():
+		draw_rect(Rect2(194, 4, 12, 10), background)
+		draw_rect(Rect2(194, 4, 12, 10), foreground, false, 1.0)
+		draw_line(Vector2(197, 9), Vector2(200, 12), foreground, 2.0)
+		draw_line(Vector2(200, 12), Vector2(204, 6), foreground, 2.0)
 	var footer_frame := Rect2(4, 151, 312, 26) if ui_scale_percent() > 100 else Rect2(4, 162, 312, 15)
 	draw_rect(footer_frame, background)
 	draw_rect(footer_frame, foreground, false, 1.0)

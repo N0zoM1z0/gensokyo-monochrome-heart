@@ -33,6 +33,7 @@ var supplemental_dialogue_paths: Array[String] = [
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/sdm_late_by_three_minutes.csv",
 	"res://content/localization/mtn_tomorrows_headline.csv",
+	"res://content/localization/ein_four_dawns.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -41,7 +42,7 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/mtn_deferred_references.json",
 ]
 var expected_supplemental_dialogue_count: int = 28
-var expected_supplemental_localization_count: int = 46
+var expected_supplemental_localization_count: int = 47
 
 
 func content_paths() -> Array[String]:

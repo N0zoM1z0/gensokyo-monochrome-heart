@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://src/presentation/exploration/ExplorationMode.tscn" id="1_base"]
+
+[node name="EienteiBambooExplorationMode" instance=ExtResource("1_base")]
+spot_component = "bamboo_four_dawns"

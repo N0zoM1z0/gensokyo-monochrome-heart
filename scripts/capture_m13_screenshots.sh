@@ -49,6 +49,11 @@ capture_pair m13_mountain_slice_journal res://tests/ui/fixtures/MountainSliceJou
 capture_pair m13_archive_tutorial res://tests/ui/fixtures/ArchiveTutorialFixture.tscn
 capture_pair m13_archive_familiar res://tests/ui/fixtures/ArchiveFamiliarFixture.tscn
 capture_pair m13_archive_removal res://tests/ui/fixtures/ArchiveRemovalFixture.tscn
+capture_pair m13_bamboo_first_dawn res://tests/ui/fixtures/BambooLoopFirstDawnFixture.tscn
+capture_pair m13_bamboo_fourth_dawn res://tests/ui/fixtures/BambooLoopFourthDawnFixture.tscn
+capture_pair m13_bamboo_primed res://tests/ui/fixtures/BambooLoopPrimedFixture.tscn
+capture_pair m13_bamboo_retry res://tests/ui/fixtures/BambooLoopRetryFixture.tscn
+capture_pair m13_bamboo_advance res://tests/ui/fixtures/BambooLoopAdvanceFixture.tscn
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated

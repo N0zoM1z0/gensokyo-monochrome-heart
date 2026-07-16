@@ -12,7 +12,40 @@ func run() -> Array[String]:
 	_expect_input_parity(failures)
 	_expect_mansion_service_spot(failures)
 	_expect_youkai_mountain_spot(failures)
+	_expect_bamboo_four_dawns_topology(failures)
 	return failures
+
+
+func _expect_bamboo_four_dawns_topology(failures: Array[String]) -> void:
+	var spot := ExplorationSpotRegistry.build(&"bamboo_four_dawns")
+	if (
+		spot.location_id != &"loc.eientei"
+		or spot.environment_style != &"bamboo_loop"
+		or spot.topology_component != &"bamboo_four_dawns"
+		or spot.required_sequence != BambooFourDawnsTopology.ANCHOR_SEQUENCE
+	):
+		failures.append("Eientei registry lost its typed four-dawn topology contract")
+	if spot.interactables.size() != 4 or spot.event_triggers.size() != 1:
+		failures.append("Eientei corridor omitted a sound anchor or Reisen handoff")
+	var topology := ExplorationLoopTopologyRegistry.create(spot.topology_component)
+	if not topology is BambooFourDawnsTopology:
+		failures.append("four-dawn component did not resolve through the topology registry")
+		return
+	if topology.observe_anchor(&"prop.ein.rabbit_knock") or topology.cross_exit().advanced:
+		failures.append("an out-of-order sound escaped the first dawn")
+	for index: int in range(BambooFourDawnsTopology.ANCHOR_SEQUENCE.size()):
+		var anchor_id := BambooFourDawnsTopology.ANCHOR_SEQUENCE[index]
+		if not topology.observe_anchor(anchor_id) or not topology.primed_for_exit():
+			failures.append("dawn %d did not accept its authored audiovisual anchor" % (index + 1))
+			break
+		var transition := topology.cross_exit()
+		if not transition.advanced or transition.iteration_after != index + 1:
+			failures.append("dawn %d did not advance across the corridor seam" % (index + 1))
+			break
+		if transition.completed != (index == BambooFourDawnsTopology.ANCHOR_SEQUENCE.size() - 1):
+			failures.append("four-dawn topology completed at the wrong seam")
+	if topology.current_iteration() != 4 or topology.crossing_count() != 5:
+		failures.append("four-dawn topology lost its successful or failed crossing history")
 
 
 func _expect_youkai_mountain_spot(failures: Array[String]) -> void:

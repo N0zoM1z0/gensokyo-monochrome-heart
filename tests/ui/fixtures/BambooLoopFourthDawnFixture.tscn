@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://src/presentation/exploration/EienteiBambooExplorationMode.tscn" id="1_mode"]
+[ext_resource type="Script" path="res://tests/ui/fixtures/BambooLoopFixture.gd" id="2_fixture"]
+
+[node name="BambooLoopFourthDawnFixture" instance=ExtResource("1_mode")]
+script = ExtResource("2_fixture")
+fixture_dawn = 3

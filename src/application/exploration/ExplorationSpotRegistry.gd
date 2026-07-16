@@ -9,5 +9,7 @@ static func build(component_id: StringName) -> ExplorationSpotDefinition:
 			return MansionServiceSpotFactory.build()
 		&"mountain_trail":
 			return YoukaiMountainSpotFactory.build()
+		&"bamboo_four_dawns":
+			return EienteiBambooSpotFactory.build()
 		_:
 			return HakureiVerandaSpotFactory.build()
