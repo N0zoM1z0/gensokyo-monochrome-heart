@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "3632d79469836e45ccf4febc613148dc8491573c771f50a365ff872676faf873",
+  "content_hash": "bf16a246f9f69508ae844215fec050dae8caa3db811dd2c940cb1c275234b75a",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 50,
-    "dialogue_beats": 234,
-    "localization": 1016,
+    "events": 51,
+    "dialogue_beats": 241,
+    "localization": 1031,
     "music_cues": 89,
-    "event_nodes": 549
+    "event_nodes": 566
   },
   "ids": {
     "characters": [
@@ -121,6 +121,7 @@
       "evt.hgy.farewell_replay",
       "evt.hgy.garden_shift",
       "evt.hgy.last_sweet",
+      "evt.hgy.meal_she_finishes",
       "evt.hgy.petal_on_hold",
       "evt.hgy.two_bodies_bridge",
       "evt.hgy.two_bodies_one_embarrassment",
@@ -175,6 +176,13 @@
       "beat.hgy.garden_shift.playful",
       "beat.hgy.garden_shift.withdrawn",
       "beat.hgy.garden_shift.work",
+      "beat.hgy.meal.after",
+      "beat.hgy.meal.defiant",
+      "beat.hgy.meal.direct",
+      "beat.hgy.meal.patient",
+      "beat.hgy.meal.playful",
+      "beat.hgy.meal.youmu_hesitate",
+      "beat.hgy.meal.yuyuko_offer",
       "beat.hgy.two_bodies.after",
       "beat.hgy.two_bodies.clear",
       "beat.hgy.two_bodies.defiant",
@@ -407,6 +415,10 @@
       "choice.hgy.garden_shift.direct",
       "choice.hgy.garden_shift.patient",
       "choice.hgy.garden_shift.playful",
+      "choice.hgy.meal.defiant",
+      "choice.hgy.meal.direct",
+      "choice.hgy.meal.patient",
+      "choice.hgy.meal.playful",
       "choice.hgy.two_bodies.defiant",
       "choice.hgy.two_bodies.direct",
       "choice.hgy.two_bodies.patient",
@@ -519,6 +531,13 @@
       "dlg.hgy.garden_shift.playful",
       "dlg.hgy.garden_shift.withdrawn",
       "dlg.hgy.garden_shift.work",
+      "dlg.hgy.meal.after",
+      "dlg.hgy.meal.defiant",
+      "dlg.hgy.meal.direct",
+      "dlg.hgy.meal.patient",
+      "dlg.hgy.meal.playful",
+      "dlg.hgy.meal.youmu_hesitate",
+      "dlg.hgy.meal.yuyuko_offer",
       "dlg.hgy.two_bodies.after",
       "dlg.hgy.two_bodies.clear",
       "dlg.hgy.two_bodies.defiant",
@@ -740,6 +759,7 @@
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
       "event.hgy.garden_shift.title",
+      "event.hgy.meal_she_finishes.title",
       "event.hgy.two_bodies.title",
       "event.hkr.day_nothing_happens.title",
       "event.hkr.empty_cushion.title",
@@ -783,6 +803,8 @@
       "journal.hgy.garden_shift.title",
       "journal.hgy.garden_shift.withdrawn.body",
       "journal.hgy.garden_shift.withdrawn.title",
+      "journal.hgy.meal_she_finishes.body",
+      "journal.hgy.meal_she_finishes.title",
       "journal.hgy.two_bodies.body",
       "journal.hgy.two_bodies.title",
       "journal.hgy.two_bodies.withdrawn.body",
@@ -835,6 +857,7 @@
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
       "obj.hgy.garden_shift.match",
+      "obj.hgy.meal_she_finishes.sit",
       "obj.hgy.two_bodies.cross",
       "obj.hkr.day_nothing_happens.enter",
       "obj.hkr.find_second_cup",
@@ -1663,6 +1686,76 @@
     {
       "source": "beat.hgy.garden_shift.work",
       "target": "dlg.hgy.garden_shift.work",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.meal.after",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.meal.after",
+      "target": "dlg.hgy.meal.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.meal.defiant",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.meal.defiant",
+      "target": "dlg.hgy.meal.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.meal.direct",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.meal.direct",
+      "target": "dlg.hgy.meal.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.meal.patient",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.meal.patient",
+      "target": "dlg.hgy.meal.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.meal.playful",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.meal.playful",
+      "target": "dlg.hgy.meal.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.meal.youmu_hesitate",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.meal.youmu_hesitate",
+      "target": "dlg.hgy.meal.youmu_hesitate",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.meal.yuyuko_offer",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.meal.yuyuko_offer",
+      "target": "dlg.hgy.meal.yuyuko_offer",
       "kind": "localization"
     },
     {
@@ -3886,6 +3979,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.hgy.meal.response",
+      "target": "choice.hgy.meal.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.meal.response",
+      "target": "choice.hgy.meal.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.meal.response",
+      "target": "choice.hgy.meal.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.meal.response",
+      "target": "choice.hgy.meal.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hgy.two_bodies.response",
       "target": "choice.hgy.two_bodies.defiant",
       "kind": "localization"
@@ -5192,6 +5305,231 @@
     },
     {
       "source": "evt.hgy.last_sweet",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n001",
+      "target": "evt.hgy.meal_she_finishes.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n001",
+      "target": "mus_yuyuko_banquet",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n002",
+      "target": "evt.hgy.meal_she_finishes.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n002",
+      "target": "obj.hgy.meal_she_finishes.sit",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n002",
+      "target": "prop.hgy.cooling_soup",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n002",
+      "target": "prop.hgy.yuyuko_garden_hat",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n003",
+      "target": "beat.hgy.meal.yuyuko_offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n003",
+      "target": "evt.hgy.meal_she_finishes.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n004",
+      "target": "beat.hgy.meal.youmu_hesitate",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n004",
+      "target": "evt.hgy.meal_she_finishes.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n005",
+      "target": "choice.hgy.meal.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n005",
+      "target": "evt.hgy.meal_she_finishes.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n005",
+      "target": "evt.hgy.meal_she_finishes.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n005",
+      "target": "evt.hgy.meal_she_finishes.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n005",
+      "target": "evt.hgy.meal_she_finishes.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_after",
+      "target": "beat.hgy.meal.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_after",
+      "target": "evt.hgy.meal_she_finishes.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_defiant_line",
+      "target": "beat.hgy.meal.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_defiant_line",
+      "target": "evt.hgy.meal_she_finishes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_defiant",
+      "target": "evt.hgy.meal_she_finishes.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_direct_line",
+      "target": "beat.hgy.meal.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_direct_line",
+      "target": "evt.hgy.meal_she_finishes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_direct",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_direct",
+      "target": "evt.hgy.meal_she_finishes.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_effects",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_effects",
+      "target": "evt.hgy.meal_she_finishes.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_journal",
+      "target": "evt.hgy.meal_she_finishes.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_journal",
+      "target": "journal.hgy.meal_she_finishes",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_patient_line",
+      "target": "beat.hgy.meal.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_patient_line",
+      "target": "evt.hgy.meal_she_finishes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_patient",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_patient",
+      "target": "evt.hgy.meal_she_finishes.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_playful_line",
+      "target": "beat.hgy.meal.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_playful_line",
+      "target": "evt.hgy.meal_she_finishes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_playful",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes.node.n_playful",
+      "target": "evt.hgy.meal_she_finishes.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes",
+      "target": "char.youmu_konpaku",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes",
+      "target": "event.hgy.meal_she_finishes.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes",
+      "target": "evt.hgy.meal_she_finishes",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes",
+      "target": "loc.hakugyokurou.dining_room",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hgy.meal_she_finishes",
       "target": "loc.hakugyokurou",
       "kind": "location"
     },

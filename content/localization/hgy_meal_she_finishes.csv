@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.hgy.meal_she_finishes.sit,objective,,Stay seated until Youmu has finished her meal.,妖夢が食事を終えるまで席にいる。,208,Original
+event.hgy.meal_she_finishes.title,event_title,,The Meal She Gets to Finish,最後まで食べる食事,208,Original
+choice.hgy.meal.direct,choice,,Tell Youmu her duty will still be there after soup.,スープの後にも役目は残っていると言う。,248,Original
+choice.hgy.meal.playful,choice,,Ask whether Yuyuko's garden hat grants temporary authority over moss.,幽々子の庭帽子に苔への一時的な権限があるのか聞く。,248,Original
+choice.hgy.meal.patient,choice,,Wait until Youmu chooses to sit down herself.,妖夢が自分で座るのを待つ。,248,Original
+choice.hgy.meal.defiant,choice,,Say resting is not a favor she must earn.,休むことは稼がなければならない好意ではないと言う。,248,Original
+dlg.hgy.meal.yuyuko_offer,dialogue,char.yuyuko_saigyouji,"The lower path and I have an appointment. Youmu, your soup and you have one too. Mine is shorter, but much more delicious.",「下の道と私は約束があります。妖夢、あなたとスープにもあります。私の方が短いけれど、ずっとおいしい約束よ。」,248,Original
+dlg.hgy.meal.youmu_hesitate,dialogue,char.youmu_konpaku,"My lady, I can finish later. The path needs checking before the petals gather.",「幽々子様、食事は後で終えられます。花びらが集まる前に、道を確かめる必要があります。」,248,Original
+dlg.hgy.meal.direct,dialogue,char.yuyuko_saigyouji,"Exactly. The path will be there after soup, and so will Youmu's judgment. I am only borrowing the watch, not her whole afternoon.",「その通り。スープの後にも道はあるし、妖夢の判断もあるわ。見守りを借りるだけで、午後全部を借りるのではないの。」,248,Original
+dlg.hgy.meal.playful,dialogue,char.yuyuko_saigyouji,"Only over moss with excellent manners. This hat has very limited jurisdiction.",「行儀のいい苔にだけね。この帽子の権限は、とても限られているの。」,248,Original
+dlg.hgy.meal.patient,dialogue,char.youmu_konpaku,"Then I will sit until the bowl is empty. That is a clear boundary. I can keep it.",「では、器が空になるまで座ります。明確な境目です。守れます。」,248,Original
+dlg.hgy.meal.defiant,dialogue,char.yuyuko_saigyouji,"No, she need not earn it. I asked for this little exchange because I wanted to take the path today.",「いいえ、稼ぐ必要はないわ。今日は私が道を見たかったから、この小さな交換を頼んだの。」,248,Original
+dlg.hgy.meal.after,dialogue,char.youmu_konpaku,"I finished it while it was warm. The path was still there when I returned, and so was my place in it.",「温かいうちに食べ終えました。戻った時にも道はあり、そこに私の役目もありました。」,248,Original
+journal.hgy.meal_she_finishes.title,journal_title,,The Warm Bowl,温かい器,248,Original
+journal.hgy.meal_she_finishes.body,journal_body,,Yuyuko took one defined watch because she chose to, and Youmu finished a warm meal. Rest neither erased Youmu's duty nor made it a debt.,幽々子は自分で選んで、一つの見守りを引き受けた。妖夢は温かい食事を終えた。休息は妖夢の役目を消さず、借りにもならなかった。,248,Original

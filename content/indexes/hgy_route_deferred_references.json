@@ -21,6 +21,10 @@
     {"id": "loc.hakugyokurou.training_yard", "kind": "spot", "target_milestone": "M14", "reason": "Youmu notices she is treating a relational disagreement like a training assignment."},
     {"id": "prop.hgy.unfinished_cut","kind":"interactable","target_milestone":"M14","reason":"A deliberately incomplete practice cut."},
     {"id": "prop.hgy.training_board","kind":"interactable","target_milestone":"M14","reason":"Board that cannot produce an instruction for an emotion."},
-    {"id": "journal.hgy.cutting_wrong_problem","kind":"journal_entry","target_milestone":"M14","reason":"Conflict remains open without turning the player into Youmu's commander."}
+    {"id": "journal.hgy.cutting_wrong_problem","kind":"journal_entry","target_milestone":"M14","reason":"Conflict remains open without turning the player into Youmu's commander."},
+    {"id":"loc.hakugyokurou.dining_room","kind":"spot","target_milestone":"M14","reason":"Yuyuko makes room for Youmu to finish a meal."},
+    {"id":"prop.hgy.cooling_soup","kind":"interactable","target_milestone":"M14","reason":"The meal is allowed to be eaten warm rather than abandoned."},
+    {"id":"prop.hgy.yuyuko_garden_hat","kind":"interactable","target_milestone":"M14","reason":"Yuyuko visibly chooses to take the short garden watch."},
+    {"id":"journal.hgy.meal_she_finishes","kind":"journal_entry","target_milestone":"M14","reason":"A completed meal without duty becoming a punishment or debt."}
   ]
 }

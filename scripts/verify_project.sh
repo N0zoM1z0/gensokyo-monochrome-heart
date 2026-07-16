@@ -391,6 +391,8 @@ run_checked "M14 Youmu delegated-duty event" env XDG_DATA_HOME="$LOG_DIR/user-da
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_duty_delegated.gd
 run_checked "M14 Youmu wrong-problem boundary event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_wrong_cut.gd
+run_checked "M14 Youmu finished-meal event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_finished_meal.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

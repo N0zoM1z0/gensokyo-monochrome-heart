@@ -48,6 +48,18 @@
       "status": "authored",
       "estimated_minutes": 9,
       "comfort_tags": ["no_timer", "conflict_continues", "no_route_lockout"]
+    },
+    {
+      "id": "evt.hgy.meal_she_finishes",
+      "legacy_id": "EVT-HGY-RTE-005",
+      "title_en": "The Meal She Gets to Finish",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": ["char.youmu_konpaku", "char.yuyuko_saigyouji"],
+      "primary_mode": "dialogue",
+      "core_change": "Yuyuko chooses to cover a defined garden duty so Youmu can finish one meal without treating rest as dereliction.",
+      "status": "authored",
+      "estimated_minutes": 9,
+      "comfort_tags": ["no_timer", "rest_without_penalty", "duty_remains_chosen"]
     }
   ]
 }
