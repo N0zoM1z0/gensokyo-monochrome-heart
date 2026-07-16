@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "8b033ba48befa0e888b2446e5ba13b53b00f5a34aac8a76edf03aaacb2d87c99",
+  "content_hash": "69044e99c98b05c5f9da3e0dab2b67bfe7ba6fd0259e86149ba23a560824218d",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 43,
-    "dialogue_beats": 182,
-    "localization": 893,
+    "events": 44,
+    "dialogue_beats": 189,
+    "localization": 908,
     "music_cues": 89,
-    "event_nodes": 416
+    "event_nodes": 433
   },
   "ids": {
     "characters": [
@@ -147,6 +147,7 @@
       "evt.sdm.competence_not_consent",
       "evt.sdm.corridor_never_walked",
       "evt.sdm.corridor_no_dust",
+      "evt.sdm.favor_cannot_optimize",
       "evt.sdm.kitchen_after_midnight",
       "evt.sdm.late_by_three_minutes",
       "evt.sdm.small_chair"
@@ -311,6 +312,13 @@
       "beat.sdm.corridor.patient",
       "beat.sdm.corridor.playful",
       "beat.sdm.corridor.reset",
+      "beat.sdm.favor.after",
+      "beat.sdm.favor.defiant",
+      "beat.sdm.favor.direct",
+      "beat.sdm.favor.intro",
+      "beat.sdm.favor.patient",
+      "beat.sdm.favor.playful",
+      "beat.sdm.favor.request",
       "beat.sdm.kitchen.after",
       "beat.sdm.kitchen.defiant",
       "beat.sdm.kitchen.direct",
@@ -408,6 +416,10 @@
       "choice.sdm.corridor.direct",
       "choice.sdm.corridor.patient",
       "choice.sdm.corridor.playful",
+      "choice.sdm.favor.defiant",
+      "choice.sdm.favor.direct",
+      "choice.sdm.favor.patient",
+      "choice.sdm.favor.playful",
       "choice.sdm.kitchen.defiant",
       "choice.sdm.kitchen.direct",
       "choice.sdm.kitchen.patient",
@@ -575,6 +587,13 @@
       "dlg.sdm.corridor.patient",
       "dlg.sdm.corridor.playful",
       "dlg.sdm.corridor.reset",
+      "dlg.sdm.favor.after",
+      "dlg.sdm.favor.defiant",
+      "dlg.sdm.favor.direct",
+      "dlg.sdm.favor.intro",
+      "dlg.sdm.favor.patient",
+      "dlg.sdm.favor.playful",
+      "dlg.sdm.favor.request",
       "dlg.sdm.kitchen.after",
       "dlg.sdm.kitchen.defiant",
       "dlg.sdm.kitchen.direct",
@@ -615,6 +634,7 @@
       "event.mtn.tomorrows_headline.title",
       "event.sdm.competence_not_consent.title",
       "event.sdm.corridor_no_dust.title",
+      "event.sdm.favor_cannot_optimize.title",
       "event.sdm.kitchen_after_midnight.title",
       "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
@@ -663,6 +683,8 @@
       "journal.sdm.competence_not_consent.title",
       "journal.sdm.corridor_no_dust.body",
       "journal.sdm.corridor_no_dust.title",
+      "journal.sdm.favor_cannot_optimize.body",
+      "journal.sdm.favor_cannot_optimize.title",
       "journal.sdm.kitchen_after_midnight.body",
       "journal.sdm.kitchen_after_midnight.title",
       "journal.sdm.missing_minute.body",
@@ -685,6 +707,7 @@
       "obj.mtn.trace_tomorrows_photo",
       "obj.sdm.competence_not_consent.ask",
       "obj.sdm.corridor_no_dust.walk_once",
+      "obj.sdm.favor_cannot_optimize.choose",
       "obj.sdm.kitchen_after_midnight.wait",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
@@ -2914,6 +2937,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sdm.favor.after",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.favor.after",
+      "target": "dlg.sdm.favor.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.favor.defiant",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.favor.defiant",
+      "target": "dlg.sdm.favor.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.favor.direct",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.favor.direct",
+      "target": "dlg.sdm.favor.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.favor.intro",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.favor.intro",
+      "target": "dlg.sdm.favor.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.favor.patient",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.favor.patient",
+      "target": "dlg.sdm.favor.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.favor.playful",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.favor.playful",
+      "target": "dlg.sdm.favor.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.favor.request",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.favor.request",
+      "target": "dlg.sdm.favor.request",
+      "kind": "localization"
+    },
+    {
       "source": "beat.sdm.kitchen.after",
       "target": "char.sakuya_izayoi",
       "kind": "speaker"
@@ -3481,6 +3574,26 @@
     {
       "source": "choice.sdm.corridor.answer",
       "target": "choice.sdm.corridor.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.favor.answer",
+      "target": "choice.sdm.favor.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.favor.answer",
+      "target": "choice.sdm.favor.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.favor.answer",
+      "target": "choice.sdm.favor.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.favor.answer",
+      "target": "choice.sdm.favor.playful",
       "kind": "localization"
     },
     {
@@ -8305,6 +8418,236 @@
     },
     {
       "source": "evt.sdm.corridor_no_dust",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n001",
+      "target": "evt.sdm.favor_cannot_optimize.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n001",
+      "target": "mus_sakuya_kitchen",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n002",
+      "target": "evt.sdm.favor_cannot_optimize.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n002",
+      "target": "obj.sdm.favor_cannot_optimize.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n002",
+      "target": "prop.sdm.remilia_tea_pair",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n002",
+      "target": "prop.sdm.service_bell",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n002",
+      "target": "prop.sdm.unread_preference_card",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n003",
+      "target": "beat.sdm.favor.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n003",
+      "target": "evt.sdm.favor_cannot_optimize.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n004",
+      "target": "beat.sdm.favor.request",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n004",
+      "target": "evt.sdm.favor_cannot_optimize.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n005",
+      "target": "choice.sdm.favor.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n005",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n005",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n005",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n005",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_after",
+      "target": "beat.sdm.favor.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_after",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_defiant_line",
+      "target": "beat.sdm.favor.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_defiant_line",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_defiant",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_defiant",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_direct_line",
+      "target": "beat.sdm.favor.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_direct_line",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_direct",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_direct",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_effects",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_effects",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_journal",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_journal",
+      "target": "journal.sdm.favor_cannot_optimize",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_patient_line",
+      "target": "beat.sdm.favor.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_patient_line",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_patient",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_patient",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_playful_line",
+      "target": "beat.sdm.favor.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_playful_line",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_playful",
+      "target": "char.sakuya_izayoi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize.node.n_playful",
+      "target": "evt.sdm.favor_cannot_optimize.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize",
+      "target": "char.remilia_scarlet",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize",
+      "target": "char.remilia_scarlet",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize",
+      "target": "char.sakuya_izayoi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize",
+      "target": "char.sakuya_izayoi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize",
+      "target": "event.sdm.favor_cannot_optimize.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize",
+      "target": "evt.sdm.favor_cannot_optimize",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize",
+      "target": "loc.scarlet_devil_mansion.private_teahouse",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.sdm.favor_cannot_optimize",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },

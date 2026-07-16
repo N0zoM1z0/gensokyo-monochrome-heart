@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.sdm.favor_cannot_optimize.choose,objective,,Choose a tea by preference, not by efficiency.,効率ではなく好みで紅茶を選ぶ。,208,Original
+event.sdm.favor_cannot_optimize.title,event_title,,The Favor She Cannot Optimize,最適化できない頼み,208,Original
+choice.sdm.favor.direct,choice,,Choose the tea that suits a quiet evening.,静かな夜に合う紅茶を選ぶ。,248,Original
+choice.sdm.favor.playful,choice,,Choose the tea most likely to start an argument about taste.,味について言い争いになりそうな紅茶を選ぶ。,248,Original
+choice.sdm.favor.patient,choice,,Ask Sakuya which tea Remilia reaches for when no one watches.,誰も見ていない時にレミリアが手を伸ばす紅茶を咲夜に聞く。,248,Original
+choice.sdm.favor.defiant,choice,,Say a preference card cannot decide for a person.,好みのカードに人の代わりはできないと言う。,248,Original
+dlg.sdm.favor.intro,dialogue,char.sakuya_izayoi,"Mistress has two teas she enjoys. Both fit the schedule. Neither fits the same evening.",「お嬢様がお好きな紅茶は二つあります。どちらも予定には合います。でも、同じ夜には合いません。」,248,Original
+dlg.sdm.favor.request,dialogue,char.sakuya_izayoi,"Will you choose one? I know the records. I do not know what she wants tonight.",「一つ選んでいただけますか。記録は分かります。でも今夜、何を望まれるかは分かりません。」,248,Original
+dlg.sdm.favor.direct,dialogue,char.sakuya_izayoi,"A quiet tea. Sensible, but not merely safe. I will serve it.",「静かな紅茶ですね。堅実ですが、ただ無難なだけではありません。お出しします。」,248,Original
+dlg.sdm.favor.playful,dialogue,char.sakuya_izayoi,"An argument about taste is still company. That is useful information.",「味の言い争いも、一緒にいることではあります。有用な情報です。」,248,Original
+dlg.sdm.favor.patient,dialogue,char.sakuya_izayoi,"When no one watches, she reaches for the darker tin. Thank you for asking before using that knowledge.",「誰も見ていない時は、濃い方の缶に手を伸ばされます。その知識を使う前に聞いてくださって、ありがとうございます。」,248,Original
+dlg.sdm.favor.defiant,dialogue,char.sakuya_izayoi,"Precisely. A card can preserve a pattern, not grant me an answer.",「その通りです。カードは傾向を残せても、答えを与えてはくれません。」,248,Original
+dlg.sdm.favor.after,dialogue,char.sakuya_izayoi,"I will bring the tray myself. This is a favor, not a new procedure.",「盆は私が運びます。これは頼みであって、新しい手順ではありません。」,248,Original
+journal.sdm.favor_cannot_optimize.title,journal_title,,A Preference, Not a Procedure,手順ではない好み,248,Original
+journal.sdm.favor_cannot_optimize.body,journal_body,,Sakuya asked for a judgment no schedule could produce. The chosen tea honored Remilia's preference without turning care into a measurable service task.,咲夜は、予定表では出せない判断を頼んだ。選ばれた紅茶は、気遣いを測れる給仕にせず、レミリアの好みを尊重した。,248,Original
