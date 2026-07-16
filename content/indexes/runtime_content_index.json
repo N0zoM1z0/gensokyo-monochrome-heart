@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "7a36154b292227230bbd6806ab47214cd20c62479d1a00ba57ab01bd669ce172",
+  "content_hash": "227440ee0fe1a85ecae3f5b04efd9390cc2e766339b88d3974c7eaa227632164",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 35,
-    "dialogue_beats": 125,
-    "localization": 768,
+    "events": 36,
+    "dialogue_beats": 132,
+    "localization": 783,
     "music_cues": 89,
-    "event_nodes": 273
+    "event_nodes": 290
   },
   "ids": {
     "characters": [
@@ -131,6 +131,7 @@
       "evt.hkr.unasked_rescue",
       "evt.mrs.crash_landing",
       "evt.mrs.field_notes",
+      "evt.mrs.shelf_marked_later",
       "evt.mtn.keyword_us",
       "evt.mtn.measurable_faith",
       "evt.mtn.patrol_against_nothing",
@@ -241,6 +242,13 @@
       "beat.mrs.notes.patient",
       "beat.mrs.notes.playful",
       "beat.mrs.notes.work",
+      "beat.mrs.shelf.after",
+      "beat.mrs.shelf.boundary",
+      "beat.mrs.shelf.defiant",
+      "beat.mrs.shelf.direct",
+      "beat.mrs.shelf.intro",
+      "beat.mrs.shelf.patient",
+      "beat.mrs.shelf.playful",
       "beat.mtn.headline.aya.after_01",
       "beat.mtn.headline.aya.after_02",
       "beat.mtn.headline.aya.danmaku_assist",
@@ -311,6 +319,10 @@
       "choice.mrs.notes.direct",
       "choice.mrs.notes.patient",
       "choice.mrs.notes.playful",
+      "choice.mrs.shelf.defiant",
+      "choice.mrs.shelf.direct",
+      "choice.mrs.shelf.patient",
+      "choice.mrs.shelf.playful",
       "choice.mtn.headline.defiant",
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
@@ -416,6 +428,13 @@
       "dlg.mrs.notes.patient",
       "dlg.mrs.notes.playful",
       "dlg.mrs.notes.work",
+      "dlg.mrs.shelf.after",
+      "dlg.mrs.shelf.boundary",
+      "dlg.mrs.shelf.defiant",
+      "dlg.mrs.shelf.direct",
+      "dlg.mrs.shelf.intro",
+      "dlg.mrs.shelf.patient",
+      "dlg.mrs.shelf.playful",
       "dlg.mtn.headline.aya.after_01",
       "dlg.mtn.headline.aya.after_02",
       "dlg.mtn.headline.aya.danmaku_assist",
@@ -453,6 +472,7 @@
       "event.hkr.unasked_rescue.title",
       "event.mrs.crash_landing.title",
       "event.mrs.field_notes.title",
+      "event.mrs.shelf_marked_later.title",
       "event.mtn.tomorrows_headline.title",
       "event.sdm.late_by_three_minutes.title",
       "input.glyph.keyboard.cancel",
@@ -485,6 +505,8 @@
       "journal.mrs.crash_landing.title",
       "journal.mrs.field_notes.body",
       "journal.mrs.field_notes.title",
+      "journal.mrs.shelf_marked_later.body",
+      "journal.mrs.shelf_marked_later.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
       "journal.sdm.missing_minute.body",
@@ -499,6 +521,7 @@
       "obj.hkr.unasked_rescue.hold_veranda",
       "obj.mrs.crash.secure_cargo",
       "obj.mrs.field_notes.read_marks",
+      "obj.mrs.shelf.wait",
       "obj.mtn.trace_tomorrows_photo",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
@@ -2104,6 +2127,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.mrs.shelf.after",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.shelf.after",
+      "target": "dlg.mrs.shelf.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.shelf.boundary",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.shelf.boundary",
+      "target": "dlg.mrs.shelf.boundary",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.shelf.defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.shelf.defiant",
+      "target": "dlg.mrs.shelf.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.shelf.direct",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.shelf.direct",
+      "target": "dlg.mrs.shelf.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.shelf.intro",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.shelf.intro",
+      "target": "dlg.mrs.shelf.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.shelf.patient",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.shelf.patient",
+      "target": "dlg.mrs.shelf.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mrs.shelf.playful",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mrs.shelf.playful",
+      "target": "dlg.mrs.shelf.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.mtn.headline.aya.after_01",
       "target": "char.aya_shameimaru",
       "kind": "speaker"
@@ -2561,6 +2654,26 @@
     {
       "source": "choice.mrs.notes.answer",
       "target": "choice.mrs.notes.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.shelf.answer",
+      "target": "choice.mrs.shelf.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.shelf.answer",
+      "target": "choice.mrs.shelf.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.shelf.answer",
+      "target": "choice.mrs.shelf.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mrs.shelf.answer",
+      "target": "choice.mrs.shelf.playful",
       "kind": "localization"
     },
     {
@@ -5380,6 +5493,221 @@
     },
     {
       "source": "evt.mrs.field_notes",
+      "target": "loc.forest_of_magic",
+      "kind": "location"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n001",
+      "target": "evt.mrs.shelf_marked_later.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n001",
+      "target": "mus_marisa_night",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n002",
+      "target": "evt.mrs.shelf_marked_later.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n002",
+      "target": "obj.mrs.shelf.wait",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n002",
+      "target": "prop.marisa_later_shelf",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n002",
+      "target": "prop.marisa_unsorted_box",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n003",
+      "target": "beat.mrs.shelf.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n003",
+      "target": "evt.mrs.shelf_marked_later.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n004",
+      "target": "beat.mrs.shelf.boundary",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n004",
+      "target": "evt.mrs.shelf_marked_later.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n005",
+      "target": "choice.mrs.shelf.answer",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n005",
+      "target": "evt.mrs.shelf_marked_later.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n005",
+      "target": "evt.mrs.shelf_marked_later.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n005",
+      "target": "evt.mrs.shelf_marked_later.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n005",
+      "target": "evt.mrs.shelf_marked_later.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_after",
+      "target": "beat.mrs.shelf.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_after",
+      "target": "evt.mrs.shelf_marked_later.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_defiant_line",
+      "target": "beat.mrs.shelf.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_defiant_line",
+      "target": "evt.mrs.shelf_marked_later.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_defiant",
+      "target": "evt.mrs.shelf_marked_later.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_direct_line",
+      "target": "beat.mrs.shelf.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_direct_line",
+      "target": "evt.mrs.shelf_marked_later.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_direct",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_direct",
+      "target": "evt.mrs.shelf_marked_later.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_effects",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_effects",
+      "target": "evt.mrs.shelf_marked_later.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_journal",
+      "target": "evt.mrs.shelf_marked_later.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_journal",
+      "target": "journal.mrs.shelf_marked_later",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_patient_line",
+      "target": "beat.mrs.shelf.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_patient_line",
+      "target": "evt.mrs.shelf_marked_later.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_patient",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_patient",
+      "target": "evt.mrs.shelf_marked_later.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_playful_line",
+      "target": "beat.mrs.shelf.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_playful_line",
+      "target": "evt.mrs.shelf_marked_later.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_playful",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later.node.n_playful",
+      "target": "evt.mrs.shelf_marked_later.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later",
+      "target": "char.marisa_kirisame",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later",
+      "target": "event.mrs.shelf_marked_later.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later",
+      "target": "evt.mrs.shelf_marked_later",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later",
+      "target": "loc.forest_of_magic.marisa_house",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.mrs.shelf_marked_later",
       "target": "loc.forest_of_magic",
       "kind": "location"
     },
