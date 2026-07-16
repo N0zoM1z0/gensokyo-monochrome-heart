@@ -14,7 +14,90 @@ func run() -> Array[String]:
 	_expect_host_and_story_isolation(failures)
 	_expect_time_grid_service(failures)
 	_expect_five_impossible_errands(failures)
+	_expect_soul_garden_release(failures)
 	return failures
+
+
+func _expect_soul_garden_release(failures: Array[String]) -> void:
+	var definition := SoulGardenDefinition.new()
+	if not definition.validation_errors().is_empty():
+		failures.append("Soul Garden does not satisfy the shared minigame contract")
+	var game := SoulGardenSimulation.new()
+	game.configure(_soul_garden_context(), MinigameAssistSettings.new())
+	var start := MinigameInputFrame.new()
+	start.confirm_pressed = true
+	game.step(start)
+	_move_soul_cursor(game, game.state.spirit_columns[0])
+	var confirm := MinigameInputFrame.new()
+	confirm.confirm_pressed = true
+	game.step(confirm)
+	if game.state.carried_spirit != 0:
+		failures.append("Soul Garden could not collect the marked fan spirit")
+	_move_soul_cursor(game, SoulGardenSimulation.TREE_COLUMNS[1])
+	game.step(confirm)
+	if game.state.carried_spirit != 0 or game.state.released_count != 0 or game.state.mismatch_count != 1:
+		failures.append("wrong memorial tree consumed a spirit or lost existing progress")
+	for spirit_index: int in range(3):
+		if game.state.carried_spirit < 0:
+			_move_soul_cursor(game, game.state.spirit_columns[spirit_index])
+			game.step(confirm)
+		_move_soul_cursor(game, SoulGardenSimulation.TREE_COLUMNS[spirit_index])
+		game.step(confirm)
+	if game.final_result == null or game.final_result.result_tag != &"clear" or game.state.released_count != 3:
+		failures.append("three matched spirits did not complete through deliberate release")
+	elif &"soul_garden.released.3" not in game.final_result.outcome_tags:
+		failures.append("Soul Garden result omitted stable release evidence")
+	var repeated := _run_clean_soul_garden()
+	var repeated_again := _run_clean_soul_garden()
+	if repeated.final_result == null or repeated.final_result.performance_band != &"excellent":
+		failures.append("clean Soul Garden release did not retain optional mastery")
+	elif repeated.final_result.telemetry.final_state_hash != repeated_again.final_result.telemetry.final_state_hash:
+		failures.append("Soul Garden produced nondeterministic release telemetry")
+	var assisted := SoulGardenSimulation.new()
+	var slower := MinigameAssistSettings.new()
+	slower.slower_pace = true
+	assisted.configure(_soul_garden_context(), slower)
+	assisted.step(start)
+	var initial_columns := assisted.state.spirit_columns.duplicate()
+	for _tick: int in range(SoulGardenSimulation.STANDARD_DRIFT_TICKS):
+		assisted.step(MinigameInputFrame.new())
+	if assisted.state.spirit_columns != initial_columns:
+		failures.append("Soul Garden slower-pace assist did not delay the first drift")
+	for _tick: int in range(SoulGardenSimulation.STANDARD_DRIFT_TICKS):
+		assisted.step(MinigameInputFrame.new())
+	if assisted.state.spirit_columns == initial_columns:
+		failures.append("Soul Garden slower-pace assist stopped drift instead of pacing it")
+
+
+func _run_clean_soul_garden() -> SoulGardenSimulation:
+	var game := SoulGardenSimulation.new()
+	game.configure(_soul_garden_context(), MinigameAssistSettings.new())
+	var confirm := MinigameInputFrame.new()
+	confirm.confirm_pressed = true
+	game.step(confirm)
+	for spirit_index: int in range(3):
+		_move_soul_cursor(game, game.state.spirit_columns[spirit_index])
+		game.step(confirm)
+		_move_soul_cursor(game, SoulGardenSimulation.TREE_COLUMNS[spirit_index])
+		game.step(confirm)
+	return game
+
+
+func _move_soul_cursor(game: SoulGardenSimulation, target: int) -> void:
+	while game.state.cursor_column != target:
+		var frame := MinigameInputFrame.new()
+		frame.grid_direction.x = signi(target - game.state.cursor_column)
+		game.step(frame)
+
+
+func _soul_garden_context() -> ModeContext:
+	var context := ModeContext.new()
+	context.mode_type = &"start_minigame"
+	context.mode_id = &"mini.hgy.soul_garden"
+	context.event_id = &"evt.hgy.petal_on_hold"
+	context.node_id = &"n_soul_garden"
+	context.deterministic_seed = 13021
+	return context
 
 
 func _expect_five_impossible_errands(failures: Array[String]) -> void:

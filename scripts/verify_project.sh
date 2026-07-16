@@ -135,6 +135,12 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/FiveErrandsActiveFixture.tscn \
 	--scene=res://tests/ui/fixtures/FiveErrandsRefusalFixture.tscn \
 	--scene=res://tests/ui/fixtures/FiveErrandsResultFixture.tscn \
+	--scene=res://src/presentation/minigames/SoulGardenMode.tscn \
+	--scene=res://tests/ui/fixtures/SoulGardenTutorialFixture.tscn \
+	--scene=res://tests/ui/fixtures/SoulGardenActiveFixture.tscn \
+	--scene=res://tests/ui/fixtures/SoulGardenCarriedFixture.tscn \
+	--scene=res://tests/ui/fixtures/SoulGardenMismatchFixture.tscn \
+	--scene=res://tests/ui/fixtures/SoulGardenResultFixture.tscn \
 	--scene=res://src/presentation/exploration/MansionServiceExplorationMode.tscn \
 	--scene=res://tests/ui/fixtures/MansionServiceExplorationFixture.tscn \
 	--scene=res://tests/ui/fixtures/MansionServiceKitchenFixture.tscn \
@@ -310,6 +316,8 @@ run_checked "M13 Eientei bamboo loop integration" env XDG_DATA_HOME="$LOG_DIR/us
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_bamboo_loop_flow.gd
 run_checked "M13 Five Impossible Errands integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_five_impossible_errands.gd
+run_checked "M13 Soul Garden integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_soul_garden.gd
 run_checked "M13 Tomorrow's Headline event integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_tomorrows_headline_event_flow.gd
 run_checked "M13 Youkai Mountain vertical slice integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \

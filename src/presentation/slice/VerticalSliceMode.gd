@@ -525,6 +525,8 @@ func _spawn_mechanical_mode(context: ModeContext) -> void:
 		(mode as TimeGridServiceMode).configure_assists(_tea_assists())
 	elif mode is TeaTemperatureMode:
 		(mode as TeaTemperatureMode).configure_assists(_tea_assists())
+	elif mode is SoulGardenMode:
+		(mode as SoulGardenMode).configure_assists(_tea_assists())
 	elif mode is BoundaryStainMode:
 		(mode as BoundaryStainMode).configure_assists(_danmaku_assists())
 	elif mode is CompactFighterMode:
@@ -681,6 +683,7 @@ func _tea_assists() -> MinigameAssistSettings:
 		settings.slower_heat_change = true
 		settings.wider_target_band = true
 		settings.no_timer = true
+		settings.slower_pace = true
 	return settings
 
 

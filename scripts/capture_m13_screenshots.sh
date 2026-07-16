@@ -58,6 +58,11 @@ capture_pair m13_five_errands_tutorial res://tests/ui/fixtures/FiveErrandsTutori
 capture_pair m13_five_errands_active res://tests/ui/fixtures/FiveErrandsActiveFixture.tscn
 capture_pair m13_five_errands_refusal res://tests/ui/fixtures/FiveErrandsRefusalFixture.tscn
 capture_pair m13_five_errands_result res://tests/ui/fixtures/FiveErrandsResultFixture.tscn
+capture_pair m13_soul_garden_tutorial res://tests/ui/fixtures/SoulGardenTutorialFixture.tscn
+capture_pair m13_soul_garden_active res://tests/ui/fixtures/SoulGardenActiveFixture.tscn
+capture_pair m13_soul_garden_carried res://tests/ui/fixtures/SoulGardenCarriedFixture.tscn
+capture_pair m13_soul_garden_mismatch res://tests/ui/fixtures/SoulGardenMismatchFixture.tscn
+capture_pair m13_soul_garden_result res://tests/ui/fixtures/SoulGardenResultFixture.tscn
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated
