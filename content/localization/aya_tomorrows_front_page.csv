@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.aya.tomorrows_front_page.withhold,objective,,Decide whether tomorrow's perfect headline should remain unprinted.,明日の完璧な見出しを掲載しないままにするか決める。,208,Original
+event.aya.tomorrows_front_page.title,event_title,,Tomorrow's Front Page,明日の一面,208,Original
+choice.aya.tomorrows_front_page.direct,choice,,Say a correct future can still become a harmful instruction.,正しい未来でも、有害な指示になり得ると言う。,248,Original
+choice.aya.tomorrows_front_page.playful,choice,,Ask whether the scoop will survive being less clever than tomorrow.,特ダネが明日より賢くなくても生き残れるか尋ねる。,248,Original
+choice.aya.tomorrows_front_page.patient,choice,,Ask what the people in the headline would lose by reading it early.,見出しの中の人たちが早く読めば何を失うか聞く。,248,Original
+choice.aya.tomorrows_front_page.defiant,choice,,Say no one owes the Archive a performance of its prediction.,誰もアーカイブの予言を演じる義務はないと言う。,248,Original
+dlg.aya.tomorrows_front_page.offer,dialogue,char.aya_shameimaru,"The Archive offered a front page that is completely accurate tomorrow: the bridge closes, the patrol apologizes, and everyone says the sentence I would have quoted.",「アーカイブは、明日には完全に正しい一面を差し出しました。橋は閉じ、哨戒は謝り、皆が私なら引用したであろう言葉を言います。」,248,Original
+dlg.aya.tomorrows_front_page.refusal,dialogue,char.aya_shameimaru,"Accuracy is not permission. If I print it now, people will walk toward its sentences and call that proof. I do not want a future that needs an audience.",「正確さは許可ではありません。今印刷すれば、人々はその文章へ歩き、それを証明と呼ぶでしょう。観客を必要とする未来はいりません。」,248,Original
+dlg.aya.tomorrows_front_page.direct,dialogue,char.aya_shameimaru,"Exactly. A true warning can become a route marker with no room to turn. I will withhold it and report what happens instead.",「その通りです。正しい警告でも、曲がる余地のない道標になれます。伏せて、代わりに起きたことを報じます。」,248,Original
+dlg.aya.tomorrows_front_page.playful,dialogue,char.aya_shameimaru,"It may complain loudly. A scoop that cannot survive uncertainty was only an announcement wearing a hat.",「大きく文句は言うでしょうね。不確かさを生き残れない特ダネは、帽子をかぶった告知にすぎません。」,248,Original
+dlg.aya.tomorrows_front_page.patient,dialogue,char.aya_shameimaru,"They would lose an ordinary morning. They would become people trying to satisfy a caption instead of people deciding what to do.",「普通の朝を失います。何をするか決める人ではなく、説明文を満たそうとする人になってしまいます。」,248,Original
+dlg.aya.tomorrows_front_page.defiant,dialogue,char.aya_shameimaru,"No. Prediction is not a command, and my paper will not recruit people to obey it. The page stays closed.",「いいえ。予言は命令ではなく、私の新聞は従わせるために人を集めません。この頁は閉じたままです。」,248,Original
+dlg.aya.tomorrows_front_page.after,dialogue,char.aya_shameimaru,"Camera down, page closed. Tomorrow may still be news. It will have to become news before I claim it.",「カメラを下ろし、頁を閉じます。明日はニュースになるかもしれません。でも、私が名乗る前にニュースにならなければなりません。」,248,Original
+journal.aya.tomorrows_front_page.title,journal_title,,The Front Page Left Closed,閉じたままの一面,248,Original
+journal.aya.tomorrows_front_page.body,journal_body,,Aya withheld the Archive's perfect future headline. A prediction could be accurate and still make people perform it; she chose to report tomorrow only after it had the freedom to happen differently.,文はアーカイブの完璧な未来見出しを伏せた。予言は正しくても人々に演じさせ得るため、彼女は明日が別様に起きる自由を持った後でのみ報じることを選んだ。,248,Original

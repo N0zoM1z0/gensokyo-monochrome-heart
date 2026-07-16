@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "5bfa2f068c38112d7729efb5719fdf51cbb76017f3017633cd36d5dfe747196f",
+  "content_hash": "67611d579437d4c7a5fd15de895a5dc86c38a0781f6b37ed518f29cd251696e1",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 58,
-    "dialogue_beats": 292,
-    "localization": 1146,
+    "events": 59,
+    "dialogue_beats": 299,
+    "localization": 1161,
     "music_cues": 89,
-    "event_nodes": 698
+    "event_nodes": 715
   },
   "ids": {
     "characters": [
@@ -111,6 +111,7 @@
       "evt.aya.exclusive_interview",
       "evt.aya.hidden_folder",
       "evt.aya.story_published_too_soon",
+      "evt.aya.tomorrows_front_page",
       "evt.aya.wind_frame_graze",
       "evt.ein.burn_false_moon",
       "evt.ein.five_impossibilities",
@@ -195,6 +196,13 @@
       "beat.aya.story_published_too_soon.intro",
       "beat.aya.story_published_too_soon.patient",
       "beat.aya.story_published_too_soon.playful",
+      "beat.aya.tomorrows_front_page.after",
+      "beat.aya.tomorrows_front_page.defiant",
+      "beat.aya.tomorrows_front_page.direct",
+      "beat.aya.tomorrows_front_page.offer",
+      "beat.aya.tomorrows_front_page.patient",
+      "beat.aya.tomorrows_front_page.playful",
+      "beat.aya.tomorrows_front_page.refusal",
       "beat.aya.wind_frame_graze.after",
       "beat.aya.wind_frame_graze.assist",
       "beat.aya.wind_frame_graze.clear",
@@ -481,6 +489,10 @@
       "choice.aya.story_published_too_soon.direct",
       "choice.aya.story_published_too_soon.patient",
       "choice.aya.story_published_too_soon.playful",
+      "choice.aya.tomorrows_front_page.defiant",
+      "choice.aya.tomorrows_front_page.direct",
+      "choice.aya.tomorrows_front_page.patient",
+      "choice.aya.tomorrows_front_page.playful",
       "choice.aya.wind_frame_graze.defiant",
       "choice.aya.wind_frame_graze.direct",
       "choice.aya.wind_frame_graze.patient",
@@ -629,6 +641,13 @@
       "dlg.aya.story_published_too_soon.intro",
       "dlg.aya.story_published_too_soon.patient",
       "dlg.aya.story_published_too_soon.playful",
+      "dlg.aya.tomorrows_front_page.after",
+      "dlg.aya.tomorrows_front_page.defiant",
+      "dlg.aya.tomorrows_front_page.direct",
+      "dlg.aya.tomorrows_front_page.offer",
+      "dlg.aya.tomorrows_front_page.patient",
+      "dlg.aya.tomorrows_front_page.playful",
+      "dlg.aya.tomorrows_front_page.refusal",
       "dlg.aya.wind_frame_graze.after",
       "dlg.aya.wind_frame_graze.assist",
       "dlg.aya.wind_frame_graze.clear",
@@ -897,6 +916,7 @@
       "event.aya.exclusive_interview.title",
       "event.aya.hidden_folder.title",
       "event.aya.story_published_too_soon.title",
+      "event.aya.tomorrows_front_page.title",
       "event.aya.wind_frame_graze.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -947,6 +967,8 @@
       "journal.aya.hidden_folder.title",
       "journal.aya.story_published_too_soon.body",
       "journal.aya.story_published_too_soon.title",
+      "journal.aya.tomorrows_front_page.body",
+      "journal.aya.tomorrows_front_page.title",
       "journal.aya.wind_frame_graze.body",
       "journal.aya.wind_frame_graze.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -1023,6 +1045,7 @@
       "obj.aya.exclusive_interview.mark_record",
       "obj.aya.hidden_folder.review",
       "obj.aya.story_published_too_soon.correct",
+      "obj.aya.tomorrows_front_page.withhold",
       "obj.aya.wind_frame_graze.exit",
       "obj.ein.cross_four_dawns",
       "obj.hgy.cutting_wrong_problem.listen",
@@ -4322,6 +4345,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.aya.tomorrows_front_page.response",
+      "target": "choice.aya.tomorrows_front_page.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.tomorrows_front_page.response",
+      "target": "choice.aya.tomorrows_front_page.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.tomorrows_front_page.response",
+      "target": "choice.aya.tomorrows_front_page.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.tomorrows_front_page.response",
+      "target": "choice.aya.tomorrows_front_page.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.aya.wind_frame_graze.response",
       "target": "choice.aya.wind_frame_graze.defiant",
       "kind": "localization"
@@ -5778,6 +5821,221 @@
     },
     {
       "source": "evt.aya.story_published_too_soon",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n001",
+      "target": "evt.aya.tomorrows_front_page.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n001",
+      "target": "mus_aya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n002",
+      "target": "evt.aya.tomorrows_front_page.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n002",
+      "target": "obj.aya.tomorrows_front_page.withhold",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n002",
+      "target": "prop.aya.archive_front_page",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n002",
+      "target": "prop.aya.unprinted_morning",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n003",
+      "target": "beat.aya.tomorrows_front_page.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n003",
+      "target": "evt.aya.tomorrows_front_page.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n004",
+      "target": "beat.aya.tomorrows_front_page.refusal",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n004",
+      "target": "evt.aya.tomorrows_front_page.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n005",
+      "target": "choice.aya.tomorrows_front_page.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n005",
+      "target": "evt.aya.tomorrows_front_page.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n005",
+      "target": "evt.aya.tomorrows_front_page.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n005",
+      "target": "evt.aya.tomorrows_front_page.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n005",
+      "target": "evt.aya.tomorrows_front_page.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_after",
+      "target": "beat.aya.tomorrows_front_page.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_after",
+      "target": "evt.aya.tomorrows_front_page.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_defiant_line",
+      "target": "beat.aya.tomorrows_front_page.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_defiant_line",
+      "target": "evt.aya.tomorrows_front_page.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_defiant",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_defiant",
+      "target": "evt.aya.tomorrows_front_page.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_direct_line",
+      "target": "beat.aya.tomorrows_front_page.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_direct_line",
+      "target": "evt.aya.tomorrows_front_page.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_direct",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_direct",
+      "target": "evt.aya.tomorrows_front_page.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_effects",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_effects",
+      "target": "evt.aya.tomorrows_front_page.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_journal",
+      "target": "evt.aya.tomorrows_front_page.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_journal",
+      "target": "journal.aya.tomorrows_front_page",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_patient_line",
+      "target": "beat.aya.tomorrows_front_page.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_patient_line",
+      "target": "evt.aya.tomorrows_front_page.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_patient",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_patient",
+      "target": "evt.aya.tomorrows_front_page.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_playful_line",
+      "target": "beat.aya.tomorrows_front_page.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_playful_line",
+      "target": "evt.aya.tomorrows_front_page.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_playful",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page.node.n_playful",
+      "target": "evt.aya.tomorrows_front_page.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page",
+      "target": "char.aya_shameimaru",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page",
+      "target": "char.aya_shameimaru",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page",
+      "target": "event.aya.tomorrows_front_page.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page",
+      "target": "evt.aya.tomorrows_front_page",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page",
+      "target": "loc.youkai_mountain.wind_ridge",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.aya.tomorrows_front_page",
       "target": "loc.youkai_mountain",
       "kind": "location"
     },
