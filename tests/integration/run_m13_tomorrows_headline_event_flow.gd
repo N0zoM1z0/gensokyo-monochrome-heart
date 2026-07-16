@@ -76,7 +76,9 @@ func _run_branch(
 		and result.mode_context.mode_id == &"danmaku.mtn.tomorrows_headline",
 		"%s did not yield the Wind-Frame handoff" % tone
 	)
-	result = interpreter.resume_mode(ModeResult.new(result_tag))
+	var mode_result := ModeResult.new(result_tag)
+	mode_result.outcome_tags = [&"strategy.photo_frame"]
+	result = interpreter.resume_mode(mode_result)
 	var expected_result_node: StringName = {
 		&"clear": &"n_danmaku_clear",
 		&"assist_clear": &"n_danmaku_assist",
@@ -125,6 +127,25 @@ func _expect_completion(state: GameState, tone: StringName) -> void:
 	_expect(EVENT_ID in state.journal.replay_event_ids, "%s did not unlock Journal replay" % tone)
 	_expect(state.inventory.keepsakes.has(KEEPSAKE_ID), "%s did not grant the unprinted caption" % tone)
 	_expect(state.journal.entries.has(JOURNAL_ID), "%s did not write the Journal observation" % tone)
+	_expect(state.rumors.has(&"rumor.mtn.tomorrows_headline"), "%s did not record Aya's withheld headline rumor" % tone)
+	if state.rumors.has(&"rumor.mtn.tomorrows_headline"):
+		var rumor := state.rumors[&"rumor.mtn.tomorrows_headline"] as RumorState
+		_expect(
+			rumor.claim_key == &"rumor.mtn.tomorrows_headline.withheld_correction"
+			and rumor.reliability_milli == 820
+			and rumor.privacy == &"shared"
+			and rumor.confidence_label() == &"seen",
+			"%s stored the wrong initial rumor evidence" % tone
+		)
+	if state.journal.entries.has(JOURNAL_ID):
+		_expect(
+			&"strategy.photo_frame" in state.journal.entries[JOURNAL_ID].tags,
+			"%s Journal entry omitted the recorded photo-frame strategy" % tone
+		)
+	_expect(
+		RecordedStrategyLedger.ranked_tags(state) == [&"strategy.photo_frame"],
+		"%s did not expose photo-frame evidence to the Archive ledger" % tone
+	)
 	for flag_id: StringName in [
 		&"flag.mtn.prediction_performance.observed",
 		&"flag.mtn.headline.withheld",

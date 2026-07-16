@@ -54,6 +54,7 @@
     "n_item": {"type": "give_item", "item_id": "item.keepsake.unprinted_caption", "owner_character_id": "char.aya_shameimaru", "dialogue_tags": ["mtn.tomorrows_headline", "boundary.off_record"], "next": "n_journal"},
     "n_journal": {"type": "journal_entry", "entry_id": "journal.mtn.tomorrows_headline", "entry_type": "event_observation", "tags": ["future_photo", "publication_boundary", "prediction_loop"], "next": "n_effects"},
     "n_effects": {"type": "effects", "effects": [
+      {"op": "add_rumor", "rumor_id": "rumor.mtn.tomorrows_headline", "claim_key": "rumor.mtn.tomorrows_headline.withheld_correction", "source_character_id": "char.aya_shameimaru", "reliability_milli": 820, "privacy": "shared", "status": "unresolved"},
       {"op": "set_flag", "key": "flag.mtn.prediction_performance.observed", "value": true},
       {"op": "set_flag", "key": "flag.mtn.headline.withheld", "value": true},
       {"op": "set_flag", "key": "evt.mtn.tomorrows_headline.complete", "value": true}

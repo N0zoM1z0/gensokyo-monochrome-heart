@@ -68,7 +68,10 @@ func _run() -> void:
 		and wind_frame.assist_settings.auto_bomb,
 		"Story preset did not reach the composed Wind-Frame mode"
 	)
-	_expect(_slice.submit_mode_result_for_test(&"clear", 2), "Wind-Frame clear could not return to Aya")
+	_expect(
+		_slice.submit_mode_result_for_test(&"clear", 2, [&"strategy.photo_frame", &"photo.capture.composed"]),
+		"Wind-Frame clear could not return to Aya"
+	)
 	_expect(_slice.current_event_node_id() == &"n_danmaku_clear", "Wind-Frame clear reached the wrong response")
 	_expect(_slice.current_stage_component() == &"mountain_new_frame", "clear response omitted the unpredicted frame")
 	_confirm()
@@ -88,9 +91,35 @@ func _run() -> void:
 	_expect(completed.inventory.keepsakes.has(KEEPSAKE_ID), "mountain slice did not grant the unprinted caption")
 	_expect(completed.journal.entries.has(JOURNAL_ID), "mountain slice did not add the caption Journal entry")
 	_expect(EVENT_ID in completed.journal.replay_event_ids, "mountain slice did not unlock read-only replay")
+	_expect(completed.rumors.has(&"rumor.mtn.tomorrows_headline"), "mountain slice did not add the withheld-headline rumor")
+	_expect(
+		completed.journal.entries.has(JOURNAL_ID)
+		and &"strategy.photo_frame" in completed.journal.entries[JOURNAL_ID].tags,
+		"mountain Journal did not retain the locale-free photo-frame strategy"
+	)
+	_expect(
+		RecordedStrategyLedger.ranked_tags(completed) == [&"strategy.photo_frame"],
+		"mountain completion did not expose a strategy to the Archive ledger"
+	)
 
 	_confirm()
 	_expect(_slice.phase_id() == &"day_end", "mountain reward did not save and close the day")
+	var day_end := _kernel.state_snapshot() as GameState
+	var retold := day_end.rumors.get(&"rumor.mtn.tomorrows_headline") as RumorState
+	_expect(
+		retold != null
+		and retold.claim_key == &"rumor.mtn.tomorrows_headline.reporter_prevented_accident"
+		and retold.reliability_milli == 610
+		and retold.privacy == &"public"
+		and retold.mutation_count == 1
+		and retold.confidence_label() == &"reported",
+		"day end did not mutate the withheld headline into its public retelling"
+	)
+	for region_id: StringName in [&"loc.hakurei_shrine", &"loc.scarlet_devil_mansion"]:
+		_expect(
+			day_end.regions[region_id].condition_id == &"region.rumor.future_headline_arrived",
+			"headline retelling did not reach %s" % region_id
+		)
 	_confirm()
 	_expect(_slice.phase_id() == &"journal", "mountain day end did not open the Journal")
 	var before_replay := GameStateCodec.new().canonical_state(_kernel.state_snapshot())

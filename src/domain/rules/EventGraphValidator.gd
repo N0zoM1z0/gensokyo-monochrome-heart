@@ -88,10 +88,19 @@ func _validate_shape(node: EventNodeRecord, errors: Array[String]) -> void:
 		if node.effects.is_empty():
 			errors.append("effects node %s cannot be empty" % node.id)
 		for effect: EventEffectRecord in node.effects:
-			if effect.operation not in [&"relationship", &"set_flag"]:
+			if effect.operation not in [&"relationship", &"set_flag", &"add_rumor"]:
 				errors.append("effects node %s has unsupported operation %s" % [node.id, effect.operation])
 			elif effect.operation == &"set_flag" and not _is_flag_id(effect.key):
 				errors.append("effects node %s has invalid flag ID %s" % [node.id, effect.key])
+			elif effect.operation == &"add_rumor":
+				if not _matches_id(effect.rumor_id, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
+					errors.append("effects node %s has invalid rumor ID %s" % [node.id, effect.rumor_id])
+				if not _matches_id(effect.claim_key, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
+					errors.append("effects node %s has invalid rumor claim %s" % [node.id, effect.claim_key])
+				if effect.reliability_milli < 0 or effect.reliability_milli > 1000:
+					errors.append("effects node %s has invalid rumor reliability" % node.id)
+				if effect.privacy not in RumorState.PRIVACY_VALUES or effect.status not in RumorState.STATUS_VALUES:
+					errors.append("effects node %s has invalid rumor privacy or status" % node.id)
 	if node.next_node_id == &"" and node.type not in [&"choice", &"start_minigame", &"start_danmaku", &"start_duel"]:
 		errors.append("node %s requires a next edge" % node.id)
 
@@ -101,6 +110,10 @@ func _is_flag_id(flag_id: StringName) -> bool:
 	if expression.compile("^(?:flag|evt)\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$") != OK:
 		return false
 	return expression.search(String(flag_id)) != null
+
+
+func _matches_id(value: StringName, pattern: String) -> bool:
+	return RegEx.create_from_string(pattern).search(String(value)) != null
 
 
 func _reachable(entry_id: StringName, nodes: Dictionary[StringName, EventNodeRecord]) -> Array[StringName]:

@@ -45,6 +45,10 @@ func _apply(state: GameState, command: GameCommand) -> CommandResult:
 		return _mutate_rumor(state, command)
 	if command is SetRumorStatusCommand:
 		return _set_rumor_status(state, command)
+	if command is SetRegionConditionCommand:
+		return _set_region_condition(state, command)
+	if command is RecordStrategyUseCommand:
+		return _record_strategy_use(state, command)
 	if command is AddJournalEntryCommand:
 		return _add_journal_entry(state, command)
 	if command is MarkJournalEntryReadCommand:
@@ -282,6 +286,43 @@ func _set_location(state: GameState, command: SetLocationCommand) -> CommandResu
 	state.current_location = command.location_id
 	state.regions[command.location_id].visit_count += 1
 	state.regions[command.location_id].last_visited_day = state.day
+	return CommandResult.success(command.command_id)
+
+
+func _set_region_condition(state: GameState, command: SetRegionConditionCommand) -> CommandResult:
+	if not state.regions.has(command.region_id):
+		return _not_found(command, "unknown region: %s" % command.region_id)
+	if not _matches(command.condition_id, "^region\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
+		return _invalid(command, "region condition must have a valid stable ID")
+	if state.regions[command.region_id].condition_id == command.condition_id:
+		return _already_exists(command, "region already has condition %s" % command.condition_id)
+	state.regions[command.region_id].condition_id = command.condition_id
+	return CommandResult.success(command.command_id)
+
+
+func _record_strategy_use(state: GameState, command: RecordStrategyUseCommand) -> CommandResult:
+	if (
+		not _matches(command.event_id, "^evt\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$")
+		or not _matches(command.strategy_tag, "^strategy\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$")
+	):
+		return _invalid(command, "event ID and locale-free strategy tag are required")
+	var event_flag_id := RecordedStrategyLedger.event_flag_id(command.event_id, command.strategy_tag)
+	if state.flags.has(event_flag_id):
+		return CommandResult.new(
+			CommandResult.Code.OK,
+			command.command_id,
+			"strategy is already recorded for event: %s" % command.strategy_tag,
+			false
+		)
+	var global_flag_id := RecordedStrategyLedger.global_flag_id(command.strategy_tag)
+	var use_count := 0
+	if state.flags.has(global_flag_id):
+		var existing := state.flags[global_flag_id] as FlagState
+		if existing == null or existing.kind != FlagState.Kind.INTEGER:
+			return _invalid(command, "strategy ledger count has the wrong type")
+		use_count = existing.integer_value
+	state.flags[global_flag_id] = FlagState.from_value(global_flag_id, use_count + 1)
+	state.flags[event_flag_id] = FlagState.from_value(event_flag_id, true)
 	return CommandResult.success(command.command_id)
 
 

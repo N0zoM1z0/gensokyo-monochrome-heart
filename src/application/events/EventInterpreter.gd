@@ -108,9 +108,20 @@ func resume_mode(result: ModeResult) -> EventInterpreterResult:
 			break
 	if next_node_id == &"":
 		return _error("mode result has no authored branch: %s" % result.result_tag)
-	var advanced := _advance_to(next_node_id)
+	var strategy_tags: Array[StringName] = []
+	for outcome_tag: StringName in result.outcome_tags:
+		if String(outcome_tag).begins_with("strategy.") and outcome_tag not in strategy_tags:
+			strategy_tags.append(outcome_tag)
+	strategy_tags.sort_custom(func(left: StringName, right: StringName) -> bool: return String(left) < String(right))
+	var commands: Array[GameCommand] = []
+	if not _runtime.is_replay:
+		for strategy_tag: StringName in strategy_tags:
+			commands.append(RecordStrategyUseCommand.new(_graph.id, strategy_tag))
+	commands.append(SetEventPositionCommand.new(_graph.id, next_node_id))
+	var advanced := _commit_commands(commands)
 	if not advanced.is_success():
 		return _error("mode resume failed: %s" % advanced.message)
+	_runtime.node_id = next_node_id
 	_runtime.waiting_for = &""
 	return _run_until_wait()
 
@@ -210,7 +221,7 @@ func _run_until_wait() -> EventInterpreterResult:
 func _apply_effect_node(node: EventNodeRecord) -> CommandResult:
 	var commands: Array[GameCommand] = []
 	if not _runtime.is_replay:
-		var compiled := _effect_compiler.compile(node.effects)
+		var compiled := _effect_compiler.compile(node.effects, _state.day)
 		if not compiled.is_success():
 			return CommandResult.failure(
 				CommandResult.Code.INVALID_COMMAND,
@@ -274,6 +285,9 @@ func _add_journal(node: EventNodeRecord) -> CommandResult:
 		entry.discovered_day = _state.day
 		entry.observation_keys.append(StringName("%s.body" % node.journal_entry_id))
 		entry.tags = node.journal_tags.duplicate()
+		for strategy_tag: StringName in RecordedStrategyLedger.tags_for_event(_state, _graph.id):
+			if strategy_tag not in entry.tags:
+				entry.tags.append(strategy_tag)
 		if entry.tags.is_empty():
 			entry.tags.append(&"resonance")
 			entry.tags.append(&"quiet_object")

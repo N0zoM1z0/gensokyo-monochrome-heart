@@ -34,6 +34,7 @@ var reward_confirm_key: StringName = &"ui.slice.reward.confirm"
 var complete_header_key: StringName = &"ui.slice.complete.header"
 var complete_body_key: StringName = &"ui.slice.complete.body"
 var complete_confirm_key: StringName = &"ui.slice.complete.confirm"
+var day_end_rumor_rules: Array[RumorPropagationRule] = []
 
 
 func stage_component(node_id: StringName) -> StringName:

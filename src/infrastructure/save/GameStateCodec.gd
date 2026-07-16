@@ -254,7 +254,14 @@ func _decode_flags(raw: Dictionary) -> Dictionary[StringName, FlagState]:
 	var result: Dictionary[StringName, FlagState] = {}
 	for raw_id: Variant in raw:
 		var record: Dictionary = raw[raw_id]
-		var flag := FlagState.from_value(StringName(record.flag_id), record.value)
+		var value: Variant = record.value
+		# JSON numbers may arrive as floats even after the schema accepted an
+		# integer-valued token. Restore the declared closed flag kind explicitly.
+		if String(record.kind) == "int":
+			value = int(record.value)
+		elif String(record.kind) == "id":
+			value = StringName(record.value)
+		var flag := FlagState.from_value(StringName(record.flag_id), value)
 		result[StringName(raw_id)] = flag
 	return result
 

@@ -294,6 +294,10 @@ func _build_dependency_graph(bundle: EventAuthoringBundle) -> ContentDependencyG
 		for effect: EventEffectRecord in node.effects:
 			if effect.character_id != &"":
 				result.add_edge(owner, effect.character_id, &"effect_character")
+			if effect.source_character_id != &"":
+				result.add_edge(owner, effect.source_character_id, &"rumor_source")
+			if effect.claim_key != &"":
+				result.add_edge(owner, effect.claim_key, &"localization")
 		if node.minigame_id != &"":
 			result.add_edge(owner, node.minigame_id, &"mode")
 		if node.item_id != &"":
@@ -337,6 +341,9 @@ func _validate_bundle_references(bundle: EventAuthoringBundle) -> void:
 				_validate_string_reference(option.text_key, "choice %s" % node.choice.id, string_keys, bundle.errors)
 				if option.unavailable_reason_key != &"":
 					_validate_string_reference(option.unavailable_reason_key, "choice reason %s" % node.choice.id, string_keys, bundle.errors)
+		for effect: EventEffectRecord in node.effects:
+			if effect.claim_key != &"":
+				_validate_string_reference(effect.claim_key, "rumor claim at node %s" % node.id, string_keys, bundle.errors)
 
 
 func _validate_catalog_references(bundle: EventAuthoringBundle) -> void:
@@ -364,6 +371,8 @@ func _validate_catalog_references(bundle: EventAuthoringBundle) -> void:
 		for effect: EventEffectRecord in node.effects:
 			if effect.character_id != &"" and catalog.character(effect.character_id) == null:
 				bundle.errors.append("event.json: node %s affects unknown character %s" % [node.id, effect.character_id])
+			if effect.source_character_id != &"" and catalog.character(effect.source_character_id) == null:
+				bundle.errors.append("event.json: node %s uses unknown rumor source %s" % [node.id, effect.source_character_id])
 		if node.minigame_id != &"":
 			var expected_prefix := "mini"
 			if node.type == &"start_danmaku":
@@ -414,6 +423,8 @@ func _append_preview_node(
 			for effect: EventEffectRecord in node.effects:
 				if effect.operation == &"relationship":
 					lines.append("Effect: `%s.%s` %+d" % [effect.character_id, effect.facet, effect.delta])
+				elif effect.operation == &"add_rumor":
+					lines.append("Effect: add rumor `%s` as `%s`" % [effect.rumor_id, effect.claim_key])
 				else:
 					lines.append("Effect: set `%s` = %s" % [effect.key, effect.boolean_value])
 		&"start_minigame", &"start_danmaku", &"start_duel":

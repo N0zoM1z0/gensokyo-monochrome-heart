@@ -321,7 +321,11 @@ func complete_exploration_for_test() -> bool:
 	return true
 
 
-func submit_mode_result_for_test(result_tag: StringName, attempt_count: int = 1) -> bool:
+func submit_mode_result_for_test(
+	result_tag: StringName,
+	attempt_count: int = 1,
+	outcome_tags: Array[StringName] = []
+) -> bool:
 	if _phase != Phase.MECHANICAL_MODE or _active_mode == null:
 		return false
 	var telemetry := ModeTelemetry.new()
@@ -330,6 +334,7 @@ func submit_mode_result_for_test(result_tag: StringName, attempt_count: int = 1)
 	telemetry.deterministic_seed = _active_mode.mode_context.deterministic_seed
 	var result := ModeResult.new(result_tag)
 	result.telemetry = telemetry
+	result.outcome_tags = outcome_tags.duplicate()
 	_on_mode_completed(result)
 	return _phase != Phase.ERROR
 
@@ -579,6 +584,13 @@ func _finish_day() -> void:
 		if not marked.is_success():
 			_fail(marked.message)
 			return
+	var propagated := RumorPropagationService.new().propagate(
+		_working_state,
+		_definition.day_end_rumor_rules
+	)
+	if not propagated.is_success():
+		_fail("day-end rumor propagation failed: %s" % propagated.message)
+		return
 	var slot_count := 4 - TimeSlotRules.SLOTS.find(_working_state.time_slot)
 	var advanced := GameCommandDispatcher.new().dispatch(
 		_working_state,
@@ -646,7 +658,10 @@ func _commit_working_state(source_id: StringName, autosave_reason: StringName = 
 	if autosave_reason != &"" and _save_service != null:
 		var saved: Variant = _save_service.call("autosave", autosave_reason, _save_context())
 		if not saved is SaveOperationResult or not saved.is_success():
-			_fail("autosave failed at %s" % autosave_reason)
+			_fail("autosave failed at %s: %s" % [
+				autosave_reason,
+				saved.message if saved is SaveOperationResult else "save service returned no result",
+			])
 			return false
 	if autosave_reason != &"":
 		checkpoint_requested.emit(autosave_reason)

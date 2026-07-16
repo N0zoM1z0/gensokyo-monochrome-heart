@@ -530,6 +530,10 @@ func _validate_event_node(graph_record: EventGraphRecord, node: EventNodeRecord,
 	for effect: EventEffectRecord in node.effects:
 		if effect.character_id != &"":
 			_require_known(owner, effect.character_id, _characters.has(effect.character_id), &"effect_character", source)
+		if effect.source_character_id != &"":
+			_require_known(owner, effect.source_character_id, _characters.has(effect.source_character_id), &"rumor_source", source)
+		if effect.claim_key != &"":
+			_require_known(owner, effect.claim_key, _strings.has(effect.claim_key), &"localization", source)
 	if node.minigame_id != &"":
 		_require_deferred(owner, node.minigame_id, &"minigame", source)
 	if node.item_id != &"":

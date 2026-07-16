@@ -1,13 +1,13 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "3f2cff38c05400541c1e21783b425ce86605ccc3bbd4ab290debb192ee8ff56e",
+  "content_hash": "a69afe62cadcdd6a538b3c436f902c627388a4d24a68029197320a6a2c444862",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 28,
     "dialogue_beats": 47,
-    "localization": 472,
+    "localization": 474,
     "music_cues": 89,
     "event_nodes": 96
   },
@@ -273,6 +273,8 @@
       "obj.hkr.find_second_cup",
       "obj.mtn.trace_tomorrows_photo",
       "obj.sdm.trace_missing_minute",
+      "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
+      "rumor.mtn.tomorrows_headline.withheld_correction",
       "ui.accessibility.help",
       "ui.accessibility.title",
       "ui.common.back",
@@ -2149,8 +2151,18 @@
     },
     {
       "source": "evt.mtn.tomorrows_headline.node.n_effects",
+      "target": "char.aya_shameimaru",
+      "kind": "rumor_source"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_effects",
       "target": "evt.mtn.tomorrows_headline.node.n_end",
       "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.tomorrows_headline.node.n_effects",
+      "target": "rumor.mtn.tomorrows_headline.withheld_correction",
+      "kind": "localization"
     },
     {
       "source": "evt.mtn.tomorrows_headline.node.n_item",

@@ -19,3 +19,5 @@ dlg.mtn.headline.aya.after_01,dialogue,char.aya_shameimaru,"My paper called the 
 dlg.mtn.headline.aya.after_02,dialogue,char.aya_shameimaru,"Camera down. No face, no name. I publish the correction only after the route changes.",カメラを下ろします。顔も名前も載せません。道が変わった後に訂正を出します。先回りはしません。,248,Original
 journal.mtn.tomorrows_headline.title,journal_title,,The Caption Not Printed,掲載されなかった説明文,248,Original
 journal.mtn.tomorrows_headline.body,journal_body,,"Aya's future photo made people perform the accident. She honored your boundary and withheld your identity, promising a correction after the route changed.",文の未来写真が哨戒路を変え、人々に事故を再現させていた。文は掲載条件を守り、人物を特定する説明文を伏せ、道が変わってから訂正すると約束した。,248,Original
+rumor.mtn.tomorrows_headline.withheld_correction,rumor_claim,char.aya_shameimaru,Aya withheld a future-accident headline until the changed route could be corrected.,文は変更された経路を訂正できるまで、未来の事故の見出しを掲載しなかった。,248,Original
+rumor.mtn.tomorrows_headline.reporter_prevented_accident,rumor_claim,char.aya_shameimaru,The mountain reporter prevented an accident that tomorrow's newspaper had predicted.,山の新聞記者が、明日の新聞で予言された事故を防いだという。,248,Original

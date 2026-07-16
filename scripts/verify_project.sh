@@ -305,6 +305,8 @@ run_checked "M13 Tomorrow's Headline event integration" env XDG_DATA_HOME="$LOG_
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_tomorrows_headline_event_flow.gd
 run_checked "M13 Youkai Mountain vertical slice integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_mountain_vertical_slice_flow.gd
+run_checked "M13 Youkai Mountain save and resume matrix" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_mountain_save_resume_matrix.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

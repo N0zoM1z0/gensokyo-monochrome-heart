@@ -154,3 +154,15 @@ static func _configure_mountain(definition: EventSliceDefinition) -> void:
 	definition.reward_item_name_key = &"ui.slice.mtn.reward.item_name"
 	definition.complete_header_key = &"ui.slice.mtn.complete.header"
 	definition.complete_body_key = &"ui.slice.mtn.complete.body"
+	var headline_retelling := RumorPropagationRule.new(
+		&"rumor.mtn.tomorrows_headline",
+		&"rumor.mtn.tomorrows_headline.withheld_correction",
+		&"rumor.mtn.tomorrows_headline.reporter_prevented_accident",
+		-210,
+		&"public"
+	)
+	headline_retelling.region_conditions = {
+		&"loc.hakurei_shrine": &"region.rumor.future_headline_arrived",
+		&"loc.scarlet_devil_mansion": &"region.rumor.future_headline_arrived",
+	}
+	definition.day_end_rumor_rules.append(headline_retelling)

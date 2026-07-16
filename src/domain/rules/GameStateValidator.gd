@@ -72,6 +72,8 @@ func _validate_regions(state: GameState, errors: Array[String]) -> void:
 			continue
 		if region.visit_count < 0 or region.last_visited_day < 0:
 			errors.append("%s has negative visit metadata" % region_id)
+		if not _matches(region.condition_id, "^region\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
+			errors.append("%s has invalid condition %s" % [region_id, region.condition_id])
 		_check_unique(region.discovered_spot_ids, "%s discovered spot" % region_id, errors)
 
 
