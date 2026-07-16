@@ -49,6 +49,7 @@
     "n008": {"type": "line", "beat_id": "beat.hkr.quiet.reimu.after", "next": "n_journal"},
     "n_journal": {"type": "journal_entry", "entry_id": "journal.hkr.day_nothing_happens", "entry_type": "route_observation", "tags": ["private_habit", "shared_silence", "ordinary_shrine_work"], "next": "n_effects"},
     "n_effects": {"type": "effects", "effects": [
+      {"op": "route_stage", "character_id": "char.reimu_hakurei", "stage": 2},
       {"op": "set_flag", "key": "flag.route.reimu.silence_tolerated", "value": true},
       {"op": "set_flag", "key": "flag.route.reimu.private_habit_seen", "value": true},
       {"op": "set_flag", "key": "evt.hkr.day_nothing_happens.complete", "value": true}

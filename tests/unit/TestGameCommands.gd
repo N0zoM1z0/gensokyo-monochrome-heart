@@ -250,6 +250,33 @@ func _test_time_location_route(failures: Array[String]) -> void:
 	)
 	if state.characters[&"char.reimu_hakurei"].route_intent != &"friendship":
 		failures.append("rejected route intent changed the accepted player choice")
+	_expect_success(
+		"AdvanceRouteStageCommand positive",
+		_dispatcher.dispatch(state, AdvanceRouteStageCommand.new(&"char.reimu_hakurei", 1)),
+		failures
+	)
+	_expect_failure(
+		"AdvanceRouteStageCommand duplicate",
+		_dispatcher.dispatch(state, AdvanceRouteStageCommand.new(&"char.reimu_hakurei", 1)),
+		failures
+	)
+	_expect_failure(
+		"AdvanceRouteStageCommand invalid target",
+		_dispatcher.dispatch(state, AdvanceRouteStageCommand.new(&"char.reimu_hakurei", 0)),
+		failures
+	)
+	_expect_success(
+		"AdvanceRouteStageCommand forward",
+		_dispatcher.dispatch(state, AdvanceRouteStageCommand.new(&"char.reimu_hakurei", 2)),
+		failures
+	)
+	_expect_failure(
+		"AdvanceRouteStageCommand regression",
+		_dispatcher.dispatch(state, AdvanceRouteStageCommand.new(&"char.reimu_hakurei", 1)),
+		failures
+	)
+	if state.characters[&"char.reimu_hakurei"].route_stage != 2:
+		failures.append("route stage did not preserve only forward checkpoints")
 
 
 func _test_event_cursor(failures: Array[String]) -> void:

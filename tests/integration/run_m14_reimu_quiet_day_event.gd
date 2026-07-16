@@ -111,6 +111,7 @@ func _expect_tone_effect(state: GameState, tone: StringName) -> void:
 
 func _expect_completion(state: GameState, tone: StringName) -> void:
 	_expect(EVENT_ID in state.completed_event_ids, "%s did not record quiet-day completion" % tone)
+	_expect(state.characters[&"char.reimu_hakurei"].route_stage == 2, "%s did not advance Reimu to route stage 2" % tone)
 	_expect(EVENT_ID in state.journal.replay_event_ids, "%s did not unlock quiet-day replay" % tone)
 	_expect(state.journal.entries.has(JOURNAL_ID), "%s did not write the ordinary-afternoon observation" % tone)
 	for flag_id: StringName in [&"flag.route.reimu.silence_tolerated", &"flag.route.reimu.private_habit_seen", &"evt.hkr.day_nothing_happens.complete"]:
@@ -133,6 +134,7 @@ func _create_state(profile_id: StringName) -> GameState:
 	for prior_event: StringName in [&"evt.hkr.empty_cushion", &"evt.hkr.offerings_without_owners"]:
 		dispatcher.dispatch(state, SetEventPositionCommand.new(prior_event, &"n_route_predecessor"))
 		dispatcher.dispatch(state, CompleteEventCommand.new(prior_event, &"complete"))
+	dispatcher.dispatch(state, AdvanceRouteStageCommand.new(&"char.reimu_hakurei", 1))
 	return state
 
 

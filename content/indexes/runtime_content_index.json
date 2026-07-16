@@ -1,7 +1,7 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "554f6a2cfc765673aedeab3f07f8c04a473e5817cb4f5d2c954742f8bc5313ec",
+  "content_hash": "3ac2b56f4cf2aa783ab38eb582d361bbfbd57dc80113c93064661f339e6ee1c2",
   "counts": {
     "characters": 71,
     "locations": 19,
@@ -2033,6 +2033,11 @@
     },
     {
       "source": "evt.hkr.day_nothing_happens.node.n_effects",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.day_nothing_happens.node.n_effects",
       "target": "evt.hkr.day_nothing_happens.node.n_end",
       "kind": "event_edge"
     },
@@ -2765,6 +2770,11 @@
       "source": "evt.hkr.offerings_without_owners.node.n_direct",
       "target": "evt.hkr.offerings_without_owners.node.n_direct_line",
       "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.offerings_without_owners.node.n_effects",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
     },
     {
       "source": "evt.hkr.offerings_without_owners.node.n_effects",

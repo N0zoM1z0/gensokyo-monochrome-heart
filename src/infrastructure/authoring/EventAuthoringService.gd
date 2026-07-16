@@ -423,6 +423,8 @@ func _append_preview_node(
 			for effect: EventEffectRecord in node.effects:
 				if effect.operation == &"relationship":
 					lines.append("Effect: `%s.%s` %+d" % [effect.character_id, effect.facet, effect.delta])
+				elif effect.operation == &"route_stage":
+					lines.append("Effect: advance `%s` to route stage `%d`" % [effect.character_id, effect.stage])
 				elif effect.operation == &"add_rumor":
 					lines.append("Effect: add rumor `%s` as `%s`" % [effect.rumor_id, effect.claim_key])
 				else:

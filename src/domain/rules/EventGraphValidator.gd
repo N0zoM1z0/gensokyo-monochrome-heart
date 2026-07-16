@@ -88,10 +88,15 @@ func _validate_shape(node: EventNodeRecord, errors: Array[String]) -> void:
 		if node.effects.is_empty():
 			errors.append("effects node %s cannot be empty" % node.id)
 		for effect: EventEffectRecord in node.effects:
-			if effect.operation not in [&"relationship", &"set_flag", &"add_rumor"]:
+			if effect.operation not in [&"relationship", &"set_flag", &"add_rumor", &"route_stage"]:
 				errors.append("effects node %s has unsupported operation %s" % [node.id, effect.operation])
 			elif effect.operation == &"set_flag" and not _is_flag_id(effect.key):
 				errors.append("effects node %s has invalid flag ID %s" % [node.id, effect.key])
+			elif effect.operation == &"route_stage":
+				if not _matches_id(effect.character_id, "^char\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
+					errors.append("effects node %s has invalid route-stage character %s" % [node.id, effect.character_id])
+				if effect.stage < 1:
+					errors.append("effects node %s has invalid route-stage target" % node.id)
 			elif effect.operation == &"add_rumor":
 				if not _matches_id(effect.rumor_id, "^rumor\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$"):
 					errors.append("effects node %s has invalid rumor ID %s" % [node.id, effect.rumor_id])

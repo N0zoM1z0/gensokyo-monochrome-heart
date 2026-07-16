@@ -14,6 +14,8 @@ func compile(effects: Array[EventEffectRecord], acquired_day: int = 1) -> EventC
 				result.commands.append(
 					AdjustRelationshipCommand.new(effect.character_id, effect.facet, effect.delta)
 				)
+			&"route_stage":
+				result.commands.append(AdvanceRouteStageCommand.new(effect.character_id, effect.stage))
 			&"set_flag":
 				var flag := FlagState.from_value(effect.key, effect.boolean_value)
 				if flag == null:

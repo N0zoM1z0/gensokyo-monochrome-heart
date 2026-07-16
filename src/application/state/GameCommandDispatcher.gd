@@ -73,6 +73,8 @@ func _apply(state: GameState, command: GameCommand) -> CommandResult:
 		return _set_location(state, command)
 	if command is SetRouteIntentCommand:
 		return _set_route_intent(state, command)
+	if command is AdvanceRouteStageCommand:
+		return _advance_route_stage(state, command)
 	if command is SetComfortProfileCommand:
 		return _set_comfort_profile(state, command)
 	if command is SetEventPositionCommand:
@@ -336,6 +338,21 @@ func _set_route_intent(state: GameState, command: SetRouteIntentCommand) -> Comm
 	if state.characters[command.character_id].route_intent == command.route_intent:
 		return _already_exists(command, "route intent is already %s" % command.route_intent)
 	state.characters[command.character_id].route_intent = command.route_intent
+	return CommandResult.success(command.command_id)
+
+
+func _advance_route_stage(state: GameState, command: AdvanceRouteStageCommand) -> CommandResult:
+	if not state.characters.has(command.character_id):
+		return _not_found(command, "unknown character: %s" % command.character_id)
+	if command.target_stage < 1:
+		return _invalid(command, "route stage target must be positive")
+	var character := state.characters[command.character_id]
+	if command.target_stage <= character.route_stage:
+		return _already_exists(
+			command,
+			"route stage cannot move backward or repeat: %d -> %d" % [character.route_stage, command.target_stage]
+		)
+	character.route_stage = command.target_stage
 	return CommandResult.success(command.command_id)
 
 

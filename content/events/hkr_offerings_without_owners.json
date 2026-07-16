@@ -59,6 +59,7 @@
     "n011": {"type": "line", "beat_id": "beat.hkr.offerings.reimu.after_02", "next": "n_journal"},
     "n_journal": {"type": "journal_entry", "entry_id": "journal.hkr.offerings_without_owners", "entry_type": "event_observation", "tags": ["shrine_duty", "memory_offerings", "owner_unknown"], "next": "n_effects"},
     "n_effects": {"type": "effects", "effects": [
+      {"op": "route_stage", "character_id": "char.reimu_hakurei", "stage": 1},
       {"op": "set_flag", "key": "flag.route.reimu.shrine_function_restored", "value": true},
       {"op": "set_flag", "key": "evt.hkr.offerings_without_owners.complete", "value": true}
     ], "next": "n_end"},

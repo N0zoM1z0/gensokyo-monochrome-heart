@@ -96,6 +96,7 @@ func _expect_tone_effect(state: GameState, tone: StringName) -> void:
 
 func _expect_completion(state: GameState, tone: StringName) -> void:
 	_expect(EVENT_ID in state.completed_event_ids, "%s did not record event completion" % tone)
+	_expect(state.characters[&"char.reimu_hakurei"].route_stage == 1, "%s did not advance Reimu to route stage 1" % tone)
 	_expect(EVENT_ID in state.journal.replay_event_ids, "%s did not unlock replay" % tone)
 	_expect(state.journal.entries.has(JOURNAL_ID), "%s did not write the ownerless-offering observation" % tone)
 	for flag_id: StringName in [&"flag.route.reimu.shrine_function_restored", &"evt.hkr.offerings_without_owners.complete"]:

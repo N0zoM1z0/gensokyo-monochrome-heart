@@ -1,11 +1,12 @@
 class_name EventEffectRecord
 extends RefCounted
-## Typed effect payload for relationship, flag, and rumor operations.
+## Typed effect payload for relationship, flag, rumor, and route-stage operations.
 
 var operation: StringName
 var character_id: StringName
 var facet: StringName
 var delta: int
+var stage: int
 var key: StringName
 var boolean_value: bool
 var rumor_id: StringName
