@@ -8,6 +8,7 @@ const EVENTS: Array[StringName] = [
 	&"evt.ein.short_lived_guest",
 	&"evt.ein.mokou_uninvited_honesty",
 	&"evt.ein.endless_night_offer",
+	&"evt.ein.promise",
 ]
 
 var _content := ContentRepository.new()

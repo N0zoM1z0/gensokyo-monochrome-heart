@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "b2bcc8cc7b85daae4a444cb90a933d65ca1c234fbec2169fee3393516ef2f74f",
+  "content_hash": "65fba37ba1e6375412da2a33586afe4a470db7514df64409450ca3553b72e6ad",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 65,
-    "dialogue_beats": 350,
-    "localization": 1280,
+    "events": 66,
+    "dialogue_beats": 356,
+    "localization": 1300,
     "music_cues": 89,
-    "event_nodes": 848
+    "event_nodes": 869
   },
   "ids": {
     "characters": [
@@ -122,6 +122,7 @@
       "evt.ein.game_with_no_continue",
       "evt.ein.mokou_uninvited_honesty",
       "evt.ein.patient_refuses",
+      "evt.ein.promise",
       "evt.ein.short_lived_guest",
       "evt.ein.shortcut_seller",
       "evt.fin.borders_back",
@@ -263,6 +264,12 @@
       "beat.ein.mokou_uninvited_honesty.patient",
       "beat.ein.mokou_uninvited_honesty.playful",
       "beat.ein.mokou_uninvited_honesty.rivalry",
+      "beat.ein.promise.ask",
+      "beat.ein.promise.friendship",
+      "beat.ein.promise.intro",
+      "beat.ein.promise.postponed",
+      "beat.ein.promise.romance",
+      "beat.ein.promise.undecided",
       "beat.ein.short_lived_guest.after",
       "beat.ein.short_lived_guest.defiant",
       "beat.ein.short_lived_guest.direct",
@@ -580,6 +587,10 @@
       "choice.ein.mokou_uninvited_honesty.direct",
       "choice.ein.mokou_uninvited_honesty.patient",
       "choice.ein.mokou_uninvited_honesty.playful",
+      "choice.ein.promise.friendship",
+      "choice.ein.promise.postponed",
+      "choice.ein.promise.romance",
+      "choice.ein.promise.undecided",
       "choice.ein.short_lived_guest.defiant",
       "choice.ein.short_lived_guest.direct",
       "choice.ein.short_lived_guest.patient",
@@ -789,6 +800,12 @@
       "dlg.ein.mokou_uninvited_honesty.patient",
       "dlg.ein.mokou_uninvited_honesty.playful",
       "dlg.ein.mokou_uninvited_honesty.rivalry",
+      "dlg.ein.promise.ask",
+      "dlg.ein.promise.friendship",
+      "dlg.ein.promise.intro",
+      "dlg.ein.promise.postponed",
+      "dlg.ein.promise.romance",
+      "dlg.ein.promise.undecided",
       "dlg.ein.short_lived_guest.after",
       "dlg.ein.short_lived_guest.defiant",
       "dlg.ein.short_lived_guest.direct",
@@ -1062,6 +1079,7 @@
       "event.ein.five_impossibilities.title",
       "event.ein.game_with_no_continue.title",
       "event.ein.mokou_uninvited_honesty.title",
+      "event.ein.promise.title",
       "event.ein.short_lived_guest.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -1138,6 +1156,14 @@
       "journal.ein.game_with_no_continue.title",
       "journal.ein.mokou_uninvited_honesty.body",
       "journal.ein.mokou_uninvited_honesty.title",
+      "journal.ein.promise.friendship.body",
+      "journal.ein.promise.friendship.title",
+      "journal.ein.promise.postponed.body",
+      "journal.ein.promise.postponed.title",
+      "journal.ein.promise.romance.body",
+      "journal.ein.promise.romance.title",
+      "journal.ein.promise.undecided.body",
+      "journal.ein.promise.undecided.title",
       "journal.ein.short_lived_guest.body",
       "journal.ein.short_lived_guest.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -1223,6 +1249,7 @@
       "obj.ein.five_impossibilities.answer",
       "obj.ein.game_with_no_continue.choose",
       "obj.ein.mokou_uninvited_honesty.choose",
+      "obj.ein.promise.choose",
       "obj.ein.short_lived_guest.choose",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
@@ -2038,6 +2065,66 @@
     {
       "source": "beat.ein.mokou_uninvited_honesty.rivalry",
       "target": "dlg.ein.mokou_uninvited_honesty.rivalry",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.promise.ask",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.promise.ask",
+      "target": "dlg.ein.promise.ask",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.promise.friendship",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.promise.friendship",
+      "target": "dlg.ein.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.promise.intro",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.promise.intro",
+      "target": "dlg.ein.promise.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.promise.postponed",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.promise.postponed",
+      "target": "dlg.ein.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.promise.romance",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.promise.romance",
+      "target": "dlg.ein.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.promise.undecided",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.promise.undecided",
+      "target": "dlg.ein.promise.undecided",
       "kind": "localization"
     },
     {
@@ -4898,6 +4985,26 @@
     {
       "source": "choice.ein.mokou_uninvited_honesty.response",
       "target": "choice.ein.mokou_uninvited_honesty.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.promise.intent",
+      "target": "choice.ein.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.promise.intent",
+      "target": "choice.ein.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.promise.intent",
+      "target": "choice.ein.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.promise.intent",
+      "target": "choice.ein.promise.undecided",
       "kind": "localization"
     },
     {
@@ -8292,6 +8399,231 @@
     },
     {
       "source": "evt.ein.patient_refuses",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.promise.node.n001",
+      "target": "evt.ein.promise.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n001",
+      "target": "mus_kaguya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.ein.promise.node.n002",
+      "target": "evt.ein.promise.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n002",
+      "target": "obj.ein.promise.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.promise.node.n002",
+      "target": "prop.ein.challenge_rules",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.promise.node.n002",
+      "target": "prop.ein.unfinished_sunrise_tea",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.promise.node.n003",
+      "target": "beat.ein.promise.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.promise.node.n003",
+      "target": "evt.ein.promise.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n004",
+      "target": "beat.ein.promise.ask",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.promise.node.n004",
+      "target": "evt.ein.promise.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n005",
+      "target": "choice.ein.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.ein.promise.node.n005",
+      "target": "evt.ein.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n005",
+      "target": "evt.ein.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n005",
+      "target": "evt.ein.promise.node.n_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n005",
+      "target": "evt.ein.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_effects_friendship",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.promise.node.n_effects_friendship",
+      "target": "evt.ein.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_effects_postponed",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.promise.node.n_effects_postponed",
+      "target": "evt.ein.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_effects_romance",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.promise.node.n_effects_romance",
+      "target": "evt.ein.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_effects_undecided",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.promise.node.n_effects_undecided",
+      "target": "evt.ein.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_friendship",
+      "target": "beat.ein.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.promise.node.n_friendship",
+      "target": "evt.ein.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_journal_friendship",
+      "target": "evt.ein.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_journal_friendship",
+      "target": "journal.ein.promise.friendship",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.promise.node.n_journal_postponed",
+      "target": "evt.ein.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_journal_postponed",
+      "target": "journal.ein.promise.postponed",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.promise.node.n_journal_romance",
+      "target": "evt.ein.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_journal_romance",
+      "target": "journal.ein.promise.romance",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.promise.node.n_journal_undecided",
+      "target": "evt.ein.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_journal_undecided",
+      "target": "journal.ein.promise.undecided",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.promise.node.n_postponed",
+      "target": "beat.ein.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.promise.node.n_postponed",
+      "target": "evt.ein.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_romance",
+      "target": "beat.ein.promise.romance",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.promise.node.n_romance",
+      "target": "evt.ein.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise.node.n_undecided",
+      "target": "beat.ein.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.promise.node.n_undecided",
+      "target": "evt.ein.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.promise",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.ein.promise",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.promise",
+      "target": "event.ein.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.promise",
+      "target": "evt.ein.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.ein.promise",
+      "target": "loc.eientei.open_dawn_veranda",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.ein.promise",
       "target": "loc.eientei",
       "kind": "location"
     },

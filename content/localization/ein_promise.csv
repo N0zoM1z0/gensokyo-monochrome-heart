@@ -1,0 +1,21 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.ein.promise.choose,objective,,Choose the future you and Kaguya will name.,輝夜と名づける未来を選ぶ。,208,Original
+event.ein.promise.title,event_title,,Promise,約束,208,Original
+choice.ein.promise.friendship,choice,,Choose a standing challenge whose rules can change.,規則を変えられる、続く挑戦を選ぶ。,248,Original
+choice.ein.promise.romance,choice,,Choose romance without asking either life to become eternal.,どちらの命にも永遠を求めない恋を選ぶ。,248,Original
+choice.ein.promise.postponed,choice,,Leave the name for another day without making it a rejection.,拒絶にせず、名前を別の日まで残す。,248,Original
+choice.ein.promise.undecided,choice,,Leave the future unclaimed for now.,今は未来を誰のものにもせずにおく。,248,Original
+dlg.ein.promise.intro,dialogue,char.kaguya_houraisan,"A new rule card for a new morning. How vulgar of the sun to make yesterday's perfect answer look incomplete already.",「新しい朝には、新しい規則札。昨日の完璧な答えを、もう不完全に見せるなんて、太陽はなんて無作法なのかしら。」,248,Original
+dlg.ein.promise.ask,dialogue,char.kaguya_houraisan,"Choose only what you mean today. I am not offering a cage with a pretty name, and I will not let you offer one to me.",「今日、本当に意味するものだけを選んで。きれいな名前の檻を差し出すつもりはないし、あなたにも私にそうさせない。」,248,Original
+dlg.ein.promise.friendship,dialogue,char.kaguya_houraisan,"Then let us keep a standing challenge: one rule at a time, either of us allowed to revise it. Friendship should remain clever enough to surprise us.",「なら、続く挑戦にしましょう。一度に一つの規則、どちらにも書き換える権利がある。友達なら、私たちを驚かせるほど賢くあり続けるべきよ。」,248,Original
+dlg.ein.promise.romance,dialogue,char.kaguya_houraisan,"I cannot make your life eternal. I can stop treating its moments as replaceable. If you choose this with me, we will notice each one before it goes.",「あなたの命を永遠にはできない。でも、その一刻を取り替えの利くものとして扱うのはやめられる。私とこれを選ぶなら、過ぎる前に一つずつ見届けましょう。」,248,Original
+dlg.ein.promise.postponed,dialogue,char.kaguya_houraisan,"A later answer is still an answer with manners. Keep the card blank; the morning will not charge us rent for uncertainty.",「後の答えにも礼儀はある。札は空白のままにしておきましょう。朝は不確かさに家賃を請求しないわ。」,248,Original
+dlg.ein.promise.undecided,dialogue,char.kaguya_houraisan,"Then no one writes a claim over the other. We have learned enough about permanence to leave a line unwritten when it must be.",「なら、どちらも相手への権利を書かない。必要な時に一行を空けておくことを、私たちは永遠から十分に学んだでしょう。」,248,Original
+journal.ein.promise.friendship.title,journal_title,,Rules for Tomorrow,明日の規則,248,Original
+journal.ein.promise.friendship.body,journal_body,,Kaguya and the protagonist chose friendship as a standing challenge. Its rules can be revised by either person, so neither a victory nor a version of the relationship has to become permanent.,輝夜と主人公は友情を続く挑戦として選んだ。規則はどちらにも書き換えられるから、勝利も関係の一つの形も永遠に固定されない。,248,Original
+journal.ein.promise.romance.title,journal_title,,Not Replaceable,取り替えの利かないもの,248,Original
+journal.ein.promise.romance.body,journal_body,,Kaguya did not promise an equal lifespan or an endless night. They chose to treat each finite moment as singular enough to notice before it passes.,輝夜は同じ寿命も終わらない夜も約束しなかった。過ぎる前に見届けるほど、一つ一つの有限な瞬間を固有のものとして扱うことを選んだ。,248,Original
+journal.ein.promise.postponed.title,journal_title,,A Blank Rule Card,空白の規則札,248,Original
+journal.ein.promise.postponed.body,journal_body,,The future received no deadline or forced name. Kaguya left the card blank by agreement, allowing another morning to change what either person could honestly choose.,未来には締め切りも無理な名前も与えられなかった。輝夜は合意の上で札を空白にし、別の朝が二人の正直に選べるものを変える余地を残した。,248,Original
+journal.ein.promise.undecided.title,journal_title,,The Unwritten Line,書かれなかった一行,248,Original
+journal.ein.promise.undecided.body,journal_body,,Neither person claimed the future. The line remained unwritten not as a failure, but as a boundary both of them were free to revisit or leave alone.,誰も未来を所有しなかった。その一行は失敗としてでなく、二人が自由に見直すことも、そのままにすることもできる境界として空白に残った。,248,Original

@@ -144,6 +144,48 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "Kaguya records an evening kept by living through its end, not by letting the Archive repeat it."
+    },
+    {
+      "id": "loc.eientei.open_dawn_veranda",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "An open veranda after dawn makes Kaguya’s future a place for changing rules rather than a preserved scene."
+    },
+    {
+      "id": "prop.ein.challenge_rules",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A rule card can be rewritten by either participant as the friendship future changes."
+    },
+    {
+      "id": "prop.ein.unfinished_sunrise_tea",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Tea left unfinished keeps the romance future finite and unreplaced."
+    },
+    {
+      "id": "journal.ein.promise.friendship",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Friendship remains a standing challenge whose rules may change."
+    },
+    {
+      "id": "journal.ein.promise.romance",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Romance names finite moments as irreplaceable without promising eternity."
+    },
+    {
+      "id": "journal.ein.promise.postponed",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The future can be delayed without being treated as a rejection."
+    },
+    {
+      "id": "journal.ein.promise.undecided",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Neither person claims an undecided future."
     }
   ]
 }
