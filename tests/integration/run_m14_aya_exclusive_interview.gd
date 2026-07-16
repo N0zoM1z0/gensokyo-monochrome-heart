@@ -28,7 +28,7 @@ func _run(graph: EventGraphRecord, tone: StringName, index: int) -> void:
 		&"playful": boundary_flag = &"flag.route.aya.harmless_detail_offered"
 		&"patient": boundary_flag = &"flag.route.aya.verification_requested"
 		&"defiant": boundary_flag = &"flag.route.aya.privacy_boundary_named"
-	_expect(state.event_flags.has(boundary_flag), "%s did not preserve its publication boundary" % tone)
+	_expect(state.flags.has(boundary_flag), "%s did not preserve its publication boundary" % tone)
 
 func _state(profile_id: StringName) -> GameState:
 	var characters: Array[StringName] = []; for character: CharacterRecord in _content.all_characters(): characters.append(character.id)

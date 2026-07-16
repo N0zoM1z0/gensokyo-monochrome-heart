@@ -23,7 +23,7 @@ func _run(graph: EventGraphRecord, tone: StringName, index: int) -> void:
 	_expect(state.characters[YOUMU].route_stage == 3, "%s did not advance Youmu to stage three" % tone)
 	var journal_id: StringName = &"journal.hgy.duty_delegated.declined" if tone == &"defiant" else &"journal.hgy.duty_delegated"
 	_expect(state.journal.entries.has(journal_id), "%s omitted delegation Journal evidence" % tone)
-	_expect(state.event_flags.has(&"flag.route.youmu.delegation_declined") if tone == &"defiant" else state.event_flags.has(&"flag.route.youmu.delegation_accepted"), "%s did not persist the correct delegation boundary" % tone)
+	_expect(state.flags.has(&"flag.route.youmu.delegation_declined") if tone == &"defiant" else state.flags.has(&"flag.route.youmu.delegation_accepted"), "%s did not persist the correct delegation boundary" % tone)
 
 func _state(profile_id: StringName) -> GameState:
 	var characters: Array[StringName] = []; for character: CharacterRecord in _content.all_characters(): characters.append(character.id)
