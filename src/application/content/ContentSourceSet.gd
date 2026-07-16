@@ -50,6 +50,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/sdm_promise.json",
 	"res://content/events/hgy_garden_shift.json",
 	"res://content/events/hgy_two_bodies_one_embarrassment.json",
+	"res://content/events/hgy_duty_delegated.json",
 	"res://content/events/mtn_tomorrows_headline.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
@@ -75,6 +76,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/sdm_promise.json",
 	"res://content/dialogue/hgy_garden_shift.json",
 	"res://content/dialogue/hgy_two_bodies_one_embarrassment.json",
+	"res://content/dialogue/hgy_duty_delegated.json",
 	"res://content/dialogue/mtn_tomorrows_headline.json",
 ]
 var supplemental_localization_paths: Array[String] = [
@@ -100,6 +102,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/sdm_promise.csv",
 	"res://content/localization/hgy_garden_shift.csv",
 	"res://content/localization/hgy_two_bodies_one_embarrassment.csv",
+	"res://content/localization/hgy_duty_delegated.csv",
 	"res://content/localization/mtn_tomorrows_headline.csv",
 	"res://content/localization/ein_four_dawns.csv",
 ]
@@ -112,9 +115,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/hgy_route_deferred_references.json",
 	"res://content/indexes/mtn_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 20
-var expected_supplemental_dialogue_count: int = 201
-var expected_supplemental_localization_count: int = 392
+var expected_supplemental_event_count: int = 21
+var expected_supplemental_dialogue_count: int = 208
+var expected_supplemental_localization_count: int = 407
 
 
 func content_paths() -> Array[String]:

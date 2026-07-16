@@ -13,6 +13,10 @@
     {"id": "prop.hgy.bridge_phantom_mark", "kind": "interactable", "target_milestone": "M14", "reason": "Half-phantom opposite bridge destination."},
     {"id": "mini.hgy.half_phantom_balance", "kind": "minigame", "target_milestone": "M14", "reason": "Implemented paired-body bridge runtime."},
     {"id": "journal.hgy.two_bodies", "kind": "journal_entry", "target_milestone": "M14", "reason": "Youmu's dual nature is coordinated, not corrected."},
-    {"id": "journal.hgy.two_bodies.withdrawn", "kind": "journal_entry", "target_milestone": "M14", "reason": "The bridge may be left for another day without shame."}
+    {"id": "journal.hgy.two_bodies.withdrawn", "kind": "journal_entry", "target_milestone": "M14", "reason": "The bridge may be left for another day without shame."},
+    {"id": "loc.hakugyokurou.east_garden_path", "kind": "spot", "target_milestone": "M14", "reason": "The small path Youmu chooses to delegate for one garden watch."},
+    {"id": "prop.hgy.unraked_east_path", "kind": "interactable", "target_milestone": "M14", "reason": "A deliberately visible path whose care does not require command."},
+    {"id": "prop.hgy.garden_bell", "kind": "interactable", "target_milestone": "M14", "reason": "Youmu's check-in signal rather than an order bell."},
+    {"id": "journal.hgy.duty_delegated", "kind": "journal_entry", "target_milestone": "M14", "reason": "A single garden watch is delegated with a return point and no role claim."}
   ]
 }

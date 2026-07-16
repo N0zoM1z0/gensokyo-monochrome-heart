@@ -387,6 +387,8 @@ run_checked "M14 Youmu paired-body bridge event" env XDG_DATA_HOME="$LOG_DIR/use
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_two_bodies.gd
 run_checked "M14 Half-Phantom Balance runtime" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_half_phantom_balance.gd
+run_checked "M14 Youmu delegated-duty event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_duty_delegated.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

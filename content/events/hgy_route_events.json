@@ -24,6 +24,18 @@
       "status": "authored",
       "estimated_minutes": 9,
       "comfort_tags": ["no_timer", "withdrawal_continues", "no_body_shame"]
+    },
+    {
+      "id": "evt.hgy.duty_delegated",
+      "legacy_id": "EVT-HGY-RTE-003",
+      "title_en": "A Duty Delegated",
+      "location_id": "loc.hakugyokurou",
+      "lead_character_ids": ["char.youmu_konpaku"],
+      "primary_mode": "dialogue",
+      "core_change": "Youmu delegates one visible garden watch without making the player her commander or treating help as a permanent claim.",
+      "status": "authored",
+      "estimated_minutes": 8,
+      "comfort_tags": ["no_timer", "delegation_is_explicit", "no_role_pressure"]
     }
   ]
 }

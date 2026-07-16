@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "e74bf287c615ebd96780e1889efc7bddc42fd835c85dc488e6c00839fce55db9",
+  "content_hash": "b05738b5d82f91269b98abec736db5ecfafd0da290a8bdcdbdeef3daa15d98a9",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 48,
-    "dialogue_beats": 220,
-    "localization": 986,
+    "events": 49,
+    "dialogue_beats": 227,
+    "localization": 1001,
     "music_cues": 89,
-    "event_nodes": 515
+    "event_nodes": 532
   },
   "ids": {
     "characters": [
@@ -116,6 +116,7 @@
       "evt.fin.margin_of_error",
       "evt.fin.one_blank_page",
       "evt.fin.public_hearing",
+      "evt.hgy.duty_delegated",
       "evt.hgy.farewell_replay",
       "evt.hgy.garden_shift",
       "evt.hgy.last_sweet",
@@ -157,6 +158,13 @@
       "evt.sdm.small_chair"
     ],
     "dialogue_beats": [
+      "beat.hgy.duty.after",
+      "beat.hgy.duty.defiant",
+      "beat.hgy.duty.direct",
+      "beat.hgy.duty.intro",
+      "beat.hgy.duty.patient",
+      "beat.hgy.duty.playful",
+      "beat.hgy.duty.request",
       "beat.hgy.garden_shift.after",
       "beat.hgy.garden_shift.clear",
       "beat.hgy.garden_shift.defiant",
@@ -383,6 +391,10 @@
       "accessibility.preset.low_motion",
       "accessibility.preset.original",
       "accessibility.preset.story",
+      "choice.hgy.duty.defiant",
+      "choice.hgy.duty.direct",
+      "choice.hgy.duty.patient",
+      "choice.hgy.duty.playful",
       "choice.hgy.garden_shift.defiant",
       "choice.hgy.garden_shift.direct",
       "choice.hgy.garden_shift.patient",
@@ -479,6 +491,13 @@
       "choice.sdm.promise.postponed",
       "choice.sdm.promise.romance",
       "choice.sdm.promise.undecided",
+      "dlg.hgy.duty.after",
+      "dlg.hgy.duty.defiant",
+      "dlg.hgy.duty.direct",
+      "dlg.hgy.duty.intro",
+      "dlg.hgy.duty.patient",
+      "dlg.hgy.duty.playful",
+      "dlg.hgy.duty.request",
       "dlg.hgy.garden_shift.after",
       "dlg.hgy.garden_shift.clear",
       "dlg.hgy.garden_shift.defiant",
@@ -699,6 +718,7 @@
       "dlg.sdm.promise.postponed",
       "dlg.sdm.promise.romance",
       "dlg.sdm.promise.undecided",
+      "event.hgy.duty_delegated.title",
       "event.hgy.garden_shift.title",
       "event.hgy.two_bodies.title",
       "event.hkr.day_nothing_happens.title",
@@ -735,6 +755,8 @@
       "input.glyph.pointer.confirm",
       "input.glyph.pointer.menu",
       "input.glyph.pointer.move",
+      "journal.hgy.duty_delegated.body",
+      "journal.hgy.duty_delegated.title",
       "journal.hgy.garden_shift.body",
       "journal.hgy.garden_shift.title",
       "journal.hgy.garden_shift.withdrawn.body",
@@ -788,6 +810,7 @@
       "journal.sdm.promise.body",
       "journal.sdm.promise.title",
       "obj.ein.cross_four_dawns",
+      "obj.hgy.duty_delegated.watch",
       "obj.hgy.garden_shift.match",
       "obj.hgy.two_bodies.cross",
       "obj.hkr.day_nothing_happens.enter",
@@ -1459,6 +1482,76 @@
     ]
   },
   "dependencies": [
+    {
+      "source": "beat.hgy.duty.after",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.duty.after",
+      "target": "dlg.hgy.duty.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.duty.defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.duty.defiant",
+      "target": "dlg.hgy.duty.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.duty.direct",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.duty.direct",
+      "target": "dlg.hgy.duty.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.duty.intro",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.duty.intro",
+      "target": "dlg.hgy.duty.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.duty.patient",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.duty.patient",
+      "target": "dlg.hgy.duty.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.duty.playful",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.duty.playful",
+      "target": "dlg.hgy.duty.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hgy.duty.request",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hgy.duty.request",
+      "target": "dlg.hgy.duty.request",
+      "kind": "localization"
+    },
     {
       "source": "beat.hgy.garden_shift.after",
       "target": "char.youmu_konpaku",
@@ -3660,6 +3753,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.hgy.duty.response",
+      "target": "choice.hgy.duty.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.duty.response",
+      "target": "choice.hgy.duty.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.duty.response",
+      "target": "choice.hgy.duty.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hgy.duty.response",
+      "target": "choice.hgy.duty.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hgy.garden_shift.response",
       "target": "choice.hgy.garden_shift.defiant",
       "kind": "localization"
@@ -4237,6 +4350,221 @@
     {
       "source": "evt.fin.public_hearing",
       "target": "loc.human_village",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n001",
+      "target": "evt.hgy.duty_delegated.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n001",
+      "target": "mus_hakugyokurou",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n002",
+      "target": "evt.hgy.duty_delegated.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n002",
+      "target": "obj.hgy.duty_delegated.watch",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n002",
+      "target": "prop.hgy.garden_bell",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n002",
+      "target": "prop.hgy.unraked_east_path",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n003",
+      "target": "beat.hgy.duty.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n003",
+      "target": "evt.hgy.duty_delegated.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n004",
+      "target": "beat.hgy.duty.request",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n004",
+      "target": "evt.hgy.duty_delegated.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n005",
+      "target": "choice.hgy.duty.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n005",
+      "target": "evt.hgy.duty_delegated.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n005",
+      "target": "evt.hgy.duty_delegated.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n005",
+      "target": "evt.hgy.duty_delegated.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n005",
+      "target": "evt.hgy.duty_delegated.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_after",
+      "target": "beat.hgy.duty.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_after",
+      "target": "evt.hgy.duty_delegated.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_defiant_line",
+      "target": "beat.hgy.duty.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_defiant_line",
+      "target": "evt.hgy.duty_delegated.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_defiant",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_defiant",
+      "target": "evt.hgy.duty_delegated.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_direct_line",
+      "target": "beat.hgy.duty.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_direct_line",
+      "target": "evt.hgy.duty_delegated.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_direct",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_direct",
+      "target": "evt.hgy.duty_delegated.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_effects",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_effects",
+      "target": "evt.hgy.duty_delegated.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_journal",
+      "target": "evt.hgy.duty_delegated.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_journal",
+      "target": "journal.hgy.duty_delegated",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_patient_line",
+      "target": "beat.hgy.duty.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_patient_line",
+      "target": "evt.hgy.duty_delegated.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_patient",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_patient",
+      "target": "evt.hgy.duty_delegated.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_playful_line",
+      "target": "beat.hgy.duty.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_playful_line",
+      "target": "evt.hgy.duty_delegated.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_playful",
+      "target": "char.youmu_konpaku",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hgy.duty_delegated.node.n_playful",
+      "target": "evt.hgy.duty_delegated.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hgy.duty_delegated",
+      "target": "char.youmu_konpaku",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hgy.duty_delegated",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hgy.duty_delegated",
+      "target": "event.hgy.duty_delegated.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hgy.duty_delegated",
+      "target": "evt.hgy.duty_delegated",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hgy.duty_delegated",
+      "target": "loc.hakugyokurou.east_garden_path",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hgy.duty_delegated",
+      "target": "loc.hakugyokurou",
       "kind": "location"
     },
     {
