@@ -50,6 +50,7 @@
     "n_item": {"type": "give_item", "item_id": "item.keepsake.unfinished_checklist", "owner_character_id": "char.sakuya_izayoi", "dialogue_tags": ["sdm.missing_minute"], "next": "n_journal"},
     "n_journal": {"type": "journal_entry", "entry_id": "journal.sdm.missing_minute", "entry_type": "event_observation", "tags": ["missing_minute", "service_route"], "next": "n_effects"},
     "n_effects": {"type": "effects", "effects": [
+      {"op": "route_stage", "character_id": "char.sakuya_izayoi", "stage": 1},
       {"op": "set_flag", "key": "flag.sdm.missing_minute.observed", "value": true},
       {"op": "set_flag", "key": "evt.sdm.late_by_three_minutes.complete", "value": true}
     ], "next": "n_end"},

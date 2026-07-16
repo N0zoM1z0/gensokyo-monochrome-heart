@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.sdm.corridor_no_dust.walk_once,objective,,Walk the corridor once without asking it to reset.,廊下にリセットを頼まず、一度歩き通す。,208,Original
+event.sdm.corridor_no_dust.title,event_title,,The Corridor With No Dust,埃のない廊下,208,Original
+choice.sdm.corridor.direct,choice,,Say a clean floor can still show that someone worked.,きれいな床にも、誰かが働いた跡は残せると言う。,248,Original
+choice.sdm.corridor.playful,choice,,Ask whether the dust keeps a stricter schedule than the staff.,埃の方が使用人より厳格な予定表を持つのかと聞く。,248,Original
+choice.sdm.corridor.patient,choice,,Wait for Sakuya to decide whether the door stays open.,咲夜が扉を開けたままにするか決めるまで待つ。,248,Original
+choice.sdm.corridor.defiant,choice,,Say nobody is entitled to her extra minutes.,彼女の余分な時間を当然のものにできる人はいないと言う。,248,Original
+dlg.sdm.corridor.intro,dialogue,char.sakuya_izayoi,"This corridor has no dust because it has not been allowed to be walked.",「この廊下に埃がないのは、歩かせてもらえなかったからです。」,248,Original
+dlg.sdm.corridor.reset,dialogue,char.sakuya_izayoi,"Each time a tray slipped, I stopped the minute and corrected the floor. Meiling remembers opening this door. The corridor does not.",「盆が滑るたび、一分を止めて床を直しました。美鈴さんはこの扉を開けたと覚えています。廊下は覚えていません。」,248,Original
+dlg.sdm.corridor.direct,dialogue,char.sakuya_izayoi,"Quite. The work should not vanish just because it was done well.",「ええ。うまく済んだ仕事だからといって、消えてよいわけではありません。」,248,Original
+dlg.sdm.corridor.playful,dialogue,char.sakuya_izayoi,"It would be punctual, at least. I prefer staff who can disagree with a timetable.",「少なくとも時間には正確でしょうね。予定表に異議を言える使用人の方が、私は好みです。」,248,Original
+dlg.sdm.corridor.patient,dialogue,char.sakuya_izayoi,"Thank you. I will leave the door open. Please do not turn that into an assignment.",「ありがとうございます。扉は開けたままにします。どうか、それをあなたの仕事にしないでください。」,248,Original
+dlg.sdm.corridor.defiant,dialogue,char.sakuya_izayoi,"Correct. My spare minute is not a room key, either.",「その通りです。私の余分な一分は、部屋の鍵でもありません。」,248,Original
+dlg.sdm.corridor.after,dialogue,char.sakuya_izayoi,"One set of footprints is enough. The mansion can keep the evidence without becoming untidy.",「足跡が一組あれば十分です。屋敷は散らからずに、証拠を残せます。」,248,Original
+journal.sdm.corridor_no_dust.title,journal_title,,A Floor That Remembered,覚えていた床,248,Original
+journal.sdm.corridor_no_dust.body,journal_body,,Sakuya left one corridor uncorrected long enough for its labor to be witnessed. Precision became a choice rather than a demand for invisible work.,咲夜は一つの廊下を、仕事が見届けられるだけ修正せずに残した。正確さは、見えない労働を求めるものではなく、選べるものになった。,248,Original
