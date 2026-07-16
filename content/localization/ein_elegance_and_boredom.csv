@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.ein.elegance_and_boredom.host,objective,,Decide how Kaguya will receive Eientei's guests.,輝夜が永遠亭の客をどう迎えるか決める。,208,Original
+event.ein.elegance_and_boredom.title,event_title,,Elegance and Boredom,優雅さと退屈,208,Original
+choice.ein.elegance_and_boredom.direct,choice,,Ask which part of hosting she actually wants to do today.,今日、もてなしのどの部分を本当にしたいのか尋ねる。,248,Original
+choice.ein.elegance_and_boredom.playful,choice,,Turn the seating plan into a riddle with an answer anyone may ignore.,席順を、誰でも無視できる答えのあるなぞなぞにする。,248,Original
+choice.ein.elegance_and_boredom.patient,choice,,Wait until she names the difference between ceremony and comfort.,儀式と心地よさの違いを輝夜が言葉にするまで待つ。,248,Original
+choice.ein.elegance_and_boredom.defiant,choice,,Say no guest is owed a performance of a princess.,客は誰も、姫君らしさを演じてもらう権利はないと言う。,248,Original
+dlg.ein.elegance_and_boredom.intro,dialogue,char.kaguya_houraisan,"Eientei has three visitors, two formal cushions, and one chair I have deliberately left unset. A hostess must leave at least one answer undecided.",「永遠亭には客が三人、正式な座布団が二つ、それから私がわざと決めていない椅子が一脚。主は少なくとも一つ、答えを決めずに残すものよ。」,248,Original
+dlg.ein.elegance_and_boredom.context,dialogue,char.kaguya_houraisan,"I can make this room perfectly imperial. I can also pour tea and ask everyone to stop calling it an occasion. Both are skills; neither is owed.",「この部屋を完璧に帝王らしくすることもできるわ。お茶を注いで、皆に行事と呼ぶのをやめてと言うこともできる。どちらも技術。でも、どちらも義務ではないの。」,248,Original
+dlg.ein.elegance_and_boredom.direct,dialogue,char.kaguya_houraisan,"Then I will welcome them plainly and keep the formal cushions for the moment they become useful. Hosting is more interesting when it answers the people in the room.",「なら、素直に迎えて、正式な座布団は役に立つ時まで取っておくわ。もてなしは、その部屋にいる人に答える時の方が面白いもの。」,248,Original
+dlg.ein.elegance_and_boredom.playful,dialogue,char.kaguya_houraisan,"A riddle with an optional answer—very good. The guest who ignores it gets tea first; that is the only rule I will defend.",「答えが任意のなぞなぞ。とてもいいわ。無視した客には最初にお茶を出す。それだけが私の守る規則。」,248,Original
+dlg.ein.elegance_and_boredom.patient,dialogue,char.kaguya_houraisan,"Ceremony tells people what they can expect. Comfort lets them change their mind after arriving. I want both, but not at the cost of pretending.",「儀式は、何を期待できるかを人に伝える。心地よさは、来てから考えを変えられるようにする。両方ほしいけれど、演じる代償にはしたくないわ。」,248,Original
+dlg.ein.elegance_and_boredom.defiant,dialogue,char.kaguya_houraisan,"No, they are not. Thank you for saying it before I had to make the room grand enough to hide from it. The side door will do beautifully.",「ええ、ないわ。私が隠れるために部屋を大きくする前に言ってくれてありがとう。横の扉で、十分に美しいもの。」,248,Original
+dlg.ein.elegance_and_boredom.after,dialogue,char.kaguya_houraisan,"There. The reception has become an evening again. I chose to host it, and that is much more elegant than being obliged to be a princess.",「これで、迎賓はまた一つの夕べになった。私が迎えることを選んだの。それは姫君であることを義務づけられるより、ずっと優雅よ。」,248,Original
+journal.ein.elegance_and_boredom.title,journal_title,,The Unset Chair,決めない椅子,248,Original
+journal.ein.elegance_and_boredom.body,journal_body,,Kaguya chose how to welcome Eientei's guests without treating ceremony as a cage. The empty chair kept the evening able to change its mind.,輝夜は儀式を檻にせず、永遠亭の客をどう迎えるか選んだ。空いた椅子は、夕べが考えを変えられる余地を残した。,248,Original

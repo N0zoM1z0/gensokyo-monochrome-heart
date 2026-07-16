@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "96c13b5c964fc8961c66bb2d4bc64739afc4440f454e51e44a10bd6805985665",
+  "content_hash": "c62834a7e11adfd0d7757647e26bd031df47310ed7fac66073a08bfdac925cdb",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 60,
-    "dialogue_beats": 315,
-    "localization": 1205,
+    "events": 61,
+    "dialogue_beats": 322,
+    "localization": 1220,
     "music_cues": 89,
-    "event_nodes": 763
+    "event_nodes": 780
   },
   "ids": {
     "characters": [
@@ -115,6 +115,7 @@
       "evt.aya.tomorrows_front_page",
       "evt.aya.wind_frame_graze",
       "evt.ein.burn_false_moon",
+      "evt.ein.elegance_and_boredom",
       "evt.ein.five_impossibilities",
       "evt.ein.four_dawns",
       "evt.ein.patient_refuses",
@@ -223,6 +224,13 @@
       "beat.aya.wind_frame_graze.patient",
       "beat.aya.wind_frame_graze.playful",
       "beat.aya.wind_frame_graze.withdrawn",
+      "beat.ein.elegance_and_boredom.after",
+      "beat.ein.elegance_and_boredom.context",
+      "beat.ein.elegance_and_boredom.defiant",
+      "beat.ein.elegance_and_boredom.direct",
+      "beat.ein.elegance_and_boredom.intro",
+      "beat.ein.elegance_and_boredom.patient",
+      "beat.ein.elegance_and_boredom.playful",
       "beat.ein.five_impossibilities.after",
       "beat.ein.five_impossibilities.defiant",
       "beat.ein.five_impossibilities.direct",
@@ -520,6 +528,10 @@
       "choice.aya.wind_frame_graze.direct",
       "choice.aya.wind_frame_graze.patient",
       "choice.aya.wind_frame_graze.playful",
+      "choice.ein.elegance_and_boredom.defiant",
+      "choice.ein.elegance_and_boredom.direct",
+      "choice.ein.elegance_and_boredom.patient",
+      "choice.ein.elegance_and_boredom.playful",
       "choice.ein.five_impossibilities.defiant",
       "choice.ein.five_impossibilities.direct",
       "choice.ein.five_impossibilities.patient",
@@ -694,6 +706,13 @@
       "dlg.aya.wind_frame_graze.patient",
       "dlg.aya.wind_frame_graze.playful",
       "dlg.aya.wind_frame_graze.withdrawn",
+      "dlg.ein.elegance_and_boredom.after",
+      "dlg.ein.elegance_and_boredom.context",
+      "dlg.ein.elegance_and_boredom.defiant",
+      "dlg.ein.elegance_and_boredom.direct",
+      "dlg.ein.elegance_and_boredom.intro",
+      "dlg.ein.elegance_and_boredom.patient",
+      "dlg.ein.elegance_and_boredom.playful",
       "dlg.ein.five_impossibilities.after",
       "dlg.ein.five_impossibilities.defiant",
       "dlg.ein.five_impossibilities.direct",
@@ -962,6 +981,7 @@
       "event.aya.story_published_too_soon.title",
       "event.aya.tomorrows_front_page.title",
       "event.aya.wind_frame_graze.title",
+      "event.ein.elegance_and_boredom.title",
       "event.ein.five_impossibilities.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -1028,6 +1048,8 @@
       "journal.aya.wind_frame_graze.title",
       "journal.aya.wind_frame_graze.withdrawn.body",
       "journal.aya.wind_frame_graze.withdrawn.title",
+      "journal.ein.elegance_and_boredom.body",
+      "journal.ein.elegance_and_boredom.title",
       "journal.ein.five_impossibilities.body",
       "journal.ein.five_impossibilities.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -1108,6 +1130,7 @@
       "obj.aya.tomorrows_front_page.withhold",
       "obj.aya.wind_frame_graze.exit",
       "obj.ein.cross_four_dawns",
+      "obj.ein.elegance_and_boredom.host",
       "obj.ein.five_impossibilities.answer",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
@@ -4476,6 +4499,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.ein.elegance_and_boredom.response",
+      "target": "choice.ein.elegance_and_boredom.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.elegance_and_boredom.response",
+      "target": "choice.ein.elegance_and_boredom.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.elegance_and_boredom.response",
+      "target": "choice.ein.elegance_and_boredom.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.elegance_and_boredom.response",
+      "target": "choice.ein.elegance_and_boredom.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.ein.five_impossibilities.response",
       "target": "choice.ein.five_impossibilities.defiant",
       "kind": "localization"
@@ -6747,6 +6790,221 @@
     },
     {
       "source": "evt.ein.burn_false_moon",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n001",
+      "target": "evt.ein.elegance_and_boredom.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n001",
+      "target": "mus_kaguya_errands",
+      "kind": "music"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n002",
+      "target": "evt.ein.elegance_and_boredom.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n002",
+      "target": "obj.ein.elegance_and_boredom.host",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n002",
+      "target": "prop.ein.guest_list",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n002",
+      "target": "prop.ein.unset_place",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n003",
+      "target": "beat.ein.elegance_and_boredom.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n003",
+      "target": "evt.ein.elegance_and_boredom.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n004",
+      "target": "beat.ein.elegance_and_boredom.context",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n004",
+      "target": "evt.ein.elegance_and_boredom.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n005",
+      "target": "choice.ein.elegance_and_boredom.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n005",
+      "target": "evt.ein.elegance_and_boredom.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n005",
+      "target": "evt.ein.elegance_and_boredom.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n005",
+      "target": "evt.ein.elegance_and_boredom.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n005",
+      "target": "evt.ein.elegance_and_boredom.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_after",
+      "target": "beat.ein.elegance_and_boredom.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_after",
+      "target": "evt.ein.elegance_and_boredom.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_defiant_line",
+      "target": "beat.ein.elegance_and_boredom.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_defiant_line",
+      "target": "evt.ein.elegance_and_boredom.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_defiant",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_defiant",
+      "target": "evt.ein.elegance_and_boredom.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_direct_line",
+      "target": "beat.ein.elegance_and_boredom.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_direct_line",
+      "target": "evt.ein.elegance_and_boredom.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_direct",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_direct",
+      "target": "evt.ein.elegance_and_boredom.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_effects",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_effects",
+      "target": "evt.ein.elegance_and_boredom.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_journal",
+      "target": "evt.ein.elegance_and_boredom.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_journal",
+      "target": "journal.ein.elegance_and_boredom",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_patient_line",
+      "target": "beat.ein.elegance_and_boredom.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_patient_line",
+      "target": "evt.ein.elegance_and_boredom.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_patient",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_patient",
+      "target": "evt.ein.elegance_and_boredom.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_playful_line",
+      "target": "beat.ein.elegance_and_boredom.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_playful_line",
+      "target": "evt.ein.elegance_and_boredom.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom.node.n_playful",
+      "target": "evt.ein.elegance_and_boredom.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom",
+      "target": "event.ein.elegance_and_boredom.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom",
+      "target": "evt.ein.elegance_and_boredom",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom",
+      "target": "loc.eientei.moonlit_reception",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.ein.elegance_and_boredom",
       "target": "loc.eientei",
       "kind": "location"
     },

@@ -27,6 +27,7 @@ var supplemental_event_paths: Array[String] = [
 	"res://content/events/sdm_route_events.json",
 	"res://content/events/hgy_route_events.json",
 	"res://content/events/aya_route_events.json",
+	"res://content/events/ein_route_events.json",
 ]
 var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/hkr_day_nothing_happens.json",
@@ -65,6 +66,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/aya_promise.json",
 	"res://content/events/mtn_tomorrows_headline.json",
 	"res://content/events/ein_five_impossibilities.json",
+	"res://content/events/ein_elegance_and_boredom.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -103,6 +105,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/aya_promise.json",
 	"res://content/dialogue/mtn_tomorrows_headline.json",
 	"res://content/dialogue/ein_five_impossibilities.json",
+	"res://content/dialogue/ein_elegance_and_boredom.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -142,6 +145,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/mtn_tomorrows_headline.csv",
 	"res://content/localization/ein_four_dawns.csv",
 	"res://content/localization/ein_five_impossibilities.csv",
+	"res://content/localization/ein_elegance_and_boredom.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -154,9 +158,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/mtn_deferred_references.json",
 	"res://content/indexes/ein_route_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 32
-var expected_supplemental_dialogue_count: int = 296
-var expected_supplemental_localization_count: int = 611
+var expected_supplemental_event_count: int = 33
+var expected_supplemental_dialogue_count: int = 303
+var expected_supplemental_localization_count: int = 626
 
 
 func content_paths() -> Array[String]:
