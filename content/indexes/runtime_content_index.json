@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "ea149293dcb19788f27ad9765471cd704e6e25e4ce744d89c712c5fe0b93a549",
+  "content_hash": "5bfa2f068c38112d7729efb5719fdf51cbb76017f3017633cd36d5dfe747196f",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 57,
-    "dialogue_beats": 285,
-    "localization": 1131,
+    "events": 58,
+    "dialogue_beats": 292,
+    "localization": 1146,
     "music_cues": 89,
-    "event_nodes": 681
+    "event_nodes": 698
   },
   "ids": {
     "characters": [
@@ -107,6 +107,7 @@
       "loc.youkai_mountain"
     ],
     "events": [
+      "evt.aya.camera_down",
       "evt.aya.exclusive_interview",
       "evt.aya.hidden_folder",
       "evt.aya.story_published_too_soon",
@@ -166,6 +167,13 @@
       "evt.sdm.small_chair"
     ],
     "dialogue_beats": [
+      "beat.aya.camera_down.after",
+      "beat.aya.camera_down.defiant",
+      "beat.aya.camera_down.direct",
+      "beat.aya.camera_down.intro",
+      "beat.aya.camera_down.patient",
+      "beat.aya.camera_down.playful",
+      "beat.aya.camera_down.stop",
       "beat.aya.exclusive_interview.after",
       "beat.aya.exclusive_interview.defiant",
       "beat.aya.exclusive_interview.direct",
@@ -457,6 +465,10 @@
       "accessibility.preset.low_motion",
       "accessibility.preset.original",
       "accessibility.preset.story",
+      "choice.aya.camera_down.defiant",
+      "choice.aya.camera_down.direct",
+      "choice.aya.camera_down.patient",
+      "choice.aya.camera_down.playful",
       "choice.aya.exclusive_interview.defiant",
       "choice.aya.exclusive_interview.direct",
       "choice.aya.exclusive_interview.patient",
@@ -589,6 +601,13 @@
       "choice.sdm.promise.postponed",
       "choice.sdm.promise.romance",
       "choice.sdm.promise.undecided",
+      "dlg.aya.camera_down.after",
+      "dlg.aya.camera_down.defiant",
+      "dlg.aya.camera_down.direct",
+      "dlg.aya.camera_down.intro",
+      "dlg.aya.camera_down.patient",
+      "dlg.aya.camera_down.playful",
+      "dlg.aya.camera_down.stop",
       "dlg.aya.exclusive_interview.after",
       "dlg.aya.exclusive_interview.defiant",
       "dlg.aya.exclusive_interview.direct",
@@ -874,6 +893,7 @@
       "dlg.sdm.promise.postponed",
       "dlg.sdm.promise.romance",
       "dlg.sdm.promise.undecided",
+      "event.aya.camera_down.title",
       "event.aya.exclusive_interview.title",
       "event.aya.hidden_folder.title",
       "event.aya.story_published_too_soon.title",
@@ -919,6 +939,8 @@
       "input.glyph.pointer.confirm",
       "input.glyph.pointer.menu",
       "input.glyph.pointer.move",
+      "journal.aya.camera_down.body",
+      "journal.aya.camera_down.title",
       "journal.aya.exclusive_interview.body",
       "journal.aya.exclusive_interview.title",
       "journal.aya.hidden_folder.body",
@@ -997,6 +1019,7 @@
       "journal.sdm.missing_minute_returned.title",
       "journal.sdm.promise.body",
       "journal.sdm.promise.title",
+      "obj.aya.camera_down.wait",
       "obj.aya.exclusive_interview.mark_record",
       "obj.aya.hidden_folder.review",
       "obj.aya.story_published_too_soon.correct",
@@ -4219,6 +4242,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.aya.camera_down.response",
+      "target": "choice.aya.camera_down.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.camera_down.response",
+      "target": "choice.aya.camera_down.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.camera_down.response",
+      "target": "choice.aya.camera_down.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.camera_down.response",
+      "target": "choice.aya.camera_down.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.aya.exclusive_interview.response",
       "target": "choice.aya.exclusive_interview.defiant",
       "kind": "localization"
@@ -4877,6 +4920,221 @@
       "source": "choice.sdm.promise.intent",
       "target": "choice.sdm.promise.undecided",
       "kind": "localization"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n001",
+      "target": "evt.aya.camera_down.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n001",
+      "target": "mus_aya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n002",
+      "target": "evt.aya.camera_down.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n002",
+      "target": "obj.aya.camera_down.wait",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n002",
+      "target": "prop.aya.camera_case",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n002",
+      "target": "prop.aya.unsent_dispatch",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n003",
+      "target": "beat.aya.camera_down.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n003",
+      "target": "evt.aya.camera_down.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n004",
+      "target": "beat.aya.camera_down.stop",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n004",
+      "target": "evt.aya.camera_down.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n005",
+      "target": "choice.aya.camera_down.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n005",
+      "target": "evt.aya.camera_down.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n005",
+      "target": "evt.aya.camera_down.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n005",
+      "target": "evt.aya.camera_down.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n005",
+      "target": "evt.aya.camera_down.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_after",
+      "target": "beat.aya.camera_down.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_after",
+      "target": "evt.aya.camera_down.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_defiant_line",
+      "target": "beat.aya.camera_down.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_defiant_line",
+      "target": "evt.aya.camera_down.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_defiant",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_defiant",
+      "target": "evt.aya.camera_down.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_direct_line",
+      "target": "beat.aya.camera_down.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_direct_line",
+      "target": "evt.aya.camera_down.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_direct",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_direct",
+      "target": "evt.aya.camera_down.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_effects",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_effects",
+      "target": "evt.aya.camera_down.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_journal",
+      "target": "evt.aya.camera_down.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_journal",
+      "target": "journal.aya.camera_down",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_patient_line",
+      "target": "beat.aya.camera_down.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_patient_line",
+      "target": "evt.aya.camera_down.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_patient",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_patient",
+      "target": "evt.aya.camera_down.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_playful_line",
+      "target": "beat.aya.camera_down.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_playful_line",
+      "target": "evt.aya.camera_down.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_playful",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.camera_down.node.n_playful",
+      "target": "evt.aya.camera_down.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.camera_down",
+      "target": "char.aya_shameimaru",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.aya.camera_down",
+      "target": "char.aya_shameimaru",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.aya.camera_down",
+      "target": "event.aya.camera_down.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.camera_down",
+      "target": "evt.aya.camera_down",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.aya.camera_down",
+      "target": "loc.youkai_mountain.bunbunmaru_roof",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.aya.camera_down",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
     },
     {
       "source": "evt.aya.exclusive_interview.node.n001",

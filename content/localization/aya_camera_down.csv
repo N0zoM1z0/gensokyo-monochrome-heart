@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.aya.camera_down.wait,objective,,Stay while Aya decides whether the next dispatch can wait.,次の通信を待たせられるか、文が決める間そばにいる。,208,Original
+event.aya.camera_down.title,event_title,,Camera Down,カメラを下ろす,208,Original
+choice.aya.camera_down.direct,choice,,Say you can stay without asking for one more story.,もう一つの話を求めずにそばにいられると言う。,248,Original
+choice.aya.camera_down.playful,choice,,Ask whether the newspaper can issue a mandatory weather pause.,新聞が強制的な天気休止を出せるか尋ねる。,248,Original
+choice.aya.camera_down.patient,choice,,Offer tea and let Aya decide whether to talk.,お茶を出し、話すかどうかは文に任せる。,248,Original
+choice.aya.camera_down.defiant,choice,,Say exhaustion is not proof that Aya owes you access.,疲れていることは、文があなたに内側を見せる義務の証明ではないと言う。,248,Original
+dlg.aya.camera_down.intro,dialogue,char.aya_shameimaru,"I have raced three corrections, two patrol notices, and a rumor about a falling roof. The roof was a laundry line. I still ran.",「訂正を三本、哨戒の通知を二本、落ちる屋根のうわさを一件追いました。屋根は物干し縄でした。それでも走りました。」,248,Original
+dlg.aya.camera_down.stop,dialogue,char.aya_shameimaru,"The next dispatch can leave without me for one evening. I am saying that out loud because otherwise I will pick up the camera before I believe it.",「次の通信は、一晩なら私なしで出せます。信じる前にカメラを拾ってしまうので、声に出して言っています。」,248,Original
+dlg.aya.camera_down.direct,dialogue,char.aya_shameimaru,"Good. Then this is not an interview with a softer light. We can simply watch the ridge change color.",「いいですね。では、柔らかい光の取材ではありません。尾根の色が変わるのを、ただ見ていましょう。」,248,Original
+dlg.aya.camera_down.playful,dialogue,char.aya_shameimaru,"Mandatory weather pause: all headlines delayed by wind conditions, editor included. I would print that in very large type.",「強制天気休止。すべての見出しは風の都合で延期、編集長も含む。とても大きな活字で載せたいですね。」,248,Original
+dlg.aya.camera_down.patient,dialogue,char.aya_shameimaru,"Tea first. Silence after, perhaps. If I want to talk, I will choose the first sentence instead of being chased into it.",「先にお茶を。たぶん、その後は静かに。話したくなったら、追い立てられるのでなく自分で最初の一文を選びます。」,248,Original
+dlg.aya.camera_down.defiant,dialogue,char.aya_shameimaru,"Thank you. I can be tired without becoming a confession someone else has earned. I will tell you what I choose to tell you.",「ありがとうございます。疲れていても、誰かが得た告白になる必要はありません。話すなら、自分で選んで話します。」,248,Original
+dlg.aya.camera_down.after,dialogue,char.aya_shameimaru,"Camera down. The mountain will still make news tomorrow. Tonight it is allowed to be only a mountain.",「カメラを下ろします。山は明日もニュースを作るでしょう。今夜は、ただの山でいていいです。」,248,Original
+journal.aya.camera_down.title,journal_title,,An Evening Without a Dispatch,通信のない夕べ,248,Original
+journal.aya.camera_down.body,journal_body,,Aya chose to pause the news cycle without turning rest into a confession or a debt. The camera stayed in its case, and the mountain was allowed to be quiet.,文は休息を告白や借りにせず、ニュースの循環を止めることを選んだ。カメラはケースに残り、山は静かでいることを許された。,248,Original
