@@ -15,5 +15,6 @@
     ,{"id":"journal.hkr.shrine_not_guesthouse","kind":"journal_entry","target_milestone":"M14","reason":"The boundary-test observation distinguishes welcome from unpaid shrine duty."}
     ,{"id":"journal.hkr.unasked_rescue","kind":"journal_entry","target_milestone":"M14","reason":"The rescue observation records protection without turning it into a debt."}
     ,{"id":"journal.hkr.perfectly_recorded_tea","kind":"journal_entry","target_milestone":"M14","reason":"The Archive refusal records a finite afternoon rather than a perfect copy."}
+    ,{"id":"journal.hkr.promise","kind":"journal_entry","target_milestone":"M14","reason":"The finale records the chosen relationship outcome without exposing hidden facets."}
   ]
 }

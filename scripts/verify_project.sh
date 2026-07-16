@@ -120,6 +120,7 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/ReimuOfferingsChoiceFixture.tscn \
 	--scene=res://tests/ui/fixtures/ReimuQuietLineFixture.tscn \
 	--scene=res://tests/ui/fixtures/ReimuQuietChoiceFixture.tscn \
+	--scene=res://tests/ui/fixtures/ReimuPromiseChoiceFixture.tscn \
 	--scene=res://src/presentation/minigames/QuietChoreMode.tscn \
 	--scene=res://tests/ui/fixtures/QuietChoreTutorialFixture.tscn \
 	--scene=res://tests/ui/fixtures/QuietChoreSitFixture.tscn \
@@ -349,6 +350,8 @@ run_checked "M14 Reimu unasked rescue event" env XDG_DATA_HOME="$LOG_DIR/user-da
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_unasked_rescue_event.gd
 run_checked "M14 Reimu perfectly recorded tea event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_recorded_tea_event.gd
+run_checked "M14 Reimu Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_promise_event.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

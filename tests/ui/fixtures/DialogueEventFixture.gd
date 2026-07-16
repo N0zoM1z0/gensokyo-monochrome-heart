@@ -245,13 +245,28 @@ func _create_event_state() -> GameState:
 	state.chapter_id = &"chapter.1"
 	state.time_slot = &"day"
 	GameCommandDispatcher.new().dispatch(state, SetLocationCommand.new(&"loc.hakurei_shrine"))
-	if fixture_event_id in [&"evt.hkr.offerings_without_owners", &"evt.hkr.day_nothing_happens"]:
+	if fixture_event_id in [
+		&"evt.hkr.offerings_without_owners",
+		&"evt.hkr.day_nothing_happens",
+		&"evt.hkr.promise",
+	]:
 		var dispatcher := GameCommandDispatcher.new()
-		dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.hkr.empty_cushion", &"n_fixture_predecessor"))
-		dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.hkr.empty_cushion", &"complete"))
+		var predecessors: Array[StringName] = [&"evt.hkr.empty_cushion"]
 		if fixture_event_id == &"evt.hkr.day_nothing_happens":
-			dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.hkr.offerings_without_owners", &"n_fixture_predecessor"))
-			dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.hkr.offerings_without_owners", &"complete"))
+			predecessors.append(&"evt.hkr.offerings_without_owners")
+		elif fixture_event_id == &"evt.hkr.promise":
+			predecessors.append_array([
+				&"evt.hkr.offerings_without_owners",
+				&"evt.hkr.day_nothing_happens",
+				&"evt.hkr.shrine_not_guesthouse",
+				&"evt.hkr.unasked_rescue",
+				&"evt.hkr.perfectly_recorded_tea",
+			])
+		for event_id: StringName in predecessors:
+			dispatcher.dispatch(state, SetEventPositionCommand.new(event_id, &"n_fixture_predecessor"))
+			dispatcher.dispatch(state, CompleteEventCommand.new(event_id, &"complete"))
+		if fixture_event_id == &"evt.hkr.promise":
+			dispatcher.dispatch(state, AdvanceRouteStageCommand.new(&"char.reimu_hakurei", 5))
 	return state
 
 

@@ -36,6 +36,11 @@
       "location_id":"loc.hakurei_shrine", "lead_character_ids":["char.reimu_hakurei"], "primary_mode":"minigame",
       "core_change":"a quiet afternoon is kept finite rather than preserved", "status":"authored", "estimated_minutes":9,
       "comfort_tags":["no_timer","wide_target","loss_continues"]
+    },
+    {
+      "id":"evt.hkr.promise", "legacy_id":"EVT-HKR-RTE-007", "title_en":"Promise", "location_id":"loc.hakurei_shrine",
+      "lead_character_ids":["char.reimu_hakurei"], "primary_mode":"dialogue", "core_change":"the route names a chosen, non-possessive return", "status":"authored", "estimated_minutes":6,
+      "comfort_tags":["no_timer","no_failure","route_intent_explicit"]
     }
   ]
 }

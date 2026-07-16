@@ -16,6 +16,8 @@ func compile(effects: Array[EventEffectRecord], acquired_day: int = 1) -> EventC
 				)
 			&"route_stage":
 				result.commands.append(AdvanceRouteStageCommand.new(effect.character_id, effect.stage))
+			&"route_intent":
+				result.commands.append(SetRouteIntentCommand.new(effect.character_id, effect.route_intent))
 			&"set_flag":
 				var flag := FlagState.from_value(effect.key, effect.boolean_value)
 				if flag == null:

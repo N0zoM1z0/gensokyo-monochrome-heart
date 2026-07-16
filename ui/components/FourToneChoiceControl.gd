@@ -12,6 +12,12 @@ const TONE_LABEL_KEYS: Dictionary[StringName, StringName] = {
 	&"patient": &"ui.dialogue.tone.patient",
 	&"defiant": &"ui.dialogue.tone.defiant",
 }
+const ROUTE_INTENT_LABEL_KEYS: Dictionary[StringName, StringName] = {
+	&"direct": &"ui.dialogue.intent.friendship",
+	&"playful": &"ui.dialogue.intent.romance",
+	&"patient": &"ui.dialogue.intent.postponed",
+	&"defiant": &"ui.dialogue.intent.undecided",
+}
 
 var profile_id: StringName = &"A"
 var locale: StringName = &"en"
@@ -21,6 +27,7 @@ var presenter := FourToneChoicePresenter.new()
 var _catalog := UiTextCatalog.new()
 var _latin_font: Font
 var _japanese_font: Font
+var _uses_route_intent_labels: bool = false
 
 
 func _ready() -> void:
@@ -41,6 +48,7 @@ func configure(
 ) -> void:
 	presenter = FourToneChoicePresenter.new(content)
 	presenter.configure(choice, next_locale, preferred_tone)
+	_uses_route_intent_labels = choice != null and choice.choice_id == &"choice.hkr.promise.intent"
 	locale = next_locale
 	profile_id = next_profile_id
 	queue_redraw()
@@ -140,7 +148,8 @@ func _draw_option(
 	var body_size := UI_SCALE_POLICY.pixels(body_base, ui_scale_percent)
 	var tone_size := UI_SCALE_POLICY.pixels(10 if locale == &"ja" else 8, ui_scale_percent)
 	var line_height := body_size
-	var tone_label := _catalog.text(TONE_LABEL_KEYS.get(option.tone, &"ui.common.unavailable"), locale)
+	var label_keys := ROUTE_INTENT_LABEL_KEYS if _uses_route_intent_labels else TONE_LABEL_KEYS
+	var tone_label := _catalog.text(label_keys.get(option.tone, &"ui.common.unavailable"), locale)
 	var first_baseline := mini(row_height - 4, tone_size + 1)
 	var is_reflow := ui_scale_percent > 100
 	if not is_reflow:

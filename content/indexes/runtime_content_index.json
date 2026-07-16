@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "1842cb85262bf684319b60f4a33975ea2ad3a6ec2a9b55088806402213d55eb7",
+  "content_hash": "712cf551737e5c136ce2f76bd6194e91f5db248990f46613d0e952f22cf6237c",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 32,
-    "dialogue_beats": 102,
-    "localization": 712,
+    "events": 33,
+    "dialogue_beats": 109,
+    "localization": 731,
     "music_cues": 89,
-    "event_nodes": 211
+    "event_nodes": 236
   },
   "ids": {
     "characters": [
@@ -124,6 +124,7 @@
       "evt.hkr.empty_cushion",
       "evt.hkr.offerings_without_owners",
       "evt.hkr.perfectly_recorded_tea",
+      "evt.hkr.promise",
       "evt.hkr.return_before_borrowing",
       "evt.hkr.shrine_not_guesthouse",
       "evt.hkr.spell_card_terms",
@@ -183,6 +184,13 @@
       "beat.hkr.offerings.reimu.patient",
       "beat.hkr.offerings.reimu.pattern",
       "beat.hkr.offerings.reimu.playful",
+      "beat.hkr.promise.reimu.after",
+      "beat.hkr.promise.reimu.choice",
+      "beat.hkr.promise.reimu.friendship",
+      "beat.hkr.promise.reimu.postponed",
+      "beat.hkr.promise.reimu.rain",
+      "beat.hkr.promise.reimu.romance",
+      "beat.hkr.promise.reimu.undecided",
       "beat.hkr.quiet.reimu.after",
       "beat.hkr.quiet.reimu.begin",
       "beat.hkr.quiet.reimu.defiant",
@@ -261,6 +269,10 @@
       "choice.hkr.offerings.direct",
       "choice.hkr.offerings.patient",
       "choice.hkr.offerings.playful",
+      "choice.hkr.promise.friendship",
+      "choice.hkr.promise.postponed",
+      "choice.hkr.promise.romance",
+      "choice.hkr.promise.undecided",
       "choice.hkr.quiet.defiant",
       "choice.hkr.quiet.direct",
       "choice.hkr.quiet.patient",
@@ -323,6 +335,13 @@
       "dlg.hkr.offerings.reimu.patient",
       "dlg.hkr.offerings.reimu.pattern",
       "dlg.hkr.offerings.reimu.playful",
+      "dlg.hkr.promise.reimu.after",
+      "dlg.hkr.promise.reimu.choice",
+      "dlg.hkr.promise.reimu.friendship",
+      "dlg.hkr.promise.reimu.postponed",
+      "dlg.hkr.promise.reimu.rain",
+      "dlg.hkr.promise.reimu.romance",
+      "dlg.hkr.promise.reimu.undecided",
       "dlg.hkr.quiet.reimu.after",
       "dlg.hkr.quiet.reimu.begin",
       "dlg.hkr.quiet.reimu.defiant",
@@ -387,6 +406,7 @@
       "event.hkr.empty_cushion.title",
       "event.hkr.offerings_without_owners.title",
       "event.hkr.perfectly_recorded_tea.title",
+      "event.hkr.promise.title",
       "event.hkr.shrine_not_guesthouse.title",
       "event.hkr.unasked_rescue.title",
       "event.mtn.tomorrows_headline.title",
@@ -411,6 +431,8 @@
       "journal.hkr.offerings_without_owners.title",
       "journal.hkr.perfectly_recorded_tea.body",
       "journal.hkr.perfectly_recorded_tea.title",
+      "journal.hkr.promise.body",
+      "journal.hkr.promise.title",
       "journal.hkr.shrine_not_guesthouse.body",
       "journal.hkr.shrine_not_guesthouse.title",
       "journal.hkr.unasked_rescue.body",
@@ -423,6 +445,7 @@
       "obj.hkr.day_nothing_happens.enter",
       "obj.hkr.find_second_cup",
       "obj.hkr.offerings.inspect_box",
+      "obj.hkr.promise.come_in_from_rain",
       "obj.hkr.recorded_tea.set_cups",
       "obj.hkr.shrine_not_guesthouse.check_veranda",
       "obj.hkr.unasked_rescue.hold_veranda",
@@ -543,6 +566,10 @@
       "ui.dialogue.backlog",
       "ui.dialogue.choose_intent",
       "ui.dialogue.complete",
+      "ui.dialogue.intent.friendship",
+      "ui.dialogue.intent.postponed",
+      "ui.dialogue.intent.romance",
+      "ui.dialogue.intent.undecided",
       "ui.dialogue.mock_mode",
       "ui.dialogue.resonance.cup_closer",
       "ui.dialogue.result.clear",
@@ -1472,6 +1499,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.hkr.promise.reimu.after",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.after",
+      "target": "dlg.hkr.promise.reimu.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.choice",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.choice",
+      "target": "dlg.hkr.promise.reimu.choice",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.friendship",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.friendship",
+      "target": "dlg.hkr.promise.reimu.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.postponed",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.postponed",
+      "target": "dlg.hkr.promise.reimu.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.rain",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.rain",
+      "target": "dlg.hkr.promise.reimu.rain",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.romance",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.romance",
+      "target": "dlg.hkr.promise.reimu.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.undecided",
+      "target": "char.reimu_hakurei",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.hkr.promise.reimu.undecided",
+      "target": "dlg.hkr.promise.reimu.undecided",
+      "kind": "localization"
+    },
+    {
       "source": "beat.hkr.quiet.reimu.after",
       "target": "char.reimu_hakurei",
       "kind": "speaker"
@@ -2129,6 +2226,26 @@
     {
       "source": "choice.hkr.offerings.work",
       "target": "choice.hkr.offerings.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.promise.intent",
+      "target": "choice.hkr.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.promise.intent",
+      "target": "choice.hkr.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.promise.intent",
+      "target": "choice.hkr.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.hkr.promise.intent",
+      "target": "choice.hkr.promise.undecided",
       "kind": "localization"
     },
     {
@@ -3643,6 +3760,276 @@
     },
     {
       "source": "evt.hkr.perfectly_recorded_tea",
+      "target": "loc.hakurei_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.hkr.promise.node.n001",
+      "target": "evt.hkr.promise.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n001",
+      "target": "mus_reimu_private",
+      "kind": "music"
+    },
+    {
+      "source": "evt.hkr.promise.node.n002",
+      "target": "evt.hkr.promise.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n002",
+      "target": "obj.hkr.promise.come_in_from_rain",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.promise.node.n002",
+      "target": "prop.paper_screen",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.promise.node.n002",
+      "target": "prop.second_cushion",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.promise.node.n002",
+      "target": "prop.shrine_broom",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.hkr.promise.node.n003",
+      "target": "beat.hkr.promise.reimu.rain",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n003",
+      "target": "evt.hkr.promise.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n004",
+      "target": "beat.hkr.promise.reimu.choice",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n004",
+      "target": "evt.hkr.promise.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n005",
+      "target": "choice.hkr.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.hkr.promise.node.n005",
+      "target": "evt.hkr.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n005",
+      "target": "evt.hkr.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n005",
+      "target": "evt.hkr.promise.node.n_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n005",
+      "target": "evt.hkr.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_after_friendship",
+      "target": "beat.hkr.promise.reimu.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_after_friendship",
+      "target": "evt.hkr.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_after_postponed",
+      "target": "beat.hkr.promise.reimu.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_after_postponed",
+      "target": "evt.hkr.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_after_romance",
+      "target": "beat.hkr.promise.reimu.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_after_romance",
+      "target": "evt.hkr.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_after_undecided",
+      "target": "beat.hkr.promise.reimu.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_after_undecided",
+      "target": "evt.hkr.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_effects_friendship",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_effects_friendship",
+      "target": "evt.hkr.promise.node.n_after_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_effects_postponed",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_effects_postponed",
+      "target": "evt.hkr.promise.node.n_after_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_effects_romance",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_effects_romance",
+      "target": "evt.hkr.promise.node.n_after_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_effects_undecided",
+      "target": "char.reimu_hakurei",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_effects_undecided",
+      "target": "evt.hkr.promise.node.n_after_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_friendship",
+      "target": "beat.hkr.promise.reimu.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_friendship",
+      "target": "evt.hkr.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_journal_friendship",
+      "target": "evt.hkr.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_journal_friendship",
+      "target": "journal.hkr.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_journal_postponed",
+      "target": "evt.hkr.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_journal_postponed",
+      "target": "journal.hkr.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_journal_romance",
+      "target": "evt.hkr.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_journal_romance",
+      "target": "journal.hkr.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_journal_undecided",
+      "target": "evt.hkr.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_journal_undecided",
+      "target": "journal.hkr.promise",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_postponed",
+      "target": "beat.hkr.promise.reimu.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_postponed",
+      "target": "evt.hkr.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_romance",
+      "target": "beat.hkr.promise.reimu.romance",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_romance",
+      "target": "evt.hkr.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_undecided",
+      "target": "beat.hkr.promise.reimu.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.hkr.promise.node.n_undecided",
+      "target": "evt.hkr.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.hkr.promise",
+      "target": "char.reimu_hakurei",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.hkr.promise",
+      "target": "char.reimu_hakurei",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.hkr.promise",
+      "target": "event.hkr.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.hkr.promise",
+      "target": "evt.hkr.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.hkr.promise",
+      "target": "loc.hakurei_shrine.sitting_room",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.hkr.promise",
       "target": "loc.hakurei_shrine",
       "kind": "location"
     },

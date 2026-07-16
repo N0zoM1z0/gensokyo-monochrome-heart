@@ -351,6 +351,7 @@ func _parse_event_node(node_id: StringName, raw: Dictionary) -> EventNodeRecord:
 			effect.facet = _name(raw_effect.get("facet", ""))
 			effect.delta = int(raw_effect.get("delta", 0))
 			effect.stage = int(raw_effect.get("stage", 0))
+			effect.route_intent = _name(raw_effect.get("intent", ""))
 			effect.key = _name(raw_effect.get("key", ""))
 			effect.boolean_value = bool(raw_effect.get("value", false))
 			effect.rumor_id = _name(raw_effect.get("rumor_id", ""))
