@@ -28,6 +28,7 @@ func run() -> Array[String]:
 		if tone == &"patient":
 			replay_source = completed
 	_expect_transaction_rollback(failures)
+	_expect_invalid_flag_validation(failures)
 	_expect_step_limit_and_cycle_rejection(failures)
 	_expect_read_only_replay(replay_source, failures)
 	_remove_tree(TEST_ROOT)
@@ -221,6 +222,21 @@ func _expect_transaction_rollback(failures: Array[String]) -> void:
 		failures.append("forced effect failure did not stop the event")
 	if state.characters[&"char.reimu_hakurei"].relationship.trust != 0:
 		failures.append("forced effect failure leaked an earlier command from its transaction")
+
+
+func _expect_invalid_flag_validation(failures: Array[String]) -> void:
+	var graph := EventGraphRecord.new(1, &"evt.fixture.flag", &"event.fixture.title", &"loc.hakurei_shrine", &"", [], &"n_effect", [])
+	var effects := EventNodeRecord.new(&"n_effect", &"effects")
+	effects.next_node_id = &"n_end"
+	var invalid_flag := EventEffectRecord.new(&"set_flag")
+	invalid_flag.key = &"fixture.missing_prefix"
+	invalid_flag.boolean_value = true
+	effects.effects = [invalid_flag]
+	var end := EventNodeRecord.new(&"n_end", &"end_event")
+	end.outcome = &"complete"
+	graph.nodes = [effects, end]
+	if not _contains(EventGraphValidator.new().validate(graph), "invalid flag ID"):
+		failures.append("event validation did not reject a runtime-invalid flag ID")
 
 
 func _expect_step_limit_and_cycle_rejection(failures: Array[String]) -> void:

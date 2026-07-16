@@ -51,6 +51,14 @@ capture m12_time_grid_controller_b_ja res://tests/ui/fixtures/TimeGridActiveFixt
 capture m12_time_grid_150_a_en res://tests/ui/fixtures/TimeGridActiveFixture.tscn A en --ui-scale=150
 capture_pair m12_mansion_exploration_b res://tests/ui/fixtures/MansionServiceExplorationFixture.tscn B
 capture_pair m12_mansion_kitchen_c res://tests/ui/fixtures/MansionServiceKitchenFixture.tscn C
+capture_pair m12_sdm_invitation_a res://tests/ui/fixtures/MansionSliceInvitationFixture.tscn A
+capture_pair m12_sdm_choice_b res://tests/ui/fixtures/MansionSliceChoiceFixture.tscn B
+capture_pair m12_sdm_afterbeat_c res://tests/ui/fixtures/MansionSliceAfterbeatFixture.tscn C
+capture_pair m12_sdm_library_a res://tests/ui/fixtures/MansionSliceLibraryFixture.tscn A
+capture_pair m12_sdm_remilia_public_b res://tests/ui/fixtures/MansionSliceRemiliaPublicFixture.tscn B
+capture_pair m12_sdm_remilia_private_d res://tests/ui/fixtures/MansionSliceRemiliaPrivateFixture.tscn D
+capture_pair m12_sdm_reward_a res://tests/ui/fixtures/MansionSliceRewardFixture.tscn A
+capture_pair m12_sdm_journal_c res://tests/ui/fixtures/MansionSliceJournalFixture.tscn C
 capture_pair m12_knives_tutorial_a res://tests/ui/fixtures/MissingMinuteKnivesTutorialFixture.tscn A
 capture_pair m12_knives_phase1_b res://tests/ui/fixtures/MissingMinuteKnivesPhase1Fixture.tscn B
 capture_pair m12_knives_phase2_c res://tests/ui/fixtures/MissingMinuteKnivesPhase2Fixture.tscn C

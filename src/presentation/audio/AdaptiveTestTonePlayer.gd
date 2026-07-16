@@ -12,6 +12,11 @@ const STATE_PITCHES := {
 	&"mus_border_crossing": 233.08,
 	&"mus_shrine_duel": 293.66,
 	&"mus_reimu_private": 174.61,
+	&"mus_sdm_foyer": 164.81,
+	&"mus_sakuya_kitchen": 246.94,
+	&"mus_sakuya_clock": 277.18,
+	&"mus_patchouli_route": 185.00,
+	&"mus_remilia_route": 207.65,
 }
 
 var current_state_id: StringName

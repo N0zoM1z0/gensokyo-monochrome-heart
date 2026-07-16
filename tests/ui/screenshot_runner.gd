@@ -4,7 +4,6 @@ extends SceneTree
 const CANVAS_SIZE := Vector2i(320, 180)
 const DEFAULT_SCENE := "res://tests/ui/fixtures/VisualFoundationFixture.tscn"
 const DEFAULT_OUTPUT := "res://tests/screenshots/generated/visual_foundation_A_en.png"
-const ONE_BIT_SHADER := preload("res://ui/theme/one_bit_post_process.gdshader")
 const UI_SCALE_POLICY := preload("res://src/presentation/ui/UiScalePolicy.gd")
 
 
@@ -44,14 +43,15 @@ func _run() -> void:
 		fixture.call("restore_focus", options.focus_id)
 	if options.semantic_action != &"" and fixture.has_method("handle_semantic_action"):
 		fixture.call("handle_semantic_action", options.semantic_action)
-	_add_one_bit_threshold(viewport)
 	var resolved_profile := options.profile_id
 	if fixture.has_method("resolved_profile_id"):
 		resolved_profile = fixture.call("resolved_profile_id")
 	# Give newly-created textures/MultiMeshes enough synchronized submissions to
 	# finish their first upload before reading the viewport. Without the final
 	# sync, software renderers can return a valid one-bit but incomplete frame.
-	for _warmup_frame: int in range(3):
+	# Japanese glyph atlases plus a newly-instantiated story stage can require
+	# several additional software-renderer submissions before readback.
+	for _warmup_frame: int in range(8):
 		await process_frame
 		RenderingServer.force_draw(false)
 	await process_frame
@@ -64,6 +64,7 @@ func _run() -> void:
 	if image == null or image.is_empty():
 		_fail("active rendering driver returned an empty screenshot")
 		return
+	_threshold_to_one_bit(image)
 	if image.get_size() != CANVAS_SIZE:
 		_fail("fixture rendered at %s instead of %s" % [image.get_size(), CANVAS_SIZE])
 		return
@@ -92,16 +93,17 @@ func _run() -> void:
 	quit(0)
 
 
-func _add_one_bit_threshold(viewport: SubViewport) -> void:
-	var material := ShaderMaterial.new()
-	material.shader = ONE_BIT_SHADER
-	var threshold := ColorRect.new()
-	threshold.position = Vector2.ZERO
-	threshold.size = CANVAS_SIZE
-	threshold.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	threshold.z_index = 1000
-	threshold.material = material
-	viewport.add_child(threshold)
+func _threshold_to_one_bit(image: Image) -> void:
+	# Threshold the final readback instead of sampling the viewport through a
+	# screen-texture shader, so exported evidence does not depend on back-buffer
+	# sampling behavior under different rendering drivers.
+	image.convert(Image.FORMAT_RGBA8)
+	for y: int in range(image.get_height()):
+		for x: int in range(image.get_width()):
+			var sampled := image.get_pixel(x, y)
+			var luminance := sampled.r * 0.2126 + sampled.g * 0.7152 + sampled.b * 0.0722
+			var bit := 1.0 if luminance >= 0.5 else 0.0
+			image.set_pixel(x, y, Color(bit, bit, bit, 1.0))
 
 
 func _configure_input_fixture(options: ScreenshotOptions) -> void:

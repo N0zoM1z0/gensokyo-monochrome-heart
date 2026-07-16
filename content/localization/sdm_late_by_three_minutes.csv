@@ -19,7 +19,7 @@ dlg.sdm.late.sakuya.danmaku_loss,danmaku result,Sakuya,Enough. A failed spell is
 dlg.sdm.late.sakuya.after_01,private dialogue,Sakuya,I stopped the same minute until it could no longer tell me what I wanted.,同じ一分を止め続けて、何を望んでいたのか分からなくなりました。,214,Original
 dlg.sdm.late.sakuya.after_02,private dialogue,Sakuya,Tomorrow's checklist will keep one blank line. Deliberately.,明日の確認表には空欄を一つ残します。意図して。,214,Original
 dlg.sdm.late.patchouli.teaser,teaser dialogue,Patchouli,A book in the library recorded that blank yesterday. Do not read the last page yet.,図書館の本が昨日、その空欄を記したわ。まだ最後の頁は読まないで。,214,Original
-dlg.sdm.late.remilia.public,public dialogue,Remilia,Naturally the household arrived precisely when I intended.,当然でしょう。この館は、私が望んだ時刻どおりに着いたのよ。,214,Original
+dlg.sdm.late.remilia.public,public dialogue,Remilia,Naturally the household arrived precisely when I intended.,当然でしょう。館の者は、私が望んだ時刻どおりに着いたのよ。,214,Original
 dlg.sdm.late.remilia.private,private dialogue,Remilia,Between us: did she choose the blank line herself?,ここだけの話よ。あの空欄は、咲夜が自分で選んだの？,214,Original
 journal.sdm.missing_minute.title,journal title,,The Minute Left Unserved,給仕されなかった一分,180,Original
-journal.sdm.missing_minute.body,journal body,,A corridor clock and a resetting tray concealed one minute Sakuya had corrected too often. She left tomorrow's checklist deliberately unfinished.,廊下の時計と戻る盆は、咲夜が直しすぎた一分を隠していた。彼女は明日の確認表を意図して未完のまま残した。,214,Original
+journal.sdm.missing_minute.body,journal body,,A corridor clock and a resetting tray concealed one minute Sakuya had corrected too often. She left tomorrow's checklist deliberately unfinished.,廊下の時計と戻る盆は、咲夜が直しすぎた一分を隠していた。彼女は明日の確認表を意図的に未完のまま残した。,214,Original

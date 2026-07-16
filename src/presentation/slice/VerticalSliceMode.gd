@@ -1,6 +1,6 @@
 class_name VerticalSliceMode
 extends GameMode
-## M09 playable day coordinator for the data-authored Empty Cushion event.
+## Reusable playable-day coordinator for a data-authored event slice.
 
 enum Phase {
 	INVITATION,
@@ -17,21 +17,17 @@ enum Phase {
 	ERROR,
 }
 
-const EVENT_ID: StringName = &"evt.hkr.empty_cushion"
-const LOCATION_ID: StringName = &"loc.hakurei_shrine"
-const JOURNAL_ID: StringName = &"journal.hkr.empty_cushion"
-const KEEPSAKE_ID: StringName = &"item.keepsake.unpaired_cup"
 const AFTERBEAT_RELEASE_FRAMES := 36
 const ACTION_CONTRACT := [
 	"move", "confirm", "cancel", "focus", "companion", "bomb", "journal", "map",
 	"page_left", "page_right", "pause", "shot", "guard", "light", "heavy", "skill", "spell",
 ]
-const EXPLORATION_SCENE := preload("res://src/presentation/exploration/ExplorationMode.tscn")
-const TEA_SCENE := preload("res://src/presentation/minigames/TeaTemperatureMode.tscn")
-const DANMAKU_SCENE := preload("res://src/presentation/danmaku/BoundaryStainMode.tscn")
-const FIGHTER_SCENE := preload("res://src/presentation/fighter/CompactFighterMode.tscn")
+
+@export_enum("hakurei_shrine", "scarlet_devil_mansion") var slice_component := "hakurei_shrine"
 
 var _phase: Phase = Phase.ERROR
+var _definition := EventSliceDefinitionFactory.build(&"hakurei_shrine")
+var _mode_registry := EventModeSceneRegistry.new()
 var _content: ContentRepository
 var _working_state: GameState
 var _interpreter := EventInterpreter.new()
@@ -85,6 +81,7 @@ func _ready() -> void:
 		_content = ContentRepository.new()
 		_content.load_sources()
 	_resolver = LocalizedContentResolver.new(_content)
+	_definition = EventSliceDefinitionFactory.build(StringName(slice_component))
 	_dialogue = DialoguePresenter.new(_content)
 	_dialogue.instant_text = _instant_text_for_test
 	choice_control.visible = false
@@ -139,7 +136,7 @@ func handle_semantic_action(action: StringName) -> bool:
 				return true
 		Phase.WORLD_MAP:
 			if action == GameInput.CONFIRM:
-				_travel_to_shrine()
+				_travel_to_event_location()
 				return true
 		Phase.EVENT_LINE:
 			if action == GameInput.JOURNAL:
@@ -203,7 +200,7 @@ func resolve_input_candidates(candidates: Array[StringName]) -> StringName:
 		Phase.EVENT_CHOICE:
 			return GameInput.first_matching(candidates, [
 				GameInput.MOVE_UP, GameInput.MOVE_DOWN, GameInput.MOVE_LEFT,
-				GameInput.MOVE_RIGHT, GameInput.CONFIRM, GameInput.CANCEL,
+				GameInput.MOVE_RIGHT, GameInput.CONFIRM,
 			])
 		Phase.JOURNAL, Phase.REPLAY_COMPLETE:
 			return GameInput.first_matching(candidates, [
@@ -225,7 +222,7 @@ func phase_id() -> StringName:
 		Phase.EXPLORATION:
 			return &"exploration"
 		Phase.EVENT_LINE:
-			return &"afterbeat" if _event_result != null and String(_event_result.node_id).begins_with("n_afterbeat") else &"dialogue"
+			return &"afterbeat" if _event_result != null and _definition.is_afterbeat_node(_event_result.node_id) else &"dialogue"
 		Phase.EVENT_CHOICE:
 			return &"choice"
 		Phase.MECHANICAL_MODE:
@@ -262,6 +259,14 @@ func current_text() -> String:
 
 func is_replay() -> bool:
 	return _is_replay
+
+
+func slice_component_id() -> StringName:
+	return _definition.component_id
+
+
+func current_stage_component() -> StringName:
+	return _definition.stage_component(current_event_node_id())
 
 
 func telemetry_snapshot() -> Dictionary:
@@ -309,11 +314,10 @@ func complete_exploration_for_test() -> bool:
 	if not _active_mode is ExplorationMode:
 		return false
 	var exploration := _active_mode as ExplorationMode
-	if not exploration.interact_target_for_test(&"prop.unpaired_cup"):
-		return false
-	if not exploration.interact_target_for_test(&"prop.empty_cushion"):
-		return false
-	exploration.set_player_position_for_test(Vector2(250, 130))
+	for target_id: StringName in _definition.exploration_target_ids:
+		if not exploration.interact_target_for_test(target_id):
+			return false
+	exploration.set_player_position_for_test(_definition.exploration_trigger_position)
 	return true
 
 
@@ -339,15 +343,16 @@ func _initialize_session() -> void:
 		_fail("an active profile is required for the vertical slice")
 		return
 	_working_state = snapshot
+	_definition = EventSliceDefinitionFactory.for_state(_working_state, StringName(slice_component))
 	_telemetry.begin_session(
 		_working_state.profile_id,
 		_content.report.content_revision,
 		_content.report.content_hash
 	)
-	if _working_state.active_event_id == EVENT_ID:
+	if _working_state.active_event_id == _definition.event_id:
 		_start_authored_event(false)
-	elif EVENT_ID in _working_state.completed_event_ids:
-		if _working_state.journal.entries.has(JOURNAL_ID) and not _working_state.journal.entries[JOURNAL_ID].is_read:
+	elif _definition.event_id in _working_state.completed_event_ids:
+		if _working_state.journal.entries.has(_definition.journal_id) and not _working_state.journal.entries[_definition.journal_id].is_read:
 			_set_phase(Phase.REWARD, &"reward")
 		else:
 			_set_phase(Phase.JOURNAL, &"journal")
@@ -368,30 +373,37 @@ func _open_world_map() -> void:
 	_set_phase(Phase.WORLD_MAP, &"world_map")
 
 
-func _travel_to_shrine() -> void:
-	if _working_state.current_location != LOCATION_ID:
-		var traveled := GameCommandDispatcher.new().dispatch(_working_state, SetLocationCommand.new(LOCATION_ID))
+func _travel_to_event_location() -> void:
+	if _working_state.current_location != _definition.location_id:
+		var traveled := GameCommandDispatcher.new().dispatch(_working_state, SetLocationCommand.new(_definition.location_id))
 		if not traveled.is_success():
 			_fail(traveled.message)
 			return
 	if not _commit_working_state(&"slice.travel", &"event_checkpoint"):
 		return
-	music_player.request_state(&"mus_shrine_day")
+	music_player.request_state(_definition.initial_music_id)
 	_spawn_exploration()
 
 
 func _spawn_exploration() -> void:
 	_clear_active_mode()
 	var context := ExplorationModeContext.new()
-	context.mode_id = &"explore.hakurei_shrine.veranda"
-	context.location_id = LOCATION_ID
-	context.spot_id = &"loc.hakurei_shrine.veranda"
+	context.mode_id = _definition.exploration_mode_id
+	context.location_id = _definition.location_id
+	context.spot_id = _definition.spot_id
 	context.time_slot = _working_state.time_slot
-	context.objective_id = &"obj.hkr.find_second_cup"
-	context.companion_id = &"char.reimu_hakurei"
+	context.objective_id = _definition.objective_id
+	context.companion_id = _definition.companion_id
 	context.story_navigation_hints = true
 	context.companion_skill_enabled = true
-	var exploration := EXPLORATION_SCENE.instantiate() as ExplorationMode
+	var exploration_scene := ResourceLoader.load(_definition.exploration_scene_path, "PackedScene") as PackedScene
+	if exploration_scene == null:
+		_fail("slice exploration scene is unavailable: %s" % _definition.exploration_scene_path)
+		return
+	var exploration := exploration_scene.instantiate() as ExplorationMode
+	if exploration == null:
+		_fail("slice exploration scene does not provide ExplorationMode")
+		return
 	exploration.configure(context)
 	exploration.configure_fixture(
 		_profile.profile_id,
@@ -411,7 +423,7 @@ func _spawn_exploration() -> void:
 
 
 func _on_exploration_event_triggered(event_id: StringName) -> void:
-	if _phase != Phase.EXPLORATION or event_id != EVENT_ID:
+	if _phase != Phase.EXPLORATION or event_id != _definition.event_id:
 		return
 	_clear_active_mode()
 	_working_state = _kernel.call("state_snapshot")
@@ -425,9 +437,9 @@ func _start_authored_event(replay: bool) -> void:
 	_dialogue = DialoguePresenter.new(_content)
 	_dialogue.instant_text = _instant_text_for_test
 	_show_backlog = false
-	var graph := _content.graph(EVENT_ID)
+	var graph := _content.graph(_definition.event_id)
 	if graph == null:
-		_fail("the authored Empty Cushion graph is unavailable")
+		_fail("the authored slice graph is unavailable: %s" % _definition.event_id)
 		return
 	_accept_event_result(_interpreter.start(graph, _working_state, _content, replay))
 
@@ -448,12 +460,13 @@ func _accept_event_result(result: EventInterpreterResult) -> void:
 			if result.beat != null:
 				choice_control.visible = false
 				_dialogue.present(result.beat, result.event_id, result.node_id, _current_locale())
-				if String(result.node_id).begins_with("n_afterbeat"):
+				var is_afterbeat := _definition.is_afterbeat_node(result.node_id)
+				if is_afterbeat:
 					_confirm_guard_frames = AFTERBEAT_RELEASE_FRAMES
 				_set_phase(
 					Phase.EVENT_LINE,
-					&"replay_afterbeat" if _is_replay and String(result.node_id).begins_with("n_afterbeat") else (
-						&"afterbeat" if String(result.node_id).begins_with("n_afterbeat") else (&"replay_dialogue" if _is_replay else &"dialogue")
+					&"replay_afterbeat" if _is_replay and is_afterbeat else (
+						&"afterbeat" if is_afterbeat else (&"replay_dialogue" if _is_replay else &"dialogue")
 					)
 				)
 			elif result.choice != null:
@@ -484,18 +497,14 @@ func _spawn_mechanical_mode(context: ModeContext) -> void:
 		_fail("event mode handoff omitted its typed context")
 		return
 	_clear_active_mode()
-	var packed: PackedScene
-	match context.mode_type:
-		&"start_minigame":
-			packed = TEA_SCENE
-		&"start_danmaku":
-			packed = DANMAKU_SCENE
-		&"start_duel":
-			packed = FIGHTER_SCENE
-		_:
-			_fail("unsupported event mode type: %s" % context.mode_type)
-			return
+	var packed := _mode_registry.scene_for(context.mode_id)
+	if packed == null:
+		_fail("no presentation scene is registered for mode: %s" % context.mode_id)
+		return
 	var mode := packed.instantiate() as GameMode
+	if mode == null:
+		_fail("registered mode scene does not provide GameMode: %s" % context.mode_id)
+		return
 	mode.configure(context)
 	mode.call(
 		"configure_fixture",
@@ -507,7 +516,9 @@ func _spawn_mechanical_mode(context: ModeContext) -> void:
 	)
 	if _fixture_ui_scale_percent > 0:
 		mode.set_ui_scale_fixture(_fixture_ui_scale_percent)
-	if mode is TeaTemperatureMode:
+	if mode is TimeGridServiceMode:
+		(mode as TimeGridServiceMode).configure_assists(_tea_assists())
+	elif mode is TeaTemperatureMode:
 		(mode as TeaTemperatureMode).configure_assists(_tea_assists())
 	elif mode is BoundaryStainMode:
 		(mode as BoundaryStainMode).configure_assists(_danmaku_assists())
@@ -560,10 +571,10 @@ func _apply_presentation_cues(cues: Array[EventPresentationCue]) -> void:
 
 func _finish_day() -> void:
 	_working_state = _kernel.call("state_snapshot")
-	if _working_state.journal.entries.has(JOURNAL_ID) and not _working_state.journal.entries[JOURNAL_ID].is_read:
+	if _working_state.journal.entries.has(_definition.journal_id) and not _working_state.journal.entries[_definition.journal_id].is_read:
 		var marked := GameCommandDispatcher.new().dispatch(
 			_working_state,
-			MarkJournalEntryReadCommand.new(JOURNAL_ID)
+			MarkJournalEntryReadCommand.new(_definition.journal_id)
 		)
 		if not marked.is_success():
 			_fail(marked.message)
@@ -588,7 +599,7 @@ func _finish_day() -> void:
 
 func _start_journal_replay() -> void:
 	var source: Variant = _kernel.call("state_snapshot")
-	if not source is GameState or EVENT_ID not in source.journal.replay_event_ids:
+	if not source is GameState or _definition.event_id not in source.journal.replay_event_ids:
 		_fail("the completed event is not unlocked for Journal replay")
 		return
 	_working_state = source
@@ -644,7 +655,7 @@ func _commit_working_state(source_id: StringName, autosave_reason: StringName = 
 
 func _save_context() -> SaveCardContext:
 	var context := SaveCardContext.new()
-	context.visible_character_ids = [&"char.reimu_hakurei", &"char.marisa_kirisame"]
+	context.visible_character_ids = _definition.visible_character_ids.duplicate()
 	context.accessibility_preset_id = _working_state.protagonist.comfort_profile_id
 	return context
 
@@ -801,39 +812,34 @@ func _draw() -> void:
 
 func _draw_invitation(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
-	_draw_header(&"ui.slice.invitation.header", foreground, background)
+	_draw_header(_definition.invitation_header_key, foreground, background)
 	if ui_scale_percent() > 100:
-		draw_rect(Rect2(24, 58, 70, 34), foreground, false, 2.0)
-		draw_colored_polygon(PackedVector2Array([Vector2(28, 62), Vector2(59, 78), Vector2(90, 62)]), foreground)
-		draw_colored_polygon(PackedVector2Array([Vector2(33, 63), Vector2(59, 75), Vector2(85, 63)]), background)
-		_draw_wrapped(&"ui.slice.invitation.body", Rect2(105, 45, 190, 105), 6)
-		_draw_footer(&"ui.slice.invitation.confirm", foreground, background)
+		_draw_invitation_art(Rect2(24, 58, 70, 34), foreground, background)
+		_draw_wrapped(_definition.invitation_body_key, Rect2(105, 45, 190, 105), 6)
+		_draw_footer(_definition.invitation_confirm_key, foreground, background)
 		return
-	draw_rect(Rect2(24, 55, 118, 62), foreground, false, 2.0)
-	draw_line(Vector2(35, 73), Vector2(130, 73), foreground, 1.0)
-	draw_rect(Rect2(49, 80, 68, 24), foreground, false, 1.0)
-	draw_colored_polygon(PackedVector2Array([Vector2(49, 80), Vector2(83, 96), Vector2(117, 80)]), foreground)
-	draw_colored_polygon(PackedVector2Array([Vector2(53, 82), Vector2(83, 94), Vector2(113, 82)]), background)
-	_draw_wrapped(&"ui.slice.invitation.body", Rect2(158, 56, 136, 55), 4)
-	_draw_footer(&"ui.slice.invitation.confirm", foreground, background)
+	_draw_invitation_art(Rect2(24, 55, 118, 62), foreground, background)
+	_draw_wrapped(_definition.invitation_body_key, Rect2(158, 56, 136, 55), 4)
+	_draw_footer(_definition.invitation_confirm_key, foreground, background)
 
 
 func _draw_world_map(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
-	_draw_header(&"ui.slice.map.header", foreground, background)
+	_draw_header(_definition.map_header_key, foreground, background)
 	if ui_scale_percent() > 100:
 		draw_rect(Rect2(16, 45, 122, 96), foreground, false, 1.0)
 		for point: Vector2 in [Vector2(35, 73), Vector2(55, 119), Vector2(78, 61), Vector2(106, 108), Vector2(124, 76)]:
 			draw_rect(Rect2(point, Vector2(3, 3)), foreground)
 		draw_line(Vector2(36, 74), Vector2(78, 62), foreground, 1.0)
 		draw_line(Vector2(78, 62), Vector2(106, 109), foreground, 1.0)
-		draw_circle(Vector2(78, 62), 7, foreground)
-		draw_circle(Vector2(78, 62), 4, background)
-		var large_location := _content.location(LOCATION_ID)
+		var large_marker := Vector2(78, 62) if _definition.map_marker.x < 130.0 else Vector2(106, 109)
+		draw_circle(large_marker, 7, foreground)
+		draw_circle(large_marker, 4, background)
+		var large_location := _content.location(_definition.location_id)
 		var large_location_name := large_location.display_name(_current_locale()) if large_location != null else ""
 		_draw_text(large_location_name, Vector2(146, 61), 158, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
-		_draw_wrapped(&"ui.slice.map.body", Rect2(146, 68, 158, 70), 4)
-		_draw_footer(&"ui.slice.map.confirm", foreground, background)
+		_draw_wrapped(_definition.map_body_key, Rect2(146, 68, 158, 70), 4)
+		_draw_footer(_definition.map_confirm_key, foreground, background)
 		return
 	draw_rect(Rect2(14, 39, 190, 114), foreground, false, 1.0)
 	for point: Vector2 in [Vector2(42, 71), Vector2(72, 121), Vector2(109, 57), Vector2(155, 105), Vector2(190, 73)]:
@@ -841,23 +847,21 @@ func _draw_world_map(foreground: Color, background: Color) -> void:
 	draw_line(Vector2(43, 72), Vector2(109, 58), foreground, 1.0)
 	draw_line(Vector2(109, 58), Vector2(156, 106), foreground, 1.0)
 	draw_line(Vector2(156, 106), Vector2(191, 74), foreground, 1.0)
-	draw_circle(Vector2(109, 58), 8, foreground)
-	draw_circle(Vector2(109, 58), 5, background)
-	draw_line(Vector2(109, 49), Vector2(109, 67), foreground, 1.0)
-	draw_line(Vector2(100, 58), Vector2(118, 58), foreground, 1.0)
-	var location := _content.location(LOCATION_ID)
+	draw_circle(_definition.map_marker, 8, foreground)
+	draw_circle(_definition.map_marker, 5, background)
+	draw_line(_definition.map_marker + Vector2(0, -9), _definition.map_marker + Vector2(0, 9), foreground, 1.0)
+	draw_line(_definition.map_marker + Vector2(-9, 0), _definition.map_marker + Vector2(9, 0), foreground, 1.0)
+	var location := _content.location(_definition.location_id)
 	var location_name := location.display_name(_current_locale()) if location != null else ""
 	_draw_text(location_name, Vector2(207, 58), 98, HORIZONTAL_ALIGNMENT_CENTER, 6)
-	_draw_wrapped(&"ui.slice.map.body", Rect2(206, 72, 100, 62), 5)
-	_draw_footer(&"ui.slice.map.confirm", foreground, background)
+	_draw_wrapped(_definition.map_body_key, Rect2(206, 72, 100, 62), 5)
+	_draw_footer(_definition.map_confirm_key, foreground, background)
 
 
 func _draw_event(foreground: Color, background: Color) -> void:
-	var is_afterbeat := _event_result != null and String(_event_result.node_id).begins_with("n_afterbeat")
-	if is_afterbeat:
-		_draw_afterbeat_stage(foreground, background)
-	else:
-		_draw_shrine_stage(foreground, background)
+	var is_afterbeat := _event_result != null and _definition.is_afterbeat_node(_event_result.node_id)
+	var node_id := _event_result.node_id if _event_result != null else &""
+	_draw_event_stage(_definition.stage_component(node_id), foreground, background)
 	if _show_backlog:
 		_draw_backlog(foreground, background)
 		return
@@ -865,6 +869,14 @@ func _draw_event(foreground: Color, background: Color) -> void:
 		draw_rect(Rect2(14, 5, 292, 25), background)
 		draw_rect(Rect2(14, 5, 292, 25), foreground, false, 2.0)
 		_draw_text(_ui(&"ui.dialogue.choose_intent"), Vector2(22, 21), 276, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+		var choice_footer := "%s %s  %s" % [
+			input_axis_binding(GameInput.MOVE_UP, GameInput.MOVE_DOWN),
+			_ui(&"ui.common.select"),
+			input_hint(GameInput.CONFIRM, _ui(&"ui.common.confirm")),
+		]
+		draw_rect(Rect2(14, 160, 292, 16), background)
+		draw_rect(Rect2(14, 160, 292, 16), foreground, false, 1.0)
+		_draw_text(choice_footer, Vector2(18, 172), 284, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 		return
 	if _dialogue == null or _dialogue.current == null:
 		return
@@ -875,13 +887,13 @@ func _draw_event(foreground: Color, background: Color) -> void:
 	)
 	draw_rect(panel, background)
 	draw_rect(panel, foreground, false, 2.0)
-	var name_tag := Rect2(panel.position.x + 8, panel.position.y - 14, 86, 16)
+	var name_tag := Rect2(panel.position.x + 8, panel.position.y - 14, minf(140.0, panel.size.x - 16.0), 16)
 	draw_rect(name_tag, background)
 	draw_rect(name_tag, foreground, false, 1.0)
 	_draw_text(
 		_dialogue.current.speaker_name,
 		name_tag.position + Vector2(4, 12),
-		78,
+		name_tag.size.x - 8,
 		HORIZONTAL_ALIGNMENT_LEFT,
 		_body_font_size()
 	)
@@ -902,36 +914,45 @@ func _draw_event(foreground: Color, background: Color) -> void:
 			HORIZONTAL_ALIGNMENT_LEFT,
 			_body_font_size()
 		)
-	if not is_afterbeat:
+	var control_y := panel.position.y + panel.size.y - 5
+	if is_afterbeat:
+		_draw_text(input_hint(GameInput.CONFIRM, _ui(&"ui.common.next")), Vector2(panel.position.x + 8, control_y), panel.size.x - 16, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+	else:
 		var auto_key := &"ui.dialogue.auto_on" if _dialogue.auto_mode else &"ui.dialogue.auto_off"
-		_draw_text(_ui(auto_key), panel.position + Vector2(8, panel.size.y - 5), 112, HORIZONTAL_ALIGNMENT_LEFT, _chrome_font_size())
-		_draw_text(_ui(&"ui.dialogue.backlog"), panel.position + Vector2(panel.size.x - 76, panel.size.y - 5), 66, HORIZONTAL_ALIGNMENT_RIGHT, _chrome_font_size())
+		var inner_width := floori(panel.size.x - 16)
+		var auto_width := floori(inner_width * 0.35)
+		var next_width := floori(inner_width * 0.27)
+		var log_width := inner_width - auto_width - next_width
+		var control_x := floori(panel.position.x + 8)
+		_draw_text(input_hint(GameInput.FOCUS, _ui(auto_key)), Vector2(control_x, control_y), auto_width, HORIZONTAL_ALIGNMENT_LEFT, _chrome_font_size())
+		_draw_text(input_hint(GameInput.CONFIRM, _ui(&"ui.common.next")), Vector2(control_x + auto_width, control_y), next_width, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
+		_draw_text(input_hint(GameInput.JOURNAL, _ui(&"ui.dialogue.backlog")), Vector2(control_x + auto_width + next_width, control_y), log_width, HORIZONTAL_ALIGNMENT_RIGHT, _chrome_font_size())
 
 
 func _draw_reward(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
-	_draw_header(&"ui.slice.reward.header", foreground, background)
+	_draw_header(_definition.reward_header_key, foreground, background)
 	if ui_scale_percent() > 100:
 		draw_rect(Rect2(22, 48, 276, 46), foreground, false, 1.0)
-		_draw_unpaired_cup(Vector2(34, 60), foreground)
+		_draw_reward_icon(Vector2(34, 60), foreground)
 		_draw_text(_ui(&"ui.slice.reward.keepsake"), Vector2(72, 63), 214, HORIZONTAL_ALIGNMENT_LEFT, _chrome_font_size())
-		_draw_wrapped(&"ui.slice.reward.item_name", Rect2(72, 64, 214, 27), 1)
+		_draw_wrapped(_definition.reward_item_name_key, Rect2(72, 64, 214, 27), 1)
 		draw_rect(Rect2(22, 98, 276, 44), foreground, false, 1.0)
 		_draw_journal_mark(Vector2(34, 106), foreground)
 		_draw_text(_ui(&"ui.slice.reward.journal_added"), Vector2(72, 112), 214, HORIZONTAL_ALIGNMENT_LEFT, _chrome_font_size())
-		var large_title := _resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text
+		var large_title := _resolver.resolve(_journal_key("title"), _current_locale()).text
 		_draw_text(large_title, Vector2(72, 135), 214, HORIZONTAL_ALIGNMENT_LEFT, _body_font_size())
-		_draw_footer(&"ui.slice.reward.confirm", foreground, background)
+		_draw_footer(_definition.reward_confirm_key, foreground, background)
 		return
 	draw_rect(Rect2(22, 49, 130, 92), foreground, false, 1.0)
-	_draw_unpaired_cup(Vector2(72, 64), foreground)
+	_draw_reward_icon(Vector2(72, 64), foreground)
 	_draw_text(_ui(&"ui.slice.reward.keepsake"), Vector2(30, 105), 114, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
-	_draw_wrapped(&"ui.slice.reward.item_name", Rect2(30, 109, 114, 28), 2)
+	_draw_wrapped(_definition.reward_item_name_key, Rect2(30, 109, 114, 28), 2)
 	draw_rect(Rect2(160, 49, 138, 92), foreground, false, 1.0)
 	_draw_journal_mark(Vector2(209, 60), foreground)
 	_draw_text(_ui(&"ui.slice.reward.journal_added"), Vector2(168, 103), 122, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 	var title_lines := PixelTextWrapper.wrap(
-		_resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text,
+		_resolver.resolve(_journal_key("title"), _current_locale()).text,
 		_font(),
 		122,
 		_body_font_size(),
@@ -940,7 +961,7 @@ func _draw_reward(foreground: Color, background: Color) -> void:
 	)
 	for index: int in range(title_lines.size()):
 		_draw_text(title_lines[index], Vector2(168, 119 + index * _body_line_height()), 122, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
-	_draw_footer(&"ui.slice.reward.confirm", foreground, background)
+	_draw_footer(_definition.reward_confirm_key, foreground, background)
 
 
 func _draw_day_end(foreground: Color, background: Color) -> void:
@@ -958,8 +979,8 @@ func _draw_journal(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.journal.header", foreground, background)
 	draw_rect(Rect2(18, 44, 284, 100), foreground, false, 2.0)
-	_draw_text(_resolver.resolve(&"journal.hkr.empty_cushion.title", _current_locale()).text, Vector2(30, 61), 260, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
-	var journal_body := _resolver.resolve(&"journal.hkr.empty_cushion.body", _current_locale()).text
+	_draw_text(_resolver.resolve(_journal_key("title"), _current_locale()).text, Vector2(30, 61), 260, HORIZONTAL_ALIGNMENT_CENTER, _body_font_size())
+	var journal_body := _resolver.resolve(_journal_key("body"), _current_locale()).text
 	var maximum_lines := 12 if ui_scale_percent() > 100 else 4
 	var lines := PixelTextWrapper.wrap(journal_body, _font(), 260, _body_font_size(), _current_locale(), maximum_lines)
 	var first_line := _large_text_page * 3 if ui_scale_percent() > 100 else 0
@@ -991,16 +1012,16 @@ func _draw_journal(foreground: Color, background: Color) -> void:
 func _draw_replay_complete(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.replay_complete.header", foreground, background)
-	_draw_unpaired_cup(Vector2(145, 69), foreground)
+	_draw_reward_icon(Vector2(145, 69), foreground)
 	_draw_wrapped(&"ui.slice.replay_complete.body", Rect2(50, 112, 220, 24), 2)
 	_draw_footer(&"ui.slice.replay_complete.confirm", foreground, background)
 
 
 func _draw_complete(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
-	_draw_header(&"ui.slice.complete.header", foreground, background)
-	_draw_wrapped(&"ui.slice.complete.body", Rect2(44, 78, 232, 45), 4)
-	_draw_footer(&"ui.slice.complete.confirm", foreground, background)
+	_draw_header(_definition.complete_header_key, foreground, background)
+	_draw_wrapped(_definition.complete_body_key, Rect2(44, 78, 232, 45), 4)
+	_draw_footer(_definition.complete_confirm_key, foreground, background)
 
 
 func _draw_error(foreground: Color, background: Color) -> void:
@@ -1028,6 +1049,22 @@ func _draw_backlog(foreground: Color, background: Color) -> void:
 	_draw_text(_ui(&"ui.slice.backlog.close"), Vector2(13, 169), 294)
 
 
+func _draw_event_stage(component_id: StringName, foreground: Color, background: Color) -> void:
+	match component_id:
+		&"shrine_afterbeat":
+			_draw_afterbeat_stage(foreground, background)
+		&"mansion_clock":
+			_draw_mansion_clock_stage(foreground, background)
+		&"mansion_afterbeat":
+			_draw_mansion_afterbeat_stage(foreground, background)
+		&"mansion_library":
+			_draw_mansion_library_stage(foreground, background)
+		&"mansion_balcony_public", &"mansion_balcony_private":
+			_draw_mansion_balcony_stage(component_id == &"mansion_balcony_private", foreground, background)
+		_:
+			_draw_shrine_stage(foreground, background)
+
+
 func _draw_shrine_stage(foreground: Color, background: Color) -> void:
 	for y: int in range(4, 92, 6):
 		for x: int in range(2 + floori(y / 6.0) % 2 * 3, 320, 6):
@@ -1050,6 +1087,72 @@ func _draw_afterbeat_stage(foreground: Color, background: Color) -> void:
 	draw_line(Vector2(18, 94), Vector2(42, 94), foreground, 1.0)
 	_draw_unpaired_cup(Vector2(92, 74), foreground)
 	draw_line(Vector2(132, 84), Vector2(150, 84), foreground, 1.0)
+
+
+func _draw_mansion_clock_stage(foreground: Color, background: Color) -> void:
+	for y: int in range(8, 93, 16):
+		for x: int in range(8 + posmod(y / 16, 2) * 12, 320, 24):
+			draw_rect(Rect2(x, y, 12, 8), foreground, false, 1.0)
+	draw_line(Vector2(0, 99), Vector2(320, 99), foreground, 2.0)
+	draw_rect(Rect2(18, 42, 5, 58), foreground)
+	draw_rect(Rect2(137, 42, 5, 58), foreground)
+	draw_circle(Vector2(80, 52), 19, foreground)
+	draw_circle(Vector2(80, 52), 15, background)
+	draw_line(Vector2(80, 52), Vector2(80, 40), foreground, 2.0)
+	draw_line(Vector2(80, 52), Vector2(91, 57), foreground, 2.0)
+	draw_rect(Rect2(164, 78, 62, 16), foreground, false, 2.0)
+	draw_circle(Vector2(181, 72), 5, foreground, false, 1.0)
+	draw_rect(Rect2(204, 66, 10, 11), foreground, false, 1.0)
+
+
+func _draw_mansion_afterbeat_stage(foreground: Color, background: Color) -> void:
+	draw_line(Vector2(0, 99), Vector2(320, 99), foreground, 1.0)
+	draw_circle(Vector2(55, 61), 15, foreground)
+	draw_circle(Vector2(55, 61), 12, background)
+	draw_line(Vector2(55, 61), Vector2(55, 51), foreground, 1.0)
+	draw_rect(Rect2(93, 62, 58, 30), foreground, false, 2.0)
+	for y: int in [69, 76, 83]:
+		draw_line(Vector2(101, y), Vector2(142 if y < 83 else 129, y), foreground, 1.0)
+	draw_rect(Rect2(162, 79, 46, 14), foreground, false, 1.0)
+	draw_line(Vector2(166, 86), Vector2(204, 86), foreground, 1.0)
+
+
+func _draw_mansion_library_stage(foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(7, 13, 306, 87), foreground, false, 2.0)
+	for shelf_y: int in [38, 65, 92]:
+		draw_line(Vector2(13, shelf_y), Vector2(307, shelf_y), foreground, 2.0)
+	for book_x: int in range(17, 305, 9):
+		var height := 15 + posmod(book_x, 4) * 3
+		draw_rect(Rect2(book_x, 37 - height, 5, height), foreground, false, 1.0)
+	draw_circle(Vector2(242, 65), 27, foreground)
+	draw_circle(Vector2(242, 67), 21, background)
+	draw_rect(Rect2(218, 67, 49, 33), background)
+	draw_rect(Rect2(218, 67, 49, 33), foreground, false, 1.0)
+
+
+func _draw_mansion_balcony_stage(is_private: bool, foreground: Color, background: Color) -> void:
+	draw_circle(Vector2(252, 30), 18, foreground)
+	draw_circle(Vector2(246, 25), 18, background)
+	draw_line(Vector2(0, 100), Vector2(320, 100), foreground, 2.0)
+	for x: int in range(10, 320, 22):
+		draw_rect(Rect2(x, 82, 3, 18), foreground)
+	draw_line(Vector2(0, 81), Vector2(320, 81), foreground, 2.0)
+	var figure_x := 72.0 if is_private else 152.0
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(figure_x - 11, 81), Vector2(figure_x - 8, 52), Vector2(figure_x, 42),
+		Vector2(figure_x + 8, 52), Vector2(figure_x + 11, 81),
+	]), foreground)
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(figure_x - 18, 46), Vector2(figure_x - 7, 39), Vector2(figure_x - 5, 51),
+	]), foreground)
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(figure_x + 18, 46), Vector2(figure_x + 7, 39), Vector2(figure_x + 5, 51),
+	]), foreground)
+	if is_private:
+		draw_line(Vector2(116, 56), Vector2(212, 56), foreground, 1.0)
+	else:
+		draw_rect(Rect2(27, 18, 54, 45), foreground, false, 2.0)
+		draw_rect(Rect2(239, 18, 54, 45), foreground, false, 2.0)
 
 
 func _draw_frame(foreground: Color) -> void:
@@ -1100,10 +1203,45 @@ func _draw_text(
 	draw_string(_font(), position, text, alignment, width, resolved_size, foreground)
 
 
+func _draw_invitation_art(rect: Rect2, foreground: Color, background: Color) -> void:
+	draw_rect(rect, foreground, false, 2.0)
+	if _definition.invitation_component == &"schedule":
+		var sheet := Rect2(rect.position + Vector2(18, 7), rect.size - Vector2(36, 14))
+		draw_rect(sheet, foreground, false, 1.0)
+		for line_index: int in range(3):
+			var y := sheet.position.y + 6 + line_index * 7
+			draw_rect(Rect2(sheet.position.x + 4, y - 2, 3, 3), foreground, false, 1.0)
+			draw_line(Vector2(sheet.position.x + 11, y), Vector2(sheet.end.x - 4, y), foreground, 1.0)
+		return
+	var left := rect.position + Vector2(10, rect.size.y * 0.28)
+	var right := rect.end - Vector2(10, rect.size.y * 0.28)
+	var center := Vector2(rect.get_center().x, rect.position.y + rect.size.y * 0.7)
+	draw_line(left, right, foreground, 1.0)
+	draw_colored_polygon(PackedVector2Array([left, center, right]), foreground)
+	draw_colored_polygon(PackedVector2Array([left + Vector2(4, 2), center - Vector2(0, 3), right + Vector2(-4, 2)]), background)
+
+
+func _draw_reward_icon(origin: Vector2, foreground: Color) -> void:
+	if _definition.reward_component == &"checklist":
+		_draw_checklist(origin, foreground)
+	else:
+		_draw_unpaired_cup(origin, foreground)
+
+
 func _draw_unpaired_cup(origin: Vector2, foreground: Color) -> void:
 	draw_rect(Rect2(origin, Vector2(22, 14)), foreground, false, 2.0)
 	draw_rect(Rect2(origin + Vector2(21, 3), Vector2(7, 7)), foreground, false, 2.0)
 	draw_line(origin + Vector2(3, 18), origin + Vector2(19, 18), foreground, 2.0)
+
+
+func _draw_checklist(origin: Vector2, foreground: Color) -> void:
+	draw_rect(Rect2(origin, Vector2(27, 31)), foreground, false, 2.0)
+	for index: int in range(3):
+		var y := origin.y + 8 + index * 7
+		draw_rect(Rect2(origin.x + 5, y - 3, 4, 4), foreground, false, 1.0)
+		if index < 2:
+			draw_line(Vector2(origin.x + 6, y - 1), Vector2(origin.x + 8, y + 1), foreground, 1.0)
+		draw_line(Vector2(origin.x + 12, y - 1), Vector2(origin.x + 22, y - 1), foreground, 1.0)
 
 
 func _draw_journal_mark(origin: Vector2, foreground: Color) -> void:
@@ -1132,13 +1270,17 @@ func _font() -> Font:
 func _journal_large_page_count() -> int:
 	if _resolver == null:
 		return 1
-	var body := _resolver.resolve(&"journal.hkr.empty_cushion.body", _current_locale()).text
+	var body := _resolver.resolve(_journal_key("body"), _current_locale()).text
 	var lines := PixelTextWrapper.wrap(body, _font(), 260, _body_font_size(), _current_locale(), 12)
 	return maxi(1, ceili(lines.size() / 3.0))
 
 
 func large_text_page_for_test() -> int:
 	return _large_text_page
+
+
+func _journal_key(suffix: String) -> StringName:
+	return StringName("%s.%s" % [_definition.journal_id, suffix])
 
 
 func _ui(key: StringName, arguments: Dictionary = {}) -> String:

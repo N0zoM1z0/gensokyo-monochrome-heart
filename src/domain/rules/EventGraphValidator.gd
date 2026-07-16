@@ -90,8 +90,17 @@ func _validate_shape(node: EventNodeRecord, errors: Array[String]) -> void:
 		for effect: EventEffectRecord in node.effects:
 			if effect.operation not in [&"relationship", &"set_flag"]:
 				errors.append("effects node %s has unsupported operation %s" % [node.id, effect.operation])
+			elif effect.operation == &"set_flag" and not _is_flag_id(effect.key):
+				errors.append("effects node %s has invalid flag ID %s" % [node.id, effect.key])
 	if node.next_node_id == &"" and node.type not in [&"choice", &"start_minigame", &"start_danmaku", &"start_duel"]:
 		errors.append("node %s requires a next edge" % node.id)
+
+
+func _is_flag_id(flag_id: StringName) -> bool:
+	var expression := RegEx.new()
+	if expression.compile("^(?:flag|evt)\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$") != OK:
+		return false
+	return expression.search(String(flag_id)) != null
 
 
 func _reachable(entry_id: StringName, nodes: Dictionary[StringName, EventNodeRecord]) -> Array[StringName]:

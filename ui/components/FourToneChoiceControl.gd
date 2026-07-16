@@ -149,10 +149,15 @@ func _draw_option(
 	var action_width := size.x - action_x - 8
 	var action_text := "%s  %s" % [tone_label, option.text] if is_reflow else option.text
 	var action_lines := PixelTextWrapper.wrap(action_text, font, action_width, body_size, locale, 2)
+	var action_baseline := mini(row_height - 4, body_size - 2)
+	if locale == &"ja" and ui_scale_percent == 100:
+		# The Japanese font's ascent is taller than the Latin bitmap face. Give
+		# both wrapped lines clearance from the one-pixel row rule.
+		action_baseline += 3
 	for line_index: int in range(action_lines.size()):
 		draw_string(
 			font,
-			Vector2(action_x, top + mini(row_height - 4, body_size - 2) + line_index * line_height),
+			Vector2(action_x, top + action_baseline + line_index * line_height),
 			action_lines[line_index],
 			HORIZONTAL_ALIGNMENT_LEFT,
 			action_width,

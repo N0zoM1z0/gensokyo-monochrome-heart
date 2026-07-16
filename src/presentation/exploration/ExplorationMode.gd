@@ -75,6 +75,10 @@ func _ready() -> void:
 	if exploration_context == null:
 		spot_definition = _build_spot_definition()
 		configure(_default_context())
+	else:
+		# Slice coordinators configure the mode before it enters the tree. Rebuild
+		# once the resolver and onready presentation nodes are available.
+		_reset_spot()
 	ready_for_input.emit()
 
 

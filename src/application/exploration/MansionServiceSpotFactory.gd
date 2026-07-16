@@ -22,7 +22,9 @@ static func build() -> ExplorationSpotDefinition:
 	# on discovering the optional hop input.
 	spot.solid_obstacles = []
 	spot.interactables = [
-		_interactable(&"prop.sdm.offset_clock", Vector2(118, 91), &"observe", &"ui.exploration.sdm.note.clock", &"sfx.step.wood", 30.0, true),
+		# The interaction anchor sits below the clock face, within the shared 36 px
+		# probe used by a floor-bound player.
+		_interactable(&"prop.sdm.offset_clock", Vector2(118, 104), &"observe", &"ui.exploration.sdm.note.clock", &"sfx.step.wood", 32.0, true),
 		_interactable(&"prop.sdm.reset_tray", Vector2(220, 130), &"observe", &"ui.exploration.sdm.note.tray", &"sfx.prop.cup", 28.0, true),
 		_interactable(&"prop.sdm.foyer_door", Vector2(306, 122), &"use", &"ui.exploration.sdm.note.door", &"sfx.door.wood", 28.0),
 		_interactable(&"prop.sdm.kitchen_pass", Vector2(410, 112), &"observe", &"ui.exploration.sdm.note.pass", &"sfx.prop.cup", 30.0),
