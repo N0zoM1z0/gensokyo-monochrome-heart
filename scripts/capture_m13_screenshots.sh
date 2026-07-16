@@ -54,6 +54,10 @@ capture_pair m13_bamboo_fourth_dawn res://tests/ui/fixtures/BambooLoopFourthDawn
 capture_pair m13_bamboo_primed res://tests/ui/fixtures/BambooLoopPrimedFixture.tscn
 capture_pair m13_bamboo_retry res://tests/ui/fixtures/BambooLoopRetryFixture.tscn
 capture_pair m13_bamboo_advance res://tests/ui/fixtures/BambooLoopAdvanceFixture.tscn
+capture_pair m13_five_errands_tutorial res://tests/ui/fixtures/FiveErrandsTutorialFixture.tscn
+capture_pair m13_five_errands_active res://tests/ui/fixtures/FiveErrandsActiveFixture.tscn
+capture_pair m13_five_errands_refusal res://tests/ui/fixtures/FiveErrandsRefusalFixture.tscn
+capture_pair m13_five_errands_result res://tests/ui/fixtures/FiveErrandsResultFixture.tscn
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated

@@ -13,7 +13,68 @@ func run() -> Array[String]:
 	_expect_pause_retry_and_loss(failures)
 	_expect_host_and_story_isolation(failures)
 	_expect_time_grid_service(failures)
+	_expect_five_impossible_errands(failures)
 	return failures
+
+
+func _expect_five_impossible_errands(failures: Array[String]) -> void:
+	var definition := FiveImpossibleErrandsDefinition.new()
+	if not definition.validation_errors().is_empty():
+		failures.append("Five Impossible Errands does not satisfy the shared minigame contract")
+	var catalog := FiveImpossibleErrandsCatalog.build()
+	var kinds := {}
+	if catalog.size() != 5:
+		failures.append("Five Impossible Errands catalog does not contain five trials")
+	for errand: ImpossibleErrandDefinition in catalog:
+		kinds[errand.trial_kind] = true
+		if not errand.validation_errors().is_empty():
+			failures.append("invalid impossible errand definition: %s" % errand.errand_id)
+	if kinds.size() != 5:
+		failures.append("Five Impossible Errands collapsed distinct trial modules into one rule")
+	for approach_index: int in range(3):
+		var committed := _run_errand_choices([approach_index, approach_index, approach_index, approach_index, approach_index])
+		if committed.final_result == null or committed.final_result.result_tag != &"clear":
+			failures.append("approach %d was not a first-class clear path" % approach_index)
+		elif committed.final_result.performance_band != &"committed":
+			failures.append("consistent answers were incorrectly ranked instead of described")
+	var varied := _run_errand_choices([0, 1, 2, 1, 0])
+	var repeated := _run_errand_choices([0, 1, 2, 1, 0])
+	if varied.final_result == null or varied.final_result.performance_band != &"varied":
+		failures.append("mixed literal, clever, and refusal answers lost their neutral shape tag")
+	elif varied.final_result.telemetry.final_state_hash != repeated.final_result.telemetry.final_state_hash:
+		failures.append("Five Impossible Errands produced nondeterministic answer telemetry")
+	if &"errands.choice.3.refuse" not in varied.final_result.outcome_tags:
+		failures.append("Five Impossible Errands result omitted the explicit refusal record")
+	var scene := EventModeSceneRegistry.new().scene_for(&"mini.ein.five_impossible_errands")
+	if scene == null:
+		failures.append("Five Impossible Errands mode is not reachable through the event scene registry")
+
+
+func _run_errand_choices(choices: Array[int]) -> FiveImpossibleErrandsSimulation:
+	var game := FiveImpossibleErrandsSimulation.new()
+	game.configure(_errands_context(), MinigameAssistSettings.new())
+	var start := MinigameInputFrame.new()
+	start.confirm_pressed = true
+	game.step(start)
+	for choice: int in choices:
+		while game.state.option_cursor != choice:
+			var movement := MinigameInputFrame.new()
+			movement.choice_direction = signi(choice - game.state.option_cursor)
+			game.step(movement)
+		var confirm := MinigameInputFrame.new()
+		confirm.confirm_pressed = true
+		game.step(confirm)
+	return game
+
+
+func _errands_context() -> ModeContext:
+	var context := ModeContext.new()
+	context.mode_type = &"start_minigame"
+	context.mode_id = &"mini.ein.five_impossible_errands"
+	context.event_id = &"evt.ein.five_impossibilities"
+	context.node_id = &"n_errands"
+	context.deterministic_seed = 13003
+	return context
 
 
 func _expect_time_grid_service(failures: Array[String]) -> void:
