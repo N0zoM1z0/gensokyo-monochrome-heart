@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "ae23ab2410316247c8a17e13cec75bf6978efc682a52102fbfbd0b3dfbad8843",
+  "content_hash": "cd5d1016111d37d56c5fd31df09831661f549f88deed07c8deb5e390d380ee70",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 55,
-    "dialogue_beats": 271,
-    "localization": 1101,
+    "events": 56,
+    "dialogue_beats": 278,
+    "localization": 1116,
     "music_cues": 89,
-    "event_nodes": 647
+    "event_nodes": 664
   },
   "ids": {
     "characters": [
@@ -108,6 +108,7 @@
     ],
     "events": [
       "evt.aya.exclusive_interview",
+      "evt.aya.hidden_folder",
       "evt.aya.wind_frame_graze",
       "evt.ein.burn_false_moon",
       "evt.ein.five_impossibilities",
@@ -171,6 +172,13 @@
       "beat.aya.exclusive_interview.patient",
       "beat.aya.exclusive_interview.playful",
       "beat.aya.exclusive_interview.terms",
+      "beat.aya.hidden_folder.after",
+      "beat.aya.hidden_folder.defiant",
+      "beat.aya.hidden_folder.direct",
+      "beat.aya.hidden_folder.intro",
+      "beat.aya.hidden_folder.patient",
+      "beat.aya.hidden_folder.playful",
+      "beat.aya.hidden_folder.record",
       "beat.aya.wind_frame_graze.after",
       "beat.aya.wind_frame_graze.assist",
       "beat.aya.wind_frame_graze.clear",
@@ -445,6 +453,10 @@
       "choice.aya.exclusive_interview.direct",
       "choice.aya.exclusive_interview.patient",
       "choice.aya.exclusive_interview.playful",
+      "choice.aya.hidden_folder.defiant",
+      "choice.aya.hidden_folder.direct",
+      "choice.aya.hidden_folder.patient",
+      "choice.aya.hidden_folder.playful",
       "choice.aya.wind_frame_graze.defiant",
       "choice.aya.wind_frame_graze.direct",
       "choice.aya.wind_frame_graze.patient",
@@ -572,6 +584,13 @@
       "dlg.aya.exclusive_interview.patient",
       "dlg.aya.exclusive_interview.playful",
       "dlg.aya.exclusive_interview.terms",
+      "dlg.aya.hidden_folder.after",
+      "dlg.aya.hidden_folder.defiant",
+      "dlg.aya.hidden_folder.direct",
+      "dlg.aya.hidden_folder.intro",
+      "dlg.aya.hidden_folder.patient",
+      "dlg.aya.hidden_folder.playful",
+      "dlg.aya.hidden_folder.record",
       "dlg.aya.wind_frame_graze.after",
       "dlg.aya.wind_frame_graze.assist",
       "dlg.aya.wind_frame_graze.clear",
@@ -837,6 +856,7 @@
       "dlg.sdm.promise.romance",
       "dlg.sdm.promise.undecided",
       "event.aya.exclusive_interview.title",
+      "event.aya.hidden_folder.title",
       "event.aya.wind_frame_graze.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -881,6 +901,8 @@
       "input.glyph.pointer.move",
       "journal.aya.exclusive_interview.body",
       "journal.aya.exclusive_interview.title",
+      "journal.aya.hidden_folder.body",
+      "journal.aya.hidden_folder.title",
       "journal.aya.wind_frame_graze.body",
       "journal.aya.wind_frame_graze.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -954,6 +976,7 @@
       "journal.sdm.promise.body",
       "journal.sdm.promise.title",
       "obj.aya.exclusive_interview.mark_record",
+      "obj.aya.hidden_folder.review",
       "obj.aya.wind_frame_graze.exit",
       "obj.ein.cross_four_dawns",
       "obj.hgy.cutting_wrong_problem.listen",
@@ -4193,6 +4216,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.aya.hidden_folder.response",
+      "target": "choice.aya.hidden_folder.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.hidden_folder.response",
+      "target": "choice.aya.hidden_folder.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.hidden_folder.response",
+      "target": "choice.aya.hidden_folder.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.aya.hidden_folder.response",
+      "target": "choice.aya.hidden_folder.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.aya.wind_frame_graze.response",
       "target": "choice.aya.wind_frame_graze.defiant",
       "kind": "localization"
@@ -5004,6 +5047,221 @@
     },
     {
       "source": "evt.aya.exclusive_interview",
+      "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n001",
+      "target": "evt.aya.hidden_folder.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n001",
+      "target": "mus_aya_afterbeat",
+      "kind": "music"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n002",
+      "target": "evt.aya.hidden_folder.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n002",
+      "target": "obj.aya.hidden_folder.review",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n002",
+      "target": "prop.aya.mended_rope",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n002",
+      "target": "prop.aya.unprinted_folder",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n003",
+      "target": "beat.aya.hidden_folder.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n003",
+      "target": "evt.aya.hidden_folder.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n004",
+      "target": "beat.aya.hidden_folder.record",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n004",
+      "target": "evt.aya.hidden_folder.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n005",
+      "target": "choice.aya.hidden_folder.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n005",
+      "target": "evt.aya.hidden_folder.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n005",
+      "target": "evt.aya.hidden_folder.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n005",
+      "target": "evt.aya.hidden_folder.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n005",
+      "target": "evt.aya.hidden_folder.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_after",
+      "target": "beat.aya.hidden_folder.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_after",
+      "target": "evt.aya.hidden_folder.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_defiant_line",
+      "target": "beat.aya.hidden_folder.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_defiant_line",
+      "target": "evt.aya.hidden_folder.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_defiant",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_defiant",
+      "target": "evt.aya.hidden_folder.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_direct_line",
+      "target": "beat.aya.hidden_folder.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_direct_line",
+      "target": "evt.aya.hidden_folder.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_direct",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_direct",
+      "target": "evt.aya.hidden_folder.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_effects",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_effects",
+      "target": "evt.aya.hidden_folder.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_journal",
+      "target": "evt.aya.hidden_folder.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_journal",
+      "target": "journal.aya.hidden_folder",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_patient_line",
+      "target": "beat.aya.hidden_folder.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_patient_line",
+      "target": "evt.aya.hidden_folder.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_patient",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_patient",
+      "target": "evt.aya.hidden_folder.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_playful_line",
+      "target": "beat.aya.hidden_folder.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_playful_line",
+      "target": "evt.aya.hidden_folder.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_playful",
+      "target": "char.aya_shameimaru",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.aya.hidden_folder.node.n_playful",
+      "target": "evt.aya.hidden_folder.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.aya.hidden_folder",
+      "target": "char.aya_shameimaru",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.aya.hidden_folder",
+      "target": "char.aya_shameimaru",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.aya.hidden_folder",
+      "target": "event.aya.hidden_folder.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.aya.hidden_folder",
+      "target": "evt.aya.hidden_folder",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.aya.hidden_folder",
+      "target": "loc.youkai_mountain.bunbunmaru_darkroom",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.aya.hidden_folder",
       "target": "loc.youkai_mountain",
       "kind": "location"
     },
