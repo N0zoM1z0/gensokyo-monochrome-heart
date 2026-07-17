@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "5e645b347488bbf620f737ed57d62ac9c185d6f38c356ceb11152b8727c81abe",
+  "content_hash": "fa6567184fa0400fac36b550689c8f60e5991230c61e8ba6d4e82b823643c0b1",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 101,
-    "dialogue_beats": 690,
-    "localization": 1997,
+    "events": 102,
+    "dialogue_beats": 697,
+    "localization": 2012,
     "music_cues": 89,
-    "event_nodes": 1656
+    "event_nodes": 1673
   },
   "ids": {
     "characters": [
@@ -202,6 +202,7 @@
       "evt.tsh.entrance_tremor",
       "evt.tsh.imperfect_meal",
       "evt.tsh.keystone_construction",
+      "evt.tsh.repair_she_finishes",
       "evt.yyk.bottomless_banquet",
       "evt.yyk.empty_plate",
       "evt.yyk.feast_without_ending",
@@ -852,6 +853,13 @@
       "beat.tsh.keystone_construction.patient",
       "beat.tsh.keystone_construction.plan",
       "beat.tsh.keystone_construction.playful",
+      "beat.tsh.repair_she_finishes.after",
+      "beat.tsh.repair_she_finishes.defiant",
+      "beat.tsh.repair_she_finishes.direct",
+      "beat.tsh.repair_she_finishes.discovery",
+      "beat.tsh.repair_she_finishes.patient",
+      "beat.tsh.repair_she_finishes.playful",
+      "beat.tsh.repair_she_finishes.tenshi",
       "beat.yyk.bottomless_banquet.after",
       "beat.yyk.bottomless_banquet.assist",
       "beat.yyk.bottomless_banquet.clear",
@@ -1222,6 +1230,10 @@
       "choice.tsh.keystone_construction.direct",
       "choice.tsh.keystone_construction.patient",
       "choice.tsh.keystone_construction.playful",
+      "choice.tsh.repair_she_finishes.defiant",
+      "choice.tsh.repair_she_finishes.direct",
+      "choice.tsh.repair_she_finishes.patient",
+      "choice.tsh.repair_she_finishes.playful",
       "choice.yyk.bottomless_banquet.defiant",
       "choice.yyk.bottomless_banquet.direct",
       "choice.yyk.bottomless_banquet.patient",
@@ -1888,6 +1900,13 @@
       "dlg.tsh.keystone_construction.patient",
       "dlg.tsh.keystone_construction.plan",
       "dlg.tsh.keystone_construction.playful",
+      "dlg.tsh.repair_she_finishes.after",
+      "dlg.tsh.repair_she_finishes.defiant",
+      "dlg.tsh.repair_she_finishes.direct",
+      "dlg.tsh.repair_she_finishes.discovery",
+      "dlg.tsh.repair_she_finishes.patient",
+      "dlg.tsh.repair_she_finishes.playful",
+      "dlg.tsh.repair_she_finishes.tenshi",
       "dlg.yyk.bottomless_banquet.after",
       "dlg.yyk.bottomless_banquet.assist",
       "dlg.yyk.bottomless_banquet.clear",
@@ -2012,6 +2031,7 @@
       "event.tsh.entrance_tremor.title",
       "event.tsh.imperfect_meal.title",
       "event.tsh.keystone_construction.title",
+      "event.tsh.repair_she_finishes.title",
       "event.yyk.bottomless_banquet.title",
       "event.yyk.empty_plate.title",
       "event.yyk.feast_without_ending.title",
@@ -2249,6 +2269,8 @@
       "journal.tsh.imperfect_meal.title",
       "journal.tsh.keystone_construction.body",
       "journal.tsh.keystone_construction.title",
+      "journal.tsh.repair_she_finishes.body",
+      "journal.tsh.repair_she_finishes.title",
       "journal.yyk.bottomless_banquet.body",
       "journal.yyk.bottomless_banquet.title",
       "journal.yyk.empty_plate.body",
@@ -2338,6 +2360,7 @@
       "obj.tsh.entrance_tremor.inspect",
       "obj.tsh.imperfect_meal.notice",
       "obj.tsh.keystone_construction.read",
+      "obj.tsh.repair_she_finishes.inspect",
       "obj.yyk.bottomless_banquet.read_table",
       "obj.yyk.empty_plate.observe",
       "obj.yyk.feast_without_ending.inspect",
@@ -9414,6 +9437,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.tsh.repair_she_finishes.after",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.after",
+      "target": "dlg.tsh.repair_she_finishes.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.defiant",
+      "target": "dlg.tsh.repair_she_finishes.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.direct",
+      "target": "dlg.tsh.repair_she_finishes.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.discovery",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.discovery",
+      "target": "dlg.tsh.repair_she_finishes.discovery",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.patient",
+      "target": "dlg.tsh.repair_she_finishes.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.playful",
+      "target": "dlg.tsh.repair_she_finishes.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.tenshi",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.repair_she_finishes.tenshi",
+      "target": "dlg.tsh.repair_she_finishes.tenshi",
+      "kind": "localization"
+    },
+    {
       "source": "beat.yyk.bottomless_banquet.after",
       "target": "char.yuyuko_saigyouji",
       "kind": "speaker"
@@ -11471,6 +11564,26 @@
     {
       "source": "choice.tsh.keystone_construction.response",
       "target": "choice.tsh.keystone_construction.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.repair_she_finishes.response",
+      "target": "choice.tsh.repair_she_finishes.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.repair_she_finishes.response",
+      "target": "choice.tsh.repair_she_finishes.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.repair_she_finishes.response",
+      "target": "choice.tsh.repair_she_finishes.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.repair_she_finishes.response",
+      "target": "choice.tsh.repair_she_finishes.playful",
       "kind": "localization"
     },
     {
@@ -30850,6 +30963,226 @@
     },
     {
       "source": "evt.tsh.keystone_construction",
+      "target": "loc.heaven",
+      "kind": "location"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n001",
+      "target": "evt.tsh.repair_she_finishes.node.n_discovery",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n001",
+      "target": "mus_tenshi_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_after",
+      "target": "beat.tsh.repair_she_finishes.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_after",
+      "target": "evt.tsh.repair_she_finishes.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_choice",
+      "target": "choice.tsh.repair_she_finishes.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_choice",
+      "target": "evt.tsh.repair_she_finishes.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_choice",
+      "target": "evt.tsh.repair_she_finishes.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_choice",
+      "target": "evt.tsh.repair_she_finishes.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_choice",
+      "target": "evt.tsh.repair_she_finishes.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_defiant_line",
+      "target": "beat.tsh.repair_she_finishes.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_defiant_line",
+      "target": "evt.tsh.repair_she_finishes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_defiant",
+      "target": "evt.tsh.repair_she_finishes.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_direct_line",
+      "target": "beat.tsh.repair_she_finishes.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_direct_line",
+      "target": "evt.tsh.repair_she_finishes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_direct",
+      "target": "evt.tsh.repair_she_finishes.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_discovery",
+      "target": "beat.tsh.repair_she_finishes.discovery",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_discovery",
+      "target": "evt.tsh.repair_she_finishes.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_effects",
+      "target": "evt.tsh.repair_she_finishes.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_journal",
+      "target": "evt.tsh.repair_she_finishes.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_journal",
+      "target": "journal.tsh.repair_she_finishes",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_objective",
+      "target": "evt.tsh.repair_she_finishes.node.n_tenshi",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_objective",
+      "target": "obj.tsh.repair_she_finishes.inspect",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_objective",
+      "target": "prop.tsh.reopened_delivery_path",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_objective",
+      "target": "prop.tsh.unclaimed_tool_tray",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_objective",
+      "target": "prop.tsh.visible_repair_seam",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_patient_line",
+      "target": "beat.tsh.repair_she_finishes.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_patient_line",
+      "target": "evt.tsh.repair_she_finishes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_patient",
+      "target": "evt.tsh.repair_she_finishes.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_playful_line",
+      "target": "beat.tsh.repair_she_finishes.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_playful_line",
+      "target": "evt.tsh.repair_she_finishes.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_playful",
+      "target": "evt.tsh.repair_she_finishes.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_tenshi",
+      "target": "beat.tsh.repair_she_finishes.tenshi",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes.node.n_tenshi",
+      "target": "evt.tsh.repair_she_finishes.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes",
+      "target": "char.tenshi_hinanawi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes",
+      "target": "char.tenshi_hinanawi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes",
+      "target": "event.tsh.repair_she_finishes.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes",
+      "target": "evt.tsh.repair_she_finishes",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes",
+      "target": "loc.heaven.unwitnessed_boundary_repair",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes",
       "target": "loc.heaven",
       "kind": "location"
     },
