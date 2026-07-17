@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "aee68e145b7cdecad0ba01872b49132cd06d94e1a4ba0e71495abcf37646f48b",
+  "content_hash": "f929e8b3eb8cef2a02a2f57f3514456950a23f979eb1d8f394455a55e6d2aade",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 83,
-    "dialogue_beats": 492,
-    "localization": 1596,
+    "events": 84,
+    "dialogue_beats": 502,
+    "localization": 1614,
     "music_cues": 89,
-    "event_nodes": 1203
+    "event_nodes": 1224
   },
   "ids": {
     "characters": [
@@ -188,6 +188,7 @@
       "evt.sdm.small_chair",
       "evt.yyk.bottomless_banquet",
       "evt.yyk.empty_plate",
+      "evt.yyk.hosts_responsibility",
       "evt.yyk.joke_about_death",
       "evt.yyk.lightness_not_shallowness"
     ],
@@ -670,6 +671,16 @@
       "beat.yyk.empty_plate.patient",
       "beat.yyk.empty_plate.person_remains",
       "beat.yyk.empty_plate.playful",
+      "beat.yyk.hosts_responsibility.after",
+      "beat.yyk.hosts_responsibility.assist",
+      "beat.yyk.hosts_responsibility.clear",
+      "beat.yyk.hosts_responsibility.danger",
+      "beat.yyk.hosts_responsibility.defiant",
+      "beat.yyk.hosts_responsibility.direct",
+      "beat.yyk.hosts_responsibility.loss",
+      "beat.yyk.hosts_responsibility.patient",
+      "beat.yyk.hosts_responsibility.playful",
+      "beat.yyk.hosts_responsibility.youmu_plan",
       "beat.yyk.joke_about_death.after",
       "beat.yyk.joke_about_death.defiant",
       "beat.yyk.joke_about_death.direct",
@@ -930,6 +941,10 @@
       "choice.yyk.empty_plate.direct",
       "choice.yyk.empty_plate.patient",
       "choice.yyk.empty_plate.playful",
+      "choice.yyk.hosts_responsibility.defiant",
+      "choice.yyk.hosts_responsibility.direct",
+      "choice.yyk.hosts_responsibility.patient",
+      "choice.yyk.hosts_responsibility.playful",
       "choice.yyk.joke_about_death.defiant",
       "choice.yyk.joke_about_death.direct",
       "choice.yyk.joke_about_death.patient",
@@ -1416,6 +1431,16 @@
       "dlg.yyk.empty_plate.patient",
       "dlg.yyk.empty_plate.person_remains",
       "dlg.yyk.empty_plate.playful",
+      "dlg.yyk.hosts_responsibility.after",
+      "dlg.yyk.hosts_responsibility.assist",
+      "dlg.yyk.hosts_responsibility.clear",
+      "dlg.yyk.hosts_responsibility.danger",
+      "dlg.yyk.hosts_responsibility.defiant",
+      "dlg.yyk.hosts_responsibility.direct",
+      "dlg.yyk.hosts_responsibility.loss",
+      "dlg.yyk.hosts_responsibility.patient",
+      "dlg.yyk.hosts_responsibility.playful",
+      "dlg.yyk.hosts_responsibility.youmu_plan",
       "dlg.yyk.joke_about_death.after",
       "dlg.yyk.joke_about_death.defiant",
       "dlg.yyk.joke_about_death.direct",
@@ -1489,6 +1514,7 @@
       "event.sdm.small_chair.title",
       "event.yyk.bottomless_banquet.title",
       "event.yyk.empty_plate.title",
+      "event.yyk.hosts_responsibility.title",
       "event.yyk.joke_about_death.title",
       "event.yyk.lightness_not_shallowness.title",
       "input.glyph.keyboard.cancel",
@@ -1663,6 +1689,8 @@
       "journal.yyk.bottomless_banquet.title",
       "journal.yyk.empty_plate.body",
       "journal.yyk.empty_plate.title",
+      "journal.yyk.hosts_responsibility.body",
+      "journal.yyk.hosts_responsibility.title",
       "journal.yyk.joke_about_death.body",
       "journal.yyk.joke_about_death.title",
       "journal.yyk.lightness_not_shallowness.body",
@@ -1727,6 +1755,7 @@
       "obj.sdm.trace_missing_minute",
       "obj.yyk.bottomless_banquet.read_table",
       "obj.yyk.empty_plate.observe",
+      "obj.yyk.hosts_responsibility.redirect",
       "obj.yyk.joke_about_death.notice_protection",
       "obj.yyk.lightness_not_shallowness.read_boundary",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
@@ -7157,6 +7186,106 @@
       "kind": "localization"
     },
     {
+      "source": "beat.yyk.hosts_responsibility.after",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.after",
+      "target": "dlg.yyk.hosts_responsibility.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.assist",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.assist",
+      "target": "dlg.yyk.hosts_responsibility.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.clear",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.clear",
+      "target": "dlg.yyk.hosts_responsibility.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.danger",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.danger",
+      "target": "dlg.yyk.hosts_responsibility.danger",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.defiant",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.defiant",
+      "target": "dlg.yyk.hosts_responsibility.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.direct",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.direct",
+      "target": "dlg.yyk.hosts_responsibility.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.loss",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.loss",
+      "target": "dlg.yyk.hosts_responsibility.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.patient",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.patient",
+      "target": "dlg.yyk.hosts_responsibility.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.playful",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.playful",
+      "target": "dlg.yyk.hosts_responsibility.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.youmu_plan",
+      "target": "char.youmu_konpaku",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.hosts_responsibility.youmu_plan",
+      "target": "dlg.yyk.hosts_responsibility.youmu_plan",
+      "kind": "localization"
+    },
+    {
       "source": "beat.yyk.joke_about_death.after",
       "target": "char.yuyuko_saigyouji",
       "kind": "speaker"
@@ -8494,6 +8623,26 @@
     {
       "source": "choice.yyk.empty_plate.response",
       "target": "choice.yyk.empty_plate.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.hosts_responsibility.response",
+      "target": "choice.yyk.hosts_responsibility.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.hosts_responsibility.response",
+      "target": "choice.yyk.hosts_responsibility.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.hosts_responsibility.response",
+      "target": "choice.yyk.hosts_responsibility.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.hosts_responsibility.response",
+      "target": "choice.yyk.hosts_responsibility.playful",
       "kind": "localization"
     },
     {
@@ -23223,6 +23372,281 @@
     },
     {
       "source": "evt.yyk.empty_plate",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n001",
+      "target": "evt.yyk.hosts_responsibility.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n001",
+      "target": "mus_yuyuko_banquet",
+      "kind": "music"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n002",
+      "target": "evt.yyk.hosts_responsibility.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n002",
+      "target": "obj.yyk.hosts_responsibility.redirect",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n002",
+      "target": "prop.yyk.emergency_orchard_gate",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n002",
+      "target": "prop.yyk.procession_current_markers",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n003",
+      "target": "beat.yyk.hosts_responsibility.danger",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n003",
+      "target": "evt.yyk.hosts_responsibility.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n004",
+      "target": "beat.yyk.hosts_responsibility.youmu_plan",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n004",
+      "target": "evt.yyk.hosts_responsibility.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n005",
+      "target": "choice.yyk.hosts_responsibility.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n005",
+      "target": "evt.yyk.hosts_responsibility.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n005",
+      "target": "evt.yyk.hosts_responsibility.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n005",
+      "target": "evt.yyk.hosts_responsibility.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n005",
+      "target": "evt.yyk.hosts_responsibility.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_after",
+      "target": "beat.yyk.hosts_responsibility.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_after",
+      "target": "evt.yyk.hosts_responsibility.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_assist",
+      "target": "beat.yyk.hosts_responsibility.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_assist",
+      "target": "evt.yyk.hosts_responsibility.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_clear",
+      "target": "beat.yyk.hosts_responsibility.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_clear",
+      "target": "evt.yyk.hosts_responsibility.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_defiant_line",
+      "target": "beat.yyk.hosts_responsibility.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_defiant_line",
+      "target": "evt.yyk.hosts_responsibility.node.n_procession",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_defiant",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_defiant",
+      "target": "evt.yyk.hosts_responsibility.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_direct_line",
+      "target": "beat.yyk.hosts_responsibility.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_direct_line",
+      "target": "evt.yyk.hosts_responsibility.node.n_procession",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_direct",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_direct",
+      "target": "evt.yyk.hosts_responsibility.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_effects",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_effects",
+      "target": "evt.yyk.hosts_responsibility.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_journal",
+      "target": "evt.yyk.hosts_responsibility.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_journal",
+      "target": "journal.yyk.hosts_responsibility",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_loss",
+      "target": "beat.yyk.hosts_responsibility.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_loss",
+      "target": "evt.yyk.hosts_responsibility.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_patient_line",
+      "target": "beat.yyk.hosts_responsibility.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_patient_line",
+      "target": "evt.yyk.hosts_responsibility.node.n_procession",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_patient",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_patient",
+      "target": "evt.yyk.hosts_responsibility.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_playful_line",
+      "target": "beat.yyk.hosts_responsibility.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_playful_line",
+      "target": "evt.yyk.hosts_responsibility.node.n_procession",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_playful",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_playful",
+      "target": "evt.yyk.hosts_responsibility.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_procession",
+      "target": "evt.yyk.hosts_responsibility.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_procession",
+      "target": "evt.yyk.hosts_responsibility.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_procession",
+      "target": "evt.yyk.hosts_responsibility.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility.node.n_procession",
+      "target": "mini.yyk.spirit_procession_redirect",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility",
+      "target": "char.youmu_konpaku",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility",
+      "target": "char.youmu_konpaku",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility",
+      "target": "event.yyk.hosts_responsibility.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility",
+      "target": "evt.yyk.hosts_responsibility",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility",
+      "target": "loc.hakugyokurou.festival_crossing",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.yyk.hosts_responsibility",
       "target": "loc.hakugyokurou",
       "kind": "location"
     },

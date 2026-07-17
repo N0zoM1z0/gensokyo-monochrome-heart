@@ -102,6 +102,36 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal preserves both the strain caused by imposed solemnity and Yuyuko's chosen lightness."
+    },
+    {
+      "id": "loc.hakugyokurou.festival_crossing",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A narrow crossing makes guest, guard, and spirit routes visibly collide unless the festival changes."
+    },
+    {
+      "id": "prop.yyk.procession_current_markers",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Current markers show where a procession wants to bend without exposing individual spirits' private memories."
+    },
+    {
+      "id": "prop.yyk.emergency_orchard_gate",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An orchard gate supports a reversible redirection and a safe waiting outcome."
+    },
+    {
+      "id": "mini.yyk.spirit_procession_redirect",
+      "kind": "minigame",
+      "target_milestone": "M14",
+      "reason": "The procession handoff preserves clear, assisted, and delayed loss-continuing host responses."
+    },
+    {
+      "id": "journal.yyk.hosts_responsibility",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records a festival changed to protect guests, Youmu, and the procession itself."
     }
   ]
 }
