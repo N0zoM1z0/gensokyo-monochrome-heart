@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/presentation/exploration/ExplorationMode.gd" id="1_mode"]
 [ext_resource type="Script" path="res://ui/components/PromptChip.gd" id="2_prompt"]
-[ext_resource type="Script" path="res://src/presentation/audio/ProceduralSfxPlayer.gd" id="3_sfx"]
+[ext_resource type="Script" path="res://src/presentation/audio/ProductionSfxPlayer.gd" id="3_sfx"]
 [ext_resource type="Shader" path="res://ui/theme/one_bit_post_process.gdshader" id="4_threshold"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_threshold"]
@@ -27,7 +27,7 @@ offset_bottom = 14.0
 mouse_filter = 2
 script = ExtResource("2_prompt")
 
-[node name="ProceduralSfxPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ProductionSfxPlayer" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_sfx")
 

@@ -1,6 +1,6 @@
 class_name AudioMixPolicy
 extends RefCounted
-## Relative placeholder-mix contract; final mastering may move all values together.
+## Relative production-mix contract; final mastering may move all values together.
 
 enum Role {
 	AUTO,

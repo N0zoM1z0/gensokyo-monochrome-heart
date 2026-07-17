@@ -31,7 +31,7 @@ var _completion_emitted: bool = false
 var _visual_cue_key: StringName
 var _visual_cue_seconds: float = 0.0
 
-@onready var sfx_player: ProceduralSfxPlayer = %ProceduralSfxPlayer
+@onready var sfx_player: ProductionSfxPlayer = %ProductionSfxPlayer
 
 
 func _ready() -> void:

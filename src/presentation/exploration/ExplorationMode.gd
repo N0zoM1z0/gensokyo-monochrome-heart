@@ -56,7 +56,7 @@ var _marisa_entered: bool = false
 var _triggered_event_id: StringName
 
 @onready var prompt_chip: PromptChip = %PromptChip
-@onready var sfx_player: ProceduralSfxPlayer = %ProceduralSfxPlayer
+@onready var sfx_player: ProductionSfxPlayer = %ProductionSfxPlayer
 
 
 func _ready() -> void:

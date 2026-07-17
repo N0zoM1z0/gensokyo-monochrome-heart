@@ -80,7 +80,7 @@ func _run() -> void:
 		_slice.resolve_input_candidates([GameInput.CANCEL, GameInput.FOCUS, GameInput.HEAVY]) == GameInput.FOCUS,
 		"shared B/X binding did not resolve exclusively to Focus during danmaku"
 	)
-	_slice.music_player.advance_for_test(AdaptiveTestTonePlayer.BAR_SECONDS)
+	_slice.music_player.advance_for_test(_slice.music_player.current_bar_seconds())
 	_expect(_slice.music_player.current_state_id == &"mus_border_crossing", "boundary music did not change at a bar boundary")
 	_expect(_slice.submit_mode_result_for_test(&"assist_clear", 3), "typed Assist Clear could not return from Boundary Stain")
 	_expect(_slice.current_event_node_id() == &"n007b", "Assist Clear did not reach its respectful authored response")
@@ -102,7 +102,7 @@ func _run() -> void:
 		_slice.resolve_input_candidates([GameInput.CANCEL, GameInput.FOCUS, GameInput.HEAVY]) == GameInput.HEAVY,
 		"shared B/X binding did not resolve exclusively to Heavy during the duel"
 	)
-	_slice.music_player.advance_for_test(AdaptiveTestTonePlayer.BAR_SECONDS)
+	_slice.music_player.advance_for_test(_slice.music_player.current_bar_seconds())
 	_expect(_slice.music_player.current_state_id == &"mus_shrine_duel", "duel music did not change at a bar boundary")
 	_expect(_slice.submit_mode_result_for_test(&"win"), "typed Win could not return from the compact fighter")
 	_expect(_slice.current_event_node_id() == &"n008a", "fighter Win did not reach its authored response")

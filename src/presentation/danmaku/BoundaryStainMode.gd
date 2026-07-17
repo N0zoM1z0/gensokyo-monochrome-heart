@@ -67,7 +67,7 @@ var _is_safe_flash: bool = false
 var _no_flash_active: bool = false
 var _last_shot_held: bool = false
 
-@onready var sfx_player: ProceduralSfxPlayer = %ProceduralSfxPlayer
+@onready var sfx_player: ProductionSfxPlayer = %ProductionSfxPlayer
 
 
 func _ready() -> void:

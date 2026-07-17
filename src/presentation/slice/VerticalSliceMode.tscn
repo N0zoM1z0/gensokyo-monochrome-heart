@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/presentation/slice/VerticalSliceMode.gd" id="1_mode"]
 [ext_resource type="Script" path="res://ui/components/FourToneChoiceControl.gd" id="2_choice"]
-[ext_resource type="Script" path="res://src/presentation/audio/AdaptiveTestTonePlayer.gd" id="3_music"]
+[ext_resource type="Script" path="res://src/presentation/audio/ProductionAdaptiveMusicPlayer.gd" id="3_music"]
 
 [node name="VerticalSliceMode" type="Control"]
 custom_minimum_size = Vector2(320, 180)
@@ -35,7 +35,7 @@ offset_right = 306.0
 offset_bottom = 159.0
 script = ExtResource("2_choice")
 
-[node name="AdaptiveTestTonePlayer" type="AudioStreamPlayer" parent="."]
+[node name="ProductionAdaptiveMusicPlayer" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_music")
 

@@ -60,7 +60,7 @@ var _japanese_font: Font
 
 @onready var mode_host: Control = %ModeHost
 @onready var choice_control: FourToneChoiceControl = %FourToneChoice
-@onready var music_player: AdaptiveTestTonePlayer = %AdaptiveTestTonePlayer
+@onready var music_player: ProductionAdaptiveMusicPlayer = %ProductionAdaptiveMusicPlayer
 
 
 func _ready() -> void:
