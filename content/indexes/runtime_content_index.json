@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "f3652d307eb71f506cf763bb630268033cff40c8d813c5acb3a423cee0380abf",
+  "content_hash": "bc88f69050c581abbcdd2ffcdfb2ac0d09ae09b7fff03ea46cb567f79b0aff49",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 91,
-    "dialogue_beats": 576,
-    "localization": 1780,
+    "events": 92,
+    "dialogue_beats": 587,
+    "localization": 1799,
     "music_cues": 89,
-    "event_nodes": 1408
+    "event_nodes": 1430
   },
   "ids": {
     "characters": [
@@ -125,6 +125,7 @@
       "evt.ein.promise",
       "evt.ein.short_lived_guest",
       "evt.ein.shortcut_seller",
+      "evt.eir.clinic_triage",
       "evt.fin.borders_back",
       "evt.fin.margin_of_error",
       "evt.fin.one_blank_page",
@@ -302,6 +303,17 @@
       "beat.ein.short_lived_guest.patient",
       "beat.ein.short_lived_guest.playful",
       "beat.ein.short_lived_guest.question",
+      "beat.eir.clinic_triage.after",
+      "beat.eir.clinic_triage.assist",
+      "beat.eir.clinic_triage.clear",
+      "beat.eir.clinic_triage.defiant",
+      "beat.eir.clinic_triage.direct",
+      "beat.eir.clinic_triage.eirin_terms",
+      "beat.eir.clinic_triage.loss",
+      "beat.eir.clinic_triage.patient",
+      "beat.eir.clinic_triage.playful",
+      "beat.eir.clinic_triage.reisen_intake",
+      "beat.eir.clinic_triage.tewi_noise",
       "beat.hgy.duty.after",
       "beat.hgy.duty.defiant",
       "beat.hgy.duty.direct",
@@ -840,6 +852,10 @@
       "choice.ein.short_lived_guest.direct",
       "choice.ein.short_lived_guest.patient",
       "choice.ein.short_lived_guest.playful",
+      "choice.eir.clinic_triage.defiant",
+      "choice.eir.clinic_triage.direct",
+      "choice.eir.clinic_triage.patient",
+      "choice.eir.clinic_triage.playful",
       "choice.hgy.duty.defiant",
       "choice.hgy.duty.direct",
       "choice.hgy.duty.patient",
@@ -1176,6 +1192,17 @@
       "dlg.ein.short_lived_guest.patient",
       "dlg.ein.short_lived_guest.playful",
       "dlg.ein.short_lived_guest.question",
+      "dlg.eir.clinic_triage.after",
+      "dlg.eir.clinic_triage.assist",
+      "dlg.eir.clinic_triage.clear",
+      "dlg.eir.clinic_triage.defiant",
+      "dlg.eir.clinic_triage.direct",
+      "dlg.eir.clinic_triage.eirin_terms",
+      "dlg.eir.clinic_triage.loss",
+      "dlg.eir.clinic_triage.patient",
+      "dlg.eir.clinic_triage.playful",
+      "dlg.eir.clinic_triage.reisen_intake",
+      "dlg.eir.clinic_triage.tewi_noise",
       "dlg.hgy.duty.after",
       "dlg.hgy.duty.defiant",
       "dlg.hgy.duty.direct",
@@ -1664,6 +1691,7 @@
       "event.ein.mokou_uninvited_honesty.title",
       "event.ein.promise.title",
       "event.ein.short_lived_guest.title",
+      "event.eir.clinic_triage.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
       "event.hgy.farewell_will_not_fall.title",
@@ -1777,6 +1805,8 @@
       "journal.ein.promise.undecided.title",
       "journal.ein.short_lived_guest.body",
       "journal.ein.short_lived_guest.title",
+      "journal.eir.clinic_triage.body",
+      "journal.eir.clinic_triage.title",
       "journal.hgy.cutting_wrong_problem.body",
       "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
@@ -1948,6 +1978,7 @@
       "obj.ein.mokou_uninvited_honesty.choose",
       "obj.ein.promise.choose",
       "obj.ein.short_lived_guest.choose",
+      "obj.eir.clinic_triage.separate",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
       "obj.hgy.farewell.release",
@@ -3670,6 +3701,116 @@
     {
       "source": "beat.ein.short_lived_guest.question",
       "target": "dlg.ein.short_lived_guest.question",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.after",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.after",
+      "target": "dlg.eir.clinic_triage.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.assist",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.assist",
+      "target": "dlg.eir.clinic_triage.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.clear",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.clear",
+      "target": "dlg.eir.clinic_triage.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.defiant",
+      "target": "dlg.eir.clinic_triage.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.direct",
+      "target": "dlg.eir.clinic_triage.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.eirin_terms",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.eirin_terms",
+      "target": "dlg.eir.clinic_triage.eirin_terms",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.loss",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.loss",
+      "target": "dlg.eir.clinic_triage.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.patient",
+      "target": "dlg.eir.clinic_triage.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.playful",
+      "target": "dlg.eir.clinic_triage.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.reisen_intake",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.reisen_intake",
+      "target": "dlg.eir.clinic_triage.reisen_intake",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.clinic_triage.tewi_noise",
+      "target": "char.tewi_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.clinic_triage.tewi_noise",
+      "target": "dlg.eir.clinic_triage.tewi_noise",
       "kind": "localization"
     },
     {
@@ -8703,6 +8844,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.eir.clinic_triage.response",
+      "target": "choice.eir.clinic_triage.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.clinic_triage.response",
+      "target": "choice.eir.clinic_triage.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.clinic_triage.response",
+      "target": "choice.eir.clinic_triage.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.clinic_triage.response",
+      "target": "choice.eir.clinic_triage.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hgy.duty.response",
       "target": "choice.hgy.duty.defiant",
       "kind": "localization"
@@ -13119,6 +13280,296 @@
     },
     {
       "source": "evt.ein.shortcut_seller",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n001",
+      "target": "evt.eir.clinic_triage.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n001",
+      "target": "mus_eirin_lab",
+      "kind": "music"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n002",
+      "target": "evt.eir.clinic_triage.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n002",
+      "target": "obj.eir.clinic_triage.separate",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n002",
+      "target": "prop.eir.observed_sign_tray",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n002",
+      "target": "prop.eir.patient_statement_ledger",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n002",
+      "target": "prop.eir.rumor_stamped_symptom_cards",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n003",
+      "target": "beat.eir.clinic_triage.eirin_terms",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n003",
+      "target": "evt.eir.clinic_triage.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n004",
+      "target": "beat.eir.clinic_triage.reisen_intake",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n004",
+      "target": "evt.eir.clinic_triage.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n005",
+      "target": "choice.eir.clinic_triage.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n005",
+      "target": "evt.eir.clinic_triage.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n005",
+      "target": "evt.eir.clinic_triage.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n005",
+      "target": "evt.eir.clinic_triage.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n005",
+      "target": "evt.eir.clinic_triage.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n006",
+      "target": "beat.eir.clinic_triage.tewi_noise",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n006",
+      "target": "evt.eir.clinic_triage.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_after",
+      "target": "beat.eir.clinic_triage.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_after",
+      "target": "evt.eir.clinic_triage.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_assist",
+      "target": "beat.eir.clinic_triage.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_assist",
+      "target": "evt.eir.clinic_triage.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_clear",
+      "target": "beat.eir.clinic_triage.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_clear",
+      "target": "evt.eir.clinic_triage.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_defiant_line",
+      "target": "beat.eir.clinic_triage.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_defiant_line",
+      "target": "evt.eir.clinic_triage.node.n_triage",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_defiant",
+      "target": "evt.eir.clinic_triage.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_direct_line",
+      "target": "beat.eir.clinic_triage.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_direct_line",
+      "target": "evt.eir.clinic_triage.node.n_triage",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_direct",
+      "target": "evt.eir.clinic_triage.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_effects",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_effects",
+      "target": "evt.eir.clinic_triage.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_journal",
+      "target": "evt.eir.clinic_triage.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_journal",
+      "target": "journal.eir.clinic_triage",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_loss",
+      "target": "beat.eir.clinic_triage.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_loss",
+      "target": "evt.eir.clinic_triage.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_patient_line",
+      "target": "beat.eir.clinic_triage.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_patient_line",
+      "target": "evt.eir.clinic_triage.node.n_triage",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_patient",
+      "target": "evt.eir.clinic_triage.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_playful_line",
+      "target": "beat.eir.clinic_triage.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_playful_line",
+      "target": "evt.eir.clinic_triage.node.n_triage",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_playful",
+      "target": "evt.eir.clinic_triage.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_triage",
+      "target": "evt.eir.clinic_triage.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_triage",
+      "target": "evt.eir.clinic_triage.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_triage",
+      "target": "evt.eir.clinic_triage.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.clinic_triage.node.n_triage",
+      "target": "mini.eir.clinic_triage",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.eir.clinic_triage",
+      "target": "char.eirin_yagokoro",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.clinic_triage",
+      "target": "char.eirin_yagokoro",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.clinic_triage",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.clinic_triage",
+      "target": "char.tewi_inaba",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.clinic_triage",
+      "target": "event.eir.clinic_triage.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.clinic_triage",
+      "target": "evt.eir.clinic_triage",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.eir.clinic_triage",
+      "target": "loc.eientei.clinic_intake_table",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.eir.clinic_triage",
       "target": "loc.eientei",
       "kind": "location"
     },
