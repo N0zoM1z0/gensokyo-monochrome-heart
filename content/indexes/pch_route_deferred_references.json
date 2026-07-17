@@ -126,6 +126,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records a spell completed through bounded cooperation rather than endurance or takeover."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.answering_stacks",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "The Archive’s predictive volume appears in a stack where knowledge can be compared with authorship."
+    },
+    {
+      "id": "prop.pch.complete_future_volume",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A complete volume makes every predicted future conversation materially tempting and invasive."
+    },
+    {
+      "id": "prop.pch.blank_last_folios",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Blank final folios preserve future questions and answers that neither person has chosen yet."
+    },
+    {
+      "id": "journal.pch.book_answers_everything",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records Patchouli choosing incomplete knowledge over a prewritten relationship."
     }
   ]
 }

@@ -91,6 +91,24 @@
         "loss_continues",
         "physical_limits_respected"
       ]
+    },
+    {
+      "id": "evt.pch.book_answers_everything",
+      "legacy_id": "EVT-PAT-06",
+      "title_en": "The Book That Answers Everything",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.patchouli_knowledge"
+      ],
+      "primary_mode": "choice_puzzle",
+      "core_change": "future pages left blank",
+      "status": "implemented",
+      "estimated_minutes": 15,
+      "comfort_tags": [
+        "no_timer",
+        "archive_refusal",
+        "future_not_preclaimed"
+      ]
     }
   ]
 }

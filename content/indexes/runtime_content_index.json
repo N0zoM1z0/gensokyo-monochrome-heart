@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "4f9d8126d69a1e66ae7e1710a04f78d1d1341f54d02ed66e1a135a6c5eead8e5",
+  "content_hash": "95efb4317602992a49324b22fb363abcecf5db279a2bff8d416e015b6f385ac4",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 71,
-    "dialogue_beats": 394,
-    "localization": 1378,
+    "events": 72,
+    "dialogue_beats": 401,
+    "localization": 1393,
     "music_cues": 89,
-    "event_nodes": 958
+    "event_nodes": 975
   },
   "ids": {
     "characters": [
@@ -161,6 +161,7 @@
       "evt.mtn.patrol_against_nothing",
       "evt.mtn.rumor_machine",
       "evt.mtn.tomorrows_headline",
+      "evt.pch.book_answers_everything",
       "evt.pch.borrowing_argument",
       "evt.pch.library_breathing_room",
       "evt.pch.question_worth_asking",
@@ -479,6 +480,13 @@
       "beat.mtn.headline.aya.patient",
       "beat.mtn.headline.aya.photo_origin",
       "beat.mtn.headline.aya.playful",
+      "beat.pch.book_answers_everything.after",
+      "beat.pch.book_answers_everything.defiant",
+      "beat.pch.book_answers_everything.direct",
+      "beat.pch.book_answers_everything.offer",
+      "beat.pch.book_answers_everything.patient",
+      "beat.pch.book_answers_everything.playful",
+      "beat.pch.book_answers_everything.problem",
       "beat.pch.borrowing_argument.after",
       "beat.pch.borrowing_argument.defiant",
       "beat.pch.borrowing_argument.direct",
@@ -726,6 +734,10 @@
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
       "choice.mtn.headline.playful",
+      "choice.pch.book_answers_everything.defiant",
+      "choice.pch.book_answers_everything.direct",
+      "choice.pch.book_answers_everything.patient",
+      "choice.pch.book_answers_everything.playful",
       "choice.pch.borrowing_argument.defiant",
       "choice.pch.borrowing_argument.direct",
       "choice.pch.borrowing_argument.patient",
@@ -1073,6 +1085,13 @@
       "dlg.mtn.headline.aya.patient",
       "dlg.mtn.headline.aya.photo_origin",
       "dlg.mtn.headline.aya.playful",
+      "dlg.pch.book_answers_everything.after",
+      "dlg.pch.book_answers_everything.defiant",
+      "dlg.pch.book_answers_everything.direct",
+      "dlg.pch.book_answers_everything.offer",
+      "dlg.pch.book_answers_everything.patient",
+      "dlg.pch.book_answers_everything.playful",
+      "dlg.pch.book_answers_everything.problem",
       "dlg.pch.borrowing_argument.after",
       "dlg.pch.borrowing_argument.defiant",
       "dlg.pch.borrowing_argument.direct",
@@ -1204,6 +1223,7 @@
       "event.mrs.shelf_marked_later.title",
       "event.mrs.talent_bad_conversation.title",
       "event.mtn.tomorrows_headline.title",
+      "event.pch.book_answers_everything.title",
       "event.pch.borrowing_argument.title",
       "event.pch.library_breathing_room.title",
       "event.pch.question_worth_asking.title",
@@ -1328,6 +1348,8 @@
       "journal.mrs.talent_bad_conversation.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
+      "journal.pch.book_answers_everything.body",
+      "journal.pch.book_answers_everything.title",
       "journal.pch.borrowing_argument.body",
       "journal.pch.borrowing_argument.title",
       "journal.pch.library_breathing_room.body",
@@ -1389,6 +1411,7 @@
       "obj.mrs.shelf.wait",
       "obj.mrs.talent.stop_comparison",
       "obj.mtn.trace_tomorrows_photo",
+      "obj.pch.book_answers_everything.choose",
       "obj.pch.borrowing_argument.choose",
       "obj.pch.library_breathing_room.choose",
       "obj.pch.question_worth_asking.choose",
@@ -4289,6 +4312,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.pch.book_answers_everything.after",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.after",
+      "target": "dlg.pch.book_answers_everything.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.defiant",
+      "target": "dlg.pch.book_answers_everything.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.direct",
+      "target": "dlg.pch.book_answers_everything.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.offer",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.offer",
+      "target": "dlg.pch.book_answers_everything.offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.patient",
+      "target": "dlg.pch.book_answers_everything.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.playful",
+      "target": "dlg.pch.book_answers_everything.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.problem",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.book_answers_everything.problem",
+      "target": "dlg.pch.book_answers_everything.problem",
+      "kind": "localization"
+    },
+    {
       "source": "beat.pch.borrowing_argument.after",
       "target": "char.patchouli_knowledge",
       "kind": "speaker"
@@ -5966,6 +6059,26 @@
     {
       "source": "choice.mtn.headline.boundary",
       "target": "choice.mtn.headline.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.book_answers_everything.response",
+      "target": "choice.pch.book_answers_everything.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.book_answers_everything.response",
+      "target": "choice.pch.book_answers_everything.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.book_answers_everything.response",
+      "target": "choice.pch.book_answers_everything.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.book_answers_everything.response",
+      "target": "choice.pch.book_answers_everything.playful",
       "kind": "localization"
     },
     {
@@ -15341,6 +15454,221 @@
     {
       "source": "evt.mtn.tomorrows_headline",
       "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n001",
+      "target": "evt.pch.book_answers_everything.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n001",
+      "target": "mus_patchouli_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n002",
+      "target": "evt.pch.book_answers_everything.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n002",
+      "target": "obj.pch.book_answers_everything.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n002",
+      "target": "prop.pch.blank_last_folios",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n002",
+      "target": "prop.pch.complete_future_volume",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n003",
+      "target": "beat.pch.book_answers_everything.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n003",
+      "target": "evt.pch.book_answers_everything.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n004",
+      "target": "beat.pch.book_answers_everything.problem",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n004",
+      "target": "evt.pch.book_answers_everything.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n005",
+      "target": "choice.pch.book_answers_everything.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n005",
+      "target": "evt.pch.book_answers_everything.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n005",
+      "target": "evt.pch.book_answers_everything.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n005",
+      "target": "evt.pch.book_answers_everything.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n005",
+      "target": "evt.pch.book_answers_everything.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_after",
+      "target": "beat.pch.book_answers_everything.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_after",
+      "target": "evt.pch.book_answers_everything.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_defiant_line",
+      "target": "beat.pch.book_answers_everything.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_defiant_line",
+      "target": "evt.pch.book_answers_everything.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_defiant",
+      "target": "evt.pch.book_answers_everything.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_direct_line",
+      "target": "beat.pch.book_answers_everything.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_direct_line",
+      "target": "evt.pch.book_answers_everything.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_direct",
+      "target": "evt.pch.book_answers_everything.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_effects",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_effects",
+      "target": "evt.pch.book_answers_everything.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_journal",
+      "target": "evt.pch.book_answers_everything.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_journal",
+      "target": "journal.pch.book_answers_everything",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_patient_line",
+      "target": "beat.pch.book_answers_everything.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_patient_line",
+      "target": "evt.pch.book_answers_everything.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_patient",
+      "target": "evt.pch.book_answers_everything.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_playful_line",
+      "target": "beat.pch.book_answers_everything.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_playful_line",
+      "target": "evt.pch.book_answers_everything.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.book_answers_everything.node.n_playful",
+      "target": "evt.pch.book_answers_everything.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.book_answers_everything",
+      "target": "char.patchouli_knowledge",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.pch.book_answers_everything",
+      "target": "char.patchouli_knowledge",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pch.book_answers_everything",
+      "target": "event.pch.book_answers_everything.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.book_answers_everything",
+      "target": "evt.pch.book_answers_everything",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.pch.book_answers_everything",
+      "target": "loc.scarlet_devil_mansion.answering_stacks",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.pch.book_answers_everything",
+      "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },
     {
