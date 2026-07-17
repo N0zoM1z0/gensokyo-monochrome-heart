@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "59f7b1c699c03bbda621843367f6d93319760ff5ba6989cf54c87dfba94fcb7d",
+  "content_hash": "08cfd3a6b9f3a5feb4e2f44f0f8686cb23c05299da37c3fe7906ae75463a767c",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 94,
-    "dialogue_beats": 621,
-    "localization": 1862,
+    "events": 95,
+    "dialogue_beats": 636,
+    "localization": 1885,
     "music_cues": 89,
-    "event_nodes": 1502
+    "event_nodes": 1528
   },
   "ids": {
     "characters": [
@@ -127,6 +127,7 @@
       "evt.ein.shortcut_seller",
       "evt.eir.clinic_triage",
       "evt.eir.do_not_volunteer",
+      "evt.eir.doctor_sleeps",
       "evt.eir.practical_care",
       "evt.fin.borders_back",
       "evt.fin.margin_of_error",
@@ -337,6 +338,21 @@
       "beat.eir.do_not_volunteer.playful",
       "beat.eir.do_not_volunteer.reisen_close",
       "beat.eir.do_not_volunteer.stop",
+      "beat.eir.doctor_sleeps.archive",
+      "beat.eir.doctor_sleeps.audit",
+      "beat.eir.doctor_sleeps.choose_rest",
+      "beat.eir.doctor_sleeps.defiant",
+      "beat.eir.doctor_sleeps.direct",
+      "beat.eir.doctor_sleeps.patient",
+      "beat.eir.doctor_sleeps.person",
+      "beat.eir.doctor_sleeps.plan",
+      "beat.eir.doctor_sleeps.player_action",
+      "beat.eir.doctor_sleeps.playful",
+      "beat.eir.doctor_sleeps.quiet",
+      "beat.eir.doctor_sleeps.record",
+      "beat.eir.doctor_sleeps.roster",
+      "beat.eir.doctor_sleeps.routine",
+      "beat.eir.doctor_sleeps.wake",
       "beat.eir.practical_care.after",
       "beat.eir.practical_care.assist",
       "beat.eir.practical_care.clear",
@@ -902,6 +918,10 @@
       "choice.eir.do_not_volunteer.direct",
       "choice.eir.do_not_volunteer.patient",
       "choice.eir.do_not_volunteer.playful",
+      "choice.eir.doctor_sleeps.defiant",
+      "choice.eir.doctor_sleeps.direct",
+      "choice.eir.doctor_sleeps.patient",
+      "choice.eir.doctor_sleeps.playful",
       "choice.eir.practical_care.defiant",
       "choice.eir.practical_care.direct",
       "choice.eir.practical_care.patient",
@@ -1274,6 +1294,21 @@
       "dlg.eir.do_not_volunteer.playful",
       "dlg.eir.do_not_volunteer.reisen_close",
       "dlg.eir.do_not_volunteer.stop",
+      "dlg.eir.doctor_sleeps.archive",
+      "dlg.eir.doctor_sleeps.audit",
+      "dlg.eir.doctor_sleeps.choose_rest",
+      "dlg.eir.doctor_sleeps.defiant",
+      "dlg.eir.doctor_sleeps.direct",
+      "dlg.eir.doctor_sleeps.patient",
+      "dlg.eir.doctor_sleeps.person",
+      "dlg.eir.doctor_sleeps.plan",
+      "dlg.eir.doctor_sleeps.player_action",
+      "dlg.eir.doctor_sleeps.playful",
+      "dlg.eir.doctor_sleeps.quiet",
+      "dlg.eir.doctor_sleeps.record",
+      "dlg.eir.doctor_sleeps.roster",
+      "dlg.eir.doctor_sleeps.routine",
+      "dlg.eir.doctor_sleeps.wake",
       "dlg.eir.practical_care.after",
       "dlg.eir.practical_care.assist",
       "dlg.eir.practical_care.clear",
@@ -1778,6 +1813,7 @@
       "event.ein.short_lived_guest.title",
       "event.eir.clinic_triage.title",
       "event.eir.do_not_volunteer.title",
+      "event.eir.doctor_sleeps.title",
       "event.eir.practical_care.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -1899,6 +1935,8 @@
       "journal.eir.clinic_triage.title",
       "journal.eir.do_not_volunteer.body",
       "journal.eir.do_not_volunteer.title",
+      "journal.eir.doctor_sleeps.body",
+      "journal.eir.doctor_sleeps.title",
       "journal.eir.practical_care.body",
       "journal.eir.practical_care.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -2075,6 +2113,7 @@
       "obj.ein.short_lived_guest.choose",
       "obj.eir.clinic_triage.separate",
       "obj.eir.do_not_volunteer.withdraw",
+      "obj.eir.doctor_sleeps.handoff",
       "obj.eir.practical_care.balance",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
@@ -4120,6 +4159,156 @@
     {
       "source": "beat.eir.do_not_volunteer.stop",
       "target": "dlg.eir.do_not_volunteer.stop",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.archive",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.archive",
+      "target": "dlg.eir.doctor_sleeps.archive",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.audit",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.audit",
+      "target": "dlg.eir.doctor_sleeps.audit",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.choose_rest",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.choose_rest",
+      "target": "dlg.eir.doctor_sleeps.choose_rest",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.defiant",
+      "target": "dlg.eir.doctor_sleeps.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.direct",
+      "target": "dlg.eir.doctor_sleeps.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.patient",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.patient",
+      "target": "dlg.eir.doctor_sleeps.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.person",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.person",
+      "target": "dlg.eir.doctor_sleeps.person",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.plan",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.plan",
+      "target": "dlg.eir.doctor_sleeps.plan",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.player_action",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.player_action",
+      "target": "dlg.eir.doctor_sleeps.player_action",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.playful",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.playful",
+      "target": "dlg.eir.doctor_sleeps.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.quiet",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.quiet",
+      "target": "dlg.eir.doctor_sleeps.quiet",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.record",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.record",
+      "target": "dlg.eir.doctor_sleeps.record",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.roster",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.roster",
+      "target": "dlg.eir.doctor_sleeps.roster",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.routine",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.routine",
+      "target": "dlg.eir.doctor_sleeps.routine",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.wake",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.doctor_sleeps.wake",
+      "target": "dlg.eir.doctor_sleeps.wake",
       "kind": "localization"
     },
     {
@@ -9350,6 +9539,26 @@
     {
       "source": "choice.eir.do_not_volunteer.response",
       "target": "choice.eir.do_not_volunteer.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.doctor_sleeps.response",
+      "target": "choice.eir.doctor_sleeps.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.doctor_sleeps.response",
+      "target": "choice.eir.doctor_sleeps.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.doctor_sleeps.response",
+      "target": "choice.eir.doctor_sleeps.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.doctor_sleeps.response",
+      "target": "choice.eir.doctor_sleeps.playful",
       "kind": "localization"
     },
     {
@@ -14644,6 +14853,336 @@
     },
     {
       "source": "evt.eir.do_not_volunteer",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n001",
+      "target": "evt.eir.doctor_sleeps.node.n_plan",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n001",
+      "target": "mus_eirin_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_archive",
+      "target": "beat.eir.doctor_sleeps.archive",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_archive",
+      "target": "evt.eir.doctor_sleeps.node.n_quiet",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_audit",
+      "target": "beat.eir.doctor_sleeps.audit",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_audit",
+      "target": "evt.eir.doctor_sleeps.node.n_choose_rest",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_choice",
+      "target": "choice.eir.doctor_sleeps.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_choice",
+      "target": "evt.eir.doctor_sleeps.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_choice",
+      "target": "evt.eir.doctor_sleeps.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_choice",
+      "target": "evt.eir.doctor_sleeps.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_choice",
+      "target": "evt.eir.doctor_sleeps.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_choose_rest",
+      "target": "beat.eir.doctor_sleeps.choose_rest",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_choose_rest",
+      "target": "evt.eir.doctor_sleeps.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_defiant_line",
+      "target": "beat.eir.doctor_sleeps.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_defiant_line",
+      "target": "evt.eir.doctor_sleeps.node.n_routine",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_defiant",
+      "target": "evt.eir.doctor_sleeps.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_direct_line",
+      "target": "beat.eir.doctor_sleeps.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_direct_line",
+      "target": "evt.eir.doctor_sleeps.node.n_routine",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_direct",
+      "target": "evt.eir.doctor_sleeps.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_effects",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_effects",
+      "target": "evt.eir.doctor_sleeps.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_journal",
+      "target": "evt.eir.doctor_sleeps.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_journal",
+      "target": "journal.eir.doctor_sleeps",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_objective",
+      "target": "evt.eir.doctor_sleeps.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_objective",
+      "target": "obj.eir.doctor_sleeps.handoff",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_objective",
+      "target": "prop.eir.clinic_handoff_ledger",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_objective",
+      "target": "prop.eir.completed_rest_sandglass",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_objective",
+      "target": "prop.eir.kaguya_morning_correspondence_tray",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_objective",
+      "target": "prop.eir.rest_threshold_door_card",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_patient_line",
+      "target": "beat.eir.doctor_sleeps.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_patient_line",
+      "target": "evt.eir.doctor_sleeps.node.n_routine",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_patient",
+      "target": "evt.eir.doctor_sleeps.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_person",
+      "target": "beat.eir.doctor_sleeps.person",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_person",
+      "target": "evt.eir.doctor_sleeps.node.n_record",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_plan",
+      "target": "beat.eir.doctor_sleeps.plan",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_plan",
+      "target": "evt.eir.doctor_sleeps.node.n_roster",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_player_action",
+      "target": "beat.eir.doctor_sleeps.player_action",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_player_action",
+      "target": "evt.eir.doctor_sleeps.node.n_player_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_player_effects",
+      "target": "evt.eir.doctor_sleeps.node.n_archive",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_playful_line",
+      "target": "beat.eir.doctor_sleeps.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_playful_line",
+      "target": "evt.eir.doctor_sleeps.node.n_routine",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_playful",
+      "target": "evt.eir.doctor_sleeps.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_quiet",
+      "target": "beat.eir.doctor_sleeps.quiet",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_quiet",
+      "target": "evt.eir.doctor_sleeps.node.n_wake",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_record",
+      "target": "beat.eir.doctor_sleeps.record",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_record",
+      "target": "evt.eir.doctor_sleeps.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_roster",
+      "target": "beat.eir.doctor_sleeps.roster",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_roster",
+      "target": "evt.eir.doctor_sleeps.node.n_audit",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_routine",
+      "target": "beat.eir.doctor_sleeps.routine",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_routine",
+      "target": "evt.eir.doctor_sleeps.node.n_player_action",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_wake",
+      "target": "beat.eir.doctor_sleeps.wake",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps.node.n_wake",
+      "target": "evt.eir.doctor_sleeps.node.n_person",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "char.eirin_yagokoro",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "char.eirin_yagokoro",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "event.eir.doctor_sleeps.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "evt.eir.doctor_sleeps",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
+      "target": "loc.eientei.night_handoff_corridor",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.eir.doctor_sleeps",
       "target": "loc.eientei",
       "kind": "location"
     },
