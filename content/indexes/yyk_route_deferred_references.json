@@ -1,0 +1,35 @@
+{
+  "schema": "gmh-deferred-references-v1",
+  "references": [
+    {
+      "id": "loc.hakugyokurou.banquet_veranda",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A veranda table makes fan cues, shared servings, and protected conversational space visible."
+    },
+    {
+      "id": "prop.yyk.fan_cue_cards",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Fan cue cards teach the difference between inviting a story, serving a course, and respecting a stopped boundary."
+    },
+    {
+      "id": "prop.yyk.shared_serving_tray",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A shared tray makes Youmu's finite kitchen cadence and Yuyuko's hosting responsibility actionable."
+    },
+    {
+      "id": "mini.yyk.bottomless_banquet",
+      "kind": "minigame",
+      "target_milestone": "M14",
+      "reason": "The banquet handoff balances stories and courses with clear, assisted, and loss-continuing returns."
+    },
+    {
+      "id": "journal.yyk.bottomless_banquet",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The opening observation records appetite as hosting intelligence rather than a single food-vacuum joke."
+    }
+  ]
+}
