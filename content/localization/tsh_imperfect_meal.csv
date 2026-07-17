@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.tsh.imperfect_meal.notice,objective,,Notice the chipped bowl, scorched rice edge, and market note before answering Tenshi.,天子へ答える前に、欠けた椀、焦げたご飯の縁、市場のメモを見る。,208,Original
+event.tsh.imperfect_meal.title,event_title,,An Imperfect Meal on the Ground,地上の不完全な食事,208,Original
+choice.tsh.imperfect_meal.direct,choice,,Say that a precise preference is different from contempt for the meal.,食事への軽蔑と、正確な好みは違うと言う。,248,Original
+choice.tsh.imperfect_meal.playful,choice,,Ask whether the second crisp edge has already been declared hers.,二つ目の焦げた縁も、もう彼女のものと宣言されたのか尋ねる。,248,Original
+choice.tsh.imperfect_meal.patient,choice,,Read the market note and name the ordinary work behind the bowl.,市場のメモを読み、椀の向こうにある日常の手間を口にする。,248,Original
+choice.tsh.imperfect_meal.defiant,choice,,Refuse to call the ground a punishment just because Heaven is higher.,天界が高いからといって、地面を罰と呼ぶことを拒む。,248,Original
+dlg.tsh.imperfect_meal.meal,dialogue,char.tenshi_hinanawi,"The rice is scorched at one edge, the bowl has a chip, and the tea is too cool. I am telling you because all three are useful facts. Also, give me the crisp edge.",「ご飯は片側が焦げ、椀は欠け、茶はぬるすぎる。どれも役に立つ事実だから言っているの。あと、焦げた縁は私にちょうだい。」,248,Original
+dlg.tsh.imperfect_meal.ground,dialogue,char.tenshi_hinanawi,"I left the keystone uphill. A meal on the ground should not need an entrance, a railing, or an audience to prove it happened.",「要石は坂の上に置いてきた。地面で食べるなら、登場も欄干も、食べた証明の観客もいらないでしょう。」,248,Original
+dlg.tsh.imperfect_meal.direct,dialogue,char.tenshi_hinanawi,"Exactly. The cook deserves an honest note, not a polite lie. This one is good because the crisp edge survived the pan, not because I am pretending the tea improved.",「その通り。作った人には、丁寧な嘘ではなく正直な感想を渡すべきよ。これは焦げた縁が鍋を生き延びたからおいしいのであって、茶が良くなったふりをするからじゃない。」,248,Original
+dlg.tsh.imperfect_meal.playful,dialogue,char.tenshi_hinanawi,"Declared? Secured. There is a difference. You may have the other piece if you can stop looking at it like a treaty clause.",「宣言じゃなく、確保よ。違いがあるでしょう。条約の条文みたいに見つめるのをやめられるなら、もう一つはあげてもいい。」,248,Original
+dlg.tsh.imperfect_meal.patient,dialogue,char.tenshi_hinanawi,"They wrote down which stall still had rice after the rain and who carried the bowls up the path. That makes the chip part of a route, not proof the meal is beneath me.",「雨のあとも米があった店と、椀を坂まで運んだ人が書いてある。なら、この欠けは道の一部であって、食事が私より下だという証拠じゃない。」,248,Original
+dlg.tsh.imperfect_meal.defiant,dialogue,char.tenshi_hinanawi,"Fair. I came down because the ground has answers Heaven smooths away. Calling it punishment would only be another way to avoid listening.",「もっともね。天界がならして消す答えが、地面にはあるから降りてきた。罰と呼ぶのは、聞かないための別の言い方になるだけ。」,248,Original
+dlg.tsh.imperfect_meal.after,dialogue,char.tenshi_hinanawi,"Leave the chip visible after washing it. If every useful thing must become flawless before we keep it, Heaven will eat alone forever.",「洗っても、欠けは見えるままにしておいて。役に立つものを全部、残す前に完璧にしなければならないなら、天界はずっと一人で食べることになる。」,248,Original
+journal.tsh.imperfect_meal.title,journal_title,,The Crisp Edge,焦げた縁,248,Original
+journal.tsh.imperfect_meal.body,journal_body,,Tenshi criticized the meal precisely, enjoyed it transparently, and chose the ground without treating it as a demotion. The chipped bowl remained useful because its history was visible, not because anyone had made it perfect.,天子は食事を正確に批評し、隠さず楽しみ、地面を格下げ扱いせず選んだ。欠けた椀が役に立つのは、誰かが完璧にしたからではなく、来歴が見えているからだった。,248,Original

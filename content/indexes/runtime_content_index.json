@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "862de94796ed643864fb4a873779af9280bc51847a17e8ae3d6f0fc494372cd8",
+  "content_hash": "f33600c3a9bfef60e7b440d5880f4853545037aa413ff8b2dc7e52515bfa14a8",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 99,
-    "dialogue_beats": 675,
-    "localization": 1966,
+    "events": 100,
+    "dialogue_beats": 682,
+    "localization": 1981,
     "music_cues": 89,
-    "event_nodes": 1619
+    "event_nodes": 1636
   },
   "ids": {
     "characters": [
@@ -199,6 +199,7 @@
       "evt.sne.promise",
       "evt.sne.shrine_between_homes",
       "evt.tsh.entrance_tremor",
+      "evt.tsh.imperfect_meal",
       "evt.tsh.keystone_construction",
       "evt.yyk.bottomless_banquet",
       "evt.yyk.empty_plate",
@@ -825,6 +826,13 @@
       "beat.tsh.entrance_tremor.patient",
       "beat.tsh.entrance_tremor.playful",
       "beat.tsh.entrance_tremor.repair_terms",
+      "beat.tsh.imperfect_meal.after",
+      "beat.tsh.imperfect_meal.defiant",
+      "beat.tsh.imperfect_meal.direct",
+      "beat.tsh.imperfect_meal.ground",
+      "beat.tsh.imperfect_meal.meal",
+      "beat.tsh.imperfect_meal.patient",
+      "beat.tsh.imperfect_meal.playful",
       "beat.tsh.keystone_construction.after",
       "beat.tsh.keystone_construction.assist",
       "beat.tsh.keystone_construction.clear",
@@ -1193,6 +1201,10 @@
       "choice.tsh.entrance_tremor.direct",
       "choice.tsh.entrance_tremor.patient",
       "choice.tsh.entrance_tremor.playful",
+      "choice.tsh.imperfect_meal.defiant",
+      "choice.tsh.imperfect_meal.direct",
+      "choice.tsh.imperfect_meal.patient",
+      "choice.tsh.imperfect_meal.playful",
       "choice.tsh.keystone_construction.defiant",
       "choice.tsh.keystone_construction.direct",
       "choice.tsh.keystone_construction.patient",
@@ -1838,6 +1850,13 @@
       "dlg.tsh.entrance_tremor.patient",
       "dlg.tsh.entrance_tremor.playful",
       "dlg.tsh.entrance_tremor.repair_terms",
+      "dlg.tsh.imperfect_meal.after",
+      "dlg.tsh.imperfect_meal.defiant",
+      "dlg.tsh.imperfect_meal.direct",
+      "dlg.tsh.imperfect_meal.ground",
+      "dlg.tsh.imperfect_meal.meal",
+      "dlg.tsh.imperfect_meal.patient",
+      "dlg.tsh.imperfect_meal.playful",
       "dlg.tsh.keystone_construction.after",
       "dlg.tsh.keystone_construction.assist",
       "dlg.tsh.keystone_construction.clear",
@@ -1969,6 +1988,7 @@
       "event.sne.promise.title",
       "event.sne.shrine_between_homes.title",
       "event.tsh.entrance_tremor.title",
+      "event.tsh.imperfect_meal.title",
       "event.tsh.keystone_construction.title",
       "event.yyk.bottomless_banquet.title",
       "event.yyk.empty_plate.title",
@@ -2201,6 +2221,8 @@
       "journal.sne.shrine_between_homes.title",
       "journal.tsh.entrance_tremor.body",
       "journal.tsh.entrance_tremor.title",
+      "journal.tsh.imperfect_meal.body",
+      "journal.tsh.imperfect_meal.title",
       "journal.tsh.keystone_construction.body",
       "journal.tsh.keystone_construction.title",
       "journal.yyk.bottomless_banquet.body",
@@ -2289,6 +2311,7 @@
       "obj.sne.promise.choose",
       "obj.sne.shrine_between_homes.inspect",
       "obj.tsh.entrance_tremor.inspect",
+      "obj.tsh.imperfect_meal.notice",
       "obj.tsh.keystone_construction.read",
       "obj.yyk.bottomless_banquet.read_table",
       "obj.yyk.empty_plate.observe",
@@ -9116,6 +9139,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.tsh.imperfect_meal.after",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.after",
+      "target": "dlg.tsh.imperfect_meal.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.defiant",
+      "target": "dlg.tsh.imperfect_meal.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.direct",
+      "target": "dlg.tsh.imperfect_meal.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.ground",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.ground",
+      "target": "dlg.tsh.imperfect_meal.ground",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.meal",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.meal",
+      "target": "dlg.tsh.imperfect_meal.meal",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.patient",
+      "target": "dlg.tsh.imperfect_meal.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.imperfect_meal.playful",
+      "target": "dlg.tsh.imperfect_meal.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.tsh.keystone_construction.after",
       "target": "char.tenshi_hinanawi",
       "kind": "speaker"
@@ -11213,6 +11306,26 @@
     {
       "source": "choice.tsh.entrance_tremor.response",
       "target": "choice.tsh.entrance_tremor.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.imperfect_meal.response",
+      "target": "choice.tsh.imperfect_meal.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.imperfect_meal.response",
+      "target": "choice.tsh.imperfect_meal.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.imperfect_meal.response",
+      "target": "choice.tsh.imperfect_meal.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.imperfect_meal.response",
+      "target": "choice.tsh.imperfect_meal.playful",
       "kind": "localization"
     },
     {
@@ -29887,6 +30000,226 @@
     },
     {
       "source": "evt.tsh.entrance_tremor",
+      "target": "loc.heaven",
+      "kind": "location"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n001",
+      "target": "evt.tsh.imperfect_meal.node.n_meal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n001",
+      "target": "mus_tenshi_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_after",
+      "target": "beat.tsh.imperfect_meal.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_after",
+      "target": "evt.tsh.imperfect_meal.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_choice",
+      "target": "choice.tsh.imperfect_meal.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_choice",
+      "target": "evt.tsh.imperfect_meal.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_choice",
+      "target": "evt.tsh.imperfect_meal.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_choice",
+      "target": "evt.tsh.imperfect_meal.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_choice",
+      "target": "evt.tsh.imperfect_meal.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_defiant_line",
+      "target": "beat.tsh.imperfect_meal.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_defiant_line",
+      "target": "evt.tsh.imperfect_meal.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_defiant",
+      "target": "evt.tsh.imperfect_meal.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_direct_line",
+      "target": "beat.tsh.imperfect_meal.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_direct_line",
+      "target": "evt.tsh.imperfect_meal.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_direct",
+      "target": "evt.tsh.imperfect_meal.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_effects",
+      "target": "evt.tsh.imperfect_meal.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_ground",
+      "target": "beat.tsh.imperfect_meal.ground",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_ground",
+      "target": "evt.tsh.imperfect_meal.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_journal",
+      "target": "evt.tsh.imperfect_meal.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_journal",
+      "target": "journal.tsh.imperfect_meal",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_meal",
+      "target": "beat.tsh.imperfect_meal.meal",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_meal",
+      "target": "evt.tsh.imperfect_meal.node.n_ground",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_objective",
+      "target": "evt.tsh.imperfect_meal.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_objective",
+      "target": "obj.tsh.imperfect_meal.notice",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_objective",
+      "target": "prop.tsh.chipped_black_bowl",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_objective",
+      "target": "prop.tsh.folded_market_note",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_objective",
+      "target": "prop.tsh.scorched_rice_edge",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_patient_line",
+      "target": "beat.tsh.imperfect_meal.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_patient_line",
+      "target": "evt.tsh.imperfect_meal.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_patient",
+      "target": "evt.tsh.imperfect_meal.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_playful_line",
+      "target": "beat.tsh.imperfect_meal.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_playful_line",
+      "target": "evt.tsh.imperfect_meal.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal.node.n_playful",
+      "target": "evt.tsh.imperfect_meal.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal",
+      "target": "char.tenshi_hinanawi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal",
+      "target": "char.tenshi_hinanawi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal",
+      "target": "event.tsh.imperfect_meal.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal",
+      "target": "evt.tsh.imperfect_meal",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal",
+      "target": "loc.heaven.ground_level_peach_step",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.tsh.imperfect_meal",
       "target": "loc.heaven",
       "kind": "location"
     },
