@@ -20,7 +20,13 @@ func _ready() -> void:
 	input_router.set_action_candidate_resolver(_resolve_input_candidates)
 	input_router.semantic_action_pressed.connect(_on_semantic_action_pressed)
 	scene_router.route_completed.connect(_on_route_completed)
+	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	_boot.call_deferred()
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		_on_application_focus_lost()
 
 
 func _boot() -> void:
@@ -36,6 +42,15 @@ func _boot() -> void:
 
 func receive_semantic_action(action: StringName) -> void:
 	_on_semantic_action_pressed(action)
+
+
+func _on_joy_connection_changed(_device: int, connected: bool) -> void:
+	if not connected:
+		_pause_for_external_input_interruption()
+
+
+func _on_application_focus_lost() -> void:
+	_pause_for_external_input_interruption()
 
 
 func active_primary_screen() -> Node:
@@ -314,6 +329,14 @@ func _pop_focus() -> StringName:
 func _release_active_inputs() -> void:
 	for action: StringName in GameInput.ALL_ACTIONS:
 		Input.action_release(action)
+
+
+func _pause_for_external_input_interruption() -> void:
+	_release_active_inputs()
+	if scene_router == null:
+		return
+	if scene_router.current_screen_id in [&"foundation_mode", &"vertical_slice"]:
+		_open_pause()
 
 
 func _resolve_input_candidates(candidates: Array[StringName]) -> StringName:

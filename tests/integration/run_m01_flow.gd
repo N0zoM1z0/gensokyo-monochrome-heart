@@ -26,6 +26,7 @@ func _run() -> void:
 		return
 	await _verify_live_locale_route()
 	await _verify_new_profile_to_mode()
+	await _verify_external_input_interruptions()
 	await _verify_pause_modal_focus_and_resume()
 	await _verify_pause_return_to_title()
 	await _verify_continue_from_latest_save()
@@ -208,6 +209,39 @@ func _verify_pause_modal_focus_and_resume() -> void:
 		_fail("Pause did not resume after its three-frame cue")
 	if shell.active_route_id() != &"vertical_slice":
 		_fail("resume replaced the active mode instead of preserving it")
+
+
+func _verify_external_input_interruptions() -> void:
+	Input.action_press(GameInput.CONFIRM)
+	shell._on_joy_connection_changed(0, false)
+	if not shell.has_open_pause() or not paused:
+		_fail("controller disconnect did not pause an active mode")
+		return
+	if Input.is_action_pressed(GameInput.CONFIRM):
+		_fail("controller disconnect retained a pressed semantic action")
+	await _resume_external_interruption("controller reconnect")
+	shell._on_joy_connection_changed(0, true)
+	_press(GameInput.PAUSE)
+	if not shell.has_open_pause():
+		_fail("controller reconnect did not preserve semantic input handling")
+		return
+	await _resume_external_interruption("controller reconnect input")
+
+	Input.action_press(GameInput.SHOT)
+	shell._on_application_focus_lost()
+	if not shell.has_open_pause() or not paused:
+		_fail("application focus loss did not pause an active mode")
+		return
+	if Input.is_action_pressed(GameInput.SHOT):
+		_fail("application focus loss retained a pressed semantic action")
+	await _resume_external_interruption("application focus restore")
+
+
+func _resume_external_interruption(context: String) -> void:
+	shell.receive_semantic_action(GameInput.CANCEL)
+	await _wait_frames(5)
+	if shell.has_open_pause() or paused or shell.active_route_id() != &"vertical_slice":
+		_fail("%s did not resume the existing active mode" % context)
 
 
 func _verify_pause_return_to_title() -> void:
