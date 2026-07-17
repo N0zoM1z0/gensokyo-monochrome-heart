@@ -48,6 +48,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records curiosity that respects a question’s scope and the right not to answer."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.reading_alcove",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A two-seat alcove permits shared reading without requiring shared conversation."
+    },
+    {
+      "id": "prop.pch.separate_bookmarks",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Separate bookmarks show that the readers may keep different places and different books."
+    },
+    {
+      "id": "prop.pch.companion_comment_switch",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A visible switch makes disabled companion comments an authored boundary rather than missing feedback."
+    },
+    {
+      "id": "journal.pch.shared_silence_different_books",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records that quiet attention can be shared without becoming a performance."
     }
   ]
 }

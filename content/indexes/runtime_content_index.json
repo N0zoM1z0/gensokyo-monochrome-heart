@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "7671fce5a8686be5fc378f2cd3708f30bb3c0169d0007895f83c16b5205f4ea0",
+  "content_hash": "c6a59b0d5622debce3f2ca094fc3c7bf9a3c9a649b6667f385c3a8ed79e282f5",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 68,
-    "dialogue_beats": 370,
-    "localization": 1330,
+    "events": 69,
+    "dialogue_beats": 377,
+    "localization": 1345,
     "music_cues": 89,
-    "event_nodes": 903
+    "event_nodes": 920
   },
   "ids": {
     "characters": [
@@ -163,6 +163,7 @@
       "evt.mtn.tomorrows_headline",
       "evt.pch.library_breathing_room",
       "evt.pch.question_worth_asking",
+      "evt.pch.shared_silence_different_books",
       "evt.pro.phone_no_signal",
       "evt.sdm.book_written_tomorrow",
       "evt.sdm.breakable_point",
@@ -490,6 +491,13 @@
       "beat.pch.question_worth_asking.patient",
       "beat.pch.question_worth_asking.playful",
       "beat.pch.question_worth_asking.prompt",
+      "beat.pch.shared_silence_different_books.after",
+      "beat.pch.shared_silence_different_books.defiant",
+      "beat.pch.shared_silence_different_books.direct",
+      "beat.pch.shared_silence_different_books.intro",
+      "beat.pch.shared_silence_different_books.patient",
+      "beat.pch.shared_silence_different_books.playful",
+      "beat.pch.shared_silence_different_books.terms",
       "beat.sdm.consent.after",
       "beat.sdm.consent.boundary",
       "beat.sdm.consent.defiant",
@@ -707,6 +715,10 @@
       "choice.pch.question_worth_asking.direct",
       "choice.pch.question_worth_asking.patient",
       "choice.pch.question_worth_asking.playful",
+      "choice.pch.shared_silence_different_books.defiant",
+      "choice.pch.shared_silence_different_books.direct",
+      "choice.pch.shared_silence_different_books.patient",
+      "choice.pch.shared_silence_different_books.playful",
       "choice.sdm.consent.defiant",
       "choice.sdm.consent.direct",
       "choice.sdm.consent.patient",
@@ -1048,6 +1060,13 @@
       "dlg.pch.question_worth_asking.patient",
       "dlg.pch.question_worth_asking.playful",
       "dlg.pch.question_worth_asking.prompt",
+      "dlg.pch.shared_silence_different_books.after",
+      "dlg.pch.shared_silence_different_books.defiant",
+      "dlg.pch.shared_silence_different_books.direct",
+      "dlg.pch.shared_silence_different_books.intro",
+      "dlg.pch.shared_silence_different_books.patient",
+      "dlg.pch.shared_silence_different_books.playful",
+      "dlg.pch.shared_silence_different_books.terms",
       "dlg.sdm.consent.after",
       "dlg.sdm.consent.boundary",
       "dlg.sdm.consent.defiant",
@@ -1143,6 +1162,7 @@
       "event.mtn.tomorrows_headline.title",
       "event.pch.library_breathing_room.title",
       "event.pch.question_worth_asking.title",
+      "event.pch.shared_silence_different_books.title",
       "event.sdm.competence_not_consent.title",
       "event.sdm.corridor_no_dust.title",
       "event.sdm.favor_cannot_optimize.title",
@@ -1266,6 +1286,8 @@
       "journal.pch.library_breathing_room.title",
       "journal.pch.question_worth_asking.body",
       "journal.pch.question_worth_asking.title",
+      "journal.pch.shared_silence_different_books.body",
+      "journal.pch.shared_silence_different_books.title",
       "journal.sdm.competence_not_consent.body",
       "journal.sdm.competence_not_consent.title",
       "journal.sdm.corridor_no_dust.body",
@@ -1319,6 +1341,7 @@
       "obj.mtn.trace_tomorrows_photo",
       "obj.pch.library_breathing_room.choose",
       "obj.pch.question_worth_asking.choose",
+      "obj.pch.shared_silence_different_books.choose",
       "obj.sdm.competence_not_consent.ask",
       "obj.sdm.corridor_no_dust.walk_once",
       "obj.sdm.favor_cannot_optimize.choose",
@@ -4354,6 +4377,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.pch.shared_silence_different_books.after",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.after",
+      "target": "dlg.pch.shared_silence_different_books.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.defiant",
+      "target": "dlg.pch.shared_silence_different_books.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.direct",
+      "target": "dlg.pch.shared_silence_different_books.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.intro",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.intro",
+      "target": "dlg.pch.shared_silence_different_books.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.patient",
+      "target": "dlg.pch.shared_silence_different_books.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.playful",
+      "target": "dlg.pch.shared_silence_different_books.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.terms",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.shared_silence_different_books.terms",
+      "target": "dlg.pch.shared_silence_different_books.terms",
+      "kind": "localization"
+    },
+    {
       "source": "beat.sdm.consent.after",
       "target": "char.sakuya_izayoi",
       "kind": "speaker"
@@ -5691,6 +5784,26 @@
     {
       "source": "choice.pch.question_worth_asking.response",
       "target": "choice.pch.question_worth_asking.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.shared_silence_different_books.response",
+      "target": "choice.pch.shared_silence_different_books.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.shared_silence_different_books.response",
+      "target": "choice.pch.shared_silence_different_books.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.shared_silence_different_books.response",
+      "target": "choice.pch.shared_silence_different_books.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.shared_silence_different_books.response",
+      "target": "choice.pch.shared_silence_different_books.playful",
       "kind": "localization"
     },
     {
@@ -15395,6 +15508,221 @@
     },
     {
       "source": "evt.pch.question_worth_asking",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n001",
+      "target": "evt.pch.shared_silence_different_books.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n001",
+      "target": "mus_patchouli_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n002",
+      "target": "evt.pch.shared_silence_different_books.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n002",
+      "target": "obj.pch.shared_silence_different_books.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n002",
+      "target": "prop.pch.companion_comment_switch",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n002",
+      "target": "prop.pch.separate_bookmarks",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n003",
+      "target": "beat.pch.shared_silence_different_books.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n003",
+      "target": "evt.pch.shared_silence_different_books.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n004",
+      "target": "beat.pch.shared_silence_different_books.terms",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n004",
+      "target": "evt.pch.shared_silence_different_books.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n005",
+      "target": "choice.pch.shared_silence_different_books.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n005",
+      "target": "evt.pch.shared_silence_different_books.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n005",
+      "target": "evt.pch.shared_silence_different_books.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n005",
+      "target": "evt.pch.shared_silence_different_books.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n005",
+      "target": "evt.pch.shared_silence_different_books.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_after",
+      "target": "beat.pch.shared_silence_different_books.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_after",
+      "target": "evt.pch.shared_silence_different_books.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_defiant_line",
+      "target": "beat.pch.shared_silence_different_books.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_defiant_line",
+      "target": "evt.pch.shared_silence_different_books.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_defiant",
+      "target": "evt.pch.shared_silence_different_books.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_direct_line",
+      "target": "beat.pch.shared_silence_different_books.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_direct_line",
+      "target": "evt.pch.shared_silence_different_books.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_direct",
+      "target": "evt.pch.shared_silence_different_books.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_effects",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_effects",
+      "target": "evt.pch.shared_silence_different_books.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_journal",
+      "target": "evt.pch.shared_silence_different_books.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_journal",
+      "target": "journal.pch.shared_silence_different_books",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_patient_line",
+      "target": "beat.pch.shared_silence_different_books.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_patient_line",
+      "target": "evt.pch.shared_silence_different_books.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_patient",
+      "target": "evt.pch.shared_silence_different_books.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_playful_line",
+      "target": "beat.pch.shared_silence_different_books.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_playful_line",
+      "target": "evt.pch.shared_silence_different_books.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books.node.n_playful",
+      "target": "evt.pch.shared_silence_different_books.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books",
+      "target": "char.patchouli_knowledge",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books",
+      "target": "char.patchouli_knowledge",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books",
+      "target": "event.pch.shared_silence_different_books.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books",
+      "target": "evt.pch.shared_silence_different_books",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books",
+      "target": "loc.scarlet_devil_mansion.reading_alcove",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.pch.shared_silence_different_books",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },

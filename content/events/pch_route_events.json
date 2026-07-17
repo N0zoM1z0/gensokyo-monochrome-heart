@@ -36,6 +36,24 @@
         "no_knowledge_shaming",
         "question_boundary"
       ]
+    },
+    {
+      "id": "evt.pch.shared_silence_different_books",
+      "legacy_id": "EVT-PAT-03",
+      "title_en": "Shared Silence, Different Books",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.patchouli_knowledge"
+      ],
+      "primary_mode": "choice_puzzle",
+      "core_change": "silence shared without performance",
+      "status": "implemented",
+      "estimated_minutes": 13,
+      "comfort_tags": [
+        "no_timer",
+        "companion_comments_disabled",
+        "silence_respected"
+      ]
     }
   ]
 }
