@@ -397,6 +397,8 @@ run_checked "M14 Youmu Archive farewell event" env XDG_DATA_HOME="$LOG_DIR/user-
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_farewell.gd
 run_checked "M14 Youmu Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_promise.gd
+run_checked "M14 Eirin route availability and semantic finale gates" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_route_availability.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \
