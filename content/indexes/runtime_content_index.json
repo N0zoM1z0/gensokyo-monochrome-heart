@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "1f9c05069a03fc3904b6c1111ce0665e6b4ba68cb4a580e451b07e7526098217",
+  "content_hash": "b28efaa6f3205a2e889097a7acc0dabbd332d0196536a4af4179fc62e47f26ab",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 80,
-    "dialogue_beats": 471,
-    "localization": 1551,
+    "events": 81,
+    "dialogue_beats": 478,
+    "localization": 1566,
     "music_cues": 89,
-    "event_nodes": 1151
+    "event_nodes": 1168
   },
   "ids": {
     "characters": [
@@ -186,7 +186,8 @@
       "evt.sdm.missing_minute",
       "evt.sdm.promise",
       "evt.sdm.small_chair",
-      "evt.yyk.bottomless_banquet"
+      "evt.yyk.bottomless_banquet",
+      "evt.yyk.joke_about_death"
     ],
     "dialogue_beats": [
       "beat.aya.camera_down.after",
@@ -659,7 +660,14 @@
       "beat.yyk.bottomless_banquet.kitchen_terms",
       "beat.yyk.bottomless_banquet.loss",
       "beat.yyk.bottomless_banquet.patient",
-      "beat.yyk.bottomless_banquet.playful"
+      "beat.yyk.bottomless_banquet.playful",
+      "beat.yyk.joke_about_death.after",
+      "beat.yyk.joke_about_death.defiant",
+      "beat.yyk.joke_about_death.direct",
+      "beat.yyk.joke_about_death.joke",
+      "beat.yyk.joke_about_death.notice",
+      "beat.yyk.joke_about_death.patient",
+      "beat.yyk.joke_about_death.playful"
     ],
     "localization": [
       "accessibility.preset.custom",
@@ -902,6 +910,10 @@
       "choice.yyk.bottomless_banquet.direct",
       "choice.yyk.bottomless_banquet.patient",
       "choice.yyk.bottomless_banquet.playful",
+      "choice.yyk.joke_about_death.defiant",
+      "choice.yyk.joke_about_death.direct",
+      "choice.yyk.joke_about_death.patient",
+      "choice.yyk.joke_about_death.playful",
       "dlg.aya.camera_down.after",
       "dlg.aya.camera_down.defiant",
       "dlg.aya.camera_down.direct",
@@ -1373,6 +1385,13 @@
       "dlg.yyk.bottomless_banquet.loss",
       "dlg.yyk.bottomless_banquet.patient",
       "dlg.yyk.bottomless_banquet.playful",
+      "dlg.yyk.joke_about_death.after",
+      "dlg.yyk.joke_about_death.defiant",
+      "dlg.yyk.joke_about_death.direct",
+      "dlg.yyk.joke_about_death.joke",
+      "dlg.yyk.joke_about_death.notice",
+      "dlg.yyk.joke_about_death.patient",
+      "dlg.yyk.joke_about_death.playful",
       "event.aya.camera_down.title",
       "event.aya.exclusive_interview.title",
       "event.aya.hidden_folder.title",
@@ -1431,6 +1450,7 @@
       "event.sdm.promise.title",
       "event.sdm.small_chair.title",
       "event.yyk.bottomless_banquet.title",
+      "event.yyk.joke_about_death.title",
       "input.glyph.keyboard.cancel",
       "input.glyph.keyboard.confirm",
       "input.glyph.keyboard.menu",
@@ -1601,6 +1621,8 @@
       "journal.sdm.small_chair.title",
       "journal.yyk.bottomless_banquet.body",
       "journal.yyk.bottomless_banquet.title",
+      "journal.yyk.joke_about_death.body",
+      "journal.yyk.joke_about_death.title",
       "obj.aya.camera_down.wait",
       "obj.aya.exclusive_interview.mark_record",
       "obj.aya.hidden_folder.review",
@@ -1660,6 +1682,7 @@
       "obj.sdm.small_chair.enter_by_invitation",
       "obj.sdm.trace_missing_minute",
       "obj.yyk.bottomless_banquet.read_table",
+      "obj.yyk.joke_about_death.notice_protection",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
       "rumor.mtn.tomorrows_headline.withheld_correction",
       "ui.accessibility.help",
@@ -7018,6 +7041,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.yyk.joke_about_death.after",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.after",
+      "target": "dlg.yyk.joke_about_death.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.defiant",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.defiant",
+      "target": "dlg.yyk.joke_about_death.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.direct",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.direct",
+      "target": "dlg.yyk.joke_about_death.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.joke",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.joke",
+      "target": "dlg.yyk.joke_about_death.joke",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.notice",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.notice",
+      "target": "dlg.yyk.joke_about_death.notice",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.patient",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.patient",
+      "target": "dlg.yyk.joke_about_death.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.playful",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.joke_about_death.playful",
+      "target": "dlg.yyk.joke_about_death.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.aya.camera_down.response",
       "target": "choice.aya.camera_down.defiant",
       "kind": "localization"
@@ -8195,6 +8288,26 @@
     {
       "source": "choice.yyk.bottomless_banquet.response",
       "target": "choice.yyk.bottomless_banquet.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.joke_about_death.response",
+      "target": "choice.yyk.joke_about_death.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.joke_about_death.response",
+      "target": "choice.yyk.joke_about_death.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.joke_about_death.response",
+      "target": "choice.yyk.joke_about_death.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.joke_about_death.response",
+      "target": "choice.yyk.joke_about_death.playful",
       "kind": "localization"
     },
     {
@@ -22669,6 +22782,221 @@
     },
     {
       "source": "evt.yyk.bottomless_banquet",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n001",
+      "target": "evt.yyk.joke_about_death.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n001",
+      "target": "mus_yuyuko_private",
+      "kind": "music"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n002",
+      "target": "evt.yyk.joke_about_death.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n002",
+      "target": "obj.yyk.joke_about_death.notice_protection",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n002",
+      "target": "prop.yyk.screened_memorial_view",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n002",
+      "target": "prop.yyk.unread_crossing_notice",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n003",
+      "target": "beat.yyk.joke_about_death.joke",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n003",
+      "target": "evt.yyk.joke_about_death.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n004",
+      "target": "beat.yyk.joke_about_death.notice",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n004",
+      "target": "evt.yyk.joke_about_death.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n005",
+      "target": "choice.yyk.joke_about_death.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n005",
+      "target": "evt.yyk.joke_about_death.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n005",
+      "target": "evt.yyk.joke_about_death.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n005",
+      "target": "evt.yyk.joke_about_death.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n005",
+      "target": "evt.yyk.joke_about_death.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_after",
+      "target": "beat.yyk.joke_about_death.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_after",
+      "target": "evt.yyk.joke_about_death.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_defiant_line",
+      "target": "beat.yyk.joke_about_death.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_defiant_line",
+      "target": "evt.yyk.joke_about_death.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_defiant",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_defiant",
+      "target": "evt.yyk.joke_about_death.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_direct_line",
+      "target": "beat.yyk.joke_about_death.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_direct_line",
+      "target": "evt.yyk.joke_about_death.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_direct",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_direct",
+      "target": "evt.yyk.joke_about_death.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_effects",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_effects",
+      "target": "evt.yyk.joke_about_death.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_journal",
+      "target": "evt.yyk.joke_about_death.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_journal",
+      "target": "journal.yyk.joke_about_death",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_patient_line",
+      "target": "beat.yyk.joke_about_death.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_patient_line",
+      "target": "evt.yyk.joke_about_death.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_patient",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_patient",
+      "target": "evt.yyk.joke_about_death.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_playful_line",
+      "target": "beat.yyk.joke_about_death.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_playful_line",
+      "target": "evt.yyk.joke_about_death.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_playful",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.joke_about_death.node.n_playful",
+      "target": "evt.yyk.joke_about_death.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.joke_about_death",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.yyk.joke_about_death",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.yyk.joke_about_death",
+      "target": "event.yyk.joke_about_death.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.yyk.joke_about_death",
+      "target": "evt.yyk.joke_about_death",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.yyk.joke_about_death",
+      "target": "loc.hakugyokurou.new_arrival_parlor",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.yyk.joke_about_death",
       "target": "loc.hakugyokurou",
       "kind": "location"
     }

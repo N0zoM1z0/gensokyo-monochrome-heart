@@ -90,6 +90,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/rml_predestination_exhibit.json",
 	"res://content/events/rml_promise.json",
 	"res://content/events/yyk_bottomless_banquet.json",
+	"res://content/events/yyk_joke_about_death.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -149,6 +150,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/rml_predestination_exhibit.json",
 	"res://content/dialogue/rml_promise.json",
 	"res://content/dialogue/yyk_bottomless_banquet.json",
+	"res://content/dialogue/yyk_joke_about_death.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -209,6 +211,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/rml_predestination_exhibit.csv",
 	"res://content/localization/rml_promise.csv",
 	"res://content/localization/yyk_bottomless_banquet.csv",
+	"res://content/localization/yyk_joke_about_death.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -224,9 +227,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/rml_route_deferred_references.json",
 	"res://content/indexes/yyk_route_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 52
-var expected_supplemental_dialogue_count: int = 452
-var expected_supplemental_localization_count: int = 957
+var expected_supplemental_event_count: int = 53
+var expected_supplemental_dialogue_count: int = 459
+var expected_supplemental_localization_count: int = 972
 
 
 func content_paths() -> Array[String]:

@@ -30,6 +30,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The opening observation records appetite as hosting intelligence rather than a single food-vacuum joke."
+    },
+    {
+      "id": "loc.hakugyokurou.new_arrival_parlor",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A quiet parlor gives a newly arrived spirit control over when a formal crossing notice returns to view."
+    },
+    {
+      "id": "prop.yyk.unread_crossing_notice",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A true but temporarily covered notice distinguishes gentle pacing from denial."
+    },
+    {
+      "id": "prop.yyk.screened_memorial_view",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A movable screen makes protection revisable rather than a permanent decision about the spirit's mood."
+    },
+    {
+      "id": "journal.yyk.joke_about_death",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records levity that interrupts fear without trivializing death or stealing the next question."
     }
   ]
 }
