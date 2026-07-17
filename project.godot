@@ -6,7 +6,7 @@ config_version=5
 [application]
 
 config/name="Gensokyo: Monochrome Heart"
-config/version="0.1.0-rc.1"
+config/version="0.1.0"
 run/main_scene="res://src/presentation/shell/Main.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/show_image=false
@@ -37,6 +37,7 @@ window/stretch/scale_mode="integer"
 [gmh]
 
 build/channel="dev"
+build/candidate_version="0.1.0-rc.1"
 content/revision="2026.07.17.1"
 save/schema_version=2
 

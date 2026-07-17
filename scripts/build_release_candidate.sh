@@ -5,7 +5,7 @@ PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_ROOT"
 
 GODOT_BIN="${GODOT_BIN:-godot}"
-RELEASE_VERSION="$(sed -n 's/^config\/version="\(.*\)"$/\1/p' project.godot)"
+RELEASE_VERSION="$(sed -n 's/^build\/candidate_version="\(.*\)"$/\1/p' project.godot)"
 CONTENT_REVISION="$(python3 -c 'import json; print(json.load(open("content/indexes/runtime_content_index.json", encoding="utf-8"))["content_revision"])')"
 SAVE_SCHEMA="$(sed -n 's/^save\/schema_version=\([0-9][0-9]*\)$/\1/p' project.godot)"
 RELEASE_PLATFORM="${GMH_RELEASE_PLATFORM:-linux}"
