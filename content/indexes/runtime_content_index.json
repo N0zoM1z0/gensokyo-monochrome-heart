@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "af3da4546e9512f0f1109b3949bb69cccd1580ac01f6b4998adfcf3cd1a49b48",
+  "content_hash": "4f9d8126d69a1e66ae7e1710a04f78d1d1341f54d02ed66e1a135a6c5eead8e5",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 70,
-    "dialogue_beats": 384,
-    "localization": 1360,
+    "events": 71,
+    "dialogue_beats": 394,
+    "localization": 1378,
     "music_cues": 89,
-    "event_nodes": 937
+    "event_nodes": 958
   },
   "ids": {
     "characters": [
@@ -165,6 +165,7 @@
       "evt.pch.library_breathing_room",
       "evt.pch.question_worth_asking",
       "evt.pch.shared_silence_different_books",
+      "evt.pch.spell_for_two_readers",
       "evt.pro.phone_no_signal",
       "evt.sdm.book_written_tomorrow",
       "evt.sdm.breakable_point",
@@ -506,6 +507,16 @@
       "beat.pch.shared_silence_different_books.patient",
       "beat.pch.shared_silence_different_books.playful",
       "beat.pch.shared_silence_different_books.terms",
+      "beat.pch.spell_for_two_readers.after",
+      "beat.pch.spell_for_two_readers.assist",
+      "beat.pch.spell_for_two_readers.clear",
+      "beat.pch.spell_for_two_readers.defiant",
+      "beat.pch.spell_for_two_readers.direct",
+      "beat.pch.spell_for_two_readers.intro",
+      "beat.pch.spell_for_two_readers.loss",
+      "beat.pch.spell_for_two_readers.patient",
+      "beat.pch.spell_for_two_readers.playful",
+      "beat.pch.spell_for_two_readers.terms",
       "beat.sdm.consent.after",
       "beat.sdm.consent.boundary",
       "beat.sdm.consent.defiant",
@@ -731,6 +742,10 @@
       "choice.pch.shared_silence_different_books.direct",
       "choice.pch.shared_silence_different_books.patient",
       "choice.pch.shared_silence_different_books.playful",
+      "choice.pch.spell_for_two_readers.defiant",
+      "choice.pch.spell_for_two_readers.direct",
+      "choice.pch.spell_for_two_readers.patient",
+      "choice.pch.spell_for_two_readers.playful",
       "choice.sdm.consent.defiant",
       "choice.sdm.consent.direct",
       "choice.sdm.consent.patient",
@@ -1086,6 +1101,16 @@
       "dlg.pch.shared_silence_different_books.patient",
       "dlg.pch.shared_silence_different_books.playful",
       "dlg.pch.shared_silence_different_books.terms",
+      "dlg.pch.spell_for_two_readers.after",
+      "dlg.pch.spell_for_two_readers.assist",
+      "dlg.pch.spell_for_two_readers.clear",
+      "dlg.pch.spell_for_two_readers.defiant",
+      "dlg.pch.spell_for_two_readers.direct",
+      "dlg.pch.spell_for_two_readers.intro",
+      "dlg.pch.spell_for_two_readers.loss",
+      "dlg.pch.spell_for_two_readers.patient",
+      "dlg.pch.spell_for_two_readers.playful",
+      "dlg.pch.spell_for_two_readers.terms",
       "dlg.sdm.consent.after",
       "dlg.sdm.consent.boundary",
       "dlg.sdm.consent.defiant",
@@ -1183,6 +1208,7 @@
       "event.pch.library_breathing_room.title",
       "event.pch.question_worth_asking.title",
       "event.pch.shared_silence_different_books.title",
+      "event.pch.spell_for_two_readers.title",
       "event.sdm.competence_not_consent.title",
       "event.sdm.corridor_no_dust.title",
       "event.sdm.favor_cannot_optimize.title",
@@ -1310,6 +1336,8 @@
       "journal.pch.question_worth_asking.title",
       "journal.pch.shared_silence_different_books.body",
       "journal.pch.shared_silence_different_books.title",
+      "journal.pch.spell_for_two_readers.body",
+      "journal.pch.spell_for_two_readers.title",
       "journal.sdm.competence_not_consent.body",
       "journal.sdm.competence_not_consent.title",
       "journal.sdm.corridor_no_dust.body",
@@ -1365,6 +1393,7 @@
       "obj.pch.library_breathing_room.choose",
       "obj.pch.question_worth_asking.choose",
       "obj.pch.shared_silence_different_books.choose",
+      "obj.pch.spell_for_two_readers.choose",
       "obj.sdm.competence_not_consent.ask",
       "obj.sdm.corridor_no_dust.walk_once",
       "obj.sdm.favor_cannot_optimize.choose",
@@ -4540,6 +4569,106 @@
       "kind": "localization"
     },
     {
+      "source": "beat.pch.spell_for_two_readers.after",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.after",
+      "target": "dlg.pch.spell_for_two_readers.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.assist",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.assist",
+      "target": "dlg.pch.spell_for_two_readers.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.clear",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.clear",
+      "target": "dlg.pch.spell_for_two_readers.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.defiant",
+      "target": "dlg.pch.spell_for_two_readers.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.direct",
+      "target": "dlg.pch.spell_for_two_readers.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.intro",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.intro",
+      "target": "dlg.pch.spell_for_two_readers.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.loss",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.loss",
+      "target": "dlg.pch.spell_for_two_readers.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.patient",
+      "target": "dlg.pch.spell_for_two_readers.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.playful",
+      "target": "dlg.pch.spell_for_two_readers.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.terms",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.spell_for_two_readers.terms",
+      "target": "dlg.pch.spell_for_two_readers.terms",
+      "kind": "localization"
+    },
+    {
       "source": "beat.sdm.consent.after",
       "target": "char.sakuya_izayoi",
       "kind": "speaker"
@@ -5917,6 +6046,26 @@
     {
       "source": "choice.pch.shared_silence_different_books.response",
       "target": "choice.pch.shared_silence_different_books.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.spell_for_two_readers.response",
+      "target": "choice.pch.spell_for_two_readers.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.spell_for_two_readers.response",
+      "target": "choice.pch.spell_for_two_readers.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.spell_for_two_readers.response",
+      "target": "choice.pch.spell_for_two_readers.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.spell_for_two_readers.response",
+      "target": "choice.pch.spell_for_two_readers.playful",
       "kind": "localization"
     },
     {
@@ -16081,6 +16230,271 @@
     },
     {
       "source": "evt.pch.shared_silence_different_books",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n001",
+      "target": "evt.pch.spell_for_two_readers.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n001",
+      "target": "mus_patchouli_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n002",
+      "target": "evt.pch.spell_for_two_readers.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n002",
+      "target": "obj.pch.spell_for_two_readers.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n002",
+      "target": "prop.pch.abort_marker",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n002",
+      "target": "prop.pch.margin_glyph",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n003",
+      "target": "beat.pch.spell_for_two_readers.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n003",
+      "target": "evt.pch.spell_for_two_readers.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n004",
+      "target": "beat.pch.spell_for_two_readers.terms",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n004",
+      "target": "evt.pch.spell_for_two_readers.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n005",
+      "target": "choice.pch.spell_for_two_readers.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n005",
+      "target": "evt.pch.spell_for_two_readers.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n005",
+      "target": "evt.pch.spell_for_two_readers.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n005",
+      "target": "evt.pch.spell_for_two_readers.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n005",
+      "target": "evt.pch.spell_for_two_readers.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_after",
+      "target": "beat.pch.spell_for_two_readers.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_after",
+      "target": "evt.pch.spell_for_two_readers.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_assist",
+      "target": "beat.pch.spell_for_two_readers.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_assist",
+      "target": "evt.pch.spell_for_two_readers.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_clear",
+      "target": "beat.pch.spell_for_two_readers.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_clear",
+      "target": "evt.pch.spell_for_two_readers.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_defiant_line",
+      "target": "beat.pch.spell_for_two_readers.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_defiant_line",
+      "target": "evt.pch.spell_for_two_readers.node.n_margin",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_defiant",
+      "target": "evt.pch.spell_for_two_readers.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_direct_line",
+      "target": "beat.pch.spell_for_two_readers.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_direct_line",
+      "target": "evt.pch.spell_for_two_readers.node.n_margin",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_direct",
+      "target": "evt.pch.spell_for_two_readers.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_effects",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_effects",
+      "target": "evt.pch.spell_for_two_readers.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_journal",
+      "target": "evt.pch.spell_for_two_readers.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_journal",
+      "target": "journal.pch.spell_for_two_readers",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_loss",
+      "target": "beat.pch.spell_for_two_readers.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_loss",
+      "target": "evt.pch.spell_for_two_readers.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_margin",
+      "target": "evt.pch.spell_for_two_readers.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_margin",
+      "target": "evt.pch.spell_for_two_readers.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_margin",
+      "target": "evt.pch.spell_for_two_readers.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_margin",
+      "target": "mini.pch.conceptual_margin",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_patient_line",
+      "target": "beat.pch.spell_for_two_readers.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_patient_line",
+      "target": "evt.pch.spell_for_two_readers.node.n_margin",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_patient",
+      "target": "evt.pch.spell_for_two_readers.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_playful_line",
+      "target": "beat.pch.spell_for_two_readers.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_playful_line",
+      "target": "evt.pch.spell_for_two_readers.node.n_margin",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers.node.n_playful",
+      "target": "evt.pch.spell_for_two_readers.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers",
+      "target": "char.patchouli_knowledge",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers",
+      "target": "char.patchouli_knowledge",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers",
+      "target": "event.pch.spell_for_two_readers.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers",
+      "target": "evt.pch.spell_for_two_readers",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers",
+      "target": "loc.scarlet_devil_mansion.margin_dais",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.pch.spell_for_two_readers",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },

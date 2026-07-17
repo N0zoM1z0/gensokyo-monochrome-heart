@@ -1,0 +1,19 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.pch.spell_for_two_readers.choose,objective,,Choose how to hold Patchouli's conceptual margin.,パチュリーの概念的余白をどう支えるか選ぶ。,208,Original
+event.pch.spell_for_two_readers.title,event_title,,A Spell Written for Two Readers,二人の読者のための術式,208,Original
+choice.pch.spell_for_two_readers.direct,choice,,Confirm the exact boundary between her casting and your support.,彼女の詠唱と自分の支援の正確な境界を確認する。,248,Original
+choice.pch.spell_for_two_readers.playful,choice,,Promise to hold the margin without trying to become the main text.,本文になろうとせず、余白を支えると約束する。,248,Original
+choice.pch.spell_for_two_readers.patient,choice,,Match the breathing count and wait for each handoff.,呼吸の数を合わせ、合図ごとの受け渡しを待つ。,248,Original
+choice.pch.spell_for_two_readers.defiant,choice,,Refuse both taking over and being used as expendable support.,術式を奪うことも、使い捨ての支援にされることも断る。,248,Original
+dlg.pch.spell_for_two_readers.intro,dialogue,char.patchouli_knowledge,"The center is mine to cast. The outer margin needs a second reader who can hold a meaning without completing it for me.",「中心は私が詠唱する。外側の余白には、意味を私の代わりに完成させず支えられる二人目の読者が必要。」,248,Original
+dlg.pch.spell_for_two_readers.terms,dialogue,char.patchouli_knowledge,"If the margin narrows, release it. Assistance is permitted. Collapse is data. Endurance is not one of the objectives.",「余白が狭まったら放して。補助は許可する。崩壊もデータになる。耐久は目的に含まれない。」,248,Original
+dlg.pch.spell_for_two_readers.direct,dialogue,char.patchouli_knowledge,"You hold the outer definition; I transform the center. Exact roles make trust cheaper and mistakes easier to locate.",「あなたは外側の定義を支え、私は中心を変換する。役割が正確なら、信頼の負担は軽く、誤りの場所も見つけやすい。」,248,Original
+dlg.pch.spell_for_two_readers.playful,dialogue,char.patchouli_knowledge,"A margin that wants to become the text is merely an interruption with typography. Stay where you are useful.",「本文になりたがる余白は、活字をまとった中断にすぎない。役に立つ場所にいて。」,248,Original
+dlg.pch.spell_for_two_readers.patient,dialogue,char.patchouli_knowledge,"Four counts in, four counts held, then the handoff. Do not anticipate me. Attention is enough.",「四つで吸い、四つで支え、それから受け渡す。先回りしないで。注意だけで十分。」,248,Original
+dlg.pch.spell_for_two_readers.defiant,dialogue,char.patchouli_knowledge,"Correct on both points. Cooperation is neither authorship theft nor disposable labor. Keep the abort marker visible.",「どちらも正しい。協力は著者の座を奪うことでも、使い捨ての労働でもない。中止印は見えるままにして。」,248,Original
+dlg.pch.spell_for_two_readers.clear,dialogue,char.patchouli_knowledge,"Stable. You held the unresolved edge without forcing it shut. That is rarer than power.",「安定した。未解決の端を、無理に閉じず支えた。力より珍しい技術ね。」,248,Original
+dlg.pch.spell_for_two_readers.assist,dialogue,char.patchouli_knowledge,"The widened margin is still our spell. Accepting assistance changed the notation, not the authorship.",「広げた余白でも私たちの術式よ。補助を受け入れて変わったのは記法であって、誰のものかではない。」,248,Original
+dlg.pch.spell_for_two_readers.loss,dialogue,char.patchouli_knowledge,"Released safely. The center dispersed; the result did not. Mark where it narrowed and we can read the failure later.",「安全に解放できた。中心は散ったけれど、結果は消えていない。狭まった場所を印して、失敗は後で読める。」,248,Original
+dlg.pch.spell_for_two_readers.after,dialogue,char.patchouli_knowledge,"Two sets of marks, neither interchangeable. The spell now records who held which part and where it changed.",「二組の印は、どちらも取り替えられない。術式には誰がどこを支え、どこで変わったかが残った。」,248,Original
+journal.pch.spell_for_two_readers.title,journal_title,,The Held Margin,支えられた余白,248,Original
+journal.pch.spell_for_two_readers.body,journal_body,,Patchouli cast the center while the protagonist held an unfinished outer meaning. Clear, assisted, or safely released, the spell preserved distinct roles and treated every result as readable work.,パチュリーが中心を詠唱し、主人公は未完成の外側の意味を支えた。成功、補助、安全な解放のいずれでも、術式は役割の違いを残し、結果を読める成果として扱った。,248,Original

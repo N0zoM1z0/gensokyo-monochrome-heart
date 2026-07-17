@@ -73,6 +73,24 @@
         "no_caricature",
         "conflict_discussion"
       ]
+    },
+    {
+      "id": "evt.pch.spell_for_two_readers",
+      "legacy_id": "EVT-PAT-05",
+      "title_en": "A Spell Written for Two Readers",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.patchouli_knowledge"
+      ],
+      "primary_mode": "minigame",
+      "core_change": "conceptual margin held together",
+      "status": "implemented",
+      "estimated_minutes": 16,
+      "comfort_tags": [
+        "assist_clear",
+        "loss_continues",
+        "physical_limits_respected"
+      ]
     }
   ]
 }
