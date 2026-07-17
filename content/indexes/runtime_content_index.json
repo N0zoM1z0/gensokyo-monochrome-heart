@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "9be8168aa62b5efcc7d576b807a79fd6ebf6dffd209d37123852f55ab4965343",
+  "content_hash": "a16574e673978c32bc5aacf11d24f8c5418b4006ba7679c48a658690b4e7f623",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 88,
-    "dialogue_beats": 544,
-    "localization": 1706,
+    "dialogue_beats": 552,
+    "localization": 1722,
     "music_cues": 89,
-    "event_nodes": 1326
+    "event_nodes": 1345
   },
   "ids": {
     "characters": [
@@ -504,6 +504,14 @@
       "beat.mtn.headline.aya.patient",
       "beat.mtn.headline.aya.photo_origin",
       "beat.mtn.headline.aya.playful",
+      "beat.mtn.measurable_faith.after_belief",
+      "beat.mtn.measurable_faith.after_withdraw",
+      "beat.mtn.measurable_faith.defiant",
+      "beat.mtn.measurable_faith.direct",
+      "beat.mtn.measurable_faith.kanako_evidence",
+      "beat.mtn.measurable_faith.patient",
+      "beat.mtn.measurable_faith.playful",
+      "beat.mtn.measurable_faith.sanae_numbers",
       "beat.pch.book_answers_everything.after",
       "beat.pch.book_answers_everything.defiant",
       "beat.pch.book_answers_everything.direct",
@@ -899,6 +907,10 @@
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
       "choice.mtn.headline.playful",
+      "choice.mtn.measurable_faith.defiant",
+      "choice.mtn.measurable_faith.direct",
+      "choice.mtn.measurable_faith.patient",
+      "choice.mtn.measurable_faith.playful",
       "choice.pch.book_answers_everything.defiant",
       "choice.pch.book_answers_everything.direct",
       "choice.pch.book_answers_everything.patient",
@@ -1328,6 +1340,14 @@
       "dlg.mtn.headline.aya.patient",
       "dlg.mtn.headline.aya.photo_origin",
       "dlg.mtn.headline.aya.playful",
+      "dlg.mtn.measurable_faith.after_belief",
+      "dlg.mtn.measurable_faith.after_withdraw",
+      "dlg.mtn.measurable_faith.defiant",
+      "dlg.mtn.measurable_faith.direct",
+      "dlg.mtn.measurable_faith.kanako_evidence",
+      "dlg.mtn.measurable_faith.patient",
+      "dlg.mtn.measurable_faith.playful",
+      "dlg.mtn.measurable_faith.sanae_numbers",
       "dlg.pch.book_answers_everything.after",
       "dlg.pch.book_answers_everything.defiant",
       "dlg.pch.book_answers_everything.direct",
@@ -1601,6 +1621,7 @@
       "event.mrs.rescue_looks_like_race.title",
       "event.mrs.shelf_marked_later.title",
       "event.mrs.talent_bad_conversation.title",
+      "event.mtn.measurable_faith.title",
       "event.mtn.tomorrows_headline.title",
       "event.pch.book_answers_everything.title",
       "event.pch.borrowing_argument.title",
@@ -1752,6 +1773,8 @@
       "journal.mrs.shelf_marked_later.title",
       "journal.mrs.talent_bad_conversation.body",
       "journal.mrs.talent_bad_conversation.title",
+      "journal.mtn.measurable_faith.body",
+      "journal.mtn.measurable_faith.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
       "journal.pch.book_answers_everything.body",
@@ -1865,6 +1888,7 @@
       "obj.mrs.rescue.hold_cargo",
       "obj.mrs.shelf.wait",
       "obj.mrs.talent.stop_comparison",
+      "obj.mtn.measurable_faith.audit",
       "obj.mtn.trace_tomorrows_photo",
       "obj.pch.book_answers_everything.choose",
       "obj.pch.borrowing_argument.choose",
@@ -5614,6 +5638,86 @@
       "kind": "localization"
     },
     {
+      "source": "beat.mtn.measurable_faith.after_belief",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.after_belief",
+      "target": "dlg.mtn.measurable_faith.after_belief",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.after_withdraw",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.after_withdraw",
+      "target": "dlg.mtn.measurable_faith.after_withdraw",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.defiant",
+      "target": "dlg.mtn.measurable_faith.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.direct",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.direct",
+      "target": "dlg.mtn.measurable_faith.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.kanako_evidence",
+      "target": "char.kanako_yasaka",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.kanako_evidence",
+      "target": "dlg.mtn.measurable_faith.kanako_evidence",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.patient",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.patient",
+      "target": "dlg.mtn.measurable_faith.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.playful",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.playful",
+      "target": "dlg.mtn.measurable_faith.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.sanae_numbers",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.mtn.measurable_faith.sanae_numbers",
+      "target": "dlg.mtn.measurable_faith.sanae_numbers",
+      "kind": "localization"
+    },
+    {
       "source": "beat.pch.book_answers_everything.after",
       "target": "char.patchouli_knowledge",
       "kind": "speaker"
@@ -8741,6 +8845,26 @@
     {
       "source": "choice.mtn.headline.boundary",
       "target": "choice.mtn.headline.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mtn.measurable_faith.boundary",
+      "target": "choice.mtn.measurable_faith.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mtn.measurable_faith.boundary",
+      "target": "choice.mtn.measurable_faith.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mtn.measurable_faith.boundary",
+      "target": "choice.mtn.measurable_faith.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.mtn.measurable_faith.boundary",
+      "target": "choice.mtn.measurable_faith.playful",
       "kind": "localization"
     },
     {
@@ -18409,6 +18533,221 @@
       "kind": "location"
     },
     {
+      "source": "evt.mtn.measurable_faith.node.n001",
+      "target": "evt.mtn.measurable_faith.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n001",
+      "target": "mus_sanae_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n002",
+      "target": "evt.mtn.measurable_faith.node.n_boundary",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n002",
+      "target": "obj.mtn.measurable_faith.audit",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n002",
+      "target": "prop.mtn.attendance_counter",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n002",
+      "target": "prop.mtn.repeated_prayer_slips",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n002",
+      "target": "prop.mtn.unasked_witness_pair_poster",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n003",
+      "target": "beat.mtn.measurable_faith.sanae_numbers",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n003",
+      "target": "evt.mtn.measurable_faith.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n004",
+      "target": "beat.mtn.measurable_faith.kanako_evidence",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n004",
+      "target": "evt.mtn.measurable_faith.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n005",
+      "target": "choice.mtn.measurable_faith.boundary",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n005",
+      "target": "evt.mtn.measurable_faith.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n005",
+      "target": "evt.mtn.measurable_faith.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n005",
+      "target": "evt.mtn.measurable_faith.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n005",
+      "target": "evt.mtn.measurable_faith.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_after_01",
+      "target": "beat.mtn.measurable_faith.after_withdraw",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_after_01",
+      "target": "evt.mtn.measurable_faith.node.n_after_02",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_after_02",
+      "target": "beat.mtn.measurable_faith.after_belief",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_after_02",
+      "target": "evt.mtn.measurable_faith.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_boundary",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_boundary",
+      "target": "evt.mtn.measurable_faith.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_defiant_line",
+      "target": "beat.mtn.measurable_faith.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_defiant_line",
+      "target": "evt.mtn.measurable_faith.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_defiant",
+      "target": "evt.mtn.measurable_faith.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_direct_line",
+      "target": "beat.mtn.measurable_faith.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_direct_line",
+      "target": "evt.mtn.measurable_faith.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_direct",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_direct",
+      "target": "evt.mtn.measurable_faith.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_effects",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_effects",
+      "target": "evt.mtn.measurable_faith.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_journal",
+      "target": "evt.mtn.measurable_faith.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_journal",
+      "target": "journal.mtn.measurable_faith",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_patient_line",
+      "target": "beat.mtn.measurable_faith.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_patient_line",
+      "target": "evt.mtn.measurable_faith.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_patient",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_patient",
+      "target": "evt.mtn.measurable_faith.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_playful_line",
+      "target": "beat.mtn.measurable_faith.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_playful_line",
+      "target": "evt.mtn.measurable_faith.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_playful",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith.node.n_playful",
+      "target": "evt.mtn.measurable_faith.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.mtn.measurable_faith",
+      "target": "char.kanako_yasaka",
+      "kind": "cast"
+    },
+    {
       "source": "evt.mtn.measurable_faith",
       "target": "char.kanako_yasaka",
       "kind": "lead_character"
@@ -18416,7 +18755,27 @@
     {
       "source": "evt.mtn.measurable_faith",
       "target": "char.sanae_kochiya",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.mtn.measurable_faith",
+      "target": "char.sanae_kochiya",
       "kind": "lead_character"
+    },
+    {
+      "source": "evt.mtn.measurable_faith",
+      "target": "event.mtn.measurable_faith.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.mtn.measurable_faith",
+      "target": "evt.mtn.measurable_faith",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.mtn.measurable_faith",
+      "target": "loc.moriya_shrine.campaign_counting_table",
+      "kind": "spot"
     },
     {
       "source": "evt.mtn.measurable_faith",

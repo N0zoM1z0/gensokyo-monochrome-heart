@@ -216,11 +216,16 @@
         "char.sanae_kochiya",
         "char.kanako_yasaka"
       ],
-      "primary_mode": "festival_minigame",
-      "core_change": "publicity conflict",
-      "status": "planned",
-      "estimated_minutes": 18,
-      "comfort_tags": []
+      "primary_mode": "campaign_boundary_audit",
+      "core_change": "A numerically successful campaign exposes repeated slogans and an unasked publicity image; Sanae withdraws the image and accepts that attention did not prove belief.",
+      "status": "authored",
+      "estimated_minutes": 12,
+      "comfort_tags": [
+        "no_timer",
+        "conflict_continues",
+        "image_consent_required",
+        "metrics_not_belief"
+      ]
     },
     {
       "id": "evt.ein.four_dawns",
