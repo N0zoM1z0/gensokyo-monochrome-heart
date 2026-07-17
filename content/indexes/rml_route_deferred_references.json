@@ -24,6 +24,36 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The opening observation records participation in theater without compelled belief."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.mist_processional",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A crossing processional makes status-sensitive routes readable as spatial responsibilities rather than a hierarchy score."
+    },
+    {
+      "id": "prop.rml.mist_guest_markers",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Three dithered markers distinguish passage requirements without reducing guests to social value."
+    },
+    {
+      "id": "prop.rml.processional_bell",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A bell exposes the procession's timing and lets the slowest protected route set its pace."
+    },
+    {
+      "id": "mini.rml.red_mist_etiquette",
+      "kind": "minigame",
+      "target_milestone": "M14",
+      "reason": "The escort handoff supports clear, assisted clear, and loss-continuing outcomes while Mist Command reveals path intent."
+    },
+    {
+      "id": "journal.rml.red_mist_etiquette",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records ceremony serving people and Remilia retaining responsibility when a route changes."
     }
   ]
 }

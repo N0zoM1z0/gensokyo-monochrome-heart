@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "bce2998ab28481ffa6b5b969eaee86acc986d99a56fcfd5c9158a486ee97a345",
+  "content_hash": "678ea23fcfaaaa3bb4a8c3f531fde454f5e1ae52d50681489c02c328878f2db7",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 74,
-    "dialogue_beats": 414,
-    "localization": 1428,
+    "events": 75,
+    "dialogue_beats": 424,
+    "localization": 1446,
     "music_cues": 89,
-    "event_nodes": 1013
+    "event_nodes": 1034
   },
   "ids": {
     "characters": [
@@ -169,6 +169,7 @@
       "evt.pch.shared_silence_different_books",
       "evt.pch.spell_for_two_readers",
       "evt.pro.phone_no_signal",
+      "evt.rml.red_mist_etiquette",
       "evt.rml.the_audience",
       "evt.sdm.book_written_tomorrow",
       "evt.sdm.breakable_point",
@@ -533,6 +534,16 @@
       "beat.pch.spell_for_two_readers.patient",
       "beat.pch.spell_for_two_readers.playful",
       "beat.pch.spell_for_two_readers.terms",
+      "beat.rml.red_mist_etiquette.after",
+      "beat.rml.red_mist_etiquette.assist",
+      "beat.rml.red_mist_etiquette.clear",
+      "beat.rml.red_mist_etiquette.defiant",
+      "beat.rml.red_mist_etiquette.direct",
+      "beat.rml.red_mist_etiquette.intro",
+      "beat.rml.red_mist_etiquette.loss",
+      "beat.rml.red_mist_etiquette.patient",
+      "beat.rml.red_mist_etiquette.playful",
+      "beat.rml.red_mist_etiquette.rules",
       "beat.rml.the_audience.after",
       "beat.rml.the_audience.cue",
       "beat.rml.the_audience.defiant",
@@ -777,6 +788,10 @@
       "choice.pch.spell_for_two_readers.direct",
       "choice.pch.spell_for_two_readers.patient",
       "choice.pch.spell_for_two_readers.playful",
+      "choice.rml.red_mist_etiquette.defiant",
+      "choice.rml.red_mist_etiquette.direct",
+      "choice.rml.red_mist_etiquette.patient",
+      "choice.rml.red_mist_etiquette.playful",
       "choice.rml.the_audience.defiant",
       "choice.rml.the_audience.direct",
       "choice.rml.the_audience.patient",
@@ -1159,6 +1174,16 @@
       "dlg.pch.spell_for_two_readers.patient",
       "dlg.pch.spell_for_two_readers.playful",
       "dlg.pch.spell_for_two_readers.terms",
+      "dlg.rml.red_mist_etiquette.after",
+      "dlg.rml.red_mist_etiquette.assist",
+      "dlg.rml.red_mist_etiquette.clear",
+      "dlg.rml.red_mist_etiquette.defiant",
+      "dlg.rml.red_mist_etiquette.direct",
+      "dlg.rml.red_mist_etiquette.intro",
+      "dlg.rml.red_mist_etiquette.loss",
+      "dlg.rml.red_mist_etiquette.patient",
+      "dlg.rml.red_mist_etiquette.playful",
+      "dlg.rml.red_mist_etiquette.rules",
       "dlg.rml.the_audience.after",
       "dlg.rml.the_audience.cue",
       "dlg.rml.the_audience.defiant",
@@ -1266,6 +1291,7 @@
       "event.pch.question_worth_asking.title",
       "event.pch.shared_silence_different_books.title",
       "event.pch.spell_for_two_readers.title",
+      "event.rml.red_mist_etiquette.title",
       "event.rml.the_audience.title",
       "event.sdm.competence_not_consent.title",
       "event.sdm.corridor_no_dust.title",
@@ -1406,6 +1432,8 @@
       "journal.pch.shared_silence_different_books.title",
       "journal.pch.spell_for_two_readers.body",
       "journal.pch.spell_for_two_readers.title",
+      "journal.rml.red_mist_etiquette.body",
+      "journal.rml.red_mist_etiquette.title",
       "journal.rml.the_audience.body",
       "journal.rml.the_audience.title",
       "journal.sdm.competence_not_consent.body",
@@ -1466,6 +1494,7 @@
       "obj.pch.question_worth_asking.choose",
       "obj.pch.shared_silence_different_books.choose",
       "obj.pch.spell_for_two_readers.choose",
+      "obj.rml.red_mist_etiquette.read_paths",
       "obj.rml.the_audience.take_place",
       "obj.sdm.competence_not_consent.ask",
       "obj.sdm.corridor_no_dust.walk_once",
@@ -5622,6 +5651,106 @@
       "kind": "localization"
     },
     {
+      "source": "beat.rml.red_mist_etiquette.after",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.after",
+      "target": "dlg.rml.red_mist_etiquette.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.assist",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.assist",
+      "target": "dlg.rml.red_mist_etiquette.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.clear",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.clear",
+      "target": "dlg.rml.red_mist_etiquette.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.defiant",
+      "target": "dlg.rml.red_mist_etiquette.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.direct",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.direct",
+      "target": "dlg.rml.red_mist_etiquette.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.intro",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.intro",
+      "target": "dlg.rml.red_mist_etiquette.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.loss",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.loss",
+      "target": "dlg.rml.red_mist_etiquette.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.patient",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.patient",
+      "target": "dlg.rml.red_mist_etiquette.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.playful",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.playful",
+      "target": "dlg.rml.red_mist_etiquette.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.rules",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.red_mist_etiquette.rules",
+      "target": "dlg.rml.red_mist_etiquette.rules",
+      "kind": "localization"
+    },
+    {
       "source": "beat.rml.the_audience.after",
       "target": "char.remilia_scarlet",
       "kind": "speaker"
@@ -7129,6 +7258,26 @@
     {
       "source": "choice.pch.spell_for_two_readers.response",
       "target": "choice.pch.spell_for_two_readers.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.red_mist_etiquette.response",
+      "target": "choice.rml.red_mist_etiquette.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.red_mist_etiquette.response",
+      "target": "choice.rml.red_mist_etiquette.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.red_mist_etiquette.response",
+      "target": "choice.rml.red_mist_etiquette.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.red_mist_etiquette.response",
+      "target": "choice.rml.red_mist_etiquette.playful",
       "kind": "localization"
     },
     {
@@ -18039,6 +18188,271 @@
     {
       "source": "evt.pro.phone_no_signal",
       "target": "loc.outside_world",
+      "kind": "location"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n001",
+      "target": "evt.rml.red_mist_etiquette.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n001",
+      "target": "mus_remilia_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n002",
+      "target": "evt.rml.red_mist_etiquette.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n002",
+      "target": "obj.rml.red_mist_etiquette.read_paths",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n002",
+      "target": "prop.rml.mist_guest_markers",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n002",
+      "target": "prop.rml.processional_bell",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n003",
+      "target": "beat.rml.red_mist_etiquette.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n003",
+      "target": "evt.rml.red_mist_etiquette.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n004",
+      "target": "beat.rml.red_mist_etiquette.rules",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n004",
+      "target": "evt.rml.red_mist_etiquette.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n005",
+      "target": "choice.rml.red_mist_etiquette.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n005",
+      "target": "evt.rml.red_mist_etiquette.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n005",
+      "target": "evt.rml.red_mist_etiquette.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n005",
+      "target": "evt.rml.red_mist_etiquette.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n005",
+      "target": "evt.rml.red_mist_etiquette.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_after",
+      "target": "beat.rml.red_mist_etiquette.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_after",
+      "target": "evt.rml.red_mist_etiquette.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_assist",
+      "target": "beat.rml.red_mist_etiquette.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_assist",
+      "target": "evt.rml.red_mist_etiquette.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_clear",
+      "target": "beat.rml.red_mist_etiquette.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_clear",
+      "target": "evt.rml.red_mist_etiquette.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_defiant_line",
+      "target": "beat.rml.red_mist_etiquette.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_defiant_line",
+      "target": "evt.rml.red_mist_etiquette.node.n_mist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_defiant",
+      "target": "evt.rml.red_mist_etiquette.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_direct_line",
+      "target": "beat.rml.red_mist_etiquette.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_direct_line",
+      "target": "evt.rml.red_mist_etiquette.node.n_mist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_direct",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_direct",
+      "target": "evt.rml.red_mist_etiquette.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_effects",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_effects",
+      "target": "evt.rml.red_mist_etiquette.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_journal",
+      "target": "evt.rml.red_mist_etiquette.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_journal",
+      "target": "journal.rml.red_mist_etiquette",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_loss",
+      "target": "beat.rml.red_mist_etiquette.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_loss",
+      "target": "evt.rml.red_mist_etiquette.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_mist",
+      "target": "evt.rml.red_mist_etiquette.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_mist",
+      "target": "evt.rml.red_mist_etiquette.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_mist",
+      "target": "evt.rml.red_mist_etiquette.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_mist",
+      "target": "mini.rml.red_mist_etiquette",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_patient_line",
+      "target": "beat.rml.red_mist_etiquette.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_patient_line",
+      "target": "evt.rml.red_mist_etiquette.node.n_mist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_patient",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_patient",
+      "target": "evt.rml.red_mist_etiquette.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_playful_line",
+      "target": "beat.rml.red_mist_etiquette.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_playful_line",
+      "target": "evt.rml.red_mist_etiquette.node.n_mist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_playful",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette.node.n_playful",
+      "target": "evt.rml.red_mist_etiquette.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette",
+      "target": "char.remilia_scarlet",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette",
+      "target": "char.remilia_scarlet",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette",
+      "target": "event.rml.red_mist_etiquette.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette",
+      "target": "evt.rml.red_mist_etiquette",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette",
+      "target": "loc.scarlet_devil_mansion.mist_processional",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.rml.red_mist_etiquette",
+      "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },
     {

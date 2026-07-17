@@ -82,6 +82,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/pch_book_answers_everything.json",
 	"res://content/events/pch_promise.json",
 	"res://content/events/rml_the_audience.json",
+	"res://content/events/rml_red_mist_etiquette.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -134,6 +135,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/pch_book_answers_everything.json",
 	"res://content/dialogue/pch_promise.json",
 	"res://content/dialogue/rml_the_audience.json",
+	"res://content/dialogue/rml_red_mist_etiquette.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -187,6 +189,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/pch_book_answers_everything.csv",
 	"res://content/localization/pch_promise.csv",
 	"res://content/localization/rml_the_audience.csv",
+	"res://content/localization/rml_red_mist_etiquette.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -201,9 +204,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/pch_route_deferred_references.json",
 	"res://content/indexes/rml_route_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 46
-var expected_supplemental_dialogue_count: int = 395
-var expected_supplemental_localization_count: int = 834
+var expected_supplemental_event_count: int = 47
+var expected_supplemental_dialogue_count: int = 405
+var expected_supplemental_localization_count: int = 852
 
 
 func content_paths() -> Array[String]:
