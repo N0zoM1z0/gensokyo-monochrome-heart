@@ -32,9 +32,9 @@ func _expect_counts(report: ContentLoadReport, failures: Array[String]) -> void:
 		report.music_cue_count,
 		report.event_node_count,
 	]
-	var expected := [71, 19, 29, 68, 654, 89, 141]
+	var expected := [71, 19, 104, 713, 2054, 89, 1720]
 	if actual != expected:
-		failures.append("typed starter counts differ: expected %s, got %s" % [expected, actual])
+		failures.append("typed authored-package counts differ: expected %s, got %s" % [expected, actual])
 	if not report.human_readable().contains("content_hash=%s" % report.content_hash):
 		failures.append("human-readable report omitted the content hash")
 	if report.stages.size() < 10:
@@ -78,12 +78,12 @@ func _expect_queries(repository: ContentRepository, failures: Array[String]) -> 
 		failures.append("deep-route query expected 12 characters")
 	if repository.locations_by_launch_tier(&"headline").size() != 5:
 		failures.append("headline location query expected 5 records")
-	if repository.events_by_mode(&"danmaku").size() != 4:
-		failures.append("danmaku event query expected 4 records")
-	if repository.dialogue_by_speaker(&"char.reimu_hakurei").size() != 39:
-		failures.append("Reimu dialogue query expected 39 authored route beats")
-	if repository.dialogue_by_speaker(&"char.marisa_kirisame").size() != 1:
-		failures.append("Marisa dialogue query expected the duel-introduction beat")
+	if repository.events_by_mode(&"danmaku").size() != 7:
+		failures.append("danmaku event query expected 7 records")
+	if repository.dialogue_by_speaker(&"char.reimu_hakurei").size() != 81:
+		failures.append("Reimu dialogue query expected 81 authored route beats")
+	if repository.dialogue_by_speaker(&"char.marisa_kirisame").size() != 55:
+		failures.append("Marisa dialogue query expected 55 authored route beats")
 	if repository.music_by_priority(&"A").size() != 44:
 		failures.append("priority-A music query expected 44 cues")
 	if repository.music_by_section(&"system").size() != 12:
@@ -112,6 +112,20 @@ func _expect_reference_graph(repository: ContentRepository, failures: Array[Stri
 			failures.append("dependency graph edges are not deterministically sorted")
 			break
 		prior_key = edge.sort_key()
+	_expect_dependency_graph_write_contract(failures)
+
+
+func _expect_dependency_graph_write_contract(failures: Array[String]) -> void:
+	var graph := ContentDependencyGraph.new()
+	graph.add_edge(&"owner.z", &"target.a", &"reference")
+	graph.add_edge(&"owner.z", &"target.a", &"reference")
+	graph.add_edge(&"owner.a", &"target.z", &"reference")
+	if graph.node_ids() != [&"owner.a", &"owner.z", &"target.a", &"target.z"]:
+		failures.append("dependency graph node read boundary is not sorted")
+	if graph.edges().size() != 2:
+		failures.append("dependency graph did not suppress a duplicate edge")
+	elif graph.edges()[0].sort_key() > graph.edges()[1].sort_key():
+		failures.append("dependency graph edge read boundary is not sorted")
 
 
 func _expect_multiple_event_graphs(failures: Array[String]) -> void:
@@ -120,8 +134,8 @@ func _expect_multiple_event_graphs(failures: Array[String]) -> void:
 	if not report.is_success():
 		failures.append("secondary event graph failed typed loading: %s" % report.human_readable())
 		return
-	if repository.all_event_graphs().size() != 5:
-		failures.append("event graph catalog expected five records")
+	if repository.all_event_graphs().size() != 85:
+		failures.append("event graph catalog expected 85 records")
 	var quiet_day := repository.graph(&"evt.hkr.day_nothing_happens")
 	if quiet_day == null or quiet_day.location_id != &"loc.hakurei_shrine" or quiet_day.node(&"n_quiet_chore") == null:
 		failures.append("stable graph lookup did not expose The Day Nothing Happens")
@@ -134,10 +148,10 @@ func _expect_multiple_event_graphs(failures: Array[String]) -> void:
 	var mountain := repository.graph(&"evt.mtn.tomorrows_headline")
 	if mountain == null or mountain.location_id != &"loc.youkai_mountain" or mountain.node(&"n_danmaku") == null:
 		failures.append("stable graph lookup did not expose Tomorrow's Headline")
-	if report.event_node_count != 141:
-		failures.append("event node aggregate expected 141, got %d" % report.event_node_count)
+	if report.event_node_count != 1720:
+		failures.append("event node aggregate expected 1720, got %d" % report.event_node_count)
 	var parsed: Variant = JSON.parse_string(repository.runtime_index_json())
-	if not parsed is Dictionary or int(parsed.counts.event_nodes) != 141:
+	if not parsed is Dictionary or int(parsed.counts.event_nodes) != 1720:
 		failures.append("runtime index did not aggregate multiple event graphs")
 
 

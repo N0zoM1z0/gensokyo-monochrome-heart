@@ -21,8 +21,8 @@ func run() -> Array[String]:
 		elif catalog.text(required_key, &"en").is_empty() or catalog.text(required_key, &"ja").is_empty():
 			failures.append("UI localization is not bilingual for %s" % required_key)
 	var keys := catalog.keys()
-	if keys.size() != 570:
-		failures.append("expected 570 merged localization keys, got %d" % keys.size())
+	if keys.size() != 596:
+		failures.append("expected 596 merged localization keys, got %d" % keys.size())
 	if keys != catalog.keys():
 		failures.append("UI localization keys are not deterministic")
 
