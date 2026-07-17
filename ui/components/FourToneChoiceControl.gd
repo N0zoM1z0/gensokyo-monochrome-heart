@@ -48,15 +48,14 @@ func configure(
 ) -> void:
 	presenter = FourToneChoicePresenter.new(content)
 	presenter.configure(choice, next_locale, preferred_tone)
-	_uses_route_intent_labels = choice != null and choice.choice_id in [
-		&"choice.hkr.promise.intent",
-		&"choice.mrs.promise.intent",
-		&"choice.sdm.promise.intent",
-		&"choice.hgy.promise.intent",
-	]
+	_uses_route_intent_labels = choice != null and uses_route_intent_labels(choice.choice_id)
 	locale = next_locale
 	profile_id = next_profile_id
 	queue_redraw()
+
+
+static func uses_route_intent_labels(choice_id: StringName) -> bool:
+	return String(choice_id).ends_with(".promise.intent")
 
 
 func set_locale(next_locale: StringName) -> void:

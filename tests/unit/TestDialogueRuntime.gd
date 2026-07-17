@@ -16,6 +16,7 @@ func run() -> Array[String]:
 	_expect_dialogue_presenter(failures)
 	_expect_backlog_bound(failures)
 	_expect_four_tone_focus(failures)
+	_expect_route_intent_label_detection(failures)
 	_expect_safe_resonance_and_debug_views(failures)
 	return failures
 
@@ -132,6 +133,24 @@ func _expect_four_tone_focus(failures: Array[String]) -> void:
 	choice.option_for_tone(&"playful").is_available = false
 	if presenter.confirm() != &"":
 		failures.append("four-tone presenter confirmed a disabled authored option")
+
+
+func _expect_route_intent_label_detection(failures: Array[String]) -> void:
+	for choice_id: StringName in [
+		&"choice.hkr.promise.intent",
+		&"choice.aya.promise.intent",
+		&"choice.ein.promise.intent",
+		&"choice.pch.promise.intent",
+		&"choice.rml.promise.intent",
+	]:
+		if not FourToneChoiceControl.uses_route_intent_labels(choice_id):
+			failures.append("Promise choice did not request route-intent labels: %s" % choice_id)
+	for choice_id: StringName in [
+		&"choice.rml.the_audience.response",
+		&"choice.aya.promise.romance_consent",
+	]:
+		if FourToneChoiceControl.uses_route_intent_labels(choice_id):
+			failures.append("ordinary or consent choice was mislabeled as route intent: %s" % choice_id)
 
 
 func _expect_safe_resonance_and_debug_views(failures: Array[String]) -> void:
