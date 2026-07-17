@@ -341,6 +341,19 @@ run_checked "M13 Youkai Mountain save and resume matrix" env XDG_DATA_HOME="$LOG
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_mountain_save_resume_matrix.gd
 run_checked "M13 recorded-strategy Archive prototype" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m13_archive_prototype.gd
+
+# Every authored M14 integration script is a release gate. Keep this inventory
+# check adjacent to the invocations so a newly added route test cannot silently
+# remain outside normal verification.
+for M14_TEST_PATH in tests/integration/run_m14_*.gd; do
+	M14_RESOURCE="res://${M14_TEST_PATH}"
+	M14_MATCHES="$(grep -F -c "$M14_RESOURCE" scripts/verify_project.sh || true)"
+	if [[ "$M14_MATCHES" != "1" ]]; then
+		echo "M14 integration test must be registered exactly once: $M14_RESOURCE (found $M14_MATCHES)" >&2
+		exit 1
+	fi
+done
+
 run_checked "M14 Reimu Offerings Without Owners event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_offerings_event.gd
 run_checked "M14 Reimu The Day Nothing Happens event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
