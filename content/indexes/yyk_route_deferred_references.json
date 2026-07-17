@@ -132,6 +132,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records a festival changed to protect guests, Youmu, and the procession itself."
+    },
+    {
+      "id": "loc.hakugyokurou.archive_banquet_loop",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A repeating banquet table makes replenishment erase intervals, taste, and hosting choice."
+    },
+    {
+      "id": "prop.yyk.replenishing_bowl",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A bowl that refills without being asked materializes the Archive's coercive abundance."
+    },
+    {
+      "id": "prop.yyk.flavorless_last_course",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Repeated identical servings show taste becoming proof of receipt rather than a transient experience."
+    },
+    {
+      "id": "journal.yyk.feast_without_ending",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records Yuyuko ending infinite abundance herself and restoring the meaning of a last course."
     }
   ]
 }
