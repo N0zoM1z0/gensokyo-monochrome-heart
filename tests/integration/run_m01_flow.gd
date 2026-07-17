@@ -44,6 +44,7 @@ func _prepare_services() -> void:
 		settings.set_preferred_presentation_profile(&"A")
 		settings.set_reduced_motion(false)
 		settings.set_safe_flash(false)
+		settings.configure_audio_accessibility(false, false)
 	var theme := root.get_node_or_null("UiThemeRegistry")
 	if theme != null:
 		theme.set_native_profile(&"A")
@@ -96,11 +97,33 @@ func _verify_live_locale_route() -> void:
 		_fail("Options did not switch the active locale to Japanese")
 	if shell.active_primary_screen().get_instance_id() != instance_id:
 		_fail("locale switching restarted the active Options scene")
+	for _step: int in range(8):
+		_press(GameInput.MOVE_DOWN)
+	if options.call("current_focus_id") != &"options.mono_audio":
+		_fail("Options did not expose Mono Audio at its stable focus ID")
+	options.call("arm_input_for_test")
+	_press(GameInput.CONFIRM)
+	_press(GameInput.MOVE_DOWN)
+	if options.call("current_focus_id") != &"options.low_dynamic_range":
+		_fail("Options did not expose Low Dynamic Range at its stable focus ID")
+	options.call("arm_input_for_test")
+	_press(GameInput.CONFIRM)
+	var settings := root.get_node_or_null("SettingsService")
+	if settings == null or not settings.is_mono_audio or not settings.is_low_dynamic_range:
+		_fail("Options did not apply live mono and low-dynamic audio settings")
+	else:
+		var config := ConfigFile.new()
+		if config.load(SettingsService.CONFIG_PATH) != OK:
+			_fail("Options did not persist its live audio settings")
+		elif not bool(config.get_value("audio", "mono", false)) or not bool(config.get_value("audio", "low_dynamic_range", false)):
+			_fail("persisted audio accessibility values did not match the live Options state")
 	_press(GameInput.CANCEL)
 	if not await _wait_for_route(&"title"):
 		return
 	if localization != null and localization.locale != &"en":
 		_fail("Options cancel did not restore its opening locale")
+	if settings != null and (settings.is_mono_audio or settings.is_low_dynamic_range):
+		_fail("Options cancel did not restore its opening audio mix")
 
 
 func _verify_new_profile_to_mode() -> void:
@@ -148,6 +171,12 @@ func _verify_new_profile_to_mode() -> void:
 		_fail("controller input did not preserve the active controller glyph family")
 	if shell.active_primary_screen().process_mode != Node.PROCESS_MODE_PAUSABLE:
 		_fail("ModeHost content would continue processing while the tree is paused")
+	var slice := shell.active_primary_screen() as VerticalSliceMode
+	if settings != null and slice != null:
+		settings.configure_audio_accessibility(true, true)
+		if not slice.music_player.is_mono_audio or not slice.music_player.is_low_dynamic_range:
+			_fail("live audio settings did not propagate to the active production music director")
+		settings.configure_audio_accessibility(false, false)
 
 
 func _verify_pause_modal_focus_and_resume() -> void:

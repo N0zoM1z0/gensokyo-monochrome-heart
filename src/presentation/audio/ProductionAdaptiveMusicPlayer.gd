@@ -89,6 +89,8 @@ var transition_count: int = 0
 var family_restart_count: int = 0
 var is_muted: bool = false
 var is_dialogue_ducked: bool = false
+var is_mono_audio: bool = false
+var is_low_dynamic_range: bool = false
 var volume_db: float = AudioMixPolicy.MUSIC_DB
 
 var _players: Dictionary[StringName, AudioStreamPlayer] = {}
@@ -96,6 +98,7 @@ var _players: Dictionary[StringName, AudioStreamPlayer] = {}
 
 func _ready() -> void:
 	_ensure_players()
+	_connect_audio_settings()
 	_update_mix()
 	set_process(true)
 
@@ -123,6 +126,12 @@ func set_music_muted(enabled: bool) -> void:
 
 func set_dialogue_ducked(enabled: bool) -> void:
 	is_dialogue_ducked = enabled
+	_update_mix()
+
+
+func set_audio_accessibility(mono_enabled: bool, low_dynamic_enabled: bool) -> void:
+	is_mono_audio = mono_enabled
+	is_low_dynamic_range = low_dynamic_enabled
 	_update_mix()
 
 
@@ -230,13 +239,34 @@ func _load_family(family_id: StringName) -> void:
 
 
 func _update_mix() -> void:
-	volume_db = SILENT_DB if is_muted else AudioMixPolicy.music_gain_db(is_dialogue_ducked)
+	volume_db = SILENT_DB if is_muted else AudioMixPolicy.music_gain_db(
+		is_dialogue_ducked,
+		is_low_dynamic_range
+	)
 	if _players.is_empty():
 		return
 	var profile := mix_profile_for_state(current_state_id)
 	var offsets: Dictionary = ROLE_OFFSETS[profile]
 	for role: StringName in STEM_ROLES:
-		_players[role].volume_db = SILENT_DB if is_muted else volume_db + float(offsets[role])
+		_players[role].volume_db = SILENT_DB if is_muted else volume_db + AudioMixPolicy.music_stem_offset_db(
+			float(offsets[role]),
+			is_low_dynamic_range
+		)
+
+
+func _connect_audio_settings() -> void:
+	var settings := get_node_or_null("/root/SettingsService")
+	if settings == null:
+		return
+	set_audio_accessibility(settings.is_mono_audio, settings.is_low_dynamic_range)
+	if not settings.audio_settings_changed.is_connected(_on_audio_settings_changed):
+		settings.audio_settings_changed.connect(_on_audio_settings_changed)
+
+
+func _on_audio_settings_changed() -> void:
+	var settings := get_node_or_null("/root/SettingsService")
+	if settings != null:
+		set_audio_accessibility(settings.is_mono_audio, settings.is_low_dynamic_range)
 
 
 func _exit_tree() -> void:

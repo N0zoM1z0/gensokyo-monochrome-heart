@@ -2,8 +2,8 @@
 
 Date: 2026-07-17  
 Decision: the listed original files are approved as production audio inputs;
-the first runtime adaptive-playback and bounded-SFX integration is implemented,
-while user-facing mix accessibility and full campaign cue coverage remain open.
+runtime adaptive playback, bounded SFX, and user-facing mix accessibility are
+implemented, while listener sign-off and full campaign cue coverage remain open.
 
 ## Authorship and rights
 
@@ -42,9 +42,14 @@ and SFX use explicit buses in `default_bus_layout.tres`.
 Detailed evidence is recorded in
 `docs/reviews/m16_production_audio_runtime_review.md`.
 
+The follow-up accessibility pass adds a persistent Master-bus mono downmix,
+low-dynamic compressor, compact stem/SFX gain matrices, and bilingual Options
+controls. Its technical and simulated-player evidence is recorded in
+`docs/reviews/m16_audio_accessibility_review.md`.
+
 ## Blocking remainder
 
-M16 still needs user-facing mono and low-dynamic-range controls, listener review
-of the production mix, and deliberate production-family mapping for campaign
-regions outside the five headline families. This file approval therefore does
-not by itself close the complete M16 audio gate.
+M16 still needs listener review of the production mix on real speakers and
+headphones, plus deliberate production-family mapping for campaign regions
+outside the five headline families. This file approval therefore does not by
+itself close the complete M16 audio gate.

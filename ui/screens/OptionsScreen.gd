@@ -1,6 +1,6 @@
 class_name OptionsScreen
 extends UiScreenBase
-## Live EN/JA, profile, motion, and flash preview with cancel-to-restore semantics.
+## Live presentation, comfort, input, and audio preview with cancel-to-restore semantics.
 
 const TOGGLE_SCENE := preload("res://ui/components/toggle.tscn")
 const PROFILE_IDS: Array[StringName] = [&"A", &"B", &"C", &"D"]
@@ -22,6 +22,8 @@ var _opening_ui_scale_percent: int = 100
 var _opening_reduce_needles: bool = false
 var _opening_replace_alcohol: bool = false
 var _opening_soften_coercion: bool = false
+var _opening_mono_audio: bool = false
+var _opening_low_dynamic_range: bool = false
 var _current_profile: StringName = &"A"
 var _current_reduced_motion: bool = false
 var _current_safe_flash: bool = false
@@ -30,11 +32,15 @@ var _current_ui_scale_percent: int = 100
 var _current_reduce_needles: bool = false
 var _current_replace_alcohol: bool = false
 var _current_soften_coercion: bool = false
+var _current_mono_audio: bool = false
+var _current_low_dynamic_range: bool = false
 var _low_motion_toggle: PixelToggle
 var _safe_flash_toggle: PixelToggle
 var _needles_toggle: PixelToggle
 var _alcohol_toggle: PixelToggle
 var _coercion_toggle: PixelToggle
+var _mono_toggle: PixelToggle
+var _low_dynamic_toggle: PixelToggle
 var _visible_first: int = 0
 var _visible_count: int = 0
 
@@ -55,6 +61,8 @@ func _build_screen() -> void:
 	_opening_reduce_needles = accessibility.reduce_needles if accessibility != null else false
 	_opening_replace_alcohol = accessibility.replace_alcohol if accessibility != null else false
 	_opening_soften_coercion = accessibility.soften_coercion if accessibility != null else false
+	_opening_mono_audio = settings.is_mono_audio if settings != null else false
+	_opening_low_dynamic_range = settings.is_low_dynamic_range if settings != null else false
 	_current_profile = _opening_profile
 	_current_reduced_motion = _opening_reduced_motion
 	_current_safe_flash = _opening_safe_flash
@@ -63,6 +71,8 @@ func _build_screen() -> void:
 	_current_reduce_needles = _opening_reduce_needles
 	_current_replace_alcohol = _opening_replace_alcohol
 	_current_soften_coercion = _opening_soften_coercion
+	_current_mono_audio = _opening_mono_audio
+	_current_low_dynamic_range = _opening_low_dynamic_range
 	_add_frame(Rect2(8, 8, 304, 164))
 	_add_row(&"ui.options.language", &"language", &"options.language", Rect2(16, 29, 288, 15))
 	_add_row(&"ui.options.profile", &"profile", &"options.profile", Rect2(16, 45, 288, 15))
@@ -72,13 +82,17 @@ func _build_screen() -> void:
 	_add_row(&"ui.options.comfort.needles", &"comfort_needles", &"options.comfort_needles", Rect2(16, 109, 288, 15))
 	_add_row(&"ui.options.comfort.alcohol", &"comfort_alcohol", &"options.comfort_alcohol", Rect2(16, 125, 288, 15))
 	_add_row(&"ui.options.comfort.coercion", &"comfort_coercion", &"options.comfort_coercion", Rect2(16, 141, 288, 15))
-	_add_row(&"ui.options.one_handed", &"one_handed", &"options.one_handed", Rect2(16, 157, 288, 15))
-	_add_row(&"ui.options.back", &"options_apply", &"options.back", Rect2(16, 173, 288, 15))
+	_add_row(&"ui.options.mono_audio", &"mono_audio", &"options.mono_audio", Rect2(16, 157, 288, 15))
+	_add_row(&"ui.options.low_dynamic_range", &"low_dynamic_range", &"options.low_dynamic_range", Rect2(16, 173, 288, 15))
+	_add_row(&"ui.options.one_handed", &"one_handed", &"options.one_handed", Rect2(16, 189, 288, 15))
+	_add_row(&"ui.options.back", &"options_apply", &"options.back", Rect2(16, 205, 288, 15))
 	_low_motion_toggle = _add_toggle(Vector2(268, 79))
 	_safe_flash_toggle = _add_toggle(Vector2(268, 95))
 	_needles_toggle = _add_toggle(Vector2(268, 111))
 	_alcohol_toggle = _add_toggle(Vector2(268, 127))
 	_coercion_toggle = _add_toggle(Vector2(268, 143))
+	_mono_toggle = _add_toggle(Vector2(268, 159))
+	_low_dynamic_toggle = _add_toggle(Vector2(268, 175))
 	_add_action_hint(GameInput.CONFIRM, &"ui.common.confirm", Rect2(16, 159, 92, 12))
 	_add_action_hint(GameInput.CANCEL, &"ui.common.cancel", Rect2(210, 159, 94, 12))
 
@@ -97,6 +111,10 @@ func _on_fixture_configured() -> void:
 	_current_reduce_needles = false
 	_current_replace_alcohol = false
 	_current_soften_coercion = false
+	_opening_mono_audio = false
+	_opening_low_dynamic_range = false
+	_current_mono_audio = false
+	_current_low_dynamic_range = false
 	_opening_one_handed_preset = InputMapInstaller.OneHandedPreset.NONE
 	_current_one_handed_preset = InputMapInstaller.OneHandedPreset.NONE
 	_opening_ui_scale_percent = _fixture_ui_scale_percent
@@ -113,6 +131,14 @@ func set_ui_scale_fixture(percent: int) -> void:
 func set_one_handed_fixture(preset: int) -> void:
 	_opening_one_handed_preset = clampi(preset, InputMapInstaller.OneHandedPreset.NONE, InputMapInstaller.OneHandedPreset.RIGHT_HAND)
 	_current_one_handed_preset = _opening_one_handed_preset
+	_refresh_screen()
+
+
+func set_audio_fixture(mono_enabled: bool, low_dynamic_enabled: bool) -> void:
+	_opening_mono_audio = mono_enabled
+	_opening_low_dynamic_range = low_dynamic_enabled
+	_current_mono_audio = mono_enabled
+	_current_low_dynamic_range = low_dynamic_enabled
 	_refresh_screen()
 
 
@@ -137,6 +163,10 @@ func _adjust_current(direction: int) -> bool:
 			_apply_comfort_filter(AccessibilityState.COMFORT_ALCOHOL, not _current_replace_alcohol)
 		&"comfort_coercion":
 			_apply_comfort_filter(AccessibilityState.COMFORT_COERCION, not _current_soften_coercion)
+		&"mono_audio":
+			_apply_mono_audio(not _current_mono_audio)
+		&"low_dynamic_range":
+			_apply_low_dynamic_range(not _current_low_dynamic_range)
 		&"one_handed":
 			_apply_one_handed(wrapi(_current_one_handed_preset + direction, 0, 3))
 		_:
@@ -158,7 +188,7 @@ func _handle_cancel() -> void:
 
 func _refresh_screen() -> void:
 	super._refresh_screen()
-	if rows.size() < 10:
+	if rows.size() < 12:
 		return
 	rows[0].set_value_key(&"ui.language.japanese" if active_locale() == &"ja" else &"ui.language.english")
 	var profile_index := maxi(0, PROFILE_IDS.find(_current_profile))
@@ -169,7 +199,9 @@ func _refresh_screen() -> void:
 	rows[5].set_value_key(&"ui.common.on" if _current_reduce_needles else &"ui.common.off")
 	rows[6].set_value_key(&"ui.common.on" if _current_replace_alcohol else &"ui.common.off")
 	rows[7].set_value_key(&"ui.common.on" if _current_soften_coercion else &"ui.common.off")
-	rows[8].set_value_key([
+	rows[8].set_value_key(&"ui.common.on" if _current_mono_audio else &"ui.common.off")
+	rows[9].set_value_key(&"ui.common.on" if _current_low_dynamic_range else &"ui.common.off")
+	rows[10].set_value_key([
 		&"ui.options.one_handed.off",
 		&"ui.options.one_handed.left",
 		&"ui.options.one_handed.right",
@@ -185,6 +217,10 @@ func _refresh_screen() -> void:
 		_alcohol_toggle.set_value(_current_replace_alcohol, _active_profile_id())
 	if _coercion_toggle != null:
 		_coercion_toggle.set_value(_current_soften_coercion, _active_profile_id())
+	if _mono_toggle != null:
+		_mono_toggle.set_value(_current_mono_audio, _active_profile_id())
+	if _low_dynamic_toggle != null:
+		_low_dynamic_toggle.set_value(_current_low_dynamic_range, _active_profile_id())
 
 
 func _draw_screen(profile: PresentationProfile) -> void:
@@ -298,6 +334,24 @@ func _apply_one_handed(next_preset: int) -> void:
 	_refresh_screen()
 
 
+func _apply_mono_audio(enabled: bool) -> void:
+	_current_mono_audio = enabled
+	if not _fixture_mode:
+		var settings := get_node_or_null("/root/SettingsService")
+		if settings != null:
+			settings.configure_audio_accessibility(_current_mono_audio, _current_low_dynamic_range)
+	_refresh_screen()
+
+
+func _apply_low_dynamic_range(enabled: bool) -> void:
+	_current_low_dynamic_range = enabled
+	if not _fixture_mode:
+		var settings := get_node_or_null("/root/SettingsService")
+		if settings != null:
+			settings.configure_audio_accessibility(_current_mono_audio, _current_low_dynamic_range)
+	_refresh_screen()
+
+
 func _apply_ui_scale(next_percent: int) -> void:
 	_current_ui_scale_percent = UI_SCALE_POLICY.normalize(next_percent)
 	if _fixture_mode:
@@ -316,7 +370,7 @@ func _focus_changed(_row: ListRow) -> void:
 
 
 func _apply_scale_layout() -> void:
-	if rows.size() < 10:
+	if rows.size() < 12:
 		return
 	var percent := ui_scale_percent()
 	var visible_count := 7 if percent == 100 else (4 if percent == 125 else 3)
@@ -337,6 +391,8 @@ func _apply_scale_layout() -> void:
 	_position_toggle(_needles_toggle, 5)
 	_position_toggle(_alcohol_toggle, 6)
 	_position_toggle(_coercion_toggle, 7)
+	_position_toggle(_mono_toggle, 8)
+	_position_toggle(_low_dynamic_toggle, 9)
 	if action_hints.size() >= 2:
 		if percent == 100:
 			action_hints[0].position = Vector2(16, 157)
@@ -373,6 +429,8 @@ func _restore_opening_values() -> void:
 		_current_replace_alcohol = _opening_replace_alcohol
 		_current_soften_coercion = _opening_soften_coercion
 		_current_one_handed_preset = _opening_one_handed_preset
+		_current_mono_audio = _opening_mono_audio
+		_current_low_dynamic_range = _opening_low_dynamic_range
 		_fixture_ui_scale_percent = _opening_ui_scale_percent
 		_current_ui_scale_percent = _opening_ui_scale_percent
 		_refresh_screen()
@@ -383,6 +441,7 @@ func _restore_opening_values() -> void:
 	var settings := get_node_or_null("/root/SettingsService")
 	if settings != null:
 		settings.set_preferred_presentation_profile(_opening_profile)
+		settings.configure_audio_accessibility(_opening_mono_audio, _opening_low_dynamic_range)
 	var registry := get_node_or_null("/root/UiThemeRegistry")
 	if registry != null:
 		registry.set_native_profile(_opening_profile)
@@ -407,5 +466,7 @@ func _restore_opening_values() -> void:
 	_current_replace_alcohol = _opening_replace_alcohol
 	_current_soften_coercion = _opening_soften_coercion
 	_current_one_handed_preset = _opening_one_handed_preset
+	_current_mono_audio = _opening_mono_audio
+	_current_low_dynamic_range = _opening_low_dynamic_range
 	_current_ui_scale_percent = _opening_ui_scale_percent
 	_refresh_screen()

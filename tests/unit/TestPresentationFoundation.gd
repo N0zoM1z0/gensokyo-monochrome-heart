@@ -71,8 +71,34 @@ func _validate_settings_invariance(failures: Array[String]) -> void:
 		settings.resolve_profile(profile_id)
 	settings.set_reduced_motion(true)
 	settings.set_safe_flash(true)
+	settings.configure_audio_accessibility(true, true, false)
 	if InputMap.get_actions() != actions_before:
-		failures.append("presentation settings changed the input action contract")
+		failures.append("presentation or audio settings changed the input action contract")
 	if not settings.is_reduced_motion or not settings.is_safe_flash:
 		failures.append("accessibility presentation settings did not persist")
+	if not settings.is_mono_audio or not settings.is_low_dynamic_range:
+		failures.append("audio accessibility settings did not retain the selected modes")
+	var master_bus := AudioServer.get_bus_index(&"Master")
+	if master_bus < 0 or AudioServer.get_bus_effect_count(master_bus) < 2:
+		failures.append("Master bus omitted the mono and low-dynamic processors")
+	else:
+		var mono_effect := AudioServer.get_bus_effect(master_bus, 0) as AudioEffectStereoEnhance
+		var compact_effect := AudioServer.get_bus_effect(master_bus, 1) as AudioEffectCompressor
+		if mono_effect == null:
+			failures.append("mono mode is not backed by a stereo-collapse processor")
+		elif not is_zero_approx(mono_effect.pan_pullout):
+			failures.append("mono processor did not collapse stereo panning to center")
+		if compact_effect == null:
+			failures.append("low-dynamic mode is not backed by a peak compressor")
+		elif not is_equal_approx(compact_effect.threshold, -14.0) or not is_equal_approx(compact_effect.ratio, 3.0):
+			failures.append("low-dynamic compressor drifted from its reviewed threshold or ratio")
+		if not AudioServer.is_bus_effect_enabled(master_bus, 0):
+			failures.append("mono mode did not enable the Master downmix effect")
+		if not AudioServer.is_bus_effect_enabled(master_bus, 1):
+			failures.append("low-dynamic mode did not enable the Master compressor")
+	var normal_span := AudioMixPolicy.gain_db(AudioMixPolicy.Role.DIALOGUE_WARNING) - AudioMixPolicy.gain_db(AudioMixPolicy.Role.AMBIENCE)
+	var compact_span := AudioMixPolicy.gain_db(AudioMixPolicy.Role.DIALOGUE_WARNING, &"", true) - AudioMixPolicy.gain_db(AudioMixPolicy.Role.AMBIENCE, &"", true)
+	if compact_span >= normal_span:
+		failures.append("low-dynamic mix did not reduce the warning-to-ambience gain span")
+	settings.configure_audio_accessibility(false, false, false)
 	settings.free()

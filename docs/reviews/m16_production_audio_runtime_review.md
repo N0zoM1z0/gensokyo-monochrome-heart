@@ -1,8 +1,8 @@
 # M16 Production Audio Runtime Integration Review
 
 Date: 2026-07-17
-Decision: PASS for the first production playback slice; M16 audio remains open
-for mix accessibility, listener review, and non-headline campaign coverage.
+Decision: PASS for production playback and its follow-up mix-accessibility
+slice; M16 audio remains open for listener review and non-headline coverage.
 
 ## Runtime contract
 
@@ -44,11 +44,17 @@ for mix accessibility, listener review, and non-headline campaign coverage.
 - The M09 playable vertical-slice integration passes with zero failures after
   replacing its generated tone player and using the production bar duration.
 
+## Accessibility update
+
+Persistent Mono Audio and Low Dynamic Range controls now apply live through
+`SettingsService`, the Master bus, and both production players. Exact behavior,
+UI review, and cancellation/persistence evidence is recorded in
+`docs/reviews/m16_audio_accessibility_review.md`.
+
 ## Remaining gate
 
-The next audio slice must add persistent mono and low-dynamic-range controls and
-apply them to both players. A listener review must then judge audibility,
-fatigue, ducking, cue priority, and the balance of all five stem families on a
-real audio driver. Remaining campaign regions need new approved production
-families or an explicitly reviewed fallback policy; they must not be silently
-mapped to unrelated headline-region music.
+A listener review must judge audibility, fatigue, ducking, cue priority, and the
+balance of all five stem families on a real audio driver. Remaining campaign
+regions need new approved production families or an explicitly reviewed
+fallback policy; they must not be silently mapped to unrelated headline-region
+music.

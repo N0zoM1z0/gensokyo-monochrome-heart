@@ -13,6 +13,8 @@ func run() -> Array[String]:
 	for required_key: StringName in [
 		&"ui.title.new_profile",
 		&"ui.options.language",
+		&"ui.options.mono_audio",
+		&"ui.options.low_dynamic_range",
 		&"ui.pause.resume",
 		&"ui.accessibility.title",
 	]:
@@ -21,8 +23,8 @@ func run() -> Array[String]:
 		elif catalog.text(required_key, &"en").is_empty() or catalog.text(required_key, &"ja").is_empty():
 			failures.append("UI localization is not bilingual for %s" % required_key)
 	var keys := catalog.keys()
-	if keys.size() != 603:
-		failures.append("expected 603 merged localization keys, got %d" % keys.size())
+	if keys.size() != 605:
+		failures.append("expected 605 merged localization keys, got %d" % keys.size())
 	if keys != catalog.keys():
 		failures.append("UI localization keys are not deterministic")
 

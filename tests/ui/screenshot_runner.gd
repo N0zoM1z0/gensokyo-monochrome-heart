@@ -39,6 +39,7 @@ func _run() -> void:
 		)
 	_apply_ui_scale_fixture(fixture, options.ui_scale_percent)
 	_apply_one_handed_fixture(fixture, options.one_handed)
+	_apply_audio_fixture(fixture, options.is_mono_audio, options.is_low_dynamic_range)
 	if options.focus_id != &"" and fixture.has_method("restore_focus"):
 		fixture.call("restore_focus", options.focus_id)
 	if options.semantic_action != &"" and fixture.has_method("handle_semantic_action"):
@@ -148,6 +149,14 @@ func _apply_one_handed_fixture(node: Node, preset_name: String) -> void:
 		_apply_one_handed_fixture(child, preset_name)
 
 
+func _apply_audio_fixture(node: Node, mono_enabled: bool, low_dynamic_enabled: bool) -> void:
+	if node.has_method("set_audio_fixture"):
+		node.call("set_audio_fixture", mono_enabled, low_dynamic_enabled)
+		return
+	for child: Node in node.get_children():
+		_apply_audio_fixture(child, mono_enabled, low_dynamic_enabled)
+
+
 func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:
 	var options := ScreenshotOptions.new()
 	for argument: String in arguments:
@@ -173,6 +182,10 @@ func _parse_options(arguments: PackedStringArray) -> ScreenshotOptions:
 			options.ui_scale_percent = UI_SCALE_POLICY.normalize(int(argument.trim_prefix("--ui-scale=")))
 		elif argument.begins_with("--focus-id="):
 			options.focus_id = StringName(argument.trim_prefix("--focus-id="))
+		elif argument == "--mono-audio":
+			options.is_mono_audio = true
+		elif argument == "--low-dynamic-range":
+			options.is_low_dynamic_range = true
 		elif argument.begins_with("--semantic-action="):
 			options.semantic_action = StringName(argument.trim_prefix("--semantic-action="))
 	return options
@@ -195,6 +208,8 @@ class ScreenshotOptions:
 	var is_safe_flash: bool = false
 	var input_device: String = "keyboard"
 	var one_handed: String = "off"
+	var is_mono_audio: bool = false
+	var is_low_dynamic_range: bool = false
 	var ui_scale_percent: int = 100
 	var focus_id: StringName = &""
 	var semantic_action: StringName = &""

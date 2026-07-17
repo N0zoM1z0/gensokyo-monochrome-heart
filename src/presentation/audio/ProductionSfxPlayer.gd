@@ -24,11 +24,20 @@ var last_visual_key: StringName
 var last_resolved_asset_id: StringName
 var last_volume_db: float = AudioMixPolicy.ROLE_DB[AudioMixPolicy.Role.GAMEPLAY]
 var steal_count: int = 0
+var is_mono_audio: bool = false
+var is_low_dynamic_range: bool = false
 
 var _pools: Dictionary[StringName, Array] = {}
 var _streams: Dictionary[StringName, AudioStream] = {}
 var _voice_serials: Dictionary[int, int] = {}
+var _voice_busy_until_msec: Dictionary[int, int] = {}
+var _voice_assets: Dictionary[int, StringName] = {}
+var _voice_roles: Dictionary[int, AudioMixPolicy.Role] = {}
 var _serial: int = 0
+
+
+func _ready() -> void:
+	_connect_audio_settings()
 
 
 func play_cue(cue: AudioCueIntent) -> void:
@@ -37,17 +46,22 @@ func play_cue(cue: AudioCueIntent) -> void:
 	last_cue_id = cue.cue_id
 	last_visual_key = cue.visual_key
 	last_resolved_asset_id = resolve_asset_id(cue.cue_id)
-	last_volume_db = AudioMixPolicy.gain_db(cue.role, last_resolved_asset_id)
+	last_volume_db = AudioMixPolicy.gain_db(cue.role, last_resolved_asset_id, is_low_dynamic_range)
 	var definition: Dictionary = ASSETS[last_resolved_asset_id]
 	var family_id: StringName = definition.family
-	var voice := _select_voice(family_id, int(definition.cap))
 	if not _streams.has(last_resolved_asset_id):
 		_streams[last_resolved_asset_id] = ResourceLoader.load(String(definition.path)) as AudioStream
+	var voice := _select_voice(family_id, int(definition.cap))
 	voice.stop()
 	voice.stream = _streams[last_resolved_asset_id]
 	voice.volume_db = last_volume_db
 	_serial += 1
-	_voice_serials[voice.get_instance_id()] = _serial
+	var voice_id := voice.get_instance_id()
+	_voice_serials[voice_id] = _serial
+	var stream_seconds := maxf(0.05, voice.stream.get_length() if voice.stream != null else 0.05)
+	_voice_busy_until_msec[voice_id] = Time.get_ticks_msec() + ceili(stream_seconds * 1000.0)
+	_voice_assets[voice_id] = last_resolved_asset_id
+	_voice_roles[voice_id] = cue.role
 	if DisplayServer.get_name() != "headless" and AudioServer.get_driver_name() != "Dummy" and voice.stream != null:
 		voice.play()
 	cue_played.emit(cue.cue_id, cue.visual_key)
@@ -55,6 +69,24 @@ func play_cue(cue: AudioCueIntent) -> void:
 
 func voice_count_for_family(family_id: StringName) -> int:
 	return _pools.get(family_id, []).size()
+
+
+func set_audio_accessibility(mono_enabled: bool, low_dynamic_enabled: bool) -> void:
+	is_mono_audio = mono_enabled
+	is_low_dynamic_range = low_dynamic_enabled
+	for pool: Array in _pools.values():
+		for voice: AudioStreamPlayer in pool:
+			var voice_id := voice.get_instance_id()
+			var asset_id: StringName = _voice_assets.get(voice_id, &"")
+			var role: AudioMixPolicy.Role = _voice_roles.get(voice_id, AudioMixPolicy.Role.AUTO)
+			if asset_id != &"":
+				voice.volume_db = AudioMixPolicy.gain_db(role, asset_id, is_low_dynamic_range)
+	if last_resolved_asset_id != &"":
+		last_volume_db = AudioMixPolicy.gain_db(
+			_voice_roles.get(_last_voice_id(), AudioMixPolicy.Role.AUTO),
+			last_resolved_asset_id,
+			is_low_dynamic_range
+		)
 
 
 static func asset_path(asset_id: StringName) -> String:
@@ -90,8 +122,9 @@ func _select_voice(family_id: StringName, cap: int) -> AudioStreamPlayer:
 	if not _pools.has(family_id):
 		_pools[family_id] = []
 	var pool: Array = _pools[family_id]
+	var now_msec := Time.get_ticks_msec()
 	for candidate: AudioStreamPlayer in pool:
-		if not candidate.playing:
+		if not candidate.playing and int(_voice_busy_until_msec.get(candidate.get_instance_id(), 0)) <= now_msec:
 			return candidate
 	if pool.size() < cap:
 		var created := AudioStreamPlayer.new()
@@ -111,6 +144,32 @@ func _select_voice(family_id: StringName, cap: int) -> AudioStreamPlayer:
 	return oldest
 
 
+func _connect_audio_settings() -> void:
+	var settings := get_node_or_null("/root/SettingsService")
+	if settings == null:
+		return
+	set_audio_accessibility(settings.is_mono_audio, settings.is_low_dynamic_range)
+	if not settings.audio_settings_changed.is_connected(_on_audio_settings_changed):
+		settings.audio_settings_changed.connect(_on_audio_settings_changed)
+
+
+func _on_audio_settings_changed() -> void:
+	var settings := get_node_or_null("/root/SettingsService")
+	if settings != null:
+		set_audio_accessibility(settings.is_mono_audio, settings.is_low_dynamic_range)
+
+
+func _last_voice_id() -> int:
+	var newest_id := 0
+	var newest_serial := -1
+	for voice_id: int in _voice_serials:
+		var serial := _voice_serials[voice_id]
+		if serial > newest_serial:
+			newest_id = voice_id
+			newest_serial = serial
+	return newest_id
+
+
 func _exit_tree() -> void:
 	for pool: Array in _pools.values():
 		for voice: AudioStreamPlayer in pool:
@@ -119,3 +178,6 @@ func _exit_tree() -> void:
 	_pools.clear()
 	_streams.clear()
 	_voice_serials.clear()
+	_voice_busy_until_msec.clear()
+	_voice_assets.clear()
+	_voice_roles.clear()

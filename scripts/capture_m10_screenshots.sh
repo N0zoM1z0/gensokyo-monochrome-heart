@@ -37,6 +37,8 @@ capture m10_title_page2_150_d_ja res://ui/screens/title_screen.tscn D ja --focus
 capture m10_options_150_a_en res://ui/screens/options_screen.tscn A en
 capture m10_options_page2_150_d_ja res://ui/screens/options_screen.tscn D ja --focus-id=options.one_handed
 capture m10_options_comfort_150_a_en res://ui/screens/options_screen.tscn A en --focus-id=options.comfort_coercion
+capture m10_options_mono_150_a_en res://ui/screens/options_screen.tscn A en --focus-id=options.mono_audio --mono-audio
+capture m10_options_low_dynamic_150_d_ja res://ui/screens/options_screen.tscn D ja --focus-id=options.low_dynamic_range --low-dynamic-range
 capture m10_options_left_hand_150_a_en res://ui/screens/options_screen.tscn A en --focus-id=options.one_handed --one-handed=left
 capture m10_options_right_hand_controller_150_d_ja res://ui/screens/options_screen.tscn D ja --focus-id=options.one_handed --one-handed=right --input-device=controller
 capture m10_accessibility_150_a_ja res://ui/screens/accessibility_screen.tscn A ja

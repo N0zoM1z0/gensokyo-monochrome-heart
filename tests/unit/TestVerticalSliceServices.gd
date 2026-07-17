@@ -51,6 +51,12 @@ func _expect_production_adaptive_music(failures: Array[String]) -> void:
 	player.set_dialogue_ducked(false)
 	if player.volume_db != AudioMixPolicy.MUSIC_DB:
 		failures.append("music did not return to its reviewed base gain after dialogue")
+	var normal_quiet_stem := player.stem_volume_db(&"place")
+	player.set_audio_accessibility(true, true)
+	if not player.is_mono_audio or not player.is_low_dynamic_range:
+		failures.append("production music director did not accept audio accessibility settings")
+	if player.stem_volume_db(&"place") <= normal_quiet_stem:
+		failures.append("low-dynamic music mix did not lift the quiet stem toward the active stem")
 	if not player.request_state(&"mus_sdm_foyer"):
 		failures.append("production music director rejected a reviewed mansion state")
 	player.advance_for_test(player.current_bar_seconds())
@@ -77,6 +83,18 @@ func _expect_production_sfx(failures: Array[String]) -> void:
 		failures.append("fighter impact did not resolve to the production combat impact")
 	if player.voice_count_for_family(&"impact") != 1:
 		failures.append("production impact family did not allocate a bounded voice pool")
+	var normal_impact_db := player.last_volume_db
+	player.set_audio_accessibility(true, true)
+	if not player.is_mono_audio or not player.is_low_dynamic_range:
+		failures.append("production SFX player did not accept audio accessibility settings")
+	if player.last_volume_db == normal_impact_db:
+		failures.append("low-dynamic SFX mode did not apply the compact role-gain matrix")
+	for _repeat: int in range(4):
+		player.play_cue(impact)
+	if player.voice_count_for_family(&"impact") != 4:
+		failures.append("production impact family did not stop at its reviewed four-voice cap")
+	if player.steal_count != 1:
+		failures.append("saturated production SFX family did not steal exactly its oldest voice")
 	if ProductionSfxPlayer.resolve_asset_id(&"sfx.danmaku.graze") != &"sfx.danmaku.graze":
 		failures.append("reviewed graze cue lost its exact production identity")
 	if ProductionSfxPlayer.resolve_asset_id(&"sfx.fighter.spell_break") != &"sfx.player.damage":
@@ -109,10 +127,14 @@ func _expect_production_manifest_alignment(failures: Array[String]) -> void:
 		var kind := String(record.get("kind", ""))
 		if kind == "music_stem":
 			music_count += 1
+			if int(record.get("channels", 0)) != 1:
+				failures.append("mono-safe music source is not single-channel: %s" % record.path)
 			if not registered_music_paths.has(String(record.path)):
 				failures.append("production music manifest path is absent from the director: %s" % record.path)
 		elif kind == "sfx":
 			sfx_count += 1
+			if int(record.get("channels", 0)) != 1:
+				failures.append("mono-safe SFX source is not single-channel: %s" % record.path)
 			var asset_id := StringName(record.id)
 			if not ProductionSfxPlayer.ASSETS.has(asset_id):
 				failures.append("production SFX manifest ID is absent from the runtime: %s" % asset_id)

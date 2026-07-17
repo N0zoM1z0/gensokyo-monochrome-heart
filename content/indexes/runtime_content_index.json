@@ -1,13 +1,13 @@
 {
   "schema": "gmh-runtime-content-index-v2",
   "content_revision": "2026.07.17.1",
-  "content_hash": "12c6f6a6491425aeee670b0eb0d21eb3179040f1741d3a2cc343a8a8e9f3cca2",
+  "content_hash": "f0b37b60584a34d961414c2b64af28c2a9a5a1ebead4c385e5a253def2356c15",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 104,
     "dialogue_beats": 713,
-    "localization": 2061,
+    "localization": 2063,
     "music_cues": 89,
     "event_nodes": 1720,
     "seasonal_events": 8
@@ -2894,7 +2894,9 @@
       "ui.options.comfort.needles",
       "ui.options.help",
       "ui.options.language",
+      "ui.options.low_dynamic_range",
       "ui.options.low_motion",
+      "ui.options.mono_audio",
       "ui.options.one_handed",
       "ui.options.one_handed.left",
       "ui.options.one_handed.off",
