@@ -2,6 +2,8 @@ class_name MountainSliceFixture
 extends Control
 ## QA wrapper that drives the production mountain slice to reviewed story stages.
 
+const SAVE_ROOT_BASE := "user://tests/m13_mountain_screenshot_fixture"
+
 @export_enum("invitation", "choice", "patrol", "camera_lowered", "reward", "journal")
 var fixture_phase := "invitation"
 
@@ -21,7 +23,17 @@ func _enter_tree() -> void:
 		accessibility.apply_preset(AccessibilityState.Preset.STORY, false)
 	var save_service := get_node_or_null("/root/SaveService")
 	if save_service != null:
-		save_service.configure_for_test(kernel, "user://tests/m13_mountain_screenshot_fixture")
+		save_service.configure_for_test(
+			kernel,
+			isolated_save_root(fixture_phase, OS.get_process_id())
+		)
+
+
+static func isolated_save_root(phase: String, process_id: int) -> String:
+	# Screenshot jobs may run in parallel. AtomicFileWriter intentionally uses a
+	# stable `<slot>.tmp` name, so sharing one test root across OS processes can
+	# make an otherwise valid checkpoint lose its commit race.
+	return "%s/%s/process_%d" % [SAVE_ROOT_BASE, phase, process_id]
 
 
 func configure_fixture(

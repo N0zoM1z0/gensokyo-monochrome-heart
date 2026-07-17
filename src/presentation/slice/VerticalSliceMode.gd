@@ -1082,8 +1082,9 @@ func _draw_error(foreground: Color, background: Color) -> void:
 	_draw_frame(foreground)
 	_draw_header(&"ui.slice.error.header", foreground, background)
 	_draw_wrapped(&"ui.slice.error.body", Rect2(44, 76, 232, 45), 4)
-	if BuildChannel.allows_debug_tools():
-		_draw_text(_diagnostic, Vector2(28, 142), 264, HORIZONTAL_ALIGNMENT_CENTER, 6)
+	# `_fail()` already preserves the full diagnostic in the engine log. Never
+	# expose filesystem/atomic-write details in the player-facing recovery page,
+	# including development screenshots where the text can also be truncated.
 
 
 func _draw_backlog(foreground: Color, background: Color) -> void:
