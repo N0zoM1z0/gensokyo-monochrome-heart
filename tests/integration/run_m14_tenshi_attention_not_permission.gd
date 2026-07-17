@@ -11,6 +11,7 @@ func _initialize() -> void:
 		_finish(["Tenshi Attention Is Not Permission content could not load"])
 		return
 	var graph := _content.graph(EVENT_ID)
+	_expect(_content.localized_string(&"dlg.tsh.attention_not_permission.patient").japanese.contains("私の修復を見届ける義務はない"), "Japanese boundary text no longer says the player need not witness Tenshi's repair")
 	for tone: StringName in [&"direct", &"playful", &"patient", &"defiant"]: _run(graph, tone)
 	_finish(_failures)
 

@@ -12,6 +12,7 @@ func _initialize() -> void:
 		_finish(["Tenshi Entrance Tremor content could not load"])
 		return
 	var graph := _content.graph(EVENT_ID)
+	_expect(_content.localized_string(&"choice.tsh.entrance_tremor.defiant").japanese.contains("通りがかりの人々を次の揺れの観客にする"), "Japanese boundary text no longer says bystanders cannot be made into the next tremor's audience")
 	_run(graph, &"direct", &"flag.route.tenshi.entrance.damage_named_without_rejecting_person", 0)
 	_run(graph, &"playful", &"flag.route.tenshi.entrance.announcement_not_excuse", 1)
 	_run(graph, &"patient", &"flag.route.tenshi.entrance.access_impact_heard", 2)

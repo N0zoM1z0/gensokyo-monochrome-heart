@@ -11,6 +11,8 @@ func _initialize() -> void:
 		_finish(["Tenshi Imperfect Meal content could not load"])
 		return
 	var graph := _content.graph(EVENT_ID)
+	_expect(graph.location_id == &"loc.human_village" and graph.spot_id == &"loc.human_village.market_side_step", "the ground-level meal remained staged in Heaven")
+	_expect(_content.event(EVENT_ID).location_id == &"loc.human_village", "the meal index and playable event disagree about its ground location")
 	for tone: StringName in [&"direct", &"playful", &"patient", &"defiant"]: _run(graph, tone)
 	_finish(_failures)
 
@@ -33,7 +35,7 @@ func _state(profile_id: StringName) -> GameState:
 	var state := GameStateFactory.create_new(profile_id, characters, locations, 2271)
 	state.chapter_id = &"chapter.1"
 	var dispatcher := GameCommandDispatcher.new()
-	dispatcher.dispatch(state, SetLocationCommand.new(&"loc.heaven"))
+	dispatcher.dispatch(state, SetLocationCommand.new(&"loc.human_village"))
 	dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.tsh.keystone_construction", &"n_route_predecessor"))
 	dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.tsh.keystone_construction", &"complete"))
 	return state

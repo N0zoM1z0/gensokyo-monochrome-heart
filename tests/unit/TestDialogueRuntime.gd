@@ -144,6 +144,7 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 		&"choice.rml.promise.intent",
 		&"choice.sne.promise.intent",
 		&"choice.eir.promise.intent",
+		&"choice.tsh.promise.intent",
 	]:
 		if not FourToneChoiceControl.uses_route_intent_labels(choice_id):
 			failures.append("Promise choice did not request route-intent labels: %s" % choice_id)
@@ -159,6 +160,7 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 		&"choice.sne.promise.romance_consent",
 		&"choice.ein.patient_refuses.player_test_consent",
 		&"choice.eir.promise.romance_consent",
+		&"choice.tsh.promise.romance_consent",
 	]:
 		if not FourToneChoiceControl.uses_consent_labels(choice_id):
 			failures.append("explicit consent choice did not request yes/no labels: %s" % choice_id)
@@ -175,6 +177,11 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 	control.configure(eirin_consent, _content, &"en")
 	if control.focused_tone() != &"defiant":
 		failures.append("Eirin romance consent did not default to no")
+	var tenshi_graph := _content.graph(&"evt.tsh.promise")
+	var tenshi_consent := EventChoiceResolver.new().resolve(tenshi_graph.node(&"n_romance_consent").choice, _event_state())
+	control.configure(tenshi_consent, _content, &"en")
+	if control.focused_tone() != &"defiant":
+		failures.append("Tenshi romance consent did not default to no")
 
 
 func _expect_safe_resonance_and_debug_views(failures: Array[String]) -> void:

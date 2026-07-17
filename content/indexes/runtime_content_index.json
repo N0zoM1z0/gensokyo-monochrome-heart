@@ -1,7 +1,7 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "8f8ca63a4dd068a329196902d088dc37374fc545f25c548b50bf82ccb3e6f877",
+  "content_hash": "e2e05584db067e94bd8beb1a66afa4cf650aecb29c3517d82bd4d2e5034e29eb",
   "counts": {
     "characters": 71,
     "locations": 19,
@@ -9,7 +9,7 @@
     "dialogue_beats": 713,
     "localization": 2054,
     "music_cues": 89,
-    "event_nodes": 1719
+    "event_nodes": 1720
   },
   "ids": {
     "characters": [
@@ -9688,7 +9688,7 @@
     },
     {
       "source": "beat.tsh.repair_she_finishes.discovery",
-      "target": "char.tenshi_hinanawi",
+      "target": "char.iku_nagae",
       "kind": "speaker"
     },
     {
@@ -31193,12 +31193,12 @@
     },
     {
       "source": "evt.tsh.imperfect_meal",
-      "target": "loc.heaven.ground_level_peach_step",
+      "target": "loc.human_village.market_side_step",
       "kind": "spot"
     },
     {
       "source": "evt.tsh.imperfect_meal",
-      "target": "loc.heaven",
+      "target": "loc.human_village",
       "kind": "location"
     },
     {
@@ -31768,7 +31768,7 @@
     },
     {
       "source": "evt.tsh.repair_she_finishes.node.n001",
-      "target": "evt.tsh.repair_she_finishes.node.n_discovery",
+      "target": "evt.tsh.repair_she_finishes.node.n_objective",
       "kind": "event_edge"
     },
     {
@@ -31858,7 +31858,7 @@
     },
     {
       "source": "evt.tsh.repair_she_finishes.node.n_discovery",
-      "target": "evt.tsh.repair_she_finishes.node.n_objective",
+      "target": "evt.tsh.repair_she_finishes.node.n_tenshi",
       "kind": "event_edge"
     },
     {
@@ -31883,7 +31883,7 @@
     },
     {
       "source": "evt.tsh.repair_she_finishes.node.n_objective",
-      "target": "evt.tsh.repair_she_finishes.node.n_tenshi",
+      "target": "evt.tsh.repair_she_finishes.node.n_repair_evidence",
       "kind": "event_edge"
     },
     {
@@ -31947,6 +31947,11 @@
       "kind": "event_edge"
     },
     {
+      "source": "evt.tsh.repair_she_finishes.node.n_repair_evidence",
+      "target": "evt.tsh.repair_she_finishes.node.n_discovery",
+      "kind": "event_edge"
+    },
+    {
       "source": "evt.tsh.repair_she_finishes.node.n_tenshi",
       "target": "beat.tsh.repair_she_finishes.tenshi",
       "kind": "dialogue_beat"
@@ -31955,6 +31960,11 @@
       "source": "evt.tsh.repair_she_finishes.node.n_tenshi",
       "target": "evt.tsh.repair_she_finishes.node.n_choice",
       "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.repair_she_finishes",
+      "target": "char.iku_nagae",
+      "kind": "cast"
     },
     {
       "source": "evt.tsh.repair_she_finishes",

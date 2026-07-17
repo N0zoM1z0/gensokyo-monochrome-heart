@@ -4,7 +4,7 @@ event.tsh.entrance_tremor.title,event_title,,The Entrance Tremor,登場の揺れ
 choice.tsh.entrance_tremor.direct,choice,,Name the damaged access and ask for a repair plan before the next entrance.,壊れた通路を指摘し、次の登場の前に修復計画を求める。,248,Original
 choice.tsh.entrance_tremor.playful,choice,,Call it an expensive bell and ask who is meant to hear it.,高価すぎる呼び鈴だと言い、誰に聞かせるつもりだったのか尋ねる。,248,Original
 choice.tsh.entrance_tremor.patient,choice,,Ask which ordinary trip the tremor interrupted before discussing intention.,意図を話す前に、揺れがどの日常の移動を止めたのか尋ねる。,248,Original
-choice.tsh.entrance_tremor.defiant,choice,,Say no to making bystanders into an audience for the next shock.,次の揺れの観客に、通りがかりの人々をすることは認めないと言う。,248,Original
+choice.tsh.entrance_tremor.defiant,choice,,Say no to making bystanders into an audience for the next shock.,通りがかりの人々を次の揺れの観客にすることは認めないと言う。,248,Original
 dlg.tsh.entrance_tremor.arrival,dialogue,char.tenshi_hinanawi,"There. A proper arrival should reach the clouds and the soles of everyone's feet. You looked up, so it worked.",「ほら。ちゃんとした登場なら、雲にも皆の足の裏にも届くべきよ。あなたが見上げた。成功ね。」,248,Original
 dlg.tsh.entrance_tremor.iku_damage,dialogue,char.iku_nagae,"The lower delivery path is closed by that success. The cart cannot cross the split step, and the people below did not schedule an announcement. Please address the ground as well as the sky.",「その成功のせいで、下の配達路は閉じています。車は割れた段差を越えられず、下の人々は告知を予定していませんでした。空だけでなく、地面にも対応してください。」,248,Original
 dlg.tsh.entrance_tremor.direct,dialogue,char.tenshi_hinanawi,"You are objecting to the broken path, not telling me to disappear. Fine. That is a complaint with edges. I will mark the load points before I lift anything.",「壊れた道に文句を言っているのであって、私に消えろと言っているわけではないのね。いいわ。角のある苦情だもの。持ち上げる前に、荷重点を印してあげる。」,248,Original
