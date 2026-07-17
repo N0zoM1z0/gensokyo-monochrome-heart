@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "3021cb7b271929869e7c9d617d67e36dedd96cb23f7dfc2879c315b8638ecd80",
+  "content_hash": "7e630987c1b909d950de476b6ab6a6be631f01787f724948df7a9e704da679ab",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 85,
-    "dialogue_beats": 517,
-    "localization": 1655,
+    "events": 86,
+    "dialogue_beats": 528,
+    "localization": 1674,
     "music_cues": 89,
-    "event_nodes": 1268
+    "event_nodes": 1290
   },
   "ids": {
     "characters": [
@@ -186,6 +186,7 @@
       "evt.sdm.missing_minute",
       "evt.sdm.promise",
       "evt.sdm.small_chair",
+      "evt.sne.faith_festival_planner",
       "evt.yyk.bottomless_banquet",
       "evt.yyk.empty_plate",
       "evt.yyk.feast_without_ending",
@@ -663,6 +664,17 @@
       "beat.sdm.small_chair.patient",
       "beat.sdm.small_chair.playful",
       "beat.sdm.small_chair.private_seat",
+      "beat.sne.faith_festival_planner.after",
+      "beat.sne.faith_festival_planner.assist",
+      "beat.sne.faith_festival_planner.clear",
+      "beat.sne.faith_festival_planner.defiant",
+      "beat.sne.faith_festival_planner.direct",
+      "beat.sne.faith_festival_planner.kanako_condition",
+      "beat.sne.faith_festival_planner.loss",
+      "beat.sne.faith_festival_planner.patient",
+      "beat.sne.faith_festival_planner.playful",
+      "beat.sne.faith_festival_planner.sanae_plan",
+      "beat.sne.faith_festival_planner.suwako_condition",
       "beat.yyk.bottomless_banquet.after",
       "beat.yyk.bottomless_banquet.assist",
       "beat.yyk.bottomless_banquet.clear",
@@ -955,6 +967,10 @@
       "choice.sdm.small_chair.direct",
       "choice.sdm.small_chair.patient",
       "choice.sdm.small_chair.playful",
+      "choice.sne.faith_festival_planner.defiant",
+      "choice.sne.faith_festival_planner.direct",
+      "choice.sne.faith_festival_planner.patient",
+      "choice.sne.faith_festival_planner.playful",
       "choice.yyk.bottomless_banquet.defiant",
       "choice.yyk.bottomless_banquet.direct",
       "choice.yyk.bottomless_banquet.patient",
@@ -1448,6 +1464,17 @@
       "dlg.sdm.small_chair.patient",
       "dlg.sdm.small_chair.playful",
       "dlg.sdm.small_chair.private_seat",
+      "dlg.sne.faith_festival_planner.after",
+      "dlg.sne.faith_festival_planner.assist",
+      "dlg.sne.faith_festival_planner.clear",
+      "dlg.sne.faith_festival_planner.defiant",
+      "dlg.sne.faith_festival_planner.direct",
+      "dlg.sne.faith_festival_planner.kanako_condition",
+      "dlg.sne.faith_festival_planner.loss",
+      "dlg.sne.faith_festival_planner.patient",
+      "dlg.sne.faith_festival_planner.playful",
+      "dlg.sne.faith_festival_planner.sanae_plan",
+      "dlg.sne.faith_festival_planner.suwako_condition",
       "dlg.yyk.bottomless_banquet.after",
       "dlg.yyk.bottomless_banquet.assist",
       "dlg.yyk.bottomless_banquet.clear",
@@ -1554,6 +1581,7 @@
       "event.sdm.missing_minute.title",
       "event.sdm.promise.title",
       "event.sdm.small_chair.title",
+      "event.sne.faith_festival_planner.title",
       "event.yyk.bottomless_banquet.title",
       "event.yyk.empty_plate.title",
       "event.yyk.feast_without_ending.title",
@@ -1738,6 +1766,8 @@
       "journal.sdm.promise.title",
       "journal.sdm.small_chair.body",
       "journal.sdm.small_chair.title",
+      "journal.sne.faith_festival_planner.body",
+      "journal.sne.faith_festival_planner.title",
       "journal.yyk.bottomless_banquet.body",
       "journal.yyk.bottomless_banquet.title",
       "journal.yyk.empty_plate.body",
@@ -1809,6 +1839,7 @@
       "obj.sdm.promise.wait",
       "obj.sdm.small_chair.enter_by_invitation",
       "obj.sdm.trace_missing_minute",
+      "obj.sne.faith_festival_planner.compare",
       "obj.yyk.bottomless_banquet.read_table",
       "obj.yyk.empty_plate.observe",
       "obj.yyk.feast_without_ending.inspect",
@@ -7153,6 +7184,116 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sne.faith_festival_planner.after",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.after",
+      "target": "dlg.sne.faith_festival_planner.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.assist",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.assist",
+      "target": "dlg.sne.faith_festival_planner.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.clear",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.clear",
+      "target": "dlg.sne.faith_festival_planner.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.defiant",
+      "target": "dlg.sne.faith_festival_planner.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.direct",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.direct",
+      "target": "dlg.sne.faith_festival_planner.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.kanako_condition",
+      "target": "char.kanako_yasaka",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.kanako_condition",
+      "target": "dlg.sne.faith_festival_planner.kanako_condition",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.loss",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.loss",
+      "target": "dlg.sne.faith_festival_planner.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.patient",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.patient",
+      "target": "dlg.sne.faith_festival_planner.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.playful",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.playful",
+      "target": "dlg.sne.faith_festival_planner.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.sanae_plan",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.sanae_plan",
+      "target": "dlg.sne.faith_festival_planner.sanae_plan",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.suwako_condition",
+      "target": "char.suwako_moriya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.faith_festival_planner.suwako_condition",
+      "target": "dlg.sne.faith_festival_planner.suwako_condition",
+      "kind": "localization"
+    },
+    {
       "source": "beat.yyk.bottomless_banquet.after",
       "target": "char.yuyuko_saigyouji",
       "kind": "speaker"
@@ -8820,6 +8961,26 @@
     {
       "source": "choice.sdm.small_chair.response",
       "target": "choice.sdm.small_chair.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.faith_festival_planner.response",
+      "target": "choice.sne.faith_festival_planner.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.faith_festival_planner.response",
+      "target": "choice.sne.faith_festival_planner.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.faith_festival_planner.response",
+      "target": "choice.sne.faith_festival_planner.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.faith_festival_planner.response",
+      "target": "choice.sne.faith_festival_planner.playful",
       "kind": "localization"
     },
     {
@@ -23420,6 +23581,306 @@
     {
       "source": "evt.sdm.small_chair",
       "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n001",
+      "target": "evt.sne.faith_festival_planner.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n001",
+      "target": "mus_sanae_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n002",
+      "target": "evt.sne.faith_festival_planner.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n002",
+      "target": "obj.sne.faith_festival_planner.compare",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n002",
+      "target": "prop.sne.festival_safety_lane",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n002",
+      "target": "prop.sne.quiet_prayer_board",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n002",
+      "target": "prop.sne.single_miracle_schedule",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n003",
+      "target": "beat.sne.faith_festival_planner.sanae_plan",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n003",
+      "target": "evt.sne.faith_festival_planner.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n004",
+      "target": "beat.sne.faith_festival_planner.kanako_condition",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n004",
+      "target": "evt.sne.faith_festival_planner.node.n006",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n005",
+      "target": "choice.sne.faith_festival_planner.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n005",
+      "target": "evt.sne.faith_festival_planner.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n005",
+      "target": "evt.sne.faith_festival_planner.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n005",
+      "target": "evt.sne.faith_festival_planner.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n005",
+      "target": "evt.sne.faith_festival_planner.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n006",
+      "target": "beat.sne.faith_festival_planner.suwako_condition",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n006",
+      "target": "evt.sne.faith_festival_planner.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_after",
+      "target": "beat.sne.faith_festival_planner.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_after",
+      "target": "evt.sne.faith_festival_planner.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_assist",
+      "target": "beat.sne.faith_festival_planner.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_assist",
+      "target": "evt.sne.faith_festival_planner.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_clear",
+      "target": "beat.sne.faith_festival_planner.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_clear",
+      "target": "evt.sne.faith_festival_planner.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_defiant_line",
+      "target": "beat.sne.faith_festival_planner.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_defiant_line",
+      "target": "evt.sne.faith_festival_planner.node.n_festival",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_defiant",
+      "target": "evt.sne.faith_festival_planner.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_direct_line",
+      "target": "beat.sne.faith_festival_planner.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_direct_line",
+      "target": "evt.sne.faith_festival_planner.node.n_festival",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_direct",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_direct",
+      "target": "evt.sne.faith_festival_planner.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_effects",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_effects",
+      "target": "evt.sne.faith_festival_planner.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_festival",
+      "target": "evt.sne.faith_festival_planner.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_festival",
+      "target": "evt.sne.faith_festival_planner.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_festival",
+      "target": "evt.sne.faith_festival_planner.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_festival",
+      "target": "mini.sne.faith_festival_planner",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_journal",
+      "target": "evt.sne.faith_festival_planner.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_journal",
+      "target": "journal.sne.faith_festival_planner",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_loss",
+      "target": "beat.sne.faith_festival_planner.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_loss",
+      "target": "evt.sne.faith_festival_planner.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_patient_line",
+      "target": "beat.sne.faith_festival_planner.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_patient_line",
+      "target": "evt.sne.faith_festival_planner.node.n_festival",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_patient",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_patient",
+      "target": "evt.sne.faith_festival_planner.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_playful_line",
+      "target": "beat.sne.faith_festival_planner.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_playful_line",
+      "target": "evt.sne.faith_festival_planner.node.n_festival",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_playful",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner.node.n_playful",
+      "target": "evt.sne.faith_festival_planner.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "char.kanako_yasaka",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "char.kanako_yasaka",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "char.sanae_kochiya",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "char.sanae_kochiya",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "char.suwako_moriya",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "char.suwako_moriya",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "event.sne.faith_festival_planner.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "evt.sne.faith_festival_planner",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "loc.moriya_shrine.festival_planning_platform",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.sne.faith_festival_planner",
+      "target": "loc.moriya_shrine",
       "kind": "location"
     },
     {

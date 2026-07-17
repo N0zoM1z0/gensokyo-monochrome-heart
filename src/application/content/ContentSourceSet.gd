@@ -31,6 +31,7 @@ var supplemental_event_paths: Array[String] = [
 	"res://content/events/pch_route_events.json",
 	"res://content/events/rml_route_events.json",
 	"res://content/events/yyk_route_events.json",
+	"res://content/events/sne_route_events.json",
 ]
 var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/hkr_day_nothing_happens.json",
@@ -96,6 +97,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/yyk_hosts_responsibility.json",
 	"res://content/events/yyk_feast_without_ending.json",
 	"res://content/events/hgy_last_sweet.json",
+	"res://content/events/sne_faith_festival_planner.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -161,6 +163,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/yyk_hosts_responsibility.json",
 	"res://content/dialogue/yyk_feast_without_ending.json",
 	"res://content/dialogue/hgy_last_sweet.json",
+	"res://content/dialogue/sne_faith_festival_planner.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -227,6 +230,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/yyk_hosts_responsibility.csv",
 	"res://content/localization/yyk_feast_without_ending.csv",
 	"res://content/localization/hgy_last_sweet.csv",
+	"res://content/localization/sne_faith_festival_planner.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -241,10 +245,11 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/pch_route_deferred_references.json",
 	"res://content/indexes/rml_route_deferred_references.json",
 	"res://content/indexes/yyk_route_deferred_references.json",
+	"res://content/indexes/sne_route_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 57
-var expected_supplemental_dialogue_count: int = 498
-var expected_supplemental_localization_count: int = 1061
+var expected_supplemental_event_count: int = 58
+var expected_supplemental_dialogue_count: int = 509
+var expected_supplemental_localization_count: int = 1080
 
 
 func content_paths() -> Array[String]:
