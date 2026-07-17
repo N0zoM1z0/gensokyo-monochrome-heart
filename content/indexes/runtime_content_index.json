@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "262c72b014fe3b2619c9c354620c43e6711f3b4c57eed6c0783b236d1ab118ee",
+  "content_hash": "59f7b1c699c03bbda621843367f6d93319760ff5ba6989cf54c87dfba94fcb7d",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 93,
-    "dialogue_beats": 611,
-    "localization": 1844,
+    "events": 94,
+    "dialogue_beats": 621,
+    "localization": 1862,
     "music_cues": 89,
-    "event_nodes": 1481
+    "event_nodes": 1502
   },
   "ids": {
     "characters": [
@@ -126,6 +126,7 @@
       "evt.ein.short_lived_guest",
       "evt.ein.shortcut_seller",
       "evt.eir.clinic_triage",
+      "evt.eir.do_not_volunteer",
       "evt.eir.practical_care",
       "evt.fin.borders_back",
       "evt.fin.margin_of_error",
@@ -326,6 +327,16 @@
       "beat.eir.clinic_triage.playful",
       "beat.eir.clinic_triage.reisen_intake",
       "beat.eir.clinic_triage.tewi_noise",
+      "beat.eir.do_not_volunteer.after_anger",
+      "beat.eir.do_not_volunteer.after_unknown",
+      "beat.eir.do_not_volunteer.anger",
+      "beat.eir.do_not_volunteer.context",
+      "beat.eir.do_not_volunteer.defiant",
+      "beat.eir.do_not_volunteer.direct",
+      "beat.eir.do_not_volunteer.patient",
+      "beat.eir.do_not_volunteer.playful",
+      "beat.eir.do_not_volunteer.reisen_close",
+      "beat.eir.do_not_volunteer.stop",
       "beat.eir.practical_care.after",
       "beat.eir.practical_care.assist",
       "beat.eir.practical_care.clear",
@@ -887,6 +898,10 @@
       "choice.eir.clinic_triage.direct",
       "choice.eir.clinic_triage.patient",
       "choice.eir.clinic_triage.playful",
+      "choice.eir.do_not_volunteer.defiant",
+      "choice.eir.do_not_volunteer.direct",
+      "choice.eir.do_not_volunteer.patient",
+      "choice.eir.do_not_volunteer.playful",
       "choice.eir.practical_care.defiant",
       "choice.eir.practical_care.direct",
       "choice.eir.practical_care.patient",
@@ -1249,6 +1264,16 @@
       "dlg.eir.clinic_triage.playful",
       "dlg.eir.clinic_triage.reisen_intake",
       "dlg.eir.clinic_triage.tewi_noise",
+      "dlg.eir.do_not_volunteer.after_anger",
+      "dlg.eir.do_not_volunteer.after_unknown",
+      "dlg.eir.do_not_volunteer.anger",
+      "dlg.eir.do_not_volunteer.context",
+      "dlg.eir.do_not_volunteer.defiant",
+      "dlg.eir.do_not_volunteer.direct",
+      "dlg.eir.do_not_volunteer.patient",
+      "dlg.eir.do_not_volunteer.playful",
+      "dlg.eir.do_not_volunteer.reisen_close",
+      "dlg.eir.do_not_volunteer.stop",
       "dlg.eir.practical_care.after",
       "dlg.eir.practical_care.assist",
       "dlg.eir.practical_care.clear",
@@ -1752,6 +1777,7 @@
       "event.ein.promise.title",
       "event.ein.short_lived_guest.title",
       "event.eir.clinic_triage.title",
+      "event.eir.do_not_volunteer.title",
       "event.eir.practical_care.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -1871,6 +1897,8 @@
       "journal.ein.short_lived_guest.title",
       "journal.eir.clinic_triage.body",
       "journal.eir.clinic_triage.title",
+      "journal.eir.do_not_volunteer.body",
+      "journal.eir.do_not_volunteer.title",
       "journal.eir.practical_care.body",
       "journal.eir.practical_care.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -2046,6 +2074,7 @@
       "obj.ein.promise.choose",
       "obj.ein.short_lived_guest.choose",
       "obj.eir.clinic_triage.separate",
+      "obj.eir.do_not_volunteer.withdraw",
       "obj.eir.practical_care.balance",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
@@ -3991,6 +4020,106 @@
     {
       "source": "beat.eir.clinic_triage.tewi_noise",
       "target": "dlg.eir.clinic_triage.tewi_noise",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.after_anger",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.after_anger",
+      "target": "dlg.eir.do_not_volunteer.after_anger",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.after_unknown",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.after_unknown",
+      "target": "dlg.eir.do_not_volunteer.after_unknown",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.anger",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.anger",
+      "target": "dlg.eir.do_not_volunteer.anger",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.context",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.context",
+      "target": "dlg.eir.do_not_volunteer.context",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.defiant",
+      "target": "dlg.eir.do_not_volunteer.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.direct",
+      "target": "dlg.eir.do_not_volunteer.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.patient",
+      "target": "dlg.eir.do_not_volunteer.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.playful",
+      "target": "dlg.eir.do_not_volunteer.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.reisen_close",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.reisen_close",
+      "target": "dlg.eir.do_not_volunteer.reisen_close",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.stop",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.do_not_volunteer.stop",
+      "target": "dlg.eir.do_not_volunteer.stop",
       "kind": "localization"
     },
     {
@@ -9204,6 +9333,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.eir.do_not_volunteer.response",
+      "target": "choice.eir.do_not_volunteer.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.do_not_volunteer.response",
+      "target": "choice.eir.do_not_volunteer.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.do_not_volunteer.response",
+      "target": "choice.eir.do_not_volunteer.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.do_not_volunteer.response",
+      "target": "choice.eir.do_not_volunteer.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.eir.practical_care.response",
       "target": "choice.eir.practical_care.defiant",
       "kind": "localization"
@@ -14230,6 +14379,271 @@
     },
     {
       "source": "evt.eir.clinic_triage",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n001",
+      "target": "evt.eir.do_not_volunteer.node.n_context",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n001",
+      "target": "mus_eirin_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n002",
+      "target": "evt.eir.do_not_volunteer.node.n_boundary",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n002",
+      "target": "obj.eir.do_not_volunteer.withdraw",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n002",
+      "target": "prop.eir.accepted_unknown_result",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n002",
+      "target": "prop.eir.crossed_out_volunteer_form",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n002",
+      "target": "prop.eir.sealed_archive_sample",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n003",
+      "target": "beat.eir.do_not_volunteer.stop",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n003",
+      "target": "evt.eir.do_not_volunteer.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n004",
+      "target": "beat.eir.do_not_volunteer.reisen_close",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n004",
+      "target": "evt.eir.do_not_volunteer.node.n_after_unknown",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n005",
+      "target": "beat.eir.do_not_volunteer.anger",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n005",
+      "target": "evt.eir.do_not_volunteer.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_after_anger",
+      "target": "beat.eir.do_not_volunteer.after_anger",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_after_anger",
+      "target": "evt.eir.do_not_volunteer.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_after_unknown",
+      "target": "beat.eir.do_not_volunteer.after_unknown",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_after_unknown",
+      "target": "evt.eir.do_not_volunteer.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_boundary",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_boundary",
+      "target": "evt.eir.do_not_volunteer.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_choice",
+      "target": "choice.eir.do_not_volunteer.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_choice",
+      "target": "evt.eir.do_not_volunteer.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_choice",
+      "target": "evt.eir.do_not_volunteer.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_choice",
+      "target": "evt.eir.do_not_volunteer.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_choice",
+      "target": "evt.eir.do_not_volunteer.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_context",
+      "target": "beat.eir.do_not_volunteer.context",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_context",
+      "target": "evt.eir.do_not_volunteer.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_defiant_line",
+      "target": "beat.eir.do_not_volunteer.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_defiant_line",
+      "target": "evt.eir.do_not_volunteer.node.n_after_anger",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_defiant",
+      "target": "evt.eir.do_not_volunteer.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_direct_line",
+      "target": "beat.eir.do_not_volunteer.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_direct_line",
+      "target": "evt.eir.do_not_volunteer.node.n_after_anger",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_direct",
+      "target": "evt.eir.do_not_volunteer.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_effects",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_effects",
+      "target": "evt.eir.do_not_volunteer.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_journal",
+      "target": "evt.eir.do_not_volunteer.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_journal",
+      "target": "journal.eir.do_not_volunteer",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_patient_line",
+      "target": "beat.eir.do_not_volunteer.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_patient_line",
+      "target": "evt.eir.do_not_volunteer.node.n_after_anger",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_patient",
+      "target": "evt.eir.do_not_volunteer.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_playful_line",
+      "target": "beat.eir.do_not_volunteer.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_playful_line",
+      "target": "evt.eir.do_not_volunteer.node.n_after_anger",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer.node.n_playful",
+      "target": "evt.eir.do_not_volunteer.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer",
+      "target": "char.eirin_yagokoro",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer",
+      "target": "char.eirin_yagokoro",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer",
+      "target": "event.eir.do_not_volunteer.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer",
+      "target": "evt.eir.do_not_volunteer",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer",
+      "target": "loc.eientei.archive_sample_boundary_desk",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.eir.do_not_volunteer",
       "target": "loc.eientei",
       "kind": "location"
     },
