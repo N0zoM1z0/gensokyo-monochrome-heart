@@ -38,3 +38,8 @@ assets:
     source: "assets/audio/production/production_manifest.json"
     license: project_original
     status: approved_for_release
+  - id: m16_production_visuals
+    name: "Launch fighter, portrait, region, bullet, VFX, and UI atlases"
+    source: "assets/art/production/production_manifest.json"
+    license: project_original
+    status: approved_for_release

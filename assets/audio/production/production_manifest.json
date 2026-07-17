@@ -2,7 +2,7 @@
   "assets": [
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 105,
       "bytes": 806512,
       "channels": 1,
@@ -24,7 +24,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 105,
       "bytes": 806512,
       "channels": 1,
@@ -46,7 +46,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 105,
       "bytes": 806512,
       "channels": 1,
@@ -68,7 +68,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 84,
       "bytes": 1008112,
       "channels": 1,
@@ -90,7 +90,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 84,
       "bytes": 1008112,
       "channels": 1,
@@ -112,7 +112,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 84,
       "bytes": 1008112,
       "channels": 1,
@@ -134,7 +134,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 100,
       "bytes": 846832,
       "channels": 1,
@@ -156,7 +156,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 100,
       "bytes": 846832,
       "channels": 1,
@@ -178,7 +178,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 100,
       "bytes": 846832,
       "channels": 1,
@@ -200,7 +200,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 90,
       "bytes": 940912,
       "channels": 1,
@@ -222,7 +222,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 90,
       "bytes": 940912,
       "channels": 1,
@@ -244,7 +244,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 90,
       "bytes": 940912,
       "channels": 1,
@@ -266,7 +266,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 120,
       "bytes": 705712,
       "channels": 1,
@@ -288,7 +288,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 120,
       "bytes": 705712,
       "channels": 1,
@@ -310,7 +310,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bpm": 120,
       "bytes": 705712,
       "channels": 1,
@@ -332,7 +332,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 88312,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -352,7 +352,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 22162,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -372,7 +372,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 1630,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -392,7 +392,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 5996,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -412,7 +412,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 2160,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -432,7 +432,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 8422,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -452,7 +452,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 7540,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -472,7 +472,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 8422,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -492,7 +492,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 4454,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -512,7 +512,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 4894,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -532,7 +532,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 2468,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",
@@ -552,7 +552,7 @@
     },
     {
       "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
-      "approval_status": "approved_for_release",
+      "approval_status": "candidate_for_review",
       "bytes": 18566,
       "channels": 1,
       "creator": "Gensokyo: Monochrome Heart project",

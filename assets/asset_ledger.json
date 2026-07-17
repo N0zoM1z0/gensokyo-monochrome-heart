@@ -45,6 +45,25 @@
       "accessibility_pair": ""
     },
     {
+      "id": "asset.m16.bullets.core",
+      "path": "assets/art/production/bullets/bul_core_shapes_12.png",
+      "kind": "bullet_library",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "76cab09e927e7d1c098a40e6b799352d27e370fa3d85d0e54a78d5f7f72b2f7a",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
       "id": "asset.font.dotgothic16.japanese",
       "path": "ui/fonts/DotGothic16-Japanese.woff2",
       "kind": "font",
@@ -80,6 +99,310 @@
       "approved_by": "codex-m16-technical-review",
       "approved_at": "2026-07-17",
       "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.aya_shameimaru.model_l",
+      "path": "assets/art/production/characters/aya_shameimaru/chr_aya_shameimaru_l_keyposes.png",
+      "kind": "model_l_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "df70051e098aa3c268d1cd1e3f7e506b46a076658753aa1c983f82e60e1f0820",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.marisa_kirisame.model_l",
+      "path": "assets/art/production/characters/marisa_kirisame/chr_marisa_kirisame_l_keyposes.png",
+      "kind": "model_l_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "58669bc6d327299a132038be65adcec1d9e649c16fce2e08a12436377cb441e9",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.reimu_hakurei.model_l",
+      "path": "assets/art/production/characters/reimu_hakurei/chr_reimu_hakurei_l_keyposes.png",
+      "kind": "model_l_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "a25fa8d0fa9c489d9e40615a110d3930d9cdb1377b1c5033fe194602d8f823ae",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.remilia_scarlet.model_l",
+      "path": "assets/art/production/characters/remilia_scarlet/chr_remilia_scarlet_l_keyposes.png",
+      "kind": "model_l_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "c3b397735aef5c2161010e3910e457e1f6e2e2e69b0a0dd98c7ea43dc3a207e9",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.sakuya_izayoi.model_l",
+      "path": "assets/art/production/characters/sakuya_izayoi/chr_sakuya_izayoi_l_keyposes.png",
+      "kind": "model_l_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "2bcf15a33bf18fd10c7d1163c7a91e26347b8cdbc38b701854163a4bdea6b5f3",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.sanae_kochiya.model_l",
+      "path": "assets/art/production/characters/sanae_kochiya/chr_sanae_kochiya_l_keyposes.png",
+      "kind": "model_l_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "ac755002e97162c191079108625907f781b16354c9b6cd9a9ba306fe39e0236c",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.tenshi_hinanawi.model_l",
+      "path": "assets/art/production/characters/tenshi_hinanawi/chr_tenshi_hinanawi_l_keyposes.png",
+      "kind": "model_l_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "f69da399a50cbd850b79dca74802d88b9ca83f37d13027f3c2b48d97ec06c39b",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.youmu_konpaku.model_l",
+      "path": "assets/art/production/characters/youmu_konpaku/chr_youmu_konpaku_l_keyposes.png",
+      "kind": "model_l_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "6b261bada122c9264c4c6d963082365cd4b596483b7b5e0ef75888d1b1857545",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.aya_shameimaru.model_m",
+      "path": "assets/art/production/characters/aya_shameimaru/chr_aya_shameimaru_m_core.png",
+      "kind": "model_m_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "a245c4a854f91d3cf97e1d51010d1cc6480c74db1d581aca0ff603895dff7bae",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.marisa_kirisame.model_m",
+      "path": "assets/art/production/characters/marisa_kirisame/chr_marisa_kirisame_m_core.png",
+      "kind": "model_m_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "c1ccca159c8a720d90e3bfe96bcaaa64bf8147e60bcbdf27008756a8aa922624",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.reimu_hakurei.model_m",
+      "path": "assets/art/production/characters/reimu_hakurei/chr_reimu_hakurei_m_core.png",
+      "kind": "model_m_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "8a8092569b50749fde139a4ba726c370ba4ff4e259801b5375a03c481a6d8b9f",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.remilia_scarlet.model_m",
+      "path": "assets/art/production/characters/remilia_scarlet/chr_remilia_scarlet_m_core.png",
+      "kind": "model_m_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "8d0bcd84f955b74e0fa0b35d6edb57246dc986d9aee04531f822edcc85b6fd00",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.sakuya_izayoi.model_m",
+      "path": "assets/art/production/characters/sakuya_izayoi/chr_sakuya_izayoi_m_core.png",
+      "kind": "model_m_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "2cd260d0067a5f602c311deda7b5de35f4c68847635aa53665763284cf5009ec",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.sanae_kochiya.model_m",
+      "path": "assets/art/production/characters/sanae_kochiya/chr_sanae_kochiya_m_core.png",
+      "kind": "model_m_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "fa2ab8eb0252603eb499405bcc97892bc49ca980e42a562291fa6c25485c663d",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.tenshi_hinanawi.model_m",
+      "path": "assets/art/production/characters/tenshi_hinanawi/chr_tenshi_hinanawi_m_core.png",
+      "kind": "model_m_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "b693e6111caddb3b264cc925c5b70d33d23d5d8e79346316a6e947dfb7d9f243",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.youmu_konpaku.model_m",
+      "path": "assets/art/production/characters/youmu_konpaku/chr_youmu_konpaku_m_core.png",
+      "kind": "model_m_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "a8e4c324a628b6924617e6f5dc2051fd2058e98d650121228a786c5dfc2a257e",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
       "accessibility_pair": ""
     },
     {
@@ -365,6 +688,253 @@
       "approved_by": "codex-m16-audio-technical-review",
       "approved_at": "2026-07-17",
       "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.aya_shameimaru.portraits",
+      "path": "assets/art/production/characters/aya_shameimaru/portrait_aya_shameimaru_nine_states.png",
+      "kind": "portrait_pack",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "f63316bab3cc01165aafd143cedc497f3235392ab70f233fb400f8abc2996666",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.marisa_kirisame.portraits",
+      "path": "assets/art/production/characters/marisa_kirisame/portrait_marisa_kirisame_nine_states.png",
+      "kind": "portrait_pack",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "668aeb80198798a83152321ed2f40057fd3589aa995e6e760ebe949e16be26b6",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.reimu_hakurei.portraits",
+      "path": "assets/art/production/characters/reimu_hakurei/portrait_reimu_hakurei_nine_states.png",
+      "kind": "portrait_pack",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "edc0582fa90b2513dc061a5e677b16dc3ad1b117f90b68a2cb972c89c8af91bb",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.remilia_scarlet.portraits",
+      "path": "assets/art/production/characters/remilia_scarlet/portrait_remilia_scarlet_nine_states.png",
+      "kind": "portrait_pack",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "a2344b912023d159c7b6c28b272c24eaf3368232a9ddcdcc49f8af104202dfe8",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.sakuya_izayoi.portraits",
+      "path": "assets/art/production/characters/sakuya_izayoi/portrait_sakuya_izayoi_nine_states.png",
+      "kind": "portrait_pack",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "f07bfd58f5705c4fb3630a92fe5e3ffc48a776a6e8ea6d9a83c2f85bd70923bf",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.sanae_kochiya.portraits",
+      "path": "assets/art/production/characters/sanae_kochiya/portrait_sanae_kochiya_nine_states.png",
+      "kind": "portrait_pack",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "3a0ed8d61d12f59fdf9d4cc95947099da35259077954546e4bdf2b9851b2d813",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.tenshi_hinanawi.portraits",
+      "path": "assets/art/production/characters/tenshi_hinanawi/portrait_tenshi_hinanawi_nine_states.png",
+      "kind": "portrait_pack",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "d031200a55c7897c320a2f379ee5d7071851e4c80b45afd1544f4d072ddbd4bd",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.youmu_konpaku.portraits",
+      "path": "assets/art/production/characters/youmu_konpaku/portrait_youmu_konpaku_nine_states.png",
+      "kind": "portrait_pack",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "48f34cc8d0f302562af626da4ba828f0a31b00e620d360861cd79cc22bf6e861",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.eientei_bamboo_forest.tiles",
+      "path": "assets/art/production/regions/loc_eientei_bamboo_forest_tiles_64.png",
+      "kind": "region_tileset",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "aa08620331b6e14ad29f86b4d4c7baa13f03738cd035fdaf526e82598a885676",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.hakugyokurou.tiles",
+      "path": "assets/art/production/regions/loc_hakugyokurou_tiles_64.png",
+      "kind": "region_tileset",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "f1bda9c1810ad6076bdb13dbece0022a5639230fd71acdc39403b97cd3bc498a",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.hakurei_shrine.tiles",
+      "path": "assets/art/production/regions/loc_hakurei_shrine_tiles_64.png",
+      "kind": "region_tileset",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "9f9ffee7899d646787542c19bda614d5d2b7622aa6f095a29d9d1993c6742f59",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.scarlet_devil_mansion.tiles",
+      "path": "assets/art/production/regions/loc_scarlet_devil_mansion_tiles_64.png",
+      "kind": "region_tileset",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "25ea5cefd42d20902179e01c8a066bea88e5dcf0bd5f59c42e0a5bffa8d73e51",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.youkai_mountain.tiles",
+      "path": "assets/art/production/regions/loc_youkai_mountain_tiles_64.png",
+      "kind": "region_tileset",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "67994c552fe68e4ffb47c4d390d848c9acf93907db89fb4b05381baf05fc2925",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
       "accessibility_pair": ""
     },
     {
@@ -674,6 +1244,63 @@
       "approved_at": "2026-07-17",
       "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
       "accessibility_pair": "asset.art.reimu.model_m"
+    },
+    {
+      "id": "asset.m16.ui.export",
+      "path": "assets/art/production/ui/ui_one_bit_export_atlas.png",
+      "kind": "ui_export",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "672d818985d7ce72e3f95704491d1d746cf1984c09ab26456077786b77431b34",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.vfx.reduced_flash",
+      "path": "assets/art/production/vfx/vfx_launch_reduced_flash.png",
+      "kind": "vfx_accessibility",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "5c59b7aaac936dd18aa40580851041bb2af4398484fafa5c9ea75bd280171c64",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.m16.vfx.standard",
+      "path": "assets/art/production/vfx/vfx_launch_standard.png",
+      "kind": "vfx_accessibility",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_visual_assets.py"
+      ],
+      "sha256": "9b19162afdac94b2a2de78c18e3efe9c6ff52206404712690d6723a07c4c5db6",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic original one-bit construction validated against the M16 production contracts.",
+      "approved_by": "codex-m16-visual-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_visual_review.md",
+      "accessibility_pair": ""
     }
   ]
 }

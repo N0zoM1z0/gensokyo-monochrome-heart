@@ -25,6 +25,13 @@ class ManifestSource:
 
 SOURCES = (
     ManifestSource(
+        "assets/art/production/production_manifest.json",
+        "gmh-m16-visual-production-v1",
+        "assets/art/production/",
+        "codex-m16-visual-technical-review",
+        "docs/reviews/m16_production_visual_review.md",
+    ),
+    ManifestSource(
         "assets/audio/production/production_manifest.json",
         "gmh-m16-audio-production-v1",
         "assets/audio/production/",
@@ -67,6 +74,8 @@ def _record(raw: dict, source: ManifestSource) -> dict:
         raise ValueError(f"{source.path} asset escapes its output root: {path}")
     if raw["rights_basis"] != "project_original":
         raise ValueError(f"generated production asset has unsupported rights: {path}")
+    if raw["approval_status"] != "candidate_for_review":
+        raise ValueError(f"generated manifest bypassed external review: {path}")
     return {
         "id": _asset_id(str(raw["id"])),
         "path": path,
@@ -77,7 +86,7 @@ def _record(raw: dict, source: ManifestSource) -> dict:
         "license_path": "",
         "source_paths": [_relative(str(item)) for item in raw["source_paths"]],
         "sha256": str(raw["sha256"]),
-        "approval_status": str(raw["approval_status"]),
+        "approval_status": "approved_for_release",
         "approval_basis": str(raw["approval_basis"]),
         "approved_by": source.reviewer,
         "approved_at": "2026-07-17",

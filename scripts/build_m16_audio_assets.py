@@ -463,7 +463,7 @@ def common_record(asset_id: str, path: str, kind: str, role: str, payload: bytes
         "bytes": len(payload),
         "creator": GENERATOR_CREATOR,
         "rights_basis": "project_original",
-        "approval_status": "approved_for_release",
+        "approval_status": "candidate_for_review",
         "approval_basis": APPROVAL_BASIS,
         "source_paths": [SOURCE_PATH],
     }
