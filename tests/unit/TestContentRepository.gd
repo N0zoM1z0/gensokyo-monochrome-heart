@@ -76,6 +76,25 @@ func _expect_queries(repository: ContentRepository, failures: Array[String]) -> 
 		failures.append("typed choice lookup did not expose the four authored tones")
 	if repository.characters_by_route_depth(&"deep").size() != 12:
 		failures.append("deep-route query expected 12 characters")
+	if repository.characters_by_presence_tier(&"lead").size() != 12:
+		failures.append("M15 lead presence tier expected 12 characters")
+	if repository.characters_by_presence_tier(&"regional").size() != 22:
+		failures.append("M15 regional presence tier expected 22 characters")
+	if repository.characters_by_presence_tier(&"cameo").size() != 35:
+		failures.append("M15 cameo presence tier expected 35 characters")
+	if repository.characters_by_presence_tier(&"crowd").size() != 2:
+		failures.append("M15 crowd presence tier expected 2 conservative minor supports")
+	if repository.characters_by_companion_scope(&"regional").size() != 34:
+		failures.append("M15 regional companion query expected 34 warranted skills")
+	if repository.support_danmaku_bosses().size() != 16:
+		failures.append("M15 support danmaku boss query expected 16 candidates")
+	if alice == null or alice.event_hooks.size() != 4 or alice.companion_skill.display_name != "Doll Relay":
+		failures.append("M15 Alice runtime record omitted reviewed hooks or companion skill")
+	var koakuma := repository.character(&"char.koakuma")
+	if koakuma == null or koakuma.presence_tier != &"crowd" or koakuma.relationship_scope != &"friendship_only":
+		failures.append("sparse-canon Koakuma was not conservatively scoped")
+	elif not koakuma.agency_anchor.contains("dangerous books") or koakuma.event_hooks.size() != 2:
+		failures.append("sparse-canon Koakuma lacks an independent agency/event contract")
 	if repository.locations_by_launch_tier(&"headline").size() != 5:
 		failures.append("headline location query expected 5 records")
 	if repository.events_by_mode(&"danmaku").size() != 7:

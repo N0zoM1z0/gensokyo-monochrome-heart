@@ -5,7 +5,7 @@
     {
       "source": "design/09_data/characters.json",
       "destination": "content/characters/characters.json",
-      "sha256": "ef675b467bd8da10f930f6f82b7daee94612d1d68b003459c0ce48e495bdb5d2"
+      "sha256": "989fa819a6ff927e8a00a37f5f79a8dd9f33bca0f79fc0f989c18f42aa983bf2"
     },
     {
       "source": "design/09_data/dialogue_samples.json",
@@ -60,7 +60,7 @@
     {
       "source": "design/09_data/schemas/character_index.schema.json",
       "destination": "schemas/character_index.schema.json",
-      "sha256": "8af99d8bffd8665049dcd60c8fff770b544be26f13205b3bab419146579400cd"
+      "sha256": "5ca098189eaa0b31c99b97a92214a5ea2be0da31389992af97ace2cd320f014c"
     },
     {
       "source": "design/09_data/schemas/event_graph.schema.json",

@@ -11,7 +11,23 @@
       "route_scope_note": "Support route with romance-ready expansion  ",
       "canon_confidence": "medium-high  ",
       "skills_document": "../04_characters/alice_margatroid/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Advance autonomous doll craft, preserve control over her work and space, test skill without waste, and be appreciated for creation rather than stereotype.",
+      "event_hooks": [
+        "Doll Orchestra",
+        "A Gesture Not Taught",
+        "The Unfinished Face",
+        "Tea While the Dolls Work"
+      ],
+      "companion_skill": {
+        "id": "companion.alice_margatroid",
+        "display_name": "Doll Relay",
+        "description": "send small dolls through narrow paths, carry switches, or mirror gestures. The number of simultaneous tasks depends on Trust.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.aunn_komano",
@@ -23,7 +39,23 @@
       "route_scope_note": "Support route; shrine guardian and tutorial cameo  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/aunn_komano/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect the shrine and visitors, identify changes in faith or sacred presence, prove that quiet guardianship matters, and be treated as a participant rather than a piece of shrine furniture.",
+      "event_hooks": [
+        "The Guardian Nobody Hired",
+        "Footprints at Both Sides of the Gate",
+        "An Offering That Smells Like Another Shrine",
+        "The Patrol Ends Only When Someone Relieves You"
+      ],
+      "companion_skill": {
+        "id": "companion.aunn_komano",
+        "display_name": "Guardian Sense",
+        "description": "highlights entrances, hidden offerings, sacred residue, and objects that have crossed a boundary recently. It does not identify motives or solve social choices.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.aya_shameimaru",
@@ -35,7 +67,23 @@
       "route_scope_note": "Deep route; launch fighter and danmaku lead  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/aya_shameimaru/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Get a compelling story, maintain independence inside tengu hierarchy, outperform rivals, influence public understanding, and decide when not to publish.",
+      "event_hooks": [
+        "Exclusive Interview",
+        "Headline or Harm",
+        "The Story Published Too Soon",
+        "The Photograph Not Printed"
+      ],
+      "companion_skill": {
+        "id": "companion.aya_shameimaru",
+        "display_name": "Photo Frame",
+        "description": "capture a moving arrangement to reveal hidden wind or rumor paths; taking a photo may create a public flag.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "launch_lead"
     },
     {
       "id": "char.byakuren_hijiri",
@@ -47,7 +95,22 @@
       "route_scope_note": "Major support; fighter expansion  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/byakuren_hijiri/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Build a community where humans and youkai coexist, prevent fear from becoming persecution, guide disciples, and reconcile ideals with difficult members.",
+      "event_hooks": [
+        "Temple Chant Relay",
+        "Hospitality Has Rules",
+        "The Burden of Sanctuary"
+      ],
+      "companion_skill": {
+        "id": "companion.byakuren_hijiri",
+        "display_name": "Body Reinforcement",
+        "description": "briefly moves heavy structures or protects a group passage; cannot solve social conflict by force.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.chen",
@@ -59,7 +122,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "medium  ",
       "skills_document": "../04_characters/chen/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Complete Ran's instructions, establish personal territory, play on her own terms, and avoid being treated as merely cute.",
+      "event_hooks": [
+        "Mayohiga Territory Flags",
+        "The Instruction Written Backward",
+        "Cat Path Courier"
+      ],
+      "companion_skill": {
+        "id": "companion.chen",
+        "display_name": "Pounce Route",
+        "description": "climbs marked walls, squeezes through gaps, and retrieves small objects; she chooses her own path.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.cirno",
@@ -71,7 +149,22 @@
       "route_scope_note": "Support friendship only  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/cirno/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Prove strength, find games, protect her local pride, receive recognition, and turn simple rules into interesting challenges.",
+      "event_hooks": [
+        "Perfect Freeze Puzzle",
+        "The Pattern Too Perfect",
+        "Strongest Local Guide"
+      ],
+      "companion_skill": {
+        "id": "companion.cirno",
+        "display_name": "Perfect Freeze",
+        "description": "freeze a limited number of tiles, droplets, or moving platforms; overfreezing creates a new obstacle.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_only",
+      "danmaku_role": "none"
     },
     {
       "id": "char.clownpiece",
@@ -83,7 +176,22 @@
       "route_scope_note": "Support friendship only  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/clownpiece/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Serve Hecatia, enjoy Earth, play intensely, test limits, and understand why surface rules differ from Hell.",
+      "event_hooks": [
+        "Torchlight Rules",
+        "Hell Fairy on Earth",
+        "Freedom Needs a Boundary"
+      ],
+      "companion_skill": {
+        "id": "companion.clownpiece",
+        "display_name": "Torch Frenzy",
+        "description": "temporarily makes rigid environmental objects behave unpredictably, with clear safe bounds.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_only",
+      "danmaku_role": "none"
     },
     {
       "id": "char.doremy_sweet",
@@ -95,7 +203,22 @@
       "route_scope_note": "Major support  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/doremy_sweet/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Keep dream traffic stable, prevent waking agendas from damaging dreamers, study impossible dreams, and distinguish a dream-self from the waking person.",
+      "event_hooks": [
+        "The Dream With No Dreamer",
+        "Dream Theatre License",
+        "Do Not Wake This Memory"
+      ],
+      "companion_skill": {
+        "id": "companion.doremy_sweet",
+        "display_name": "Dream Inventory",
+        "description": "store one impossible object while inside a dream and exchange it for a symbolic effect, never carry it literally into waking.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.eiki_shiki_yamaxanadu",
@@ -107,7 +230,22 @@
       "route_scope_note": "Major support  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/eiki_shiki_yamaxanadu/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Judge fairly, encourage living people to improve before death, preserve context, and reject records that confuse consistency with virtue.",
+      "event_hooks": [
+        "Two-Color Judgment",
+        "The Perfect Record Is Suspicious",
+        "Before the Crossing"
+      ],
+      "companion_skill": {
+        "id": "companion.eiki_shiki_yamaxanadu",
+        "display_name": "Moral Contrast",
+        "description": "separates action, intention, and consequence traces; it never labels a person good or evil.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.eirin_yagokoro",
@@ -119,7 +257,23 @@
       "route_scope_note": "Deep route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/eirin_yagokoro/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect Kaguya and Eientei, practice medicine responsibly, manage the consequences of past choices, and distinguish a patient's wishes from others' fear.",
+      "event_hooks": [
+        "Clinic Triage",
+        "The Patient Who Refuses",
+        "Do Not Volunteer",
+        "A Treatment With an End Date"
+      ],
+      "companion_skill": {
+        "id": "companion.eirin_yagokoro",
+        "display_name": "Diagnostic Lens",
+        "description": "identifies physical, magical, and rumor-based symptoms as separate trace layers.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.flandre_scarlet",
@@ -131,7 +285,22 @@
       "route_scope_note": "Support route; high-safety writing review  ",
       "canon_confidence": "medium  ",
       "skills_document": "../04_characters/flandre_scarlet/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Find games and relationships that can survive her power, be addressed directly rather than discussed as a problem, and explore beyond assigned roles.",
+      "event_hooks": [
+        "Crystal Play Rules",
+        "The Thing Nobody Asked Her",
+        "A Breakable Idea"
+      ],
+      "companion_skill": {
+        "id": "companion.flandre_scarlet",
+        "display_name": "Breakable Point",
+        "description": "reveals one conceptual weak point in a puzzle. Using it may destroy an optional reward, creating a meaningful choice.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.fujiwara_no_mokou",
@@ -143,7 +312,23 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/fujiwara_no_mokou/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Keep travelers alive, resist pity, sustain meaningful conflict and routine, and find value within an unwanted eternity.",
+      "event_hooks": [
+        "Immortal Escort",
+        "The Fire That Remembers",
+        "A Meal Before the Fight",
+        "Burn the False Moon"
+      ],
+      "companion_skill": {
+        "id": "companion.fujiwara_no_mokou",
+        "display_name": "Burn Path",
+        "description": "clears false bamboo or memory residue while permanently removing some optional clues. Choice matters.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.hata_no_kokoro",
@@ -155,7 +340,22 @@
       "route_scope_note": "Support route; fighter expansion  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/hata_no_kokoro/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Understand and express emotion without being ruled by masks, perform meaningfully, recover balance, and distinguish felt emotion from assigned role.",
+      "event_hooks": [
+        "Emotion Mask Mix",
+        "The Face Before the Mask",
+        "Hope Is Not an Order"
+      ],
+      "companion_skill": {
+        "id": "companion.hata_no_kokoro",
+        "display_name": "Mask State",
+        "description": "equip one emotion mask to change NPC response and environmental rhythm; no state is universally correct.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.hatate_himekaidou",
@@ -167,7 +367,23 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "medium-high  ",
       "skills_document": "../04_characters/hatate_himekaidou/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Make reporting relevant without imitating Aya, challenge tengu hierarchy, find useful keywords, and prove mediated information can still be thoughtful.",
+      "event_hooks": [
+        "Thoughtography Search",
+        "Keyword: Us",
+        "Cached Tomorrow",
+        "Leave the Room"
+      ],
+      "companion_skill": {
+        "id": "companion.hatate_himekaidou",
+        "display_name": "Keyword Search",
+        "description": "combine two known tags to reveal a remote image; output reliability depends on rumor state.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.hecatia_lapislazuli",
@@ -179,7 +395,22 @@
       "route_scope_note": "Major support / late-game challenge  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/hecatia_lapislazuli/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Oppose Lunar arrogance, protect Hell's interests, support Junko, enjoy worlds without purity obsession, and test whether mortals can remain themselves under divine scale.",
+      "event_hooks": [
+        "Three Worlds, One Invitation",
+        "The T-Shirt Is Not the Point",
+        "Hell's Counter-Archive"
+      ],
+      "companion_skill": {
+        "id": "companion.hecatia_lapislazuli",
+        "display_name": "World Triad",
+        "description": "switch the environment among Earth, Moon, and Otherworld layers while the protagonist remains in place.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.hieda_no_akyuu",
@@ -191,7 +422,22 @@
       "route_scope_note": "Major support  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/hieda_no_akyuu/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Complete useful chronicles, protect humans, negotiate with powerful youkai, preserve continuity across lives, and decide what should remain unrecorded.",
+      "event_hooks": [
+        "Chronicle Redaction",
+        "The Entry That Knows Too Much",
+        "A Blank Page by Consent"
+      ],
+      "companion_skill": {
+        "id": "companion.hieda_no_akyuu",
+        "display_name": "Chronicle Compare",
+        "description": "overlays testimony sources, highlighting agreement and omission without declaring truth automatically.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.hina_kagiyama",
@@ -203,7 +449,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "medium  ",
       "skills_document": "../04_characters/hina_kagiyama/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Collect misfortune safely, prevent travelers from approaching danger, avoid transferring harm through intimacy, and be treated as a person rather than a contamination source.",
+      "event_hooks": [
+        "Misfortune Carousel",
+        "The Distance That Protects",
+        "A Curse With Someone Else's Name"
+      ],
+      "companion_skill": {
+        "id": "companion.hina_kagiyama",
+        "display_name": "Misfortune Draw",
+        "description": "pulls hazard probability into visible rotating tokens, making the route safer while concentrating a later challenge.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.hong_meiling",
@@ -215,7 +476,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "medium-high  ",
       "skills_document": "../04_characters/hong_meiling/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect the mansion, practice martial arts, distinguish visitors from threats, and receive recognition for actual work rather than a nickname.",
+      "event_hooks": [
+        "Gate Nap Patrol",
+        "The Visitor Who Was Already Counted",
+        "Breath at the Threshold"
+      ],
+      "companion_skill": {
+        "id": "companion.hong_meiling",
+        "display_name": "Qi Sense",
+        "description": "reveals living movement, breath, and stress through walls at short range; cannot identify exact thoughts.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.ichirin_kumoi",
@@ -227,7 +503,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "medium-high  ",
       "skills_document": "../04_characters/ichirin_kumoi/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Serve the temple, coordinate with Unzan, ensure others address both partners appropriately, and keep group plans grounded.",
+      "event_hooks": [
+        "Unzan Gesture Match",
+        "The Plan With Two Signatures",
+        "Cloud Bridge"
+      ],
+      "companion_skill": {
+        "id": "companion.ichirin_kumoi",
+        "display_name": "Cloud Hand",
+        "description": "Unzan lifts platforms, blocks wind, or presses distant switches while Ichirin maintains line of sight.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.iku_nagae",
@@ -239,7 +530,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/iku_nagae/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Deliver warnings accurately, read social atmosphere without becoming ruled by it, prevent disasters, and maintain professional dignity.",
+      "event_hooks": [
+        "Atmosphere Reading",
+        "The Warning Nobody Wanted",
+        "After the Room Is Quiet"
+      ],
+      "companion_skill": {
+        "id": "companion.iku_nagae",
+        "display_name": "Atmosphere Read",
+        "description": "reveals crowd tension, weather pressure, and likely incident escalation as separate gauges.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.joon_yorigami",
@@ -251,7 +557,22 @@
       "route_scope_note": "Support antagonist  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/joon_yorigami/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Acquire and display wealth, avoid being treated as lesser, control social value, exploit efficient schemes, and resist admitting dependence on Shion.",
+      "event_hooks": [
+        "The Gift With Interest",
+        "Perfect Possession Invoice",
+        "A Luxury Nobody Watches"
+      ],
+      "companion_skill": {
+        "id": "companion.joon_yorigami",
+        "display_name": "Value Glare",
+        "description": "reveals what NPCs currently treat as high-status, allowing social route changes but increasing rumor risk.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.junko",
@@ -263,7 +584,22 @@
       "route_scope_note": "Late-game support/antagonist  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/junko/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Pursue her purified grudge, oppose the Lunar Capital, protect the remaining truth of her motive from dilution, and test whether impurity can carry meaning.",
+      "event_hooks": [
+        "The Memory With One Emotion",
+        "Purity Containment",
+        "A Grudge Without Context"
+      ],
+      "companion_skill": {
+        "id": "companion.junko",
+        "display_name": "Purify",
+        "description": "removes one property from an object or room; the loss is permanent for the event and may be harmful.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.kaguya_houraisan",
@@ -275,7 +611,23 @@
       "route_scope_note": "Deep route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/kaguya_houraisan/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Keep Eientei as a chosen home, resist Lunar definitions of purity, make eternity interesting, test whether others can refuse her beautifully, and preserve Eirin's loyalty without taking it for granted.",
+      "event_hooks": [
+        "Five Possible Impossibilities",
+        "A Game With No Continue",
+        "The Short-Lived Guest",
+        "One Finite Evening"
+      ],
+      "companion_skill": {
+        "id": "companion.kaguya_houraisan",
+        "display_name": "Instant/Eternal Toggle",
+        "description": "freeze a marked object's state or advance a transient object through one cycle. Cannot be used on living characters.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.kanako_yasaka",
@@ -287,7 +639,22 @@
       "route_scope_note": "Major support  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/kanako_yasaka/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Secure sustainable faith, modernize infrastructure, protect the shrine's future, and prevent spiritual institutions from becoming obsolete.",
+      "event_hooks": [
+        "Divine Ropeway",
+        "Measurable Faith",
+        "The Project Without a Metric"
+      ],
+      "companion_skill": {
+        "id": "companion.kanako_yasaka",
+        "display_name": "Infrastructure Plan",
+        "description": "places one temporary bridge, lift, or power route after surveying anchors.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.kasen_ibaraki",
@@ -299,7 +666,22 @@
       "route_scope_note": "Major support  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/kasen_ibaraki/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Improve behavior in Gensokyo, manage her own divided nature, protect people and animals, and keep dangerous truths controlled until necessary.",
+      "event_hooks": [
+        "The Lecture That Applies to Her",
+        "Animal Messenger",
+        "A Hand Not Shown"
+      ],
+      "companion_skill": {
+        "id": "companion.kasen_ibaraki",
+        "display_name": "Animal Guidance",
+        "description": "asks a local animal to reveal a route or carry a signal. The animal may refuse if the environment is unsafe.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.keiki_haniyasushin",
@@ -311,7 +693,22 @@
       "route_scope_note": "Major support  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/keiki_haniyasushin/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect human spirits, create durable guardians, improve forms through craft, resist exploitative beast organizations, and decide whether a creation may choose beyond purpose.",
+      "event_hooks": [
+        "Idol Assembly",
+        "The Perfect Protagonist Statue",
+        "Creation's Right to Refuse"
+      ],
+      "companion_skill": {
+        "id": "companion.keiki_haniyasushin",
+        "display_name": "Idol Assembly",
+        "description": "combine silhouette, material, and purpose modules to create a temporary helper with visible tradeoffs.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.keine_kamishirasawa",
@@ -323,7 +720,23 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/keine_kamishirasawa/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect villagers, teach useful history, preserve continuity without fossilizing it, and decide when concealment is justified.",
+      "event_hooks": [
+        "The Village That Was Never There",
+        "Classroom Reconstruction",
+        "Do Not Erase This",
+        "Full Moon Footnote"
+      ],
+      "companion_skill": {
+        "id": "companion.keine_kamishirasawa",
+        "display_name": "History Layer",
+        "description": "temporarily reveals a prior version of a room or path; using it cannot alter living memories directly.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.koakuma",
@@ -335,7 +748,21 @@
       "route_scope_note": "Minor support  ",
       "canon_confidence": "low  ",
       "skills_document": "../04_characters/koakuma/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Project-original: keep dangerous books moving safely, assist Patchouli without pretending to be a scholar, and enjoy knowing where things are.",
+      "event_hooks": [
+        "The Book Cart With One Extra Volume",
+        "Restricted Shelf Delivery"
+      ],
+      "companion_skill": {
+        "id": "companion.koakuma",
+        "display_name": "Shelf Slip",
+        "description": "traverse narrow shelf gaps and retrieve a marked volume, with a chance to trigger a harmless magical side effect.",
+        "scope": "event_only"
+      },
+      "presence_tier": "crowd",
+      "relationship_scope": "friendship_only",
+      "danmaku_role": "none"
     },
     {
       "id": "char.kogasa_tatara",
@@ -347,7 +774,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/kogasa_tatara/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Fulfill her purpose through meaningful surprise, be remembered without causing harm, improve technique, and prove she offers more than a single trick.",
+      "event_hooks": [
+        "Surprise Timing",
+        "The Person Who Pretended to Be Scared",
+        "Umbrella Repair"
+      ],
+      "companion_skill": {
+        "id": "companion.kogasa_tatara",
+        "display_name": "Surprise Setup",
+        "description": "place decoys and timing triggers to redirect NPC attention without harm.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.koishi_komeiji",
@@ -359,7 +801,22 @@
       "route_scope_note": "Support route; high-safety writing review  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/koishi_komeiji/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Follow impulses, encounter people without anticipated rejection, connect without being trapped by observation, and rediscover forms of conscious desire.",
+      "event_hooks": [
+        "Unconscious Hide-and-Seek",
+        "The Conversation Nobody Started",
+        "A Door Left Unwatched"
+      ],
+      "companion_skill": {
+        "id": "companion.koishi_komeiji",
+        "display_name": "Unnoticed Change",
+        "description": "while camera faces away, Koishi alters marked objects or paths. Player learns by environmental comparison.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.komachi_onozuka",
@@ -371,7 +828,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/komachi_onozuka/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Ferry souls, hear their stories, control distance, avoid pointless urgency, and soften transitions without denying duty.",
+      "event_hooks": [
+        "Ferry Fare",
+        "The Name on the Early List",
+        "A Delay With No Excuse"
+      ],
+      "companion_skill": {
+        "id": "companion.komachi_onozuka",
+        "display_name": "Distance Knot",
+        "description": "shorten or lengthen a marked path, changing which conversations or hazards fit inside it.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.kosuzu_motoori",
@@ -383,7 +855,22 @@
       "route_scope_note": "Support friendship only  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/kosuzu_motoori/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Read what humans are told not to read, expand Suzunaan, understand youkai culture, and prove curiosity can be responsible rather than merely reckless.",
+      "event_hooks": [
+        "Demon Book Checkout",
+        "The Book That Reads Back",
+        "Safe Access"
+      ],
+      "companion_skill": {
+        "id": "companion.kosuzu_motoori",
+        "display_name": "Script Decipher",
+        "description": "translates one inscription layer and reveals operational meaning, not all hidden intent.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_only",
+      "danmaku_role": "none"
     },
     {
       "id": "char.marisa_kirisame",
@@ -395,7 +882,23 @@
       "route_scope_note": "Deep route; launch fighter and danmaku lead  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/marisa_kirisame/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Discover interesting magic, prove that effort can rival talent, collect useful objects and knowledge, and remain free to pursue the next adventure.",
+      "event_hooks": [
+        "Crash Landing With Cargo",
+        "Mushroom Field Notes",
+        "The Shelf Marked Later",
+        "Return Before Borrowing"
+      ],
+      "companion_skill": {
+        "id": "companion.marisa_kirisame",
+        "display_name": "Broom Boost",
+        "description": "crosses gaps and wind lanes while carrying limited cargo. Faster solutions are noisier and can alter event setup.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "launch_lead"
     },
     {
       "id": "char.mayumi_joutouguu",
@@ -407,7 +910,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/mayumi_joutouguu/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect the garden and human spirits, serve Keiki, improve formations, and determine whether loyalty can include disagreement.",
+      "event_hooks": [
+        "Haniwa Formation",
+        "The Order Not Given",
+        "A Crack That Is Not Damage"
+      ],
+      "companion_skill": {
+        "id": "companion.mayumi_joutouguu",
+        "display_name": "Formation Command",
+        "description": "arrange haniwa units into bridge, shield, or signal configurations.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.minamitsu_murasa",
@@ -419,7 +937,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/minamitsu_murasa/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect the temple, captain responsibly, transform destructive history into service, and avoid being defined forever by the way she died.",
+      "event_hooks": [
+        "Anchor the Ship",
+        "Passenger List From Nowhere",
+        "Safe Harbor"
+      ],
+      "companion_skill": {
+        "id": "companion.minamitsu_murasa",
+        "display_name": "Anchor Momentum",
+        "description": "throw and reel an anchor to swing platforms, brake vehicles, or stabilize moving rooms.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.momiji_inubashiri",
@@ -431,7 +964,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "medium  ",
       "skills_document": "../04_characters/momiji_inubashiri/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect mountain routes, report accurately, keep lower-level workers from absorbing elite mistakes, and enjoy strategy during rare downtime.",
+      "event_hooks": [
+        "Patrol Against Nothing",
+        "The Order With No Intruder",
+        "A Board Between Watches"
+      ],
+      "companion_skill": {
+        "id": "companion.momiji_inubashiri",
+        "display_name": "Far Sight",
+        "description": "previews off-screen hazards and patrol movement; cannot see through conceptual boundaries.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.mononobe_no_futo",
@@ -443,7 +991,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/mononobe_no_futo/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Serve Miko, maintain Taoist ritual authority, validate old methods, and avoid admitting when a fire or plate plan was avoidable.",
+      "event_hooks": [
+        "Plate Feng Shui",
+        "The Ritual Exit Is Blocked",
+        "Fire Was Not Required"
+      ],
+      "companion_skill": {
+        "id": "companion.mononobe_no_futo",
+        "display_name": "Feng Shui Plate",
+        "description": "place plates to redirect energy, fire, or movement along visible auspicious lines.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.nazrin",
@@ -455,7 +1018,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/nazrin/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Complete searches accurately, avoid wasting time on false value, protect professional credibility, and keep her relationship to Shou functional.",
+      "event_hooks": [
+        "Treasure Dowse",
+        "The Valuable Thing Nobody Lost",
+        "Shou's Missing Pagoda—Again, Carefully"
+      ],
+      "companion_skill": {
+        "id": "companion.nazrin",
+        "display_name": "Dowse",
+        "description": "points toward one chosen category—metal, memory residue, living presence, or route marker—with false positives explained.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.nitori_kawashiro",
@@ -467,7 +1045,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/nitori_kawashiro/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Build useful devices, protect kappa techniques, secure funding, prove engineering value, and understand Outside World objects.",
+      "event_hooks": [
+        "Waterwheel Tuning",
+        "A Machine for Repeating Rumors",
+        "Prototype Consent Form"
+      ],
+      "companion_skill": {
+        "id": "companion.nitori_kawashiro",
+        "display_name": "Hydro Tool",
+        "description": "redirect water, power a wheel, or reveal submerged objects. Prototype modules can be swapped at hubs.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.nue_houjuu",
@@ -479,7 +1072,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/nue_houjuu/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Control how she is identified, test whether others fear ambiguity, protect herself from classification, and participate without surrendering mystery.",
+      "event_hooks": [
+        "The Unidentifiable Memory",
+        "Wrong Name, Right Person",
+        "Temple Guest List"
+      ],
+      "companion_skill": {
+        "id": "companion.nue_houjuu",
+        "display_name": "Unidentify",
+        "description": "temporarily removes an object's category so it can bypass a rule; side effects are declared.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.okina_matara",
@@ -491,7 +1099,22 @@
       "route_scope_note": "Major support/final act foil  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/okina_matara/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Maintain hidden systems, assert recognition, recruit or test agents, preserve Gensokyo, and remind visible authorities that access has a back side.",
+      "event_hooks": [
+        "Back-Door Permission",
+        "The Sage Who Wants Credit",
+        "Access Is Not Consent"
+      ],
+      "companion_skill": {
+        "id": "companion.okina_matara",
+        "display_name": "Back Door",
+        "description": "reveals the hidden access side of marked objects; using it requires owner or scene permission.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.patchouli_knowledge",
@@ -503,7 +1126,23 @@
       "route_scope_note": "Deep route; fighter expansion  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/patchouli_knowledge/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Preserve and expand knowledge, control dangerous magical information, protect the library and Remilia's household, and choose questions worthy of limited energy.",
+      "event_hooks": [
+        "Library Breathing Room",
+        "A Question Worth Asking",
+        "The Borrowing Argument",
+        "The Page Left Blank"
+      ],
+      "companion_skill": {
+        "id": "companion.patchouli_knowledge",
+        "display_name": "Element Margin",
+        "description": "assign one of five practical elemental effects to marked library mechanisms; combinations depend on discovered notes.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.ran_yakumo",
@@ -515,7 +1154,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "medium-high  ",
       "skills_document": "../04_characters/ran_yakumo/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Execute boundary work correctly, maintain household continuity, guide Chen, and prevent Yukari's plans from creating avoidable cleanup.",
+      "event_hooks": [
+        "The Calculation Nobody Notices",
+        "Chen's Missing Instruction",
+        "Nine Routes, One Choice"
+      ],
+      "companion_skill": {
+        "id": "companion.ran_yakumo",
+        "display_name": "Calculated Route",
+        "description": "previews moving hazards and marks an optimal path; the player may choose a riskier social shortcut.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.reimu_hakurei",
@@ -527,7 +1181,23 @@
       "route_scope_note": "Deep route; launch fighter and danmaku lead  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/reimu_hakurei/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Maintain the shrine and barrier, end incidents efficiently, preserve an ordinary daily rhythm, and avoid being manipulated into other people's elaborate schemes.",
+      "event_hooks": [
+        "The Empty Cushion",
+        "Offerings Without Owners",
+        "Tea Before the Incident",
+        "The Shrine Is Not a Guesthouse"
+      ],
+      "companion_skill": {
+        "id": "companion.reimu_hakurei",
+        "display_name": "Intuitive Float",
+        "description": "reveals unstable boundary collision and allows a short neutral glide. Reimu may refuse to investigate a distraction she considers irrelevant.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "launch_lead"
     },
     {
       "id": "char.reisen_udongein_inaba",
@@ -539,7 +1209,23 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/reisen_udongein_inaba/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect her chosen refuge, become reliable without returning to military dehumanization, help patients, and distinguish her own choices from orders.",
+      "event_hooks": [
+        "Wavelength Hallway",
+        "The Signal That Says Home",
+        "Clinic Queue",
+        "Moon Rabbit Without Orders"
+      ],
+      "companion_skill": {
+        "id": "companion.reisen_udongein_inaba",
+        "display_name": "Wavelength Tune",
+        "description": "cycles visible layers—physical, emotional noise, and illusion—revealing different paths.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.remilia_scarlet",
@@ -551,7 +1237,23 @@
       "route_scope_note": "Deep route; launch fighter  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/remilia_scarlet/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Maintain charisma and household cohesion, avoid boredom, test interesting people, and make chosen bonds feel fated without admitting uncertainty.",
+      "event_hooks": [
+        "The Audience",
+        "Red Mist Etiquette",
+        "The Small Chair",
+        "A Fate With Room for Error"
+      ],
+      "companion_skill": {
+        "id": "companion.remilia_scarlet",
+        "display_name": "Mist Command",
+        "description": "marks status-sensitive paths and reveals silhouettes through red-mist-style dither. Some doors open because the household believes she intended them to.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.rin_kaenbyou",
@@ -563,7 +1265,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/rin_kaenbyou/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Keep spirit traffic under control, protect Utsuho and Satori, perform grim work cheerfully, and prevent living people from becoming cargo.",
+      "event_hooks": [
+        "Corpse Cart Switchback",
+        "The Living Passenger",
+        "Worry Sent Upstairs"
+      ],
+      "companion_skill": {
+        "id": "companion.rin_kaenbyou",
+        "display_name": "Spirit Cart",
+        "description": "ride rails, collect marked spirits, and change switches while maintaining balance.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.rinnosuke_morichika",
@@ -575,7 +1292,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/rinnosuke_morichika/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Understand Outside World objects, keep a shop while retaining interesting stock, maintain independence, and construct coherent explanations.",
+      "event_hooks": [
+        "Curio Identification",
+        "The Device Named Home",
+        "Not for Sale"
+      ],
+      "companion_skill": {
+        "id": "companion.rinnosuke_morichika",
+        "display_name": "Name/Purpose",
+        "description": "reveals an object's canonical label and intended function, while actual operation remains a player puzzle.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.sagume_kishin",
@@ -587,7 +1319,22 @@
       "route_scope_note": "Late-game support  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/sagume_kishin/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect Lunar society, use speech only when necessary, manage plans through indirect action, and find communication that does not trigger catastrophic reversal.",
+      "event_hooks": [
+        "Do Not Say the Outcome",
+        "The Note With No Verb",
+        "One Sentence"
+      ],
+      "companion_skill": {
+        "id": "companion.sagume_kishin",
+        "display_name": "Unspoken Route",
+        "description": "choose gestures or written clauses to change event logic without spoken reversal. One spoken action is reserved for climax.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.saki_kurokoma",
@@ -599,7 +1346,22 @@
       "route_scope_note": "Support rival  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/saki_kurokoma/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Expand Keiga influence, test strength honestly, reward courage, move faster than politics, and prove open force is cleaner than manipulation.",
+      "event_hooks": [
+        "Leg-Strength Courier",
+        "The Race With Unwritten Stakes",
+        "Might Is Not Permission"
+      ],
+      "companion_skill": {
+        "id": "companion.saki_kurokoma",
+        "display_name": "Leg-Strength Courier",
+        "description": "high-speed straight-line traversal that can break weak terrain and skip social encounters.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.sakuya_izayoi",
@@ -611,7 +1373,23 @@
       "route_scope_note": "Deep route; launch fighter and danmaku lead  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/sakuya_izayoi/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Serve the mansion to her standards, protect Remilia and household stability, maintain control over time and presentation, and decide what parts of herself exist outside duty.",
+      "event_hooks": [
+        "Late by Three Minutes",
+        "Perfect Tea Service",
+        "Kitchen After Midnight",
+        "One Unfinished Minute"
+      ],
+      "companion_skill": {
+        "id": "companion.sakuya_izayoi",
+        "display_name": "Stopped Object",
+        "description": "freezes one moving platform or hazard. Relationship level changes whether she offers suggestions or waits for instruction.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "launch_lead"
     },
     {
       "id": "char.sanae_kochiya",
@@ -623,7 +1401,23 @@
       "route_scope_note": "Deep route; launch fighter  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/sanae_kochiya/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Support the Moriya Shrine, create meaningful faith, reconcile Outside and Gensokyo identities, perform miracles responsibly, and be recognized beyond novelty.",
+      "event_hooks": [
+        "Faith Festival Planner",
+        "Outside World Shorthand",
+        "Publicity Versus Belief",
+        "A Miracle With Witnesses"
+      ],
+      "companion_skill": {
+        "id": "companion.sanae_kochiya",
+        "display_name": "Miracle Clause",
+        "description": "choose one unlikely but bounded traversal exception per event; the cost or condition is declared first.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.satori_komeiji",
@@ -635,7 +1429,22 @@
       "route_scope_note": "Support route with romance-ready expansion  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/satori_komeiji/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Maintain the palace and pets, protect herself from overwhelming thoughts, distinguish involuntary knowledge from chosen intimacy, and understand her sister without controlling her.",
+      "event_hooks": [
+        "Mind-Read Seating",
+        "The Thought That Is Not a Choice",
+        "A Room With Quiet Rules"
+      ],
+      "companion_skill": {
+        "id": "companion.satori_komeiji",
+        "display_name": "Thought Echo",
+        "description": "highlights emotionally charged objects but labels signals as uncertain, never facts.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.seiga_kaku",
@@ -647,7 +1456,22 @@
       "route_scope_note": "Support antagonist  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/seiga_kaku/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Pursue Taoist interests, test moral boundaries, keep useful companions, and prove that restrictions are invitations to cleverness.",
+      "event_hooks": [
+        "Wall-Walk Rescue",
+        "The Shortcut's Owner",
+        "A Favor Paid by Someone Else"
+      ],
+      "companion_skill": {
+        "id": "companion.seiga_kaku",
+        "display_name": "Wall Passage",
+        "description": "opens a temporary route through marked walls; each passage has a visible ownership or structural consequence.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.shion_yorigami",
@@ -659,7 +1483,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/shion_yorigami/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Survive without being used, find companionship that can tolerate her aura, separate poverty from personal worth, and protect the rare people who do not discard her.",
+      "event_hooks": [
+        "The Meal With Enough",
+        "Scarcity Is Not Sincerity",
+        "Tenshi's Unbroken Seat"
+      ],
+      "companion_skill": {
+        "id": "companion.shion_yorigami",
+        "display_name": "Poverty Field",
+        "description": "removes optional resources and decorative excess, sometimes revealing the essential route.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.suika_ibuki",
@@ -671,7 +1510,22 @@
       "route_scope_note": "Support route; fighter expansion  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/suika_ibuki/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Gather people, test honesty and strength, preserve oni-style directness, and prevent isolation from disguising itself as dignity.",
+      "event_hooks": [
+        "The Party That Will Not Disperse",
+        "One Cup, No Audience",
+        "Dense Enough to Hear"
+      ],
+      "companion_skill": {
+        "id": "companion.suika_ibuki",
+        "display_name": "Density Gather",
+        "description": "pulls scattered light objects or spirit traces into one place; `Sparse Step` briefly slips through marked crowds.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.sumireko_usami",
@@ -683,7 +1537,22 @@
       "route_scope_note": "Major support; postgame lead  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/sumireko_usami/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Prove occult phenomena are real, maintain intellectual independence, navigate dual lives, and avoid becoming merely an Outside World information source.",
+      "event_hooks": [
+        "The Other Outside Visitor",
+        "A Search Result for Gensokyo",
+        "Dream Commute"
+      ],
+      "companion_skill": {
+        "id": "companion.sumireko_usami",
+        "display_name": "Psychic Manipulation",
+        "description": "move marked objects at distance and read urban-legend resonance through devices.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.suwako_moriya",
@@ -695,7 +1564,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/suwako_moriya/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Preserve old forms of faith, maintain influence without constant display, enjoy human-scale games, and ensure Kanako's plans do not erase the ground beneath them.",
+      "event_hooks": [
+        "Frog-Ring Geometry",
+        "The Ground Under the Shrine",
+        "A Game Older Than the Rules"
+      ],
+      "companion_skill": {
+        "id": "companion.suwako_moriya",
+        "display_name": "Earth Shape",
+        "description": "raise or lower marked terrain and activate old ritual nodes.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.tenshi_hinanawi",
@@ -707,7 +1591,23 @@
       "route_scope_note": "Deep route; launch fighter  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/tenshi_hinanawi/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Escape celestial boredom, feel consequence and resistance, be noticed as a person rather than status, and test whether others will set real boundaries.",
+      "event_hooks": [
+        "The Entrance Tremor",
+        "Keystone Construction",
+        "Attention Is Not Permission",
+        "Ask Before the Earth Moves"
+      ],
+      "companion_skill": {
+        "id": "companion.tenshi_hinanawi",
+        "display_name": "Keystone",
+        "description": "place or remove gravity anchors, raising terrain and stabilizing quakes.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.tewi_inaba",
@@ -719,7 +1619,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/tewi_inaba/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Keep the earth rabbits autonomous, profit from predictable behavior, test whether people notice terms, and distribute luck in ways she finds interesting.",
+      "event_hooks": [
+        "Shortcut Seller",
+        "Rabbit Luck Ledger",
+        "The Coin With Two Honest Sides"
+      ],
+      "companion_skill": {
+        "id": "companion.tewi_inaba",
+        "display_name": "Lucky Shortcut",
+        "description": "reveals an alternate path with a known risk/reward clause. The player must accept terms explicitly.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "none"
     },
     {
       "id": "char.toyostomimi_no_miko",
@@ -731,7 +1646,22 @@
       "route_scope_note": "Major support; fighter expansion  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/toyostomimi_no_miko/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Guide followers, maintain authority, read social desire, counter Buddhist influence, and prove that hearing desire grants legitimate leadership.",
+      "event_hooks": [
+        "Desire Chorus",
+        "The Want She Misheard",
+        "Audience Without Consensus"
+      ],
+      "companion_skill": {
+        "id": "companion.toyostomimi_no_miko",
+        "display_name": "Desire Chorus",
+        "description": "isolates one desire signal from a crowd, but context must be gathered separately.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.utsuho_reiuji",
@@ -743,7 +1673,22 @@
       "route_scope_note": "Support route; fighter expansion  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/utsuho_reiuji/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Run the furnace, use immense power correctly, receive clear instructions, protect the household, and prove that simplicity is not worthlessness.",
+      "event_hooks": [
+        "Reactor Balance",
+        "The New Sun Mistake",
+        "Clear Instructions"
+      ],
+      "companion_skill": {
+        "id": "companion.utsuho_reiuji",
+        "display_name": "Heat Pulse",
+        "description": "powers large machinery or reveals heat routes; prolonged use changes environment and must be vented.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.watatsuki_no_toyohime",
@@ -755,7 +1700,22 @@
       "route_scope_note": "Late-game support/antagonistic guest  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/watatsuki_no_toyohime/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect Lunar Capital interests, preserve purity and hierarchy, manage family reputation, and understand why Eirin and Kaguya chose Earth.",
+      "event_hooks": [
+        "The Polite Detention",
+        "Sea-Mountain Fold",
+        "A Cup Offered Without an Exit"
+      ],
+      "companion_skill": {
+        "id": "companion.watatsuki_no_toyohime",
+        "display_name": "Sea-Mountain Link",
+        "description": "connects two distant terrain anchors through a temporary path under authored conditions.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.watatsuki_no_yorihime",
@@ -767,7 +1727,22 @@
       "route_scope_note": "Late-game support/duel  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/watatsuki_no_yorihime/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Defend the Lunar Capital, uphold training and divine order, honor Eirin's instruction, and assess Earth beings by conduct rather than rumor.",
+      "event_hooks": [
+        "The Lowered Sword",
+        "God Invocation Match",
+        "A Defeat Without Submission"
+      ],
+      "companion_skill": {
+        "id": "companion.watatsuki_no_yorihime",
+        "display_name": "Divine Invocation",
+        "description": "choose one source-checked god effect for a marked obstacle; rare, authored, never a generic spell list.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.yachie_kicchou",
@@ -779,7 +1754,22 @@
       "route_scope_note": "Support antagonist  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/yachie_kicchou/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Advance the Kiketsu Family, outmaneuver rivals, manage people as assets, preserve authority, and avoid acknowledging kindness as weakness.",
+      "event_hooks": [
+        "Resource Negotiation",
+        "The Contract Already Signed",
+        "Kindness Classified as Waste"
+      ],
+      "companion_skill": {
+        "id": "companion.yachie_kicchou",
+        "display_name": "Command Pressure",
+        "description": "not a player skill; an event hazard that narrows choices until the player finds grounding evidence or ally support.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.yoshika_miyako",
@@ -791,7 +1781,22 @@
       "route_scope_note": "Minor support; safety-sensitive  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/yoshika_miyako/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Follow commands, preserve body function, respond to sensory cues, and occasionally surface fragments not fully owned by Seiga's instructions.",
+      "event_hooks": [
+        "Jiang-Shi Instruction Queue",
+        "The Poem Under the Talisman",
+        "Ask, Do Not Command"
+      ],
+      "companion_skill": {
+        "id": "companion.yoshika_miyako",
+        "display_name": "Rigid Hold",
+        "description": "braces a door or weight indefinitely while talisman energy lasts; player must ask rather than command.",
+        "scope": "event_only"
+      },
+      "presence_tier": "crowd",
+      "relationship_scope": "friendship_only",
+      "danmaku_role": "none"
     },
     {
       "id": "char.youmu_konpaku",
@@ -803,7 +1808,23 @@
       "route_scope_note": "Deep route; launch fighter and danmaku lead  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/youmu_konpaku/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Serve Yuyuko well, maintain the gardens, improve sword skill, act honorably, and understand responsibilities she cannot solve by cutting.",
+      "event_hooks": [
+        "Garden Shift",
+        "Half-Phantom Balance",
+        "A Duty Delegated",
+        "What the Sword Cannot Finish"
+      ],
+      "companion_skill": {
+        "id": "companion.youmu_konpaku",
+        "display_name": "Dual Body",
+        "description": "the phantom half mirrors or offsets movement to press paired switches and carry spirit traces.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "launch_lead"
     },
     {
       "id": "char.yukari_yakumo",
@@ -815,7 +1836,23 @@
       "route_scope_note": "Major support; ensemble and finale lead  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/yukari_yakumo/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Preserve Gensokyo's existence and flexibility, manage dangerous thresholds, test whether others can act without her, and keep private motives private.",
+      "event_hooks": [
+        "The Border Remembers",
+        "A Door the Player Declined",
+        "Sage Table",
+        "The Last Unrecorded Gap"
+      ],
+      "companion_skill": {
+        "id": "companion.yukari_yakumo",
+        "display_name": "Boundary Fold",
+        "description": "temporarily links two screen edges or reclassifies an obstacle as a threshold. Late-game only and always authored.",
+        "scope": "regional"
+      },
+      "presence_tier": "regional",
+      "relationship_scope": "non_route",
+      "danmaku_role": "none"
     },
     {
       "id": "char.yuugi_hoshiguma",
@@ -827,7 +1864,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/yuugi_hoshiguma/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Keep Former Hell lively, test strength honestly, protect oni dignity, and welcome people who can state limits without groveling.",
+      "event_hooks": [
+        "Oni Cup Balance",
+        "The Contest You May Refuse",
+        "Old Capital Support Beam"
+      ],
+      "companion_skill": {
+        "id": "companion.yuugi_hoshiguma",
+        "display_name": "Oni Lift",
+        "description": "move massive obstacles or hold collapsing structures while the player solves a secondary route.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.yuuka_kazami",
@@ -839,7 +1891,22 @@
       "route_scope_note": "Support route  ",
       "canon_confidence": "medium-high  ",
       "skills_document": "../04_characters/yuuka_kazami/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Protect flowers and seasonal rhythms, oppose careless destruction, enjoy worthy encounters, and observe whether others can attend without grabbing.",
+      "event_hooks": [
+        "Flower Listening",
+        "The Artificial Perfect Bloom",
+        "Five Minutes of Stillness"
+      ],
+      "companion_skill": {
+        "id": "companion.yuuka_kazami",
+        "display_name": "Bloom Read",
+        "description": "identify plant needs and reveal paths through growth rhythm; Yuuka may alter a single bloom as a clue.",
+        "scope": "event_only"
+      },
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "danmaku_role": "support_boss"
     },
     {
       "id": "char.yuyuko_saigyouji",
@@ -851,7 +1918,23 @@
       "route_scope_note": "Deep route  ",
       "canon_confidence": "high  ",
       "skills_document": "../04_characters/yuyuko_saigyouji/skills.md",
-      "tags": []
+      "tags": [],
+      "agency_anchor": "Care for Hakugyokurou and Youmu, enjoy transient experiences, protect others from unnecessary fear, and avoid allowing death to become only solemn spectacle.",
+      "event_hooks": [
+        "Bottomless Banquet",
+        "A Joke About Death",
+        "The Empty Plate",
+        "The Last Bite"
+      ],
+      "companion_skill": {
+        "id": "companion.yuyuko_saigyouji",
+        "display_name": "Ghost Drift",
+        "description": "pass through marked spirit veils and listen to emotional residue, but not private facts.",
+        "scope": "regional"
+      },
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "danmaku_role": "none"
     }
   ]
 }

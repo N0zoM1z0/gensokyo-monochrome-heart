@@ -211,6 +211,33 @@ func characters_by_route_depth(route_depth: StringName) -> Array[CharacterRecord
 	return result
 
 
+func characters_by_presence_tier(presence_tier: StringName) -> Array[CharacterRecord]:
+	var result: Array[CharacterRecord] = []
+	for record: CharacterRecord in _characters.values():
+		if record.presence_tier == presence_tier:
+			result.append(record)
+	result.sort_custom(_character_less)
+	return result
+
+
+func characters_by_companion_scope(scope: StringName) -> Array[CharacterRecord]:
+	var result: Array[CharacterRecord] = []
+	for record: CharacterRecord in _characters.values():
+		if record.companion_skill != null and record.companion_skill.scope == scope:
+			result.append(record)
+	result.sort_custom(_character_less)
+	return result
+
+
+func support_danmaku_bosses() -> Array[CharacterRecord]:
+	var result: Array[CharacterRecord] = []
+	for record: CharacterRecord in _characters.values():
+		if record.danmaku_role == &"support_boss":
+			result.append(record)
+	result.sort_custom(_character_less)
+	return result
+
+
 func locations_by_launch_tier(launch_tier: StringName) -> Array[LocationRecord]:
 	var result: Array[LocationRecord] = []
 	for record: LocationRecord in _locations.values():
@@ -371,8 +398,26 @@ func _index_records(
 			report.add_error(&"rules", source_path, "unsupported route depth: %s" % record.route_depth, record.id)
 		if record.skills_document.is_empty() or not FileAccess.file_exists(record.skills_document):
 			report.add_error(&"rules", source_path, "skills document is missing: %s" % record.skills_document, record.id)
+		if record.presence_tier not in [&"lead", &"regional", &"cameo", &"crowd"]:
+			report.add_error(&"rules", source_path, "unsupported roster presence tier: %s" % record.presence_tier, record.id)
+		if record.relationship_scope not in [&"deep_route", &"friendship_support", &"friendship_only", &"non_route"]:
+			report.add_error(&"rules", source_path, "unsupported relationship scope: %s" % record.relationship_scope, record.id)
+		if record.agency_anchor.is_empty():
+			report.add_error(&"rules", source_path, "roster entry requires an agency anchor", record.id)
+		if record.event_hooks.size() < 2 or record.event_hooks.size() > 4:
+			report.add_error(&"rules", source_path, "roster entry requires 2-4 event hooks", record.id)
+		if record.companion_skill == null or record.companion_skill.id == &"" or record.companion_skill.display_name.is_empty():
+			report.add_error(&"rules", source_path, "roster entry requires a companion skill contract", record.id)
+		elif record.companion_skill.scope not in [&"regional", &"event_only"]:
+			report.add_error(&"rules", source_path, "unsupported companion skill scope: %s" % record.companion_skill.scope, record.id)
+		if record.danmaku_role not in [&"launch_lead", &"support_boss", &"none"]:
+			report.add_error(&"rules", source_path, "unsupported danmaku role: %s" % record.danmaku_role, record.id)
+		if record.route_depth == &"deep" and record.relationship_scope != &"deep_route":
+			report.add_error(&"rules", source_path, "deep route lacks a deep-route relationship contract", record.id)
+		if record.route_depth == &"support" and record.relationship_scope == &"deep_route":
+			report.add_error(&"rules", source_path, "support roster entry promises an unsupported deep route", record.id)
 		record.tags.sort_custom(_string_name_less)
-		report.record_check(&"rules", 3)
+		report.record_check(&"rules", 12)
 	for record: LocationRecord in locations:
 		var source_path := _source(record.source_path, sources.locations_path)
 		_validate_id(record.id, "^loc\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$", source_path)

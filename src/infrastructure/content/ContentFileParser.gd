@@ -37,6 +37,15 @@ func parse_characters(path: String, schema_path: String) -> Array[CharacterRecor
 	var data: Variant = _load_validated_json(path, schema_path, &"parse_characters")
 	for raw: Variant in _object_array(data, "characters", path, &"parse_characters"):
 		var record: Dictionary = raw
+		var companion_raw: Variant = record.get("companion_skill", {})
+		var companion := CompanionSkillRecord.new(&"", "", "", &"")
+		if companion_raw is Dictionary:
+			companion = CompanionSkillRecord.new(
+				_name(companion_raw.get("id", "")),
+				_clean(companion_raw.get("display_name", "")),
+				_clean(companion_raw.get("description", "")),
+				_name(companion_raw.get("scope", ""))
+			)
 		result.append(
 			CharacterRecord.new(
 				_name(record.get("id", "")),
@@ -49,6 +58,12 @@ func parse_characters(path: String, schema_path: String) -> Array[CharacterRecor
 				_name(record.get("canon_confidence", "")),
 				_clean(record.get("skills_document", "")),
 				_names(record.get("tags", [])),
+				_name(record.get("presence_tier", "")),
+				_name(record.get("relationship_scope", "")),
+				_clean(record.get("agency_anchor", "")),
+				_strings(record.get("event_hooks", [])),
+				companion,
+				_name(record.get("danmaku_role", "")),
 				path
 			)
 		)

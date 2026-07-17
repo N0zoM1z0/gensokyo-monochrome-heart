@@ -11,7 +11,18 @@
       "route_scope_note": "Exercises the stricter project stable-ID rule.",
       "canon_confidence": "original",
       "skills_document": "res://design/10_codex/CODEX_MASTER_TASKBOOK.md",
-      "tags": ["fixture"]
+      "tags": ["fixture"],
+      "presence_tier": "cameo",
+      "relationship_scope": "friendship_support",
+      "agency_anchor": "Exercise the invalid stable-ID rule independently of the M15 roster contract.",
+      "event_hooks": ["Invalid ID One", "Invalid ID Two"],
+      "companion_skill": {
+        "id": "companion.invalid_case",
+        "display_name": "Fixture Skill",
+        "description": "Keeps this fixture valid except for its deliberately malformed character ID.",
+        "scope": "event_only"
+      },
+      "danmaku_role": "none"
     }
   ]
 }

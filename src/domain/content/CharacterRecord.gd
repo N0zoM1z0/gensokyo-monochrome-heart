@@ -12,6 +12,12 @@ var route_scope_note: String
 var canon_confidence: StringName
 var skills_document: String
 var tags: Array[StringName]
+var presence_tier: StringName
+var relationship_scope: StringName
+var agency_anchor: String
+var event_hooks: Array[String]
+var companion_skill: CompanionSkillRecord
+var danmaku_role: StringName
 var source_path: String
 
 
@@ -26,6 +32,12 @@ func _init(
 	p_canon_confidence: StringName,
 	p_skills_document: String,
 	p_tags: Array[StringName],
+	p_presence_tier: StringName,
+	p_relationship_scope: StringName,
+	p_agency_anchor: String,
+	p_event_hooks: Array[String],
+	p_companion_skill: CompanionSkillRecord,
+	p_danmaku_role: StringName,
 	p_source_path: String = ""
 ) -> void:
 	id = p_id
@@ -38,6 +50,12 @@ func _init(
 	canon_confidence = p_canon_confidence
 	skills_document = p_skills_document
 	tags = p_tags.duplicate()
+	presence_tier = p_presence_tier
+	relationship_scope = p_relationship_scope
+	agency_anchor = p_agency_anchor
+	event_hooks = p_event_hooks.duplicate()
+	companion_skill = p_companion_skill
+	danmaku_role = p_danmaku_role
 	source_path = p_source_path
 
 

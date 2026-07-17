@@ -71,6 +71,7 @@ actual_version="$($GODOT_BIN --version)"
 echo "Godot version: $actual_version"
 
 run_checked "design package" python3 design/tools/validate_package.py
+run_checked "M15 roster metadata" python3 scripts/build_m15_roster.py --check
 run_checked "content synchronization" python3 scripts/sync_design_content.py --check
 run_checked "font synchronization" python3 scripts/sync_fonts.py --check
 run_checked "Python syntax" python3 -m compileall -q scripts

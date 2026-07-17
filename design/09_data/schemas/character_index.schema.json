@@ -19,7 +19,13 @@
           "slug",
           "display_name_en",
           "skills_document",
-          "route_depth"
+          "route_depth",
+          "presence_tier",
+          "relationship_scope",
+          "agency_anchor",
+          "event_hooks",
+          "companion_skill",
+          "danmaku_role"
         ],
         "properties": {
           "id": {
@@ -58,6 +64,72 @@
             "items": {
               "type": "string"
             }
+          },
+          "presence_tier": {
+            "enum": [
+              "lead",
+              "regional",
+              "cameo",
+              "crowd"
+            ]
+          },
+          "relationship_scope": {
+            "enum": [
+              "deep_route",
+              "friendship_support",
+              "friendship_only",
+              "non_route"
+            ]
+          },
+          "agency_anchor": {
+            "type": "string",
+            "minLength": 12
+          },
+          "event_hooks": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 3
+            }
+          },
+          "companion_skill": {
+            "type": "object",
+            "required": [
+              "id",
+              "display_name",
+              "description",
+              "scope"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^companion\\."
+              },
+              "display_name": {
+                "type": "string",
+                "minLength": 2
+              },
+              "description": {
+                "type": "string",
+                "minLength": 12
+              },
+              "scope": {
+                "enum": [
+                  "regional",
+                  "event_only"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "danmaku_role": {
+            "enum": [
+              "launch_lead",
+              "support_boss",
+              "none"
+            ]
           }
         },
         "additionalProperties": false

@@ -11,7 +11,18 @@
       "route_scope_note": "Must collide with the reviewed character index.",
       "canon_confidence": "fixture",
       "skills_document": "res://design/10_codex/CODEX_MASTER_TASKBOOK.md",
-      "tags": ["fixture"]
+      "tags": ["fixture"],
+      "presence_tier": "lead",
+      "relationship_scope": "deep_route",
+      "agency_anchor": "Exercise duplicate registration without failing the M15 roster metadata contract.",
+      "event_hooks": ["Duplicate One", "Duplicate Two"],
+      "companion_skill": {
+        "id": "companion.duplicate_reimu_fixture",
+        "display_name": "Fixture Skill",
+        "description": "Keeps this fixture valid except for its deliberately duplicated character ID.",
+        "scope": "regional"
+      },
+      "danmaku_role": "launch_lead"
     }
   ]
 }
