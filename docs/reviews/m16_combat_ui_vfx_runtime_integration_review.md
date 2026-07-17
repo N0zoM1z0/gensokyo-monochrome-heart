@@ -103,9 +103,9 @@ engineering-stress captures.
   35.378–42.020 ms MultiMesh baseline. The fixture continues to report
   `within_budget: false` honestly pending target-GPU evidence.
 
-## Remaining scope
+## Cross-system closure
 
 This approval closes the production bullet, UI-export, and standard/reduced VFX
-runtime composition gates. It does not by itself declare all of M16 complete;
-the next phase is the final cross-system audit of release evidence, remaining
-scope statements, credits/provenance, and the complete verification matrix.
+runtime composition gates. The subsequent release evidence, credits/provenance,
+complete verification matrix, repaired player-review findings, and remaining
+human audio boundary are recorded in `m16_cross_system_audit.md`.

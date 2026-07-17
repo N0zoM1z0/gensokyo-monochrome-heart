@@ -96,5 +96,6 @@ blocker.
 This approval closes the five headline region atlas/runtime gate. The subsequent
 production bullet, UI export, and standard/reduced-flash VFX mapping, composed
 screenshots, and player review are recorded in
-`m16_combat_ui_vfx_runtime_integration_review.md`. Overall M16 acceptance still
-requires the final cross-system audit.
+`m16_combat_ui_vfx_runtime_integration_review.md`. The final combined evidence
+and remaining real-device audio boundary are recorded in
+`m16_cross_system_audit.md`.

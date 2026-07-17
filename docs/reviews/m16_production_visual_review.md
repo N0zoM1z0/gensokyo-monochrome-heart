@@ -68,5 +68,5 @@ palette resolution, and composed proofs are reviewed in
 `docs/reviews/m16_region_runtime_integration_review.md`. Bullet/UI art and both
 VFX modes subsequently completed their runtime-background screenshot and player
 review in `docs/reviews/m16_combat_ui_vfx_runtime_integration_review.md`. The
-remaining M16 gate is the final cross-system audit rather than another asset-file
-approval.
+final combined evidence and repaired full-matrix player findings are recorded in
+`docs/reviews/m16_cross_system_audit.md`.
