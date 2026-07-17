@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "924572f39962bb4eccd4fcd58efc826c4ad98b29fff7c788f3a18ec2abd7a8d9",
+  "content_hash": "39bba74cf57964afb59f71fc5e7d31d53b0ec654e974646907827a0cd6cc173b",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 89,
-    "dialogue_beats": 560,
-    "localization": 1738,
+    "events": 90,
+    "dialogue_beats": 568,
+    "localization": 1754,
     "music_cues": 89,
-    "event_nodes": 1363
+    "event_nodes": 1381
   },
   "ids": {
     "characters": [
@@ -187,6 +187,7 @@
       "evt.sdm.promise",
       "evt.sdm.small_chair",
       "evt.sne.faith_festival_planner",
+      "evt.sne.guaranteed_faith",
       "evt.sne.ordinary_miracle",
       "evt.sne.outside_world_shorthand",
       "evt.sne.shrine_between_homes",
@@ -686,6 +687,14 @@
       "beat.sne.faith_festival_planner.playful",
       "beat.sne.faith_festival_planner.sanae_plan",
       "beat.sne.faith_festival_planner.suwako_condition",
+      "beat.sne.guaranteed_faith.after_disconnect",
+      "beat.sne.guaranteed_faith.after_doubt",
+      "beat.sne.guaranteed_faith.defiant",
+      "beat.sne.guaranteed_faith.direct",
+      "beat.sne.guaranteed_faith.offer",
+      "beat.sne.guaranteed_faith.patient",
+      "beat.sne.guaranteed_faith.playful",
+      "beat.sne.guaranteed_faith.temptation",
       "beat.sne.ordinary_miracle.after_meaning",
       "beat.sne.ordinary_miracle.after_test",
       "beat.sne.ordinary_miracle.defiant",
@@ -1010,6 +1019,10 @@
       "choice.sne.faith_festival_planner.direct",
       "choice.sne.faith_festival_planner.patient",
       "choice.sne.faith_festival_planner.playful",
+      "choice.sne.guaranteed_faith.defiant",
+      "choice.sne.guaranteed_faith.direct",
+      "choice.sne.guaranteed_faith.patient",
+      "choice.sne.guaranteed_faith.playful",
       "choice.sne.ordinary_miracle.defiant",
       "choice.sne.ordinary_miracle.direct",
       "choice.sne.ordinary_miracle.patient",
@@ -1534,6 +1547,14 @@
       "dlg.sne.faith_festival_planner.playful",
       "dlg.sne.faith_festival_planner.sanae_plan",
       "dlg.sne.faith_festival_planner.suwako_condition",
+      "dlg.sne.guaranteed_faith.after_disconnect",
+      "dlg.sne.guaranteed_faith.after_doubt",
+      "dlg.sne.guaranteed_faith.defiant",
+      "dlg.sne.guaranteed_faith.direct",
+      "dlg.sne.guaranteed_faith.offer",
+      "dlg.sne.guaranteed_faith.patient",
+      "dlg.sne.guaranteed_faith.playful",
+      "dlg.sne.guaranteed_faith.temptation",
       "dlg.sne.ordinary_miracle.after_meaning",
       "dlg.sne.ordinary_miracle.after_test",
       "dlg.sne.ordinary_miracle.defiant",
@@ -1666,6 +1687,7 @@
       "event.sdm.promise.title",
       "event.sdm.small_chair.title",
       "event.sne.faith_festival_planner.title",
+      "event.sne.guaranteed_faith.title",
       "event.sne.ordinary_miracle.title",
       "event.sne.outside_world_shorthand.title",
       "event.sne.shrine_between_homes.title",
@@ -1857,6 +1879,8 @@
       "journal.sdm.small_chair.title",
       "journal.sne.faith_festival_planner.body",
       "journal.sne.faith_festival_planner.title",
+      "journal.sne.guaranteed_faith.body",
+      "journal.sne.guaranteed_faith.title",
       "journal.sne.ordinary_miracle.body",
       "journal.sne.ordinary_miracle.title",
       "journal.sne.outside_world_shorthand.body",
@@ -1936,6 +1960,7 @@
       "obj.sdm.small_chair.enter_by_invitation",
       "obj.sdm.trace_missing_minute",
       "obj.sne.faith_festival_planner.compare",
+      "obj.sne.guaranteed_faith.inspect",
       "obj.sne.ordinary_miracle.inspect",
       "obj.sne.outside_world_shorthand.read_labels",
       "obj.sne.shrine_between_homes.inspect",
@@ -7473,6 +7498,86 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sne.guaranteed_faith.after_disconnect",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.after_disconnect",
+      "target": "dlg.sne.guaranteed_faith.after_disconnect",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.after_doubt",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.after_doubt",
+      "target": "dlg.sne.guaranteed_faith.after_doubt",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.defiant",
+      "target": "dlg.sne.guaranteed_faith.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.direct",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.direct",
+      "target": "dlg.sne.guaranteed_faith.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.offer",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.offer",
+      "target": "dlg.sne.guaranteed_faith.offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.patient",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.patient",
+      "target": "dlg.sne.guaranteed_faith.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.playful",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.playful",
+      "target": "dlg.sne.guaranteed_faith.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.temptation",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.guaranteed_faith.temptation",
+      "target": "dlg.sne.guaranteed_faith.temptation",
+      "kind": "localization"
+    },
+    {
       "source": "beat.sne.ordinary_miracle.after_meaning",
       "target": "char.sanae_kochiya",
       "kind": "speaker"
@@ -9420,6 +9525,26 @@
     {
       "source": "choice.sne.faith_festival_planner.response",
       "target": "choice.sne.faith_festival_planner.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.guaranteed_faith.response",
+      "target": "choice.sne.guaranteed_faith.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.guaranteed_faith.response",
+      "target": "choice.sne.guaranteed_faith.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.guaranteed_faith.response",
+      "target": "choice.sne.guaranteed_faith.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.guaranteed_faith.response",
+      "target": "choice.sne.guaranteed_faith.playful",
       "kind": "localization"
     },
     {
@@ -24614,6 +24739,231 @@
     },
     {
       "source": "evt.sne.faith_festival_planner",
+      "target": "loc.moriya_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n001",
+      "target": "evt.sne.guaranteed_faith.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n001",
+      "target": "mus_sanae_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n002",
+      "target": "evt.sne.guaranteed_faith.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n002",
+      "target": "obj.sne.guaranteed_faith.inspect",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n002",
+      "target": "prop.sne.disconnected_verification_lead",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n002",
+      "target": "prop.sne.never_falling_faith_counter",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n003",
+      "target": "beat.sne.guaranteed_faith.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n003",
+      "target": "evt.sne.guaranteed_faith.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n004",
+      "target": "beat.sne.guaranteed_faith.temptation",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n004",
+      "target": "evt.sne.guaranteed_faith.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n005",
+      "target": "choice.sne.guaranteed_faith.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n005",
+      "target": "evt.sne.guaranteed_faith.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n005",
+      "target": "evt.sne.guaranteed_faith.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n005",
+      "target": "evt.sne.guaranteed_faith.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n005",
+      "target": "evt.sne.guaranteed_faith.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_after_01",
+      "target": "beat.sne.guaranteed_faith.after_disconnect",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_after_01",
+      "target": "evt.sne.guaranteed_faith.node.n_after_02",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_after_02",
+      "target": "beat.sne.guaranteed_faith.after_doubt",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_after_02",
+      "target": "evt.sne.guaranteed_faith.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_defiant_line",
+      "target": "beat.sne.guaranteed_faith.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_defiant_line",
+      "target": "evt.sne.guaranteed_faith.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_defiant",
+      "target": "evt.sne.guaranteed_faith.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_direct_line",
+      "target": "beat.sne.guaranteed_faith.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_direct_line",
+      "target": "evt.sne.guaranteed_faith.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_direct",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_direct",
+      "target": "evt.sne.guaranteed_faith.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_effects",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_effects",
+      "target": "evt.sne.guaranteed_faith.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_journal",
+      "target": "evt.sne.guaranteed_faith.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_journal",
+      "target": "journal.sne.guaranteed_faith",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_patient_line",
+      "target": "beat.sne.guaranteed_faith.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_patient_line",
+      "target": "evt.sne.guaranteed_faith.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_patient",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_patient",
+      "target": "evt.sne.guaranteed_faith.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_playful_line",
+      "target": "beat.sne.guaranteed_faith.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_playful_line",
+      "target": "evt.sne.guaranteed_faith.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_playful",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith.node.n_playful",
+      "target": "evt.sne.guaranteed_faith.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith",
+      "target": "char.sanae_kochiya",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith",
+      "target": "char.sanae_kochiya",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith",
+      "target": "event.sne.guaranteed_faith.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith",
+      "target": "evt.sne.guaranteed_faith",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith",
+      "target": "loc.moriya_shrine.archive_verification_hall",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.sne.guaranteed_faith",
       "target": "loc.moriya_shrine",
       "kind": "location"
     },
