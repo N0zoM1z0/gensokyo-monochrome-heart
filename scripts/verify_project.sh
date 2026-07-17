@@ -405,6 +405,8 @@ run_checked "M14 Tenshi Keystone Construction integration" env XDG_DATA_HOME="$L
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_tenshi_keystone_construction.gd
 run_checked "M14 Tenshi Imperfect Meal integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_tenshi_imperfect_meal.gd
+run_checked "M14 Tenshi Attention Is Not Permission integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_tenshi_attention_not_permission.gd
 run_checked "runtime smoke" "$GODOT_BIN" --headless --path . --quit-after 60
 
 run_expected_failure "duplicate ID fixture" "duplicate stable ID" \

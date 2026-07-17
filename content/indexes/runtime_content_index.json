@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "f33600c3a9bfef60e7b440d5880f4853545037aa413ff8b2dc7e52515bfa14a8",
+  "content_hash": "5e645b347488bbf620f737ed57d62ac9c185d6f38c356ceb11152b8727c81abe",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 100,
-    "dialogue_beats": 682,
-    "localization": 1981,
+    "events": 101,
+    "dialogue_beats": 690,
+    "localization": 1997,
     "music_cues": 89,
-    "event_nodes": 1636
+    "event_nodes": 1656
   },
   "ids": {
     "characters": [
@@ -198,6 +198,7 @@
       "evt.sne.outside_world_shorthand",
       "evt.sne.promise",
       "evt.sne.shrine_between_homes",
+      "evt.tsh.attention_not_permission",
       "evt.tsh.entrance_tremor",
       "evt.tsh.imperfect_meal",
       "evt.tsh.keystone_construction",
@@ -819,6 +820,14 @@
       "beat.sne.shrine_between_homes.key",
       "beat.sne.shrine_between_homes.patient",
       "beat.sne.shrine_between_homes.playful",
+      "beat.tsh.attention_not_permission.break",
+      "beat.tsh.attention_not_permission.cost",
+      "beat.tsh.attention_not_permission.defiant",
+      "beat.tsh.attention_not_permission.direct",
+      "beat.tsh.attention_not_permission.leave",
+      "beat.tsh.attention_not_permission.patient",
+      "beat.tsh.attention_not_permission.playful",
+      "beat.tsh.attention_not_permission.respect",
       "beat.tsh.entrance_tremor.arrival",
       "beat.tsh.entrance_tremor.defiant",
       "beat.tsh.entrance_tremor.direct",
@@ -1197,6 +1206,10 @@
       "choice.sne.shrine_between_homes.direct",
       "choice.sne.shrine_between_homes.patient",
       "choice.sne.shrine_between_homes.playful",
+      "choice.tsh.attention_not_permission.defiant",
+      "choice.tsh.attention_not_permission.direct",
+      "choice.tsh.attention_not_permission.patient",
+      "choice.tsh.attention_not_permission.playful",
       "choice.tsh.entrance_tremor.defiant",
       "choice.tsh.entrance_tremor.direct",
       "choice.tsh.entrance_tremor.patient",
@@ -1843,6 +1856,14 @@
       "dlg.sne.shrine_between_homes.key",
       "dlg.sne.shrine_between_homes.patient",
       "dlg.sne.shrine_between_homes.playful",
+      "dlg.tsh.attention_not_permission.break",
+      "dlg.tsh.attention_not_permission.cost",
+      "dlg.tsh.attention_not_permission.defiant",
+      "dlg.tsh.attention_not_permission.direct",
+      "dlg.tsh.attention_not_permission.leave",
+      "dlg.tsh.attention_not_permission.patient",
+      "dlg.tsh.attention_not_permission.playful",
+      "dlg.tsh.attention_not_permission.respect",
       "dlg.tsh.entrance_tremor.arrival",
       "dlg.tsh.entrance_tremor.defiant",
       "dlg.tsh.entrance_tremor.direct",
@@ -1987,6 +2008,7 @@
       "event.sne.outside_world_shorthand.title",
       "event.sne.promise.title",
       "event.sne.shrine_between_homes.title",
+      "event.tsh.attention_not_permission.title",
       "event.tsh.entrance_tremor.title",
       "event.tsh.imperfect_meal.title",
       "event.tsh.keystone_construction.title",
@@ -2219,6 +2241,8 @@
       "journal.sne.promise.undecided.title",
       "journal.sne.shrine_between_homes.body",
       "journal.sne.shrine_between_homes.title",
+      "journal.tsh.attention_not_permission.body",
+      "journal.tsh.attention_not_permission.title",
       "journal.tsh.entrance_tremor.body",
       "journal.tsh.entrance_tremor.title",
       "journal.tsh.imperfect_meal.body",
@@ -2310,6 +2334,7 @@
       "obj.sne.outside_world_shorthand.read_labels",
       "obj.sne.promise.choose",
       "obj.sne.shrine_between_homes.inspect",
+      "obj.tsh.attention_not_permission.inspect",
       "obj.tsh.entrance_tremor.inspect",
       "obj.tsh.imperfect_meal.notice",
       "obj.tsh.keystone_construction.read",
@@ -9069,6 +9094,86 @@
       "kind": "localization"
     },
     {
+      "source": "beat.tsh.attention_not_permission.break",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.break",
+      "target": "dlg.tsh.attention_not_permission.break",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.cost",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.cost",
+      "target": "dlg.tsh.attention_not_permission.cost",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.defiant",
+      "target": "dlg.tsh.attention_not_permission.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.direct",
+      "target": "dlg.tsh.attention_not_permission.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.leave",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.leave",
+      "target": "dlg.tsh.attention_not_permission.leave",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.patient",
+      "target": "dlg.tsh.attention_not_permission.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.playful",
+      "target": "dlg.tsh.attention_not_permission.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.respect",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.attention_not_permission.respect",
+      "target": "dlg.tsh.attention_not_permission.respect",
+      "kind": "localization"
+    },
+    {
       "source": "beat.tsh.entrance_tremor.arrival",
       "target": "char.tenshi_hinanawi",
       "kind": "speaker"
@@ -11286,6 +11391,26 @@
     {
       "source": "choice.sne.shrine_between_homes.response",
       "target": "choice.sne.shrine_between_homes.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.attention_not_permission.response",
+      "target": "choice.tsh.attention_not_permission.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.attention_not_permission.response",
+      "target": "choice.tsh.attention_not_permission.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.attention_not_permission.response",
+      "target": "choice.tsh.attention_not_permission.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.attention_not_permission.response",
+      "target": "choice.tsh.attention_not_permission.playful",
       "kind": "localization"
     },
     {
@@ -29771,6 +29896,231 @@
     {
       "source": "evt.sne.shrine_between_homes",
       "target": "loc.moriya_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n001",
+      "target": "evt.tsh.attention_not_permission.node.n_break",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n001",
+      "target": "mus_tenshi_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_break",
+      "target": "beat.tsh.attention_not_permission.break",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_break",
+      "target": "evt.tsh.attention_not_permission.node.n_cost",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_choice",
+      "target": "choice.tsh.attention_not_permission.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_choice",
+      "target": "evt.tsh.attention_not_permission.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_choice",
+      "target": "evt.tsh.attention_not_permission.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_choice",
+      "target": "evt.tsh.attention_not_permission.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_choice",
+      "target": "evt.tsh.attention_not_permission.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_cost",
+      "target": "beat.tsh.attention_not_permission.cost",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_cost",
+      "target": "evt.tsh.attention_not_permission.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_defiant_line",
+      "target": "beat.tsh.attention_not_permission.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_defiant_line",
+      "target": "evt.tsh.attention_not_permission.node.n_leave",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_defiant",
+      "target": "evt.tsh.attention_not_permission.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_direct_line",
+      "target": "beat.tsh.attention_not_permission.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_direct_line",
+      "target": "evt.tsh.attention_not_permission.node.n_leave",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_direct",
+      "target": "evt.tsh.attention_not_permission.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_effects",
+      "target": "evt.tsh.attention_not_permission.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_journal",
+      "target": "evt.tsh.attention_not_permission.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_journal",
+      "target": "journal.tsh.attention_not_permission",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_leave_effects",
+      "target": "evt.tsh.attention_not_permission.node.n_respect",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_leave",
+      "target": "beat.tsh.attention_not_permission.leave",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_leave",
+      "target": "evt.tsh.attention_not_permission.node.n_leave_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_objective",
+      "target": "evt.tsh.attention_not_permission.node.n_strain",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_objective",
+      "target": "obj.tsh.attention_not_permission.inspect",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_objective",
+      "target": "prop.tsh.clear_cloud_exit",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_objective",
+      "target": "prop.tsh.closed_practice_arena",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_objective",
+      "target": "prop.tsh.rebroken_boundary_stone",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_patient_line",
+      "target": "beat.tsh.attention_not_permission.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_patient_line",
+      "target": "evt.tsh.attention_not_permission.node.n_leave",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_patient",
+      "target": "evt.tsh.attention_not_permission.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_playful_line",
+      "target": "beat.tsh.attention_not_permission.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_playful_line",
+      "target": "evt.tsh.attention_not_permission.node.n_leave",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_playful",
+      "target": "evt.tsh.attention_not_permission.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_respect",
+      "target": "beat.tsh.attention_not_permission.respect",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_respect",
+      "target": "evt.tsh.attention_not_permission.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_strain",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission.node.n_strain",
+      "target": "evt.tsh.attention_not_permission.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission",
+      "target": "char.tenshi_hinanawi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission",
+      "target": "char.tenshi_hinanawi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission",
+      "target": "event.tsh.attention_not_permission.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission",
+      "target": "evt.tsh.attention_not_permission",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission",
+      "target": "loc.heaven.boundary_stone_exit",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.tsh.attention_not_permission",
+      "target": "loc.heaven",
       "kind": "location"
     },
     {
