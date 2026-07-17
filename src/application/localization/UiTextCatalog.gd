@@ -4,7 +4,7 @@ extends RefCounted
 
 const DEFAULT_PATH := "res://content/localization/ui_strings.json"
 const SCHEMA_PATH := "res://schemas/ui_localization.schema.json"
-const REVIEWED_CSV_PATH := "res://content/localization/strings.csv"
+const REVIEWED_CSV_PATH := "res://content/runtime/localization/strings.csv.txt"
 
 var errors: Array[String] = []
 var _records: Dictionary[StringName, LocalizedTextRecord] = {}

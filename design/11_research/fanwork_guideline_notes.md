@@ -1,6 +1,17 @@
 # Touhou Fan-Work Guideline Notes
 
-Research snapshot: 2026-07-14. This summary is not legal advice and does not replace the current official guideline page.
+Research snapshot: 2026-07-17. This summary is not legal advice and does not replace the current official guideline page.
+
+The release-candidate review opened the official
+[Touhou Project fan-work guideline](https://touhou-project.news/guideline/)
+on 2026-07-17. The page is dated 2024-05-31 and states that individual fan
+activity is generally permitted within common sense, requires clear fan-work
+identification, prohibits misleading official presentation and infringement of
+others' rights, and limits distribution to original-sales or permitted channels.
+It also says the guideline may change without notice. This candidate therefore
+does not select a storefront, price, crowdfunding plan, or public support
+channel by implication; each needs an owner-approved review immediately before
+distribution.
 
 ## Production interpretation
 
@@ -37,3 +48,13 @@ Even where fan-work rules may allow broad creativity, this project additionally 
 8. Confirm demo, soundtrack, crowdfunding, and physical goods separately.
 9. Confirm credits/unofficial notice in EN and JA.
 10. Preserve the review record with the release manifest.
+
+## M19 candidate decision
+
+- Intended format: a portable Linux x86_64 technical candidate.
+- Public distribution decision: **not approved**. M17 human editorial/canon
+  review, target-GPU evidence, an owned support contact, and a named permitted
+  distribution channel remain outstanding.
+- Crowdfunding: not planned for this candidate.
+- Official-game files, screenshots, endings, copied assets, and other creators'
+  works remain prohibited by the project policy and release asset ledger.

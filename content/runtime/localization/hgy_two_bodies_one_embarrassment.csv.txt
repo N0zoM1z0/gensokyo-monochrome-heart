@@ -1,0 +1,20 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.hgy.two_bodies.cross,objective,,Help Youmu and her phantom cross the narrow bridge on their own terms.,妖夢と半霊がそれぞれの意思で細い橋を渡るのを手伝う。,208,Original
+event.hgy.two_bodies.title,event_title,,"Two Bodies, One Embarrassment",二つの身体と一つの気まずさ,208,Original
+choice.hgy.two_bodies.direct,choice,,Ask which half wants to cross first.,どちらが先に渡りたいのか尋ねる。,248,Original
+choice.hgy.two_bodies.playful,choice,,Say the bridge is about to receive two very serious guests.,橋にとても真面目な客が二人来ると言う。,248,Original
+choice.hgy.two_bodies.patient,choice,,Wait until Youmu decides how to begin.,妖夢が始め方を決めるまで待つ。,248,Original
+choice.hgy.two_bodies.defiant,choice,,Say neither half needs to prove it belongs here.,どちらもここにいる資格を証明しなくていいと言う。,248,Original
+dlg.hgy.two_bodies.intro,dialogue,char.youmu_konpaku,"The bridge is narrow, but that is not the problem. I keep trying to make both of us take the same step.",「橋は細いですが、問題はそれではありません。私はいつも、私たち二人に同じ一歩を踏ませようとしてしまいます。」,248,Original
+dlg.hgy.two_bodies.explain,dialogue,char.youmu_konpaku,The upper mark is mine and the lower one is my phantom's. We can cross separately. I only have to stop calling that untidy.,「上の印は私の、下の印は半霊のものです。別々に渡れます。それを整っていないと呼ぶのを、やめればいいだけです。」,248,Original
+dlg.hgy.two_bodies.direct,dialogue,char.youmu_konpaku,That is fair. I will ask instead of assuming. It should have been obvious.,「それが公平です。決めつけずに聞きます。もっと早く気づくべきでした。」,248,Original
+dlg.hgy.two_bodies.playful,dialogue,char.youmu_konpaku,Please do not announce it to the bridge. My phantom already looks pleased with itself.,「橋には言わないでください。半霊がもう得意そうにしています。」,248,Original
+dlg.hgy.two_bodies.patient,dialogue,char.youmu_konpaku,Thank you. Waiting is difficult when I have mistaken speed for discipline.,「ありがとうございます。速さを規律だと勘違いしていると、待つのは難しいです。」,248,Original
+dlg.hgy.two_bodies.defiant,dialogue,char.youmu_konpaku,"No. Neither does. I know that, but knowing it and moving like it are different lessons.",「ええ、そうです。どちらも必要ありません。分かっていることと、その通りに動けることは別の勉強です。」,248,Original
+dlg.hgy.two_bodies.clear,dialogue,char.youmu_konpaku,We arrived at different moments. Nothing split. Nothing needed to be repaired.,「着いた瞬間は別々でした。何も分かれませんでした。直す必要のあるものもありませんでした。」,248,Original
+dlg.hgy.two_bodies.withdrawn,dialogue,char.youmu_konpaku,We may leave the bridge for today. Stopping is not proof that either of us is unfinished.,「今日は橋を残してもいいです。止まることは、どちらかが未完成だという証明ではありません。」,248,Original
+dlg.hgy.two_bodies.after,dialogue,char.youmu_konpaku,I do not have to make every part of me march in one line before I can be seen.,「見てもらう前に、自分の全部を一列に行進させなくてもいいのですね。」,248,Original
+journal.hgy.two_bodies.title,journal_title,,The Bridge With Two Footprints,二つの足跡がある橋,248,Original
+journal.hgy.two_bodies.body,journal_body,,Youmu and her phantom crossed on separate terms. Their difference was not a defect to conceal or a joke to make at either one's expense.,妖夢と半霊は別々の意思で渡った。その違いは隠す欠点でも、どちらかを笑う理由でもなかった。,248,Original
+journal.hgy.two_bodies.withdrawn.title,journal_title,,The Bridge Left for Tomorrow,明日に残した橋,248,Original
+journal.hgy.two_bodies.withdrawn.body,journal_body,,The crossing was left for another day without turning either half into a problem. Youmu named the pause without apologizing for it.,橋は別の日に残された。どちらも問題にはされなかった。妖夢は休止を謝らずに、その名を呼んだ。,248,Original

@@ -1,0 +1,21 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.hkr.offerings.inspect_box,objective,,Sort memory offerings from boundary residue.,記憶の供物と結界の残滓を分ける。,208,Original
+event.hkr.offerings_without_owners.title,event_title,,Offerings Without Owners,持ち主のない供物,208,Original
+choice.hkr.offerings.direct,choice,,Sort what belongs to the shrine from what does not.,神社に属する物と、そうでない物を分けようと言う。,248,Original
+choice.hkr.offerings.playful,choice,,Ask whether any memory is worth more than a coin.,硬貨より価値のある記憶はあるかと聞く。,248,Original
+choice.hkr.offerings.patient,choice,,Ask where Reimu wants each tray moved.,どの盆をどこへ運ぶか霊夢に聞く。,248,Original
+choice.hkr.offerings.defiant,choice,,Say the box is doing shrine work—not causing a nuisance.,賽銭箱は迷惑でなく、神社の役目を果たしていると言う。,248,Original
+dlg.hkr.offerings.reimu.intro,dialogue,char.reimu_hakurei,"No coins. Three memories, one apology, and a summer afternoon that belongs to someone else.",「硬貨はなし。記憶が三つ、謝罪が一つ、それと誰かの夏の午後。」,248,Original
+dlg.hkr.offerings.reimu.duty,dialogue,char.reimu_hakurei,"The joke can wait. Offerings are supposed to cross a boundary cleanly. These are snagging it.",「冗談は後。供物は境界をきれいに渡るものよ。これは引っかかってる。」,248,Original
+dlg.hkr.offerings.reimu.direct,dialogue,char.reimu_hakurei,"Good. Shrine side on the white tray. Anything still calling for an owner stays by me.",「いいわ。神社側は白い盆。まだ持ち主を呼んでいる物は、私のそばに置いて。」,248,Original
+dlg.hkr.offerings.reimu.playful,dialogue,char.reimu_hakurei,"Today? The apology. It might actually be used. Keep the coins out of this.",「今日は謝罪ね。使われるかもしれない。硬貨の話は混ぜないで。」,248,Original
+dlg.hkr.offerings.reimu.patient,dialogue,char.reimu_hakurei,"White tray to the altar. Black tray to the boundary. If one whispers a name, stop and tell me.",「白い盆は祭壇へ。黒い盆は結界へ。名前を囁く物があったら、止まって私に言って。」,248,Original
+dlg.hkr.offerings.reimu.defiant,dialogue,char.reimu_hakurei,"I know what my shrine does. Pick up the white tray if you want to prove you do too.",「自分の神社の役目くらい分かってる。あなたも分かるなら、白い盆を持って。」,248,Original
+dlg.hkr.offerings.reimu.pattern,dialogue,char.reimu_hakurei,"Down. The memories are pulling boundary residue into their old shapes. Do not break the offerings.",「伏せて。記憶が結界の残滓を昔の形へ引いてる。供物は壊さないで。」,248,Original
+dlg.hkr.offerings.reimu.clear,dialogue,char.reimu_hakurei,"Clean enough. The box can receive things again without keeping their owners attached.",「これで十分。持ち主まで引き留めずに、また供物を受け取れる。」,248,Original
+dlg.hkr.offerings.reimu.assist,dialogue,char.reimu_hakurei,"A wider seal is still a seal. The offerings crossed, and nobody had to pretend otherwise.",「広い封印でも封印は封印よ。供物は渡った。違うふりをする必要はないわ。」,248,Original
+dlg.hkr.offerings.reimu.loss,dialogue,char.reimu_hakurei,"Behind me. Protect the trays. I can close my own boundary, and you can still help with the work.",「私の後ろへ。盆を守って。結界は私が閉じる。その後の仕事は手伝える。」,248,Original
+dlg.hkr.offerings.reimu.after_01,dialogue,char.reimu_hakurei,"This one still has a road home. I will leave it at the village lost-and-found before dusk.",「これはまだ帰り道を持ってる。日暮れ前に里の預かり所へ置いてくるわ。」,248,Original
+dlg.hkr.offerings.reimu.after_02,dialogue,char.reimu_hakurei,"The second broom is not an invitation to move in. It means the veranda has two sides.",「二本目の箒は住み着けという意味じゃない。縁側に二つの端があるだけよ。」,248,Original
+journal.hkr.offerings_without_owners.title,journal_title,,The Offering That Still Knew Home,まだ帰り道を知る供物,248,Original
+journal.hkr.offerings_without_owners.body,journal_body,,Reimu restored the shrine before asking who the memories belonged to. She kept one offering safe because it still had a road back to its owner.,霊夢は記憶の持ち主を尋ねる前に、神社の働きを戻した。まだ持ち主への帰り道がある供物を一つ、彼女は守っている。,248,Original

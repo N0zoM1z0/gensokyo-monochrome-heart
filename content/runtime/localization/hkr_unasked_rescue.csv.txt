@@ -1,0 +1,21 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.hkr.unasked_rescue.hold_veranda,objective,,Keep the veranda line from opening.,縁側の線を開かせない。,208,Original
+event.hkr.unasked_rescue.title,event_title,,The Unasked Rescue,頼まれなかった救助,248,Original
+choice.hkr.rescue.direct,choice,,Say you heard her and will hold the marker.,聞こえた、札を持つと言う。,248,Original
+choice.hkr.rescue.playful,choice,,Say being thrown behind her is not your preferred route home.,後ろに放り込まれるのは好きな帰り道じゃない、と言う。,248,Original
+choice.hkr.rescue.patient,choice,,Ask whether she wants you to take the repair line when the gap closes.,隙間が閉じたら修復線を受け持っていいか聞く。,248,Original
+choice.hkr.rescue.defiant,choice,,Say you will not owe her for doing what only she could do.,彼女にしかできないことをしたからと、借りは作らないと言う。,248,Original
+dlg.hkr.rescue.reimu.collapse,dialogue,char.reimu_hakurei,"Do not step back. The boundary is folding toward the veranda.",「下がらないで。結界が縁側へ折れ込んでる。」,248,Original
+dlg.hkr.rescue.reimu.protect,dialogue,char.reimu_hakurei,"Too late. Behind me. That was not a request.",「遅い。後ろへ。頼んでない。」,248,Original
+dlg.hkr.rescue.reimu.direct,dialogue,char.reimu_hakurei,"Good. Hold it level. Listening is more useful than apologizing right now.",「いい。水平に持って。今は謝るより聞くほうが役に立つ。」,248,Original
+dlg.hkr.rescue.reimu.playful,dialogue,char.reimu_hakurei,"Complain after the gap stops trying to eat the porch.",「隙間が縁側を食べるのをやめてから文句を言って。」,248,Original
+dlg.hkr.rescue.reimu.patient,dialogue,char.reimu_hakurei,"Yes. After it closes. You do not repair a tear from inside it.",「いいわ。閉じてから。裂け目の中から直そうとしないで。」,248,Original
+dlg.hkr.rescue.reimu.defiant,dialogue,char.reimu_hakurei,"Fine. Then do not turn it into a speech. Hold the marker.",「いいわ。じゃあ演説にしないで。札を持って。」,248,Original
+dlg.hkr.rescue.reimu.no_debt,dialogue,char.reimu_hakurei,"I moved you because you were in the way of a bad idea. Keep the line open.",「あなたを動かしたのは、悪い考えの邪魔だったから。筋を開けて。」,248,Original
+dlg.hkr.rescue.reimu.clear,dialogue,char.reimu_hakurei,"The fold is gone. Do not thank me like I performed for you.",「折れ込みは消えた。見せ物でもしたみたいに礼を言わないで。」,248,Original
+dlg.hkr.rescue.reimu.assist,dialogue,char.reimu_hakurei,"It held. That is enough drama for one veranda.",「保った。それで縁側一つ分の騒ぎには十分よ。」,248,Original
+dlg.hkr.rescue.reimu.loss,dialogue,char.reimu_hakurei,"Outer stitch only. Breathe. We still have a porch to mend.",「外側の縫い目だけ。息をして。直す縁側はまだある。」,248,Original
+dlg.hkr.rescue.reimu.repair,dialogue,char.reimu_hakurei,"Now you can help. Sweep the ash, mend the seams, then sit until the line settles.",「今なら手伝っていい。灰を掃いて、継ぎ目を直して、線が落ち着くまで座って。」,248,Original
+dlg.hkr.rescue.reimu.after,dialogue,char.reimu_hakurei,"That was help. Not repayment. Learn the difference.",「今のは手伝い。返済じゃない。違いを覚えて。」,248,Original
+journal.hkr.unasked_rescue.title,journal_title,,The Line Held,保った線,248,Original
+journal.hkr.unasked_rescue.body,journal_body,,Reimu moved me out of the collapsing boundary before I could decide anything. Later she gave me a repair line. Protection was not a debt; repair was work we could share.,霊夢は、私が決める前に崩れる結界から動かした。その後で修復線を渡した。守られたことは借りではなく、修復は分け合える仕事だった。,248,Original

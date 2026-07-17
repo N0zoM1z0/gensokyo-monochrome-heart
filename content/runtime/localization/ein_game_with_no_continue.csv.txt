@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.ein.game_with_no_continue.choose,objective,,Choose how to meet Kaguya's finished game.,終わった輝夜の勝負にどう向き合うか選ぶ。,208,Original
+event.ein.game_with_no_continue.title,event_title,,A Game With No Continue,コンティニューのない勝負,208,Original
+choice.ein.game_with_no_continue.direct,choice,,Say the loss counts because she chose to let it end.,負けが意味を持つのは、輝夜が終わらせることを選んだからだと言う。,248,Original
+choice.ein.game_with_no_continue.playful,choice,,"Ask which move she wants remembered, not replayed.",やり直すのでなく、どの一手を覚えておきたいか尋ねる。,248,Original
+choice.ein.game_with_no_continue.patient,choice,,Stay with the silence until she decides what the loss means.,負けが何を意味するかを輝夜が決めるまで、沈黙と共にいる。,248,Original
+choice.ein.game_with_no_continue.defiant,choice,,Refuse to turn her loss into a lesson or a test for either of you.,この負けを、どちらかの教訓や試験にすることを断る。,248,Original
+dlg.ein.game_with_no_continue.intro,dialogue,char.kaguya_houraisan,"One board, one life, no continue. I made the rule before we began, which is why losing has managed to surprise me.",「盤は一つ、命も一つ、コンティニューはなし。始める前に私が決めた規則だからこそ、負けは私を驚かせたのね。」,248,Original
+dlg.ein.game_with_no_continue.loss,dialogue,char.kaguya_houraisan,"I could reset the pieces. I could arrange the same evening until I win. But then this loss would never have happened, and neither would this quiet.",「駒を戻すことはできる。同じ夕べを、勝つまで並べ直すことも。でもそうしたら、この負けは起こらなかったことになる。この静けさもね。」,248,Original
+dlg.ein.game_with_no_continue.direct,dialogue,char.kaguya_houraisan,"Yes. I chose a rule that could hold me, too. It is irritatingly fair, which makes it worth keeping.",「ええ。私自身も縛れる規則を選んだの。腹立たしいほど公平で、だから残す価値があるわ。」,248,Original
+dlg.ein.game_with_no_continue.playful,dialogue,char.kaguya_houraisan,The third move. It was beautiful and wrong. A replay would polish it away; I would rather keep the mistake with its manners intact.,「三手目。美しくて、間違っていた。やり直せば磨き消せる。でも私は、その間違いを礼儀ごと残しておきたい。」,248,Original
+dlg.ein.game_with_no_continue.patient,dialogue,char.kaguya_houraisan,Do not hurry me out of it. Eternity makes people expect an immediate replacement for every feeling. This one may sit here a while.,「急いでここから出そうとしないで。永遠は、どんな気持ちにもすぐ代わりがあると人に思わせる。この気持ちは、少しここにいてもいいの。」,248,Original
+dlg.ein.game_with_no_continue.defiant,dialogue,char.kaguya_houraisan,"Quite right. I lost a game, not my dignity, and you did not win the right to explain me. Let us put the board away.",「その通り。私は勝負に負けただけで、尊厳を失ったわけではない。あなたも私を説明する権利を勝ち取ったわけではない。盤をしまいましょう。」,248,Original
+dlg.ein.game_with_no_continue.after,dialogue,char.kaguya_houraisan,The lantern has moved while we were looking at the board. Good. The evening did not wait for me to become better at losing.,「盤を見ている間に、灯りが動いた。いいことね。夕べは、私が負け上手になるのを待たなかった。」,248,Original
+journal.ein.game_with_no_continue.title,journal_title,,The Third Move,三手目,248,Original
+journal.ein.game_with_no_continue.body,journal_body,,Kaguya let one game end without resetting it. The loss was neither a punishment nor a lesson owed to anyone; it remained a finite moment she chose to keep.,輝夜は一局をやり直さずに終わらせた。負けは罰でも、誰かに負う教訓でもない。彼女が残すことを選んだ、有限の一刻のままだった。,248,Original

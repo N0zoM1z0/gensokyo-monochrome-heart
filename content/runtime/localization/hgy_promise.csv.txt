@@ -1,0 +1,21 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.hgy.promise.wait,objective,,Wait for Youmu to name a morning that belongs to no duty.,妖夢が役目に属さない朝を言葉にするまで待つ。,208,Original
+event.hgy.promise.title,event_title,,What the Sword Cannot Finish,剣では終えられないこと,208,Original
+choice.hgy.promise.friendship,choice,,Accept a practice sword and a morning training invitation as friends.,友人として、稽古刀と朝稽古の誘いを受ける。,248,Original
+choice.hgy.promise.romance,choice,,Say there are feelings no sword needs to cut away.,剣で切り捨てなくていい気持ちがあると言う。,248,Original
+choice.hgy.promise.postponed,choice,,Leave the morning open without naming what it means yet.,意味をまだ決めず、その朝を空けたままにする。,248,Original
+choice.hgy.promise.undecided,choice,,Say the future does not need marching orders tonight.,未来に今夜、行進命令は要らないと言う。,248,Original
+dlg.hgy.promise.intro,dialogue,char.youmu_konpaku,"I brought a practice sword, not a plan. The morning after next is empty, if you would like to meet it with me.",「稽古刀を持ってきました。計画ではありません。よろしければ、明後日の朝は空いています。一緒に迎えませんか。」,248,Original
+dlg.hgy.promise.choice,dialogue,char.youmu_konpaku,"I can ask without turning it into a duty. What would you choose for that morning?",「役目にせずに聞けます。その朝を、どう選びますか。」,248,Original
+dlg.hgy.promise.friendship,dialogue,char.youmu_konpaku,"Then we will train as friends. I will bring two wooden swords and no evaluation sheet.",「では友人として稽古しましょう。木刀を二本持っていきます。評価表は持ちません。」,248,Original
+dlg.hgy.promise.romance,dialogue,char.youmu_konpaku,"There are things I cannot cut. I would like to stop calling that a failure, especially when I am with you.",「私には切れないものがあります。それを失敗と呼ぶのはやめたいです。特に、あなたといる時は。」,248,Original
+dlg.hgy.promise.postponed,dialogue,char.youmu_konpaku,"That is acceptable. An open morning is not an unfinished command.",「それで構いません。空いた朝は、未完の命令ではありません。」,248,Original
+dlg.hgy.promise.undecided,dialogue,char.youmu_konpaku,"Then neither of us has to march first. The future can arrive at walking pace.",「では、どちらも先に行進しなくていい。未来は歩く速さで来てもいいです。」,248,Original
+journal.hgy.promise.friendship.title,journal_title,,A Morning of Practice,朝の稽古,248,Original
+journal.hgy.promise.friendship.body,journal_body,,Youmu offered a practice sword and a morning of training as friends without turning either into an evaluation.,妖夢は、どちらも評価にせず、友人として稽古刀と朝稽古を差し出した。,248,Original
+journal.hgy.promise.romance.title,journal_title,,What She Will Not Cut Away,切り捨てないもの,248,Original
+journal.hgy.promise.romance.body,journal_body,,Youmu named feelings she cannot cut away and chose not to call them failure.,妖夢は切り捨てられない気持ちを言葉にし、それを失敗と呼ばないことを選んだ。,248,Original
+journal.hgy.promise.postponed.title,journal_title,,The Morning Left Open,空けたままの朝,248,Original
+journal.hgy.promise.postponed.body,journal_body,,The morning stayed open without being an unfinished order.,その朝は、未完の命令にならないまま空けておかれた。,248,Original
+journal.hgy.promise.undecided.title,journal_title,,A Future at Walking Pace,歩く速さの未来,248,Original
+journal.hgy.promise.undecided.body,journal_body,,Neither future was ordered forward. Youmu allowed uncertainty to arrive at walking pace.,どちらの未来にも先へ進む命令はなかった。妖夢は未定が歩く速さで来ることを許した。,248,Original

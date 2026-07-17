@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.mrs.shelf.wait,objective,,Wait for Marisa to name what may be moved.,魔理沙が動かしてよい物を言うまで待つ。,208,Original
+event.mrs.shelf_marked_later.title,event_title,,The Shelf Marked Later,「あとで」の棚,208,Original
+choice.mrs.shelf.direct,choice,,Ask which things may be catalogued.,どれを目録にしてよいか聞く。,248,Original
+choice.mrs.shelf.playful,choice,,Promise not to alphabetize her mushrooms.,キノコを五十音順にしないと約束する。,248,Original
+choice.mrs.shelf.patient,choice,,Wait until she offers a box herself.,彼女が自分から箱を渡すまで待つ。,248,Original
+choice.mrs.shelf.defiant,choice,,Say clutter is not permission to take control.,散らかりは主導権を奪う許可ではないと言う。,248,Original
+dlg.mrs.shelf.intro,dialogue,char.marisa_kirisame,"That shelf says later. Later is a real category, so do not rescue it.",「その棚は『あとで』だ。「あとで」は本当の分類だから、助け出すな。」,248,Original
+dlg.mrs.shelf.boundary,dialogue,char.marisa_kirisame,"Ask before you move anything. I know where it is, even if the room disagrees.",「何か動かす前に聞け。部屋が反対でも、どこにあるかは分かってる。」,248,Original
+dlg.mrs.shelf.direct,dialogue,char.marisa_kirisame,"These three. Catalog them, not my reasons for keeping them.",「この三つ。目録にはしていい。でも取っておく理由まで目録にするな。」,248,Original
+dlg.mrs.shelf.playful,dialogue,char.marisa_kirisame,"Good. Alphabetical mushrooms become smug mushrooms.",「よし。五十音順のキノコは偉そうになる。」,248,Original
+dlg.mrs.shelf.patient,dialogue,char.marisa_kirisame,"Here. This box can move. I am offering it, not losing it.",「ほら。この箱は動かしていい。なくすんじゃなくて、私が渡す。」,248,Original
+dlg.mrs.shelf.defiant,dialogue,char.marisa_kirisame,"Exactly. A mess is still mine to answer for.",「その通り。散らかってても責任を取るのは私だ。」,248,Original
+dlg.mrs.shelf.after,dialogue,char.marisa_kirisame,"Put the label back crooked. I will fix it when later arrives.",「札は曲がったまま戻せ。「あとで」が来たら、私が直す。」,248,Original
+journal.mrs.shelf_marked_later.title,journal_title,,The Category Called Later,「あとで」という分類,248,Original
+journal.mrs.shelf_marked_later.body,journal_body,,Marisa's shelves were not an invitation to take charge. Asking first made room for help without deleting the history of why anything stayed.,魔理沙の棚は主導権を奪ってよいという招待ではなかった。先に聞くことで、物が残った理由の歴史を消さずに手伝えた。,248,Original

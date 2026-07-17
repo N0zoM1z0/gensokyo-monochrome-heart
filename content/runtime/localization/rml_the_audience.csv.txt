@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.rml.the_audience.take_place,objective,,Inspect the foretold place card and choose how to enter Remilia's audience.,予告された席札を確かめ、レミリアの謁見へどう入るか選ぶ。,208,Original
+event.rml.the_audience.title,event_title,,The Audience,謁見,208,Original
+choice.rml.the_audience.direct,choice,,"Take the announced place, but say that arriving was your decision.",告げられた位置に立つ。ただし、来たのは自分の決断だと言う。,248,Original
+choice.rml.the_audience.playful,choice,,Praise fate for predicting your muddy shoes as well as your arrival.,到着だけでなく泥のついた靴まで予言した運命を褒める。,248,Original
+choice.rml.the_audience.patient,choice,,Follow her cue and leave the guest book's reason-for-arrival line blank.,彼女の合図に従い、来訪理由の欄だけは空白にしておく。,248,Original
+choice.rml.the_audience.defiant,choice,,Refuse to let the room announce your answer before you give it.,自分が答える前に、この部屋に答えを宣言させることを拒む。,248,Original
+dlg.rml.the_audience.intro,dialogue,char.remilia_scarlet,At last. The west clock has spent all evening waiting to prove me right. Do try to make its patience look intentional.,「ようやくね。西の時計は今夜ずっと、私の正しさを証明する時を待っていたの。あれの辛抱が予定どおりに見えるよう努めなさい。」,248,Original
+dlg.rml.the_audience.cue,dialogue,char.remilia_scarlet,"When your name is called, stand where the scarlet window cuts the carpet. You may improvise, provided you do not confuse disbelief with dullness.",「名を呼ばれたら、緋色の窓明かりが絨毯を切る場所に立ちなさい。即興は許すわ。不信を退屈さと取り違えないならね。」,248,Original
+dlg.rml.the_audience.direct,dialogue,char.remilia_scarlet,Naturally you chose to arrive at the place I named. A voluntary bow has far better posture than a compelled one.,「当然、私が示した場所へ来ることを選んだのね。自分で選んだ礼の方が、強いられた礼よりずっと姿勢がいいわ。」,248,Original
+dlg.rml.the_audience.playful,dialogue,char.remilia_scarlet,The mud was an embellishment I permitted the road. Keep it. A flawless prophecy is terribly underdressed.,「その泥は、道に許した飾りよ。そのままにしておきなさい。完璧すぎる予言は、ひどく着飾りが足りないもの。」,248,Original
+dlg.rml.the_audience.patient,dialogue,char.remilia_scarlet,"Leave the line empty, then. An unnamed motive keeps the guest book from becoming an accountant's prophecy.",「なら、その欄は空けておきなさい。名づけられない動機が一つあれば、賓客簿も帳簿屋の予言にはならないわ。」,248,Original
+dlg.rml.the_audience.defiant,dialogue,char.remilia_scarlet,Good. A declaration worth making should survive an answer it did not write. The gallery may record that I expected resistance.,「いいわ。宣言する価値のあるものなら、自分で書かなかった答えにも耐えるべきよ。抵抗も予想どおりだったと、皆には記しておかせるわ。」,248,Original
+dlg.rml.the_audience.after,dialogue,char.remilia_scarlet,"You kept the entrance and changed its meaning. Between us, that is much more interesting than obedience—or proof.",「登場は守って、その意味だけを変えた。ここだけの話、服従や証明より、そちらの方がずっと面白いわ。」,248,Original
+journal.rml.the_audience.title,journal_title,,A Cue Is Not a Command,合図は命令ではない,248,Original
+journal.rml.the_audience.body,journal_body,,Remilia made the arrival look foretold without requiring the protagonist to believe it was. The performance held because both people could choose what the entrance meant.,レミリアは、主人公に運命だと信じさせることなく、来訪を予言どおりに見せた。登場の意味を双方が選べたからこそ、演目は成立した。,248,Original

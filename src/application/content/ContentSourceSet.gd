@@ -328,6 +328,16 @@ var expected_supplemental_dialogue_count: int = 694
 var expected_supplemental_localization_count: int = 1458
 
 
+func _init() -> void:
+	# Godot treats .csv files as Translation resources and strips their raw source
+	# from exported PCKs. Runtime content parsing needs the reviewed CSV rows, so
+	# release builds consume deterministic .csv.txt mirrors instead.
+	localization_path = _runtime_csv_path(localization_path)
+	music_cues_path = _runtime_csv_path(music_cues_path)
+	for index: int in range(supplemental_localization_paths.size()):
+		supplemental_localization_paths[index] = _runtime_csv_path(supplemental_localization_paths[index])
+
+
 func content_paths() -> Array[String]:
 	var paths: Array[String] = [
 		manifest_path,
@@ -353,3 +363,11 @@ func content_paths() -> Array[String]:
 	paths.append_array(supplemental_deferred_reference_paths)
 	paths.sort()
 	return paths
+
+
+func _runtime_csv_path(source_path: String) -> String:
+	if source_path.begins_with("res://content/localization/"):
+		return source_path.replace("res://content/localization/", "res://content/runtime/localization/") + ".txt"
+	if source_path == "res://content/music/music_cues.csv":
+		return "res://content/runtime/music/music_cues.csv.txt"
+	return source_path

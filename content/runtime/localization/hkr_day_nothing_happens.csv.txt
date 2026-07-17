@@ -1,0 +1,18 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.hkr.day_nothing_happens.enter,objective,,Spend an ordinary afternoon at the shrine.,神社でいつもの午後を過ごす。,208,Original
+event.hkr.day_nothing_happens.title,event_title,,The Day Nothing Happens,何も起きない日,208,Original
+choice.hkr.quiet.direct,choice,,Take the second broom and start on the far side.,二本目の箒を取り、向こう側から始める。,248,Original
+choice.hkr.quiet.playful,choice,,Bet that whoever speaks first washes both cups.,先に話したほうが湯呑みを二つ洗うと賭ける。,248,Original
+choice.hkr.quiet.patient,choice,,Wait for Reimu to show which half is yours.,霊夢がこちらの持ち場を示すまで待つ。,248,Original
+choice.hkr.quiet.defiant,choice,,Say her crooked screen patch will still leak.,曲がった障子の継ぎ目はまだ雨漏りすると言う。,248,Original
+dlg.hkr.quiet.reimu.intro,dialogue,char.reimu_hakurei,"You came on the one afternoon when nothing is broken, haunted, or asking to be named.",「壊れた物も、取り憑いた物も、名前を求める物もない午後に来たのね。」,248,Original
+dlg.hkr.quiet.reimu.no_incident,dialogue,char.reimu_hakurei,"So do not invent an incident. The floor needs sweeping. That is enough.",「だから異変をでっち上げないで。床を掃けばいい。それで十分よ。」,248,Original
+dlg.hkr.quiet.reimu.direct,dialogue,char.reimu_hakurei,"Fine. Keep your dust on that side until we meet in the middle.",「いいわ。真ん中で会うまで、埃はそっち側から出さないで。」,248,Original
+dlg.hkr.quiet.reimu.playful,dialogue,char.reimu_hakurei,"You spoke to propose it. You already lost. Sweep first; cups later.",「賭けを持ち出して、もう話したわね。あなたの負け。先に掃いて、湯呑みは後。」,248,Original
+dlg.hkr.quiet.reimu.patient,dialogue,char.reimu_hakurei,"There. Stop waiting for instructions after that. The room has its own order.",「そこ。あとは指示を待たないで。部屋には部屋の順番があるから。」,248,Original
+dlg.hkr.quiet.reimu.defiant,dialogue,char.reimu_hakurei,"It kept the last rain out. If you can make a straighter patch, the paper is beside you.",「この前の雨は防いだわ。もっと真っ直ぐ継げるなら、紙はあなたの横。」,248,Original
+dlg.hkr.quiet.reimu.begin,dialogue,char.reimu_hakurei,"Sweep. Mend the three seams. Then sit down. You do not have to improve the silence.",「掃いて、三つの継ぎ目を直して、それから座って。静けさまで整えなくていい。」,248,Original
+dlg.hkr.quiet.reimu.tea_cold,dialogue,char.reimu_hakurei,"The tea went cold.",「お茶、冷めたわね。」,248,Original
+dlg.hkr.quiet.reimu.after,dialogue,char.reimu_hakurei,"Good. It means neither of us was waiting for the afternoon to become something else.",「よかった。二人とも、この午後が別の何かになるのを待ってなかったってことよ。」,248,Original
+journal.hkr.day_nothing_happens.title,journal_title,,The Afternoon Left Unimproved,手を加えなかった午後,248,Original
+journal.hkr.day_nothing_happens.body,journal_body,,We swept the shrine and mended three paper seams. Nothing happened. Reimu left both cushions where they were.,神社を掃き、障子の継ぎ目を三つ直した。何も起きなかった。霊夢は二つの座布団をそのままにした。,248,Original

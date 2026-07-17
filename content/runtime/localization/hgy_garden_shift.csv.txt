@@ -1,0 +1,20 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.hgy.garden_shift.match,objective,,Match each wandering spirit with its memorial tree.,さまよう魂をそれぞれの供養の木へ導く。,208,Original
+event.hgy.garden_shift.title,event_title,,Garden Shift,庭仕事の当番,208,Original
+choice.hgy.garden_shift.direct,choice,,Offer to watch one side of the garden with her.,庭の片側を一緒に見守ると申し出る。,248,Original
+choice.hgy.garden_shift.playful,choice,,Ask whether the garden will inspect your posture too.,庭にも立ち姿を検査されるのか尋ねる。,248,Original
+choice.hgy.garden_shift.patient,choice,,Wait for Youmu to indicate where help would be welcome.,妖夢が助けを望む場所を示すまで待つ。,248,Original
+choice.hgy.garden_shift.defiant,choice,,Ask whether a garden can be made too orderly.,庭を整えすぎることはないのか尋ねる。,248,Original
+dlg.hgy.garden_shift.intro,dialogue,char.youmu_konpaku,"Please keep behind the stones until I have checked the paths. The spirits drift when the petals turn, and drifting is not the same as being lost.",「道を確認するまで、石の後ろにいてください。花びらが向くと魂は流れます。流れることと迷うことは、同じではありません。」,248,Original
+dlg.hgy.garden_shift.work,dialogue,char.youmu_konpaku,"The fan belongs by the west pine, the cup by the middle plum, and the bell by the east cherry. These are not orders for them. They are promises that someone remembers.",「扇は西の松へ、杯は中央の梅へ、鈴は東の桜へ。これは魂への命令ではありません。誰かが覚えているという約束です。」,248,Original
+dlg.hgy.garden_shift.direct,dialogue,char.youmu_konpaku,One side each? Yes. Call me if a spirit changes course; do not chase it with your feet first.,「片側ずつ、ですか。はい。魂が進路を変えたら呼んでください。先に足で追いかけないように。」,248,Original
+dlg.hgy.garden_shift.playful,dialogue,char.youmu_konpaku,Only if the garden files a complaint. My own inspection is merely… standard safety procedure.,「庭から苦情が出た時だけです。私の点検は、あくまで……通常の安全手順です。」,248,Original
+dlg.hgy.garden_shift.patient,dialogue,char.youmu_konpaku,"Thank you. Stand by the middle plum, then. Waiting there is work; I should say that more often.",「ありがとうございます。では中央の梅のそばをお願いします。そこで待つのも仕事です。もっとそう言うべきでした。」,248,Original
+dlg.hgy.garden_shift.defiant,dialogue,char.youmu_konpaku,Perhaps. Order can become a way to avoid looking at what changes. I am still learning the difference.,「そうかもしれません。整えることが、変わるものを見ないための方法になることもあります。その違いは、まだ勉強中です。」,248,Original
+dlg.hgy.garden_shift.clear,dialogue,char.youmu_konpaku,"You let each one choose the last distance. I planned the route, but I did not have to make the ending happen by force.",「最後の距離は、それぞれに選ばせてくれました。道筋は考えました。でも終わりまで力で起こす必要はありませんでした。」,248,Original
+dlg.hgy.garden_shift.withdrawn,dialogue,char.youmu_konpaku,"We can stop here. A memorial is not a test, and no spirit is harmed because today needed to be shorter.",「ここで止めましょう。供養は試験ではありません。今日が短くなっても、魂が傷つくわけではありません。」,248,Original
+dlg.hgy.garden_shift.after,dialogue,char.youmu_konpaku,"I write every task as if it were a duel to win. Tomorrow I will write: watch, wait, and let go.",「私はどの仕事も、勝つべき決闘のように書いてしまいます。明日は『見守る、待つ、手放す』と書きます。」,248,Original
+journal.hgy.garden_shift.title,journal_title,,The Shift That Was Not a Drill,訓練ではない当番,248,Original
+journal.hgy.garden_shift.body,journal_body,,"Youmu showed that a memorial garden is not conquered by finishing it quickly. The spirits were matched, watched, and allowed to leave the final distance as their own.",妖夢は供養の庭を早く終えるために攻略するものではないと示した。魂はそれぞれの木へ導かれ、見守られ、最後の距離を自分で進むことを許された。,248,Original
+journal.hgy.garden_shift.withdrawn.title,journal_title,,The Shift Made Shorter,短くした当番,248,Original
+journal.hgy.garden_shift.withdrawn.body,journal_body,,We stopped when the garden asked for less. Youmu named the pause a form of care; no spirit was turned into a score.,庭が少ない方を望む時に、私たちは止まった。妖夢は休止もケアの形だと呼び、どの魂も点数にはされなかった。,248,Original

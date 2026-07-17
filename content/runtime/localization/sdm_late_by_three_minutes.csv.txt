@@ -1,0 +1,25 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+event.sdm.late_by_three_minutes.title,event title,,Late by Three Minutes,三分遅れ,180,Original
+obj.sdm.trace_missing_minute,objective,,Clock first. Then trace the resetting tray.,遅い時計、次に戻る盆を追う。,208,Original
+choice.sdm.late.direct,tone choice,,Say: The clock is wrong and you know it.,「時計がずれている。あなたも気づいている」と言う。,200,Original
+choice.sdm.late.playful,tone choice,,Say: Does punctuality allow borrowed minutes?,「時間厳守なら、分を借りてもいいの？」と聞く。,200,Original
+choice.sdm.late.patient,tone choice,,Say: We can leave one tray unfinished.,「盆を一つ、未完のままにしてもいい」と言う。,200,Original
+choice.sdm.late.defiant,tone choice,,Say: Repeating perfect work is still a mistake.,「完璧な仕事でも、繰り返せば間違いだ」と言う。,200,Original
+dlg.sdm.late.sakuya.intro,public dialogue,Sakuya,The corridor is three minutes slow. The service remains on time.,廊下は三分遅れています。給仕に遅れはありません。,214,Original
+dlg.sdm.late.sakuya.direct,public dialogue,Sakuya,Correct. I was deciding whether the error belonged to the clock.,その通りです。時計の誤りかどうかを見定めていました。,214,Original
+dlg.sdm.late.sakuya.playful,public dialogue,Sakuya,Borrowed time still appears in the accounts. Usually under someone else's name.,借りた時間も帳簿には残ります。たいてい、別の誰かの名で。,214,Original
+dlg.sdm.late.sakuya.patient,private dialogue,Sakuya,One unfinished tray would be visible. That may be why I avoided it.,未完の盆は目につきます。だから避けていたのでしょうね。,214,Original
+dlg.sdm.late.sakuya.defiant,public dialogue,Sakuya,Then help me prove which repetition is mine and which was imposed.,では、どの反復が私のもので、どれが押しつけられたものか確かめてください。,214,Original
+dlg.sdm.late.sakuya.service_excellent,minigame result,Sakuya,Every station is exact. The empty square is not an error after all.,各持ち場は正確です。あの空白は、やはり誤りではありません。,214,Original
+dlg.sdm.late.sakuya.service_clear,minigame result,Sakuya,Service complete. The grid kept one minute that no tray used.,給仕は完了です。どの盆も使わなかった一分が、升目に残っています。,214,Original
+dlg.sdm.late.sakuya.service_loss,minigame result,Sakuya,Stop. The schedule is releasing every correction at once.,止まって。予定表が、すべての修正を一度に解放しています。,214,Original
+dlg.sdm.late.sakuya.danmaku_clear,danmaku result,Sakuya,The knives have their seconds back. So do we.,ナイフには秒が戻りました。私たちにも。,214,Original
+dlg.sdm.late.sakuya.danmaku_assist,danmaku result,Sakuya,A wider lane changes no conclusion. It only makes the evidence readable.,広い通路でも結論は変わりません。証拠が読みやすくなるだけです。,214,Original
+dlg.sdm.late.sakuya.danmaku_loss,danmaku result,Sakuya,Enough. A failed spell is not permission to keep you inside it.,ここまでです。弾幕に失敗したからといって、閉じ込めてよい理由にはなりません。,214,Original
+dlg.sdm.late.sakuya.after_01,private dialogue,Sakuya,I stopped the same minute until it could no longer tell me what I wanted.,同じ一分を止め続けて、何を望んでいたのか分からなくなりました。,214,Original
+dlg.sdm.late.sakuya.after_02,private dialogue,Sakuya,Tomorrow's checklist will keep one blank line. Deliberately.,明日の確認表には空欄を一つ残します。意図して。,214,Original
+dlg.sdm.late.patchouli.teaser,teaser dialogue,Patchouli,A book in the library recorded that blank yesterday. Do not read the last page yet.,図書館の本が昨日、その空欄を記したわ。まだ最後の頁は読まないで。,214,Original
+dlg.sdm.late.remilia.public,public dialogue,Remilia,Naturally the household arrived precisely when I intended.,当然でしょう。館の者は、私が望んだ時刻どおりに着いたのよ。,214,Original
+dlg.sdm.late.remilia.private,private dialogue,Remilia,Between us: did she choose the blank line herself?,ここだけの話よ。あの空欄は、咲夜が自分で選んだの？,214,Original
+journal.sdm.missing_minute.title,journal title,,The Minute Left Unserved,給仕されなかった一分,180,Original
+journal.sdm.missing_minute.body,journal body,,A corridor clock and a resetting tray concealed one minute Sakuya had corrected too often. She left tomorrow's checklist deliberately unfinished.,廊下の時計と戻る盆は、咲夜が直しすぎた一分を隠していた。彼女は明日の確認表を意図的に未完のまま残した。,214,Original

@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.sdm.small_chair.enter_by_invitation,objective,,Follow Remilia's invitation behind the throne and observe the private resting place without claiming it.,レミリアの招きに従って玉座の裏へ入り、私的な休息の場を自分のものにせず見守る。,208,Original
+event.sdm.small_chair.title,event_title,,The Small Chair Behind the Throne,玉座の裏の小さな椅子,208,Original
+choice.sdm.small_chair.direct,choice,,Ask what the plain chair gives her that the throne cannot.,飾りのない椅子には、玉座にない何があるのか尋ねる。,248,Original
+choice.sdm.small_chair.playful,choice,,Call it better backstage blocking with much fairer sightlines.,こちらの方が舞台裏の立ち位置も、見晴らしも公平だと言う。,248,Original
+choice.sdm.small_chair.patient,choice,,Remain standing and share the quiet only if she invites you to sit.,立ったまま待ち、彼女に座るよう招かれた時だけ静けさを共にする。,248,Original
+choice.sdm.small_chair.defiant,choice,,Say that a throne can define an office without defining her body.,玉座が定めるのは役目であって、彼女の身体ではないと言う。,248,Original
+dlg.sdm.small_chair.invitation,dialogue,char.remilia_scarlet,The procession is finished. Bring that unlit lamp behind the throne. I am inviting you; there is no honor in pretending you wandered in by accident.,「行列は終わったわ。その消えた灯りを玉座の裏へ持ってきなさい。私が招いているのよ。偶然迷い込んだふりをしても、誉れにはならないわ。」,248,Original
+dlg.sdm.small_chair.private_seat,dialogue,char.remilia_scarlet,"This chair fits the hours when no one requires a horizon from me. It is ordinary, comfortable, and not a metaphor unless I permit one.",「この椅子は、誰も私に地平線を求めない時間にちょうどいい。普通で、座り心地がよくて、私が許さない限り比喩でもないわ。」,248,Original
+dlg.sdm.small_chair.direct,dialogue,char.remilia_scarlet,A back. Two armrests. The freedom to shift without someone discovering policy in my posture. The throne is excellent at being seen and dreadful at being furniture.,「背もたれ。二本の肘掛け。姿勢を変えるたびに誰かが方針を読み取らない自由。玉座は見られることには優秀で、家具としてはひどいものよ。」,248,Original
+dlg.sdm.small_chair.playful,dialogue,char.remilia_scarlet,Backstage? No. This is the better seat. The throne has excellent sightlines for the audience and none at all for the person trapped on it.,「舞台裏？　違うわ。こちらが上等な席よ。玉座は観客からはよく見えても、そこに捕まった者からは何も見えないもの。」,248,Original
+dlg.sdm.small_chair.patient,dialogue,char.remilia_scarlet,"There is another plain chair behind the curtain. Sit, if you can let a silence remain an interval instead of an unanswered question.",「幕の後ろに、もう一脚ただの椅子があるわ。沈黙を答えのない質問にせず、間のままにできるなら座りなさい。」,248,Original
+dlg.sdm.small_chair.defiant,dialogue,char.remilia_scarlet,"Precisely. It defines an office, and I occupy that office when it is useful. I do not owe the furniture every hour of my shape.",「その通り。あれが定めるのは役目で、役に立つ時には私がその座を占める。でも、一日のすべてを家具に合わせる義務はないわ。」,248,Original
+dlg.sdm.small_chair.after,dialogue,char.remilia_scarlet,"The chair stays behind the throne because privacy is chosen, not because rest is shameful. You may know where it is. Do not turn knowing into an exhibit.",「この椅子が玉座の裏にあるのは、休むことが恥だからではなく、私的な時間を選ぶためよ。場所を知るのは許すわ。その知識を展示物にしないことね。」,248,Original
+journal.sdm.small_chair.title,journal_title,,Furniture Behind the Office,役目の裏の家具,248,Original
+journal.sdm.small_chair.body,journal_body,,"Remilia invited the protagonist behind the throne and chose an ordinary chair built for rest rather than display. The private space mattered because she controlled access, not because the chair made her smaller.",レミリアは主人公を玉座の裏へ招き、見せるためでなく休むための普通の椅子を自分で選んだ。椅子が彼女を小さくしたからではなく、入る者を彼女が決めたからこそ、その私的な場所には意味があった。,248,Original

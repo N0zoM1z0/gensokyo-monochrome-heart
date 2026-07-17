@@ -598,6 +598,13 @@ run_expected_failure "M17 incomplete human review manifest" "missing human revie
 	python3 scripts/validate_m17_review.py --require-human-review \
 	--review-manifest=tests/fixtures/invalid/m17/incomplete_human_reviews.json
 
+if [[ "${GMH_VERIFY_RELEASE_EXPORT:-0}" == "1" ]]; then
+	run_checked "M19 Linux release candidate" env GODOT_BIN="$GODOT_BIN" \
+		./scripts/verify_release_linux.sh
+else
+	echo "==> M19 Linux release candidate skipped; set GMH_VERIFY_RELEASE_EXPORT=1 after installing export templates"
+fi
+
 if [[ "${GMH_SKIP_SCREENSHOTS:-0}" == "1" ]]; then
 	echo "==> screenshot matrix explicitly skipped with GMH_SKIP_SCREENSHOTS=1"
 else

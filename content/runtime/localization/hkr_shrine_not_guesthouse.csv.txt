@@ -1,0 +1,20 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.hkr.shrine_not_guesthouse.check_veranda,objective,,Check the veranda before settling in.,腰を落ち着ける前に、縁側を確かめる。,208,Original
+event.hkr.shrine_not_guesthouse.title,event_title,,"A Shrine Is Not a Home, Except When It Is",神社は家じゃない――でも、そうなる時もある,248,Original
+choice.hkr.guesthouse.direct,choice,,Say you treated the shrine as somewhere to recover without asking what it cost.,神社を、何が必要か聞かずに休める場所としていたと言う。,248,Original
+choice.hkr.guesthouse.playful,choice,,Offer to pay rent in tea and hope that makes the work disappear.,お茶で家賃を払うから仕事は消えることにしよう、と言う。,248,Original
+choice.hkr.guesthouse.patient,choice,,Ask which side of the boundary needs another pair of hands.,結界のどちら側に、もう一人分の手が要るか聞く。,248,Original
+choice.hkr.guesthouse.defiant,choice,,Say a welcome that comes with danger is an uneven bargain.,危険込みの歓迎は、不公平な取引だと言う。,248,Original
+dlg.hkr.guesthouse.reimu.intro,dialogue,char.reimu_hakurei,You can leave your bag inside. Do not mistake that for the shrine having no work left.,「荷物は中に置いていいわ。でも、それで神社の仕事がなくなるわけじゃない。」,248,Original
+dlg.hkr.guesthouse.reimu.boundary,dialogue,char.reimu_hakurei,That line is thin tonight. Guests get dry floors. I get the side that keeps the floor here.,「今夜はあの線が薄いの。客は乾いた床を使う。床をここに残す側は、私がやる。」,248,Original
+dlg.hkr.guesthouse.reimu.direct,dialogue,char.reimu_hakurei,Good. Not a confession. Just notice it next time. Take the west marker.,「いいわ。懺悔じゃない。次から気づけばいい。西の札を持って。」,248,Original
+dlg.hkr.guesthouse.reimu.playful,dialogue,char.reimu_hakurei,Tea is for after the work. That joke is why I did not ask you to bring cups.,「お茶は仕事の後。その冗談を言うから、湯呑みを頼まなかったのよ。」,248,Original
+dlg.hkr.guesthouse.reimu.patient,dialogue,char.reimu_hakurei,"West side. If it pulls, do not be brave. Call out and keep the marker level.",「西側。引かれても、勇敢ぶらないで。呼んで、札を水平に保って。」,248,Original
+dlg.hkr.guesthouse.reimu.defiant,dialogue,char.reimu_hakurei,Yes. Which is why calling it a favor does not fix it. Hold the west marker.,「そうよ。だから恩に着せても直らない。西の札を持って。」,248,Original
+dlg.hkr.guesthouse.reimu.assignment,dialogue,char.reimu_hakurei,Follow the open lane. The gap wants you to rush. It can wait.,「開いた筋を行って。隙間は急がせたがる。待たせていい。」,248,Original
+dlg.hkr.guesthouse.reimu.clear,dialogue,char.reimu_hakurei,There. The veranda is still a veranda. You can put your bag inside now.,「ほら。縁側は縁側のまま。今なら荷物を中に置いていい。」,248,Original
+dlg.hkr.guesthouse.reimu.assist,dialogue,char.reimu_hakurei,"The seal held. Next time, take the marker before I have to point at it.",「結界は保った。次は私が指す前に、札を取って。」,248,Original
+dlg.hkr.guesthouse.reimu.loss,dialogue,char.reimu_hakurei,"It broke the outer stitch, not the shrine. Stay where I can see you. Then we mend it.",「外側の縫い目が切れただけ。神社じゃない。見える所にいて。それから直す。」,248,Original
+dlg.hkr.guesthouse.reimu.after,dialogue,char.reimu_hakurei,You are welcome here. That is different from making this place carry you.,「ここに来るのはいい。でも、この場所にあなたを背負わせるのとは違うわ。」,248,Original
+journal.hkr.shrine_not_guesthouse.title,journal_title,,The West Marker,西の札,248,Original
+journal.hkr.shrine_not_guesthouse.body,journal_body,,"Reimu let me leave my bag inside, then handed me the west boundary marker. Welcome was not an excuse to leave the work to her.",霊夢は荷物を中に置かせてくれた後、西の結界札を渡した。歓迎は、仕事を彼女に残す理由にはならなかった。,248,Original

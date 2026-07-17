@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.pch.question_worth_asking.choose,objective,,Choose a question with a clear scope.,範囲の明確な問いを選ぶ。,208,Original
+event.pch.question_worth_asking.title,event_title,,A Question Worth Asking,問う価値のある問い,208,Original
+choice.pch.question_worth_asking.direct,choice,,Ask what evidence would change her current conclusion.,今の結論を変える証拠は何か尋ねる。,248,Original
+choice.pch.question_worth_asking.playful,choice,,Ask whether a footnote has ever improved an argument.,脚注が議論を良くしたことがあるか尋ねる。,248,Original
+choice.pch.question_worth_asking.patient,choice,,Leave the question in the margin without demanding an answer today.,今日答えを求めず、余白に問いを残す。,248,Original
+choice.pch.question_worth_asking.defiant,choice,,Refuse to turn access to knowledge into a demand for her attention.,知識へのアクセスを、彼女の注意を要求する理由にしない。,248,Original
+dlg.pch.question_worth_asking.intro,dialogue,char.patchouli_knowledge,A question is useful only if it can be wrong in an interesting way.,「問いは、面白い仕方で間違えられる時だけ役に立つ。」,248,Original
+dlg.pch.question_worth_asking.prompt,dialogue,char.patchouli_knowledge,"Trivia is a catalog problem. Ask what you want to learn, not what you want me to perform.",「雑学は目録の問題。私に演じてほしいことではなく、知りたいことを尋ねなさい。」,248,Original
+dlg.pch.question_worth_asking.direct,dialogue,char.patchouli_knowledge,Good. That question has a hinge. I can show you the evidence and leave the conclusion movable.,「いい。その問いには蝶番がある。証拠は見せる。結論は動かせるままにする。」,248,Original
+dlg.pch.question_worth_asking.playful,dialogue,char.patchouli_knowledge,Frequently. Usually by proving the argument should have been shorter. Continue.,「よくある。たいてい、議論の方を短くすべきだったと証明してね。続けて。」,248,Original
+dlg.pch.question_worth_asking.patient,dialogue,char.patchouli_knowledge,A margin is a respectable place for an unfinished question. It will not decay overnight.,「余白は未完成の問いにふさわしい場所。夜のうちに腐ったりしない。」,248,Original
+dlg.pch.question_worth_asking.defiant,dialogue,char.patchouli_knowledge,Correct. My answer is not a toll for standing near a shelf. The question may remain; so may my silence.,「その通り。私の答えは棚のそばに立つ通行料じゃない。問いは残ってもいいし、私の沈黙も残っていい。」,248,Original
+dlg.pch.question_worth_asking.after,dialogue,char.patchouli_knowledge,"I reserved the reference. Read it, then ask the next question only if it survives the reading.",「参考文献は取っておいた。読んで、それでも残った時だけ次の問いをしなさい。」,248,Original
+journal.pch.question_worth_asking.title,journal_title,,A Hinge in the Margin,余白の蝶番,248,Original
+journal.pch.question_worth_asking.body,journal_body,,"Patchouli accepted a question that named its evidence and limits. Curiosity remained active without making an answer, access, or attention into something owed.",パチュリーは証拠と限界を名づけた問いを受け取った。答えも利用も注意も、負われるものにせずに好奇心は動き続けた。,248,Original

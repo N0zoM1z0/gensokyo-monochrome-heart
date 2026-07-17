@@ -1,0 +1,18 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.hgy.duty_delegated.watch,objective,,Watch the east garden path until Youmu returns.,妖夢が戻るまで東の庭道を見守る。,208,Original
+event.hgy.duty_delegated.title,event_title,,A Duty Delegated,託された当番,208,Original
+choice.hgy.duty.direct,choice,,Agree to watch the east path until her return.,彼女が戻るまで東の道を見ると引き受ける。,248,Original
+choice.hgy.duty.playful,choice,,Ask whether the bell makes you an extremely temporary captain.,鈴で自分がとても一時的な隊長になるのか尋ねる。,248,Original
+choice.hgy.duty.patient,choice,,Ask what needs attention and what can be left alone.,気をつける物と放っておける物を聞く。,248,Original
+choice.hgy.duty.defiant,choice,,Say you cannot take the watch today but can name what you noticed.,今日は見守りを引き受けられないが、気づいたことは伝えられると言う。,248,Original
+dlg.hgy.duty.intro,dialogue,char.youmu_konpaku,The east path can stay unraked until evening. I know that. I keep reaching for the rake anyway.,「東の道は夕方まで熊手を入れなくても大丈夫です。分かっています。それでも手が熊手へ行ってしまいます。」,248,Original
+dlg.hgy.duty.request,dialogue,char.youmu_konpaku,"Would you watch this section while I check the lower garden? Not manage it. Just notice if something asks for help, and ring once if it does.",「私が下の庭を見ている間、この区画を見ていてもらえますか。管理ではありません。何か助けを求めたら気づいて、一度だけ鈴を鳴らしてください。」,248,Original
+dlg.hgy.duty.direct,dialogue,char.youmu_konpaku,Thank you. I will return before the bell becomes an order. The path is yours only for this watch.,「ありがとうございます。鈴が命令になる前に戻ります。この見守りの間だけ、その道をお願いします。」,248,Original
+dlg.hgy.duty.playful,dialogue,char.youmu_konpaku,"No captaincy. The bell is a question, not a promotion. Please do not salute the moss.",「隊長ではありません。鈴は昇進ではなく質問です。苔に敬礼はしないでください。」,248,Original
+dlg.hgy.duty.patient,dialogue,char.youmu_konpaku,"Watch the petals near the stone and leave the rake marks alone. If you are uncertain, uncertainty is a reason to ring, not to guess.",「石のそばの花びらを見て、熊手の筋はそのままにしてください。迷ったら、推測せず鈴を鳴らす理由になります。」,248,Original
+dlg.hgy.duty.defiant,dialogue,char.youmu_konpaku,"I understand. Then no watch. Tell me what you noticed, and I will decide the path from there.",「分かりました。では見守りは頼みません。気づいたことを教えてください。その先の道は私が決めます。」,248,Original
+dlg.hgy.duty.after,dialogue,char.youmu_konpaku,You left the path visible. I had expected a report or a correction. Watching was enough.,「道を見えるまま残してくれました。報告か修正があると思っていました。見守るだけで十分でした。」,248,Original
+journal.hgy.duty_delegated.title,journal_title,,The Path Watched,見守られた道,248,Original
+journal.hgy.duty_delegated.body,journal_body,,"Youmu delegated one small watch with a clear return point. Help did not become command, ownership, or a permanent role.",妖夢は戻る時刻を決めて、小さな見守りを託した。手伝いは指揮でも所有でも、恒久の役目でもなかった。,248,Original
+journal.hgy.duty_delegated.declined.title,journal_title,,The Watch Not Taken,引き受けなかった見守り,248,Original
+journal.hgy.duty_delegated.declined.body,journal_body,,The watch was declined without turning it into a failure. Youmu accepted an observation and kept the decision about the path with herself.,見守りは失敗にされずに断られた。妖夢は気づきを受け取り、その先の道を決めることは自分に残した。,248,Original

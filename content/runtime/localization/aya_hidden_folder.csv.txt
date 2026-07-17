@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.aya.hidden_folder.review,objective,,Review Aya's unprinted intervention record.,文の未掲載の介入記録を見る。,208,Original
+event.aya.hidden_folder.title,event_title,,The Hidden Folder,隠されたフォルダ,208,Original
+choice.aya.hidden_folder.direct,choice,,Ask what Aya changed before deciding not to print it.,載せないと決める前に、文が何を変えたのか聞く。,248,Original
+choice.aya.hidden_folder.playful,choice,,Ask whether this is the newspaper's quietest scoop.,これが新聞で一番静かな特ダネなのか尋ねる。,248,Original
+choice.aya.hidden_folder.patient,choice,,Ask whose permission was checked before each picture was kept.,一枚ずつ残す前に、誰の許可を確かめたのか聞く。,248,Original
+choice.aya.hidden_folder.defiant,choice,,Say withholding a photograph must not become hiding responsibility.,写真を伏せることが責任を隠すことになってはいけないと言う。,248,Original
+dlg.aya.hidden_folder.intro,dialogue,char.aya_shameimaru,"This folder is not a collection of private moments. It is where I put photographs taken after I helped and decided the help mattered more than a headline.",「このフォルダは私的な瞬間の収集ではありません。手を貸した後で、その助けの方が見出しより大事だと決めた写真を入れる場所です。」,248,Original
+dlg.aya.hidden_folder.record,dialogue,char.aya_shameimaru,"A bridge rope mended before dawn. A patrol turned away from a family carrying medicine. An anonymous warning that worked because no face accompanied it.",「夜明け前に直された橋の縄。薬を運ぶ家族から進路を変えた哨戒。顔が添えられなかったから役に立った匿名の警告。」,248,Original
+dlg.aya.hidden_folder.direct,dialogue,char.aya_shameimaru,"I wrote the action beside each plate: who was warned, what changed, and what I did not publish. The work should survive even when the photograph does not.",「それぞれの乾板の横に行動を書いています。誰に伝えたか、何が変わったか、何を掲載しなかったか。写真が残らなくても、仕事は残るべきです。」,248,Original
+dlg.aya.hidden_folder.playful,dialogue,char.aya_shameimaru,"Precisely. Terrible for circulation. Excellent for letting people go home without becoming a lesson in someone else's article.",「その通りです。部数には最悪。でも、誰かが他人の記事の教訓にならずに家へ帰るには、とても良い特ダネです。」,248,Original
+dlg.aya.hidden_folder.patient,dialogue,char.aya_shameimaru,"The people I could ask said yes to the record, not necessarily to publication. The people I could not ask are not here at all.",「聞けた人には、記録への同意を得ました。掲載への同意とは限りません。聞けなかった人は、そもそもここにいません。」,248,Original
+dlg.aya.hidden_folder.defiant,dialogue,char.aya_shameimaru,"Agreed. I keep the action notes so I can be questioned about my choices without handing someone else their worst hour as evidence.",「同意します。私の選択は問われるように行動記録を残します。でも、誰かの最悪の一時間を証拠として渡さずに済むように。」,248,Original
+dlg.aya.hidden_folder.after,dialogue,char.aya_shameimaru,"The folder is not proof that I am kind. It is a reminder that publication is one tool, and sometimes the responsible tool is a closed drawer.",「このフォルダは、私が親切だという証明ではありません。掲載は一つの道具で、責任ある道具が閉じた引き出しになることもある、その覚え書きです。」,248,Original
+journal.aya.hidden_folder.title,journal_title,,The Folder of Interventions,介入のフォルダ,248,Original
+journal.aya.hidden_folder.body,journal_body,,Aya kept a record of interventions without turning the people in them into a story. Her notes made her choices answerable while leaving private moments unprinted.,文は介入の記録を残しながら、そこにいた人々を物語にはしなかった。記録は彼女の選択を問えるものにし、私的な瞬間は掲載しないままにした。,248,Original

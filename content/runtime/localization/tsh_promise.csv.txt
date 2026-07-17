@@ -1,0 +1,27 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.tsh.promise.read,objective,,"Read the challenge contract's ask, stop, repair, terrain, and two-signature terms.",挑戦契約の尋ねる、止める、修復、地形、二つの署名の条項を読む。,208,Original
+event.tsh.promise.title,event_title,,Promise,約束,208,Original
+choice.tsh.promise.friendship,choice,,Sign the formal challenge contract as friends.,友人として正式な挑戦契約に署名する。,248,Original
+choice.tsh.promise.romance,choice,,Ask whether the contract may also become romance.,契約が恋愛にもなり得るか尋ねる。,248,Original
+choice.tsh.promise.postponed,choice,,Keep the contract and postpone naming the relationship.,契約を保ち、関係に名前をつけることは保留にする。,248,Original
+choice.tsh.promise.undecided,choice,,Leave the future unclaimed while keeping the stop clause real.,止める条項を本物のままにして、未来を決めずに残す。,248,Original
+choice.tsh.promise.romance_yes,choice,,"Yes. Let romance be explicit, mutual, and still interruptible.",はい。恋愛を明確に、互いに選び、なお中断できるものにする。,248,Original
+choice.tsh.promise.romance_no,choice,,"No. Keep the contract, attention, and room to refuse.",いいえ。契約も、関心も、拒める余地も残す。,248,Original
+dlg.tsh.promise.contract,dialogue,char.tenshi_hinanawi,"A formal challenge contract. Terrain scope, repair responsibility, and two signature lines. It is not a trap; either signature may refuse the next challenge.",「正式な挑戦契約。地形の範囲、修復の責任、二つの署名欄。罠じゃない。どちらの署名も次の挑戦を断れる。」,248,Original
+dlg.tsh.promise.terms,dialogue,char.tenshi_hinanawi,The first clause says ask. The second says stop. The third says repair what I damage. These are not decorations around a dare. They are what makes a dare worth accepting.,「一つ目は尋ねる。二つ目は止める。三つ目は私が壊したものを直す。度胸試しの飾りじゃない。度胸試しを受ける価値があるものにする条項よ。」,248,Original
+dlg.tsh.promise.friendship,dialogue,char.tenshi_hinanawi,"Friends, then: a contract with real challenges and real exits. I will keep looking for your answer, but I will ask before I make the ground move.",「じゃあ友人として。本物の挑戦と本物の出口がある契約。あなたの答えはこれからも探す。でも地面を動かす前には尋ねる。」,248,Original
+dlg.tsh.promise.romance_ask,dialogue,char.tenshi_hinanawi,"One separate question. May this become romance? No changes the contract, the challenges, and my attention exactly zero. I need your answer, not a clever inference.",「別の質問を一つ。この関係は恋愛になってもいい？　いいえでも契約も挑戦も、私の関心も何も変わらない。欲しいのは、気の利いた推測じゃなくあなたの答え。」,248,Original
+dlg.tsh.promise.romance_yes,dialogue,char.tenshi_hinanawi,"Then keep looking at me--but tell me when I have gone too far. I will hear it before I move the earth, and after, until the repair is real.",「なら、これからも私を見ていて。でも、私が行き過ぎたら言って。地面を動かす前にも、その後も、修復が本物になるまで聞く。」,248,Original
+dlg.tsh.promise.romance_no,dialogue,char.tenshi_hinanawi,"No, then. The contract stays. So does the next challenge, the open exit, and my willingness to be answered without being rewarded for guessing.",「では、いいえ。契約は残る。次の挑戦も、開いた出口も、推測のご褒美なしに答えを受け取る意志も残る。」,248,Original
+dlg.tsh.promise.postponed,dialogue,char.tenshi_hinanawi,No label today. Fine. The blank line is not a countdown. We can sign the work we choose and leave the rest unfinished on purpose.,「今日は名前をつけない。いいわ。空欄は秒読みじゃない。選んだ仕事には署名して、残りはわざと未完成にしておける。」,248,Original
+dlg.tsh.promise.undecided,dialogue,char.tenshi_hinanawi,"Unclaimed future, then. It will not be a hole I fill with an incident. It can stay open and still be ours to approach carefully.",「決めない未来、ね。異変で埋める穴にはしない。開いたままでも、慎重に近づく私たちのものにできる。」,248,Original
+journal.tsh.promise.friendship.title,journal_title,,A Contract With an Exit,出口のある契約,248,Original
+journal.tsh.promise.friendship.body,journal_body,,"Tenshi and the protagonist signed a formal challenge contract with ask, stop, repair, terrain, and two-signature terms. Friendship was a complete promise, not a lesser ending.",天子と主人公は、尋ねる、止める、修復、地形、二つの署名の条項を持つ正式な挑戦契約に署名した。友情は劣った結末ではなく、完全な約束だった。,248,Original
+journal.tsh.promise.romance.title,journal_title,,Tell Me When Too Far,行き過ぎたら言って,248,Original
+journal.tsh.promise.romance.body,journal_body,,"After a separate yes, romance joined the mutual challenge contract. Tenshi asked to be told when she went too far and accepted that stopping, leaving, and repair remained part of closeness.",別の「はい」の後、恋愛は互いの挑戦契約に加わった。天子は行き過ぎたら言ってほしいと頼み、止めること、去ること、修復することが親しさの一部であり続けると受け入れた。,248,Original
+journal.tsh.promise.romance_declined.title,journal_title,,The Contract Stayed,契約は残った,248,Original
+journal.tsh.promise.romance_declined.body,journal_body,,"Romance was declined without penalty. The formal contract, attention, next challenge, and open exit remained exactly where they were.",恋愛は罰なしに断られた。正式な契約、関心、次の挑戦、開いた出口は、何一つ変わらず残った。,248,Original
+journal.tsh.promise.postponed.title,journal_title,,A Blank Line Without a Clock,時計のない空欄,248,Original
+journal.tsh.promise.postponed.body,journal_body,,"The contract was signed while the relationship label remained blank. The blank was not debt, delay punishment, or a countdown to an answer.",契約には署名し、関係の名前は空欄のままにした。その空欄は負債でも、保留への罰でも、答えへの秒読みでもなかった。,248,Original
+journal.tsh.promise.undecided.title,journal_title,,The Irregular Future,不規則な未来,248,Original
+journal.tsh.promise.undecided.body,journal_body,,Tenshi and the protagonist kept an unclaimed future beside a real stop clause. Neither uncertainty nor refusal needed an incident to become legible.,天子と主人公は、本物の止める条項のそばに、決めない未来を残した。不確かさも拒絶も、分かるものになるために異変を必要としなかった。,248,Original

@@ -94,6 +94,33 @@ def _expected_outputs() -> dict[Path, bytes]:
             }
         )
 
+    # Godot imports .csv files as Translation resources and omits their raw
+    # source from exported PCKs. Runtime content loaders use ordinary text
+    # mirrors so the reviewed rows remain available after export.
+    for source in sorted((ROOT / "content" / "localization").glob("*.csv")):
+        destination_relative = f"content/runtime/localization/{source.name}.txt"
+        payload = source.read_bytes()
+        outputs[ROOT / destination_relative] = payload
+        manifest_entries.append(
+            {
+                "source": f"content/localization/{source.name}",
+                "destination": destination_relative,
+                "sha256": _sha256(payload),
+            }
+        )
+
+    music_source = ROOT / "content" / "music" / "music_cues.csv"
+    music_destination_relative = "content/runtime/music/music_cues.csv.txt"
+    music_payload = music_source.read_bytes()
+    outputs[ROOT / music_destination_relative] = music_payload
+    manifest_entries.append(
+        {
+            "source": "content/music/music_cues.csv",
+            "destination": music_destination_relative,
+            "sha256": _sha256(music_payload),
+        }
+    )
+
     manifest = {
         "schema": "gmh-design-content-sync-v1",
         "source_revision": "2026.07.17.1",

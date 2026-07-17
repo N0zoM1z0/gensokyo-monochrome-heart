@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.aya.exclusive_interview.mark_record,objective,,Decide which part of your arrival may go on the record.,到着のどの部分を記録に載せてよいか決める。,208,Original
+event.aya.exclusive_interview.title,event_title,,Exclusive Interview,独占取材,208,Original
+choice.aya.exclusive_interview.direct,choice,,Keep the arrival off the record; she may report the storm that delayed it.,到着のことはオフレコにし、遅らせた嵐なら記事にしてよいと伝える。,248,Original
+choice.aya.exclusive_interview.playful,choice,,Offer one harmless weather detail and nothing that identifies you.,害のない天気の話だけを渡し、自分を特定することは何も渡さない。,248,Original
+choice.aya.exclusive_interview.patient,choice,,Ask what she needs to verify and what she only wants to sell.,確認に必要なことと、ただ売りたいことを分けて聞く。,248,Original
+choice.aya.exclusive_interview.defiant,choice,,Say a private arrival is not public just because she reached it first.,先に着いたからといって、私的な到着が公のものにはならないと言う。,248,Original
+dlg.aya.exclusive_interview.intro,dialogue,char.aya_shameimaru,"Good timing. The mountain has acquired a new arrival, a sudden storm, and three mutually incompatible explanations. May I have the version that survives print?",「いい頃合いです。山には新しい来訪者と急な嵐と、互いに食い違う説明が三つ増えました。活字に耐える方の話を伺っても？」,248,Original
+dlg.aya.exclusive_interview.terms,dialogue,char.aya_shameimaru,Before you answer: what is on the record? I can leave a line blank. Blank space is not the same as a mistake.,「お答えの前に、記録に載せてよいことはどこまでですか。私は一行を空けておけます。空白は間違いと同じではありません。」,248,Original
+dlg.aya.exclusive_interview.direct,dialogue,char.aya_shameimaru,"Storm, yes. Arrival, no. I will write the weather as weather and leave the person out of it.",「嵐は、はい。到着は、いいえ。天気は天気として書き、人のことは載せません。」,248,Original
+dlg.aya.exclusive_interview.playful,dialogue,char.aya_shameimaru,"A cloud that lost an argument with the ridge? Delightful, and safely useless to anyone looking for you.",「尾根と口論して負けた雲、ですか。素敵ですね。あなたを探す人には、ちゃんと役に立たない話です。」,248,Original
+dlg.aya.exclusive_interview.patient,dialogue,char.aya_shameimaru,Verification is the bridge condition and the weather log. Selling is the tempting story about who stood here. I can keep those in different columns.,「確認に必要なのは橋の状態と気象記録です。売りたいのは、ここに誰が立っていたかという魅力的な話。欄を分けておけます。」,248,Original
+dlg.aya.exclusive_interview.defiant,dialogue,char.aya_shameimaru,"Fair correction. Speed gets me to a fact, not a claim on it. The camera stays down.",「もっともな訂正です。速さが私を事実まで運んでも、それを自分のものにする権利までは運びません。カメラは下ろします。」,248,Original
+dlg.aya.exclusive_interview.after,dialogue,char.aya_shameimaru,"There. The story has a storm, a bridge, and a gap where your name might have made it louder. Readers can live with a quieter truth.",「これで、記事には嵐と橋と、あなたの名前ならもっと派手になったかもしれない空白があります。読者は、少し静かな真実でも生きていけます。」,248,Original
+journal.aya.exclusive_interview.title,journal_title,,Terms of the First Interview,最初の取材条件,248,Original
+journal.aya.exclusive_interview.body,journal_body,,"Aya asked what the record could hold before she filled it. The arrival stayed private where it needed to, and the mountain still received a useful report.",文は記録を埋める前に、何を載せてよいか尋ねた。到着は必要なところで私的なまま守られ、それでも山には役立つ記事が届いた。,248,Original

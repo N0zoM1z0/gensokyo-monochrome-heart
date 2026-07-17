@@ -1,0 +1,15 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.sdm.promise.wait,objective,,Wait for Sakuya to offer an unscheduled evening.,咲夜が予定のない夜を差し出すまで待つ。,208,Original
+event.sdm.promise.title,event_title,,One Unfinished Minute,未完の一分,208,Original
+choice.sdm.promise.friendship,choice,,Accept permission to visit the kitchen after hours as friends.,友人として、営業時間外の厨房を訪れる許可を受ける。,248,Original
+choice.sdm.promise.romance,choice,,Ask whether one evening can belong to neither work nor duty.,仕事でも義務でもない夜を一つ持てるか尋ねる。,248,Original
+choice.sdm.promise.postponed,choice,,Leave the evening open without deciding what it means yet.,意味をまだ決めずに、その夜を開けたままにする。,248,Original
+choice.sdm.promise.undecided,choice,,Say the future does not need a schedule tonight.,未来に今夜、予定表は要らないと言う。,248,Original
+dlg.sdm.promise.intro,dialogue,char.sakuya_izayoi,"This ribbon belonged to my watch. It can hold a key now, if you would like one.",「このリボンは私の懐中時計のものでした。よろしければ、今度は鍵を留められます。」,248,Original
+dlg.sdm.promise.choice,dialogue,char.sakuya_izayoi,I have left one evening unmarked. I will not fill it by guessing what you owe me. What would you choose?,「予定を入れていない夜を一つ残しました。あなたが何を返すべきか、勝手に決めて埋めたりしません。何を選ばれますか。」,248,Original
+dlg.sdm.promise.friendship,dialogue,char.sakuya_izayoi,Then the kitchen is open after hours when you wish to visit. Please knock; friendship deserves the courtesy too.,「では、給仕の後の厨房は、来たい時に開けておきます。ノックはしてください。友情にもその礼儀は要ります。」,248,Original
+dlg.sdm.promise.romance,dialogue,char.sakuya_izayoi,"Yes. This evening is not work. I have set the watch down, and I am asking you to stay.",「ええ。この夜は仕事ではありません。時計は置きました。ここにいてほしいと、私からお願いしています。」,248,Original
+dlg.sdm.promise.postponed,dialogue,char.sakuya_izayoi,That is acceptable. An open hour is not a failure to decide.,「それで構いません。開いた一時間は、決め損ねたことではありません。」,248,Original
+dlg.sdm.promise.undecided,dialogue,char.sakuya_izayoi,Then we will not name it early. The evening may remain itself.,「では、早く名前をつけるのはやめましょう。この夜は、この夜のままでいて構いません。」,248,Original
+journal.sdm.promise.title,journal_title,,An Evening Not Work,仕事ではない夜,248,Original
+journal.sdm.promise.body,journal_body,,"Sakuya offered time without making it a service or an obligation. Friendship, romance, postponement, and uncertainty each left the evening chosen rather than assigned.",咲夜は時間を給仕や義務にせず差し出した。友情、恋愛、保留、未定のどれもが、その夜を割り当てではなく選ばれたものにした。,248,Original

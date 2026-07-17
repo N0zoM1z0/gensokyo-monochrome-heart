@@ -58,6 +58,451 @@
       "sha256": "b4863f9e17b4136eb916f38d2e1e0e123a6206a36d037f2bd2410ea93a17074a"
     },
     {
+      "source": "content/localization/aya_camera_down.csv",
+      "destination": "content/runtime/localization/aya_camera_down.csv.txt",
+      "sha256": "4a0ca711b3ca6ec9d061a96738a4d08c58189b3c04cfffac63d091d9c682c2e4"
+    },
+    {
+      "source": "content/localization/aya_exclusive_interview.csv",
+      "destination": "content/runtime/localization/aya_exclusive_interview.csv.txt",
+      "sha256": "aea2a3294e1378633ee03963188ef172fc0cb00a0705611b9954b3357037deca"
+    },
+    {
+      "source": "content/localization/aya_hidden_folder.csv",
+      "destination": "content/runtime/localization/aya_hidden_folder.csv.txt",
+      "sha256": "ac35f5e493a8908b5a74b0eb5f694c73024180c0e5788512dc0c0f4ae9f7e5f2"
+    },
+    {
+      "source": "content/localization/aya_promise.csv",
+      "destination": "content/runtime/localization/aya_promise.csv.txt",
+      "sha256": "b9ad5d641b8ca174cad46558889e3fc953769b8f23332914d010b69443fee20f"
+    },
+    {
+      "source": "content/localization/aya_story_published_too_soon.csv",
+      "destination": "content/runtime/localization/aya_story_published_too_soon.csv.txt",
+      "sha256": "ba8cc847b070a2d6c15ea68c067de4977d5d34a71945212d2244731a556b7c4c"
+    },
+    {
+      "source": "content/localization/aya_tomorrows_front_page.csv",
+      "destination": "content/runtime/localization/aya_tomorrows_front_page.csv.txt",
+      "sha256": "60b7212018ad93c5aaa774f1803f66684f9a30b38a7cbb67967d7d934e60f305"
+    },
+    {
+      "source": "content/localization/aya_wind_frame_graze.csv",
+      "destination": "content/runtime/localization/aya_wind_frame_graze.csv.txt",
+      "sha256": "7b0545236edc4d50fccc63b5f7eaede2a0b32338dff32e624a0d8fe3d73107f6"
+    },
+    {
+      "source": "content/localization/ein_elegance_and_boredom.csv",
+      "destination": "content/runtime/localization/ein_elegance_and_boredom.csv.txt",
+      "sha256": "c9c9f571154cee4edf4318774530933394952026cfb172f6c9ad5b0cf6dc3d65"
+    },
+    {
+      "source": "content/localization/ein_endless_night_offer.csv",
+      "destination": "content/runtime/localization/ein_endless_night_offer.csv.txt",
+      "sha256": "33b23113e3b128860a84da8a6e4d1c9e8849dac374fb69087af91bb6a1d1a882"
+    },
+    {
+      "source": "content/localization/ein_five_impossibilities.csv",
+      "destination": "content/runtime/localization/ein_five_impossibilities.csv.txt",
+      "sha256": "54d81e31d4a7a72a5eb8525b7f9b1085c196cef371923ce5c59b91260892a674"
+    },
+    {
+      "source": "content/localization/ein_four_dawns.csv",
+      "destination": "content/runtime/localization/ein_four_dawns.csv.txt",
+      "sha256": "3f0d4cb83cb6ec7d99adf4d31620c008f00d5f5ec0ca44a810bffbe3b581fba9"
+    },
+    {
+      "source": "content/localization/ein_game_with_no_continue.csv",
+      "destination": "content/runtime/localization/ein_game_with_no_continue.csv.txt",
+      "sha256": "71e186da00cdaab70077a061b605dac8536935cd914a9806b073859163b3264f"
+    },
+    {
+      "source": "content/localization/ein_mokou_uninvited_honesty.csv",
+      "destination": "content/runtime/localization/ein_mokou_uninvited_honesty.csv.txt",
+      "sha256": "6c44d83aa20e0e5a672c5534f5b288441d95e930245e04d87dc203f99de82b61"
+    },
+    {
+      "source": "content/localization/ein_patient_refuses.csv",
+      "destination": "content/runtime/localization/ein_patient_refuses.csv.txt",
+      "sha256": "6bf1d9e997d965a4b2d49a72624d1b80cb42a786e09198df2efaadfed567d72a"
+    },
+    {
+      "source": "content/localization/ein_promise.csv",
+      "destination": "content/runtime/localization/ein_promise.csv.txt",
+      "sha256": "8b26f78c36aaa3ef338a1f69990bb5240c7112d0d66e6417fe972c8cf698771c"
+    },
+    {
+      "source": "content/localization/ein_short_lived_guest.csv",
+      "destination": "content/runtime/localization/ein_short_lived_guest.csv.txt",
+      "sha256": "5dbd93ebdcf1c542979a8e1f8a80dd277b66ba0a098bd12c7217f9775135ff5d"
+    },
+    {
+      "source": "content/localization/eir_clinic_triage.csv",
+      "destination": "content/runtime/localization/eir_clinic_triage.csv.txt",
+      "sha256": "b53f7300ae3d9db2235fbf7d9453a13d6caeb6971b45332470e14592931243a8"
+    },
+    {
+      "source": "content/localization/eir_do_not_volunteer.csv",
+      "destination": "content/runtime/localization/eir_do_not_volunteer.csv.txt",
+      "sha256": "b3f8e72f816296f20b7c6d053c4464adfdd69d1ae46c3e44ba6c0acfe710a526"
+    },
+    {
+      "source": "content/localization/eir_doctor_sleeps.csv",
+      "destination": "content/runtime/localization/eir_doctor_sleeps.csv.txt",
+      "sha256": "4a1e2fabfa19fcb760bab6b6903bcc92436c660436cbfb7ab6fb9237fee734f6"
+    },
+    {
+      "source": "content/localization/eir_permanent_cure.csv",
+      "destination": "content/runtime/localization/eir_permanent_cure.csv.txt",
+      "sha256": "06d49948b28ece2a43ca44def5e556e1ed251b538e9a08ab95c03d0ee98f428e"
+    },
+    {
+      "source": "content/localization/eir_practical_care.csv",
+      "destination": "content/runtime/localization/eir_practical_care.csv.txt",
+      "sha256": "2ce7263eed21e2d8b1d7e627db9e99464bf9581d081419e819cad60abf4af35a"
+    },
+    {
+      "source": "content/localization/eir_promise.csv",
+      "destination": "content/runtime/localization/eir_promise.csv.txt",
+      "sha256": "52fb566f8e00494f9242c7c4dfaac51881fbef6b6c1557084102c7f0fe979e1d"
+    },
+    {
+      "source": "content/localization/en.csv",
+      "destination": "content/runtime/localization/en.csv.txt",
+      "sha256": "ce65d4b1ef90ffbc64635fe587a67112191479ad59ece3f5eab35caf7a30c9bd"
+    },
+    {
+      "source": "content/localization/hgy_cutting_wrong_problem.csv",
+      "destination": "content/runtime/localization/hgy_cutting_wrong_problem.csv.txt",
+      "sha256": "23b0fdd120d4fb40ad1df4d7014a2a4c0c009b9ccf179dd013d78e7ca6c18744"
+    },
+    {
+      "source": "content/localization/hgy_duty_delegated.csv",
+      "destination": "content/runtime/localization/hgy_duty_delegated.csv.txt",
+      "sha256": "3bf46b168b232347c8e255374616004604db942e99885c9a8d98fcb7db116b5f"
+    },
+    {
+      "source": "content/localization/hgy_farewell_will_not_fall.csv",
+      "destination": "content/runtime/localization/hgy_farewell_will_not_fall.csv.txt",
+      "sha256": "36de2fb413cea19d5a29b0711f10eebb7cb62a87b02a75a9112985c36c2693ea"
+    },
+    {
+      "source": "content/localization/hgy_garden_shift.csv",
+      "destination": "content/runtime/localization/hgy_garden_shift.csv.txt",
+      "sha256": "6182fe2e8c54161a75f93973fb2c3701b44d93dcbd531dff6c5a315f32510759"
+    },
+    {
+      "source": "content/localization/hgy_last_sweet.csv",
+      "destination": "content/runtime/localization/hgy_last_sweet.csv.txt",
+      "sha256": "f14150d550afcb774fe9c8b107e831131222f0362d1fc15758dbf24e1eb9783b"
+    },
+    {
+      "source": "content/localization/hgy_meal_she_finishes.csv",
+      "destination": "content/runtime/localization/hgy_meal_she_finishes.csv.txt",
+      "sha256": "c555993b10b6abe8d13db0cdcb5e1eb9bce48da369f7261dd479d6e4e1009f90"
+    },
+    {
+      "source": "content/localization/hgy_promise.csv",
+      "destination": "content/runtime/localization/hgy_promise.csv.txt",
+      "sha256": "a22a08a86a0fa1905f47c1287788fc0e06f8142ef94f6c39311040eafaf96427"
+    },
+    {
+      "source": "content/localization/hgy_two_bodies_one_embarrassment.csv",
+      "destination": "content/runtime/localization/hgy_two_bodies_one_embarrassment.csv.txt",
+      "sha256": "1b00b2e7926e4d3e6ac94bbdb5c6e6214e5728ea2bc715aa61f11f95e994dea0"
+    },
+    {
+      "source": "content/localization/hkr_day_nothing_happens.csv",
+      "destination": "content/runtime/localization/hkr_day_nothing_happens.csv.txt",
+      "sha256": "24fc1211f7ec002432545fe9f43ef56107b32567426f17268809b43a38147ad0"
+    },
+    {
+      "source": "content/localization/hkr_offerings_without_owners.csv",
+      "destination": "content/runtime/localization/hkr_offerings_without_owners.csv.txt",
+      "sha256": "402c1360dfc54d95f8cca8cb35ccd87bf16f81737c1de83b1cb59158cac39e62"
+    },
+    {
+      "source": "content/localization/hkr_perfectly_recorded_tea.csv",
+      "destination": "content/runtime/localization/hkr_perfectly_recorded_tea.csv.txt",
+      "sha256": "0c414cb14be63cd13cf54a8840fb95624facd48076ad15346ce6c9bbf21e7ec1"
+    },
+    {
+      "source": "content/localization/hkr_promise.csv",
+      "destination": "content/runtime/localization/hkr_promise.csv.txt",
+      "sha256": "6b778c0b22e7ebb9596d8710d29d580853aa8a56bde3f943f068d723e0c66c44"
+    },
+    {
+      "source": "content/localization/hkr_shrine_not_guesthouse.csv",
+      "destination": "content/runtime/localization/hkr_shrine_not_guesthouse.csv.txt",
+      "sha256": "31596a4bcc026c0eb2b2e7029d2ca0a2a73886063b4bb8f2f4de2db0c2c568c2"
+    },
+    {
+      "source": "content/localization/hkr_unasked_rescue.csv",
+      "destination": "content/runtime/localization/hkr_unasked_rescue.csv.txt",
+      "sha256": "bea09e3fb48287bc24111a97d018a704b83c908c9212a3b0d74a292aaa7baf19"
+    },
+    {
+      "source": "content/localization/ja.csv",
+      "destination": "content/runtime/localization/ja.csv.txt",
+      "sha256": "44cc1ad2cc84855348d0ca1e4202933a293386a111eefe9771542db1b7de298d"
+    },
+    {
+      "source": "content/localization/mrs_crash_landing.csv",
+      "destination": "content/runtime/localization/mrs_crash_landing.csv.txt",
+      "sha256": "d214708d6ed79c87cd60b1f44edadeebe84521ad5af0d570d9451cdba85b897b"
+    },
+    {
+      "source": "content/localization/mrs_field_notes.csv",
+      "destination": "content/runtime/localization/mrs_field_notes.csv.txt",
+      "sha256": "6ab01cb4417fdd0f651b7f0c59c47976fafa4ee01b7b5ae8844cebb446d0bad2"
+    },
+    {
+      "source": "content/localization/mrs_infinite_experiment.csv",
+      "destination": "content/runtime/localization/mrs_infinite_experiment.csv.txt",
+      "sha256": "0d0ec9248e72be0557cba09a58e87bb4153512a0e14dc51938829bc940d92215"
+    },
+    {
+      "source": "content/localization/mrs_promise.csv",
+      "destination": "content/runtime/localization/mrs_promise.csv.txt",
+      "sha256": "fd5aae7916ebe6d2f58b0a0fc177f6f47a251d5961577f23c2d66de6c564e49e"
+    },
+    {
+      "source": "content/localization/mrs_rescue_looks_like_race.csv",
+      "destination": "content/runtime/localization/mrs_rescue_looks_like_race.csv.txt",
+      "sha256": "ca7eefcc1007690ea5f71150486323f60e4b05684136a11d430b440e0624ab67"
+    },
+    {
+      "source": "content/localization/mrs_shelf_marked_later.csv",
+      "destination": "content/runtime/localization/mrs_shelf_marked_later.csv.txt",
+      "sha256": "564ef132bb737a5329af7017c79acb77912ce03c89e758ca615e01c8c29f90d1"
+    },
+    {
+      "source": "content/localization/mrs_talent_bad_conversation.csv",
+      "destination": "content/runtime/localization/mrs_talent_bad_conversation.csv.txt",
+      "sha256": "247e0a6c8d5772737ee1334275bb011e7bb0ec855b931c107ca1e1dd11ba1510"
+    },
+    {
+      "source": "content/localization/mtn_measurable_faith.csv",
+      "destination": "content/runtime/localization/mtn_measurable_faith.csv.txt",
+      "sha256": "60c457c3e2e42608fd2ee9d2a4ec659886e395e603f15101fe2eac5299006656"
+    },
+    {
+      "source": "content/localization/mtn_tomorrows_headline.csv",
+      "destination": "content/runtime/localization/mtn_tomorrows_headline.csv.txt",
+      "sha256": "d79ddce85416d25965e7d3d72d044844ad25e7a033ffe6e25754ff00502b3677"
+    },
+    {
+      "source": "content/localization/pch_book_answers_everything.csv",
+      "destination": "content/runtime/localization/pch_book_answers_everything.csv.txt",
+      "sha256": "c5f33bef416af6bcdccefa3a99f226331cd1d0af50165a88c8c93045dd4c69b1"
+    },
+    {
+      "source": "content/localization/pch_borrowing_argument.csv",
+      "destination": "content/runtime/localization/pch_borrowing_argument.csv.txt",
+      "sha256": "4ecde31dd304d85a0e706b1d5e17c70274e2413a516c89afe99f308bb9aad3ea"
+    },
+    {
+      "source": "content/localization/pch_library_breathing_room.csv",
+      "destination": "content/runtime/localization/pch_library_breathing_room.csv.txt",
+      "sha256": "719a316be6b480b278c9c986d245f1a490cb7369a5816d3e2aeddd1713568b8a"
+    },
+    {
+      "source": "content/localization/pch_promise.csv",
+      "destination": "content/runtime/localization/pch_promise.csv.txt",
+      "sha256": "7f79a197906df1c4f208c12f6bf1ccf686e1d3cb795fe448db261adbbcf3f132"
+    },
+    {
+      "source": "content/localization/pch_question_worth_asking.csv",
+      "destination": "content/runtime/localization/pch_question_worth_asking.csv.txt",
+      "sha256": "33ff5361e06e56cd389a0cace9c3b36e02d69ba594dd3b584ce63947c4089523"
+    },
+    {
+      "source": "content/localization/pch_shared_silence_different_books.csv",
+      "destination": "content/runtime/localization/pch_shared_silence_different_books.csv.txt",
+      "sha256": "5de36d4508bac08059860d5c983567764ca9436debe8eae0def63e787c8fadcc"
+    },
+    {
+      "source": "content/localization/pch_spell_for_two_readers.csv",
+      "destination": "content/runtime/localization/pch_spell_for_two_readers.csv.txt",
+      "sha256": "78ca5296ef7420bb355fc70b0b6867587d9405a6a15561b30cc727742178a814"
+    },
+    {
+      "source": "content/localization/rml_do_not_laugh_wrong_thing.csv",
+      "destination": "content/runtime/localization/rml_do_not_laugh_wrong_thing.csv.txt",
+      "sha256": "ad5995f6e478ae3356e61e4456c7b272bde516789a88a46ddc2e8978e02d9abd"
+    },
+    {
+      "source": "content/localization/rml_fate_she_does_not_announce.csv",
+      "destination": "content/runtime/localization/rml_fate_she_does_not_announce.csv.txt",
+      "sha256": "34eced85973c1435c83c83bea9852abc8713ac564a61de896ece466406fedd03"
+    },
+    {
+      "source": "content/localization/rml_predestination_exhibit.csv",
+      "destination": "content/runtime/localization/rml_predestination_exhibit.csv.txt",
+      "sha256": "f6b790b563b349210eeaa7264280337fc54bbf7f8afd007f45cc2e9344d2b762"
+    },
+    {
+      "source": "content/localization/rml_promise.csv",
+      "destination": "content/runtime/localization/rml_promise.csv.txt",
+      "sha256": "6cb7d6c3b19d073c009cf4ff3796bd3d1e0993f249fd32268834262a0a6c3786"
+    },
+    {
+      "source": "content/localization/rml_red_mist_etiquette.csv",
+      "destination": "content/runtime/localization/rml_red_mist_etiquette.csv.txt",
+      "sha256": "5e02af42658d92a26d23bace4c91ce4ad319c3d2765b275f660ff2e6b7b43fc6"
+    },
+    {
+      "source": "content/localization/rml_the_audience.csv",
+      "destination": "content/runtime/localization/rml_the_audience.csv.txt",
+      "sha256": "008fd8eb5c3cbbf7ec4d610d986faa49a921bafae2c6f7558e4169034b3f6e15"
+    },
+    {
+      "source": "content/localization/sdm_competence_not_consent.csv",
+      "destination": "content/runtime/localization/sdm_competence_not_consent.csv.txt",
+      "sha256": "e4d103057c62b3d5c23e70aab24910e4e649b75293afbf5df8384761c61b03bd"
+    },
+    {
+      "source": "content/localization/sdm_corridor_no_dust.csv",
+      "destination": "content/runtime/localization/sdm_corridor_no_dust.csv.txt",
+      "sha256": "578d5c84a558bbaa342d2756675c5acaec1395e4a544d66995d2b3a19e48a65f"
+    },
+    {
+      "source": "content/localization/sdm_favor_cannot_optimize.csv",
+      "destination": "content/runtime/localization/sdm_favor_cannot_optimize.csv.txt",
+      "sha256": "31224fd49680423f215acb2b00f2bac0d3479f9564df1515221adccaa7f99f32"
+    },
+    {
+      "source": "content/localization/sdm_kitchen_after_midnight.csv",
+      "destination": "content/runtime/localization/sdm_kitchen_after_midnight.csv.txt",
+      "sha256": "88f387b6595c7e12dd4c768184abf50e9277f9f818dd39d9464794325af902e5"
+    },
+    {
+      "source": "content/localization/sdm_late_by_three_minutes.csv",
+      "destination": "content/runtime/localization/sdm_late_by_three_minutes.csv.txt",
+      "sha256": "dfcc5f2d1b31eb99e3d10b95511e823bd0e626da79360c10fa90e2b8617a26fb"
+    },
+    {
+      "source": "content/localization/sdm_missing_minute.csv",
+      "destination": "content/runtime/localization/sdm_missing_minute.csv.txt",
+      "sha256": "7acff62a4b869caea3026a0e4b52945b26caa98dffb71812cb7ee7f0b21de35f"
+    },
+    {
+      "source": "content/localization/sdm_promise.csv",
+      "destination": "content/runtime/localization/sdm_promise.csv.txt",
+      "sha256": "c703d9bff9bed9d65017a812e85c08801ec8c1689fd9dd62c513bf839162f3ac"
+    },
+    {
+      "source": "content/localization/sdm_small_chair.csv",
+      "destination": "content/runtime/localization/sdm_small_chair.csv.txt",
+      "sha256": "4cb8d0fdcb81a568cf7cbe9bf1d83a02c0b0c14d3ae02a71a8a016463223bbc2"
+    },
+    {
+      "source": "content/localization/sne_faith_festival_planner.csv",
+      "destination": "content/runtime/localization/sne_faith_festival_planner.csv.txt",
+      "sha256": "639a0ca474ef6ed40d2b500c9dc251a20a04c1b1930e105f3ce17e97704581aa"
+    },
+    {
+      "source": "content/localization/sne_guaranteed_faith.csv",
+      "destination": "content/runtime/localization/sne_guaranteed_faith.csv.txt",
+      "sha256": "0a23debb7c77348e96d73e5955efff29e021f0ed4b0eb79b2ceb1a0aa8d9330a"
+    },
+    {
+      "source": "content/localization/sne_ordinary_miracle.csv",
+      "destination": "content/runtime/localization/sne_ordinary_miracle.csv.txt",
+      "sha256": "f5d808fc5e9259b4a6c22633c50f18dd8e0bf17eb79b7b45532f449bce0f7e3d"
+    },
+    {
+      "source": "content/localization/sne_outside_world_shorthand.csv",
+      "destination": "content/runtime/localization/sne_outside_world_shorthand.csv.txt",
+      "sha256": "4417b1d3e26492b4f1c7aca3b41e14d216017ef952bc6a4bdcbaa32d2af6040a"
+    },
+    {
+      "source": "content/localization/sne_promise.csv",
+      "destination": "content/runtime/localization/sne_promise.csv.txt",
+      "sha256": "f8e82a50dd4480a5ffedca03d1dc7d19c8d3c9604bc6f37598c48556beb78a7f"
+    },
+    {
+      "source": "content/localization/sne_shrine_between_homes.csv",
+      "destination": "content/runtime/localization/sne_shrine_between_homes.csv.txt",
+      "sha256": "34bed00f39d9516d1aae7d326afa2ccf91b9c153f495f85c045cdb16902c4613"
+    },
+    {
+      "source": "content/localization/strings.csv",
+      "destination": "content/runtime/localization/strings.csv.txt",
+      "sha256": "76bd9a88c7e0316b40096a3e762650108d3848435a801899a00dc1b85e512228"
+    },
+    {
+      "source": "content/localization/tsh_attention_not_permission.csv",
+      "destination": "content/runtime/localization/tsh_attention_not_permission.csv.txt",
+      "sha256": "7cd95b3aaf80822023c7d63f50ed1637585b93e1b13533c5fc42872992dd1678"
+    },
+    {
+      "source": "content/localization/tsh_entrance_tremor.csv",
+      "destination": "content/runtime/localization/tsh_entrance_tremor.csv.txt",
+      "sha256": "977e9dad0e6717ac2bf1e61efe1a2330cf770b14a4961cfb32d0c25463bd19c3"
+    },
+    {
+      "source": "content/localization/tsh_heaven_without_friction.csv",
+      "destination": "content/runtime/localization/tsh_heaven_without_friction.csv.txt",
+      "sha256": "58be70c4c0ffbbfb1c1c92a15fad77f0a1957a36ea57199fae134cb633a21329"
+    },
+    {
+      "source": "content/localization/tsh_imperfect_meal.csv",
+      "destination": "content/runtime/localization/tsh_imperfect_meal.csv.txt",
+      "sha256": "0dcb0157166a3d420309f99ada8c3cea3ec00d238031ed500da77a249d8e8735"
+    },
+    {
+      "source": "content/localization/tsh_keystone_construction.csv",
+      "destination": "content/runtime/localization/tsh_keystone_construction.csv.txt",
+      "sha256": "da4d63ae28e7aabb2f16b2dbc68d4d51589af36a30327a7eab26005c8d0666ba"
+    },
+    {
+      "source": "content/localization/tsh_promise.csv",
+      "destination": "content/runtime/localization/tsh_promise.csv.txt",
+      "sha256": "cc022df900af0febebf6e5720eeffbcfb0da7d9f6fb7893e0463e03e586df4fe"
+    },
+    {
+      "source": "content/localization/tsh_repair_she_finishes.csv",
+      "destination": "content/runtime/localization/tsh_repair_she_finishes.csv.txt",
+      "sha256": "47f8fb8e3198d25db44ebe885bccaa3c4da12fd1d9304b45dac3632807c36db0"
+    },
+    {
+      "source": "content/localization/yyk_bottomless_banquet.csv",
+      "destination": "content/runtime/localization/yyk_bottomless_banquet.csv.txt",
+      "sha256": "562ecbfe06b1870c704d867f0e7e0cbdc90dbbd5b056975cb4b5af1ffc06844a"
+    },
+    {
+      "source": "content/localization/yyk_empty_plate.csv",
+      "destination": "content/runtime/localization/yyk_empty_plate.csv.txt",
+      "sha256": "56130452a2d7ffa9a2567f12cffb6f3dec1bb0ace43261b0af916e9055086230"
+    },
+    {
+      "source": "content/localization/yyk_feast_without_ending.csv",
+      "destination": "content/runtime/localization/yyk_feast_without_ending.csv.txt",
+      "sha256": "e3a1755dcfc2dafd111832c2d268f8c5c643d122ab682ae857f2746ef5fbdf30"
+    },
+    {
+      "source": "content/localization/yyk_hosts_responsibility.csv",
+      "destination": "content/runtime/localization/yyk_hosts_responsibility.csv.txt",
+      "sha256": "59c77e1048f0451417ebd4f263bfbfb2b48038cfe11f6805653bf8229bf5cfeb"
+    },
+    {
+      "source": "content/localization/yyk_joke_about_death.csv",
+      "destination": "content/runtime/localization/yyk_joke_about_death.csv.txt",
+      "sha256": "7f3a0a326af9099723c2a1b100067051b4cae56802b919da7fd329294737eeae"
+    },
+    {
+      "source": "content/localization/yyk_lightness_not_shallowness.csv",
+      "destination": "content/runtime/localization/yyk_lightness_not_shallowness.csv.txt",
+      "sha256": "d9029be74ec59c8ad7dc639e9c6b5d70aeab1a024943e2b15fa642417b502534"
+    },
+    {
+      "source": "content/music/music_cues.csv",
+      "destination": "content/runtime/music/music_cues.csv.txt",
+      "sha256": "616588930ddd24b4a4e975f2094e753c7639eb212e0c05c7521977123697ceb0"
+    },
+    {
       "source": "design/09_data/schemas/character_agent_output.schema.json",
       "destination": "schemas/character_agent_output.schema.json",
       "sha256": "16c74251fabadd96b88c056fe378dfd6c59b7aad176d9e95e6efbdecfa1b19f5"

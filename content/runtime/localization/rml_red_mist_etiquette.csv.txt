@@ -1,0 +1,19 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.rml.red_mist_etiquette.read_paths,objective,,Escort three mist silhouettes by reading what each path must protect.,三つの霧の影を、それぞれの通路が守るべきものを読み取って案内する。,208,Original
+event.rml.red_mist_etiquette.title,event_title,,Red Mist Etiquette,紅霧の作法,208,Original
+choice.rml.red_mist_etiquette.direct,choice,,Ask for the exact crossing rules instead of guessing from rank.,身分から推測せず、交差する際の正確な規則を尋ねる。,248,Original
+choice.rml.red_mist_etiquette.playful,choice,,Treat the procession as a dance whose partners must keep their space.,行列を、相手の間合いを守る舞踏として扱う。,248,Original
+choice.rml.red_mist_etiquette.patient,choice,,Let the hesitant lamp-bearer set the procession's pace.,ためらう灯り持ちに、行列の速度を決めてもらう。,248,Original
+choice.rml.red_mist_etiquette.defiant,choice,,Move the ceremonial lane that would force a guest into danger.,賓客を危険へ追いやる儀礼用の通路を移す。,248,Original
+dlg.rml.red_mist_etiquette.intro,dialogue,char.remilia_scarlet,Red mist is not disorder. It is a curtain. A competent host knows who is behind it without reducing anyone to a shadow.,「紅い霧は混乱ではなく幕よ。有能な主人なら、その向こうに誰がいるかを知り、誰のことも影だけにはしないわ。」,248,Original
+dlg.rml.red_mist_etiquette.rules,dialogue,char.remilia_scarlet,The musician needs room to turn. The sealed courier must not be brushed. The lamp-bearer's tray cannot wait under the cold vent. All three paths cross.,「楽師には向きを変える幅が要る。封書を運ぶ者には触れてはいけない。灯り持ちの盆は冷気口の下で待たせられない。三つの道はすべて交わるわ。」,248,Original
+dlg.rml.red_mist_etiquette.direct,dialogue,char.remilia_scarlet,"Correct. Rank is the least interesting part. Ask what must not collide, and the order becomes obvious.",「正しいわ。身分など一番つまらない部分よ。何を衝突させてはいけないか問えば、順番は明らかになる。」,248,Original
+dlg.rml.red_mist_etiquette.playful,dialogue,char.remilia_scarlet,"Then count it in three. You may lead, but do not dance the tea tray into the violin case.",「なら三拍で数えなさい。先導は許すけれど、茶盆を踊らせて楽器箱へぶつけないことね。」,248,Original
+dlg.rml.red_mist_etiquette.patient,dialogue,char.remilia_scarlet,Good. The lamp sets the tempo. A title can wait five steps without losing any of its spelling.,「いいわ。灯りに速さを決めさせなさい。肩書きは五歩待ったくらいで綴りを失ったりしないもの。」,248,Original
+dlg.rml.red_mist_etiquette.defiant,dialogue,char.remilia_scarlet,A rule that endangers a guest is merely bad hosting in ceremonial clothes. Move the lane. I will make the herald call it my revision.,「賓客を危険にする規則など、儀礼服を着た粗末なもてなしにすぎない。道を移しなさい。私の改定だと触れ役に告げさせるわ。」,248,Original
+dlg.rml.red_mist_etiquette.clear,dialogue,char.remilia_scarlet,"Every silhouette arrived with seal, instrument, and flame intact. That is precedence used as information rather than praise.",「封も楽器も炎も損なわず、すべての影が着いた。これが、席次を称賛でなく情報として使うということよ。」,248,Original
+dlg.rml.red_mist_etiquette.assist,dialogue,char.remilia_scarlet,"Watch the dither at their feet. My Mist Command marks intention, not importance. Take the middle path; I will hold the other two.",「足元の網点を見なさい。私の霧の命令が示すのは意図であって、重要さではない。中央を取りなさい。残る二本は私が保つわ。」,248,Original
+dlg.rml.red_mist_etiquette.loss,dialogue,char.remilia_scarlet,Stop. I will reset the procession. No one is diminished because we refused to turn a collision into tonight's entertainment.,「止まりなさい。行列は私が組み直す。衝突を今夜の見世物にしなかったからといって、誰の価値も下がらないわ。」,248,Original
+dlg.rml.red_mist_etiquette.after,dialogue,char.remilia_scarlet,Etiquette is not the angle of a bow. It is arranging a room so no one pays for your spectacle. The revised lane stays.,「作法とは礼の角度ではない。誰にも自分の見世物の代償を払わせないよう、部屋を整えることよ。改めた道は残すわ。」,248,Original
+journal.rml.red_mist_etiquette.title,journal_title,,Paths Through the Curtain,幕を抜ける道,248,Original
+journal.rml.red_mist_etiquette.body,journal_body,,"Remilia used mist and precedence to protect three different passage needs, not to rank anyone's worth. When ceremony threatened a guest or a route failed, she changed the procession and kept responsibility.",レミリアは霧と席次を、誰かの価値を順位づけるのでなく、三者それぞれの通行条件を守るために使った。儀礼が賓客を危険にした時も道順が崩れた時も、彼女は行列を改めて責任を引き受けた。,248,Original

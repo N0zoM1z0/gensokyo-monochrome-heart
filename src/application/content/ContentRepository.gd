@@ -429,6 +429,10 @@ func _index_records(
 	deferred: Array[DeferredReferenceRecord],
 	sources: ContentSourceSet
 ) -> void:
+	# Authoring bibles are source-review evidence and deliberately excluded from
+	# public PCKs. Release runtime still validates every executable content
+	# contract, but cannot require design-only Markdown files to be shipped.
+	var require_authoring_documents := BuildChannel.current() != BuildChannel.Kind.RELEASE
 	for record: CharacterRecord in characters:
 		var source_path := _source(record.source_path, sources.characters_path)
 		_validate_id(record.id, "^char\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*$", source_path)
@@ -437,7 +441,7 @@ func _index_records(
 			report.add_error(&"rules", source_path, "character requires slug and English display name", record.id)
 		if record.route_depth not in [&"deep", &"support"]:
 			report.add_error(&"rules", source_path, "unsupported route depth: %s" % record.route_depth, record.id)
-		if record.skills_document.is_empty() or not FileAccess.file_exists(record.skills_document):
+		if require_authoring_documents and (record.skills_document.is_empty() or not FileAccess.file_exists(record.skills_document)):
 			report.add_error(&"rules", source_path, "skills document is missing: %s" % record.skills_document, record.id)
 		if record.presence_tier not in [&"lead", &"regional", &"cameo", &"crowd"]:
 			report.add_error(&"rules", source_path, "unsupported roster presence tier: %s" % record.presence_tier, record.id)
@@ -465,7 +469,7 @@ func _index_records(
 		_register(record.id, source_path, _locations, record)
 		if record.display_name_en.is_empty() or record.thesis.is_empty():
 			report.add_error(&"rules", source_path, "location requires English display name and thesis", record.id)
-		if record.bible_path.is_empty() or not FileAccess.file_exists(record.bible_path):
+		if require_authoring_documents and (record.bible_path.is_empty() or not FileAccess.file_exists(record.bible_path)):
 			report.add_error(&"rules", source_path, "location bible is missing: %s" % record.bible_path, record.id)
 		if record.map_position.x < 0 or record.map_position.x >= 320 or record.map_position.y < 0 or record.map_position.y >= 180:
 			report.add_error(&"rules", source_path, "map position is outside 320x180", record.id)

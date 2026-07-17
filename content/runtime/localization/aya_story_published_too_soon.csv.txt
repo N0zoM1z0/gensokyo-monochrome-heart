@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.aya.story_published_too_soon.correct,objective,,Decide how Aya's correction should reach the people her headline affected.,文の訂正を、見出しの影響を受けた人々へどう届けるか決める。,208,Original
+event.aya.story_published_too_soon.title,event_title,,The Story She Ruins by Publishing,掲載して壊した記事,208,Original
+choice.aya.story_published_too_soon.direct,choice,,Ask who needs the correction before the story stops circulating.,記事が広まらなくなる前に、誰へ訂正が必要か聞く。,248,Original
+choice.aya.story_published_too_soon.playful,choice,,Say a correction needs a headline or it will run after the apology.,訂正にも見出しがなければ、謝罪の後ろを走るだけだと言う。,248,Original
+choice.aya.story_published_too_soon.patient,choice,,Ask whether the courier can read the correction before the readers do.,読者より先に、その運び手が訂正を読めるか聞く。,248,Original
+choice.aya.story_published_too_soon.defiant,choice,,"Say deleting the notice protects Aya, not the people it harmed.",通知を消して守られるのは文であって、傷ついた人々ではないと言う。,248,Original
+dlg.aya.story_published_too_soon.intro,dialogue,char.aya_shameimaru,I printed that a courier had abandoned the north path. I wanted the patrol order questioned before medicine stopped moving. The courier had been diverted by that same order.,「北の道を運び手が放棄したと印刷しました。薬が動かなくなる前に哨戒命令を問いたかったのです。その運び手は、まさにその命令で迂回させられていました。」,248,Original
+dlg.aya.story_published_too_soon.harm,dialogue,char.aya_shameimaru,The correction exists in my notebook. That is not enough. The people who distrusted the courier do not read my notebook.,「訂正は私の手帳にあります。でも、それでは足りません。運び手を疑った人たちは、私の手帳を読みませんから。」,248,Original
+dlg.aya.story_published_too_soon.direct,dialogue,char.aya_shameimaru,"The courier, the clinic, and the threshold board. I will put the correction where the original made its work harder.",「運び手、診療所、そして境界の掲示板です。元の記事が仕事を難しくした場所に、訂正を置きます。」,248,Original
+dlg.aya.story_published_too_soon.playful,dialogue,char.aya_shameimaru,Then the correction gets the largest type. Let embarrassment be readable at a distance for once.,「では訂正を一番大きい活字にします。たまには恥ずかしさも遠くから読めるようにしましょう。」,248,Original
+dlg.aya.story_published_too_soon.patient,dialogue,char.aya_shameimaru,Yes. The courier will see the draft first and may tell me which fact still fails to repair the damage.,「はい。運び手に先に草稿を見てもらい、どの事実がまだ傷を直せていないか言ってもらいます。」,248,Original
+dlg.aya.story_published_too_soon.defiant,dialogue,char.aya_shameimaru,You are right. Deletion makes the paper look tidy. A correction tells readers that I made the harm and have to answer for it.,「その通りです。削除は新聞をきれいに見せます。訂正は、害を作ったのが私で、答えなければならないと読者に伝えます。」,248,Original
+dlg.aya.story_published_too_soon.after,dialogue,char.aya_shameimaru,"There. The wrong notice stays marked beneath the correction. The courier's route is not a dramatic rescue, only a route that can carry medicine again.",「これで、間違った通知は訂正の下に印を付けて残ります。運び手の道は劇的な救出ではありません。ただ、また薬を運べる道です。」,248,Original
+journal.aya.story_published_too_soon.title,journal_title,,The Correction in Large Type,大きな活字の訂正,248,Original
+journal.aya.story_published_too_soon.body,journal_body,,Aya's premature story made a courier look responsible for an order that had diverted them. She kept the error visible beneath a correction placed where the harmed readers could find it.,文の早すぎる記事は、命令で迂回させられた運び手を責任者のように見せた。彼女は誤りを消さず、影響を受けた読者が見つけられる場所に訂正を置いた。,248,Original

@@ -1,0 +1,16 @@
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.mrs.talent.stop_comparison,objective,,Let the failed spell cool before speaking.,失敗した術が冷めるまで待つ。,208,Original
+event.mrs.talent_bad_conversation.title,event_title,,Talent Is a Bad Conversation,才能は悪い話題,208,Original
+choice.mrs.talent.direct,choice,,Say her work deserves respect without comparison.,比べずに彼女の仕事を尊重すると言う。,248,Original
+choice.mrs.talent.playful,choice,,Make a risky joke about borrowing Reimu's talent.,霊夢の才能を借りる危ない冗談を言う。,248,Original
+choice.mrs.talent.patient,choice,,Ask what this attempt taught her.,今回の試みが何を教えたか聞く。,248,Original
+choice.mrs.talent.defiant,choice,,Say nobody gets to rank people by ease.,誰も容易さで人を順位づけできないと言う。,248,Original
+dlg.mrs.talent.intro,dialogue,char.marisa_kirisame,The spell failed where I wrote it would. That does not make it easier to hear.,「書いた通りの所で術は失敗した。それでも聞くのが楽になるわけじゃない。」,248,Original
+dlg.mrs.talent.conflict,dialogue,char.marisa_kirisame,Do not turn this into Reimu being effortless and me being less. That is a bad conversation.,「霊夢には簡単で、私は足りないって話にするな。それは悪い話題だ。」,248,Original
+dlg.mrs.talent.direct,dialogue,char.marisa_kirisame,"Good. See the work, then. Not a race I never agreed to run.",「いい。じゃあ仕事を見ろ。私が走ると決めてもいない競走じゃなくて。」,248,Original
+dlg.mrs.talent.playful,dialogue,char.marisa_kirisame,No. That joke borrows the wrong thing. Leave it there.,「駄目だ。その冗談は借りる物を間違えてる。そこに置いて。」,248,Original
+dlg.mrs.talent.patient,dialogue,char.marisa_kirisame,It taught me the light wants a narrower turn. That is enough for today.,「今回分かったのは、光がもっと狭く曲がりたがってるってことだ。今日はそれで十分だ。」,248,Original
+dlg.mrs.talent.defiant,dialogue,char.marisa_kirisame,Right. Ease is not a verdict. Neither is a bad afternoon.,「その通り。楽さは判決じゃない。悪い午後だってそうだ。」,248,Original
+dlg.mrs.talent.after,dialogue,char.marisa_kirisame,Write the wind down. Tomorrow I will try the turn again.,「風を記録して。明日、また曲がり方を試す。」,248,Original
+journal.mrs.talent_bad_conversation.title,journal_title,,Not a Race I Agreed to Run,走ると決めた競走じゃない,248,Original
+journal.mrs.talent_bad_conversation.body,journal_body,,"Marisa refused the easy comparison. The useful question was not who had talent, but what the failed spell could teach the next deliberate attempt.",魔理沙は安易な比較を拒んだ。役に立つ問いは誰に才能があるかではなく、失敗した術が次の意図的な試みに何を教えるかだった。,248,Original
