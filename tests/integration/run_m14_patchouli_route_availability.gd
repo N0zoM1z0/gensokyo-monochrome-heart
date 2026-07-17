@@ -8,6 +8,7 @@ const EVENTS: Array[StringName] = [
 	&"evt.pch.borrowing_argument",
 	&"evt.pch.spell_for_two_readers",
 	&"evt.pch.book_answers_everything",
+	&"evt.pch.promise",
 ]
 var _content := ContentRepository.new()
 var _failures: Array[String] = []

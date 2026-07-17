@@ -109,6 +109,24 @@
         "archive_refusal",
         "future_not_preclaimed"
       ]
+    },
+    {
+      "id": "evt.pch.promise",
+      "legacy_id": "EVT-PAT-07",
+      "title_en": "Promise",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.patchouli_knowledge"
+      ],
+      "primary_mode": "choice_puzzle",
+      "core_change": "future indexed without ownership",
+      "status": "implemented",
+      "estimated_minutes": 15,
+      "comfort_tags": [
+        "no_timer",
+        "no_failure",
+        "route_intent_explicit"
+      ]
     }
   ]
 }

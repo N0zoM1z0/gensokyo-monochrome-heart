@@ -150,6 +150,48 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records Patchouli choosing incomplete knowledge over a prewritten relationship."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.reserved_reading_desk",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A reserved desk makes continued reading available without requiring conversation or ownership."
+    },
+    {
+      "id": "prop.pch.reserved_desk_card",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A desk card records the friendship invitation as a standing, revisable arrangement."
+    },
+    {
+      "id": "prop.pch.no_due_date_borrowing_card",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A no-due-date card names the romance future while its added rules preserve return, revision, and independent work."
+    },
+    {
+      "id": "journal.pch.promise.friendship",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Friendship reserves a reading desk without requiring performance."
+    },
+    {
+      "id": "journal.pch.promise.romance",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Romance names an open-ended borrowing card whose rules prevent ownership."
+    },
+    {
+      "id": "journal.pch.promise.postponed",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The desk and future may remain unassigned without penalty."
+    },
+    {
+      "id": "journal.pch.promise.undecided",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "An unindexed future remains neither missing nor claimed."
     }
   ]
 }

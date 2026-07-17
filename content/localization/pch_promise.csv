@@ -1,0 +1,21 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.pch.promise.choose,objective,,Choose the future you and Patchouli will record.,パチュリーと記録する未来を選ぶ。,208,Original
+event.pch.promise.title,event_title,,Promise,約束,208,Original
+choice.pch.promise.friendship,choice,,Choose a reading desk reserved without required conversation.,会話を義務にしない保留席を選ぶ。,248,Original
+choice.pch.promise.romance,choice,,Choose the no-due-date card and its explicit rules.,返却期限のない貸出票と、その明確な規則を選ぶ。,248,Original
+choice.pch.promise.postponed,choice,,Leave the desk unassigned until another reading day.,次の読書の日まで席を未指定にしておく。,248,Original
+choice.pch.promise.undecided,choice,,Leave the future unindexed rather than misfile it.,未来を誤分類せず、索引に載せないままにする。,248,Original
+dlg.pch.promise.intro,dialogue,char.patchouli_knowledge,"I reserved one desk and prepared one borrowing card. They describe different arrangements. Neither becomes valid merely because I wrote it neatly.",「席を一つ確保し、貸出票を一枚用意した。別々の取り決めを示すものよ。私が丁寧に書いたからといって有効になるわけじゃない。」,248,Original
+dlg.pch.promise.ask,dialogue,char.patchouli_knowledge,"Select only what you intend to use. An unused category is preferable to a false entry.",「実際に使うつもりのものだけを選んで。使われない分類の方が、偽の項目よりまし。」,248,Original
+dlg.pch.promise.friendship,dialogue,char.patchouli_knowledge,"The desk remains reserved. You may bring any book, keep your own silence, and leave without submitting a reading report.",「席は確保しておく。どんな本を持ってきてもいい。自分の沈黙を保ち、読書報告を出さずに帰ってもいい。」,248,Original
+dlg.pch.promise.romance,dialogue,char.patchouli_knowledge,"Your name goes here. No due date. Now the rules: either reader may revise the terms, close the card, or work elsewhere without explanation. Open-ended is not the same as owned.",「ここにあなたの名前を書く。返却期限はなし。次に規則。どちらの読者も条件を改め、票を閉じ、説明せず別の場所で研究できる。期限がないことと、所有されることは同じじゃない。」,248,Original
+dlg.pch.promise.postponed,dialogue,char.patchouli_knowledge,"Then the desk remains unassigned, not withdrawn. A later decision will not be charged an overdue fee.",「なら席は未指定のまま。撤回ではない。後の決定に延滞料はかからないわ。」,248,Original
+dlg.pch.promise.undecided,dialogue,char.patchouli_knowledge,"Unindexed, then. That does not make the future missing. It means we have not lied about where it belongs.",「では索引には載せない。それで未来が失われるわけじゃない。どこに属するかについて嘘をついていないだけ。」,248,Original
+journal.pch.promise.friendship.title,journal_title,,The Reserved Desk,確保された席,248,Original
+journal.pch.promise.friendship.body,journal_body,,Patchouli reserved a reading desk with no conversation requirement and no report due. Friendship remained available as shared attention with separate books and independent departures.,パチュリーは会話も報告も求めない読書席を確保した。友情は、別々の本と自由な退出を保ったまま注意を共有するものとして残った。,248,Original
+journal.pch.promise.romance.title,journal_title,,The Card Without a Due Date,返却期限のない貸出票,248,Original
+journal.pch.promise.romance.body,journal_body,,Patchouli wrote the protagonist's name on a no-due-date borrowing card, then added rules immediately. Either reader may revise or close it, and open-ended affection grants no ownership over work, space, or time.,パチュリーは返却期限のない貸出票に主人公の名を書き、すぐ規則を加えた。どちらも変更や終了ができ、終わりのない好意も仕事、場所、時間への所有権を与えない。,248,Original
+journal.pch.promise.postponed.title,journal_title,,No Overdue Fee,延滞料なし,248,Original
+journal.pch.promise.postponed.body,journal_body,,The desk remained unassigned without being withdrawn. No deadline converted a later answer into debt or rejection.,席は撤回されず、未指定のまま残った。締め切りはなく、後の答えが負債や拒絶に変えられることもなかった。,248,Original
+journal.pch.promise.undecided.title,journal_title,,The Unindexed Future,索引にない未来,248,Original
+journal.pch.promise.undecided.body,journal_body,,Neither person filed the future under a false category. Uncertainty remained present and revisable rather than missing or claimed.,誰も未来を偽の分類に収めなかった。不確かさは失われも所有もされず、そこにあり、見直せるまま残った。,248,Original

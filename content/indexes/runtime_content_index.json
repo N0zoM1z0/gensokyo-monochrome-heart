@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "95efb4317602992a49324b22fb363abcecf5db279a2bff8d416e015b6f385ac4",
+  "content_hash": "10ff3242fe2fc2aedef8ea088d2a71fd132d3c15b658e48d5c946b76d60d9caa",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 72,
-    "dialogue_beats": 401,
-    "localization": 1393,
+    "events": 73,
+    "dialogue_beats": 407,
+    "localization": 1413,
     "music_cues": 89,
-    "event_nodes": 975
+    "event_nodes": 996
   },
   "ids": {
     "characters": [
@@ -164,6 +164,7 @@
       "evt.pch.book_answers_everything",
       "evt.pch.borrowing_argument",
       "evt.pch.library_breathing_room",
+      "evt.pch.promise",
       "evt.pch.question_worth_asking",
       "evt.pch.shared_silence_different_books",
       "evt.pch.spell_for_two_readers",
@@ -501,6 +502,12 @@
       "beat.pch.library_breathing_room.patient",
       "beat.pch.library_breathing_room.playful",
       "beat.pch.library_breathing_room.problem",
+      "beat.pch.promise.ask",
+      "beat.pch.promise.friendship",
+      "beat.pch.promise.intro",
+      "beat.pch.promise.postponed",
+      "beat.pch.promise.romance",
+      "beat.pch.promise.undecided",
       "beat.pch.question_worth_asking.after",
       "beat.pch.question_worth_asking.defiant",
       "beat.pch.question_worth_asking.direct",
@@ -746,6 +753,10 @@
       "choice.pch.library_breathing_room.direct",
       "choice.pch.library_breathing_room.patient",
       "choice.pch.library_breathing_room.playful",
+      "choice.pch.promise.friendship",
+      "choice.pch.promise.postponed",
+      "choice.pch.promise.romance",
+      "choice.pch.promise.undecided",
       "choice.pch.question_worth_asking.defiant",
       "choice.pch.question_worth_asking.direct",
       "choice.pch.question_worth_asking.patient",
@@ -1106,6 +1117,12 @@
       "dlg.pch.library_breathing_room.patient",
       "dlg.pch.library_breathing_room.playful",
       "dlg.pch.library_breathing_room.problem",
+      "dlg.pch.promise.ask",
+      "dlg.pch.promise.friendship",
+      "dlg.pch.promise.intro",
+      "dlg.pch.promise.postponed",
+      "dlg.pch.promise.romance",
+      "dlg.pch.promise.undecided",
       "dlg.pch.question_worth_asking.after",
       "dlg.pch.question_worth_asking.defiant",
       "dlg.pch.question_worth_asking.direct",
@@ -1226,6 +1243,7 @@
       "event.pch.book_answers_everything.title",
       "event.pch.borrowing_argument.title",
       "event.pch.library_breathing_room.title",
+      "event.pch.promise.title",
       "event.pch.question_worth_asking.title",
       "event.pch.shared_silence_different_books.title",
       "event.pch.spell_for_two_readers.title",
@@ -1354,6 +1372,14 @@
       "journal.pch.borrowing_argument.title",
       "journal.pch.library_breathing_room.body",
       "journal.pch.library_breathing_room.title",
+      "journal.pch.promise.friendship.body",
+      "journal.pch.promise.friendship.title",
+      "journal.pch.promise.postponed.body",
+      "journal.pch.promise.postponed.title",
+      "journal.pch.promise.romance.body",
+      "journal.pch.promise.romance.title",
+      "journal.pch.promise.undecided.body",
+      "journal.pch.promise.undecided.title",
       "journal.pch.question_worth_asking.body",
       "journal.pch.question_worth_asking.title",
       "journal.pch.shared_silence_different_books.body",
@@ -1414,6 +1440,7 @@
       "obj.pch.book_answers_everything.choose",
       "obj.pch.borrowing_argument.choose",
       "obj.pch.library_breathing_room.choose",
+      "obj.pch.promise.choose",
       "obj.pch.question_worth_asking.choose",
       "obj.pch.shared_silence_different_books.choose",
       "obj.pch.spell_for_two_readers.choose",
@@ -4522,6 +4549,66 @@
       "kind": "localization"
     },
     {
+      "source": "beat.pch.promise.ask",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.promise.ask",
+      "target": "dlg.pch.promise.ask",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.promise.friendship",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.promise.friendship",
+      "target": "dlg.pch.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.promise.intro",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.promise.intro",
+      "target": "dlg.pch.promise.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.promise.postponed",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.promise.postponed",
+      "target": "dlg.pch.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.promise.romance",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.promise.romance",
+      "target": "dlg.pch.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.promise.undecided",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.promise.undecided",
+      "target": "dlg.pch.promise.undecided",
+      "kind": "localization"
+    },
+    {
       "source": "beat.pch.question_worth_asking.after",
       "target": "char.patchouli_knowledge",
       "kind": "speaker"
@@ -6119,6 +6206,26 @@
     {
       "source": "choice.pch.library_breathing_room.response",
       "target": "choice.pch.library_breathing_room.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.promise.intent",
+      "target": "choice.pch.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.promise.intent",
+      "target": "choice.pch.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.promise.intent",
+      "target": "choice.pch.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.promise.intent",
+      "target": "choice.pch.promise.undecided",
       "kind": "localization"
     },
     {
@@ -16128,6 +16235,231 @@
     },
     {
       "source": "evt.pch.library_breathing_room",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.pch.promise.node.n001",
+      "target": "evt.pch.promise.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n001",
+      "target": "mus_patchouli_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.pch.promise.node.n002",
+      "target": "evt.pch.promise.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n002",
+      "target": "obj.pch.promise.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.promise.node.n002",
+      "target": "prop.pch.no_due_date_borrowing_card",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.promise.node.n002",
+      "target": "prop.pch.reserved_desk_card",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.promise.node.n003",
+      "target": "beat.pch.promise.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.promise.node.n003",
+      "target": "evt.pch.promise.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n004",
+      "target": "beat.pch.promise.ask",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.promise.node.n004",
+      "target": "evt.pch.promise.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n005",
+      "target": "choice.pch.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.pch.promise.node.n005",
+      "target": "evt.pch.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n005",
+      "target": "evt.pch.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n005",
+      "target": "evt.pch.promise.node.n_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n005",
+      "target": "evt.pch.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_effects_friendship",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.promise.node.n_effects_friendship",
+      "target": "evt.pch.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_effects_postponed",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.promise.node.n_effects_postponed",
+      "target": "evt.pch.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_effects_romance",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.promise.node.n_effects_romance",
+      "target": "evt.pch.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_effects_undecided",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.promise.node.n_effects_undecided",
+      "target": "evt.pch.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_friendship",
+      "target": "beat.pch.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.promise.node.n_friendship",
+      "target": "evt.pch.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_journal_friendship",
+      "target": "evt.pch.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_journal_friendship",
+      "target": "journal.pch.promise.friendship",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.promise.node.n_journal_postponed",
+      "target": "evt.pch.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_journal_postponed",
+      "target": "journal.pch.promise.postponed",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.promise.node.n_journal_romance",
+      "target": "evt.pch.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_journal_romance",
+      "target": "journal.pch.promise.romance",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.promise.node.n_journal_undecided",
+      "target": "evt.pch.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_journal_undecided",
+      "target": "journal.pch.promise.undecided",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.promise.node.n_postponed",
+      "target": "beat.pch.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.promise.node.n_postponed",
+      "target": "evt.pch.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_romance",
+      "target": "beat.pch.promise.romance",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.promise.node.n_romance",
+      "target": "evt.pch.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise.node.n_undecided",
+      "target": "beat.pch.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.promise.node.n_undecided",
+      "target": "evt.pch.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.promise",
+      "target": "char.patchouli_knowledge",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.pch.promise",
+      "target": "char.patchouli_knowledge",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pch.promise",
+      "target": "event.pch.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.promise",
+      "target": "evt.pch.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.pch.promise",
+      "target": "loc.scarlet_devil_mansion.reserved_reading_desk",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.pch.promise",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },
