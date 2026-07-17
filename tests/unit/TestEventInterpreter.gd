@@ -29,6 +29,7 @@ func run() -> Array[String]:
 			replay_source = completed
 	_expect_transaction_rollback(failures)
 	_expect_invalid_flag_validation(failures)
+	_expect_choice_shape_validation(failures)
 	_expect_step_limit_and_cycle_rejection(failures)
 	_expect_read_only_replay(replay_source, failures)
 	_remove_tree(TEST_ROOT)
@@ -245,6 +246,29 @@ func _expect_invalid_flag_validation(failures: Array[String]) -> void:
 	graph.nodes = [effects, end]
 	if not _contains(EventGraphValidator.new().validate(graph), "invalid flag ID"):
 		failures.append("event validation did not reject a runtime-invalid flag ID")
+
+
+func _expect_choice_shape_validation(failures: Array[String]) -> void:
+	var consent := EventGraphRecord.new(1, &"evt.fixture.consent", &"event.fixture.title", &"loc.hakurei_shrine", &"", [], &"n_choice", [])
+	var consent_choice := EventNodeRecord.new(&"n_choice", &"choice")
+	var consent_options: Array[ChoiceOptionRecord] = [
+		ChoiceOptionRecord.new(&"direct", &"choice.fixture.yes", &"n_end"),
+		ChoiceOptionRecord.new(&"defiant", &"choice.fixture.no", &"n_end"),
+	]
+	consent_choice.choice = ChoiceRecord.new(&"choice.fixture.romance_consent", consent_options)
+	var consent_end := EventNodeRecord.new(&"n_end", &"end_event")
+	consent_end.outcome = &"complete"
+	consent.nodes = [consent_choice, consent_end]
+	if not EventGraphValidator.new().validate(consent).is_empty():
+		failures.append("event validation rejected an explicit direct/defiant consent pair")
+	var ambiguous := EventGraphRecord.new(1, &"evt.fixture.ambiguous_binary", &"event.fixture.title", &"loc.hakurei_shrine", &"", [], &"n_choice", [])
+	var ambiguous_choice := EventNodeRecord.new(&"n_choice", &"choice")
+	ambiguous_choice.choice = ChoiceRecord.new(&"choice.fixture.binary", consent_options)
+	var ambiguous_end := EventNodeRecord.new(&"n_end", &"end_event")
+	ambiguous_end.outcome = &"complete"
+	ambiguous.nodes = [ambiguous_choice, ambiguous_end]
+	if not _contains(EventGraphValidator.new().validate(ambiguous), "direct/defiant consent pair"):
+		failures.append("event validation accepted an unlabelled two-tone choice")
 
 
 func _expect_step_limit_and_cycle_rejection(failures: Array[String]) -> void:

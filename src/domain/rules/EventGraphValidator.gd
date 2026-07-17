@@ -71,8 +71,15 @@ func _validate_shape(node: EventNodeRecord, errors: Array[String]) -> void:
 				errors.append("choice node %s has an invalid or duplicate tone option" % node.id)
 			else:
 				tones.append(option.tone)
-		if tones.size() != TONES.size():
-			errors.append("choice node %s must expose all four authored tones" % node.id)
+		var is_full_tone_choice := tones.size() == TONES.size()
+		var is_binary_consent_choice := (
+			String(node.choice.id).ends_with("_consent")
+			and tones.size() == 2
+			and &"direct" in tones
+			and &"defiant" in tones
+		)
+		if not is_full_tone_choice and not is_binary_consent_choice:
+			errors.append("choice node %s must expose all four authored tones or a direct/defiant consent pair" % node.id)
 		return
 	if node.type in [&"start_minigame", &"start_danmaku", &"start_duel"]:
 		if node.minigame_id == &"" or node.result_branches.is_empty():
