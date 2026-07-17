@@ -15,7 +15,7 @@
     {
       "source": "design/09_data/events.json",
       "destination": "content/events/events.json",
-      "sha256": "42d48d2f5030b3ed4a7bd25061ed66eebfabaf5554ade9cd1a5b87a1fdc331b3"
+      "sha256": "3a07a05c3fe138fbb668ff80c9316641b3722639972a188c0d95370398da144c"
     },
     {
       "source": "design/09_data/sample_event_empty_cushion.json",
@@ -30,17 +30,17 @@
     {
       "source": "design/09_data/localization/en.csv",
       "destination": "content/localization/en.csv",
-      "sha256": "e084478a7a847bb1f4b7a74fdf7ba162cad4b6dee8d827a92b7f1786c7a4c60a"
+      "sha256": "ce65d4b1ef90ffbc64635fe587a67112191479ad59ece3f5eab35caf7a30c9bd"
     },
     {
       "source": "design/09_data/localization/ja.csv",
       "destination": "content/localization/ja.csv",
-      "sha256": "a954e6ad8095431873aad6c0a67ccde4433615bef53cdd065a71412bab81b7f1"
+      "sha256": "44cc1ad2cc84855348d0ca1e4202933a293386a111eefe9771542db1b7de298d"
     },
     {
       "source": "design/09_data/localization/strings.csv",
       "destination": "content/localization/strings.csv",
-      "sha256": "85217cfb4d0b2999eb80697aa4bdc2cb43bea8e2785113ceef9a7ebdcc5b0fbc"
+      "sha256": "76bd9a88c7e0316b40096a3e762650108d3848435a801899a00dc1b85e512228"
     },
     {
       "source": "design/09_data/locations.json",
@@ -50,7 +50,7 @@
     {
       "source": "design/09_data/music_cues.csv",
       "destination": "content/music/music_cues.csv",
-      "sha256": "2034e6fcf365ea0a02e49777171afb17b046af5c59e6576a3d81608b16abed2f"
+      "sha256": "616588930ddd24b4a4e975f2094e753c7639eb212e0c05c7521977123697ceb0"
     },
     {
       "source": "design/09_data/schemas/character_agent_output.schema.json",

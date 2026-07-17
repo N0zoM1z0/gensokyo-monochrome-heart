@@ -121,16 +121,21 @@
     {
       "id": "evt.sdm.small_chair",
       "legacy_id": "EVT-009",
-      "title_en": "The Small Chair",
+      "title_en": "The Small Chair Behind the Throne",
       "location_id": "loc.scarlet_devil_mansion",
       "lead_character_ids": [
         "char.remilia_scarlet"
       ],
       "primary_mode": "dialogue",
-      "core_change": "public/private mask",
-      "status": "planned",
+      "core_change": "Remilia invites the protagonist behind the throne and chooses an ordinary resting chair without letting privacy become shame or infantilization.",
+      "status": "authored",
       "estimated_minutes": 12,
-      "comfort_tags": []
+      "comfort_tags": [
+        "no_timer",
+        "no_failure",
+        "private_access_invited",
+        "no_infantilization"
+      ]
     },
     {
       "id": "evt.sdm.breakable_point",
@@ -205,17 +210,22 @@
     {
       "id": "evt.mtn.measurable_faith",
       "legacy_id": "EVT-015",
-      "title_en": "Measurable Faith",
+      "title_en": "Publicity Versus Belief",
       "location_id": "loc.moriya_shrine",
       "lead_character_ids": [
         "char.sanae_kochiya",
         "char.kanako_yasaka"
       ],
-      "primary_mode": "festival_minigame",
-      "core_change": "publicity conflict",
-      "status": "planned",
-      "estimated_minutes": 18,
-      "comfort_tags": []
+      "primary_mode": "campaign_boundary_audit",
+      "core_change": "A numerically successful campaign exposes repeated slogans and an unasked publicity image; Sanae withdraws the image and accepts that attention did not prove belief.",
+      "status": "authored",
+      "estimated_minutes": 12,
+      "comfort_tags": [
+        "no_timer",
+        "conflict_continues",
+        "image_consent_required",
+        "metrics_not_belief"
+      ]
     },
     {
       "id": "evt.ein.four_dawns",
@@ -234,16 +244,23 @@
     {
       "id": "evt.ein.patient_refuses",
       "legacy_id": "EVT-017",
-      "title_en": "The Patient Who Refuses",
+      "title_en": "The Patient Who Says No",
       "location_id": "loc.eientei",
       "lead_character_ids": [
         "char.eirin_yagokoro"
       ],
-      "primary_mode": "triage_minigame",
-      "core_change": "consent theme",
-      "status": "planned",
-      "estimated_minutes": 18,
-      "comfort_tags": []
+      "primary_mode": "consent_dialogue",
+      "core_change": "Eirin treats a patient's refusal as a complete clinical answer, then gives the protagonist a separate test choice whose acceptance or refusal changes neither care nor route access.",
+      "status": "authored",
+      "estimated_minutes": 11,
+      "comfort_tags": [
+        "no_timer",
+        "no_failure",
+        "medical_refusal_respected",
+        "player_test_optional",
+        "refusal_no_route_penalty",
+        "no_real_world_treatment_advice"
+      ]
     },
     {
       "id": "evt.ein.five_impossibilities",
@@ -310,11 +327,16 @@
       "lead_character_ids": [
         "char.yuyuko_saigyouji"
       ],
-      "primary_mode": "banquet_minigame",
-      "core_change": "finite appetite",
-      "status": "planned",
-      "estimated_minutes": 18,
-      "comfort_tags": []
+      "primary_mode": "route_intent",
+      "core_change": "Yuyuko offers a standing story invitation and saves the final sweet while friendship, romance, postponement, uncertainty, and refusal remain explicit complete futures.",
+      "status": "authored",
+      "estimated_minutes": 10,
+      "comfort_tags": [
+        "no_timer",
+        "no_failure",
+        "route_intent_explicit",
+        "interactive_romance_consent"
+      ]
     },
     {
       "id": "evt.hgy.two_bodies_bridge",
