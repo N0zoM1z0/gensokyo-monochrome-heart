@@ -4,12 +4,15 @@ extends RefCounted
 
 var _node_ids: Array[StringName] = []
 var _edges: Array[ContentDependencyEdge] = []
+var _node_lookup: Dictionary[StringName, bool] = {}
+var _edge_lookup: Dictionary[String, bool] = {}
 
 
 func add_node(node_id: StringName) -> void:
-	if node_id != &"" and node_id not in _node_ids:
-		_node_ids.append(node_id)
-		_node_ids.sort_custom(_node_less)
+	if node_id == &"" or _node_lookup.has(node_id):
+		return
+	_node_lookup[node_id] = true
+	_node_ids.append(node_id)
 
 
 func add_edge(source_id: StringName, target_id: StringName, kind: StringName) -> void:
@@ -17,19 +20,23 @@ func add_edge(source_id: StringName, target_id: StringName, kind: StringName) ->
 		return
 	add_node(source_id)
 	add_node(target_id)
-	for edge: ContentDependencyEdge in _edges:
-		if edge.source_id == source_id and edge.target_id == target_id and edge.kind == kind:
-			return
+	var edge_key := "%s\u001f%s\u001f%s" % [source_id, target_id, kind]
+	if _edge_lookup.has(edge_key):
+		return
+	_edge_lookup[edge_key] = true
 	_edges.append(ContentDependencyEdge.new(source_id, target_id, kind))
-	_edges.sort_custom(_edge_less)
 
 
 func node_ids() -> Array[StringName]:
-	return _node_ids.duplicate()
+	var result := _node_ids.duplicate()
+	result.sort_custom(_node_less)
+	return result
 
 
 func edges() -> Array[ContentDependencyEdge]:
-	return _edges.duplicate()
+	var result := _edges.duplicate()
+	result.sort_custom(_edge_less)
+	return result
 
 
 func dependencies_of(source_id: StringName) -> Array[StringName]:
