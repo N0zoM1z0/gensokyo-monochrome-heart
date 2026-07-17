@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "df11759b258d5315361159c4a7e51dc5f036c7c95cfc12f3af8c3e5f664b1ff0",
+  "content_hash": "262c72b014fe3b2619c9c354620c43e6711f3b4c57eed6c0783b236d1ab118ee",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 92,
-    "dialogue_beats": 598,
-    "localization": 1823,
+    "events": 93,
+    "dialogue_beats": 611,
+    "localization": 1844,
     "music_cues": 89,
-    "event_nodes": 1457
+    "event_nodes": 1481
   },
   "ids": {
     "characters": [
@@ -126,6 +126,7 @@
       "evt.ein.short_lived_guest",
       "evt.ein.shortcut_seller",
       "evt.eir.clinic_triage",
+      "evt.eir.practical_care",
       "evt.fin.borders_back",
       "evt.fin.margin_of_error",
       "evt.fin.one_blank_page",
@@ -325,6 +326,19 @@
       "beat.eir.clinic_triage.playful",
       "beat.eir.clinic_triage.reisen_intake",
       "beat.eir.clinic_triage.tewi_noise",
+      "beat.eir.practical_care.after",
+      "beat.eir.practical_care.assist",
+      "beat.eir.practical_care.clear",
+      "beat.eir.practical_care.defiant",
+      "beat.eir.practical_care.direct",
+      "beat.eir.practical_care.eirin_consent",
+      "beat.eir.practical_care.eirin_offer",
+      "beat.eir.practical_care.kaguya_chart",
+      "beat.eir.practical_care.kosuzu_cut",
+      "beat.eir.practical_care.kosuzu_scope",
+      "beat.eir.practical_care.loss",
+      "beat.eir.practical_care.patient",
+      "beat.eir.practical_care.playful",
       "beat.hgy.duty.after",
       "beat.hgy.duty.defiant",
       "beat.hgy.duty.direct",
@@ -873,6 +887,10 @@
       "choice.eir.clinic_triage.direct",
       "choice.eir.clinic_triage.patient",
       "choice.eir.clinic_triage.playful",
+      "choice.eir.practical_care.defiant",
+      "choice.eir.practical_care.direct",
+      "choice.eir.practical_care.patient",
+      "choice.eir.practical_care.playful",
       "choice.hgy.duty.defiant",
       "choice.hgy.duty.direct",
       "choice.hgy.duty.patient",
@@ -1231,6 +1249,19 @@
       "dlg.eir.clinic_triage.playful",
       "dlg.eir.clinic_triage.reisen_intake",
       "dlg.eir.clinic_triage.tewi_noise",
+      "dlg.eir.practical_care.after",
+      "dlg.eir.practical_care.assist",
+      "dlg.eir.practical_care.clear",
+      "dlg.eir.practical_care.defiant",
+      "dlg.eir.practical_care.direct",
+      "dlg.eir.practical_care.eirin_consent",
+      "dlg.eir.practical_care.eirin_offer",
+      "dlg.eir.practical_care.kaguya_chart",
+      "dlg.eir.practical_care.kosuzu_cut",
+      "dlg.eir.practical_care.kosuzu_scope",
+      "dlg.eir.practical_care.loss",
+      "dlg.eir.practical_care.patient",
+      "dlg.eir.practical_care.playful",
       "dlg.hgy.duty.after",
       "dlg.hgy.duty.defiant",
       "dlg.hgy.duty.direct",
@@ -1721,6 +1752,7 @@
       "event.ein.promise.title",
       "event.ein.short_lived_guest.title",
       "event.eir.clinic_triage.title",
+      "event.eir.practical_care.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
       "event.hgy.farewell_will_not_fall.title",
@@ -1839,6 +1871,8 @@
       "journal.ein.short_lived_guest.title",
       "journal.eir.clinic_triage.body",
       "journal.eir.clinic_triage.title",
+      "journal.eir.practical_care.body",
+      "journal.eir.practical_care.title",
       "journal.hgy.cutting_wrong_problem.body",
       "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
@@ -2012,6 +2046,7 @@
       "obj.ein.promise.choose",
       "obj.ein.short_lived_guest.choose",
       "obj.eir.clinic_triage.separate",
+      "obj.eir.practical_care.balance",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
       "obj.hgy.farewell.release",
@@ -3956,6 +3991,136 @@
     {
       "source": "beat.eir.clinic_triage.tewi_noise",
       "target": "dlg.eir.clinic_triage.tewi_noise",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.after",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.after",
+      "target": "dlg.eir.practical_care.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.assist",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.assist",
+      "target": "dlg.eir.practical_care.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.clear",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.clear",
+      "target": "dlg.eir.practical_care.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.defiant",
+      "target": "dlg.eir.practical_care.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.direct",
+      "target": "dlg.eir.practical_care.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.eirin_consent",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.eirin_consent",
+      "target": "dlg.eir.practical_care.eirin_consent",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.eirin_offer",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.eirin_offer",
+      "target": "dlg.eir.practical_care.eirin_offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.kaguya_chart",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.kaguya_chart",
+      "target": "dlg.eir.practical_care.kaguya_chart",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.kosuzu_cut",
+      "target": "char.kosuzu_motoori",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.kosuzu_cut",
+      "target": "dlg.eir.practical_care.kosuzu_cut",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.kosuzu_scope",
+      "target": "char.kosuzu_motoori",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.kosuzu_scope",
+      "target": "dlg.eir.practical_care.kosuzu_scope",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.loss",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.loss",
+      "target": "dlg.eir.practical_care.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.patient",
+      "target": "dlg.eir.practical_care.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.practical_care.playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.practical_care.playful",
+      "target": "dlg.eir.practical_care.playful",
       "kind": "localization"
     },
     {
@@ -9039,6 +9204,26 @@
       "kind": "localization"
     },
     {
+      "source": "choice.eir.practical_care.response",
+      "target": "choice.eir.practical_care.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.practical_care.response",
+      "target": "choice.eir.practical_care.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.practical_care.response",
+      "target": "choice.eir.practical_care.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.practical_care.response",
+      "target": "choice.eir.practical_care.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.hgy.duty.response",
       "target": "choice.hgy.duty.defiant",
       "kind": "localization"
@@ -14045,6 +14230,316 @@
     },
     {
       "source": "evt.eir.clinic_triage",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n001",
+      "target": "evt.eir.practical_care.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n001",
+      "target": "mus_eirin_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n002",
+      "target": "evt.eir.practical_care.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n002",
+      "target": "obj.eir.practical_care.balance",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n002",
+      "target": "prop.eir.centuries_orbit_chart",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n002",
+      "target": "prop.eir.consent_bounded_care_packet",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n002",
+      "target": "prop.eir.kosuzu_return_slips",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n003",
+      "target": "beat.eir.practical_care.kaguya_chart",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n003",
+      "target": "evt.eir.practical_care.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n004",
+      "target": "beat.eir.practical_care.kosuzu_cut",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n004",
+      "target": "evt.eir.practical_care.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n005",
+      "target": "beat.eir.practical_care.eirin_consent",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n005",
+      "target": "evt.eir.practical_care.node.n_offer",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_after",
+      "target": "beat.eir.practical_care.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_after",
+      "target": "evt.eir.practical_care.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_assist",
+      "target": "beat.eir.practical_care.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_assist",
+      "target": "evt.eir.practical_care.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_choice",
+      "target": "choice.eir.practical_care.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_choice",
+      "target": "evt.eir.practical_care.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_choice",
+      "target": "evt.eir.practical_care.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_choice",
+      "target": "evt.eir.practical_care.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_choice",
+      "target": "evt.eir.practical_care.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_clear",
+      "target": "beat.eir.practical_care.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_clear",
+      "target": "evt.eir.practical_care.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_defiant_line",
+      "target": "beat.eir.practical_care.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_defiant_line",
+      "target": "evt.eir.practical_care.node.n_plan",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_defiant",
+      "target": "evt.eir.practical_care.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_direct_line",
+      "target": "beat.eir.practical_care.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_direct_line",
+      "target": "evt.eir.practical_care.node.n_plan",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_direct",
+      "target": "evt.eir.practical_care.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_effects",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_effects",
+      "target": "evt.eir.practical_care.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_journal",
+      "target": "evt.eir.practical_care.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_journal",
+      "target": "journal.eir.practical_care",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_loss",
+      "target": "beat.eir.practical_care.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_loss",
+      "target": "evt.eir.practical_care.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_offer",
+      "target": "beat.eir.practical_care.eirin_offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_offer",
+      "target": "evt.eir.practical_care.node.n_scope",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_patient_line",
+      "target": "beat.eir.practical_care.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_patient_line",
+      "target": "evt.eir.practical_care.node.n_plan",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_patient",
+      "target": "evt.eir.practical_care.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_plan",
+      "target": "evt.eir.practical_care.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_plan",
+      "target": "evt.eir.practical_care.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_plan",
+      "target": "evt.eir.practical_care.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_plan",
+      "target": "mini.eir.practical_care_attention",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_playful_line",
+      "target": "beat.eir.practical_care.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_playful_line",
+      "target": "evt.eir.practical_care.node.n_plan",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_playful",
+      "target": "evt.eir.practical_care.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_scope",
+      "target": "beat.eir.practical_care.kosuzu_scope",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.practical_care.node.n_scope",
+      "target": "evt.eir.practical_care.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.practical_care",
+      "target": "char.eirin_yagokoro",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.practical_care",
+      "target": "char.eirin_yagokoro",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.practical_care",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.practical_care",
+      "target": "char.kosuzu_motoori",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.practical_care",
+      "target": "event.eir.practical_care.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.practical_care",
+      "target": "evt.eir.practical_care",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.eir.practical_care",
+      "target": "loc.eientei.practical_care_table",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.eir.practical_care",
       "target": "loc.eientei",
       "kind": "location"
     },

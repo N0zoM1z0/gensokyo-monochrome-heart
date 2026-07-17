@@ -107,6 +107,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/sne_promise.json",
 	"res://content/events/eir_clinic_triage.json",
 	"res://content/events/ein_patient_refuses.json",
+	"res://content/events/eir_practical_care.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -181,6 +182,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/sne_promise.json",
 	"res://content/dialogue/eir_clinic_triage.json",
 	"res://content/dialogue/ein_patient_refuses.json",
+	"res://content/dialogue/eir_practical_care.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -256,6 +258,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/sne_promise.csv",
 	"res://content/localization/eir_clinic_triage.csv",
 	"res://content/localization/ein_patient_refuses.csv",
+	"res://content/localization/eir_practical_care.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -273,9 +276,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/sne_route_deferred_references.json",
 	"res://content/indexes/eir_route_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 64
-var expected_supplemental_dialogue_count: int = 579
-var expected_supplemental_localization_count: int = 1227
+var expected_supplemental_event_count: int = 65
+var expected_supplemental_dialogue_count: int = 592
+var expected_supplemental_localization_count: int = 1248
 
 
 func content_paths() -> Array[String]:
