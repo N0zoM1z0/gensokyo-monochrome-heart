@@ -187,6 +187,53 @@ def model_m_sheet(char: str) -> Canvas:
     return c
 
 
+def _model_l_down(c: Canvas, ox: int, char: str) -> None:
+    """Draw a prone silhouette that preserves the character's identity cue."""
+    # The body deliberately occupies most of the 32 px cell instead of becoming
+    # a generic floor dash. The head is on the facing/right side of the source.
+    c.poly([(ox+3,38),(ox+9,34),(ox+22,35),(ox+28,41),(ox+8,44)])
+    c.circle(ox+25,34,5)
+    c.rect(ox+2,41,11,3)
+    c.rect(ox+20,40,10,3)
+    _face(c,ox+25,34)
+    if char == "reimu_hakurei":
+        c.poly([(ox+22,30),(ox+13,24),(ox+15,34)])
+        c.poly([(ox+27,30),(ox+31,24),(ox+31,35)])
+        c.rect(ox+4,34,7,8)
+    elif char == "marisa_kirisame":
+        c.poly([(ox+14,31),(ox+31,31),(ox+22,21),(ox+18,27)])
+        c.rect(ox+12,31,19,3)
+        c.line(ox+2,44,ox+29,26,BLACK,2)
+    elif char == "sakuya_izayoi":
+        c.rect(ox+19,27,3,3,WHITE)
+        c.rect(ox+24,25,3,3,WHITE)
+        c.rect(ox+29,27,3,3,WHITE)
+        c.rect(ox+8,36,4,7,WHITE)
+        c.line(ox+2,32,ox+14,43,BLACK,2)
+    elif char == "remilia_scarlet":
+        c.poly([(ox+9,36),(ox+1,25),(ox+3,42)])
+        c.poly([(ox+15,35),(ox+10,23),(ox+20,38)])
+        c.rect(ox+21,27,10,3)
+    elif char == "youmu_konpaku":
+        c.line(ox+1,29,ox+30,43,BLACK,2)
+        c.line(ox+3,44,ox+29,26,BLACK,2)
+        c.circle(ox+7,31,5)
+        c.circle(ox+5,29,2,WHITE)
+    elif char == "aya_shameimaru":
+        c.poly([(ox+10,37),(ox+1,25),(ox+4,43)])
+        c.poly([(ox+16,36),(ox+10,24),(ox+20,41)])
+        c.rect(ox+21,26,9,5)
+    elif char == "sanae_kochiya":
+        c.rect(ox+18,29,13,11)
+        c.circle(ox+20,25,3,hollow=True)
+        c.circle(ox+29,25,3,hollow=True)
+        c.rect(ox+3,34,7,9)
+    else:
+        c.rect(ox+16,27,15,4)
+        c.circle(ox+25,24,3)
+        c.stroke(ox+2,30,10,12)
+
+
 def _model_l(c: Canvas, ox: int, char: str, action: str) -> None:
     variant = FIGHTER_ACTIONS.index(action)
     attack = action.startswith(("normal", "command", "special", "spell"))
@@ -196,7 +243,8 @@ def _model_l(c: Canvas, ox: int, char: str, action: str) -> None:
     base = 47 if action == "crouch" else 43 if not airborne else 35
     cx = ox + 16 + lean
     if down:
-        c.rect(ox+5,39,22,4); c.circle(ox+25,37,4); return
+        _model_l_down(c, ox, char)
+        return
     # Larger fighter construction is authored independently from Model M.
     c.circle(cx, base-27, 6); _face(c,cx,base-27)
     c.poly([(cx-5,base-20),(cx+5,base-20),(cx+7,base-3),(cx-7,base-3)])
@@ -500,16 +548,47 @@ def _unique_cells(canvas: Canvas, width: int, height: int) -> int:
     return len(signatures)
 
 
+def _cell_signature(canvas: Canvas, index: int, width: int, height: int) -> tuple:
+    ox = index * width
+    return tuple(
+        tuple(canvas.pixels[y * canvas.width + ox:y * canvas.width + ox + width])
+        for y in range(height)
+    )
+
+
+def _occupied_cell_bounds(canvas: Canvas, index: int, width: int, height: int) -> tuple[int, int]:
+    ox = index * width
+    occupied = [
+        (x, y)
+        for y in range(height)
+        for x in range(width)
+        if canvas.pixels[y * canvas.width + ox + x] != CLEAR
+    ]
+    if not occupied:
+        return 0, 0
+    xs, ys = zip(*occupied)
+    return max(xs) - min(xs) + 1, max(ys) - min(ys) + 1
+
+
 def quality_errors() -> list[str]:
     errors=[]
+    down_signatures=set()
     for char in CHARACTERS:
+        fighter_sheet=model_l_sheet(char)
         counts=(
             ("Model M",_unique_cells(model_m_sheet(char),24,32),10),
-            ("Model L",_unique_cells(model_l_sheet(char),32,48),28),
+            ("Model L",_unique_cells(fighter_sheet,32,48),28),
             ("portrait",_unique_cells(portrait_pack(char),80,104),9),
         )
         for label,actual,minimum in counts:
             if actual < minimum: errors.append(f"{char} {label} unique cells {actual} < {minimum}")
+        down_index=FIGHTER_ACTIONS.index("down")
+        down_signatures.add(_cell_signature(fighter_sheet,down_index,32,48))
+        down_width,down_height=_occupied_cell_bounds(fighter_sheet,down_index,32,48)
+        if down_width < 24 or down_height < 14:
+            errors.append(f"{char} down silhouette bounds {down_width}x{down_height} are not character-readable")
+    if len(down_signatures) != len(CHARACTERS):
+        errors.append("Model L down silhouettes do not preserve eight distinct character identities")
     for region in REGIONS:
         actual=_unique_cells(region_tiles(region),16,16)
         if actual < 40: errors.append(f"{region} unique tiles {actual} < 40")

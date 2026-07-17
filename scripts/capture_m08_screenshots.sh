@@ -36,6 +36,7 @@ capture m08_fighter_active_a_ja res://tests/ui/fixtures/CompactFighterActiveFixt
 capture m08_fighter_active_d_en res://tests/ui/fixtures/CompactFighterActiveFixture.tscn D en
 capture m08_fighter_hitboxes_a_en res://tests/ui/fixtures/CompactFighterHitboxFixture.tscn A en
 capture m08_fighter_spell_break_d_ja res://tests/ui/fixtures/CompactFighterSpellBreakFixture.tscn D ja --safe-flash
+capture m08_fighter_hit_a_en res://tests/ui/fixtures/CompactFighterHitFixture.tscn A en
 capture m08_fighter_down_a_en res://tests/ui/fixtures/CompactFighterDownFixture.tscn A en --reduced-motion
 capture m08_fighter_paused_a_ja res://tests/ui/fixtures/CompactFighterPausedFixture.tscn A ja
 capture m08_fighter_training_a_en res://tests/ui/fixtures/CompactFighterTrainingFixture.tscn A en

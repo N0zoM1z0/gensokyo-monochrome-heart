@@ -22,8 +22,8 @@ func run() -> Array[String]:
 		for record: Dictionary in raw.get("records", []):
 			paired += int(not String(record.get("accessibility_pair", "")).is_empty())
 			licensed += int(String(record.get("rights_basis", "")) == "licensed")
-		if paired != 4:
-			failures.append("expected four reciprocal polarity records, got %d" % paired)
+		if paired != 0:
+			failures.append("runtime recoloring should replace duplicate polarity files, got %d paired records" % paired)
 		if licensed != 2:
 			failures.append("expected two explicitly licensed font files, got %d" % licensed)
 	return failures

@@ -10,12 +10,37 @@ const FOOTER_FRAME := Rect2(4, 155, 312, 21)
 const ACTION_CONTRACT := [
 	"move", "light", "heavy", "skill", "spell", "guard", "pause", "confirm", "cancel",
 ]
-const REIMU_SHEET: Texture2D = preload("res://assets/art/fighter/reimu_m_sheet.png")
-const REIMU_SHEET_INVERTED: Texture2D = preload("res://assets/art/fighter/reimu_m_sheet_inverted.png")
-const MARISA_SHEET: Texture2D = preload("res://assets/art/fighter/marisa_m_sheet.png")
-const MARISA_SHEET_INVERTED: Texture2D = preload("res://assets/art/fighter/marisa_m_sheet_inverted.png")
+const REIMU_SHEET: Texture2D = preload("res://assets/art/production/characters/reimu_hakurei/chr_reimu_hakurei_l_keyposes.png")
+const MARISA_SHEET: Texture2D = preload("res://assets/art/production/characters/marisa_kirisame/chr_marisa_kirisame_l_keyposes.png")
+const MODEL_L_FRAME_SIZE := Vector2i(32, 48)
+const MODEL_L_IDLE := 0
+const MODEL_L_WALK_FORWARD := 2
+const MODEL_L_WALK_BACK := 3
+const MODEL_L_JUMP := 4
+const MODEL_L_GUARD_HIGH := 7
+const MODEL_L_NORMAL_1 := 10
+const MODEL_L_NORMAL_5 := 14
+const MODEL_L_SPECIAL_1 := 17
+const MODEL_L_SPECIAL_2 := 18
+const MODEL_L_SPELL_1 := 21
+const MODEL_L_HIT := 23
+const MODEL_L_DOWN := 24
+const MODEL_L_WIN := 25
+const MODEL_L_SURRENDER := 26
+const MOVE_ACTIONS := {
+	&"move.reimu.paper_tap": MODEL_L_NORMAL_1,
+	&"move.reimu.orb_sweep": MODEL_L_NORMAL_5,
+	&"move.reimu.amulet_line": MODEL_L_SPECIAL_1,
+	&"move.reimu.boundary_slip": MODEL_L_SPECIAL_2,
+	&"move.reimu.seal_declaration": MODEL_L_SPELL_1,
+	&"move.marisa.broom_jab": MODEL_L_NORMAL_1,
+	&"move.marisa.broom_arc": MODEL_L_NORMAL_5,
+	&"move.marisa.star_spread": MODEL_L_SPECIAL_1,
+	&"move.marisa.broom_vault": MODEL_L_SPECIAL_2,
+	&"move.marisa.narrow_laser": MODEL_L_SPELL_1,
+}
 
-@export_enum("live", "intro", "active", "hitbox", "spell_break", "down", "paused", "training", "result_win", "result_loss", "stress") var fixture_state: String = "live"
+@export_enum("live", "intro", "active", "hitbox", "spell_break", "hit", "down", "paused", "training", "result_win", "result_loss", "stress") var fixture_state: String = "live"
 
 var host := FighterHost.new()
 var runtime: FighterDuelSimulation
@@ -50,6 +75,7 @@ var _stress_effects: int = 0
 var _is_reduced_motion: bool = false
 var _is_safe_flash: bool = false
 var _no_flash_active: bool = false
+var _palette_textures: Dictionary = {}
 
 @onready var sfx_player: ProceduralSfxPlayer = %ProceduralSfxPlayer
 
@@ -392,20 +418,26 @@ func _prepare_fixture_state() -> void:
 		"spell_break":
 			_intro_ticks_remaining = 0
 			force_spell_break_for_test(0)
-		"down":
+		"hit":
 			_intro_ticks_remaining = 0
 			runtime.states[0].vitality = 180
 			runtime.states[0].vitality_notch = 680
 			runtime.states[0].hitstun_ticks = 12
 			runtime.states[0].visual_pose = &"hit"
+		"down":
+			_intro_ticks_remaining = 0
+			runtime.states[0].vitality = 0
+			runtime.states[0].vitality_notch = 0
+			runtime.states[0].hitstun_ticks = 0
+			runtime.states[0].visual_pose = &"down"
 		"paused":
 			_intro_ticks_remaining = 0
 			step_fixture(34, _input_frame(1, 0), _input_frame(-1, 0))
 			host.toggle_pause()
 		"training":
 			_intro_ticks_remaining = 0
-			runtime.states[0].x_fp = 128 * FighterDuelSimulation.FP
-			runtime.states[1].x_fp = 154 * FighterDuelSimulation.FP
+			runtime.states[0].x_fp = 190 * FighterDuelSimulation.FP
+			runtime.states[1].x_fp = 250 * FighterDuelSimulation.FP
 			var light := FighterInputFrame.new()
 			light.light_pressed = true
 			step_fixture(1, light)
@@ -576,7 +608,7 @@ func _retry_duel() -> void:
 func _on_spell_break(_checkpoint: String) -> void:
 	_break_banner_ticks = 30
 	checkpoint_requested.emit(&"fighter_spell_break")
-	_show_cue(&"ui.fighter.cue.spell_break", &"sfx.fighter.spell_break", 330.0, 0.15)
+	_show_cue(&"ui.fighter.cue.spell_break", &"sfx.fighter.spell_break", 330.0, 0.15, false)
 	_border_stamp_seconds = 0.0 if _no_flash_active else 0.28
 	queue_redraw()
 
@@ -593,9 +625,15 @@ func _on_result_ready(result: ModeResult) -> void:
 	queue_redraw()
 
 
-func _show_cue(key: StringName, cue_id: StringName, pitch: float, duration: float) -> void:
+func _show_cue(
+	key: StringName,
+	cue_id: StringName,
+	pitch: float,
+	duration: float,
+	show_visual: bool = true
+) -> void:
 	_visual_cue_key = key
-	_visual_cue_seconds = 0.75
+	_visual_cue_seconds = 0.75 if show_visual else 0.0
 	sfx_player.play_cue(AudioCueIntent.new(cue_id, key, pitch, duration))
 
 
@@ -627,7 +665,7 @@ func _draw() -> void:
 		_draw_intro(foreground, background)
 	if _break_banner_ticks > 0:
 		_draw_break_banner(foreground, background)
-	if _visual_cue_seconds > 0.0:
+	if _visual_cue_seconds > 0.0 and not _show_combat_boxes:
 		_draw_visual_cue(foreground, background)
 	if runtime.is_paused and not _training_overlay:
 		_draw_pause(foreground, background)
@@ -710,30 +748,63 @@ func _draw_projectiles(foreground: Color, _background: Color) -> void:
 
 func _draw_fighter(side: int) -> void:
 	var state := runtime.states[side]
-	var origin := Vector2(roundi(state.x_fp / 256.0), definition.ground_y - roundi(state.height_fp / 256.0))
+	var origin := Vector2(
+		roundi(state.x_fp / 256.0) - state.facing * 2,
+		definition.ground_y - roundi(state.height_fp / 256.0)
+	)
 	var sheet := _fighter_sheet(side)
-	var frame := _fighter_frame(state)
+	var frame := production_frame_for_state(state)
 	draw_set_transform(origin, 0.0, Vector2(state.facing, 1))
 	draw_texture_rect_region(
 		sheet,
-		Rect2(-12, -32, 24, 32),
-		Rect2(frame * 24, 0, 24, 32)
+		Rect2(-16, -48, MODEL_L_FRAME_SIZE.x, MODEL_L_FRAME_SIZE.y),
+		Rect2(frame * MODEL_L_FRAME_SIZE.x, 0, MODEL_L_FRAME_SIZE.x, MODEL_L_FRAME_SIZE.y)
 	)
 	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 
 
 func _fighter_sheet(side: int) -> Texture2D:
-	if side == 0:
-		return REIMU_SHEET_INVERTED if _profile.is_inverted else REIMU_SHEET
-	return MARISA_SHEET_INVERTED if _profile.is_inverted else MARISA_SHEET
+	return _palette_texture(REIMU_SHEET if side == 0 else MARISA_SHEET)
 
 
-func _fighter_frame(state: FighterState) -> int:
-	if state.visual_pose == &"idle":
-		return floori(runtime.encounter_tick / 10.0) % 4
-	if state.visual_pose in [&"jump", &"guard"] or state.velocity_x_fp != 0:
-		return 4 + floori(runtime.encounter_tick / 5.0) % 8
-	return 12 + floori(state.move_tick / 3.0) % 4
+func production_frame_for_state(state: FighterState) -> int:
+	if state.vitality <= 0:
+		return MODEL_L_DOWN
+	if state.hitstun_ticks > 0:
+		return MODEL_L_HIT
+	if state.guard_held or state.blockstun_ticks > 0 or state.visual_pose == &"guard":
+		return MODEL_L_GUARD_HIGH
+	if MOVE_ACTIONS.has(state.current_move_id):
+		return int(MOVE_ACTIONS[state.current_move_id])
+	if state.height_fp > 0 or state.visual_pose == &"jump":
+		return MODEL_L_JUMP
+	if state.velocity_x_fp * state.facing > 0:
+		return MODEL_L_WALK_FORWARD
+	if state.velocity_x_fp * state.facing < 0:
+		return MODEL_L_WALK_BACK
+	return MODEL_L_IDLE
+
+
+func _palette_texture(source: Texture2D) -> Texture2D:
+	if not _profile.is_inverted:
+		return source
+	var cache_key := "%s:%s" % [source.resource_path, _profile.profile_id]
+	if _palette_textures.has(cache_key):
+		return _palette_textures[cache_key] as Texture2D
+	var image := source.get_image()
+	if image == null or image.is_empty():
+		return source
+	var foreground := _profile.paper
+	var background := _profile.ink
+	for y: int in range(image.get_height()):
+		for x: int in range(image.get_width()):
+			var pixel := image.get_pixel(x, y)
+			if pixel.a <= 0.0:
+				continue
+			image.set_pixel(x, y, foreground if pixel.r < 0.5 else background)
+	var texture := ImageTexture.create_from_image(image)
+	_palette_textures[cache_key] = texture
+	return texture
 
 
 func _draw_combat_boxes(foreground: Color) -> void:
@@ -743,9 +814,10 @@ func _draw_combat_boxes(foreground: Color) -> void:
 		var hitbox := runtime.current_hitbox(side)
 		if hitbox.size != Vector2i.ZERO:
 			draw_rect(Rect2(hitbox), foreground, false, 2.0)
-	var font := _font()
-	draw_string(font, Vector2(8, 51), _catalog.text(&"ui.fighter.hitbox", _locale), HORIZONTAL_ALIGNMENT_LEFT, 70, _small_font_size(), foreground)
-	draw_string(font, Vector2(82, 51), _catalog.text(&"ui.fighter.hurtbox", _locale), HORIZONTAL_ALIGNMENT_LEFT, 70, _small_font_size(), foreground)
+	if not _training_overlay:
+		var font := _font()
+		draw_string(font, Vector2(8, 51), _catalog.text(&"ui.fighter.hitbox", _locale), HORIZONTAL_ALIGNMENT_LEFT, 70, _small_font_size(), foreground)
+		draw_string(font, Vector2(82, 51), _catalog.text(&"ui.fighter.hurtbox", _locale), HORIZONTAL_ALIGNMENT_LEFT, 70, _small_font_size(), foreground)
 
 
 func _draw_dashed_rect(rect: Rect2, color: Color) -> void:
@@ -773,8 +845,8 @@ func _draw_footer(foreground: Color, background: Color) -> void:
 		_catalog.text(mode_key, _locale),
 		runtime.assists.speed_percent,
 	]
-	draw_string(_font(), Vector2(8, 165), attacks, HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
-	draw_string(_font(), Vector2(8, 175), defense, HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
+	draw_string(_font(), Vector2(8, 163), attacks, HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
+	draw_string(_font(), Vector2(8, 173), defense, HORIZONTAL_ALIGNMENT_CENTER, 304, _small_font_size(), foreground)
 
 
 func _draw_intro(foreground: Color, background: Color) -> void:
@@ -839,9 +911,9 @@ func _draw_break_banner(foreground: Color, background: Color) -> void:
 
 
 func _draw_visual_cue(foreground: Color, background: Color) -> void:
-	draw_rect(Rect2(80, 113, 160, 18), background)
-	draw_rect(Rect2(80, 113, 160, 18), foreground, false, 1.0)
-	draw_string(_font(), Vector2(85, 127), _catalog.text(_visual_cue_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 150, _hud_font_size(), foreground)
+	draw_rect(Rect2(80, 43, 160, 18), background)
+	draw_rect(Rect2(80, 43, 160, 18), foreground, false, 1.0)
+	draw_string(_font(), Vector2(85, 57), _catalog.text(_visual_cue_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 150, _hud_font_size(), foreground)
 
 
 func _draw_pause(foreground: Color, background: Color) -> void:
@@ -863,19 +935,25 @@ func _draw_pause(foreground: Color, background: Color) -> void:
 
 func _draw_training(foreground: Color, background: Color) -> void:
 	var font := _font()
-	draw_rect(Rect2(7, 43, 306, 107), background)
-	draw_rect(Rect2(7, 43, 306, 107), foreground, false, 2.0)
-	draw_string(font, Vector2(12, 56), _catalog.text(&"ui.fighter.training.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 296, _hud_font_size(), foreground)
+	var command_panel := Rect2(7, 43, 140, 107)
+	var state_panel := Rect2(151, 43, 162, 49)
+	draw_rect(command_panel, background)
+	draw_rect(command_panel, foreground, false, 2.0)
+	draw_rect(state_panel, background)
+	draw_rect(state_panel, foreground, false, 2.0)
+	draw_string(font, Vector2(12, 56), _catalog.text(&"ui.fighter.training.title", _locale), HORIZONTAL_ALIGNMENT_CENTER, 130, _hud_font_size(), foreground)
 	var tabs: Array[StringName] = [
 		&"ui.fighter.training.commands", &"ui.fighter.training.dummy",
 		&"ui.fighter.training.display", &"ui.fighter.training.reset",
 	]
 	for index: int in range(tabs.size()):
-		var rect := Rect2(12 + index * 73, 59, 70, 13)
+		var column := index % 2
+		var row := floori(index / 2.0)
+		var rect := Rect2(12 + column * 66, 59 + row * 14, 64, 12)
 		draw_rect(rect, foreground, false, 1.0)
 		if index == _training_tab:
 			draw_rect(rect.grow(-2), foreground, false, 1.0)
-		draw_string(font, Vector2(rect.position.x + 2, 70), _catalog.text(tabs[index], _locale), HORIZONTAL_ALIGNMENT_CENTER, 66, _small_font_size(), foreground)
+		draw_string(font, Vector2(rect.position.x + 2, rect.position.y + 10), _catalog.text(tabs[index], _locale), HORIZONTAL_ALIGNMENT_CENTER, 60, _small_font_size(), foreground)
 	var command_keys: Array[StringName] = [
 		&"ui.fighter.command.move", &"ui.fighter.command.jump", &"ui.fighter.command.light",
 		&"ui.fighter.command.heavy", &"ui.fighter.command.skill", &"ui.fighter.command.skill_forward",
@@ -884,17 +962,14 @@ func _draw_training(foreground: Color, background: Color) -> void:
 	for index: int in range(command_keys.size()):
 		var column := floori(index / 5.0)
 		var row := index % 5
-		draw_string(font, Vector2(14 + column * 67, 83 + row * 12), _catalog.text(command_keys[index], _locale), HORIZONTAL_ALIGNMENT_LEFT, 64, _small_font_size(), foreground)
-	draw_line(Vector2(151, 76), Vector2(151, 143), foreground, 1.0)
+		draw_string(font, Vector2(14 + column * 64, 97 + row * 10), _catalog.text(command_keys[index], _locale), HORIZONTAL_ALIGNMENT_LEFT, 61, _small_font_size(), foreground)
 	var state := runtime.states[0]
 	var move := definition.fighters[0].move_by_id(state.current_move_id)
-	draw_string(font, Vector2(157, 84), "FRAME %03d" % runtime.encounter_tick, HORIZONTAL_ALIGNMENT_LEFT, 148, _hud_font_size(), foreground)
-	draw_string(font, Vector2(157, 98), String(state.current_move_id if state.current_move_id != &"" else &"IDLE"), HORIZONTAL_ALIGNMENT_LEFT, 148, _small_font_size(), foreground)
+	draw_string(font, Vector2(157, 56), "FRAME %03d" % runtime.encounter_tick, HORIZONTAL_ALIGNMENT_LEFT, 150, _hud_font_size(), foreground)
+	draw_string(font, Vector2(157, 68), String(state.current_move_id if state.current_move_id != &"" else &"IDLE"), HORIZONTAL_ALIGNMENT_LEFT, 150, _small_font_size(), foreground)
 	if move != null:
-		draw_string(font, Vector2(157, 111), "S %02d  A %02d  R %02d" % [move.startup_ticks, move.active_ticks, move.recovery_ticks], HORIZONTAL_ALIGNMENT_LEFT, 148, _small_font_size(), foreground)
-	draw_string(font, Vector2(157, 124), _catalog.text(&"ui.fighter.training.hitboxes", _locale), HORIZONTAL_ALIGNMENT_LEFT, 148, _small_font_size(), foreground)
-	draw_string(font, Vector2(157, 137), _catalog.text(&"ui.fighter.training.frame_step", _locale), HORIZONTAL_ALIGNMENT_LEFT, 148, _small_font_size(), foreground)
-	draw_string(font, Vector2(12, 148), "%s  %s" % [_catalog.text(&"ui.fighter.training.input_history", _locale), _input_history_text()], HORIZONTAL_ALIGNMENT_LEFT, 294, _small_font_size(), foreground)
+		draw_string(font, Vector2(157, 78), "S %02d  A %02d  R %02d" % [move.startup_ticks, move.active_ticks, move.recovery_ticks], HORIZONTAL_ALIGNMENT_LEFT, 150, _small_font_size(), foreground)
+	draw_string(font, Vector2(157, 88), "%s  %s" % [_catalog.text(&"ui.fighter.training.input_history", _locale), _input_history_text()], HORIZONTAL_ALIGNMENT_LEFT, 150, _small_font_size(), foreground)
 
 
 func _input_history_text() -> String:
@@ -932,12 +1007,26 @@ func _draw_result(foreground: Color, background: Color) -> void:
 	var title_key := StringName("ui.fighter.result.%s.title" % tag)
 	var reason_key := StringName("ui.fighter.result.%s.reason" % tag)
 	draw_string(font, Vector2(32, 43), _catalog.text(title_key, _locale), HORIZONTAL_ALIGNMENT_CENTER, 256, _title_font_size(), foreground)
+	_draw_result_fighter(0, Vector2(70, 84), MODEL_L_WIN if tag == &"win" else MODEL_L_SURRENDER, 1)
+	_draw_result_fighter(1, Vector2(250, 84), MODEL_L_DOWN if tag == &"win" else MODEL_L_WIN, -1)
 	_draw_result_seals(Vector2(160, 68), foreground, background)
+	draw_string(font, Vector2(30, 94), _fighter_name(0), HORIZONTAL_ALIGNMENT_CENTER, 80, _small_font_size(), foreground)
+	draw_string(font, Vector2(210, 94), _fighter_name(1), HORIZONTAL_ALIGNMENT_CENTER, 80, _small_font_size(), foreground)
 	var lines := PixelTextWrapper.wrap(_catalog.text(reason_key, _locale), font, 240, _body_font_size(), _locale, 3)
 	for index: int in range(lines.size()):
-		draw_string(font, Vector2(40, 101 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 240, _body_font_size(), foreground)
+		draw_string(font, Vector2(40, 112 + index * _body_line_height()), lines[index], HORIZONTAL_ALIGNMENT_CENTER, 240, _body_font_size(), foreground)
 	draw_string(font, Vector2(36, 136), input_hint(GameInput.CONFIRM, _catalog.text(&"ui.fighter.result.continue", _locale)), HORIZONTAL_ALIGNMENT_LEFT, 248, _hud_font_size(), foreground)
 	draw_string(font, Vector2(36, 148), input_hint(GameInput.CANCEL, _catalog.text(&"ui.fighter.result.retry", _locale)), HORIZONTAL_ALIGNMENT_RIGHT, 248, _hud_font_size(), foreground)
+
+
+func _draw_result_fighter(side: int, origin: Vector2, frame: int, facing: int) -> void:
+	draw_set_transform(origin, 0.0, Vector2(facing, 1))
+	draw_texture_rect_region(
+		_fighter_sheet(side),
+		Rect2(-16, -48, MODEL_L_FRAME_SIZE.x, MODEL_L_FRAME_SIZE.y),
+		Rect2(frame * MODEL_L_FRAME_SIZE.x, 0, MODEL_L_FRAME_SIZE.x, MODEL_L_FRAME_SIZE.y)
+	)
+	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 
 
 func _draw_result_seals(origin: Vector2, foreground: Color, background: Color) -> void:

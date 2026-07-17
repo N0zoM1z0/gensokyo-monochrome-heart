@@ -16,6 +16,8 @@ func run() -> Array[String]:
 	if _definition == null or not loader.errors.is_empty():
 		return ["Reimu/Marisa fighter data could not load: %s" % [loader.errors]]
 	_expect_schema_moves_and_boxes(failures)
+	_expect_grounded_pushbox_separation(failures)
+	_expect_production_model_l_mapping(failures)
 	_expect_input_buffer_and_simple_parity(failures)
 	_expect_projectile_cap(failures)
 	_expect_character_passives(failures)
@@ -25,6 +27,72 @@ func run() -> Array[String]:
 	if FileAccess.file_exists(REPLAY_PATH):
 		_expect_golden_replay(failures)
 	return failures
+
+
+func _expect_grounded_pushbox_separation(failures: Array[String]) -> void:
+	var simulation := _simulation(FighterAssistSettings.new())
+	var toward_right := FighterInputFrame.new()
+	toward_right.horizontal_axis = 1
+	var toward_left := FighterInputFrame.new()
+	toward_left.horizontal_axis = -1
+	for _tick: int in range(120):
+		simulation.step(toward_right, toward_left)
+	var separation := absi(simulation.states[1].x_fp - simulation.states[0].x_fp)
+	if separation < FighterDuelSimulation.MINIMUM_CENTER_SEPARATION_FP:
+		failures.append("grounded fighter pushboxes allowed both production silhouettes to collapse")
+	if simulation.states[0].facing != 1 or simulation.states[1].facing != -1:
+		failures.append("grounded pushbox contact lost opponent-facing orientation")
+
+
+func _expect_production_model_l_mapping(failures: Array[String]) -> void:
+	var reimu_path := "res://assets/art/production/characters/reimu_hakurei/chr_reimu_hakurei_l_keyposes.png"
+	var marisa_path := "res://assets/art/production/characters/marisa_kirisame/chr_marisa_kirisame_l_keyposes.png"
+	if not FileAccess.file_exists(reimu_path) or not FileAccess.file_exists(marisa_path):
+		failures.append("compact fighter did not ship both production Model L atlases")
+	var source := FileAccess.get_file_as_string("res://src/presentation/fighter/CompactFighterMode.gd")
+	if source.contains("assets/art/fighter/reimu_m_sheet") or source.contains("assets/art/fighter/marisa_m_sheet"):
+		failures.append("compact fighter still references superseded exploration-scale runtime sheets")
+	var mode := CompactFighterMode.new()
+	var move_cases := {
+		&"move.reimu.paper_tap": 10,
+		&"move.reimu.orb_sweep": 14,
+		&"move.reimu.amulet_line": 17,
+		&"move.reimu.boundary_slip": 18,
+		&"move.reimu.seal_declaration": 21,
+		&"move.marisa.broom_jab": 10,
+		&"move.marisa.broom_arc": 14,
+		&"move.marisa.star_spread": 17,
+		&"move.marisa.broom_vault": 18,
+		&"move.marisa.narrow_laser": 21,
+	}
+	for move_id: StringName in move_cases:
+		var moving := FighterState.new()
+		moving.current_move_id = move_id
+		if mode.production_frame_for_state(moving) != int(move_cases[move_id]):
+			failures.append("fighter move %s lost its production action mapping" % move_id)
+	var down := FighterState.new()
+	down.vitality = 0
+	var hit := FighterState.new()
+	hit.hitstun_ticks = 1
+	var guard := FighterState.new()
+	guard.guard_held = true
+	var jump := FighterState.new()
+	jump.height_fp = 1
+	var forward := FighterState.new()
+	forward.velocity_x_fp = 1
+	var backward := FighterState.new()
+	backward.velocity_x_fp = -1
+	if [
+		mode.production_frame_for_state(FighterState.new()),
+		mode.production_frame_for_state(forward),
+		mode.production_frame_for_state(backward),
+		mode.production_frame_for_state(jump),
+		mode.production_frame_for_state(guard),
+		mode.production_frame_for_state(hit),
+		mode.production_frame_for_state(down),
+	] != [0, 2, 3, 4, 7, 23, 24]:
+		failures.append("fighter neutral, movement, defense, hit, or down state lost its Model L frame contract")
+	mode.free()
 
 
 func _expect_schema_moves_and_boxes(failures: Array[String]) -> void:

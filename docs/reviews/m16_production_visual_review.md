@@ -42,10 +42,26 @@ this first asset-file pass with the following measured evidence:
 - generator manifests remain `candidate_for_review`; only this external ledger
   decision promotes their files to `approved_for_release`.
 
+### Model L down-pose rework
+
+Runtime composition review exposed one asset-level defect after the first atlas
+approval: the generic Model L `down` cell read as floor debris at native scale.
+All eight frame-24 cells were redrawn as 24–30 px prone bodies with a distinct
+identity cue: Reimu bow/sleeve, Marisa hat/broom, Sakuya headpiece, Remilia
+wings, Youmu swords/phantom, Aya wings, Sanae ornaments, and Tenshi hat.
+
+The generator now rejects any down cell whose occupied bounds are smaller than
+24×14 or whose signature duplicates another launch fighter. After regeneration,
+Godot import, A/D polarity capture, and result/down scene capture,
+`remilia_player_review` approved the revised Model L hashes and explicitly
+confirmed that the former debris-like blocker was resolved for all eight
+characters.
+
 ## Scope limits
 
-The atlases are not accepted merely because they exist. Runtime scenes must
-replace their greybox rendering with these assets, portrait tokens need a real
-resolver, Model L frames need anchor/action mapping, region tiles need collision
-metadata and composed proofs, and both VFX modes need screenshot review in the
-actual combat background. Those integration gates remain open.
+The atlases are not accepted merely because they exist. Model L fighter runtime
+mapping and scene composition are now reviewed separately in
+`docs/reviews/m16_fighter_runtime_integration_review.md`. Portrait tokens still
+need a real resolver, region tiles need collision metadata and composed proofs,
+and both VFX modes need screenshot review in the actual combat background.
+Those remaining integration gates stay open.

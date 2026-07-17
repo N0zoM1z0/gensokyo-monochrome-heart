@@ -11,6 +11,7 @@ const MAX_HITSTUN_TICKS := 24
 const COMBO_ESCAPE_HITS := 3
 const COMBO_ESCAPE_INVULNERABILITY := 30
 const NOTCH_DELAY_PER_TICK := 18
+const MINIMUM_CENTER_SEPARATION_FP := 28 * FP
 
 var definition: FighterDuelDefinition
 var mode_context: ModeContext
@@ -155,6 +156,7 @@ func _step_internal(player_input: FighterInputFrame, opponent_input: FighterInpu
 	_update_facing()
 	for side: int in range(2):
 		_tick_fighter(side, inputs[side])
+	_resolve_pushboxes()
 	_resolve_melee_hit(0, 1)
 	if final_result == null:
 		_resolve_melee_hit(1, 0)
@@ -185,6 +187,29 @@ func _update_facing() -> void:
 		var delta := states[1 - side].x_fp - state.x_fp
 		if delta != 0:
 			state.facing = 1 if delta > 0 else -1
+
+
+func _resolve_pushboxes() -> void:
+	# Grounded torsos may touch but never cross or collapse into one silhouette.
+	# Airborne fighters can still pass over one another.
+	if states[0].height_fp > 0 or states[1].height_fp > 0:
+		return
+	var delta := states[1].x_fp - states[0].x_fp
+	if absi(delta) >= MINIMUM_CENTER_SEPARATION_FP:
+		return
+	var direction := 1 if delta >= 0 else -1
+	var midpoint := floori((states[0].x_fp + states[1].x_fp) / 2.0)
+	var half_separation := floori(MINIMUM_CENTER_SEPARATION_FP / 2.0)
+	var left_bound_fp := definition.left_bound * FP
+	var right_bound_fp := definition.right_bound * FP
+	var left_x := clampi(midpoint - half_separation, left_bound_fp, right_bound_fp - MINIMUM_CENTER_SEPARATION_FP)
+	var right_x := left_x + MINIMUM_CENTER_SEPARATION_FP
+	if direction > 0:
+		states[0].x_fp = left_x
+		states[1].x_fp = right_x
+	else:
+		states[1].x_fp = left_x
+		states[0].x_fp = right_x
 
 
 func _tick_fighter(side: int, input: FighterInputFrame) -> void:
