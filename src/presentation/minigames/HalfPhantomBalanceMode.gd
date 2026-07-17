@@ -5,6 +5,9 @@ extends GameMode
 const ACTION_CONTRACT := ["move", "confirm", "cancel", "pause"]
 const BALANCE_SIMULATION := preload("res://src/application/minigames/HalfPhantomBalanceSimulation.gd")
 const BALANCE_STATE := preload("res://src/application/minigames/HalfPhantomBalanceState.gd")
+const TUTORIAL_TEXT_WIDTH := 276
+const TUTORIAL_MAX_LINES := 3
+const TUTORIAL_TEXT_TOP := 54
 
 var host := MinigameHost.new()
 var balance = BALANCE_SIMULATION.new()
@@ -135,7 +138,7 @@ func _draw() -> void:
 	draw_rect(Rect2(4, 3, 312, 174), fg, false, 1.0)
 	_text(&"ui.minigame.half_phantom.title", Vector2(10, 17), 300, fg)
 	if balance.state.phase == BALANCE_STATE.Phase.TUTORIAL:
-		_text(&"ui.minigame.half_phantom.tutorial", Vector2(22, 68), 276, fg)
+		_draw_tutorial_text(fg)
 		_text(&"ui.minigame.half_phantom.begin", Vector2(22, 165), 276, fg)
 		return
 	for index: int in range(BALANCE_SIMULATION.COLUMN_COUNT):
@@ -168,11 +171,47 @@ func _draw_body(center: Vector2, fg: Color, bg: Color, human: bool, selected: bo
 		draw_line(center + Vector2(-5, 7), center + Vector2(5, 13), fg, 2.0)
 
 
+func _draw_tutorial_text(color: Color) -> void:
+	var font := _font()
+	var font_size := tutorial_font_size(_locale)
+	var lines := wrap_tutorial_text(_t(&"ui.minigame.half_phantom.tutorial"), font, _locale)
+	var line_height := font_size + 1
+	for index: int in range(lines.size()):
+		draw_string(
+			font,
+			Vector2(22, TUTORIAL_TEXT_TOP + font_size + index * line_height),
+			lines[index],
+			HORIZONTAL_ALIGNMENT_CENTER,
+			TUTORIAL_TEXT_WIDTH,
+			font_size,
+			color
+		)
+
+
+static func wrap_tutorial_text(text: String, font: Font, locale: StringName) -> Array[String]:
+	return PixelTextWrapper.wrap(
+		text,
+		font,
+		TUTORIAL_TEXT_WIDTH,
+		tutorial_font_size(locale),
+		locale,
+		TUTORIAL_MAX_LINES
+	)
+
+
+static func tutorial_font_size(locale: StringName) -> int:
+	return 10 if locale == &"ja" else 8
+
+
 func _text(key: StringName, at: Vector2, width: float, color: Color, values: Array = []) -> void:
 	var text := _t(key)
 	for index: int in range(values.size()):
 		text = text.replace("{%d}" % index, str(values[index]))
-	draw_string(_japanese_font if _locale == &"ja" else _latin_font, at, text, HORIZONTAL_ALIGNMENT_CENTER, width, 10 if _locale == &"ja" else 8, color)
+	draw_string(_font(), at, text, HORIZONTAL_ALIGNMENT_CENTER, width, tutorial_font_size(_locale), color)
+
+
+func _font() -> Font:
+	return _japanese_font if _locale == &"ja" else _latin_font
 
 
 func _t(key: StringName) -> String:

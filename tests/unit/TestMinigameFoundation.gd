@@ -3,6 +3,7 @@ extends RefCounted
 ## M06 host contract, deterministic tea bands, assists, pause/retry, and state isolation.
 
 const FIXTURE_PATH := "res://tests/fixtures/minigames/tea_excellent_run.json"
+const HALF_PHANTOM_MODE := preload("res://src/presentation/minigames/HalfPhantomBalanceMode.gd")
 
 
 func run() -> Array[String]:
@@ -16,7 +17,33 @@ func run() -> Array[String]:
 	_expect_five_impossible_errands(failures)
 	_expect_soul_garden_release(failures)
 	_expect_quiet_chore(failures)
+	_expect_half_phantom_tutorial_wrapping(failures)
 	return failures
+
+
+func _expect_half_phantom_tutorial_wrapping(failures: Array[String]) -> void:
+	var catalog := UiTextCatalog.new()
+	catalog.load_default()
+	for locale: StringName in [&"en", &"ja"]:
+		var font := UiFontRegistry.japanese() if locale == &"ja" else UiFontRegistry.latin()
+		var source := catalog.text(&"ui.minigame.half_phantom.tutorial", locale)
+		var lines: Array[String] = HALF_PHANTOM_MODE.wrap_tutorial_text(source, font, locale)
+		if lines.size() < 2 or lines.size() > HALF_PHANTOM_MODE.TUTORIAL_MAX_LINES:
+			failures.append("Half-Phantom tutorial %s did not wrap to two or three lines" % locale)
+			continue
+		var rebuilt := "".join(lines) if locale == &"ja" else " ".join(lines)
+		if rebuilt != source:
+			failures.append("Half-Phantom tutorial %s lost rule text while wrapping" % locale)
+		for line: String in lines:
+			var width := font.get_string_size(
+				line,
+				HORIZONTAL_ALIGNMENT_LEFT,
+				-1,
+				HALF_PHANTOM_MODE.tutorial_font_size(locale)
+			).x
+			if width > HALF_PHANTOM_MODE.TUTORIAL_TEXT_WIDTH:
+				failures.append("Half-Phantom tutorial %s line exceeds its 276 px text box" % locale)
+				break
 
 
 func _expect_quiet_chore(failures: Array[String]) -> void:
