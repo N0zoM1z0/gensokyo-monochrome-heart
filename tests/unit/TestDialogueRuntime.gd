@@ -14,6 +14,7 @@ func run() -> Array[String]:
 	_expect_grapheme_segmentation(failures)
 	_expect_pixel_wrapping(failures)
 	_expect_dialogue_presenter(failures)
+	_expect_production_portraits(failures)
 	_expect_backlog_bound(failures)
 	_expect_four_tone_focus(failures)
 	_expect_route_intent_label_detection(failures)
@@ -95,6 +96,106 @@ func _expect_dialogue_presenter(failures: Array[String]) -> void:
 		failures.append("auto mode did not wait for reveal plus locale-aware reading time")
 	if automatic.backlog.entries.size() != 1 or automatic.consume_auto_advance():
 		failures.append("auto mode accepted one line more than once")
+
+
+func _expect_production_portraits(failures: Array[String]) -> void:
+	var resolver := ProductionPortraitResolver.new()
+	if resolver.PACKS.size() != 8 or resolver.EXPRESSIONS.size() != 9:
+		failures.append("production portrait resolver omitted the reviewed 8x9 contract")
+	for character_id: StringName in resolver.PACKS:
+		var atlas := resolver.PACKS[character_id] as Texture2D
+		if atlas == null or atlas.get_size() != Vector2(720, 104):
+			failures.append("production portrait atlas has the wrong dimensions: %s" % character_id)
+	for beat: DialogueBeatRecord in _content.all_dialogue_beats():
+		var expression := resolver.resolve_expression(beat.portrait)
+		if expression not in resolver.EXPRESSIONS:
+			failures.append("authored portrait token did not resolve: %s" % beat.portrait)
+	var expected := {
+		&"private_vulnerable": &"route_vulnerable",
+		&"private_tired": &"tired_private",
+		&"quiet_amused": &"amused",
+		&"dry_irritated": &"irritated",
+		&"working_startled": &"startled",
+		&"working_resolved": &"focused",
+		&"private_gentle": &"sincere_restrained",
+		&"private_neutral": &"social_neutral",
+		&"working_neutral": &"work_neutral",
+	}
+	for authored: StringName in expected:
+		if resolver.resolve_expression(authored) != expected[authored]:
+			failures.append("portrait semantic mapping drifted for %s" % authored)
+	var normal := resolver.texture_for(&"char.reimu_hakurei", &"private_vulnerable", false)
+	var inverted := resolver.texture_for(&"char.reimu_hakurei", &"private_vulnerable", true)
+	if normal == null or inverted == null or normal.get_size() != Vector2(80, 104) or inverted.get_size() != Vector2(80, 104):
+		failures.append("production portrait resolver did not extract a native 80x104 cell")
+	else:
+		var normal_image := normal.get_image()
+		var inverted_image := inverted.get_image()
+		var checked_pixel := false
+		for y: int in range(normal_image.get_height()):
+			for x: int in range(normal_image.get_width()):
+				var normal_pixel := normal_image.get_pixel(x, y)
+				if normal_pixel.a <= 0.0:
+					continue
+				var inverted_pixel := inverted_image.get_pixel(x, y)
+				if not is_equal_approx(normal_pixel.r + inverted_pixel.r, 1.0) or not is_equal_approx(normal_pixel.a, inverted_pixel.a):
+					failures.append("production portrait polarity is not an exact reciprocal")
+				checked_pixel = true
+				break
+			if checked_pixel:
+				break
+		if not checked_pixel:
+			failures.append("production portrait cell contained no visible pixel")
+	var compact_normal := resolver.compact_texture_for(&"char.reimu_hakurei", &"private_vulnerable", false)
+	var compact_inverted := resolver.compact_texture_for(&"char.reimu_hakurei", &"private_vulnerable", true)
+	if compact_normal == null or compact_inverted == null or compact_normal.get_size() != Vector2(40, 52) or compact_inverted.get_size() != Vector2(40, 52):
+		failures.append("production portrait resolver did not create a dedicated 40x52 compact cell")
+	else:
+		var compact_image := compact_normal.get_image()
+		var compact_inverted_image := compact_inverted.get_image()
+		var face_ink_pixels := 0
+		var compact_reciprocal := true
+		for y: int in range(compact_image.get_height()):
+			for x: int in range(compact_image.get_width()):
+				var pixel := compact_image.get_pixel(x, y)
+				if pixel.a <= 0.0:
+					continue
+				var inverted_pixel := compact_inverted_image.get_pixel(x, y)
+				if not is_equal_approx(pixel.r + inverted_pixel.r, 1.0) or not is_equal_approx(pixel.a, inverted_pixel.a):
+					compact_reciprocal = false
+		if not compact_reciprocal:
+			failures.append("compact production portrait polarity is not an exact reciprocal")
+		for y: int in range(19, 31):
+			for x: int in range(14, 26):
+				var pixel := compact_image.get_pixel(x, y)
+				if pixel.a > 0.0 and pixel.r < 0.5:
+					face_ink_pixels += 1
+		if face_ink_pixels < 4:
+			failures.append("compact production portrait lost the eyes, brows, or mouth")
+	for character_id: StringName in resolver.PACKS:
+		for expression: StringName in resolver.EXPRESSIONS:
+			var compact := resolver.compact_texture_for(character_id, expression, false)
+			if compact == null or compact.get_size() != Vector2(40, 52):
+				failures.append("production portrait compact matrix is incomplete: %s/%s" % [character_id, expression])
+				continue
+			var compact_image := compact.get_image()
+			var ink_pixels := 0
+			var paper_pixels := 0
+			for y: int in range(compact_image.get_height()):
+				for x: int in range(compact_image.get_width()):
+					var pixel := compact_image.get_pixel(x, y)
+					if pixel.a <= 0.0:
+						continue
+					if pixel.r < 0.5:
+						ink_pixels += 1
+					else:
+						paper_pixels += 1
+			if ink_pixels == 0 or paper_pixels == 0:
+				failures.append("production portrait compact cell lost one-bit detail: %s/%s" % [character_id, expression])
+	if resolver.texture_for(&"char.patchouli_knowledge", &"working_neutral", false) != null:
+		failures.append("portrait resolver substituted an unrelated pack for an unsupported character")
+	if resolver.compact_texture_for(&"char.patchouli_knowledge", &"working_neutral", false) != null:
+		failures.append("compact portrait resolver substituted an unrelated pack for an unsupported character")
 
 
 func _expect_backlog_bound(failures: Array[String]) -> void:

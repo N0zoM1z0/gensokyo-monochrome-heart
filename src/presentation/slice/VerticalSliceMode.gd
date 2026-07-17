@@ -55,6 +55,7 @@ var _large_text_page: int = 0
 
 var _profile := PresentationProfileRegistry.resolve(&"A")
 var _catalog := UiTextCatalog.new()
+var _portrait_resolver := ProductionPortraitResolver.new()
 var _latin_font: Font
 var _japanese_font: Font
 
@@ -909,7 +910,9 @@ func _draw_event(foreground: Color, background: Color) -> void:
 	)
 	draw_rect(panel, background)
 	draw_rect(panel, foreground, false, 2.0)
-	var name_tag := Rect2(panel.position.x + 8, panel.position.y - 14, minf(140.0, panel.size.x - 16.0), 16)
+	var portrait_text_inset := _draw_event_portrait(panel, foreground, background)
+	var name_tag_width := 190.0 if ui_scale_percent() > 100 else 140.0
+	var name_tag := Rect2(panel.position.x + 8, panel.position.y - 14, minf(name_tag_width, panel.size.x - 16.0), 16)
 	draw_rect(name_tag, background)
 	draw_rect(name_tag, foreground, false, 1.0)
 	_draw_text(
@@ -919,7 +922,7 @@ func _draw_event(foreground: Color, background: Color) -> void:
 		HORIZONTAL_ALIGNMENT_LEFT,
 		_body_font_size()
 	)
-	var text_width := panel.size.x - 20
+	var text_width := panel.size.x - 20 - portrait_text_inset
 	var lines := PixelTextWrapper.wrap(
 		_dialogue.current.visible_text(),
 		_font(),
@@ -931,7 +934,7 @@ func _draw_event(foreground: Color, background: Color) -> void:
 	for index: int in range(lines.size()):
 		_draw_text(
 			lines[index],
-			panel.position + Vector2(10, 25 + index * _body_line_height()),
+			panel.position + Vector2(10 + portrait_text_inset, 25 + index * _body_line_height()),
 			text_width,
 			HORIZONTAL_ALIGNMENT_LEFT,
 			_body_font_size()
@@ -942,13 +945,42 @@ func _draw_event(foreground: Color, background: Color) -> void:
 	else:
 		var auto_key := &"ui.dialogue.auto_on" if _dialogue.auto_mode else &"ui.dialogue.auto_off"
 		var inner_width := floori(panel.size.x - 16)
-		var auto_width := floori(inner_width * 0.35)
-		var next_width := floori(inner_width * 0.27)
+		var auto_fraction := 0.40 if _current_locale() == &"ja" else 0.35
+		var next_fraction := 0.25 if _current_locale() == &"ja" else 0.27
+		var auto_width := floori(inner_width * auto_fraction)
+		var next_width := floori(inner_width * next_fraction)
 		var log_width := inner_width - auto_width - next_width
 		var control_x := floori(panel.position.x + 8)
 		_draw_text(input_hint(GameInput.FOCUS, _ui(auto_key)), Vector2(control_x, control_y), auto_width, HORIZONTAL_ALIGNMENT_LEFT, _chrome_font_size())
 		_draw_text(input_hint(GameInput.CONFIRM, _ui(&"ui.common.next")), Vector2(control_x + auto_width, control_y), next_width, HORIZONTAL_ALIGNMENT_CENTER, _chrome_font_size())
 		_draw_text(input_hint(GameInput.JOURNAL, _ui(&"ui.dialogue.backlog")), Vector2(control_x + auto_width + next_width, control_y), log_width, HORIZONTAL_ALIGNMENT_RIGHT, _chrome_font_size())
+
+
+func _draw_event_portrait(panel: Rect2, foreground: Color, background: Color) -> float:
+	if _dialogue == null or _dialogue.current == null or _dialogue.current.beat == null:
+		return 0.0
+	var beat := _dialogue.current.beat
+	var uses_compact_portrait := ui_scale_percent() > 100 or _current_locale() == &"ja"
+	var texture := (
+		_portrait_resolver.compact_texture_for(beat.speaker_id, beat.portrait, _profile.is_inverted)
+		if uses_compact_portrait
+		else _portrait_resolver.texture_for(beat.speaker_id, beat.portrait, _profile.is_inverted)
+	)
+	if texture == null:
+		return 0.0
+	var rect: Rect2
+	var text_inset := 0.0
+	if ui_scale_percent() > 100:
+		rect = Rect2(panel.position + Vector2(8, 20), Vector2(40, 52))
+		text_inset = 50.0
+	elif _current_locale() == &"ja":
+		rect = Rect2(8, 106, 40, 52)
+	else:
+		rect = Rect2(2, 69, 80, 104)
+	draw_rect(rect, background)
+	draw_texture_rect(texture, rect, false)
+	draw_rect(rect, foreground, false, 1.0)
+	return text_inset
 
 
 func _draw_reward(foreground: Color, background: Color) -> void:

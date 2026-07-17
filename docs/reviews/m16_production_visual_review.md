@@ -60,8 +60,10 @@ characters.
 ## Scope limits
 
 The atlases are not accepted merely because they exist. Model L fighter runtime
-mapping and scene composition are now reviewed separately in
-`docs/reviews/m16_fighter_runtime_integration_review.md`. Portrait tokens still
-need a real resolver, region tiles need collision metadata and composed proofs,
-and both VFX modes need screenshot review in the actual combat background.
-Those remaining integration gates stay open.
+mapping and scene composition are reviewed separately in
+`docs/reviews/m16_fighter_runtime_integration_review.md`; expression-aware
+portrait resolution and accessible scene composition are reviewed in
+`docs/reviews/m16_portrait_runtime_integration_review.md`. Region tiles still
+need collision metadata and composed proofs, while bullet/UI art and both VFX
+modes need screenshot review in their actual runtime backgrounds. Those
+remaining integration gates stay open.

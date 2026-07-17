@@ -45,6 +45,7 @@ var _resonance_views: Array[ResonanceCueView] = []
 var _diagnostic := ""
 var _catalog := UiTextCatalog.new()
 var _resolver: LocalizedContentResolver
+var _portrait_resolver := ProductionPortraitResolver.new()
 var _latin_font: Font
 var _japanese_font: Font
 
@@ -340,25 +341,17 @@ func _draw_shrine_stage(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(15, 52, 5, 47), foreground)
 	draw_rect(Rect2(118, 52, 5, 47), foreground)
 	draw_line(Vector2(0, 99), Vector2(320, 99), foreground, 2.0)
-	_draw_reimu_portrait(Rect2(5, 47, 76, 112), foreground, background)
+	_draw_reimu_portrait(Rect2(2, 69, 80, 104), foreground, background)
 
 
 func _draw_reimu_portrait(rect: Rect2, foreground: Color, background: Color) -> void:
 	draw_rect(rect, background)
-	draw_rect(rect, foreground, false, 2.0)
-	# Hair and oversized ribbon silhouette.
-	draw_colored_polygon(PackedVector2Array([Vector2(20, 70), Vector2(43, 54), Vector2(68, 70), Vector2(61, 111), Vector2(27, 111)]), foreground)
-	draw_colored_polygon(PackedVector2Array([Vector2(14, 57), Vector2(35, 48), Vector2(33, 68)]), foreground)
-	draw_colored_polygon(PackedVector2Array([Vector2(73, 57), Vector2(52, 48), Vector2(54, 68)]), foreground)
-	# Face is paper cut from hair, with restrained working-neutral eyes.
-	draw_colored_polygon(PackedVector2Array([Vector2(30, 69), Vector2(57, 69), Vector2(59, 92), Vector2(44, 103), Vector2(28, 92)]), background)
-	draw_line(Vector2(34, 81), Vector2(40, 80), foreground, 1.0)
-	draw_line(Vector2(48, 80), Vector2(54, 81), foreground, 1.0)
-	draw_line(Vector2(41, 91), Vector2(48, 91), foreground, 1.0)
-	# Shrine-maiden sleeves and apron blocks keep the portrait readable at native size.
-	draw_colored_polygon(PackedVector2Array([Vector2(27, 103), Vector2(9, 132), Vector2(25, 156), Vector2(63, 156), Vector2(78, 132), Vector2(59, 103)]), foreground)
-	draw_colored_polygon(PackedVector2Array([Vector2(35, 106), Vector2(52, 106), Vector2(57, 156), Vector2(30, 156)]), background)
-	draw_line(Vector2(35, 110), Vector2(52, 110), foreground, 2.0)
+	if _dialogue != null and _dialogue.current != null:
+		var beat := _dialogue.current.beat
+		var texture := _portrait_resolver.texture_for(beat.speaker_id, beat.portrait, _profile.is_inverted)
+		if texture != null:
+			draw_texture_rect(texture, rect, false)
+	draw_rect(rect, foreground, false, 1.0)
 
 
 func _draw_dialogue(foreground: Color, background: Color) -> void:
