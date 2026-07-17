@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "60f02f1118a2f20a934529fa7ff56b53c69c31fc81dbe216515de69179903641",
+  "content_hash": "01457b70bfab3b8c88b8bdaf5b2901f6b2ae4a5a3683e44be140f723c73d4593",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 77,
-    "dialogue_beats": 445,
-    "localization": 1491,
+    "events": 78,
+    "dialogue_beats": 452,
+    "localization": 1506,
     "music_cues": 89,
-    "event_nodes": 1085
+    "event_nodes": 1102
   },
   "ids": {
     "characters": [
@@ -171,6 +171,7 @@
       "evt.pro.phone_no_signal",
       "evt.rml.do_not_laugh_wrong_thing",
       "evt.rml.fate_she_does_not_announce",
+      "evt.rml.predestination_exhibit",
       "evt.rml.red_mist_etiquette",
       "evt.rml.the_audience",
       "evt.sdm.book_written_tomorrow",
@@ -550,6 +551,13 @@
       "beat.rml.fate_she_does_not_announce.evidence",
       "beat.rml.fate_she_does_not_announce.patient",
       "beat.rml.fate_she_does_not_announce.playful",
+      "beat.rml.predestination_exhibit.after",
+      "beat.rml.predestination_exhibit.boundary",
+      "beat.rml.predestination_exhibit.claim",
+      "beat.rml.predestination_exhibit.defiant",
+      "beat.rml.predestination_exhibit.direct",
+      "beat.rml.predestination_exhibit.patient",
+      "beat.rml.predestination_exhibit.playful",
       "beat.rml.red_mist_etiquette.after",
       "beat.rml.red_mist_etiquette.assist",
       "beat.rml.red_mist_etiquette.clear",
@@ -819,6 +827,10 @@
       "choice.rml.fate_she_does_not_announce.direct",
       "choice.rml.fate_she_does_not_announce.patient",
       "choice.rml.fate_she_does_not_announce.playful",
+      "choice.rml.predestination_exhibit.defiant",
+      "choice.rml.predestination_exhibit.direct",
+      "choice.rml.predestination_exhibit.patient",
+      "choice.rml.predestination_exhibit.playful",
       "choice.rml.red_mist_etiquette.defiant",
       "choice.rml.red_mist_etiquette.direct",
       "choice.rml.red_mist_etiquette.patient",
@@ -1223,6 +1235,13 @@
       "dlg.rml.fate_she_does_not_announce.evidence",
       "dlg.rml.fate_she_does_not_announce.patient",
       "dlg.rml.fate_she_does_not_announce.playful",
+      "dlg.rml.predestination_exhibit.after",
+      "dlg.rml.predestination_exhibit.boundary",
+      "dlg.rml.predestination_exhibit.claim",
+      "dlg.rml.predestination_exhibit.defiant",
+      "dlg.rml.predestination_exhibit.direct",
+      "dlg.rml.predestination_exhibit.patient",
+      "dlg.rml.predestination_exhibit.playful",
       "dlg.rml.red_mist_etiquette.after",
       "dlg.rml.red_mist_etiquette.assist",
       "dlg.rml.red_mist_etiquette.clear",
@@ -1349,6 +1368,7 @@
       "event.pch.spell_for_two_readers.title",
       "event.rml.do_not_laugh_wrong_thing.title",
       "event.rml.fate_she_does_not_announce.title",
+      "event.rml.predestination_exhibit.title",
       "event.rml.red_mist_etiquette.title",
       "event.rml.the_audience.title",
       "event.sdm.competence_not_consent.title",
@@ -1495,6 +1515,8 @@
       "journal.rml.do_not_laugh_wrong_thing.title",
       "journal.rml.fate_she_does_not_announce.body",
       "journal.rml.fate_she_does_not_announce.title",
+      "journal.rml.predestination_exhibit.body",
+      "journal.rml.predestination_exhibit.title",
       "journal.rml.red_mist_etiquette.body",
       "journal.rml.red_mist_etiquette.title",
       "journal.rml.the_audience.body",
@@ -1561,6 +1583,7 @@
       "obj.pch.spell_for_two_readers.choose",
       "obj.rml.do_not_laugh_wrong_thing.return_floor",
       "obj.rml.fate_she_does_not_announce.compare_plan",
+      "obj.rml.predestination_exhibit.inspect_unopened",
       "obj.rml.red_mist_etiquette.read_paths",
       "obj.rml.the_audience.take_place",
       "obj.sdm.competence_not_consent.ask",
@@ -5859,6 +5882,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.rml.predestination_exhibit.after",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.after",
+      "target": "dlg.rml.predestination_exhibit.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.boundary",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.boundary",
+      "target": "dlg.rml.predestination_exhibit.boundary",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.claim",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.claim",
+      "target": "dlg.rml.predestination_exhibit.claim",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.defiant",
+      "target": "dlg.rml.predestination_exhibit.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.direct",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.direct",
+      "target": "dlg.rml.predestination_exhibit.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.patient",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.patient",
+      "target": "dlg.rml.predestination_exhibit.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.playful",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.predestination_exhibit.playful",
+      "target": "dlg.rml.predestination_exhibit.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.rml.red_mist_etiquette.after",
       "target": "char.remilia_scarlet",
       "kind": "speaker"
@@ -7576,6 +7669,26 @@
     {
       "source": "choice.rml.fate_she_does_not_announce.response",
       "target": "choice.rml.fate_she_does_not_announce.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.predestination_exhibit.response",
+      "target": "choice.rml.predestination_exhibit.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.predestination_exhibit.response",
+      "target": "choice.rml.predestination_exhibit.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.predestination_exhibit.response",
+      "target": "choice.rml.predestination_exhibit.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.predestination_exhibit.response",
+      "target": "choice.rml.predestination_exhibit.playful",
       "kind": "localization"
     },
     {
@@ -18970,6 +19083,221 @@
     },
     {
       "source": "evt.rml.fate_she_does_not_announce",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n001",
+      "target": "evt.rml.predestination_exhibit.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n001",
+      "target": "mus_remilia_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n002",
+      "target": "evt.rml.predestination_exhibit.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n002",
+      "target": "obj.rml.predestination_exhibit.inspect_unopened",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n002",
+      "target": "prop.rml.predestination_panels",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n002",
+      "target": "prop.rml.unread_proof_seal",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n003",
+      "target": "beat.rml.predestination_exhibit.claim",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n003",
+      "target": "evt.rml.predestination_exhibit.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n004",
+      "target": "beat.rml.predestination_exhibit.boundary",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n004",
+      "target": "evt.rml.predestination_exhibit.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n005",
+      "target": "choice.rml.predestination_exhibit.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n005",
+      "target": "evt.rml.predestination_exhibit.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n005",
+      "target": "evt.rml.predestination_exhibit.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n005",
+      "target": "evt.rml.predestination_exhibit.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n005",
+      "target": "evt.rml.predestination_exhibit.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_after",
+      "target": "beat.rml.predestination_exhibit.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_after",
+      "target": "evt.rml.predestination_exhibit.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_defiant_line",
+      "target": "beat.rml.predestination_exhibit.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_defiant_line",
+      "target": "evt.rml.predestination_exhibit.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_defiant",
+      "target": "evt.rml.predestination_exhibit.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_direct_line",
+      "target": "beat.rml.predestination_exhibit.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_direct_line",
+      "target": "evt.rml.predestination_exhibit.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_direct",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_direct",
+      "target": "evt.rml.predestination_exhibit.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_effects",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_effects",
+      "target": "evt.rml.predestination_exhibit.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_journal",
+      "target": "evt.rml.predestination_exhibit.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_journal",
+      "target": "journal.rml.predestination_exhibit",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_patient_line",
+      "target": "beat.rml.predestination_exhibit.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_patient_line",
+      "target": "evt.rml.predestination_exhibit.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_patient",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_patient",
+      "target": "evt.rml.predestination_exhibit.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_playful_line",
+      "target": "beat.rml.predestination_exhibit.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_playful_line",
+      "target": "evt.rml.predestination_exhibit.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_playful",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit.node.n_playful",
+      "target": "evt.rml.predestination_exhibit.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit",
+      "target": "char.remilia_scarlet",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit",
+      "target": "char.remilia_scarlet",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit",
+      "target": "event.rml.predestination_exhibit.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit",
+      "target": "evt.rml.predestination_exhibit",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit",
+      "target": "loc.scarlet_devil_mansion.archive_exhibit_hall",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.rml.predestination_exhibit",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },

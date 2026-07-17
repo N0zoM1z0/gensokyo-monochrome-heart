@@ -132,6 +132,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records chosen protection, refused credit, household labor, and a future consultation boundary."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.archive_exhibit_hall",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A perfectly convergent exhibit can visibly break into a blank region when Remilia rejects certainty."
+    },
+    {
+      "id": "prop.rml.predestination_panels",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Converging panels materialize the Archive's retroactive claim without establishing it as canon truth."
+    },
+    {
+      "id": "prop.rml.unread_proof_seal",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An unopened seal lets the player decline certainty and leaves destruction to Remilia."
+    },
+    {
+      "id": "journal.rml.predestination_exhibit",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records Remilia's own Archive refusal, preserved past choices, and ambiguous fate ability."
     }
   ]
 }
