@@ -17,7 +17,8 @@ func _initialize() -> void:
 
 func _run(tone: StringName, consent: StringName, intent: StringName, outcome: StringName, journal_id: StringName) -> void:
 	var state := _state(StringName("p231_%s_%s" % [tone, consent]))
-	var interpreter := EventInterpreter.new(); var result := interpreter.start(_content.graph(EVENT_ID), state, _content)
+	var interpreter := EventInterpreter.new()
+	var result := interpreter.start(_content.graph(EVENT_ID), state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line()
 	_expect(result.choice != null and result.choice.choice_id == &"choice.tsh.promise.intent", "%s did not reach intent" % tone)
 	result = interpreter.choose_tone(tone)
@@ -30,10 +31,16 @@ func _run(tone: StringName, consent: StringName, intent: StringName, outcome: St
 	if tone == &"playful" and consent == &"defiant": _expect(state.flags.has(&"flag.route.tenshi.promise.romance_declined_contract_remains"), "romance no withdrew contract")
 
 func _state(profile_id: StringName) -> GameState:
-	var characters: Array[StringName] = []; for character: CharacterRecord in _content.all_characters(): characters.append(character.id)
-	var locations: Array[StringName] = []; for location: LocationRecord in _content.all_locations(): locations.append(location.id)
-	var state := GameStateFactory.create_new(profile_id, characters, locations, 2311); state.chapter_id = &"chapter.1"
-	var dispatcher := GameCommandDispatcher.new(); dispatcher.dispatch(state, SetLocationCommand.new(&"loc.heaven")); dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.tsh.heaven_without_friction", &"n_route_predecessor")); dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.tsh.heaven_without_friction", &"complete"))
+	var characters: Array[StringName] = []
+	for character: CharacterRecord in _content.all_characters(): characters.append(character.id)
+	var locations: Array[StringName] = []
+	for location: LocationRecord in _content.all_locations(): locations.append(location.id)
+	var state := GameStateFactory.create_new(profile_id, characters, locations, 2311)
+	state.chapter_id = &"chapter.1"
+	var dispatcher := GameCommandDispatcher.new()
+	dispatcher.dispatch(state, SetLocationCommand.new(&"loc.heaven"))
+	dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.tsh.heaven_without_friction", &"n_route_predecessor"))
+	dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.tsh.heaven_without_friction", &"complete"))
 	for flag_id: StringName in [&"flag.route.tenshi.boundary.clear_no_spoken", &"flag.route.tenshi.boundary.player_left_engagement", &"flag.route.tenshi.boundary.tenshi_stopped_without_escalation", &"flag.route.tenshi.repair.completed_without_audience", &"flag.route.tenshi.repair.no_credit_requested", &"flag.route.tenshi.repair.boundary_strain_repaired_through_practice", &"flag.route.tenshi.archive.frictionless_offer_rejected_by_tenshi", &"flag.route.tenshi.archive.surprise_not_calibrated", &"flag.route.tenshi.archive.refusal_remains_possible", &"flag.route.tenshi.archive.irregular_future_chosen"]: dispatcher.dispatch(state, SetFlagCommand.new(FlagState.from_value(flag_id, true)))
 	return state
 
