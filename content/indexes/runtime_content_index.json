@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "7e630987c1b909d950de476b6ab6a6be631f01787f724948df7a9e704da679ab",
+  "content_hash": "785620d572fd3c001749a7a032d9e4fc97ebd68269777bcb5b2765a76547a0ba",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 86,
-    "dialogue_beats": 528,
-    "localization": 1674,
+    "events": 87,
+    "dialogue_beats": 536,
+    "localization": 1690,
     "music_cues": 89,
-    "event_nodes": 1290
+    "event_nodes": 1308
   },
   "ids": {
     "characters": [
@@ -187,6 +187,7 @@
       "evt.sdm.promise",
       "evt.sdm.small_chair",
       "evt.sne.faith_festival_planner",
+      "evt.sne.outside_world_shorthand",
       "evt.yyk.bottomless_banquet",
       "evt.yyk.empty_plate",
       "evt.yyk.feast_without_ending",
@@ -675,6 +676,14 @@
       "beat.sne.faith_festival_planner.playful",
       "beat.sne.faith_festival_planner.sanae_plan",
       "beat.sne.faith_festival_planner.suwako_condition",
+      "beat.sne.outside_world_shorthand.after_recognition",
+      "beat.sne.outside_world_shorthand.after_relabel",
+      "beat.sne.outside_world_shorthand.correction",
+      "beat.sne.outside_world_shorthand.defiant",
+      "beat.sne.outside_world_shorthand.direct",
+      "beat.sne.outside_world_shorthand.instructions",
+      "beat.sne.outside_world_shorthand.patient",
+      "beat.sne.outside_world_shorthand.playful",
       "beat.yyk.bottomless_banquet.after",
       "beat.yyk.bottomless_banquet.assist",
       "beat.yyk.bottomless_banquet.clear",
@@ -971,6 +980,10 @@
       "choice.sne.faith_festival_planner.direct",
       "choice.sne.faith_festival_planner.patient",
       "choice.sne.faith_festival_planner.playful",
+      "choice.sne.outside_world_shorthand.defiant",
+      "choice.sne.outside_world_shorthand.direct",
+      "choice.sne.outside_world_shorthand.patient",
+      "choice.sne.outside_world_shorthand.playful",
       "choice.yyk.bottomless_banquet.defiant",
       "choice.yyk.bottomless_banquet.direct",
       "choice.yyk.bottomless_banquet.patient",
@@ -1475,6 +1488,14 @@
       "dlg.sne.faith_festival_planner.playful",
       "dlg.sne.faith_festival_planner.sanae_plan",
       "dlg.sne.faith_festival_planner.suwako_condition",
+      "dlg.sne.outside_world_shorthand.after_recognition",
+      "dlg.sne.outside_world_shorthand.after_relabel",
+      "dlg.sne.outside_world_shorthand.correction",
+      "dlg.sne.outside_world_shorthand.defiant",
+      "dlg.sne.outside_world_shorthand.direct",
+      "dlg.sne.outside_world_shorthand.instructions",
+      "dlg.sne.outside_world_shorthand.patient",
+      "dlg.sne.outside_world_shorthand.playful",
       "dlg.yyk.bottomless_banquet.after",
       "dlg.yyk.bottomless_banquet.assist",
       "dlg.yyk.bottomless_banquet.clear",
@@ -1582,6 +1603,7 @@
       "event.sdm.promise.title",
       "event.sdm.small_chair.title",
       "event.sne.faith_festival_planner.title",
+      "event.sne.outside_world_shorthand.title",
       "event.yyk.bottomless_banquet.title",
       "event.yyk.empty_plate.title",
       "event.yyk.feast_without_ending.title",
@@ -1768,6 +1790,8 @@
       "journal.sdm.small_chair.title",
       "journal.sne.faith_festival_planner.body",
       "journal.sne.faith_festival_planner.title",
+      "journal.sne.outside_world_shorthand.body",
+      "journal.sne.outside_world_shorthand.title",
       "journal.yyk.bottomless_banquet.body",
       "journal.yyk.bottomless_banquet.title",
       "journal.yyk.empty_plate.body",
@@ -1840,6 +1864,7 @@
       "obj.sdm.small_chair.enter_by_invitation",
       "obj.sdm.trace_missing_minute",
       "obj.sne.faith_festival_planner.compare",
+      "obj.sne.outside_world_shorthand.read_labels",
       "obj.yyk.bottomless_banquet.read_table",
       "obj.yyk.empty_plate.observe",
       "obj.yyk.feast_without_ending.inspect",
@@ -7294,6 +7319,86 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sne.outside_world_shorthand.after_recognition",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.after_recognition",
+      "target": "dlg.sne.outside_world_shorthand.after_recognition",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.after_relabel",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.after_relabel",
+      "target": "dlg.sne.outside_world_shorthand.after_relabel",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.correction",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.correction",
+      "target": "dlg.sne.outside_world_shorthand.correction",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.defiant",
+      "target": "dlg.sne.outside_world_shorthand.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.direct",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.direct",
+      "target": "dlg.sne.outside_world_shorthand.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.instructions",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.instructions",
+      "target": "dlg.sne.outside_world_shorthand.instructions",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.patient",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.patient",
+      "target": "dlg.sne.outside_world_shorthand.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.playful",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.outside_world_shorthand.playful",
+      "target": "dlg.sne.outside_world_shorthand.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.yyk.bottomless_banquet.after",
       "target": "char.yuyuko_saigyouji",
       "kind": "speaker"
@@ -8981,6 +9086,26 @@
     {
       "source": "choice.sne.faith_festival_planner.response",
       "target": "choice.sne.faith_festival_planner.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.outside_world_shorthand.response",
+      "target": "choice.sne.outside_world_shorthand.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.outside_world_shorthand.response",
+      "target": "choice.sne.outside_world_shorthand.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.outside_world_shorthand.response",
+      "target": "choice.sne.outside_world_shorthand.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.outside_world_shorthand.response",
+      "target": "choice.sne.outside_world_shorthand.playful",
       "kind": "localization"
     },
     {
@@ -23880,6 +24005,231 @@
     },
     {
       "source": "evt.sne.faith_festival_planner",
+      "target": "loc.moriya_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n001",
+      "target": "evt.sne.outside_world_shorthand.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n001",
+      "target": "mus_sanae_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n002",
+      "target": "evt.sne.outside_world_shorthand.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n002",
+      "target": "obj.sne.outside_world_shorthand.read_labels",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n002",
+      "target": "prop.sne.hybrid_shorthand_notebook",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n002",
+      "target": "prop.sne.transfer_map_supply_labels",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n003",
+      "target": "beat.sne.outside_world_shorthand.instructions",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n003",
+      "target": "evt.sne.outside_world_shorthand.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n004",
+      "target": "beat.sne.outside_world_shorthand.correction",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n004",
+      "target": "evt.sne.outside_world_shorthand.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n005",
+      "target": "choice.sne.outside_world_shorthand.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n005",
+      "target": "evt.sne.outside_world_shorthand.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n005",
+      "target": "evt.sne.outside_world_shorthand.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n005",
+      "target": "evt.sne.outside_world_shorthand.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n005",
+      "target": "evt.sne.outside_world_shorthand.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_after_01",
+      "target": "beat.sne.outside_world_shorthand.after_recognition",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_after_01",
+      "target": "evt.sne.outside_world_shorthand.node.n_after_02",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_after_02",
+      "target": "beat.sne.outside_world_shorthand.after_relabel",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_after_02",
+      "target": "evt.sne.outside_world_shorthand.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_defiant_line",
+      "target": "beat.sne.outside_world_shorthand.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_defiant_line",
+      "target": "evt.sne.outside_world_shorthand.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_defiant",
+      "target": "evt.sne.outside_world_shorthand.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_direct_line",
+      "target": "beat.sne.outside_world_shorthand.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_direct_line",
+      "target": "evt.sne.outside_world_shorthand.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_direct",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_direct",
+      "target": "evt.sne.outside_world_shorthand.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_effects",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_effects",
+      "target": "evt.sne.outside_world_shorthand.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_journal",
+      "target": "evt.sne.outside_world_shorthand.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_journal",
+      "target": "journal.sne.outside_world_shorthand",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_patient_line",
+      "target": "beat.sne.outside_world_shorthand.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_patient_line",
+      "target": "evt.sne.outside_world_shorthand.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_patient",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_patient",
+      "target": "evt.sne.outside_world_shorthand.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_playful_line",
+      "target": "beat.sne.outside_world_shorthand.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_playful_line",
+      "target": "evt.sne.outside_world_shorthand.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_playful",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand.node.n_playful",
+      "target": "evt.sne.outside_world_shorthand.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand",
+      "target": "char.sanae_kochiya",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand",
+      "target": "char.sanae_kochiya",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand",
+      "target": "event.sne.outside_world_shorthand.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand",
+      "target": "evt.sne.outside_world_shorthand",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand",
+      "target": "loc.moriya_shrine.post_festival_storehouse",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.sne.outside_world_shorthand",
       "target": "loc.moriya_shrine",
       "kind": "location"
     },

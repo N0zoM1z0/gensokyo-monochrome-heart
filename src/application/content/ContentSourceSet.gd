@@ -98,6 +98,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/yyk_feast_without_ending.json",
 	"res://content/events/hgy_last_sweet.json",
 	"res://content/events/sne_faith_festival_planner.json",
+	"res://content/events/sne_outside_world_shorthand.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -164,6 +165,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/yyk_feast_without_ending.json",
 	"res://content/dialogue/hgy_last_sweet.json",
 	"res://content/dialogue/sne_faith_festival_planner.json",
+	"res://content/dialogue/sne_outside_world_shorthand.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -231,6 +233,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/yyk_feast_without_ending.csv",
 	"res://content/localization/hgy_last_sweet.csv",
 	"res://content/localization/sne_faith_festival_planner.csv",
+	"res://content/localization/sne_outside_world_shorthand.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -247,9 +250,9 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/yyk_route_deferred_references.json",
 	"res://content/indexes/sne_route_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 58
-var expected_supplemental_dialogue_count: int = 509
-var expected_supplemental_localization_count: int = 1080
+var expected_supplemental_event_count: int = 59
+var expected_supplemental_dialogue_count: int = 517
+var expected_supplemental_localization_count: int = 1096
 
 
 func content_paths() -> Array[String]:
