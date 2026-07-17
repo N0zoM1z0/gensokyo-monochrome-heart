@@ -54,6 +54,25 @@
         "companion_comments_disabled",
         "silence_respected"
       ]
+    },
+    {
+      "id": "evt.pch.borrowing_argument",
+      "legacy_id": "EVT-PAT-04",
+      "title_en": "The Borrowing Argument",
+      "location_id": "loc.scarlet_devil_mansion",
+      "lead_character_ids": [
+        "char.patchouli_knowledge",
+        "char.marisa_kirisame"
+      ],
+      "primary_mode": "choice_puzzle",
+      "core_change": "responsible access",
+      "status": "implemented",
+      "estimated_minutes": 14,
+      "comfort_tags": [
+        "no_timer",
+        "no_caricature",
+        "conflict_discussion"
+      ]
     }
   ]
 }

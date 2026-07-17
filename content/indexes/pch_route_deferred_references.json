@@ -72,6 +72,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records that quiet attention can be shared without becoming a performance."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.return_desk",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A return desk gives Patchouli and Marisa a concrete place to negotiate access and responsibility."
+    },
+    {
+      "id": "prop.pch.borrowing_ledger",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "The ledger records due care without treating a borrower as a caricature."
+    },
+    {
+      "id": "prop.pch.annotated_grimoire",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Annotations show Marisa’s research work and the risks of untracked access."
+    },
+    {
+      "id": "journal.pch.borrowing_argument",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records a library rule that protects both research and responsibility."
     }
   ]
 }

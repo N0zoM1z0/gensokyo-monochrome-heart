@@ -1,0 +1,16 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.pch.borrowing_argument.choose,objective,,Choose a rule that protects both research access and the collection.,研究利用と蔵書の両方を守る規則を選ぶ。,208,Original
+event.pch.borrowing_argument.title,event_title,,The Borrowing Argument,借り方をめぐる議論,208,Original
+choice.pch.borrowing_argument.direct,choice,,Propose a condition record with renewable return dates.,状態記録と更新できる返却日を提案する。,248,Original
+choice.pch.borrowing_argument.playful,choice,,Count useful annotations as part of what Marisa returns.,有用な書き込みも魔理沙が返すものに数える。,248,Original
+choice.pch.borrowing_argument.patient,choice,,Ask each magician what one rule must protect before proposing terms.,条件を出す前に、各々が規則で守りたいものを一つずつ尋ねる。,248,Original
+choice.pch.borrowing_argument.defiant,choice,,Refuse the easy story of a thief against a hoarder.,泥棒と抱え込み屋という安易な物語を拒む。,248,Original
+dlg.pch.borrowing_argument.marisa_case,dialogue,char.marisa_kirisame,"I did not leave it untouched. Three failed transcriptions, one useful correction, and a margin full of results. That is research, not decoration.",「手つかずで置いてたわけじゃない。転写に三回失敗して、役立つ訂正が一つ、余白には結果がぎっしりだ。飾りじゃなく研究だぜ。」,248,Original
+dlg.pch.borrowing_argument.patchouli_case,dialogue,char.patchouli_knowledge,"Research is not an alibi for making a collection impossible to locate. I need condition, location, and a date on which the rule is reconsidered.",「研究は、蔵書を追跡不能にする免罪符じゃない。状態、所在、そして規則を見直す日付が必要よ。」,248,Original
+dlg.pch.borrowing_argument.direct,dialogue,char.patchouli_knowledge,"Renewal instead of an imaginary final return. Acceptable. The book remains findable, and the work does not have to pretend it is finished.",「架空の最終返却ではなく更新。妥当ね。本は追跡でき、研究も終わったふりをしなくていい。」,248,Original
+dlg.pch.borrowing_argument.playful,dialogue,char.marisa_kirisame,"Now that is a return with interest. I will copy the useful notes cleanly, and Patchouli can cross out the ones that only looked brilliant at midnight.",「それなら利子付きの返却だ。有用なメモは清書する。真夜中だけ天才に見えたやつは、パチュリーが消せばいい。」,248,Original
+dlg.pch.borrowing_argument.patient,dialogue,char.patchouli_knowledge,"I protect recoverability. Marisa protects work that is still becoming useful. Those requirements conflict less than our habits do.",「私は回収可能性を守る。魔理沙は、まだ役に立つ途中の研究を守る。対立しているのは要件より私たちの習慣ね。」,248,Original
+dlg.pch.borrowing_argument.defiant,dialogue,char.marisa_kirisame,"Fair. I am not a punch line with a sack of books, and she is not a dragon sleeping on paper. Judge what we do, then write a better rule.",「公平だ。私は本袋を抱えた落ちじゃないし、こいつも紙の上で眠る竜じゃない。やったことを見て、もっとましな規則を書こう。」,248,Original
+dlg.pch.borrowing_argument.after,dialogue,char.patchouli_knowledge,"Recorded, renewable, and open to correction. Marisa keeps the volume until the review date; the library keeps the ability to find it.",「記録済み、更新可能、訂正も可能。見直し日まで本は魔理沙が持つ。図書館は所在を把握し続ける。」,248,Original
+journal.pch.borrowing_argument.title,journal_title,,A Renewable Card,更新できる貸出票,248,Original
+journal.pch.borrowing_argument.body,journal_body,,Patchouli and Marisa replaced an old caricature with a reviewable rule. Research could continue, annotations counted as work returned, and the library retained a reliable record of condition and location.,パチュリーと魔理沙は古い戯画を、見直せる規則に置き換えた。研究は続けられ、書き込みも返す成果に数えられ、図書館には状態と所在の確かな記録が残った。,248,Original

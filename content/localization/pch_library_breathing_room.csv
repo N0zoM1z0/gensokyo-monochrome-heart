@@ -3,7 +3,7 @@ obj.pch.library_breathing_room.choose,objective,,Choose how to help stabilize th
 event.pch.library_breathing_room.title,event_title,,Library Breathing Room,図書館の呼吸する場所,208,Original
 choice.pch.library_breathing_room.direct,choice,,Ask which elemental shelf can be moved without spreading dust.,埃を広げずに動かせる元素棚を尋ねる。,248,Original
 choice.pch.library_breathing_room.playful,choice,,Suggest labeling the disagreeing elements before they argue again.,言い争う前に、仲の悪い元素へ札を付けようと提案する。,248,Original
-choice.pch.library_breathing_room.patient,choice,,Wait for Patchouli to set the pace and take only the task she names.,輝夜ではなく、パチュリーが決めた速度と作業だけを受け取る。,248,Original
+choice.pch.library_breathing_room.patient,choice,,Wait for Patchouli to set the pace and take only the task she names.,パチュリーが決めた速度に合わせ、彼女が示した作業だけを引き受ける。,248,Original
 choice.pch.library_breathing_room.defiant,choice,,Refuse to rush her recovery or turn her limits into a puzzle to win.,回復を急がせたり、限界を勝つための謎にしたりすることを断る。,248,Original
 dlg.pch.library_breathing_room.intro,dialogue,char.patchouli_knowledge,"The dust ward and the fire shelf disagree. The library is reacting to both, which is inconveniently democratic.",「防塵結界と火の棚が噛み合わない。図書館が両方に反応している。面倒なほど民主的ね。」,248,Original
 dlg.pch.library_breathing_room.problem,dialogue,char.patchouli_knowledge,"I can correct it. That does not mean I should spend the same amount of energy on every correction. Read the margins before moving anything.",「直せるわ。でも、どの修正にも同じだけの力を使うべきという意味じゃない。何か動かす前に余白を読みなさい。」,248,Original

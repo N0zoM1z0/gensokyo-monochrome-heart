@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "c6a59b0d5622debce3f2ca094fc3c7bf9a3c9a649b6667f385c3a8ed79e282f5",
+  "content_hash": "af3da4546e9512f0f1109b3949bb69cccd1580ac01f6b4998adfcf3cd1a49b48",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 69,
-    "dialogue_beats": 377,
-    "localization": 1345,
+    "events": 70,
+    "dialogue_beats": 384,
+    "localization": 1360,
     "music_cues": 89,
-    "event_nodes": 920
+    "event_nodes": 937
   },
   "ids": {
     "characters": [
@@ -161,6 +161,7 @@
       "evt.mtn.patrol_against_nothing",
       "evt.mtn.rumor_machine",
       "evt.mtn.tomorrows_headline",
+      "evt.pch.borrowing_argument",
       "evt.pch.library_breathing_room",
       "evt.pch.question_worth_asking",
       "evt.pch.shared_silence_different_books",
@@ -477,6 +478,13 @@
       "beat.mtn.headline.aya.patient",
       "beat.mtn.headline.aya.photo_origin",
       "beat.mtn.headline.aya.playful",
+      "beat.pch.borrowing_argument.after",
+      "beat.pch.borrowing_argument.defiant",
+      "beat.pch.borrowing_argument.direct",
+      "beat.pch.borrowing_argument.marisa_case",
+      "beat.pch.borrowing_argument.patchouli_case",
+      "beat.pch.borrowing_argument.patient",
+      "beat.pch.borrowing_argument.playful",
       "beat.pch.library_breathing_room.after",
       "beat.pch.library_breathing_room.defiant",
       "beat.pch.library_breathing_room.direct",
@@ -707,6 +715,10 @@
       "choice.mtn.headline.direct",
       "choice.mtn.headline.patient",
       "choice.mtn.headline.playful",
+      "choice.pch.borrowing_argument.defiant",
+      "choice.pch.borrowing_argument.direct",
+      "choice.pch.borrowing_argument.patient",
+      "choice.pch.borrowing_argument.playful",
       "choice.pch.library_breathing_room.defiant",
       "choice.pch.library_breathing_room.direct",
       "choice.pch.library_breathing_room.patient",
@@ -1046,6 +1058,13 @@
       "dlg.mtn.headline.aya.patient",
       "dlg.mtn.headline.aya.photo_origin",
       "dlg.mtn.headline.aya.playful",
+      "dlg.pch.borrowing_argument.after",
+      "dlg.pch.borrowing_argument.defiant",
+      "dlg.pch.borrowing_argument.direct",
+      "dlg.pch.borrowing_argument.marisa_case",
+      "dlg.pch.borrowing_argument.patchouli_case",
+      "dlg.pch.borrowing_argument.patient",
+      "dlg.pch.borrowing_argument.playful",
       "dlg.pch.library_breathing_room.after",
       "dlg.pch.library_breathing_room.defiant",
       "dlg.pch.library_breathing_room.direct",
@@ -1160,6 +1179,7 @@
       "event.mrs.shelf_marked_later.title",
       "event.mrs.talent_bad_conversation.title",
       "event.mtn.tomorrows_headline.title",
+      "event.pch.borrowing_argument.title",
       "event.pch.library_breathing_room.title",
       "event.pch.question_worth_asking.title",
       "event.pch.shared_silence_different_books.title",
@@ -1282,6 +1302,8 @@
       "journal.mrs.talent_bad_conversation.title",
       "journal.mtn.tomorrows_headline.body",
       "journal.mtn.tomorrows_headline.title",
+      "journal.pch.borrowing_argument.body",
+      "journal.pch.borrowing_argument.title",
       "journal.pch.library_breathing_room.body",
       "journal.pch.library_breathing_room.title",
       "journal.pch.question_worth_asking.body",
@@ -1339,6 +1361,7 @@
       "obj.mrs.shelf.wait",
       "obj.mrs.talent.stop_comparison",
       "obj.mtn.trace_tomorrows_photo",
+      "obj.pch.borrowing_argument.choose",
       "obj.pch.library_breathing_room.choose",
       "obj.pch.question_worth_asking.choose",
       "obj.pch.shared_silence_different_books.choose",
@@ -4237,6 +4260,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.pch.borrowing_argument.after",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.after",
+      "target": "dlg.pch.borrowing_argument.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.defiant",
+      "target": "dlg.pch.borrowing_argument.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.direct",
+      "target": "dlg.pch.borrowing_argument.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.marisa_case",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.marisa_case",
+      "target": "dlg.pch.borrowing_argument.marisa_case",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.patchouli_case",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.patchouli_case",
+      "target": "dlg.pch.borrowing_argument.patchouli_case",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.patient",
+      "target": "dlg.pch.borrowing_argument.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.playful",
+      "target": "char.marisa_kirisame",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.pch.borrowing_argument.playful",
+      "target": "dlg.pch.borrowing_argument.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.pch.library_breathing_room.after",
       "target": "char.patchouli_knowledge",
       "kind": "speaker"
@@ -5744,6 +5837,26 @@
     {
       "source": "choice.mtn.headline.boundary",
       "target": "choice.mtn.headline.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.borrowing_argument.response",
+      "target": "choice.pch.borrowing_argument.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.borrowing_argument.response",
+      "target": "choice.pch.borrowing_argument.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.borrowing_argument.response",
+      "target": "choice.pch.borrowing_argument.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.pch.borrowing_argument.response",
+      "target": "choice.pch.borrowing_argument.playful",
       "kind": "localization"
     },
     {
@@ -15079,6 +15192,251 @@
     {
       "source": "evt.mtn.tomorrows_headline",
       "target": "loc.youkai_mountain",
+      "kind": "location"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n001",
+      "target": "evt.pch.borrowing_argument.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n001",
+      "target": "mus_patchouli_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n002",
+      "target": "evt.pch.borrowing_argument.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n002",
+      "target": "obj.pch.borrowing_argument.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n002",
+      "target": "prop.pch.annotated_grimoire",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n002",
+      "target": "prop.pch.borrowing_ledger",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n003",
+      "target": "beat.pch.borrowing_argument.marisa_case",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n003",
+      "target": "evt.pch.borrowing_argument.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n004",
+      "target": "beat.pch.borrowing_argument.patchouli_case",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n004",
+      "target": "evt.pch.borrowing_argument.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n005",
+      "target": "choice.pch.borrowing_argument.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n005",
+      "target": "evt.pch.borrowing_argument.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n005",
+      "target": "evt.pch.borrowing_argument.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n005",
+      "target": "evt.pch.borrowing_argument.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n005",
+      "target": "evt.pch.borrowing_argument.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_after",
+      "target": "beat.pch.borrowing_argument.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_after",
+      "target": "evt.pch.borrowing_argument.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_defiant_line",
+      "target": "beat.pch.borrowing_argument.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_defiant_line",
+      "target": "evt.pch.borrowing_argument.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_defiant",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_defiant",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_defiant",
+      "target": "evt.pch.borrowing_argument.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_direct_line",
+      "target": "beat.pch.borrowing_argument.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_direct_line",
+      "target": "evt.pch.borrowing_argument.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_direct",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_direct",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_direct",
+      "target": "evt.pch.borrowing_argument.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_effects",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_effects",
+      "target": "evt.pch.borrowing_argument.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_journal",
+      "target": "evt.pch.borrowing_argument.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_journal",
+      "target": "journal.pch.borrowing_argument",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_patient_line",
+      "target": "beat.pch.borrowing_argument.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_patient_line",
+      "target": "evt.pch.borrowing_argument.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_patient",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_patient",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_patient",
+      "target": "evt.pch.borrowing_argument.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_playful_line",
+      "target": "beat.pch.borrowing_argument.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_playful_line",
+      "target": "evt.pch.borrowing_argument.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_playful",
+      "target": "char.marisa_kirisame",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_playful",
+      "target": "char.patchouli_knowledge",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument.node.n_playful",
+      "target": "evt.pch.borrowing_argument.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.pch.borrowing_argument",
+      "target": "char.marisa_kirisame",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.pch.borrowing_argument",
+      "target": "char.marisa_kirisame",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument",
+      "target": "char.patchouli_knowledge",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.pch.borrowing_argument",
+      "target": "char.patchouli_knowledge",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.pch.borrowing_argument",
+      "target": "event.pch.borrowing_argument.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.pch.borrowing_argument",
+      "target": "evt.pch.borrowing_argument",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.pch.borrowing_argument",
+      "target": "loc.scarlet_devil_mansion.return_desk",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.pch.borrowing_argument",
+      "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },
     {
