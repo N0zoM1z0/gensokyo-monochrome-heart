@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "b28efaa6f3205a2e889097a7acc0dabbd332d0196536a4af4179fc62e47f26ab",
+  "content_hash": "45579852e9cf36f62729ba734e547f24e5ec1c540f0a6d9297ae4589d60ba3ff",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 81,
-    "dialogue_beats": 478,
-    "localization": 1566,
+    "events": 82,
+    "dialogue_beats": 485,
+    "localization": 1581,
     "music_cues": 89,
-    "event_nodes": 1168
+    "event_nodes": 1185
   },
   "ids": {
     "characters": [
@@ -187,6 +187,7 @@
       "evt.sdm.promise",
       "evt.sdm.small_chair",
       "evt.yyk.bottomless_banquet",
+      "evt.yyk.empty_plate",
       "evt.yyk.joke_about_death"
     ],
     "dialogue_beats": [
@@ -661,6 +662,13 @@
       "beat.yyk.bottomless_banquet.loss",
       "beat.yyk.bottomless_banquet.patient",
       "beat.yyk.bottomless_banquet.playful",
+      "beat.yyk.empty_plate.after",
+      "beat.yyk.empty_plate.defiant",
+      "beat.yyk.empty_plate.direct",
+      "beat.yyk.empty_plate.flavor_missing",
+      "beat.yyk.empty_plate.patient",
+      "beat.yyk.empty_plate.person_remains",
+      "beat.yyk.empty_plate.playful",
       "beat.yyk.joke_about_death.after",
       "beat.yyk.joke_about_death.defiant",
       "beat.yyk.joke_about_death.direct",
@@ -910,6 +918,10 @@
       "choice.yyk.bottomless_banquet.direct",
       "choice.yyk.bottomless_banquet.patient",
       "choice.yyk.bottomless_banquet.playful",
+      "choice.yyk.empty_plate.defiant",
+      "choice.yyk.empty_plate.direct",
+      "choice.yyk.empty_plate.patient",
+      "choice.yyk.empty_plate.playful",
       "choice.yyk.joke_about_death.defiant",
       "choice.yyk.joke_about_death.direct",
       "choice.yyk.joke_about_death.patient",
@@ -1385,6 +1397,13 @@
       "dlg.yyk.bottomless_banquet.loss",
       "dlg.yyk.bottomless_banquet.patient",
       "dlg.yyk.bottomless_banquet.playful",
+      "dlg.yyk.empty_plate.after",
+      "dlg.yyk.empty_plate.defiant",
+      "dlg.yyk.empty_plate.direct",
+      "dlg.yyk.empty_plate.flavor_missing",
+      "dlg.yyk.empty_plate.patient",
+      "dlg.yyk.empty_plate.person_remains",
+      "dlg.yyk.empty_plate.playful",
       "dlg.yyk.joke_about_death.after",
       "dlg.yyk.joke_about_death.defiant",
       "dlg.yyk.joke_about_death.direct",
@@ -1450,6 +1469,7 @@
       "event.sdm.promise.title",
       "event.sdm.small_chair.title",
       "event.yyk.bottomless_banquet.title",
+      "event.yyk.empty_plate.title",
       "event.yyk.joke_about_death.title",
       "input.glyph.keyboard.cancel",
       "input.glyph.keyboard.confirm",
@@ -1621,6 +1641,8 @@
       "journal.sdm.small_chair.title",
       "journal.yyk.bottomless_banquet.body",
       "journal.yyk.bottomless_banquet.title",
+      "journal.yyk.empty_plate.body",
+      "journal.yyk.empty_plate.title",
       "journal.yyk.joke_about_death.body",
       "journal.yyk.joke_about_death.title",
       "obj.aya.camera_down.wait",
@@ -1682,6 +1704,7 @@
       "obj.sdm.small_chair.enter_by_invitation",
       "obj.sdm.trace_missing_minute",
       "obj.yyk.bottomless_banquet.read_table",
+      "obj.yyk.empty_plate.observe",
       "obj.yyk.joke_about_death.notice_protection",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
       "rumor.mtn.tomorrows_headline.withheld_correction",
@@ -7041,6 +7064,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.yyk.empty_plate.after",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.empty_plate.after",
+      "target": "dlg.yyk.empty_plate.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.empty_plate.defiant",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.empty_plate.defiant",
+      "target": "dlg.yyk.empty_plate.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.empty_plate.direct",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.empty_plate.direct",
+      "target": "dlg.yyk.empty_plate.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.empty_plate.flavor_missing",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.empty_plate.flavor_missing",
+      "target": "dlg.yyk.empty_plate.flavor_missing",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.empty_plate.patient",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.empty_plate.patient",
+      "target": "dlg.yyk.empty_plate.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.empty_plate.person_remains",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.empty_plate.person_remains",
+      "target": "dlg.yyk.empty_plate.person_remains",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.yyk.empty_plate.playful",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.yyk.empty_plate.playful",
+      "target": "dlg.yyk.empty_plate.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.yyk.joke_about_death.after",
       "target": "char.yuyuko_saigyouji",
       "kind": "speaker"
@@ -8288,6 +8381,26 @@
     {
       "source": "choice.yyk.bottomless_banquet.response",
       "target": "choice.yyk.bottomless_banquet.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.empty_plate.response",
+      "target": "choice.yyk.empty_plate.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.empty_plate.response",
+      "target": "choice.yyk.empty_plate.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.empty_plate.response",
+      "target": "choice.yyk.empty_plate.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.yyk.empty_plate.response",
+      "target": "choice.yyk.empty_plate.playful",
       "kind": "localization"
     },
     {
@@ -22782,6 +22895,221 @@
     },
     {
       "source": "evt.yyk.bottomless_banquet",
+      "target": "loc.hakugyokurou",
+      "kind": "location"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n001",
+      "target": "evt.yyk.empty_plate.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n001",
+      "target": "mus_yuyuko_private",
+      "kind": "music"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n002",
+      "target": "evt.yyk.empty_plate.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n002",
+      "target": "obj.yyk.empty_plate.observe",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n002",
+      "target": "prop.yyk.empty_memory_plate",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n002",
+      "target": "prop.yyk.folded_napkin_boat",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n003",
+      "target": "beat.yyk.empty_plate.flavor_missing",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n003",
+      "target": "evt.yyk.empty_plate.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n004",
+      "target": "beat.yyk.empty_plate.person_remains",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n004",
+      "target": "evt.yyk.empty_plate.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n005",
+      "target": "choice.yyk.empty_plate.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n005",
+      "target": "evt.yyk.empty_plate.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n005",
+      "target": "evt.yyk.empty_plate.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n005",
+      "target": "evt.yyk.empty_plate.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n005",
+      "target": "evt.yyk.empty_plate.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_after",
+      "target": "beat.yyk.empty_plate.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_after",
+      "target": "evt.yyk.empty_plate.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_defiant_line",
+      "target": "beat.yyk.empty_plate.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_defiant_line",
+      "target": "evt.yyk.empty_plate.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_defiant",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_defiant",
+      "target": "evt.yyk.empty_plate.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_direct_line",
+      "target": "beat.yyk.empty_plate.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_direct_line",
+      "target": "evt.yyk.empty_plate.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_direct",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_direct",
+      "target": "evt.yyk.empty_plate.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_effects",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_effects",
+      "target": "evt.yyk.empty_plate.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_journal",
+      "target": "evt.yyk.empty_plate.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_journal",
+      "target": "journal.yyk.empty_plate",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_patient_line",
+      "target": "beat.yyk.empty_plate.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_patient_line",
+      "target": "evt.yyk.empty_plate.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_patient",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_patient",
+      "target": "evt.yyk.empty_plate.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_playful_line",
+      "target": "beat.yyk.empty_plate.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_playful_line",
+      "target": "evt.yyk.empty_plate.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_playful",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.yyk.empty_plate.node.n_playful",
+      "target": "evt.yyk.empty_plate.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.yyk.empty_plate",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.yyk.empty_plate",
+      "target": "char.yuyuko_saigyouji",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.yyk.empty_plate",
+      "target": "event.yyk.empty_plate.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.yyk.empty_plate",
+      "target": "evt.yyk.empty_plate",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.yyk.empty_plate",
+      "target": "loc.hakugyokurou.memory_veranda",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.yyk.empty_plate",
       "target": "loc.hakugyokurou",
       "kind": "location"
     },

@@ -54,6 +54,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records levity that interrupts fear without trivializing death or stealing the next question."
+    },
+    {
+      "id": "loc.hakugyokurou.memory_veranda",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A quiet veranda gives an ended meal room to remain empty without becoming an Archive reconstruction puzzle."
+    },
+    {
+      "id": "prop.yyk.empty_memory_plate",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An empty plate carries the end of a meal without pretending to preserve its recipe or flavor."
+    },
+    {
+      "id": "prop.yyk.folded_napkin_boat",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An anonymous personal gesture keeps the shared person present without inventing a named canon relationship."
+    },
+    {
+      "id": "journal.yyk.empty_plate",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records relational memory and an ending respected without forced reconstruction."
     }
   ]
 }
