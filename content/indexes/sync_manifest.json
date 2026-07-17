@@ -1,6 +1,6 @@
 {
   "schema": "gmh-design-content-sync-v1",
-  "source_revision": "2026.07.16.10",
+  "source_revision": "2026.07.17.1",
   "files": [
     {
       "source": "design/09_data/characters.json",
@@ -25,7 +25,7 @@
     {
       "source": "design/09_data/content_index.json",
       "destination": "content/indexes/design_content_index.json",
-      "sha256": "7f77fca9600d2fa46654a740d4514c498aef2c439f574a7f9a004d0201896746"
+      "sha256": "3e13a7daa846c24943bd19705e63efca30ecaea99329a7ddfb3c27e253cffbd9"
     },
     {
       "source": "design/09_data/localization/en.csv",
@@ -51,6 +51,11 @@
       "source": "design/09_data/music_cues.csv",
       "destination": "content/music/music_cues.csv",
       "sha256": "616588930ddd24b4a4e975f2094e753c7639eb212e0c05c7521977123697ceb0"
+    },
+    {
+      "source": "design/09_data/postgame_framework.json",
+      "destination": "content/postgame/postgame_framework.json",
+      "sha256": "86adffcf21d24d84615b0ee480e153b898dd28a51f228fc189c29b0329a16290"
     },
     {
       "source": "design/09_data/schemas/character_agent_output.schema.json",
@@ -81,6 +86,11 @@
       "source": "design/09_data/schemas/minigame.schema.json",
       "destination": "schemas/minigame.schema.json",
       "sha256": "1b9e7711f7ad2eece9d7aa913332acfb7932c731219d3f04d2ecf1ae5a27924e"
+    },
+    {
+      "source": "design/09_data/schemas/postgame_framework.schema.json",
+      "destination": "schemas/postgame_framework.schema.json",
+      "sha256": "003ccdd9b6d5d5bfbaa3ff1eb048daa20c056d03b1fe704247170616c802457f"
     },
     {
       "source": "design/09_data/schemas/save_envelope.schema.json",

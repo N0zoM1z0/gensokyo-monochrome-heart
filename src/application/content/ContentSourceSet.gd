@@ -11,6 +11,7 @@ var dialogue_path: String = "res://content/dialogue/dialogue_samples.json"
 var localization_path: String = "res://content/localization/strings.csv"
 var ui_localization_path: String = "res://content/localization/ui_strings.json"
 var music_cues_path: String = "res://content/music/music_cues.csv"
+var postgame_framework_path: String = "res://content/postgame/postgame_framework.json"
 var deferred_references_path: String = "res://content/indexes/deferred_references.json"
 var character_schema_path: String = "res://schemas/character_index.schema.json"
 var location_schema_path: String = "res://schemas/location_index.schema.json"
@@ -18,6 +19,7 @@ var event_schema_path: String = "res://schemas/event_index.schema.json"
 var event_graph_schema_path: String = "res://schemas/event_graph.schema.json"
 var dialogue_schema_path: String = "res://schemas/dialogue_index.schema.json"
 var ui_localization_schema_path: String = "res://schemas/ui_localization.schema.json"
+var postgame_framework_schema_path: String = "res://schemas/postgame_framework.schema.json"
 var enforce_manifest_counts: bool = true
 var supplemental_character_paths: Array[String] = []
 var supplemental_location_paths: Array[String] = []
@@ -337,6 +339,7 @@ func content_paths() -> Array[String]:
 		localization_path,
 		ui_localization_path,
 		music_cues_path,
+		postgame_framework_path,
 		deferred_references_path,
 	]
 	paths.append_array(supplemental_character_paths)

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "id": "postgame.framework.v1",
+  "dream_theatre": {
+    "id": "postgame.dream_theatre",
+    "location_id": "loc.outside_world",
+    "continuity_scope": "non_main_continuity",
+    "postgame_only": true,
+    "route_progression": false,
+    "fanon_ceiling": 5,
+    "label_en": "DREAM THEATRE — NON-MAIN-CONTINUITY",
+    "label_ja": "夢劇場 — 本編とは異なる世界線"
+  },
+  "seasonal_events": [
+    {
+      "id": "season.tanabata",
+      "season": "summer",
+      "title_en": "Printed Wishes",
+      "title_ja": "印刷された願い",
+      "event_hook": "Tanabata wishes are accidentally printed as facts.",
+      "music_cue_id": "mus_festival",
+      "continuity_scope": "main_continuity",
+      "relationship_progression": "none"
+    },
+    {
+      "id": "season.summer_festival",
+      "season": "summer",
+      "title_en": "Every Stall, Different Rules",
+      "title_ja": "屋台ごとに違うルール",
+      "event_hook": "Every festival stall uses a different regional mechanic.",
+      "music_cue_id": "mus_festival",
+      "continuity_scope": "main_continuity",
+      "relationship_progression": "none"
+    },
+    {
+      "id": "season.moon_viewing",
+      "season": "autumn",
+      "title_en": "Memories Under a False Moon",
+      "title_ja": "偽月の下の記憶",
+      "event_hook": "A false moon swaps ownership of route memories until the cast compares accounts.",
+      "music_cue_id": "mus_rain",
+      "continuity_scope": "main_continuity",
+      "relationship_progression": "none"
+    },
+    {
+      "id": "season.halloween",
+      "season": "autumn",
+      "title_en": "Borrowed Shapes",
+      "title_ja": "借りものの姿",
+      "event_hook": "Costumes alter companion traversal rules without changing anyone's remembered identity.",
+      "music_cue_id": "mus_festival",
+      "continuity_scope": "main_continuity",
+      "relationship_progression": "none"
+    },
+    {
+      "id": "season.art_festival",
+      "season": "autumn",
+      "title_en": "What the Painter Omitted",
+      "title_ja": "画家が描かなかったもの",
+      "event_hook": "Exhibited portraits reveal omissions rather than objective truths.",
+      "music_cue_id": "mus_festival",
+      "continuity_scope": "main_continuity",
+      "relationship_progression": "none"
+    },
+    {
+      "id": "season.christmas",
+      "season": "winter",
+      "title_en": "Rumor Labels",
+      "title_ja": "噂のラベル",
+      "event_hook": "Gift labels are replaced by rumor labels and must be corrected before delivery.",
+      "music_cue_id": "mus_winter",
+      "continuity_scope": "main_continuity",
+      "relationship_progression": "none"
+    },
+    {
+      "id": "season.new_year",
+      "season": "winter",
+      "title_en": "Offerings Remember",
+      "title_ja": "供物は覚えている",
+      "event_hook": "New Year offerings replay choices from the prior year without judging them.",
+      "music_cue_id": "mus_winter",
+      "continuity_scope": "main_continuity",
+      "relationship_progression": "none"
+    },
+    {
+      "id": "season.reitaisai_dream",
+      "season": "spring",
+      "title_en": "Interpretations on Parade",
+      "title_ja": "解釈の行列",
+      "event_hook": "The cast encounters fan interpretations of themselves and chooses what to answer or ignore.",
+      "music_cue_id": "mus_festival",
+      "continuity_scope": "dream_theatre",
+      "relationship_progression": "none"
+    }
+  ],
+  "ensemble_accord": {
+    "id": "postgame.ensemble_accord",
+    "continuity_scope": "main_continuity",
+    "minimum_completed_deep_routes": 6,
+    "minimum_friendship_endings": 3,
+    "minimum_postponed_promises": 1,
+    "severe_strain_threshold": 3,
+    "minimum_cross_faction_repairs": 3,
+    "rank_spectacle_refused_flag": "flag.ensemble.rank_spectacle_refused",
+    "intent_audit_flag": "flag.ensemble.intent_audit_complete",
+    "boundaries_established_flag": "flag.ensemble.boundaries_established",
+    "home_responsibility_flag": "flag.ensemble.home_responsibility",
+    "fallback_ending_id": "ending.ensemble.community"
+  }
+}

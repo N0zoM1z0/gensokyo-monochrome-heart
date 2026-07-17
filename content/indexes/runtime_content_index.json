@@ -1,7 +1,7 @@
 {
-  "schema": "gmh-runtime-content-index-v1",
-  "content_revision": "2026.07.16.10",
-  "content_hash": "3a2bb555c926d7668960b9d8ebb80aee77bfdf14b6538bfa1db9ef81937e7b80",
+  "schema": "gmh-runtime-content-index-v2",
+  "content_revision": "2026.07.17.1",
+  "content_hash": "020432bb7c6ca477f8219537f3a76d3a7142d29bd92731e04850729fd3a69425",
   "counts": {
     "characters": 71,
     "locations": 19,
@@ -9,7 +9,8 @@
     "dialogue_beats": 713,
     "localization": 2054,
     "music_cues": 89,
-    "event_nodes": 1720
+    "event_nodes": 1720,
+    "seasonal_events": 8
   },
   "ids": {
     "characters": [
@@ -3073,6 +3074,16 @@
       "mus_yuuka",
       "mus_yuyuko_banquet",
       "mus_yuyuko_private"
+    ],
+    "seasonal_events": [
+      "season.art_festival",
+      "season.christmas",
+      "season.halloween",
+      "season.moon_viewing",
+      "season.new_year",
+      "season.reitaisai_dream",
+      "season.summer_festival",
+      "season.tanabata"
     ]
   },
   "dependencies": [
@@ -33410,6 +33421,51 @@
       "source": "evt.yyk.lightness_not_shallowness",
       "target": "loc.hakugyokurou",
       "kind": "location"
+    },
+    {
+      "source": "postgame.dream_theatre",
+      "target": "loc.outside_world",
+      "kind": "location"
+    },
+    {
+      "source": "season.art_festival",
+      "target": "mus_festival",
+      "kind": "music"
+    },
+    {
+      "source": "season.christmas",
+      "target": "mus_winter",
+      "kind": "music"
+    },
+    {
+      "source": "season.halloween",
+      "target": "mus_festival",
+      "kind": "music"
+    },
+    {
+      "source": "season.moon_viewing",
+      "target": "mus_rain",
+      "kind": "music"
+    },
+    {
+      "source": "season.new_year",
+      "target": "mus_winter",
+      "kind": "music"
+    },
+    {
+      "source": "season.reitaisai_dream",
+      "target": "mus_festival",
+      "kind": "music"
+    },
+    {
+      "source": "season.summer_festival",
+      "target": "mus_festival",
+      "kind": "music"
+    },
+    {
+      "source": "season.tanabata",
+      "target": "mus_festival",
+      "kind": "music"
     }
   ]
 }

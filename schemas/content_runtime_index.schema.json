@@ -5,12 +5,12 @@
   "type": "object",
   "required": ["schema", "content_revision", "content_hash", "counts", "ids", "dependencies"],
   "properties": {
-    "schema": {"const": "gmh-runtime-content-index-v1"},
+    "schema": {"const": "gmh-runtime-content-index-v2"},
     "content_revision": {"type": "string", "minLength": 1},
     "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "counts": {
       "type": "object",
-      "required": ["characters", "locations", "events", "dialogue_beats", "localization", "music_cues", "event_nodes"],
+      "required": ["characters", "locations", "events", "dialogue_beats", "localization", "music_cues", "event_nodes", "seasonal_events"],
       "properties": {
         "characters": {"type": "integer", "minimum": 0},
         "locations": {"type": "integer", "minimum": 0},
@@ -18,20 +18,22 @@
         "dialogue_beats": {"type": "integer", "minimum": 0},
         "localization": {"type": "integer", "minimum": 0},
         "music_cues": {"type": "integer", "minimum": 0},
-        "event_nodes": {"type": "integer", "minimum": 0}
+        "event_nodes": {"type": "integer", "minimum": 0},
+        "seasonal_events": {"type": "integer", "minimum": 0}
       },
       "additionalProperties": false
     },
     "ids": {
       "type": "object",
-      "required": ["characters", "locations", "events", "dialogue_beats", "localization", "music_cues"],
+      "required": ["characters", "locations", "events", "dialogue_beats", "localization", "music_cues", "seasonal_events"],
       "properties": {
         "characters": {"type": "array", "items": {"type": "string", "pattern": "^char\\."}},
         "locations": {"type": "array", "items": {"type": "string", "pattern": "^loc\\."}},
         "events": {"type": "array", "items": {"type": "string", "pattern": "^evt\\."}},
         "dialogue_beats": {"type": "array", "items": {"type": "string", "pattern": "^beat\\."}},
         "localization": {"type": "array", "items": {"type": "string", "minLength": 3}},
-        "music_cues": {"type": "array", "items": {"type": "string", "pattern": "^mus_"}}
+        "music_cues": {"type": "array", "items": {"type": "string", "pattern": "^mus_"}},
+        "seasonal_events": {"type": "array", "items": {"type": "string", "pattern": "^season\\."}}
       },
       "additionalProperties": false
     },

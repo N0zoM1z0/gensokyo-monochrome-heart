@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Postgame Framework",
+  "type": "object",
+  "required": ["schema_version", "id", "dream_theatre", "seasonal_events", "ensemble_accord"],
+  "properties": {
+    "schema_version": {"type": "integer", "minimum": 1},
+    "id": {"type": "string", "pattern": "^postgame\\."},
+    "dream_theatre": {
+      "type": "object",
+      "required": ["id", "location_id", "continuity_scope", "postgame_only", "route_progression", "fanon_ceiling", "label_en", "label_ja"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^postgame\\."},
+        "location_id": {"type": "string", "pattern": "^loc\\."},
+        "continuity_scope": {"enum": ["non_main_continuity"]},
+        "postgame_only": {"const": true},
+        "route_progression": {"const": false},
+        "fanon_ceiling": {"type": "integer", "minimum": 0, "maximum": 5},
+        "label_en": {"type": "string", "minLength": 12},
+        "label_ja": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    },
+    "seasonal_events": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["id", "season", "title_en", "title_ja", "event_hook", "music_cue_id", "continuity_scope", "relationship_progression"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^season\\."},
+          "season": {"enum": ["spring", "summer", "autumn", "winter"]},
+          "title_en": {"type": "string", "minLength": 3},
+          "title_ja": {"type": "string", "minLength": 2},
+          "event_hook": {"type": "string", "minLength": 12},
+          "music_cue_id": {"type": "string", "pattern": "^mus_"},
+          "continuity_scope": {"enum": ["main_continuity", "dream_theatre"]},
+          "relationship_progression": {"enum": ["none"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "ensemble_accord": {
+      "type": "object",
+      "required": ["id", "continuity_scope", "minimum_completed_deep_routes", "minimum_friendship_endings", "minimum_postponed_promises", "severe_strain_threshold", "minimum_cross_faction_repairs", "rank_spectacle_refused_flag", "intent_audit_flag", "boundaries_established_flag", "home_responsibility_flag", "fallback_ending_id"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^postgame\\."},
+        "continuity_scope": {"enum": ["main_continuity"]},
+        "minimum_completed_deep_routes": {"type": "integer", "minimum": 6},
+        "minimum_friendship_endings": {"type": "integer", "minimum": 3},
+        "minimum_postponed_promises": {"type": "integer", "minimum": 1},
+        "severe_strain_threshold": {"type": "integer", "minimum": 1, "maximum": 3},
+        "minimum_cross_faction_repairs": {"type": "integer", "minimum": 3},
+        "rank_spectacle_refused_flag": {"type": "string", "pattern": "^flag\\."},
+        "intent_audit_flag": {"type": "string", "pattern": "^flag\\."},
+        "boundaries_established_flag": {"type": "string", "pattern": "^flag\\."},
+        "home_responsibility_flag": {"type": "string", "pattern": "^flag\\."},
+        "fallback_ending_id": {"type": "string", "pattern": "^ending\\."}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -31,6 +31,7 @@ func _initialize() -> void:
 		TestMinigameFoundation.new(),
 		TestNavigationFoundation.new(),
 		TestPresentationFoundation.new(),
+		TestPostgameFramework.new(),
 		TestReleasePlaceholderScanner.new(),
 		TestSaveMigrations.new(),
 		TestSaveRepository.new(),

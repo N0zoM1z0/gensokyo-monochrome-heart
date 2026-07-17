@@ -267,6 +267,57 @@ func parse_music_cues(path: String) -> Array[MusicCueRecord]:
 	return result
 
 
+func parse_postgame_framework(path: String, schema_path: String) -> PostgameFrameworkRecord:
+	var data: Variant = _load_validated_json(path, schema_path, &"parse_postgame")
+	if not data is Dictionary:
+		return null
+	var framework := PostgameFrameworkRecord.new()
+	framework.id = _name(data.get("id", ""))
+	framework.source_path = path
+	var dream_raw: Variant = data.get("dream_theatre", {})
+	if dream_raw is Dictionary:
+		var dream := DreamTheatreRecord.new()
+		dream.id = _name(dream_raw.get("id", ""))
+		dream.location_id = _name(dream_raw.get("location_id", ""))
+		dream.continuity_scope = _name(dream_raw.get("continuity_scope", ""))
+		dream.postgame_only = bool(dream_raw.get("postgame_only", false))
+		dream.route_progression = bool(dream_raw.get("route_progression", true))
+		dream.fanon_ceiling = int(dream_raw.get("fanon_ceiling", 0))
+		dream.label_en = _clean(dream_raw.get("label_en", ""))
+		dream.label_ja = _clean(dream_raw.get("label_ja", ""))
+		framework.dream_theatre = dream
+	for raw: Variant in _object_array(data, "seasonal_events", path, &"parse_postgame"):
+		var event := SeasonalEventRecord.new()
+		event.id = _name(raw.get("id", ""))
+		event.season = _name(raw.get("season", ""))
+		event.title_en = _clean(raw.get("title_en", ""))
+		event.title_ja = _clean(raw.get("title_ja", ""))
+		event.event_hook = _clean(raw.get("event_hook", ""))
+		event.music_cue_id = _name(raw.get("music_cue_id", ""))
+		event.continuity_scope = _name(raw.get("continuity_scope", ""))
+		event.relationship_progression = _name(raw.get("relationship_progression", ""))
+		framework.seasonal_events.append(event)
+	var accord_raw: Variant = data.get("ensemble_accord", {})
+	if accord_raw is Dictionary:
+		var accord := EnsembleAccordRulesRecord.new()
+		accord.id = _name(accord_raw.get("id", ""))
+		accord.continuity_scope = _name(accord_raw.get("continuity_scope", ""))
+		accord.minimum_completed_deep_routes = int(accord_raw.get("minimum_completed_deep_routes", 0))
+		accord.minimum_friendship_endings = int(accord_raw.get("minimum_friendship_endings", 0))
+		accord.minimum_postponed_promises = int(accord_raw.get("minimum_postponed_promises", 0))
+		accord.severe_strain_threshold = int(accord_raw.get("severe_strain_threshold", 0))
+		accord.minimum_cross_faction_repairs = int(accord_raw.get("minimum_cross_faction_repairs", 0))
+		accord.rank_spectacle_refused_flag = _name(accord_raw.get("rank_spectacle_refused_flag", ""))
+		accord.intent_audit_flag = _name(accord_raw.get("intent_audit_flag", ""))
+		accord.boundaries_established_flag = _name(accord_raw.get("boundaries_established_flag", ""))
+		accord.home_responsibility_flag = _name(accord_raw.get("home_responsibility_flag", ""))
+		accord.fallback_ending_id = _name(accord_raw.get("fallback_ending_id", ""))
+		framework.ensemble_accord = accord
+	framework.seasonal_events.sort_custom(func(left: SeasonalEventRecord, right: SeasonalEventRecord) -> bool: return String(left.id) < String(right.id))
+	_report.record_check(&"parse_postgame")
+	return framework
+
+
 func parse_deferred_references(path: String) -> Array[DeferredReferenceRecord]:
 	var result: Array[DeferredReferenceRecord] = []
 	var data: Variant = _load_json(path, &"parse_deferred")

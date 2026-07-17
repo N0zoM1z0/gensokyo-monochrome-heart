@@ -2,11 +2,12 @@ class_name ContentRepository
 extends RefCounted
 ## Atomic typed content snapshot, deterministic queries, references, graph, and hash.
 
-const RUNTIME_INDEX_SCHEMA := "gmh-runtime-content-index-v1"
+const RUNTIME_INDEX_SCHEMA := "gmh-runtime-content-index-v2"
 
 var report: ContentLoadReport
 var manifest: ContentManifestRecord
 var event_graph: EventGraphRecord
+var postgame_framework: PostgameFrameworkRecord
 var dependency_graph := ContentDependencyGraph.new()
 
 var _characters: Dictionary[StringName, CharacterRecord] = {}
@@ -60,6 +61,10 @@ func load_sources(sources: ContentSourceSet = null) -> ContentLoadReport:
 	var music_cues := parser.parse_music_cues(active_sources.music_cues_path)
 	for path: String in active_sources.supplemental_music_cue_paths:
 		music_cues.append_array(parser.parse_music_cues(path))
+	postgame_framework = parser.parse_postgame_framework(
+		active_sources.postgame_framework_path,
+		active_sources.postgame_framework_schema_path
+	)
 	var deferred := parser.parse_deferred_references(active_sources.deferred_references_path)
 	for path: String in active_sources.supplemental_deferred_reference_paths:
 		deferred.append_array(parser.parse_deferred_references(path))
@@ -84,6 +89,7 @@ func load_sources(sources: ContentSourceSet = null) -> ContentLoadReport:
 		active_sources
 	)
 	_index_event_graphs(event_graphs)
+	_validate_postgame_framework(active_sources)
 	_validate_manifest_counts(active_sources)
 	_validate_references(active_sources)
 	_finalize_counts()
@@ -301,6 +307,10 @@ func music_by_priority(priority: StringName) -> Array[MusicCueRecord]:
 	return result
 
 
+func seasonal_events_by_season(season: StringName) -> Array[SeasonalEventRecord]:
+	return postgame_framework.events_for_season(season) if postgame_framework != null else []
+
+
 func diagnostic_header() -> String:
 	return "content_revision=%s content_hash=%s" % [report.content_revision, report.content_hash]
 
@@ -332,6 +342,7 @@ func runtime_index_json() -> String:
 			"localization": _strings.size(),
 			"music_cues": _music_cues.size(),
 			"event_nodes": _event_node_count(),
+			"seasonal_events": postgame_framework.seasonal_events.size() if postgame_framework != null else 0,
 		},
 		"ids": {
 			"characters": _string_ids(_characters.keys()),
@@ -340,6 +351,7 @@ func runtime_index_json() -> String:
 			"dialogue_beats": _string_ids(_dialogue_beats.keys()),
 			"localization": _string_ids(_strings.keys()),
 			"music_cues": _string_ids(_music_cues.keys()),
+			"seasonal_events": _seasonal_event_ids(),
 		},
 		"dependencies": dependency_records,
 	}
@@ -366,6 +378,7 @@ func _reset() -> void:
 	report = ContentLoadReport.new()
 	manifest = null
 	event_graph = null
+	postgame_framework = null
 	dependency_graph = ContentDependencyGraph.new()
 	_characters.clear()
 	_locations.clear()
@@ -376,6 +389,34 @@ func _reset() -> void:
 	_deferred.clear()
 	_event_graphs.clear()
 	_global_id_sources.clear()
+
+
+func _validate_postgame_framework(sources: ContentSourceSet) -> void:
+	var source_path := sources.postgame_framework_path
+	if postgame_framework == null or postgame_framework.id == &"":
+		report.add_error(&"rules", source_path, "postgame framework is missing or incomplete")
+		return
+	if postgame_framework.dream_theatre == null:
+		report.add_error(&"rules", source_path, "Dream Theatre policy is missing", postgame_framework.id)
+	else:
+		var dream := postgame_framework.dream_theatre
+		if dream.continuity_scope != &"non_main_continuity" or not dream.postgame_only or dream.route_progression:
+			report.add_error(&"rules", source_path, "Dream Theatre must remain postgame-only non-main-continuity without route progression", dream.id)
+		_require_known(dream.id, dream.location_id, _locations.has(dream.location_id), &"location", source_path)
+	var seasonal_ids: Dictionary[StringName, bool] = {}
+	for event: SeasonalEventRecord in postgame_framework.seasonal_events:
+		if seasonal_ids.has(event.id):
+			report.add_error(&"rules", source_path, "duplicate seasonal event ID", event.id)
+		seasonal_ids[event.id] = true
+		if event.relationship_progression != &"none":
+			report.add_error(&"rules", source_path, "seasonal event makes an unsupported route promise", event.id)
+		_require_known(event.id, event.music_cue_id, _music_cues.has(event.music_cue_id), &"music", source_path)
+	var accord := postgame_framework.ensemble_accord
+	if accord == null or accord.minimum_completed_deep_routes < 6 or accord.minimum_friendship_endings < 3:
+		report.add_error(&"rules", source_path, "Ensemble Accord thresholds are incomplete", postgame_framework.id)
+	elif accord.continuity_scope != &"main_continuity":
+		report.add_error(&"rules", source_path, "Ensemble Accord must remain in main continuity", accord.id)
+	report.record_check(&"rules", 8 + postgame_framework.seasonal_events.size())
 
 
 func _index_records(
@@ -665,6 +706,16 @@ func _string_ids(ids: Array) -> Array[String]:
 	var result: Array[String] = []
 	for stable_id: Variant in ids:
 		result.append(String(stable_id))
+	result.sort()
+	return result
+
+
+func _seasonal_event_ids() -> Array[String]:
+	var result: Array[String] = []
+	if postgame_framework == null:
+		return result
+	for event: SeasonalEventRecord in postgame_framework.seasonal_events:
+		result.append(String(event.id))
 	result.sort()
 	return result
 

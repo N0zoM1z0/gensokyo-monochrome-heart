@@ -19,6 +19,7 @@ JSON_MAPPINGS = {
     "events.json": "content/events/events.json",
     "sample_event_empty_cushion.json": "content/events/sample_event_empty_cushion.json",
     "dialogue_samples.json": "content/dialogue/dialogue_samples.json",
+    "postgame_framework.json": "content/postgame/postgame_framework.json",
     "content_index.json": "content/indexes/design_content_index.json",
 }
 
@@ -95,7 +96,7 @@ def _expected_outputs() -> dict[Path, bytes]:
 
     manifest = {
         "schema": "gmh-design-content-sync-v1",
-        "source_revision": "2026.07.16.10",
+        "source_revision": "2026.07.17.1",
         "files": sorted(manifest_entries, key=lambda item: str(item["destination"])),
     }
     outputs[ROOT / "content" / "indexes" / "sync_manifest.json"] = _stable_json(
