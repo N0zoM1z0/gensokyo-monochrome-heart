@@ -1,0 +1,29 @@
+{
+  "schema": "gmh-deferred-references-v1",
+  "references": [
+    {
+      "id": "loc.scarlet_devil_mansion.audience_gallery",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A raised public gallery lets Remilia stage authority while the protagonist chooses how to enter the scene."
+    },
+    {
+      "id": "prop.rml.foretold_place_card",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A place card marks Remilia's predicted blocking without deciding why the protagonist follows it."
+    },
+    {
+      "id": "prop.rml.unwritten_guest_book",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A deliberately blank field keeps the guest's motive outside Remilia's public script."
+    },
+    {
+      "id": "journal.rml.the_audience",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The opening observation records participation in theater without compelled belief."
+    }
+  ]
+}
