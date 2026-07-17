@@ -182,6 +182,7 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 	control.configure(tenshi_consent, _content, &"en")
 	if control.focused_tone() != &"defiant":
 		failures.append("Tenshi romance consent did not default to no")
+	control.free()
 
 
 func _expect_safe_resonance_and_debug_views(failures: Array[String]) -> void:
