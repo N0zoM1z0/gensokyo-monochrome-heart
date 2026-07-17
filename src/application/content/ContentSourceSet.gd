@@ -37,6 +37,7 @@ var supplemental_event_paths: Array[String] = [
 	"res://content/events/tsh_meal_route_events.json",
 	"res://content/events/tsh_boundary_route_events.json",
 	"res://content/events/tsh_repair_route_events.json",
+	"res://content/events/tsh_friction_route_events.json",
 ]
 var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/hkr_day_nothing_happens.json",
@@ -121,6 +122,7 @@ var supplemental_event_graph_paths: Array[String] = [
 	"res://content/events/tsh_imperfect_meal.json",
 	"res://content/events/tsh_attention_not_permission.json",
 	"res://content/events/tsh_repair_she_finishes.json",
+	"res://content/events/tsh_heaven_without_friction.json",
 ]
 var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/hkr_day_nothing_happens.json",
@@ -205,6 +207,7 @@ var supplemental_dialogue_paths: Array[String] = [
 	"res://content/dialogue/tsh_imperfect_meal.json",
 	"res://content/dialogue/tsh_attention_not_permission.json",
 	"res://content/dialogue/tsh_repair_she_finishes.json",
+	"res://content/dialogue/tsh_heaven_without_friction.json",
 ]
 var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/hkr_day_nothing_happens.csv",
@@ -290,6 +293,7 @@ var supplemental_localization_paths: Array[String] = [
 	"res://content/localization/tsh_imperfect_meal.csv",
 	"res://content/localization/tsh_attention_not_permission.csv",
 	"res://content/localization/tsh_repair_she_finishes.csv",
+	"res://content/localization/tsh_heaven_without_friction.csv",
 ]
 var supplemental_ui_localization_paths: Array[String] = []
 var supplemental_music_cue_paths: Array[String] = []
@@ -310,10 +314,11 @@ var supplemental_deferred_reference_paths: Array[String] = [
 	"res://content/indexes/tsh_meal_deferred_references.json",
 	"res://content/indexes/tsh_boundary_deferred_references.json",
 	"res://content/indexes/tsh_repair_deferred_references.json",
+	"res://content/indexes/tsh_friction_deferred_references.json",
 ]
-var expected_supplemental_event_count: int = 74
-var expected_supplemental_dialogue_count: int = 678
-var expected_supplemental_localization_count: int = 1416
+var expected_supplemental_event_count: int = 75
+var expected_supplemental_dialogue_count: int = 686
+var expected_supplemental_localization_count: int = 1432
 
 
 func content_paths() -> Array[String]:

@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "fa6567184fa0400fac36b550689c8f60e5991230c61e8ba6d4e82b823643c0b1",
+  "content_hash": "cbfde9f3ea50bdeac866ece38b804d9ce1cc1079dab0a9a7772d1d52fe23d300",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 102,
-    "dialogue_beats": 697,
-    "localization": 2012,
+    "events": 103,
+    "dialogue_beats": 705,
+    "localization": 2028,
     "music_cues": 89,
-    "event_nodes": 1673
+    "event_nodes": 1692
   },
   "ids": {
     "characters": [
@@ -200,6 +200,7 @@
       "evt.sne.shrine_between_homes",
       "evt.tsh.attention_not_permission",
       "evt.tsh.entrance_tremor",
+      "evt.tsh.heaven_without_friction",
       "evt.tsh.imperfect_meal",
       "evt.tsh.keystone_construction",
       "evt.tsh.repair_she_finishes",
@@ -836,6 +837,14 @@
       "beat.tsh.entrance_tremor.patient",
       "beat.tsh.entrance_tremor.playful",
       "beat.tsh.entrance_tremor.repair_terms",
+      "beat.tsh.heaven_without_friction.after",
+      "beat.tsh.heaven_without_friction.defiant",
+      "beat.tsh.heaven_without_friction.direct",
+      "beat.tsh.heaven_without_friction.offer",
+      "beat.tsh.heaven_without_friction.patient",
+      "beat.tsh.heaven_without_friction.playful",
+      "beat.tsh.heaven_without_friction.reject",
+      "beat.tsh.heaven_without_friction.repeat",
       "beat.tsh.imperfect_meal.after",
       "beat.tsh.imperfect_meal.defiant",
       "beat.tsh.imperfect_meal.direct",
@@ -1222,6 +1231,10 @@
       "choice.tsh.entrance_tremor.direct",
       "choice.tsh.entrance_tremor.patient",
       "choice.tsh.entrance_tremor.playful",
+      "choice.tsh.heaven_without_friction.defiant",
+      "choice.tsh.heaven_without_friction.direct",
+      "choice.tsh.heaven_without_friction.patient",
+      "choice.tsh.heaven_without_friction.playful",
       "choice.tsh.imperfect_meal.defiant",
       "choice.tsh.imperfect_meal.direct",
       "choice.tsh.imperfect_meal.patient",
@@ -1883,6 +1896,14 @@
       "dlg.tsh.entrance_tremor.patient",
       "dlg.tsh.entrance_tremor.playful",
       "dlg.tsh.entrance_tremor.repair_terms",
+      "dlg.tsh.heaven_without_friction.after",
+      "dlg.tsh.heaven_without_friction.defiant",
+      "dlg.tsh.heaven_without_friction.direct",
+      "dlg.tsh.heaven_without_friction.offer",
+      "dlg.tsh.heaven_without_friction.patient",
+      "dlg.tsh.heaven_without_friction.playful",
+      "dlg.tsh.heaven_without_friction.reject",
+      "dlg.tsh.heaven_without_friction.repeat",
       "dlg.tsh.imperfect_meal.after",
       "dlg.tsh.imperfect_meal.defiant",
       "dlg.tsh.imperfect_meal.direct",
@@ -2029,6 +2050,7 @@
       "event.sne.shrine_between_homes.title",
       "event.tsh.attention_not_permission.title",
       "event.tsh.entrance_tremor.title",
+      "event.tsh.heaven_without_friction.title",
       "event.tsh.imperfect_meal.title",
       "event.tsh.keystone_construction.title",
       "event.tsh.repair_she_finishes.title",
@@ -2265,6 +2287,8 @@
       "journal.tsh.attention_not_permission.title",
       "journal.tsh.entrance_tremor.body",
       "journal.tsh.entrance_tremor.title",
+      "journal.tsh.heaven_without_friction.body",
+      "journal.tsh.heaven_without_friction.title",
       "journal.tsh.imperfect_meal.body",
       "journal.tsh.imperfect_meal.title",
       "journal.tsh.keystone_construction.body",
@@ -2358,6 +2382,7 @@
       "obj.sne.shrine_between_homes.inspect",
       "obj.tsh.attention_not_permission.inspect",
       "obj.tsh.entrance_tremor.inspect",
+      "obj.tsh.heaven_without_friction.inspect",
       "obj.tsh.imperfect_meal.notice",
       "obj.tsh.keystone_construction.read",
       "obj.tsh.repair_she_finishes.inspect",
@@ -9267,6 +9292,86 @@
       "kind": "localization"
     },
     {
+      "source": "beat.tsh.heaven_without_friction.after",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.after",
+      "target": "dlg.tsh.heaven_without_friction.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.defiant",
+      "target": "dlg.tsh.heaven_without_friction.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.direct",
+      "target": "dlg.tsh.heaven_without_friction.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.offer",
+      "target": "char.iku_nagae",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.offer",
+      "target": "dlg.tsh.heaven_without_friction.offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.patient",
+      "target": "dlg.tsh.heaven_without_friction.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.playful",
+      "target": "dlg.tsh.heaven_without_friction.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.reject",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.reject",
+      "target": "dlg.tsh.heaven_without_friction.reject",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.repeat",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.heaven_without_friction.repeat",
+      "target": "dlg.tsh.heaven_without_friction.repeat",
+      "kind": "localization"
+    },
+    {
       "source": "beat.tsh.imperfect_meal.after",
       "target": "char.tenshi_hinanawi",
       "kind": "speaker"
@@ -11524,6 +11629,26 @@
     {
       "source": "choice.tsh.entrance_tremor.response",
       "target": "choice.tsh.entrance_tremor.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.heaven_without_friction.response",
+      "target": "choice.tsh.heaven_without_friction.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.heaven_without_friction.response",
+      "target": "choice.tsh.heaven_without_friction.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.heaven_without_friction.response",
+      "target": "choice.tsh.heaven_without_friction.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.heaven_without_friction.response",
+      "target": "choice.tsh.heaven_without_friction.playful",
       "kind": "localization"
     },
     {
@@ -30463,6 +30588,251 @@
     },
     {
       "source": "evt.tsh.entrance_tremor",
+      "target": "loc.heaven",
+      "kind": "location"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n001",
+      "target": "evt.tsh.heaven_without_friction.node.n_offer",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n001",
+      "target": "mus_tenshi_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_after",
+      "target": "beat.tsh.heaven_without_friction.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_after",
+      "target": "evt.tsh.heaven_without_friction.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_choice",
+      "target": "choice.tsh.heaven_without_friction.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_choice",
+      "target": "evt.tsh.heaven_without_friction.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_choice",
+      "target": "evt.tsh.heaven_without_friction.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_choice",
+      "target": "evt.tsh.heaven_without_friction.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_choice",
+      "target": "evt.tsh.heaven_without_friction.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_defiant_line",
+      "target": "beat.tsh.heaven_without_friction.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_defiant_line",
+      "target": "evt.tsh.heaven_without_friction.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_defiant",
+      "target": "evt.tsh.heaven_without_friction.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_direct_line",
+      "target": "beat.tsh.heaven_without_friction.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_direct_line",
+      "target": "evt.tsh.heaven_without_friction.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_direct",
+      "target": "evt.tsh.heaven_without_friction.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_effects",
+      "target": "evt.tsh.heaven_without_friction.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_journal",
+      "target": "evt.tsh.heaven_without_friction.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_journal",
+      "target": "journal.tsh.heaven_without_friction",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_objective",
+      "target": "evt.tsh.heaven_without_friction.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_objective",
+      "target": "obj.tsh.heaven_without_friction.inspect",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_objective",
+      "target": "prop.tsh.identical_cloud_grid",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_objective",
+      "target": "prop.tsh.locked_refusal_box",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_objective",
+      "target": "prop.tsh.unused_irregular_anchor",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_offer",
+      "target": "beat.tsh.heaven_without_friction.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_offer",
+      "target": "evt.tsh.heaven_without_friction.node.n_repeat",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_patient_line",
+      "target": "beat.tsh.heaven_without_friction.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_patient_line",
+      "target": "evt.tsh.heaven_without_friction.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_patient",
+      "target": "evt.tsh.heaven_without_friction.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_playful_line",
+      "target": "beat.tsh.heaven_without_friction.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_playful_line",
+      "target": "evt.tsh.heaven_without_friction.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_playful",
+      "target": "evt.tsh.heaven_without_friction.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_reject_effects",
+      "target": "evt.tsh.heaven_without_friction.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_reject",
+      "target": "beat.tsh.heaven_without_friction.reject",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_reject",
+      "target": "evt.tsh.heaven_without_friction.node.n_reject_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_repeat",
+      "target": "beat.tsh.heaven_without_friction.repeat",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction.node.n_repeat",
+      "target": "evt.tsh.heaven_without_friction.node.n_reject",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction",
+      "target": "char.iku_nagae",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction",
+      "target": "char.iku_nagae",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction",
+      "target": "char.tenshi_hinanawi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction",
+      "target": "char.tenshi_hinanawi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction",
+      "target": "event.tsh.heaven_without_friction.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction",
+      "target": "evt.tsh.heaven_without_friction",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction",
+      "target": "loc.heaven.frictionless_archive_gallery",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.tsh.heaven_without_friction",
       "target": "loc.heaven",
       "kind": "location"
     },
