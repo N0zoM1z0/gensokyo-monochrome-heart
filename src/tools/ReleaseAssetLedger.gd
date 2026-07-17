@@ -70,6 +70,7 @@ func _validate_record(
 	var required := [
 		"id", "path", "kind", "creator", "rights_basis", "license_id",
 		"source_paths", "sha256", "approval_status", "approval_basis",
+		"approved_by", "approved_at", "approval_evidence_path",
 		"accessibility_pair",
 	]
 	for field: String in required:
@@ -102,6 +103,14 @@ func _validate_record(
 		errors.append("asset is not release-approved: %s" % asset_id)
 	if String(record["approval_basis"]).strip_edges().is_empty():
 		errors.append("asset approval lacks an evidence note: %s" % asset_id)
+	if String(record["approved_by"]).strip_edges().is_empty():
+		errors.append("asset approval lacks a reviewer: %s" % asset_id)
+	var date_pattern := RegEx.create_from_string("^\\d{4}-\\d{2}-\\d{2}$")
+	if date_pattern.search(String(record["approved_at"])) == null:
+		errors.append("asset approval has an invalid date: %s" % asset_id)
+	var evidence_path := String(record["approval_evidence_path"])
+	if evidence_path.is_empty() or not FileAccess.file_exists("res://%s" % evidence_path):
+		errors.append("asset approval evidence is missing: %s" % asset_id)
 	var sources: Array = record["source_paths"]
 	if sources.is_empty():
 		errors.append("asset lacks source provenance: %s" % asset_id)

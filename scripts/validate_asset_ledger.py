@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -75,6 +76,9 @@ def validate(ledger: dict) -> list[str]:
         "sha256",
         "approval_status",
         "approval_basis",
+        "approved_by",
+        "approved_at",
+        "approval_evidence_path",
         "accessibility_pair",
     )
     for index, record in enumerate(ledger["records"]):
@@ -113,6 +117,15 @@ def validate(ledger: dict) -> list[str]:
             errors.append(f"asset is not release-approved: {asset_id}")
         if not isinstance(record["approval_basis"], str) or not record["approval_basis"].strip():
             errors.append(f"asset approval lacks an evidence note: {asset_id}")
+        if not isinstance(record["approved_by"], str) or not record["approved_by"].strip():
+            errors.append(f"asset approval lacks a reviewer: {asset_id}")
+        if not isinstance(record["approved_at"], str) or re.fullmatch(
+            r"\d{4}-\d{2}-\d{2}", record["approved_at"]
+        ) is None:
+            errors.append(f"asset approval has an invalid date: {asset_id}")
+        evidence_path = record["approval_evidence_path"]
+        if not isinstance(evidence_path, str) or not (ROOT / evidence_path).is_file():
+            errors.append(f"asset approval evidence is missing: {asset_id}")
         if not isinstance(record["source_paths"], list) or not record["source_paths"]:
             errors.append(f"asset lacks source provenance: {asset_id}")
         else:
@@ -171,6 +184,8 @@ def _credits(ledger: dict) -> str:
                 f"- Creator: {record['creator']}",
                 f"- Rights: {record['rights_basis']} / {license_note}",
                 f"- Approval: {record['approval_status']} — {record['approval_basis']}",
+                f"- Reviewed by: {record['approved_by']} on {record['approved_at']}",
+                f"- Evidence: `{record['approval_evidence_path']}`",
                 f"- SHA-256: `{record['sha256']}`",
                 "",
             )

@@ -21,6 +21,8 @@ Ledger policy: `2026.07.17.1`. Registered runtime assets: 7.
 - Creator: Gensokyo: Monochrome Heart project
 - Rights: project_original / project-original-fanwork
 - Approval: approved_for_release — Deterministic glyph-source and one-bit import validation
+- Reviewed by: codex-m16-technical-review on 2026-07-17
+- Evidence: `docs/reviews/m16_runtime_asset_foundation_review.md`
 - SHA-256: `d225988c0ae6f986d1681c886edf9ed02c8e49022ac5fbd948c4574d7efe119c`
 
 ### asset.font.dotgothic16.japanese
@@ -29,6 +31,8 @@ Ledger policy: `2026.07.17.1`. Registered runtime assets: 7.
 - Creator: The DotGothic16 Project Authors
 - Rights: licensed / OFL-1.1 (`LICENSES/DotGothic16-OFL-1.1.txt`)
 - Approval: approved_for_release — OFL text and synchronized source hash verified
+- Reviewed by: codex-m16-technical-review on 2026-07-17
+- Evidence: `docs/reviews/m16_runtime_asset_foundation_review.md`
 - SHA-256: `a042e37d1a36798f5a9dee9ab81d2fc4204950ae1729b856e4d22833a61997ee`
 
 ### asset.font.dotgothic16.latin
@@ -37,6 +41,8 @@ Ledger policy: `2026.07.17.1`. Registered runtime assets: 7.
 - Creator: The DotGothic16 Project Authors
 - Rights: licensed / OFL-1.1 (`LICENSES/DotGothic16-OFL-1.1.txt`)
 - Approval: approved_for_release — OFL text and synchronized source hash verified
+- Reviewed by: codex-m16-technical-review on 2026-07-17
+- Evidence: `docs/reviews/m16_runtime_asset_foundation_review.md`
 - SHA-256: `d29abf817463fdba7e9e87fc954cfa2b60ea6534e8a79c46e858a0dc5aa6a6f6`
 
 ### asset.art.marisa.model_m
@@ -45,6 +51,8 @@ Ledger policy: `2026.07.17.1`. Registered runtime assets: 7.
 - Creator: Gensokyo: Monochrome Heart project
 - Rights: project_original / project-original-fanwork
 - Approval: approved_for_release — M16 technical validation and original-source review
+- Reviewed by: codex-m16-technical-review on 2026-07-17
+- Evidence: `docs/reviews/m16_runtime_asset_foundation_review.md`
 - SHA-256: `b1fc0deb7f14efa1b97925a20208f426be440a23fc2bc9f201473adf486d3cf6`
 
 ### asset.art.reimu.model_m
@@ -53,6 +61,8 @@ Ledger policy: `2026.07.17.1`. Registered runtime assets: 7.
 - Creator: Gensokyo: Monochrome Heart project
 - Rights: project_original / project-original-fanwork
 - Approval: approved_for_release — M16 technical validation and original-source review
+- Reviewed by: codex-m16-technical-review on 2026-07-17
+- Evidence: `docs/reviews/m16_runtime_asset_foundation_review.md`
 - SHA-256: `606278dda62f806092ea174fa19eb793f109cd6d0ef3ef7e5f7049dba1068c0d`
 
 ### asset.art.marisa.model_m.inverted
@@ -61,6 +71,8 @@ Ledger policy: `2026.07.17.1`. Registered runtime assets: 7.
 - Creator: Gensokyo: Monochrome Heart project
 - Rights: project_original / project-original-fanwork
 - Approval: approved_for_release — M16 polarity validation against the Model M source
+- Reviewed by: codex-m16-technical-review on 2026-07-17
+- Evidence: `docs/reviews/m16_runtime_asset_foundation_review.md`
 - SHA-256: `172a5ac9187b6cfa757a252403aab0bfe6b06ead5662e42ea7ff456cc973a8fe`
 
 ### asset.art.reimu.model_m.inverted
@@ -69,4 +81,6 @@ Ledger policy: `2026.07.17.1`. Registered runtime assets: 7.
 - Creator: Gensokyo: Monochrome Heart project
 - Rights: project_original / project-original-fanwork
 - Approval: approved_for_release — M16 polarity validation against the Model M source
+- Reviewed by: codex-m16-technical-review on 2026-07-17
+- Evidence: `docs/reviews/m16_runtime_asset_foundation_review.md`
 - SHA-256: `5f3f29053e1c85b39ef00dec702a6c95305493dd022a7be610c081a6a71ce5ae`
