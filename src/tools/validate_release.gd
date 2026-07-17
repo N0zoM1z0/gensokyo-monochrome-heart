@@ -12,6 +12,12 @@ func _initialize() -> void:
 		errors = scanner.scan_roots([PLACEHOLDER_FIXTURE])
 	elif "--release" in arguments or BuildChannel.current() == BuildChannel.Kind.RELEASE:
 		errors = scanner.scan_release_inputs()
+		var ledger := ReleaseAssetLedger.new()
+		errors.append_array(ledger.validate_release_assets())
+		print(
+			"Asset provenance: registered=%d discovered=%d"
+			% [ledger.registered_files, ledger.discovered_files]
+		)
 	else:
 		print("Release validation skipped outside the release channel; pass --release to force it.")
 		quit(0)

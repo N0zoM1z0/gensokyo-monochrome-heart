@@ -19,4 +19,17 @@ fonts:
     name: "Kiri8 prototype"
     license: project_original
     status: approved_prototype
-assets: []
+assets:
+  - id: runtime_asset_ledger
+    name: "Per-file runtime asset credits"
+    source: "assets/asset_ledger.json"
+    generated_credit: "CREDITS.generated.md"
+    status: release_gate_enforced
+  - id: model_m_foundation
+    name: "Reimu and Marisa Model M sprite sheets and polarity variants"
+    license: project_original
+    status: approved_for_release
+  - id: kiri8
+    name: "Kiri8 Latin bitmap font"
+    license: project_original
+    status: approved_for_release

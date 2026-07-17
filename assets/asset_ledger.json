@@ -1,0 +1,145 @@
+{
+  "schema": "gmh-runtime-asset-ledger-v1",
+  "policy_revision": "2026.07.17.1",
+  "release_roots": [
+    "assets",
+    "ui"
+  ],
+  "excluded_directories": [
+    "placeholders",
+    "previews",
+    "raw",
+    "test_tones"
+  ],
+  "tracked_extensions": [
+    "flac",
+    "mp3",
+    "ogg",
+    "otf",
+    "png",
+    "svg",
+    "ttf",
+    "wav",
+    "webp",
+    "woff2"
+  ],
+  "records": [
+    {
+      "id": "asset.art.marisa.model_m",
+      "path": "assets/art/fighter/marisa_m_sheet.png",
+      "kind": "sprite_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/characters.js",
+        "design/06_art/visual_system_v2/assets/sprites/marisa_m_sheet.png"
+      ],
+      "sha256": "b1fc0deb7f14efa1b97925a20208f426be440a23fc2bc9f201473adf486d3cf6",
+      "approval_status": "approved_for_release",
+      "approval_basis": "M16 technical validation and original-source review",
+      "accessibility_pair": "asset.art.marisa.model_m.inverted"
+    },
+    {
+      "id": "asset.art.marisa.model_m.inverted",
+      "path": "assets/art/fighter/marisa_m_sheet_inverted.png",
+      "kind": "sprite_sheet_accessibility_variant",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/characters.js",
+        "design/06_art/visual_system_v2/assets/sprites/marisa_m_sheet_inverted.png"
+      ],
+      "sha256": "172a5ac9187b6cfa757a252403aab0bfe6b06ead5662e42ea7ff456cc973a8fe",
+      "approval_status": "approved_for_release",
+      "approval_basis": "M16 polarity validation against the Model M source",
+      "accessibility_pair": "asset.art.marisa.model_m"
+    },
+    {
+      "id": "asset.art.reimu.model_m",
+      "path": "assets/art/fighter/reimu_m_sheet.png",
+      "kind": "sprite_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/characters.js",
+        "design/06_art/visual_system_v2/assets/sprites/reimu_m_sheet.png"
+      ],
+      "sha256": "606278dda62f806092ea174fa19eb793f109cd6d0ef3ef7e5f7049dba1068c0d",
+      "approval_status": "approved_for_release",
+      "approval_basis": "M16 technical validation and original-source review",
+      "accessibility_pair": "asset.art.reimu.model_m.inverted"
+    },
+    {
+      "id": "asset.art.reimu.model_m.inverted",
+      "path": "assets/art/fighter/reimu_m_sheet_inverted.png",
+      "kind": "sprite_sheet_accessibility_variant",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/characters.js",
+        "design/06_art/visual_system_v2/assets/sprites/reimu_m_sheet_inverted.png"
+      ],
+      "sha256": "5f3f29053e1c85b39ef00dec702a6c95305493dd022a7be610c081a6a71ce5ae",
+      "approval_status": "approved_for_release",
+      "approval_basis": "M16 polarity validation against the Model M source",
+      "accessibility_pair": "asset.art.reimu.model_m"
+    },
+    {
+      "id": "asset.font.dotgothic16.japanese",
+      "path": "ui/fonts/DotGothic16-Japanese.woff2",
+      "kind": "font",
+      "creator": "The DotGothic16 Project Authors",
+      "rights_basis": "licensed",
+      "license_id": "OFL-1.1",
+      "license_path": "LICENSES/DotGothic16-OFL-1.1.txt",
+      "source_paths": [
+        "design/06_art/visual_system_v2/assets/fonts/DotGothic16-Japanese.woff2"
+      ],
+      "sha256": "a042e37d1a36798f5a9dee9ab81d2fc4204950ae1729b856e4d22833a61997ee",
+      "approval_status": "approved_for_release",
+      "approval_basis": "OFL text and synchronized source hash verified",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.font.dotgothic16.latin",
+      "path": "ui/fonts/DotGothic16-Latin.woff2",
+      "kind": "font",
+      "creator": "The DotGothic16 Project Authors",
+      "rights_basis": "licensed",
+      "license_id": "OFL-1.1",
+      "license_path": "LICENSES/DotGothic16-OFL-1.1.txt",
+      "source_paths": [
+        "design/06_art/visual_system_v2/assets/fonts/DotGothic16-Latin.woff2"
+      ],
+      "sha256": "d29abf817463fdba7e9e87fc954cfa2b60ea6534e8a79c46e858a0dc5aa6a6f6",
+      "approval_status": "approved_for_release",
+      "approval_basis": "OFL text and synchronized source hash verified",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.font.kiri8.latin",
+      "path": "ui/fonts/kiri8_latin.png",
+      "kind": "bitmap_font",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/pixel_core.js",
+        "scripts/sync_fonts.py"
+      ],
+      "sha256": "d225988c0ae6f986d1681c886edf9ed02c8e49022ac5fbd948c4574d7efe119c",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministic glyph-source and one-bit import validation",
+      "accessibility_pair": ""
+    }
+  ]
+}
