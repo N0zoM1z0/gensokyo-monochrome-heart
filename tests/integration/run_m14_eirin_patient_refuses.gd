@@ -57,7 +57,11 @@ func _state(profile_id: StringName) -> GameState:
 	for location: LocationRecord in _content.all_locations(): locations.append(location.id)
 	var state := GameStateFactory.create_new(profile_id, characters, locations, 2181)
 	state.chapter_id = &"chapter.1"
-	GameCommandDispatcher.new().dispatch(state, SetLocationCommand.new(&"loc.eientei"))
+	var dispatcher := GameCommandDispatcher.new()
+	dispatcher.dispatch(state, SetLocationCommand.new(&"loc.eientei"))
+	dispatcher.dispatch(state, SetEventPositionCommand.new(&"evt.eir.clinic_triage", &"n_route_predecessor"))
+	dispatcher.dispatch(state, CompleteEventCommand.new(&"evt.eir.clinic_triage", &"complete"))
+	dispatcher.dispatch(state, AdvanceRouteStageCommand.new(EIRIN, 1))
 	return state
 
 
