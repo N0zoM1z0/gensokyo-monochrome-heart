@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "cbfde9f3ea50bdeac866ece38b804d9ce1cc1079dab0a9a7772d1d52fe23d300",
+  "content_hash": "01d233a9c25b9f8746a01b26a2e866b54f15c8196e67ab1765e984e00057335b",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 103,
-    "dialogue_beats": 705,
-    "localization": 2028,
+    "events": 104,
+    "dialogue_beats": 713,
+    "localization": 2054,
     "music_cues": 89,
-    "event_nodes": 1692
+    "event_nodes": 1719
   },
   "ids": {
     "characters": [
@@ -203,6 +203,7 @@
       "evt.tsh.heaven_without_friction",
       "evt.tsh.imperfect_meal",
       "evt.tsh.keystone_construction",
+      "evt.tsh.promise",
       "evt.tsh.repair_she_finishes",
       "evt.yyk.bottomless_banquet",
       "evt.yyk.empty_plate",
@@ -862,6 +863,14 @@
       "beat.tsh.keystone_construction.patient",
       "beat.tsh.keystone_construction.plan",
       "beat.tsh.keystone_construction.playful",
+      "beat.tsh.promise.contract",
+      "beat.tsh.promise.friendship",
+      "beat.tsh.promise.postponed",
+      "beat.tsh.promise.romance_ask",
+      "beat.tsh.promise.romance_no",
+      "beat.tsh.promise.romance_yes",
+      "beat.tsh.promise.terms",
+      "beat.tsh.promise.undecided",
       "beat.tsh.repair_she_finishes.after",
       "beat.tsh.repair_she_finishes.defiant",
       "beat.tsh.repair_she_finishes.direct",
@@ -1243,6 +1252,12 @@
       "choice.tsh.keystone_construction.direct",
       "choice.tsh.keystone_construction.patient",
       "choice.tsh.keystone_construction.playful",
+      "choice.tsh.promise.friendship",
+      "choice.tsh.promise.postponed",
+      "choice.tsh.promise.romance",
+      "choice.tsh.promise.romance_no",
+      "choice.tsh.promise.romance_yes",
+      "choice.tsh.promise.undecided",
       "choice.tsh.repair_she_finishes.defiant",
       "choice.tsh.repair_she_finishes.direct",
       "choice.tsh.repair_she_finishes.patient",
@@ -1921,6 +1936,14 @@
       "dlg.tsh.keystone_construction.patient",
       "dlg.tsh.keystone_construction.plan",
       "dlg.tsh.keystone_construction.playful",
+      "dlg.tsh.promise.contract",
+      "dlg.tsh.promise.friendship",
+      "dlg.tsh.promise.postponed",
+      "dlg.tsh.promise.romance_ask",
+      "dlg.tsh.promise.romance_no",
+      "dlg.tsh.promise.romance_yes",
+      "dlg.tsh.promise.terms",
+      "dlg.tsh.promise.undecided",
       "dlg.tsh.repair_she_finishes.after",
       "dlg.tsh.repair_she_finishes.defiant",
       "dlg.tsh.repair_she_finishes.direct",
@@ -2053,6 +2076,7 @@
       "event.tsh.heaven_without_friction.title",
       "event.tsh.imperfect_meal.title",
       "event.tsh.keystone_construction.title",
+      "event.tsh.promise.title",
       "event.tsh.repair_she_finishes.title",
       "event.yyk.bottomless_banquet.title",
       "event.yyk.empty_plate.title",
@@ -2293,6 +2317,16 @@
       "journal.tsh.imperfect_meal.title",
       "journal.tsh.keystone_construction.body",
       "journal.tsh.keystone_construction.title",
+      "journal.tsh.promise.friendship.body",
+      "journal.tsh.promise.friendship.title",
+      "journal.tsh.promise.postponed.body",
+      "journal.tsh.promise.postponed.title",
+      "journal.tsh.promise.romance.body",
+      "journal.tsh.promise.romance.title",
+      "journal.tsh.promise.romance_declined.body",
+      "journal.tsh.promise.romance_declined.title",
+      "journal.tsh.promise.undecided.body",
+      "journal.tsh.promise.undecided.title",
       "journal.tsh.repair_she_finishes.body",
       "journal.tsh.repair_she_finishes.title",
       "journal.yyk.bottomless_banquet.body",
@@ -2385,6 +2419,7 @@
       "obj.tsh.heaven_without_friction.inspect",
       "obj.tsh.imperfect_meal.notice",
       "obj.tsh.keystone_construction.read",
+      "obj.tsh.promise.read",
       "obj.tsh.repair_she_finishes.inspect",
       "obj.yyk.bottomless_banquet.read_table",
       "obj.yyk.empty_plate.observe",
@@ -9542,6 +9577,86 @@
       "kind": "localization"
     },
     {
+      "source": "beat.tsh.promise.contract",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.promise.contract",
+      "target": "dlg.tsh.promise.contract",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.promise.friendship",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.promise.friendship",
+      "target": "dlg.tsh.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.promise.postponed",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.promise.postponed",
+      "target": "dlg.tsh.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.promise.romance_ask",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.promise.romance_ask",
+      "target": "dlg.tsh.promise.romance_ask",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.promise.romance_no",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.promise.romance_no",
+      "target": "dlg.tsh.promise.romance_no",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.promise.romance_yes",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.promise.romance_yes",
+      "target": "dlg.tsh.promise.romance_yes",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.promise.terms",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.promise.terms",
+      "target": "dlg.tsh.promise.terms",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.promise.undecided",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.promise.undecided",
+      "target": "dlg.tsh.promise.undecided",
+      "kind": "localization"
+    },
+    {
       "source": "beat.tsh.repair_she_finishes.after",
       "target": "char.tenshi_hinanawi",
       "kind": "speaker"
@@ -11689,6 +11804,36 @@
     {
       "source": "choice.tsh.keystone_construction.response",
       "target": "choice.tsh.keystone_construction.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.promise.intent",
+      "target": "choice.tsh.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.promise.intent",
+      "target": "choice.tsh.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.promise.intent",
+      "target": "choice.tsh.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.promise.intent",
+      "target": "choice.tsh.promise.undecided",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.promise.romance_consent",
+      "target": "choice.tsh.promise.romance_no",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.promise.romance_consent",
+      "target": "choice.tsh.promise.romance_yes",
       "kind": "localization"
     },
     {
@@ -31333,6 +31478,291 @@
     },
     {
       "source": "evt.tsh.keystone_construction",
+      "target": "loc.heaven",
+      "kind": "location"
+    },
+    {
+      "source": "evt.tsh.promise.node.n001",
+      "target": "evt.tsh.promise.node.n_contract",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n001",
+      "target": "mus_tenshi_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_contract",
+      "target": "beat.tsh.promise.contract",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_contract",
+      "target": "evt.tsh.promise.node.n_terms",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_friendship_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_friendship_effects",
+      "target": "evt.tsh.promise.node.n_friendship_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_friendship_journal",
+      "target": "evt.tsh.promise.node.n_friendship_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_friendship_journal",
+      "target": "journal.tsh.promise.friendship",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_friendship",
+      "target": "beat.tsh.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_friendship",
+      "target": "evt.tsh.promise.node.n_friendship_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_intent",
+      "target": "choice.tsh.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_intent",
+      "target": "evt.tsh.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_intent",
+      "target": "evt.tsh.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_intent",
+      "target": "evt.tsh.promise.node.n_romance_ask",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_intent",
+      "target": "evt.tsh.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_objective",
+      "target": "evt.tsh.promise.node.n_intent",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_objective",
+      "target": "obj.tsh.promise.read",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_objective",
+      "target": "prop.tsh.challenge_contract_ask_stop_terms",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_objective",
+      "target": "prop.tsh.terrain_scope_map",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_objective",
+      "target": "prop.tsh.two_signature_lines",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_postponed_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_postponed_effects",
+      "target": "evt.tsh.promise.node.n_postponed_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_postponed_journal",
+      "target": "evt.tsh.promise.node.n_postponed_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_postponed_journal",
+      "target": "journal.tsh.promise.postponed",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_postponed",
+      "target": "beat.tsh.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_postponed",
+      "target": "evt.tsh.promise.node.n_postponed_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_ask",
+      "target": "beat.tsh.promise.romance_ask",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_ask",
+      "target": "evt.tsh.promise.node.n_romance_consent",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_consent",
+      "target": "choice.tsh.promise.romance_consent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_consent",
+      "target": "evt.tsh.promise.node.n_romance_no",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_consent",
+      "target": "evt.tsh.promise.node.n_romance_yes",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_no_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_no_effects",
+      "target": "evt.tsh.promise.node.n_romance_no_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_no_journal",
+      "target": "evt.tsh.promise.node.n_romance_no_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_no_journal",
+      "target": "journal.tsh.promise.romance_declined",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_no",
+      "target": "beat.tsh.promise.romance_no",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_no",
+      "target": "evt.tsh.promise.node.n_romance_no_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_yes_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_yes_effects",
+      "target": "evt.tsh.promise.node.n_romance_yes_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_yes_journal",
+      "target": "evt.tsh.promise.node.n_romance_yes_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_yes_journal",
+      "target": "journal.tsh.promise.romance",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_yes",
+      "target": "beat.tsh.promise.romance_yes",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_romance_yes",
+      "target": "evt.tsh.promise.node.n_romance_yes_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_terms",
+      "target": "beat.tsh.promise.terms",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_terms",
+      "target": "evt.tsh.promise.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_undecided_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_undecided_effects",
+      "target": "evt.tsh.promise.node.n_undecided_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_undecided_journal",
+      "target": "evt.tsh.promise.node.n_undecided_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_undecided_journal",
+      "target": "journal.tsh.promise.undecided",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_undecided",
+      "target": "beat.tsh.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.promise.node.n_undecided",
+      "target": "evt.tsh.promise.node.n_undecided_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.promise",
+      "target": "char.tenshi_hinanawi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.promise",
+      "target": "char.tenshi_hinanawi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.promise",
+      "target": "event.tsh.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.promise",
+      "target": "evt.tsh.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.tsh.promise",
+      "target": "loc.heaven.challenge_contract_table",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.tsh.promise",
       "target": "loc.heaven",
       "kind": "location"
     },
