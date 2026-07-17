@@ -1,0 +1,28 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.rml.promise.choose,objective,,Choose what the midnight invitation may become; romance still requires a second answer.,真夜中の招待を何とするか選ぶ。恋愛には、さらにもう一度の返事が必要になる。,208,Original
+event.rml.promise.title,event_title,,A Fate With an Answer,返事のある運命,208,Original
+choice.rml.promise.friendship,choice,,Accept a standing invitation to midnight tea as friendship.,真夜中の茶会への常設の招待を、友情として受け取る。,248,Original
+choice.rml.promise.romance,choice,,Ask Remilia to name the romantic future—then hear its private condition.,レミリアに恋愛の未来を名づけてもらい、その私的な条件まで聞く。,248,Original
+choice.rml.promise.romance_yes,choice,,Say yes after hearing that refusal remains possible.,断ることもできると聞いた上で、受け入れる。,248,Original
+choice.rml.promise.romance_no,choice,,Say no; leave the future unclaimed without withdrawing the relationship.,断る。関係を取り下げず、未来を誰のものにもしない。,248,Original
+choice.rml.promise.postponed,choice,,Postpone the answer without choosing a deadline.,期限を決めずに、返事を保留する。,248,Original
+choice.rml.promise.undecided,choice,,Leave the second cup and the future unclaimed tonight.,今夜は二つ目の杯も未来も、誰のものにもせずにおく。,248,Original
+dlg.rml.promise.intro,dialogue,char.remilia_scarlet,"Midnight tea will continue to occur whenever I find the night deserving. I have reserved a second cup. Before I name why, we will decide what the invitation permits.",「真夜中の茶会は、夜にその価値があると私が思うたび開くわ。二つ目の杯を取ってある。理由を名づける前に、この招待が何を許すか決めましょう。」,248,Original
+dlg.rml.promise.ask,dialogue,char.remilia_scarlet,"Friendship can be a standing invitation. Another future requires both of us to name it. Not even I can declare your half and still call the result interesting.",「友情なら、いつでも有効な招待にできる。別の未来なら、二人で名づける必要があるわ。私でも、あなたの分まで宣言しておいて、その結果を面白いとは呼べないもの。」,248,Original
+dlg.rml.promise.friendship,dialogue,char.remilia_scarlet,"Then the second cup means friendship. Come when it is set out—no summons, no debt, and no need to make every midnight significant.",「では二つ目の杯は友情を意味する。置かれている時に来なさい。召喚でも借りでもなく、真夜中を毎回特別にする必要もないわ。」,248,Original
+dlg.rml.promise.romance_public,dialogue,char.remilia_scarlet,"I have decided our fate.",「私たちの運命は、私が決めたわ。」,248,Original
+dlg.rml.promise.romance_private,dialogue,char.remilia_scarlet,"That declaration was for the room. This addition is for you: You may still say no.",「今の宣言は部屋に聞かせるため。これは、あなたにだけ付け加える言葉よ。――それでも、断っていいわ。」,248,Original
+dlg.rml.promise.romance_approved,dialogue,char.remilia_scarlet,"Then I will call it ours, not mine. The declaration may remain grand; the answer remains something we can ask again whenever the future changes.",「なら、これは私のではなく、私たちの運命と呼ぶ。宣言は大仰なままでいい。でも答えは、未来が変わるたびにもう一度尋ねられるものとして残すわ。」,248,Original
+dlg.rml.promise.romance_declined,dialogue,char.remilia_scarlet,"Then no. The declaration was mine to make; your answer remains yours. Nothing is withdrawn, and nothing will be renamed to make refusal look temporary.",「なら、答えはいいえ。宣言するのは私の自由で、答えるのはあなたの自由よ。何も取り下げないし、断りを一時的に見せるための別名も付けないわ。」,248,Original
+dlg.rml.promise.postponed,dialogue,char.remilia_scarlet,"No deadline, then. An answer commanded by a date would be another schedule pretending to be fate. The invitation can wait without watching you.",「では期限はなし。日付に命じられた答えなど、運命のふりをした予定表よ。この招待は、あなたを見張らずに待てるわ。」,248,Original
+dlg.rml.promise.undecided,dialogue,char.remilia_scarlet,"Then tonight produces no verdict. Leave the second cup where it is. Uncertainty is not an empty throne that I must hurry to occupy.",「なら今夜は結論を出さない。二つ目の杯はそこに置いておきなさい。未定とは、私が急いで座るべき空の玉座ではないわ。」,248,Original
+journal.rml.promise.friendship.title,journal_title,,A Standing Midnight Invitation,真夜中の常設招待,248,Original
+journal.rml.promise.friendship.body,journal_body,,Friendship became a standing invitation to midnight tea: no summons, debt, or demand that every visit become significant.,友情は真夜中の茶会への常設の招待になった。召喚でも借りでもなく、訪れるたびに特別な意味を求められることもない。,248,Original
+journal.rml.promise.romance.title,journal_title,,A Fate With an Answer,返事のある運命,248,Original
+journal.rml.promise.romance.body,journal_body,,Remilia made a grand declaration, then privately preserved the right to refuse. Romance began only after a separate yes, and its answer may be asked again as the future changes.,レミリアは大仰に宣言した後、私的に断る権利を残した。恋愛は別の「はい」の後にだけ始まり、未来が変われば答えは改めて尋ねられる。,248,Original
+journal.rml.promise.romance_declined.title,journal_title,,The Fate That Heard No,いいえを聞いた運命,248,Original
+journal.rml.promise.romance_declined.body,journal_body,,The romantic declaration received a clear no. Remilia accepted it without penalty, withdrawal, reinterpretation, or a claim that refusal was temporary; the future remained unclaimed.,恋愛の宣言には、はっきりと「いいえ」が返された。レミリアは罰も撤回も言い換えもせず、断りが一時的だとも主張しなかった。未来は誰のものにもならずに残った。,248,Original
+journal.rml.promise.postponed.title,journal_title,,No Scheduled Answer,予定されない返事,248,Original
+journal.rml.promise.postponed.body,journal_body,,The answer was postponed without a deadline. The invitation remained open without watching, pressuring, or converting delay into debt.,返事は期限なしで保留された。招待は、監視も圧力もなく、遅れを借りに変えることもなく開かれたまま残った。,248,Original
+journal.rml.promise.undecided.title,journal_title,,No Claim at Midnight,真夜中に主張しない,248,Original
+journal.rml.promise.undecided.body,journal_body,,Neither the second cup nor the future was claimed. Remilia treated uncertainty as a complete answer rather than an empty position she was entitled to occupy.,二つ目の杯も未来も、誰のものにもならなかった。レミリアは未定を、自分が占めてよい空席ではなく、完全な答えとして扱った。,248,Original

@@ -156,6 +156,54 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records Remilia's own Archive refusal, preserved past choices, and ambiguous fate ability."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.midnight_tea_balcony",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A midnight balcony supports the standing tea invitation and a public-to-private consent transition."
+    },
+    {
+      "id": "prop.rml.midnight_tea_invitation",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An invitation card can hold friendship, romance, postponement, or uncertainty without assigning the answer in advance."
+    },
+    {
+      "id": "prop.rml.unclaimed_second_cup",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A second cup remains available without becoming owned when the future is postponed, declined, or undecided."
+    },
+    {
+      "id": "journal.rml.promise.friendship",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Friendship records a standing midnight-tea invitation without debt or consolation framing."
+    },
+    {
+      "id": "journal.rml.promise.romance",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Romance records explicit consent after the private right to refuse."
+    },
+    {
+      "id": "journal.rml.promise.romance_declined",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "A declined declaration completes without penalty, withdrawal, or reinterpretation."
+    },
+    {
+      "id": "journal.rml.promise.postponed",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Postponement records an open invitation with no deadline or pressure."
+    },
+    {
+      "id": "journal.rml.promise.undecided",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Uncertainty remains a complete future rather than a position Remilia may claim."
     }
   ]
 }

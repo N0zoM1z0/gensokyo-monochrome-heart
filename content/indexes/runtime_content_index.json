@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "01457b70bfab3b8c88b8bdaf5b2901f6b2ae4a5a3683e44be140f723c73d4593",
+  "content_hash": "ac1e67a0f5531575a63f5d3451a1e507aa1dcad733ad512d936528fdb61e766b",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 78,
-    "dialogue_beats": 452,
-    "localization": 1506,
+    "events": 79,
+    "dialogue_beats": 461,
+    "localization": 1533,
     "music_cues": 89,
-    "event_nodes": 1102
+    "event_nodes": 1130
   },
   "ids": {
     "characters": [
@@ -172,6 +172,7 @@
       "evt.rml.do_not_laugh_wrong_thing",
       "evt.rml.fate_she_does_not_announce",
       "evt.rml.predestination_exhibit",
+      "evt.rml.promise",
       "evt.rml.red_mist_etiquette",
       "evt.rml.the_audience",
       "evt.sdm.book_written_tomorrow",
@@ -558,6 +559,15 @@
       "beat.rml.predestination_exhibit.direct",
       "beat.rml.predestination_exhibit.patient",
       "beat.rml.predestination_exhibit.playful",
+      "beat.rml.promise.ask",
+      "beat.rml.promise.friendship",
+      "beat.rml.promise.intro",
+      "beat.rml.promise.postponed",
+      "beat.rml.promise.romance_approved",
+      "beat.rml.promise.romance_declined",
+      "beat.rml.promise.romance_private",
+      "beat.rml.promise.romance_public",
+      "beat.rml.promise.undecided",
       "beat.rml.red_mist_etiquette.after",
       "beat.rml.red_mist_etiquette.assist",
       "beat.rml.red_mist_etiquette.clear",
@@ -831,6 +841,12 @@
       "choice.rml.predestination_exhibit.direct",
       "choice.rml.predestination_exhibit.patient",
       "choice.rml.predestination_exhibit.playful",
+      "choice.rml.promise.friendship",
+      "choice.rml.promise.postponed",
+      "choice.rml.promise.romance",
+      "choice.rml.promise.romance_no",
+      "choice.rml.promise.romance_yes",
+      "choice.rml.promise.undecided",
       "choice.rml.red_mist_etiquette.defiant",
       "choice.rml.red_mist_etiquette.direct",
       "choice.rml.red_mist_etiquette.patient",
@@ -1242,6 +1258,15 @@
       "dlg.rml.predestination_exhibit.direct",
       "dlg.rml.predestination_exhibit.patient",
       "dlg.rml.predestination_exhibit.playful",
+      "dlg.rml.promise.ask",
+      "dlg.rml.promise.friendship",
+      "dlg.rml.promise.intro",
+      "dlg.rml.promise.postponed",
+      "dlg.rml.promise.romance_approved",
+      "dlg.rml.promise.romance_declined",
+      "dlg.rml.promise.romance_private",
+      "dlg.rml.promise.romance_public",
+      "dlg.rml.promise.undecided",
       "dlg.rml.red_mist_etiquette.after",
       "dlg.rml.red_mist_etiquette.assist",
       "dlg.rml.red_mist_etiquette.clear",
@@ -1369,6 +1394,7 @@
       "event.rml.do_not_laugh_wrong_thing.title",
       "event.rml.fate_she_does_not_announce.title",
       "event.rml.predestination_exhibit.title",
+      "event.rml.promise.title",
       "event.rml.red_mist_etiquette.title",
       "event.rml.the_audience.title",
       "event.sdm.competence_not_consent.title",
@@ -1517,6 +1543,16 @@
       "journal.rml.fate_she_does_not_announce.title",
       "journal.rml.predestination_exhibit.body",
       "journal.rml.predestination_exhibit.title",
+      "journal.rml.promise.friendship.body",
+      "journal.rml.promise.friendship.title",
+      "journal.rml.promise.postponed.body",
+      "journal.rml.promise.postponed.title",
+      "journal.rml.promise.romance.body",
+      "journal.rml.promise.romance.title",
+      "journal.rml.promise.romance_declined.body",
+      "journal.rml.promise.romance_declined.title",
+      "journal.rml.promise.undecided.body",
+      "journal.rml.promise.undecided.title",
       "journal.rml.red_mist_etiquette.body",
       "journal.rml.red_mist_etiquette.title",
       "journal.rml.the_audience.body",
@@ -1584,6 +1620,7 @@
       "obj.rml.do_not_laugh_wrong_thing.return_floor",
       "obj.rml.fate_she_does_not_announce.compare_plan",
       "obj.rml.predestination_exhibit.inspect_unopened",
+      "obj.rml.promise.choose",
       "obj.rml.red_mist_etiquette.read_paths",
       "obj.rml.the_audience.take_place",
       "obj.sdm.competence_not_consent.ask",
@@ -5952,6 +5989,96 @@
       "kind": "localization"
     },
     {
+      "source": "beat.rml.promise.ask",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.ask",
+      "target": "dlg.rml.promise.ask",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.promise.friendship",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.friendship",
+      "target": "dlg.rml.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.promise.intro",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.intro",
+      "target": "dlg.rml.promise.intro",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.promise.postponed",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.postponed",
+      "target": "dlg.rml.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.promise.romance_approved",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.romance_approved",
+      "target": "dlg.rml.promise.romance_approved",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.promise.romance_declined",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.romance_declined",
+      "target": "dlg.rml.promise.romance_declined",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.promise.romance_private",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.romance_private",
+      "target": "dlg.rml.promise.romance_private",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.promise.romance_public",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.romance_public",
+      "target": "dlg.rml.promise.romance_public",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.promise.undecided",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.promise.undecided",
+      "target": "dlg.rml.promise.undecided",
+      "kind": "localization"
+    },
+    {
       "source": "beat.rml.red_mist_etiquette.after",
       "target": "char.remilia_scarlet",
       "kind": "speaker"
@@ -7689,6 +7816,36 @@
     {
       "source": "choice.rml.predestination_exhibit.response",
       "target": "choice.rml.predestination_exhibit.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.promise.intent",
+      "target": "choice.rml.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.promise.intent",
+      "target": "choice.rml.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.promise.intent",
+      "target": "choice.rml.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.promise.intent",
+      "target": "choice.rml.promise.undecided",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.promise.romance_consent",
+      "target": "choice.rml.promise.romance_no",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.promise.romance_consent",
+      "target": "choice.rml.promise.romance_yes",
       "kind": "localization"
     },
     {
@@ -19298,6 +19455,296 @@
     },
     {
       "source": "evt.rml.predestination_exhibit",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.rml.promise.node.n001",
+      "target": "evt.rml.promise.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n001",
+      "target": "mus_remilia_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.rml.promise.node.n002",
+      "target": "evt.rml.promise.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n002",
+      "target": "obj.rml.promise.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.promise.node.n002",
+      "target": "prop.rml.midnight_tea_invitation",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.promise.node.n002",
+      "target": "prop.rml.unclaimed_second_cup",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.promise.node.n003",
+      "target": "beat.rml.promise.intro",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n003",
+      "target": "evt.rml.promise.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n004",
+      "target": "beat.rml.promise.ask",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n004",
+      "target": "evt.rml.promise.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n005",
+      "target": "choice.rml.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.rml.promise.node.n005",
+      "target": "evt.rml.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n005",
+      "target": "evt.rml.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n005",
+      "target": "evt.rml.promise.node.n_romance_public",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n005",
+      "target": "evt.rml.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_friendship",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_friendship",
+      "target": "evt.rml.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_postponed",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_postponed",
+      "target": "evt.rml.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_romance_declined",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_romance_declined",
+      "target": "evt.rml.promise.node.n_end_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_romance",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_romance",
+      "target": "evt.rml.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_undecided",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.promise.node.n_effects_undecided",
+      "target": "evt.rml.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_friendship",
+      "target": "beat.rml.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n_friendship",
+      "target": "evt.rml.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_friendship",
+      "target": "evt.rml.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_friendship",
+      "target": "journal.rml.promise.friendship",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_postponed",
+      "target": "evt.rml.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_postponed",
+      "target": "journal.rml.promise.postponed",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_romance_declined",
+      "target": "evt.rml.promise.node.n_effects_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_romance_declined",
+      "target": "journal.rml.promise.romance_declined",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_romance",
+      "target": "evt.rml.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_romance",
+      "target": "journal.rml.promise.romance",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_undecided",
+      "target": "evt.rml.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_journal_undecided",
+      "target": "journal.rml.promise.undecided",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.promise.node.n_postponed",
+      "target": "beat.rml.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n_postponed",
+      "target": "evt.rml.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_approved",
+      "target": "beat.rml.promise.romance_approved",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_approved",
+      "target": "evt.rml.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_consent",
+      "target": "choice.rml.promise.romance_consent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_consent",
+      "target": "evt.rml.promise.node.n_romance_approved",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_consent",
+      "target": "evt.rml.promise.node.n_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_declined",
+      "target": "beat.rml.promise.romance_declined",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_declined",
+      "target": "evt.rml.promise.node.n_journal_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_private",
+      "target": "beat.rml.promise.romance_private",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_private",
+      "target": "evt.rml.promise.node.n_romance_consent",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_public",
+      "target": "beat.rml.promise.romance_public",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n_romance_public",
+      "target": "evt.rml.promise.node.n_romance_private",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise.node.n_undecided",
+      "target": "beat.rml.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.promise.node.n_undecided",
+      "target": "evt.rml.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.promise",
+      "target": "char.remilia_scarlet",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.rml.promise",
+      "target": "char.remilia_scarlet",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.rml.promise",
+      "target": "event.rml.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.promise",
+      "target": "evt.rml.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.rml.promise",
+      "target": "loc.scarlet_devil_mansion.midnight_tea_balcony",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.rml.promise",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },
