@@ -56,8 +56,9 @@ func _expect_finale_semantics(evaluator: EventPredicateEvaluator) -> void:
 	for predicate: AvailabilityPredicateRecord in graph.availability:
 		if String(predicate.key).contains("player_test_answer") or String(predicate.key).contains("player_test_refused"):
 			_failures.append("Eirin finale required one valid Stage 2 consent answer: %s" % predicate.key)
-	for missing_flag: StringName in FINALE_FLAGS:
-		var state := _state(StringName("p224_missing_%s" % String(missing_flag).get_slice(".", 4)))
+	for missing_index: int in range(FINALE_FLAGS.size()):
+		var missing_flag := FINALE_FLAGS[missing_index]
+		var state := _state(StringName("p224%d" % (10 + missing_index)))
 		_complete(state, &"evt.eir.permanent_cure")
 		var present: Array[StringName] = []
 		for flag_id: StringName in FINALE_FLAGS:

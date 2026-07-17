@@ -12,13 +12,13 @@ func _initialize() -> void:
 		return
 	var graph := _content.graph(EVENT_ID)
 	var evaluator := EventPredicateEvaluator.new()
-	var locked := _state(&"p229_locked", false)
+	var locked := _state(&"p2294", false)
 	_expect(not evaluator.all_pass(evaluator.evaluate_all(graph.availability, locked)), "unwitnessed repair ignored the clear-no boundary evidence")
 	_run(graph, &"direct", 0); _run(graph, &"playful", 1); _run(graph, &"patient", 2); _run(graph, &"defiant", 3)
 	_finish(_failures)
 
 func _run(graph: EventGraphRecord, tone: StringName, index: int) -> void:
-	var state := _state(StringName("p229_%d" % index), true)
+	var state := _state(StringName("p229%d" % index), true)
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	_expect(result.status == EventInterpreterResult.Status.WAIT_INPUT and result.node_id == &"n_discovery", "%s did not show repair evidence before any character spoke" % tone)

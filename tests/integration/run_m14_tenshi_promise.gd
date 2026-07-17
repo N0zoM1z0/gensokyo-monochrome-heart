@@ -8,15 +8,17 @@ var _failures: Array[String] = []
 
 func _initialize() -> void:
 	if not _content.load_sources().is_success(): _finish(["Tenshi Promise content could not load"]); return
-	_run(&"direct", &"", &"friendship", &"formal_challenge_contract_friendship", &"journal.tsh.promise.friendship")
-	_run(&"playful", &"direct", &"romance", &"romance_contract_with_explicit_stop_clause", &"journal.tsh.promise.romance")
-	_run(&"playful", &"defiant", &"undecided", &"romance_declined_contract_and_attention_remain", &"journal.tsh.promise.romance_declined")
-	_run(&"patient", &"", &"postponed", &"challenge_contract_without_relationship_deadline", &"journal.tsh.promise.postponed")
-	_run(&"defiant", &"", &"undecided", &"future_unclaimed_contract_remains_open", &"journal.tsh.promise.undecided")
+	_run(&"direct", &"", &"friendship", &"formal_challenge_contract_friendship", &"journal.tsh.promise.friendship", 0)
+	_run(&"playful", &"direct", &"romance", &"romance_contract_with_explicit_stop_clause", &"journal.tsh.promise.romance", 1)
+	_run(&"playful", &"defiant", &"undecided", &"romance_declined_contract_and_attention_remain", &"journal.tsh.promise.romance_declined", 2)
+	_run(&"patient", &"", &"postponed", &"challenge_contract_without_relationship_deadline", &"journal.tsh.promise.postponed", 3)
+	_run(&"defiant", &"", &"undecided", &"future_unclaimed_contract_remains_open", &"journal.tsh.promise.undecided", 4)
 	_finish(_failures)
 
-func _run(tone: StringName, consent: StringName, intent: StringName, outcome: StringName, journal_id: StringName) -> void:
-	var state := _state(StringName("p231_%s_%s" % [tone, consent]))
+func _run(tone: StringName, consent: StringName, intent: StringName, outcome: StringName, journal_id: StringName, index: int) -> void:
+	var state := _state(StringName("p231%d" % index))
+	if intent == &"undecided":
+		GameCommandDispatcher.new().dispatch(state, SetRouteIntentCommand.new(TENSHI, &"romance"))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(_content.graph(EVENT_ID), state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line()

@@ -15,6 +15,8 @@ func _initialize() -> void:
 	_finish(_failures)
 func _run(graph: EventGraphRecord, intent: StringName, tone: StringName, outcome: StringName, index: int) -> void:
 	var state := _state(StringName("p177%d" % index))
+	if intent == &"undecided":
+		GameCommandDispatcher.new().dispatch(state, SetRouteIntentCommand.new(AYA, &"romance"))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line()
@@ -28,10 +30,14 @@ func _run(graph: EventGraphRecord, intent: StringName, tone: StringName, outcome
 	_expect(state.characters[AYA].route_stage == 7 and state.characters[AYA].route_intent == intent and state.journal.entries.has(StringName("journal.aya.promise.%s" % intent)), "%s did not persist Aya Promise evidence" % intent)
 
 func _run_romance_declined(graph: EventGraphRecord) -> void:
-	var state := _state(&"p177_declined")
+	var state := _state(&"p1774")
+	GameCommandDispatcher.new().dispatch(state, SetRouteIntentCommand.new(AYA, &"romance"))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
-	result = interpreter.advance_line(); result = interpreter.advance_line(); result = interpreter.choose_tone(&"playful"); result = interpreter.advance_line()
+	result = interpreter.advance_line()
+	result = interpreter.advance_line()
+	result = interpreter.choose_tone(&"playful")
+	result = interpreter.advance_line()
 	_expect(result.choice != null and result.choice.choice_id == &"choice.aya.promise.romance_consent", "declined portrait path did not wait for explicit consent")
 	result = interpreter.choose_tone(&"defiant"); result = interpreter.advance_line()
 	_expect(result.status == EventInterpreterResult.Status.END and result.outcome == &"portrait_declined_future_unclaimed", "declined portrait path did not complete as an intact unlabelled future")
@@ -54,4 +60,7 @@ func _state(profile_id: StringName) -> GameState:
 func _expect(condition: bool, message: String) -> void:
 	if not condition: _failures.append(message)
 func _finish(failures: Array[String]) -> void:
-	print("M14 Aya Promise integration: failures=%d" % failures.size()); for failure: String in failures: printerr("FAIL: %s" % failure); quit(0 if failures.is_empty() else 1)
+	print("M14 Aya Promise integration: failures=%d" % failures.size())
+	for failure: String in failures:
+		printerr("FAIL: %s" % failure)
+	quit(0 if failures.is_empty() else 1)

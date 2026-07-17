@@ -14,10 +14,10 @@ func _initialize() -> void:
 	_finish(_failures)
 
 func _expect_private_fact_gate(graph: EventGraphRecord) -> void:
-	var locked_state := _state(&"p176_locked", false)
+	var locked_state := _state(&"p1764", false)
 	var locked := EventInterpreter.new().start(graph, locked_state, _content)
 	_expect(locked.is_error(), "Tomorrow's Front Page started without a private fact being withheld")
-	var open_state := _state(&"p176_open", true)
+	var open_state := _state(&"p1765", true)
 	var open := EventInterpreter.new().start(graph, open_state, _content)
 	_expect(not open.is_error() and open.node_id == &"n003", "Tomorrow's Front Page remained locked after the private fact was withheld")
 
@@ -39,4 +39,7 @@ func _state(profile_id: StringName, has_private_fact: bool = true) -> GameState:
 func _expect(condition: bool, message: String) -> void:
 	if not condition: _failures.append(message)
 func _finish(failures: Array[String]) -> void:
-	print("M14 Aya Tomorrow's Front Page integration: failures=%d" % failures.size()); for failure: String in failures: printerr("FAIL: %s" % failure); quit(0 if failures.is_empty() else 1)
+	print("M14 Aya Tomorrow's Front Page integration: failures=%d" % failures.size())
+	for failure: String in failures:
+		printerr("FAIL: %s" % failure)
+	quit(0 if failures.is_empty() else 1)

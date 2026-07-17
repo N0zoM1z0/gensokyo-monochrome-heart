@@ -11,11 +11,12 @@ func _initialize() -> void:
 		_finish(["Tenshi Heaven Without Friction content could not load"])
 		return
 	var graph := _content.graph(EVENT_ID)
-	for tone: StringName in [&"direct", &"playful", &"patient", &"defiant"]: _run(graph, tone)
+	for index: int in range(EventGraphValidator.TONES.size()):
+		_run(graph, EventGraphValidator.TONES[index], index)
 	_finish(_failures)
 
-func _run(graph: EventGraphRecord, tone: StringName) -> void:
-	var state := _state(StringName("p230_%s" % tone))
+func _run(graph: EventGraphRecord, tone: StringName, index: int) -> void:
+	var state := _state(StringName("p230%d" % index))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line(); result = interpreter.advance_line()

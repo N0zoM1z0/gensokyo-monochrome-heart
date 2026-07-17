@@ -39,4 +39,7 @@ func _state(profile_id: StringName) -> GameState:
 func _expect(condition: bool, message: String) -> void:
 	if not condition: _failures.append(message)
 func _finish(failures: Array[String]) -> void:
-	print("M14 Aya Hidden Folder integration: failures=%d" % failures.size()); for failure: String in failures: printerr("FAIL: %s" % failure); quit(0 if failures.is_empty() else 1)
+	print("M14 Aya Hidden Folder integration: failures=%d" % failures.size())
+	for failure: String in failures:
+		printerr("FAIL: %s" % failure)
+	quit(0 if failures.is_empty() else 1)

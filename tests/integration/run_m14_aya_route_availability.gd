@@ -28,7 +28,7 @@ func _initialize() -> void:
 
 func _expect_route_gate(evaluator: EventPredicateEvaluator, event_id: StringName, index: int) -> void:
 	var graph := _content.graph(event_id)
-	var locked := _state(StringName("p178_locked_%d" % index))
+	var locked := _state(StringName("p178%d" % index))
 	if index > 0:
 		_expect(
 			not evaluator.all_pass(evaluator.evaluate_all(graph.availability, locked)),

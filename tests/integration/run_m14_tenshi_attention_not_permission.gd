@@ -12,11 +12,12 @@ func _initialize() -> void:
 		return
 	var graph := _content.graph(EVENT_ID)
 	_expect(_content.localized_string(&"dlg.tsh.attention_not_permission.patient").japanese.contains("私の修復を見届ける義務はない"), "Japanese boundary text no longer says the player need not witness Tenshi's repair")
-	for tone: StringName in [&"direct", &"playful", &"patient", &"defiant"]: _run(graph, tone)
+	for index: int in range(EventGraphValidator.TONES.size()):
+		_run(graph, EventGraphValidator.TONES[index], index)
 	_finish(_failures)
 
-func _run(graph: EventGraphRecord, tone: StringName) -> void:
-	var state := _state(StringName("p228_%s" % tone))
+func _run(graph: EventGraphRecord, tone: StringName, index: int) -> void:
+	var state := _state(StringName("p228%d" % index))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line()

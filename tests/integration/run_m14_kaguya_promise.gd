@@ -21,6 +21,8 @@ func _initialize() -> void:
 
 func _run(graph: EventGraphRecord, intent: StringName, tone: StringName, outcome: StringName, index: int) -> void:
 	var state := _state(StringName("p188%d" % index))
+	if intent == &"undecided":
+		GameCommandDispatcher.new().dispatch(state, SetRouteIntentCommand.new(KAGUYA, &"romance"))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line()

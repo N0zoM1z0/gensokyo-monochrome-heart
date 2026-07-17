@@ -18,7 +18,7 @@ func _initialize() -> void:
 
 
 func _expect_predecessor_gate(graph: EventGraphRecord) -> void:
-	var result := EventInterpreter.new().start(graph, _state(&"p185_locked", false), _content)
+	var result := EventInterpreter.new().start(graph, _state(&"p1854", false), _content)
 	_expect(result.is_error(), "mortality conversation started before Kaguya accepted a finite loss")
 
 

@@ -33,9 +33,9 @@ func _run(graph: EventGraphRecord, tone: StringName, index: int) -> void:
 
 func _test_semantic_gate(graph: EventGraphRecord) -> void:
 	var evaluator := EventPredicateEvaluator.new()
-	var missing := _state(&"p214_missing", false)
+	var missing := _state(&"p2144", false)
 	_expect(not evaluator.all_pass(evaluator.evaluate_all(graph.availability, missing)), "Archive crisis ignored consent and ordinary-care prerequisites")
-	var ready := _state(&"p214_ready", true)
+	var ready := _state(&"p2145", true)
 	_expect(evaluator.all_pass(evaluator.evaluate_all(graph.availability, ready)), "Archive crisis remained locked after semantic prerequisites")
 
 

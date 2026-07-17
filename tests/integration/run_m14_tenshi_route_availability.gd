@@ -14,7 +14,7 @@ func _initialize() -> void:
 	_finish(_failures)
 
 func _expect_gate(evaluator: EventPredicateEvaluator, event_id: StringName, index: int) -> void:
-	var state := _state(StringName("p232_%d" % index))
+	var state := _state(StringName("p232%d" % index))
 	var graph := _content.graph(event_id)
 	if index == 0:
 		_expect(evaluator.all_pass(evaluator.evaluate_all(graph.availability, state)), "Tenshi opening event was unavailable"); return
@@ -27,8 +27,9 @@ func _expect_gate(evaluator: EventPredicateEvaluator, event_id: StringName, inde
 
 func _expect_finale_semantics(evaluator: EventPredicateEvaluator) -> void:
 	var graph := _content.graph(&"evt.tsh.promise")
-	for missing: StringName in FINALE_FLAGS:
-		var state := _state(StringName("p232_missing_%s" % String(missing).get_slice(".", 4)))
+	for missing_index: int in range(FINALE_FLAGS.size()):
+		var missing := FINALE_FLAGS[missing_index]
+		var state := _state(StringName("p232%d" % (10 + missing_index)))
 		_complete(state, &"evt.tsh.heaven_without_friction")
 		var present: Array[StringName] = []
 		for flag_id: StringName in FINALE_FLAGS:

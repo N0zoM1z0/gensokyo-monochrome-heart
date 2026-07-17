@@ -346,6 +346,12 @@ run_checked "M13 recorded-strategy Archive prototype" env XDG_DATA_HOME="$LOG_DI
 # Every authored M14 integration script is a release gate. Keep this inventory
 # check adjacent to the invocations so a newly added route test cannot silently
 # remain outside normal verification.
+if grep -En 'for .*:.*;[[:space:]]*quit\(' tests/integration/run_m14_*.gd; then
+	fail "M14 integration quit must remain outside loop bodies"
+fi
+if grep -En 'p[0-9]+_' tests/integration/run_m14_*.gd; then
+	fail "M14 integration fixtures must use valid numeric story profile IDs"
+fi
 for M14_TEST_PATH in tests/integration/run_m14_*.gd; do
 	M14_RESOURCE="res://${M14_TEST_PATH}"
 	M14_MATCHES="$(grep -F -c "$M14_RESOURCE" scripts/verify_project.sh || true)"

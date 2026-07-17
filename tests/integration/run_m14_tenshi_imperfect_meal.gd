@@ -13,11 +13,12 @@ func _initialize() -> void:
 	var graph := _content.graph(EVENT_ID)
 	_expect(graph.location_id == &"loc.human_village" and graph.spot_id == &"loc.human_village.market_side_step", "the ground-level meal remained staged in Heaven")
 	_expect(_content.event(EVENT_ID).location_id == &"loc.human_village", "the meal index and playable event disagree about its ground location")
-	for tone: StringName in [&"direct", &"playful", &"patient", &"defiant"]: _run(graph, tone)
+	for index: int in range(EventGraphValidator.TONES.size()):
+		_run(graph, EventGraphValidator.TONES[index], index)
 	_finish(_failures)
 
-func _run(graph: EventGraphRecord, tone: StringName) -> void:
-	var state := _state(StringName("p227_%s" % tone))
+func _run(graph: EventGraphRecord, tone: StringName, index: int) -> void:
+	var state := _state(StringName("p227%d" % index))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line()

@@ -23,6 +23,8 @@ func _initialize() -> void:
 
 func _run(graph: EventGraphRecord, intent: StringName, tone: StringName, outcome: StringName, index: int) -> void:
 	var state := _state(StringName("p215%d" % index), true)
+	if intent == &"undecided":
+		GameCommandDispatcher.new().dispatch(state, SetRouteIntentCommand.new(SANAE, &"romance"))
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line()
@@ -37,7 +39,7 @@ func _run(graph: EventGraphRecord, intent: StringName, tone: StringName, outcome
 
 
 func _run_romance_declined(graph: EventGraphRecord) -> void:
-	var state := _state(&"p215_declined", true)
+	var state := _state(&"p2154", true)
 	var interpreter := EventInterpreter.new()
 	var result := interpreter.start(graph, state, _content)
 	result = interpreter.advance_line(); result = interpreter.advance_line(); result = interpreter.choose_tone(&"playful"); result = interpreter.advance_line()
@@ -51,8 +53,8 @@ func _run_romance_declined(graph: EventGraphRecord) -> void:
 
 func _test_semantic_gate(graph: EventGraphRecord) -> void:
 	var evaluator := EventPredicateEvaluator.new()
-	_expect(not evaluator.all_pass(evaluator.evaluate_all(graph.availability, _state(&"p215_missing", false))), "promise ignored semantic boundary repair")
-	_expect(evaluator.all_pass(evaluator.evaluate_all(graph.availability, _state(&"p215_ready", true))), "promise remained locked after semantic boundary repair")
+	_expect(not evaluator.all_pass(evaluator.evaluate_all(graph.availability, _state(&"p2155", false))), "promise ignored semantic boundary repair")
+	_expect(evaluator.all_pass(evaluator.evaluate_all(graph.availability, _state(&"p2156", true))), "promise remained locked after semantic boundary repair")
 
 
 func _state(profile_id: StringName, semantic_flags: bool) -> GameState:

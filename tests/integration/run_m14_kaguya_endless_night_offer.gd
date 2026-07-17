@@ -18,7 +18,7 @@ func _initialize() -> void:
 
 
 func _expect_predecessor_gate(graph: EventGraphRecord) -> void:
-	var result := EventInterpreter.new().start(graph, _state(&"p187_locked", false), _content)
+	var result := EventInterpreter.new().start(graph, _state(&"p1874", false), _content)
 	_expect(result.is_error(), "Archive offer started before Mokou's warning")
 
 

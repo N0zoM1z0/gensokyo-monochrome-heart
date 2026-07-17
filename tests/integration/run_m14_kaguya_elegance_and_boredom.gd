@@ -18,7 +18,7 @@ func _initialize() -> void:
 
 
 func _expect_predecessor_gate(graph: EventGraphRecord) -> void:
-	var locked := EventInterpreter.new().start(graph, _state(&"p182_locked", false), _content)
+	var locked := EventInterpreter.new().start(graph, _state(&"p1824", false), _content)
 	_expect(locked.is_error(), "Elegance and Boredom started before Five Impossible Errands completed")
 
 
