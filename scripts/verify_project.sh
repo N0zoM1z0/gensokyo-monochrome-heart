@@ -357,6 +357,8 @@ run_checked "M14 Reimu Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_reimu_promise_event.gd
 run_checked "M14 Marisa Crash Landing event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_marisa_crash_landing.gd
+run_checked "M14 Marisa Broom Backseat runtime" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_marisa_broom_backseat.gd
 run_checked "M14 Marisa Field Notes event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_marisa_field_notes.gd
 run_checked "M14 Marisa shelf boundary event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
@@ -397,6 +399,114 @@ run_checked "M14 Youmu Archive farewell event" env XDG_DATA_HOME="$LOG_DIR/user-
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_farewell.gd
 run_checked "M14 Youmu Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_youmu_promise.gd
+run_checked "M14 Aya Exclusive Interview event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_aya_exclusive_interview.gd
+run_checked "M14 Aya Wind-Frame Graze event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_aya_wind_frame_graze.gd
+run_checked "M14 Aya Hidden Folder event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_aya_hidden_folder.gd
+run_checked "M14 Aya correction event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_aya_story_published_too_soon.gd
+run_checked "M14 Aya Camera Down event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_aya_camera_down.gd
+run_checked "M14 Aya Tomorrow's Front Page event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_aya_tomorrows_front_page.gd
+run_checked "M14 Aya Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_aya_promise.gd
+run_checked "M14 Aya route availability and semantic finale gates" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_aya_route_availability.gd
+run_checked "M14 Kaguya Five Impossible Errands event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_kaguya_five_impossibilities.gd
+run_checked "M14 Kaguya Elegance and Boredom event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_kaguya_elegance_and_boredom.gd
+run_checked "M14 Kaguya No Continue event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_kaguya_game_with_no_continue.gd
+run_checked "M14 Kaguya Short-Lived Guest event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_kaguya_short_lived_guest.gd
+run_checked "M14 Kaguya Mokou honesty event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_kaguya_mokou_uninvited_honesty.gd
+run_checked "M14 Kaguya Endless Night offer" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_kaguya_endless_night_offer.gd
+run_checked "M14 Kaguya Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_kaguya_promise.gd
+run_checked "M14 Kaguya route availability and semantic finale gates" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_kaguya_route_availability.gd
+run_checked "M14 Patchouli breathing room event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_patchouli_library_breathing_room.gd
+run_checked "M14 Patchouli shared silence event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_patchouli_shared_silence.gd
+run_checked "M14 Patchouli borrowing boundary event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_patchouli_borrowing_argument.gd
+run_checked "M14 Patchouli unfinished spell event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_patchouli_spell_for_two_readers.gd
+run_checked "M14 Patchouli Book Answers Everything event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_patchouli_book_answers_everything.gd
+run_checked "M14 Patchouli Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_patchouli_promise.gd
+run_checked "M14 Patchouli route availability and semantic finale gates" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_patchouli_route_availability.gd
+run_checked "M14 Remilia The Audience event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_remilia_the_audience.gd
+run_checked "M14 Remilia Red Mist Etiquette event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_remilia_red_mist_etiquette.gd
+run_checked "M14 Remilia Small Chair event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_remilia_small_chair.gd
+run_checked "M14 Remilia dignity repair event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_remilia_do_not_laugh_wrong_thing.gd
+run_checked "M14 Remilia unannounced fate event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_remilia_fate_she_does_not_announce.gd
+run_checked "M14 Remilia Predestination Exhibit event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_remilia_predestination_exhibit.gd
+run_checked "M14 Remilia Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_remilia_promise.gd
+run_checked "M14 Remilia route availability and semantic finale gates" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_remilia_route_availability.gd
+run_checked "M14 Yuyuko Bottomless Banquet event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_yuyuko_bottomless_banquet.gd
+run_checked "M14 Yuyuko death-joke boundary event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_yuyuko_joke_about_death.gd
+run_checked "M14 Yuyuko Empty Plate event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_yuyuko_empty_plate.gd
+run_checked "M14 Yuyuko lightness event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_yuyuko_lightness_not_shallowness.gd
+run_checked "M14 Yuyuko host responsibility event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_yuyuko_hosts_responsibility.gd
+run_checked "M14 Yuyuko Feast Without Ending event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_yuyuko_feast_without_ending.gd
+run_checked "M14 Yuyuko Last Sweet Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_yuyuko_last_sweet.gd
+run_checked "M14 Yuyuko route availability and semantic finale gates" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_yuyuko_route_availability.gd
+run_checked "M14 Sanae Faith Festival Planner event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sanae_faith_festival_planner.gd
+run_checked "M14 Sanae Outside World Shorthand event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sanae_outside_world_shorthand.gd
+run_checked "M14 Sanae Shrine Between Homes event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sanae_shrine_between_homes.gd
+run_checked "M14 Sanae Publicity Versus Belief event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sanae_measurable_faith.gd
+run_checked "M14 Sanae Ordinary Miracle event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sanae_ordinary_miracle.gd
+run_checked "M14 Sanae Guaranteed Faith event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sanae_guaranteed_faith.gd
+run_checked "M14 Sanae Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sanae_promise.gd
+run_checked "M14 Sanae route availability and semantic finale gates" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_sanae_route_availability.gd
+run_checked "M14 Eirin Clinic Triage event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_clinic_triage.gd
+run_checked "M14 Eirin consent refusal event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_patient_refuses.gd
+run_checked "M14 Eirin practical care event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_practical_care.gd
+run_checked "M14 Eirin non-volunteering boundary event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_do_not_volunteer.gd
+run_checked "M14 Eirin doctor sleeps event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_doctor_sleeps.gd
+run_checked "M14 Eirin Permanent Cure event" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_permanent_cure.gd
+run_checked "M14 Eirin Promise finale" env XDG_DATA_HOME="$LOG_DIR/user-data" \
+	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_promise.gd
 run_checked "M14 Eirin route availability and semantic finale gates" env XDG_DATA_HOME="$LOG_DIR/user-data" \
 	"$GODOT_BIN" --headless --path . --script res://tests/integration/run_m14_eirin_route_availability.gd
 run_checked "M14 Tenshi Entrance Tremor integration" env XDG_DATA_HOME="$LOG_DIR/user-data" \
