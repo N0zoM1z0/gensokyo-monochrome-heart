@@ -73,4 +73,5 @@ longer resolves. Unknown external or future states are still rejected.
 A listener review must judge audibility, fatigue, ducking, cue priority, and the
 balance of all five stem families on a real audio driver. Automated state,
 rights, and amplitude checks are supporting evidence, not a substitute for that
-human listening gate.
+human listening gate. Use `docs/reviews/m16_audio_listener_signoff.md` to record
+the result without conflating device listening with headless verification.
