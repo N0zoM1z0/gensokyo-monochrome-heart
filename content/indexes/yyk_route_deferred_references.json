@@ -78,6 +78,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records relational memory and an ending respected without forced reconstruction."
+    },
+    {
+      "id": "loc.hakugyokurou.memorial_ribbon_walk",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A ribbon walk can visibly hold bright festival welcome and memorial weight in the same space."
+    },
+    {
+      "id": "prop.yyk.memorial_ribbon",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A crooked bright ribbon expresses chosen lightness without erasing whom the memorial carries."
+    },
+    {
+      "id": "prop.yyk.stopped_fan_marker",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A stopped fan makes Yuyuko's real boundary legible before levity resumes."
+    },
+    {
+      "id": "journal.yyk.lightness_not_shallowness",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal preserves both the strain caused by imposed solemnity and Yuyuko's chosen lightness."
     }
   ]
 }
