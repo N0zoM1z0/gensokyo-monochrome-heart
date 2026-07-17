@@ -1,13 +1,13 @@
 {
   "schema": "gmh-runtime-content-index-v2",
   "content_revision": "2026.07.17.1",
-  "content_hash": "f0b37b60584a34d961414c2b64af28c2a9a5a1ebead4c385e5a253def2356c15",
+  "content_hash": "ee671b230f388763ab81de228f94714ccc0d3187ee94525c962d9e3684a5399e",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 104,
     "dialogue_beats": 713,
-    "localization": 2063,
+    "localization": 2065,
     "music_cues": 89,
     "event_nodes": 1720,
     "seasonal_events": 8
@@ -2800,8 +2800,10 @@
       "ui.minigame.quiet_chore.tutorial.footer",
       "ui.minigame.quiet_chore.tutorial.header",
       "ui.minigame.soul_garden.active.footer",
+      "ui.minigame.soul_garden.carry_release",
       "ui.minigame.soul_garden.instruction.collect",
       "ui.minigame.soul_garden.instruction.release",
+      "ui.minigame.soul_garden.move_align",
       "ui.minigame.soul_garden.note.collected",
       "ui.minigame.soul_garden.note.empty",
       "ui.minigame.soul_garden.note.mismatch",

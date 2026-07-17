@@ -34,6 +34,7 @@ var _profile: PresentationProfile = PresentationProfileRegistry.resolve(&"A")
 var _locale: StringName = &"en"
 var _catalog := UiTextCatalog.new()
 var _resolver: LocalizedContentResolver
+var _region_tiles := ProductionRegionTiles.new()
 var _latin_font: Font
 var _japanese_font: Font
 var _current_interactable: ExplorationInteractable
@@ -565,9 +566,6 @@ func _draw_world(foreground: Color, background: Color) -> void:
 
 
 func _draw_shrine_world(foreground: Color, background: Color) -> void:
-	for y: int in range(22, 88, 6):
-		for x: int in range(2 + floori(y / 6.0) % 2 * 3, 320, 6):
-			draw_rect(Rect2(x, y, 1, 1), foreground)
 	var offset := -_camera_x
 	# Far tree and low shrine silhouette establish the veranda.
 	_draw_tree(Vector2(28 + offset, 104), foreground, background)
@@ -582,6 +580,16 @@ func _draw_shrine_world(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(48 + offset, 136, 576, 5), foreground)
 	for plank_x: int in range(50, 625, 16):
 		draw_line(Vector2(plank_x + offset, 137), Vector2(plank_x + offset, 140), background, 1.0)
+	_draw_production_region_sockets(
+		&"loc.hakurei_shrine",
+		[
+			Vector2(116, 80), Vector2(230, 80), Vector2(284, 80),
+			Vector2(340, 84), Vector2(454, 84), Vector2(576, 84),
+			Vector2(52, 104), Vector2(612, 104),
+		],
+		[16, 17, 18, 19, 20, 21, 32, 36],
+		offset
+	)
 	# Adjacent room has paper panels and a dense eave, but shares the traversable floor.
 	draw_rect(Rect2(320 + offset, 54, 320, 18), foreground)
 	for panel_x: int in range(328, 632, 40):
@@ -600,14 +608,25 @@ func _draw_shrine_world(foreground: Color, background: Color) -> void:
 
 func _draw_mansion_world(foreground: Color, background: Color) -> void:
 	var offset := -_camera_x
-	for tile_y: int in range(26, 137, 16):
-		for tile_x: int in range(8, 632, 24):
-			if posmod(floori(tile_x / 24.0) + floori(tile_y / 16.0), 2) == 0:
-				draw_rect(Rect2(tile_x + offset, tile_y, 12, 8), foreground, false, 1.0)
+	for window_x: int in [16, 48, 256, 288, 336, 368, 576, 608]:
+		var window_rect := Rect2(window_x + offset, 30, 24, 18)
+		draw_rect(window_rect, foreground, false, 1.0)
+		draw_line(window_rect.position + Vector2(12, 0), window_rect.position + Vector2(12, 18), foreground, 1.0)
+		draw_line(window_rect.position + Vector2(0, 9), window_rect.position + Vector2(24, 9), foreground, 1.0)
 	draw_rect(Rect2(8 + offset, 136, 616, 5), foreground)
 	draw_rect(Rect2(320 + offset, 42, 304, 22), foreground)
 	for pillar_x: int in [24, 174, 310, 338, 470, 610]:
 		draw_rect(Rect2(pillar_x + offset, 62, 6, 76), foreground)
+	_draw_production_region_sockets(
+		&"loc.scarlet_devil_mansion",
+		[
+			Vector2(16, 54), Vector2(48, 54), Vector2(256, 54), Vector2(288, 54),
+			Vector2(336, 54), Vector2(368, 54), Vector2(576, 54), Vector2(608, 54),
+			Vector2(260, 108),
+		],
+		[16, 17, 18, 19, 20, 21, 22, 23, 41],
+		offset
+	)
 	_draw_clock(Vector2(118 + offset, 91), foreground, background)
 	_draw_service_tray(Vector2(220 + offset, 130), foreground, background)
 	_draw_door(Vector2(306 + offset, 136), foreground, background)
@@ -637,6 +656,16 @@ func _draw_mountain_world(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(8 + offset, 136, 616, 5), foreground)
 	for x: int in range(70, 620, 42):
 		draw_line(Vector2(x + offset, 137), Vector2(x + 12 + offset, 137), background, 1.0)
+	_draw_production_region_sockets(
+		&"loc.youkai_mountain",
+		[
+			Vector2(76, 104), Vector2(92, 112), Vector2(332, 112),
+			Vector2(480, 104), Vector2(496, 112), Vector2(616, 112),
+			Vector2(456, 72), Vector2(584, 72),
+		],
+		[0, 1, 2, 3, 4, 5, 48, 49],
+		offset
+	)
 	# Paper, intact guardrail, rope bridge, patrol notice, and camera perch mirror
 	# the typed interaction anchors in the spot packet.
 	_draw_newspaper(Vector2(118 + offset, 130), foreground, background)
@@ -676,7 +705,7 @@ func _draw_bamboo_loop_world(foreground: Color, background: Color) -> void:
 	# One moon shifts by a small, countable amount each loop; broad empty sky stays readable.
 	draw_circle(Vector2(72 + offset + dawn * 9, 48 + dawn * 3), 19, foreground)
 	draw_circle(Vector2(78 + offset + dawn * 9, 45 + dawn * 3), 17, background)
-	for x: int in range(18, 636, 38):
+	for x: int in [18, 32, 96, 172, 248, 300, 338, 372, 448, 524, 600, 620]:
 		var sway := posmod(floori(x / 38.0) + dawn, 3) - 1
 		draw_rect(Rect2(x + offset + sway, 37, 7, 101), foreground)
 		for notch: int in range(dawn + 1):
@@ -692,6 +721,16 @@ func _draw_bamboo_loop_world(foreground: Color, background: Color) -> void:
 	draw_rect(Rect2(552 + offset, 78, 5, 60), foreground)
 	draw_rect(Rect2(615 + offset, 78, 5, 60), foreground)
 	draw_rect(Rect2(8 + offset, 136, 616, 5), foreground)
+	_draw_production_region_sockets(
+		&"loc.eientei",
+		[
+			Vector2(56, 88), Vector2(112, 72), Vector2(184, 88), Vector2(232, 72),
+			Vector2(328, 88), Vector2(408, 72), Vector2(472, 88), Vector2(536, 72),
+			Vector2(80, 104), Vector2(344, 104),
+		],
+		[0, 1, 2, 3, 4, 5, 6, 7, 48 + mini(dawn, 3), 52 + mini(dawn, 3)],
+		offset
+	)
 	_draw_eientei_chime(Vector2(148 + offset, 116), foreground, background)
 	_draw_eientei_medicine(Vector2(272 + offset, 124), foreground, background)
 	_draw_eientei_rabbit_panel(Vector2(396 + offset, 128), foreground, background)
@@ -703,6 +742,25 @@ func _draw_bamboo_loop_world(foreground: Color, background: Color) -> void:
 		Vector2(606 + offset, 102), Vector2(610 + offset, 74), Vector2(612 + offset, 130),
 	]), foreground)
 	draw_rect(Rect2(598 + offset, 104, 12, 27), background)
+
+
+func _draw_production_region_sockets(
+	region_id: StringName,
+	world_positions: Array,
+	tile_indices: Array,
+	offset: float
+) -> void:
+	var texture := _region_tiles.texture_for(region_id, _profile.is_inverted)
+	if texture == null or world_positions.size() != tile_indices.size():
+		return
+	for index: int in range(world_positions.size()):
+		var world_position := world_positions[index] as Vector2
+		var tile_index := int(tile_indices[index])
+		draw_texture_rect_region(
+			texture,
+			Rect2(world_position + Vector2(offset, 0), Vector2(ProductionRegionTiles.TILE_SIZE)),
+			_region_tiles.source_rect(tile_index)
+		)
 
 
 func _draw_expected_bamboo_anchor(offset: float, foreground: Color, background: Color) -> void:

@@ -15,6 +15,7 @@ var final_result: ModeResult
 var _profile: PresentationProfile = PresentationProfileRegistry.resolve(&"A")
 var _locale: StringName = &"en"
 var _catalog := UiTextCatalog.new()
+var _region_tiles := ProductionRegionTiles.new()
 var _latin_font: Font
 var _japanese_font: Font
 var _accumulator: float = 0.0
@@ -279,6 +280,8 @@ func _draw_tutorial(foreground: Color, background: Color) -> void:
 
 
 func _draw_garden(foreground: Color, background: Color) -> void:
+	_draw_hakugyokurou_backdrop(foreground, background)
+	_draw_production_garden_accents()
 	for y: int in [97, 104, 111]:
 		draw_line(Vector2(8, y), Vector2(312, y), foreground, 1.0)
 	for index: int in range(3):
@@ -298,7 +301,36 @@ func _draw_garden(foreground: Color, background: Color) -> void:
 		draw_string(_font(), Vector2(8, 158), _t(_note_key), HORIZONTAL_ALIGNMENT_CENTER, 304, _compact_size(), foreground)
 	else:
 		draw_string(_font(), Vector2(8, 158), _t(instruction_key), HORIZONTAL_ALIGNMENT_CENTER, 304, _compact_size(), foreground)
-	_draw_footer(&"ui.minigame.soul_garden.active.footer", foreground, background)
+	_draw_active_footer(foreground, background)
+
+
+func _draw_hakugyokurou_backdrop(foreground: Color, background: Color) -> void:
+	# One dominant old cherry branch and a stepped stone terrace turn the abstract
+	# matching grid into a recognizable Hakugyokurou garden without crowding play.
+	draw_rect(Rect2(302, 24, 6, 72), foreground)
+	draw_line(Vector2(305, 26), Vector2(248, 34), foreground, 4.0)
+	draw_line(Vector2(268, 30), Vector2(226, 24), foreground, 3.0)
+	for center: Vector2 in [Vector2(258, 25), Vector2(242, 35), Vector2(222, 25), Vector2(203, 38)]:
+		draw_circle(center, 10, foreground)
+		draw_circle(center + Vector2(3, 1), 7, background)
+	for petal: Vector2 in [Vector2(194, 28), Vector2(183, 38), Vector2(218, 32)]:
+		draw_rect(Rect2(petal, Vector2(3, 2)), foreground)
+	draw_line(Vector2(8, 112), Vector2(22, 97), foreground, 2.0)
+	draw_line(Vector2(298, 97), Vector2(312, 112), foreground, 2.0)
+
+
+func _draw_production_garden_accents() -> void:
+	var texture := _region_tiles.texture_for(&"loc.hakugyokurou", _profile.is_inverted)
+	if texture == null:
+		return
+	var positions := [Vector2(176, 22), Vector2(198, 24), Vector2(238, 26)]
+	var tile_indices := [0, 56, 58]
+	for index: int in range(positions.size()):
+		draw_texture_rect_region(
+			texture,
+			Rect2(positions[index], Vector2(ProductionRegionTiles.TILE_SIZE)),
+			_region_tiles.source_rect(tile_indices[index])
+		)
 
 
 func _draw_result(foreground: Color, background: Color) -> void:
@@ -320,11 +352,11 @@ func _draw_pause(foreground: Color, background: Color) -> void:
 
 
 func _draw_memorial_tree(index: int, x: float, foreground: Color, background: Color) -> void:
-	draw_rect(Rect2(x - 4, 116, 8, 29), foreground)
-	draw_colored_polygon(PackedVector2Array([
-		Vector2(x, 105), Vector2(x - 18, 122), Vector2(x + 18, 122),
-	]), foreground)
-	draw_circle(Vector2(x, 122), 8, background)
+	draw_rect(Rect2(x - 3, 116, 6, 29), foreground)
+	draw_circle(Vector2(x, 113), 11, foreground)
+	draw_circle(Vector2(x - 9, 118), 8, foreground)
+	draw_circle(Vector2(x + 9, 118), 8, foreground)
+	draw_circle(Vector2(x, 116), 7, background)
 	_draw_signature(index, Vector2(x, 128), foreground, background, 5)
 
 
@@ -370,6 +402,33 @@ func _draw_footer(key: StringName, foreground: Color, background: Color) -> void
 	draw_rect(Rect2(4, 164, 312, 14), background)
 	draw_rect(Rect2(4, 164, 312, 14), foreground, false, 1.0)
 	draw_string(_font(), Vector2(8, 175), _t(key), HORIZONTAL_ALIGNMENT_CENTER, 304, _compact_size(), foreground)
+
+
+func _draw_active_footer(foreground: Color, background: Color) -> void:
+	draw_rect(Rect2(4, 164, 312, 14), background)
+	draw_rect(Rect2(4, 164, 312, 14), foreground, false, 1.0)
+	draw_string(
+		_font(), Vector2(8, 175),
+		"%s %s" % [_movement_binding(), _t(&"ui.minigame.soul_garden.move_align")],
+		HORIZONTAL_ALIGNMENT_LEFT, 122, _compact_size(), foreground
+	)
+	draw_string(
+		_font(), Vector2(130, 175),
+		"%s %s" % [input_binding(GameInput.CONFIRM), _t(&"ui.minigame.soul_garden.carry_release")],
+		HORIZONTAL_ALIGNMENT_CENTER, 97, _compact_size(), foreground
+	)
+	draw_string(
+		_font(), Vector2(227, 175),
+		"%s %s" % [input_binding(GameInput.PAUSE), _t(&"ui.input.pause")],
+		HORIZONTAL_ALIGNMENT_RIGHT, 85, _compact_size(), foreground
+	)
+
+
+func _movement_binding() -> String:
+	var glyph_service := get_node_or_null("/root/InputGlyphService")
+	if glyph_service != null:
+		return _catalog.text(glyph_service.glyph_key(GameInput.MOVE_UP), _locale)
+	return "[ARROWS]"
 
 
 func _draw_wrapped(key: StringName, rect: Rect2, maximum_lines: int, foreground: Color, centered: bool = false) -> void:

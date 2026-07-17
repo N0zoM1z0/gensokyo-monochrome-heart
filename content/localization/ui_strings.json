@@ -250,6 +250,8 @@
 	{"key": "ui.minigame.soul_garden.note.no_memorial", "en": "NO MEMORIAL HERE. THE SPIRIT STAYS WITH YOU.", "ja": "ここに供養樹はない。霊は手元に残る。"},
 	{"key": "ui.minigame.soul_garden.note.released", "en": "THE FAREWELL IS COMPLETE. NOTHING IS LOST.", "ja": "別れが終わる。失われたものはない。"},
 	{"key": "ui.minigame.soul_garden.active.footer", "en": "MOVE  ALIGN    CONFIRM  CARRY / RELEASE    PAUSE", "ja": "移動　合わせる　　決定　受け止める／送る　　一時停止"},
+	{"key": "ui.minigame.soul_garden.move_align", "en": "MOVE/ALIGN", "ja": "移動/合わせ"},
+	{"key": "ui.minigame.soul_garden.carry_release", "en": "CARRY/SEND", "ja": "受取/送る"},
 	{"key": "ui.minigame.soul_garden.result.header", "en": "THREE FAREWELLS, FINISHED", "ja": "三つの見送りを終えた"},
 	{"key": "ui.minigame.soul_garden.result.body", "en": "One petal lands. Youmu leaves the rake line imperfect.", "ja": "花びらが一枚落ちる。妖夢は熊手の筋を一本だけ乱したまま残す。"},
 	{"key": "ui.minigame.soul_garden.result.footer", "en": "CONFIRM  CONTINUE    CANCEL  TEND AGAIN", "ja": "決定　続ける　　取消　もう一度手入れする"},

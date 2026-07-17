@@ -63,7 +63,8 @@ The atlases are not accepted merely because they exist. Model L fighter runtime
 mapping and scene composition are reviewed separately in
 `docs/reviews/m16_fighter_runtime_integration_review.md`; expression-aware
 portrait resolution and accessible scene composition are reviewed in
-`docs/reviews/m16_portrait_runtime_integration_review.md`. Region tiles still
-need collision metadata and composed proofs, while bullet/UI art and both VFX
-modes need screenshot review in their actual runtime backgrounds. Those
-remaining integration gates stay open.
+`docs/reviews/m16_portrait_runtime_integration_review.md`; five-region metadata,
+palette resolution, and composed proofs are reviewed in
+`docs/reviews/m16_region_runtime_integration_review.md`. Bullet/UI art and both
+VFX modes still need screenshot review in their actual runtime backgrounds.
+Those remaining integration gates stay open.

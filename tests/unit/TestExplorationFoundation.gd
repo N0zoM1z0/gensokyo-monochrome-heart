@@ -13,7 +13,78 @@ func run() -> Array[String]:
 	_expect_mansion_service_spot(failures)
 	_expect_youkai_mountain_spot(failures)
 	_expect_bamboo_four_dawns_topology(failures)
+	_expect_production_region_tiles(failures)
 	return failures
+
+
+func _expect_production_region_tiles(failures: Array[String]) -> void:
+	var tiles := ProductionRegionTiles.new()
+	if tiles.REGIONS.size() != 5 or tiles.ROW_NAMES.size() != 8:
+		failures.append("production region resolver omitted the five-atlas/eight-row contract")
+	var required_fields := [
+		"tile_id", "region_id", "collision_shape", "collision_polygon",
+		"occlusion_band", "interaction_shape", "material_sfx", "profile_safe", "state_tags",
+	]
+	for region_id: StringName in tiles.REGIONS:
+		var atlas := tiles.REGIONS[region_id] as Texture2D
+		if atlas == null or atlas.get_size() != Vector2(128, 128):
+			failures.append("production region atlas has the wrong dimensions: %s" % region_id)
+		var tile_ids: Dictionary[StringName, bool] = {}
+		for tile_index: int in range(ProductionRegionTiles.TILE_COUNT):
+			var metadata := tiles.metadata_for(region_id, tile_index)
+			for field: String in required_fields:
+				if not metadata.has(field):
+					failures.append("production region tile omitted %s: %s/%d" % [field, region_id, tile_index])
+			var tile_id := metadata.get("tile_id", &"") as StringName
+			if tile_ids.has(tile_id):
+				failures.append("production region tile ID is not unique: %s" % tile_id)
+			tile_ids[tile_id] = true
+			var row := floori(float(tile_index) / ProductionRegionTiles.TILES_PER_ROW)
+			if row == 1 and (
+				metadata.get("collision_shape", &"none") == &"none"
+				or (metadata.get("collision_polygon", PackedVector2Array()) as PackedVector2Array).is_empty()
+			):
+				failures.append("collision-edge tile omitted separate collision geometry: %s/%d" % [region_id, tile_index])
+			if row != 1 and metadata.get("collision_shape", &"none") != &"none":
+				failures.append("visual-only region row acquired implicit collision: %s/%d" % [region_id, tile_index])
+			if row >= 4 and (metadata.get("state_tags", []) as Array).is_empty():
+				failures.append("production region state tile omitted its state tag: %s/%d" % [region_id, tile_index])
+		if tile_ids.size() != ProductionRegionTiles.TILE_COUNT:
+			failures.append("production region metadata did not cover 64 unique cells: %s" % region_id)
+	for region_id: StringName in tiles.REGIONS:
+		var normal := tiles.texture_for(region_id, false)
+		var inverted := tiles.texture_for(region_id, true)
+		if normal == null or inverted == null:
+			failures.append("production region palette resolver returned no A/D atlas: %s" % region_id)
+			continue
+		var normal_image := normal.get_image()
+		var inverted_image := inverted.get_image()
+		var checked_pixels := 0
+		var reciprocal := true
+		for y: int in range(normal_image.get_height()):
+			for x: int in range(normal_image.get_width()):
+				var pixel := normal_image.get_pixel(x, y)
+				if pixel.a <= 0.0:
+					continue
+				var inverted_pixel := inverted_image.get_pixel(x, y)
+				if not is_equal_approx(pixel.r + inverted_pixel.r, 1.0) or not is_equal_approx(pixel.a, inverted_pixel.a):
+					reciprocal = false
+				checked_pixels += 1
+		if not reciprocal:
+			failures.append("production region A/D polarity is not an exact reciprocal: %s" % region_id)
+		if checked_pixels == 0:
+			failures.append("production region atlas contained no visible pixels: %s" % region_id)
+	if not tiles.has_region(&"loc.eientei") or tiles.canonical_region_id(&"loc.eientei") != &"loc.eientei_bamboo_forest":
+		failures.append("Eientei runtime location did not resolve to its bamboo-forest atlas")
+	if not tiles.source_rect(63).is_equal_approx(Rect2(112, 112, 16, 16)) or tiles.source_rect(64) != Rect2():
+		failures.append("production region atlas cell addressing escaped the 8x8 grid")
+	var exploration_source := FileAccess.get_file_as_string("res://src/presentation/exploration/ExplorationMode.gd")
+	for region_id: String in ["loc.hakurei_shrine", "loc.scarlet_devil_mansion", "loc.youkai_mountain", "loc.eientei"]:
+		if not exploration_source.contains(region_id):
+			failures.append("playable exploration omitted production region composition: %s" % region_id)
+	var garden_source := FileAccess.get_file_as_string("res://src/presentation/minigames/SoulGardenMode.gd")
+	if not garden_source.contains("loc.hakugyokurou"):
+		failures.append("Soul Garden omitted the Hakugyokurou production atlas")
 
 
 func _expect_bamboo_four_dawns_topology(failures: Array[String]) -> void:

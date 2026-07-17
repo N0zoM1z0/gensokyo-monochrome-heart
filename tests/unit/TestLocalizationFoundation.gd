@@ -17,14 +17,16 @@ func run() -> Array[String]:
 		&"ui.options.low_dynamic_range",
 		&"ui.pause.resume",
 		&"ui.accessibility.title",
+		&"ui.minigame.soul_garden.move_align",
+		&"ui.minigame.soul_garden.carry_release",
 	]:
 		if not catalog.has_key(required_key):
 			failures.append("UI localization lacks %s" % required_key)
 		elif catalog.text(required_key, &"en").is_empty() or catalog.text(required_key, &"ja").is_empty():
 			failures.append("UI localization is not bilingual for %s" % required_key)
 	var keys := catalog.keys()
-	if keys.size() != 605:
-		failures.append("expected 605 merged localization keys, got %d" % keys.size())
+	if keys.size() != 607:
+		failures.append("expected 607 merged localization keys, got %d" % keys.size())
 	if keys != catalog.keys():
 		failures.append("UI localization keys are not deterministic")
 
