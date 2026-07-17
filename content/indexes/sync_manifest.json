@@ -55,7 +55,7 @@
     {
       "source": "design/09_data/postgame_framework.json",
       "destination": "content/postgame/postgame_framework.json",
-      "sha256": "86adffcf21d24d84615b0ee480e153b898dd28a51f228fc189c29b0329a16290"
+      "sha256": "b4863f9e17b4136eb916f38d2e1e0e123a6206a36d037f2bd2410ea93a17074a"
     },
     {
       "source": "design/09_data/schemas/character_agent_output.schema.json",

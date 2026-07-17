@@ -26,6 +26,10 @@ const ROUTES := {
 		"path": "res://ui/screens/credits_screen.tscn",
 		"host": SCREEN_HOST,
 	},
+	&"postgame_hub": {
+		"path": "res://ui/screens/postgame_hub.tscn",
+		"host": SCREEN_HOST,
+	},
 	&"foundation_mode": {
 		"path": "res://src/presentation/modes/FoundationMode.tscn",
 		"host": MODE_HOST,

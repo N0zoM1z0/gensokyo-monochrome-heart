@@ -100,6 +100,10 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--script res://src/tools/validate_pixel_alignment.gd -- \
 	--scene=res://src/presentation/shell/Main.tscn \
 	--scene=res://ui/screens/credits_screen.tscn \
+	--scene=res://ui/screens/postgame_hub.tscn \
+	--scene=res://tests/ui/fixtures/PostgameHubDreamFixture.tscn \
+	--scene=res://tests/ui/fixtures/PostgameHubSeasonalFixture.tscn \
+	--scene=res://tests/ui/fixtures/PostgameHubAccordFixture.tscn \
 	--scene=res://src/presentation/slice/VerticalSliceMode.tscn \
 	--scene=res://tests/ui/fixtures/VerticalSliceInvitationFixture.tscn \
 	--scene=res://tests/ui/fixtures/VerticalSliceMapFixture.tscn \
@@ -596,6 +600,7 @@ else
 	run_checked "M12 Scarlet Devil Mansion screenshot matrix" ./scripts/capture_m12_screenshots.sh
 	run_checked "M13 Wind-Frame, mountain, and Archive screenshot matrix" ./scripts/capture_m13_screenshots.sh
 	run_checked "M14 Reimu route screenshot matrix" ./scripts/capture_m14_screenshots.sh
+	run_checked "M15 postgame continuity screenshot matrix" ./scripts/capture_m15_screenshots.sh
 	run_checked "M07 rendered bullet stress" "$GODOT_BIN" \
 		--display-driver "${GMH_DISPLAY_DRIVER:-x11}" \
 		--rendering-driver opengl3 \

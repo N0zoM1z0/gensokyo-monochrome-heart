@@ -8,8 +8,8 @@
     "postgame_only": true,
     "route_progression": false,
     "fanon_ceiling": 5,
-    "label_en": "DREAM THEATRE — NON-MAIN-CONTINUITY",
-    "label_ja": "夢劇場 — 本編とは異なる世界線"
+    "label_en": "DREAM THEATRE: NON-MAIN CONTINUITY",
+    "label_ja": "夢劇場 [本編外・別世界線]"
   },
   "seasonal_events": [
     {

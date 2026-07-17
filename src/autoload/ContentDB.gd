@@ -236,6 +236,14 @@ func music_by_priority(priority: StringName) -> Array[MusicCueRecord]:
 	return _repository.music_by_priority(priority) if _repository != null else []
 
 
+func postgame_framework() -> PostgameFrameworkRecord:
+	return _repository.postgame_framework if _repository != null else null
+
+
+func seasonal_events_by_season(season: StringName) -> Array[SeasonalEventRecord]:
+	return _repository.seasonal_events_by_season(season) if _repository != null else []
+
+
 func _defer_hot_reload() -> void:
 	if _reload_pending:
 		return

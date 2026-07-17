@@ -23,7 +23,7 @@ func _expect_catalog(repository: ContentRepository, failures: Array[String]) -> 
 	var dream := framework.dream_theatre
 	if dream == null or dream.continuity_scope != &"non_main_continuity" or not dream.postgame_only or dream.route_progression:
 		failures.append("Dream Theatre is not explicitly isolated from main continuity and route progression")
-	elif not dream.label(&"en").contains("NON-MAIN-CONTINUITY") or not dream.label(&"ja").contains("本編とは異なる世界線"):
+	elif not dream.label(&"en").contains("NON-MAIN CONTINUITY") or not dream.label(&"ja").contains("本編外・別世界線"):
 		failures.append("Dream Theatre omitted its bilingual continuity label")
 	if framework.seasonal_events.size() != 8:
 		failures.append("seasonal framework expected 8 reviewed hooks")
