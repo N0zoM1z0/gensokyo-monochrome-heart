@@ -156,6 +156,54 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records Yuyuko ending infinite abundance herself and restoring the meaning of a last course."
+    },
+    {
+      "id": "loc.hakugyokurou.final_sweet_table",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A shared table lets everyone recognize the untouched final sweet while every future remains answerable."
+    },
+    {
+      "id": "prop.yyk.final_sweet",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "One finite sweet materializes Yuyuko's extraordinary restraint without turning food into a permanent debt."
+    },
+    {
+      "id": "prop.yyk.story_invitation_card",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A blank invitation can hold friendship, romance, postponement, or uncertainty without deciding the answer."
+    },
+    {
+      "id": "journal.hgy.last_sweet.promise.friendship",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Friendship records a standing invitation to arrive hungry with a story."
+    },
+    {
+      "id": "journal.hgy.last_sweet.promise.romance",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Romance records a finite final sweet accepted only after explicit consent."
+    },
+    {
+      "id": "journal.hgy.last_sweet.promise.romance_declined",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "A declined sweet returns to the table without penalty or preserved evidence."
+    },
+    {
+      "id": "journal.hgy.last_sweet.promise.postponed",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Postponement keeps the question open while preventing the sweet from becoming food debt."
+    },
+    {
+      "id": "journal.hgy.last_sweet.promise.undecided",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "Uncertainty shares the last bite across the table without assigning the future."
     }
   ]
 }

@@ -1,0 +1,27 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.hgy.last_sweet.choose,objective,,Choose what Yuyuko's invitation may mean; the saved sweet still requires a separate answer.,幽々子の招待を何とするか選ぶ。残された菓子には、別の返事が必要になる。,208,Original
+event.hgy.last_sweet.title,event_title,,The Last Sweet,最後の菓子,208,Original
+choice.hgy.last_sweet.friendship,choice,,Accept a standing invitation to arrive hungry with a story.,空腹と物語を携えて訪れる常設の招待を受け取る。,248,Original
+choice.hgy.last_sweet.romance,choice,,Ask why Yuyuko saved the final sweet and hear the offer.,幽々子がなぜ最後の菓子を残したか尋ね、その申し出を聞く。,248,Original
+choice.hgy.last_sweet.romance_yes,choice,,Accept the final sweet as a finite romantic gift.,最後の菓子を、有限な恋愛の贈り物として受け取る。,248,Original
+choice.hgy.last_sweet.romance_no,choice,,Decline the sweet and leave the future unclaimed without penalty.,菓子を断り、罰なく未来を誰のものにもしない。,248,Original
+choice.hgy.last_sweet.postponed,choice,,Postpone the relationship label but let the sweet be shared tonight.,関係の名前は保留し、菓子は今夜みんなで分ける。,248,Original
+choice.hgy.last_sweet.undecided,choice,,Claim neither future nor final bite; return both to the table.,未来も最後の一口も自分のものにせず、卓へ戻す。,248,Original
+dlg.hgy.last_sweet.witness,dialogue,char.youmu_konpaku,"That sweet has remained untouched through three conversations. Everyone noticed after the first. Lady Yuyuko asked me not to clear it or prepare another.",「あの菓子は、三つの会話が終わっても手つかずです。一つ目の後には、全員が気づきました。幽々子様から、下げるな、替えも用意するなと言われています。」,248,Original
+dlg.hgy.last_sweet.ask,dialogue,char.yuyuko_saigyouji,"Everyone is staring. How rude of them to count. It is still only a sweet—and an invitation I chose not to consume before you could answer it.",「みんな見ているわ。数えるなんて失礼ね。これはまだ、ただの菓子。それから、あなたが答える前に私が食べないと選んだ招待よ。」,248,Original
+dlg.hgy.last_sweet.friendship,dialogue,char.yuyuko_saigyouji,"Come hungry, but bring a story. Friendship should give the table something neither kitchen nor appetite can prepare in advance.",「空腹でいらっしゃい。でも物語を持ってきて。友情なら、厨房にも食欲にも前もって用意できないものを卓へ運べるでしょう。」,248,Original
+dlg.hgy.last_sweet.romance,dialogue,char.yuyuko_saigyouji,"I saved the final sweet for you. Everyone recognized it because I do not often leave a last bite. You may accept what I mean—or refuse it and keep the evening whole.",「最後の菓子をあなたのために残したの。私が最後の一口を残すことは滅多にないから、みんな分かったのね。私の意味を受け取ってもいいし、断って今夜を損なわずにおいてもいいわ。」,248,Original
+dlg.hgy.last_sweet.romance_approved,dialogue,char.yuyuko_saigyouji,"Then let us divide it once and not ask the plate to repeat the moment. A final sweet matters because we chose this ending together.",「では一度だけ分けて、この瞬間を繰り返すよう皿には頼まないでおきましょう。最後の菓子に意味があるのは、この終わりを二人で選んだからよ。」,248,Original
+dlg.hgy.last_sweet.romance_declined,dialogue,char.yuyuko_saigyouji,"Then no. I will return it to the table, not save it as evidence against a later answer. Nothing about the evening becomes less true because the offer ended here.",「なら、答えはいいえ。後の答えに突きつける証拠として残さず、卓へ戻すわ。申し出がここで終わっても、今夜の何かが嘘になるわけではないもの。」,248,Original
+dlg.hgy.last_sweet.postponed,dialogue,char.yuyuko_saigyouji,"The name may wait; the sweet should not become a preserved debt. We will divide it among the table and let only the question remain fresh.",「名前は待てる。でも菓子を保存された借りにしてはいけないわ。卓のみんなで分けて、問いだけを新しいまま残しましょう。」,248,Original
+dlg.hgy.last_sweet.undecided,dialogue,char.yuyuko_saigyouji,"Then neither future nor final bite belongs to one person tonight. Cut it into enough pieces for the table. Uncertainty can still have a complete dessert.",「なら今夜は、未来も最後の一口も一人のものにはしない。卓のみんなに足りるよう切り分けて。未定でも、デザートはきちんと終えられるわ。」,248,Original
+journal.hgy.last_sweet.promise.friendship.title,journal_title,,Hungry for a Story,物語を空腹に,248,Original
+journal.hgy.last_sweet.promise.friendship.body,journal_body,,Friendship became a standing invitation to come hungry and bring a story—something neither kitchen nor appetite could prepare in advance.,友情は、空腹と物語を携えて訪れる常設の招待になった。それは厨房にも食欲にも前もって用意できないものだった。,248,Original
+journal.hgy.last_sweet.promise.romance.title,journal_title,,The Final Sweet Saved Once,一度だけ残された最後の菓子,248,Original
+journal.hgy.last_sweet.promise.romance.body,journal_body,,Yuyuko saved the final sweet, made its meaning explicit, and waited for a separate yes. The finite gift mattered because both people chose how it ended.,幽々子は最後の菓子を残し、その意味を明らかにして、別の「はい」を待った。有限の贈り物に意味があったのは、二人で終わり方を選んだからだった。,248,Original
+journal.hgy.last_sweet.promise.romance_declined.title,journal_title,,The Sweet Returned to the Table,卓へ戻った菓子,248,Original
+journal.hgy.last_sweet.promise.romance_declined.body,journal_body,,The romantic offer was declined without penalty or preserved evidence. Yuyuko returned the sweet to the table, and the evening remained whole while the future stayed unclaimed.,恋愛の申し出は罰も保存された証拠もなく断られた。幽々子は菓子を卓へ戻し、未来が誰のものにもならないままでも今夜は損なわれなかった。,248,Original
+journal.hgy.last_sweet.promise.postponed.title,journal_title,,The Question Kept Fresh,新しいままの問い,248,Original
+journal.hgy.last_sweet.promise.postponed.body,journal_body,,The relationship label was postponed, but the sweet was divided instead of becoming a preserved debt. Only the question remained open.,関係の名前は保留されたが、菓子は保存された借りにならず分けられた。問いだけが開かれたまま残った。,248,Original
+journal.hgy.last_sweet.promise.undecided.title,journal_title,,A Complete Dessert Without a Claim,主張のない完全なデザート,248,Original
+journal.hgy.last_sweet.promise.undecided.body,journal_body,,Neither future nor final bite was claimed. The table shared the sweet, and uncertainty remained a complete ending rather than an absence.,未来も最後の一口も誰のものにもならなかった。卓は菓子を分け、未定は欠如でなく完全な終わりとして残った。,248,Original

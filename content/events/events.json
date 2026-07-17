@@ -315,11 +315,16 @@
       "lead_character_ids": [
         "char.yuyuko_saigyouji"
       ],
-      "primary_mode": "banquet_minigame",
-      "core_change": "finite appetite",
-      "status": "planned",
-      "estimated_minutes": 18,
-      "comfort_tags": []
+      "primary_mode": "route_intent",
+      "core_change": "Yuyuko offers a standing story invitation and saves the final sweet while friendship, romance, postponement, uncertainty, and refusal remain explicit complete futures.",
+      "status": "authored",
+      "estimated_minutes": 10,
+      "comfort_tags": [
+        "no_timer",
+        "no_failure",
+        "route_intent_explicit",
+        "interactive_romance_consent"
+      ]
     },
     {
       "id": "evt.hgy.two_bodies_bridge",
