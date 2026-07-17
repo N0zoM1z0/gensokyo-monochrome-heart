@@ -143,6 +143,7 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 		&"choice.pch.promise.intent",
 		&"choice.rml.promise.intent",
 		&"choice.sne.promise.intent",
+		&"choice.eir.promise.intent",
 	]:
 		if not FourToneChoiceControl.uses_route_intent_labels(choice_id):
 			failures.append("Promise choice did not request route-intent labels: %s" % choice_id)
@@ -157,6 +158,7 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 		&"choice.rml.promise.romance_consent",
 		&"choice.sne.promise.romance_consent",
 		&"choice.ein.patient_refuses.player_test_consent",
+		&"choice.eir.promise.romance_consent",
 	]:
 		if not FourToneChoiceControl.uses_consent_labels(choice_id):
 			failures.append("explicit consent choice did not request yes/no labels: %s" % choice_id)
@@ -168,6 +170,11 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 	control.configure(consent, _content, &"en")
 	if control.focused_tone() != &"defiant":
 		failures.append("explicit consent did not default to the no/refusal option")
+	var eirin_graph := _content.graph(&"evt.eir.promise")
+	var eirin_consent := EventChoiceResolver.new().resolve(eirin_graph.node(&"n_romance_consent").choice, _event_state())
+	control.configure(eirin_consent, _content, &"en")
+	if control.focused_tone() != &"defiant":
+		failures.append("Eirin romance consent did not default to no")
 
 
 func _expect_safe_resonance_and_debug_views(failures: Array[String]) -> void:

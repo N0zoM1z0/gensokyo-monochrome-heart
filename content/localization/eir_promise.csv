@@ -1,0 +1,27 @@
+key,context,speaker,en,ja,max_width_px,origin
+obj.eir.promise.choose,objective,,"Confirm that the ledger belongs to the patient, has a final page, and promises only the next appointment.",台帳が患者本人のもので、最後のページを持ち、次の一回の予約だけを約束することを確かめる。,208,Original
+event.eir.promise.title,event_title,,Promise,約束,208,Original
+choice.eir.promise.friendship,choice,,Choose friendship for one ordinary life.,普通の寿命に寄り添う友情を選ぶ。,248,Original
+choice.eir.promise.romance,choice,,Ask for romance one appointment at a time.,次の予約を一度ずつ重ねる恋愛を望むと伝える。,248,Original
+choice.eir.promise.postponed,choice,,Postpone the label; keep the appointment.,関係の名前は延期し、予約は残す。,248,Original
+choice.eir.promise.undecided,choice,,Leave the future unclaimed.,未来を誰のものとも決めずに残す。,248,Original
+choice.eir.promise.romance_yes,choice,,Yes. Choose the next appointment together.,はい。次の予約を一緒に選ぶ。,248,Original
+choice.eir.promise.romance_no,choice,,No. Keep the appointment without romance.,いいえ。恋愛にせず、予約は残す。,248,Original
+dlg.eir.promise.ledger,dialogue,char.eirin_yagokoro,"This ledger belongs to you. It records only what you ask me to remember; a blank page is not missing data. Its binding has a real back cover, because an ordinary lifespan is not a defective eternity.",「この台帳はあなたのものです。私に覚えてほしいと頼んだことだけを記し、空白のページを欠損扱いしない。普通の寿命は欠陥のある永遠ではないから、この台帳には本当の裏表紙があります。」,248,Original
+dlg.eir.promise.ask,dialogue,char.eirin_yagokoro,"I can offer continuity without converting it into forever. Choose a kind of promise, postpone the label, or leave it unclaimed. Care does not wait behind your answer.",「永遠に変えずとも、続いていくものは約束できます。約束の形を選ぶか、名前を延期するか、未決のままにして。ケアをあなたの答え待ちにはしません。」,248,Original
+dlg.eir.promise.friendship,dialogue,char.eirin_yagokoro,"Friendship, then. We will write for the life you live, not the span I can imagine. You keep the key. I ask before each new kind of entry, and the last page is allowed to be last.",「では友情として。私が想像できる長さではなく、あなたが生きる時間のために書きましょう。鍵はあなたが持つ。新しい種類の記録を加えるたびに、あなたへ確認します。最後のページは最後であってかまいません。」,248,Original
+dlg.eir.promise.romance,dialogue,char.eirin_yagokoro,"I will not promise forever. I will promise the next appointment, and arrive. If you want that as romance, say yes. If not, the appointment remains and the ledger stays yours.",「永遠は約束しません。次の予約を約束し、私はそこへ行きます。それを恋愛として望むなら、はいと答えて。望まなくても予約は残り、台帳はあなたのものです。」,248,Original
+dlg.eir.promise.romance_approved,dialogue,char.eirin_yagokoro,"Then I will arrive, not because eternity makes me inevitable, but because we chose the date together. After that, we may choose another.",「では私は行きます。永遠が私を必然にするからではなく、二人で日を選んだから。その後は、また次を選べます。」,248,Original
+dlg.eir.promise.romance_declined,dialogue,char.eirin_yagokoro,"No recorded. If you invite me, I will still arrive as your physician, with the same familiar regard. Nothing already given is withdrawn.",「いいえと記録しました。招かれれば、これまでと同じ親しみを持つ医師として、私は行きます。すでに渡したものは何も引き上げません。」,248,Original
+dlg.eir.promise.postponed,dialogue,char.eirin_yagokoro,"No date for the label. The next clinical appointment may still have a date; a relationship answer is not its entry fee.",「関係の名前には日付を置きません。次の診療予約には日付を置いてもいい。関係についての答えは、受診の条件ではありません。」,248,Original
+dlg.eir.promise.undecided,dialogue,char.eirin_yagokoro,"Unclaimed is a valid state, not a diagnosis awaiting correction. I will not treat uncertainty as a symptom.",「未決は有効な状態であって、修正待ちの診断ではありません。不確実性を症状として扱うことはしません。」,248,Original
+journal.eir.promise.friendship.title,journal_title,,Ledger With a Back Cover,裏表紙のある台帳,248,Original
+journal.eir.promise.friendship.body,journal_body,,"They chose friendship and a health ledger written for one ordinary lifespan. The protagonist owned its key; blank pages were complete, every new kind of entry required another question, and the final page was allowed to be final.",「二人は友情と、普通の一生のために書く健康台帳を選んだ。鍵は主人公が持ち、空白のページはそれで完全とされ、新しい種類の記録にはその都度確認が必要で、最後のページは最後のままでよかった。」,248,Original
+journal.eir.promise.romance.title,journal_title,,The Next Appointment,次の予約,248,Original
+journal.eir.promise.romance.body,journal_body,,"Eirin did not promise forever. She promised the next appointment and to arrive; the protagonist explicitly accepted that bounded promise as romance. They chose one date together and left every later appointment to another choice.",「永琳は永遠を約束しなかった。次の予約と、そこへ行くことを約束し、主人公はその限りある約束を恋愛として明確に受け入れた。二人は一つの日を選び、それ以後の予約は次の選択に委ねた。」,248,Original
+journal.eir.promise.romance_declined.title,journal_title,,Appointment Without a Claim,決めつけのない予約,248,Original
+journal.eir.promise.romance_declined.body,journal_body,,"The protagonist declined romance. Eirin recorded no without asking why; the appointment, patient-owned ledger, familiar regard, and care all remained without penalty or debt.",「主人公は恋愛を断った。永琳は理由を求めず『いいえ』を記録し、予約も、患者本人が持つ台帳も、これまでの親しみも、ケアも、罰や負債なしに残った。」,248,Original
+journal.eir.promise.postponed.title,journal_title,,Label Without a Deadline,期限のない名前,248,Original
+journal.eir.promise.postponed.body,journal_body,,"They postponed the relationship label without a deadline. A dated clinical appointment remained available, because care was not an entry fee charged for a personal answer.",「二人は関係の名前を期限なしで延期した。日付のある診療予約は残った。ケアは個人的な答えに課される参加料ではなかったからだ。」,248,Original
+journal.eir.promise.undecided.title,journal_title,,A Valid Unknown,有効な未知,248,Original
+journal.eir.promise.undecided.body,journal_body,,"They left the future unclaimed. Eirin treated uncertainty as a valid state rather than a symptom, and the ledger remained patient-owned with care continuing outside any relationship label.",「二人は未来を誰のものとも決めずに残した。永琳は不確実性を症状ではなく有効な状態として扱い、台帳は患者本人のものであり続け、関係の名前にかかわらずケアは続いた。」,248,Original

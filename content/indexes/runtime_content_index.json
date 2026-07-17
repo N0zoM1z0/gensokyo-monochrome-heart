@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "a3ed6a5bdaa90c03ee3c9e239d85ba34ced9fad36ed3c6323174790d98aac518",
+  "content_hash": "5d1b9a3e06feb60782939ce9d76942943c7c16feef7778b52480eba00c5e74c8",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 96,
-    "dialogue_beats": 650,
-    "localization": 1907,
+    "events": 97,
+    "dialogue_beats": 658,
+    "localization": 1933,
     "music_cues": 89,
-    "event_nodes": 1553
+    "event_nodes": 1581
   },
   "ids": {
     "characters": [
@@ -130,6 +130,7 @@
       "evt.eir.doctor_sleeps",
       "evt.eir.permanent_cure",
       "evt.eir.practical_care",
+      "evt.eir.promise",
       "evt.fin.borders_back",
       "evt.fin.margin_of_error",
       "evt.fin.one_blank_page",
@@ -381,6 +382,14 @@
       "beat.eir.practical_care.loss",
       "beat.eir.practical_care.patient",
       "beat.eir.practical_care.playful",
+      "beat.eir.promise.ask",
+      "beat.eir.promise.friendship",
+      "beat.eir.promise.ledger",
+      "beat.eir.promise.postponed",
+      "beat.eir.promise.romance",
+      "beat.eir.promise.romance_approved",
+      "beat.eir.promise.romance_declined",
+      "beat.eir.promise.undecided",
       "beat.hgy.duty.after",
       "beat.hgy.duty.defiant",
       "beat.hgy.duty.direct",
@@ -945,6 +954,12 @@
       "choice.eir.practical_care.direct",
       "choice.eir.practical_care.patient",
       "choice.eir.practical_care.playful",
+      "choice.eir.promise.friendship",
+      "choice.eir.promise.postponed",
+      "choice.eir.promise.romance",
+      "choice.eir.promise.romance_no",
+      "choice.eir.promise.romance_yes",
+      "choice.eir.promise.undecided",
       "choice.hgy.duty.defiant",
       "choice.hgy.duty.direct",
       "choice.hgy.duty.patient",
@@ -1355,6 +1370,14 @@
       "dlg.eir.practical_care.loss",
       "dlg.eir.practical_care.patient",
       "dlg.eir.practical_care.playful",
+      "dlg.eir.promise.ask",
+      "dlg.eir.promise.friendship",
+      "dlg.eir.promise.ledger",
+      "dlg.eir.promise.postponed",
+      "dlg.eir.promise.romance",
+      "dlg.eir.promise.romance_approved",
+      "dlg.eir.promise.romance_declined",
+      "dlg.eir.promise.undecided",
       "dlg.hgy.duty.after",
       "dlg.hgy.duty.defiant",
       "dlg.hgy.duty.direct",
@@ -1849,6 +1872,7 @@
       "event.eir.doctor_sleeps.title",
       "event.eir.permanent_cure.title",
       "event.eir.practical_care.title",
+      "event.eir.promise.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
       "event.hgy.farewell_will_not_fall.title",
@@ -1975,6 +1999,16 @@
       "journal.eir.permanent_cure.title",
       "journal.eir.practical_care.body",
       "journal.eir.practical_care.title",
+      "journal.eir.promise.friendship.body",
+      "journal.eir.promise.friendship.title",
+      "journal.eir.promise.postponed.body",
+      "journal.eir.promise.postponed.title",
+      "journal.eir.promise.romance.body",
+      "journal.eir.promise.romance.title",
+      "journal.eir.promise.romance_declined.body",
+      "journal.eir.promise.romance_declined.title",
+      "journal.eir.promise.undecided.body",
+      "journal.eir.promise.undecided.title",
       "journal.hgy.cutting_wrong_problem.body",
       "journal.hgy.cutting_wrong_problem.title",
       "journal.hgy.duty_delegated.body",
@@ -2152,6 +2186,7 @@
       "obj.eir.doctor_sleeps.handoff",
       "obj.eir.permanent_cure.audit",
       "obj.eir.practical_care.balance",
+      "obj.eir.promise.choose",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
       "obj.hgy.farewell.release",
@@ -4616,6 +4651,86 @@
     {
       "source": "beat.eir.practical_care.playful",
       "target": "dlg.eir.practical_care.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.promise.ask",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.promise.ask",
+      "target": "dlg.eir.promise.ask",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.promise.friendship",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.promise.friendship",
+      "target": "dlg.eir.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.promise.ledger",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.promise.ledger",
+      "target": "dlg.eir.promise.ledger",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.promise.postponed",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.promise.postponed",
+      "target": "dlg.eir.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.promise.romance_approved",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.promise.romance_approved",
+      "target": "dlg.eir.promise.romance_approved",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.promise.romance_declined",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.promise.romance_declined",
+      "target": "dlg.eir.promise.romance_declined",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.promise.romance",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.promise.romance",
+      "target": "dlg.eir.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.promise.undecided",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.promise.undecided",
+      "target": "dlg.eir.promise.undecided",
       "kind": "localization"
     },
     {
@@ -9776,6 +9891,36 @@
     {
       "source": "choice.eir.practical_care.response",
       "target": "choice.eir.practical_care.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.promise.intent",
+      "target": "choice.eir.promise.friendship",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.promise.intent",
+      "target": "choice.eir.promise.postponed",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.promise.intent",
+      "target": "choice.eir.promise.romance",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.promise.intent",
+      "target": "choice.eir.promise.undecided",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.promise.romance_consent",
+      "target": "choice.eir.promise.romance_no",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.promise.romance_consent",
+      "target": "choice.eir.promise.romance_yes",
       "kind": "localization"
     },
     {
@@ -16010,6 +16155,296 @@
     },
     {
       "source": "evt.eir.practical_care",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.eir.promise.node.n001",
+      "target": "evt.eir.promise.node.n_ledger",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n001",
+      "target": "mus_eirin_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.eir.promise.node.n_ask",
+      "target": "beat.eir.promise.ask",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.promise.node.n_ask",
+      "target": "evt.eir.promise.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_choice",
+      "target": "choice.eir.promise.intent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.eir.promise.node.n_choice",
+      "target": "evt.eir.promise.node.n_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_choice",
+      "target": "evt.eir.promise.node.n_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_choice",
+      "target": "evt.eir.promise.node.n_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_choice",
+      "target": "evt.eir.promise.node.n_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_friendship",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_friendship",
+      "target": "evt.eir.promise.node.n_end_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_postponed",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_postponed",
+      "target": "evt.eir.promise.node.n_end_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_romance_declined",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_romance_declined",
+      "target": "evt.eir.promise.node.n_end_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_romance",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_romance",
+      "target": "evt.eir.promise.node.n_end_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_undecided",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.promise.node.n_effects_undecided",
+      "target": "evt.eir.promise.node.n_end_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_friendship",
+      "target": "beat.eir.promise.friendship",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.promise.node.n_friendship",
+      "target": "evt.eir.promise.node.n_journal_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_friendship",
+      "target": "evt.eir.promise.node.n_effects_friendship",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_friendship",
+      "target": "journal.eir.promise.friendship",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_postponed",
+      "target": "evt.eir.promise.node.n_effects_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_postponed",
+      "target": "journal.eir.promise.postponed",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_romance_declined",
+      "target": "evt.eir.promise.node.n_effects_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_romance_declined",
+      "target": "journal.eir.promise.romance_declined",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_romance",
+      "target": "evt.eir.promise.node.n_effects_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_romance",
+      "target": "journal.eir.promise.romance",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_undecided",
+      "target": "evt.eir.promise.node.n_effects_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_journal_undecided",
+      "target": "journal.eir.promise.undecided",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.promise.node.n_ledger",
+      "target": "beat.eir.promise.ledger",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.promise.node.n_ledger",
+      "target": "evt.eir.promise.node.n_ask",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_objective",
+      "target": "evt.eir.promise.node.n_ownership",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_objective",
+      "target": "obj.eir.promise.choose",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.promise.node.n_objective",
+      "target": "prop.eir.ordinary_lifespan_health_ledger",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.promise.node.n_objective",
+      "target": "prop.eir.patient_owned_ledger_key",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.promise.node.n_objective",
+      "target": "prop.eir.single_next_appointment_card",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.promise.node.n_ownership",
+      "target": "evt.eir.promise.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_postponed",
+      "target": "beat.eir.promise.postponed",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.promise.node.n_postponed",
+      "target": "evt.eir.promise.node.n_journal_postponed",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance_approved",
+      "target": "beat.eir.promise.romance_approved",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance_approved",
+      "target": "evt.eir.promise.node.n_journal_romance",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance_consent",
+      "target": "choice.eir.promise.romance_consent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance_consent",
+      "target": "evt.eir.promise.node.n_romance_approved",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance_consent",
+      "target": "evt.eir.promise.node.n_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance_declined",
+      "target": "beat.eir.promise.romance_declined",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance_declined",
+      "target": "evt.eir.promise.node.n_journal_romance_declined",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance",
+      "target": "beat.eir.promise.romance",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.promise.node.n_romance",
+      "target": "evt.eir.promise.node.n_romance_consent",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise.node.n_undecided",
+      "target": "beat.eir.promise.undecided",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.promise.node.n_undecided",
+      "target": "evt.eir.promise.node.n_journal_undecided",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.promise",
+      "target": "char.eirin_yagokoro",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.promise",
+      "target": "char.eirin_yagokoro",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.promise",
+      "target": "event.eir.promise.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.promise",
+      "target": "evt.eir.promise",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.eir.promise",
+      "target": "loc.eientei.patient_owned_ledger_table",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.eir.promise",
       "target": "loc.eientei",
       "kind": "location"
     },
