@@ -45,3 +45,18 @@ python3 scripts/validate_m17_review.py --require-human-review
 The first command provides the reviewer-facing inventory. The second is the
 future sign-off gate and currently fails by design because no human review
 manifest has been supplied.
+
+## Human-review handoff
+
+Generate the complete pending template with:
+
+```text
+python3 scripts/generate_m17_review_template.py
+```
+
+It writes `content/reviews/m17_human_reviews.template.json` with all 85 event
+IDs, blank named reviewer fields, and all eleven passes set to `pending`. The
+template is deliberately not at the strict-gate path. Only after actual
+reviewers complete every event should a coordinator copy it to
+`content/reviews/m17_human_reviews.json`, enter names/notes, and set each
+reviewed pass to `approved`.

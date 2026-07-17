@@ -1,0 +1,1877 @@
+{
+  "schema": "gmh-m17-human-review-v1",
+  "status": "template_only_not_approved",
+  "instructions": "Copy this file to content/reviews/m17_human_reviews.json only after named human reviewers have completed every pass for every event. Do not replace pending with approved without the corresponding review.",
+  "events": [
+    {
+      "event_id": "evt.aya.camera_down",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.aya.exclusive_interview",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.aya.hidden_folder",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.aya.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.aya.story_published_too_soon",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.aya.tomorrows_front_page",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.aya.wind_frame_graze",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.ein.elegance_and_boredom",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.ein.endless_night_offer",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.ein.five_impossibilities",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.ein.game_with_no_continue",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.ein.mokou_uninvited_honesty",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.ein.patient_refuses",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.ein.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.ein.short_lived_guest",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.eir.clinic_triage",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.eir.do_not_volunteer",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.eir.doctor_sleeps",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.eir.permanent_cure",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.eir.practical_care",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.eir.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hgy.cutting_wrong_problem",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hgy.duty_delegated",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hgy.farewell_will_not_fall",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hgy.garden_shift",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hgy.last_sweet",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hgy.meal_she_finishes",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hgy.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hgy.two_bodies_one_embarrassment",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hkr.day_nothing_happens",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hkr.empty_cushion",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hkr.offerings_without_owners",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hkr.perfectly_recorded_tea",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hkr.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hkr.shrine_not_guesthouse",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.hkr.unasked_rescue",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mrs.crash_landing",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mrs.field_notes",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mrs.infinite_experiment",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mrs.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mrs.rescue_looks_like_race",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mrs.shelf_marked_later",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mrs.talent_bad_conversation",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mtn.measurable_faith",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.mtn.tomorrows_headline",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.pch.book_answers_everything",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.pch.borrowing_argument",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.pch.library_breathing_room",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.pch.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.pch.question_worth_asking",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.pch.shared_silence_different_books",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.pch.spell_for_two_readers",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.rml.do_not_laugh_wrong_thing",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.rml.fate_she_does_not_announce",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.rml.predestination_exhibit",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.rml.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.rml.red_mist_etiquette",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.rml.the_audience",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sdm.competence_not_consent",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sdm.corridor_no_dust",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sdm.favor_cannot_optimize",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sdm.kitchen_after_midnight",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sdm.late_by_three_minutes",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sdm.missing_minute",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sdm.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sdm.small_chair",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sne.faith_festival_planner",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sne.guaranteed_faith",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sne.ordinary_miracle",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sne.outside_world_shorthand",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sne.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.sne.shrine_between_homes",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.tsh.attention_not_permission",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.tsh.entrance_tremor",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.tsh.heaven_without_friction",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.tsh.imperfect_meal",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.tsh.keystone_construction",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.tsh.promise",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.tsh.repair_she_finishes",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.yyk.bottomless_banquet",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.yyk.empty_plate",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.yyk.feast_without_ending",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.yyk.hosts_responsibility",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.yyk.joke_about_death",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    },
+    {
+      "event_id": "evt.yyk.lightness_not_shallowness",
+      "reviewers": {
+        "character": "",
+        "en": "",
+        "ja": ""
+      },
+      "passes": {
+        "canon": "pending",
+        "relationship": "pending",
+        "fanon": "pending",
+        "autonomy": "pending",
+        "boundaries": "pending",
+        "humor": "pending",
+        "en_voice": "pending",
+        "ja_register": "pending",
+        "width_kinsoku": "pending",
+        "comfort": "pending",
+        "terminology": "pending"
+      },
+      "notes": ""
+    }
+  ]
+}

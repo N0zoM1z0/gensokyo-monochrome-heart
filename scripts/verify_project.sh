@@ -82,6 +82,7 @@ run_checked "M16 asset ledger and generated credits" python3 scripts/validate_as
 run_checked "Python syntax" python3 -m compileall -q scripts
 run_checked "localization CSV validation" python3 scripts/validate_localization_csv.py
 run_checked "M17 content review readiness" python3 scripts/validate_m17_review.py
+run_checked "M17 pending human review template" python3 scripts/generate_m17_review_template.py --check
 run_checked "M12 architecture reuse scan" python3 scripts/validate_m12_architecture.py
 
 # Measure the provisional CPU budget before the editor/import and authoring
