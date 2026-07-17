@@ -58,6 +58,8 @@ unobstructed.
 
 ## Remaining scope
 
-This approval closes portrait runtime integration only. Production region tiles,
-bullet art, UI atlas elements, and standard/reduced-flash VFX still require their
-own runtime composition and screenshot gates before overall M16 acceptance.
+This approval closes portrait runtime integration only. The subsequent region
+gate is recorded in `m16_region_runtime_integration_review.md`, and the bullet,
+UI, and standard/reduced-flash VFX gate is recorded in
+`m16_combat_ui_vfx_runtime_integration_review.md`. Overall M16 acceptance still
+requires the final cross-system audit.

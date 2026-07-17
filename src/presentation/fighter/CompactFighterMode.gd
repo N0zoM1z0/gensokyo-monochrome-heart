@@ -40,7 +40,7 @@ const MOVE_ACTIONS := {
 	&"move.marisa.narrow_laser": MODEL_L_SPELL_1,
 }
 
-@export_enum("live", "intro", "active", "hitbox", "spell_break", "hit", "down", "paused", "training", "result_win", "result_loss", "stress") var fixture_state: String = "live"
+@export_enum("live", "intro", "active", "hitbox", "spell_break", "hit", "down", "paused", "training", "result_win", "result_loss", "projectile_readability", "stress") var fixture_state: String = "live"
 
 var host := FighterHost.new()
 var runtime: FighterDuelSimulation
@@ -50,6 +50,7 @@ var final_result: ModeResult
 
 var _profile: PresentationProfile = PresentationProfileRegistry.resolve(&"A")
 var _batch_renderer := FighterBatchRenderer.new()
+var _production_combat := ProductionCombatVisuals.new()
 var _locale: StringName = &"en"
 var _catalog := UiTextCatalog.new()
 var _latin_font: Font
@@ -70,12 +71,16 @@ var _queued_action: StringName
 var _visual_cue_key: StringName
 var _visual_cue_seconds: float = 0.0
 var _border_stamp_seconds: float = 0.0
+var _impact_attacker_side: int = 0
+var _impact_target_side: int = 1
+var _impact_frame_override: int = -1
 var _input_history := PackedInt32Array()
 var _stress_effects: int = 0
 var _is_reduced_motion: bool = false
 var _is_safe_flash: bool = false
 var _no_flash_active: bool = false
 var _palette_textures: Dictionary = {}
+var _fighter_halos: Dictionary[String, Texture2D] = {}
 
 @onready var sfx_player: ProductionSfxPlayer = %ProductionSfxPlayer
 
@@ -154,6 +159,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(delta: float) -> void:
+	if _fixture_frozen:
+		return
 	_visual_cue_seconds = maxf(0.0, _visual_cue_seconds - maxf(0.0, delta))
 	_border_stamp_seconds = maxf(0.0, _border_stamp_seconds - maxf(0.0, delta))
 	if fixture_state == "live" or _visual_cue_seconds > 0.0 or _border_stamp_seconds > 0.0:
@@ -331,8 +338,10 @@ func capture_debug_state() -> Dictionary:
 		"start_release_ticks": _start_release_ticks,
 		"resume_countdown_ticks": _resume_countdown_ticks,
 		"no_flash": _no_flash_active,
-		"flash_border_active": _border_stamp_seconds > 0.0,
-		"flash_border_seconds": _border_stamp_seconds,
+		"flash_border_active": _border_stamp_seconds > 0.0 and not _no_flash_active,
+		"flash_border_seconds": _border_stamp_seconds if not _no_flash_active else 0.0,
+		"impact_vfx_active": _border_stamp_seconds > 0.0,
+		"impact_vfx_reduced": _border_stamp_seconds > 0.0 and _no_flash_active,
 		"result": String(final_result.result_tag) if final_result != null else "",
 	}, true)
 	return debug
@@ -386,6 +395,9 @@ func _load_runtime() -> void:
 	_visual_cue_key = &""
 	_visual_cue_seconds = 0.0
 	_border_stamp_seconds = 0.0
+	_impact_attacker_side = 0
+	_impact_target_side = 1
+	_impact_frame_override = -1
 	_input_history.clear()
 	_stress_effects = 0
 	_fixture_frozen = fixture_state != "live"
@@ -424,6 +436,10 @@ func _prepare_fixture_state() -> void:
 			runtime.states[0].vitality_notch = 680
 			runtime.states[0].hitstun_ticks = 12
 			runtime.states[0].visual_pose = &"hit"
+			_impact_attacker_side = 1
+			_impact_target_side = 0
+			_impact_frame_override = 2
+			_border_stamp_seconds = 0.35 if _no_flash_active else 0.18
 		"down":
 			_intro_ticks_remaining = 0
 			runtime.states[0].vitality = 0
@@ -453,6 +469,10 @@ func _prepare_fixture_state() -> void:
 		"result_loss":
 			_intro_ticks_remaining = 0
 			host.accept_loss()
+		"projectile_readability":
+			_intro_ticks_remaining = 0
+			_prepare_projectile_stress()
+			_stress_effects = 0
 		"stress":
 			_intro_ticks_remaining = 0
 			_prepare_projectile_stress()
@@ -501,6 +521,7 @@ func _step_runtime(
 	player: FighterInputFrame,
 	opponent: FighterInputFrame = null
 ) -> ModeResult:
+	var old_player_vitality := runtime.states[0].vitality
 	var old_vitality := runtime.states[1].vitality
 	var old_player_temperament := runtime.states[0].temperament
 	var old_marisa_firepower := runtime.states[1].firepower_level
@@ -513,13 +534,27 @@ func _step_runtime(
 	while _input_history.size() > 12:
 		_input_history.remove_at(0)
 	if runtime.states[1].vitality < old_vitality:
+		_impact_attacker_side = 0
+		_impact_target_side = 1
+		_impact_frame_override = -1
 		_show_cue(
 			&"ui.fighter.cue.guard" if runtime.states[1].last_hit_kind == &"guard" else &"ui.fighter.cue.hit",
 			&"sfx.fighter.impact",
 			210.0,
 			0.07
 		)
-		_border_stamp_seconds = 0.0 if _no_flash_active else 0.18
+		_border_stamp_seconds = 0.35 if _no_flash_active else 0.18
+	elif runtime.states[0].vitality < old_player_vitality:
+		_impact_attacker_side = 1
+		_impact_target_side = 0
+		_impact_frame_override = -1
+		_show_cue(
+			&"ui.fighter.cue.guard" if runtime.states[0].last_hit_kind == &"guard" else &"ui.fighter.cue.hit",
+			&"sfx.fighter.impact",
+			210.0,
+			0.07
+		)
+		_border_stamp_seconds = 0.35 if _no_flash_active else 0.18
 	if runtime.states[0].temperament >= old_player_temperament + 100:
 		_show_cue(&"ui.fighter.cue.neutral_reset", &"sfx.fighter.temperament", 520.0, 0.08)
 	if runtime.states[1].firepower_level > old_marisa_firepower:
@@ -609,7 +644,10 @@ func _on_spell_break(_checkpoint: String) -> void:
 	_break_banner_ticks = 30
 	checkpoint_requested.emit(&"fighter_spell_break")
 	_show_cue(&"ui.fighter.cue.spell_break", &"sfx.fighter.spell_break", 330.0, 0.15, false)
-	_border_stamp_seconds = 0.0 if _no_flash_active else 0.28
+	_impact_target_side = 0 if runtime.states[0].vitality <= runtime.states[1].vitality else 1
+	_impact_attacker_side = 1 - _impact_target_side
+	_impact_frame_override = -1
+	_border_stamp_seconds = 0.40 if _no_flash_active else 0.28
 	queue_redraw()
 
 
@@ -656,8 +694,11 @@ func _draw() -> void:
 	_draw_hud(foreground, background)
 	_draw_arena(foreground, background)
 	_draw_projectiles(foreground, background)
-	_draw_fighter(0)
-	_draw_fighter(1)
+	var dense_effects := runtime.projectiles.active_count + _stress_effects > 40
+	_draw_fighter(0, background, dense_effects)
+	_draw_fighter(1, background, dense_effects)
+	if _border_stamp_seconds > 0.0:
+		_draw_production_impact()
 	if _show_combat_boxes:
 		_draw_combat_boxes(foreground)
 	_draw_footer(foreground, background)
@@ -734,19 +775,50 @@ func _draw_arena(foreground: Color, background: Color) -> void:
 		draw_line(Vector2(38, 132), Vector2(38, 77), foreground, 1.0)
 		draw_line(Vector2(282, 132), Vector2(282, 77), foreground, 1.0)
 		draw_line(Vector2(25, 80), Vector2(295, 80), foreground, 2.0)
-		draw_rect(Rect2(145, 113, 30, 20), foreground, false, 1.0)
+		_draw_shrine_offering_box(foreground)
 		draw_line(Vector2(4, 136), Vector2(316, 136), foreground, 1.0)
 		draw_line(Vector2(4, 143), Vector2(316, 143), foreground, 2.0)
 	else:
 		draw_line(Vector2(4, 143), Vector2(316, 143), foreground, 2.0)
-	_batch_renderer.draw_effects(self, _stress_effects, foreground)
+	_batch_renderer.draw_effects(self, _stress_effects, foreground, _no_flash_active)
+
+
+func _draw_shrine_offering_box(foreground: Color) -> void:
+	# A quiet shrine landmark, not collision geometry: slatted timber front,
+	# raised lid, coin slot, and a compact boundary seal.
+	draw_rect(Rect2(145, 116, 30, 17), foreground, false, 1.0)
+	draw_line(Vector2(143, 116), Vector2(177, 116), foreground, 2.0)
+	draw_rect(Rect2(153, 112, 14, 4), foreground, false, 1.0)
+	draw_line(Vector2(156, 114), Vector2(164, 114), foreground, 1.0)
+	for x: int in [151, 157, 163, 169]:
+		draw_line(Vector2(x, 119), Vector2(x, 132), foreground, 1.0)
+	draw_line(Vector2(146, 127), Vector2(174, 127), foreground, 1.0)
+	draw_rect(Rect2(158, 121, 4, 4), foreground, false, 1.0)
 
 
 func _draw_projectiles(foreground: Color, _background: Color) -> void:
 	_batch_renderer.draw_projectiles(self, runtime.projectiles, definition.ground_y, foreground)
 
 
-func _draw_fighter(side: int) -> void:
+func _draw_production_impact() -> void:
+	var frame := (
+		_impact_frame_override
+		if _impact_frame_override >= 0
+		else (2 if _no_flash_active else clampi(3 - ceili(_border_stamp_seconds * 12.0), 0, 3))
+	)
+	var attacker_id := definition.fighters[_impact_attacker_side].character_id
+	var texture := _production_combat.vfx_texture(attacker_id, frame, _no_flash_active, _profile.is_inverted)
+	if texture == null:
+		return
+	var target := runtime.states[_impact_target_side]
+	var center := Vector2(
+		roundi(target.x_fp / 256.0) + target.facing * 12,
+		definition.ground_y - roundi(target.height_fp / 256.0) - 24
+	)
+	draw_texture_rect(texture, Rect2(center - Vector2(8, 8), Vector2(16, 16)), false)
+
+
+func _draw_fighter(side: int, background: Color, dense_effects: bool) -> void:
 	var state := runtime.states[side]
 	var origin := Vector2(
 		roundi(state.x_fp / 256.0) - state.facing * 2,
@@ -755,12 +827,42 @@ func _draw_fighter(side: int) -> void:
 	var sheet := _fighter_sheet(side)
 	var frame := production_frame_for_state(state)
 	draw_set_transform(origin, 0.0, Vector2(state.facing, 1))
+	if dense_effects:
+		var halo := _fighter_halo_texture(side, frame)
+		if halo != null:
+			draw_texture_rect(halo, Rect2(-16, -48, MODEL_L_FRAME_SIZE.x, MODEL_L_FRAME_SIZE.y), false, background)
 	draw_texture_rect_region(
 		sheet,
 		Rect2(-16, -48, MODEL_L_FRAME_SIZE.x, MODEL_L_FRAME_SIZE.y),
 		Rect2(frame * MODEL_L_FRAME_SIZE.x, 0, MODEL_L_FRAME_SIZE.x, MODEL_L_FRAME_SIZE.y)
 	)
 	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+
+
+func _fighter_halo_texture(side: int, frame: int) -> Texture2D:
+	var cache_key := "%d:%d" % [side, frame]
+	if _fighter_halos.has(cache_key):
+		return _fighter_halos[cache_key]
+	var source := (REIMU_SHEET if side == 0 else MARISA_SHEET).get_image()
+	if source == null or source.is_empty():
+		return null
+	var cell := source.get_region(Rect2i(
+		Vector2i(frame * MODEL_L_FRAME_SIZE.x, 0),
+		MODEL_L_FRAME_SIZE
+	))
+	var halo := Image.create(MODEL_L_FRAME_SIZE.x, MODEL_L_FRAME_SIZE.y, false, Image.FORMAT_RGBA8)
+	for y: int in range(cell.get_height()):
+		for x: int in range(cell.get_width()):
+			if cell.get_pixel(x, y).a <= 0.0:
+				continue
+			for offset_y: int in range(-1, 2):
+				for offset_x: int in range(-1, 2):
+					var point := Vector2i(x + offset_x, y + offset_y)
+					if point.x >= 0 and point.y >= 0 and point.x < halo.get_width() and point.y < halo.get_height():
+						halo.set_pixelv(point, Color.WHITE)
+	var texture := ImageTexture.create_from_image(halo)
+	_fighter_halos[cache_key] = texture
+	return texture
 
 
 func _fighter_sheet(side: int) -> Texture2D:

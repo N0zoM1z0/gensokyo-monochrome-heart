@@ -127,8 +127,10 @@ func _run_win_branch(graph: EventGraphRecord) -> void:
 	_expect(
 		bool(mode.capture_debug_state().get("no_flash", false))
 		and not bool(mode.capture_debug_state().get("flash_border_active", true))
-		and is_zero_approx(float(mode.capture_debug_state().get("flash_border_seconds", -1.0))),
-		"no-flash fighter still armed its high-contrast Spell Break border on the trigger frame"
+		and is_zero_approx(float(mode.capture_debug_state().get("flash_border_seconds", -1.0)))
+		and bool(mode.capture_debug_state().get("impact_vfx_active", false))
+		and bool(mode.capture_debug_state().get("impact_vfx_reduced", false)),
+		"no-flash fighter did not replace its unsafe border with the reduced impact cue"
 	)
 	var no_flash_sequence: Array[bool] = []
 	for _frame: int in range(4):

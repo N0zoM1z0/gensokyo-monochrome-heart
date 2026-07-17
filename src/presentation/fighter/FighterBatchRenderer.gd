@@ -10,14 +10,15 @@ enum Batch {
 	COUNT,
 }
 
-const TEXTURE_SIZE := 7
-const CENTER := 3
+const TEXTURE_SIZE := ProductionCombatVisuals.BULLET_MASK_SIZE
+const EFFECT_SIZE := 15
 
 var _capacity: int = 0
 var _batch_color := Color(-1, -1, -1, -1)
 var _meshes: Array[MultiMesh] = []
 var _textures: Array[Texture2D] = []
-var _quad_mesh: QuadMesh
+var _reduced_effects: bool = false
+var _production := ProductionCombatVisuals.new()
 
 
 func draw_projectiles(
@@ -46,9 +47,12 @@ func draw_projectiles(
 		_draw_batch(canvas, batch, counts[batch])
 
 
-func draw_effects(canvas: CanvasItem, count: int, foreground: Color) -> void:
+func draw_effects(canvas: CanvasItem, count: int, foreground: Color, reduced_flash: bool = false) -> void:
 	if canvas == null or count <= 0:
 		return
+	if _reduced_effects != reduced_flash:
+		_reduced_effects = reduced_flash
+		_capacity = 0
 	_ensure_batches(maxi(128, count), foreground)
 	for index: int in range(count):
 		var position := Vector2(
@@ -81,13 +85,14 @@ func _ensure_batches(capacity: int, foreground: Color) -> void:
 		_batch_color = Color(-1, -1, -1, -1)
 		_meshes.clear()
 		_textures.clear()
-		_quad_mesh = QuadMesh.new()
-		_quad_mesh.size = Vector2(TEXTURE_SIZE, TEXTURE_SIZE)
 		for batch: int in range(Batch.COUNT):
+			var quad_mesh := QuadMesh.new()
+			var texture_size := EFFECT_SIZE if batch == Batch.EFFECT else TEXTURE_SIZE
+			quad_mesh.size = Vector2(texture_size, texture_size)
 			var multimesh := MultiMesh.new()
 			multimesh.transform_format = MultiMesh.TRANSFORM_2D
 			multimesh.use_colors = true
-			multimesh.mesh = _quad_mesh
+			multimesh.mesh = quad_mesh
 			multimesh.instance_count = capacity
 			multimesh.visible_instance_count = 0
 			_meshes.append(multimesh)
@@ -101,19 +106,32 @@ func _ensure_batches(capacity: int, foreground: Color) -> void:
 
 
 func _make_texture(batch: int) -> Texture2D:
-	var image := Image.create(TEXTURE_SIZE, TEXTURE_SIZE, false, Image.FORMAT_RGBA8)
+	var production_texture: Texture2D
+	match batch:
+		Batch.AMULET:
+			production_texture = _production.bullet_mask(&"amulet")
+		Batch.STAR:
+			production_texture = _production.bullet_mask(&"star")
+		Batch.LASER:
+			production_texture = _production.bullet_mask(&"needle")
+		Batch.EFFECT:
+			production_texture = _production.vfx_mask(&"char.reimu_hakurei", 2, _reduced_effects, EFFECT_SIZE)
+	if production_texture != null:
+		return production_texture
+	var texture_size := EFFECT_SIZE if batch == Batch.EFFECT else TEXTURE_SIZE
+	var image := Image.create(texture_size, texture_size, false, Image.FORMAT_RGBA8)
 	image.fill(Color.TRANSPARENT)
 	match batch:
 		Batch.AMULET:
-			_draw_box(image, 2, 1, 4, 5)
+			_draw_box(image, 3, 1, 5, 7)
 		Batch.STAR:
-			for offset: int in range(1, 6):
-				_set_pixel(image, offset, CENTER)
-				_set_pixel(image, CENTER, offset)
+			for offset: int in range(1, 8):
+				_set_pixel(image, offset, 4)
+				_set_pixel(image, 4, offset)
 		Batch.LASER:
-			_draw_box(image, 0, 2, 6, 4)
+			_draw_box(image, 0, 3, 8, 5)
 		Batch.EFFECT:
-			_draw_box(image, 2, 2, 4, 4)
+			_draw_box(image, 2, 2, 12, 12)
 	return ImageTexture.create_from_image(image)
 
 

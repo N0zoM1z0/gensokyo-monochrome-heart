@@ -6,6 +6,7 @@
 pattern_path = "res://content/danmaku/missing_minute_knives.json"
 default_mode_id = &"danmaku.sdm.missing_minute_knives"
 default_event_id = &"evt.sdm.late_by_three_minutes"
+boss_character_id = &"char.sakuya_izayoi"
 pause_title_key = &"ui.danmaku.missing_minute.paused"
 result_text_prefix = "ui.danmaku.missing_minute.result"
 teaching_keys = Array[StringName]([&"ui.danmaku.missing_minute.teach.lattice", &"ui.danmaku.missing_minute.teach.clock_hands", &"ui.danmaku.missing_minute.teach.release"])

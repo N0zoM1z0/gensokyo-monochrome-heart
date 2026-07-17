@@ -42,7 +42,9 @@ capture m08_fighter_paused_a_ja res://tests/ui/fixtures/CompactFighterPausedFixt
 capture m08_fighter_training_a_en res://tests/ui/fixtures/CompactFighterTrainingFixture.tscn A en
 capture m08_fighter_result_win_c_ja res://tests/ui/fixtures/CompactFighterResultWinFixture.tscn C ja
 capture m08_fighter_result_loss_a_en res://tests/ui/fixtures/CompactFighterResultLossFixture.tscn A en
+capture m08_fighter_projectiles_a_en res://tests/ui/fixtures/CompactFighterProjectileReadabilityFixture.tscn A en
 capture m08_fighter_stress_d_en res://tests/ui/fixtures/CompactFighterStressFixture.tscn D en
+capture m08_fighter_hit_safe_d_ja res://tests/ui/fixtures/CompactFighterHitFixture.tscn D ja --safe-flash
 
 "$GODOT_BIN" --headless --path . --script res://src/tools/validate_one_bit.gd -- \
 	--path=res://tests/screenshots/generated

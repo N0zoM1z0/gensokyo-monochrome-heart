@@ -66,5 +66,7 @@ portrait resolution and accessible scene composition are reviewed in
 `docs/reviews/m16_portrait_runtime_integration_review.md`; five-region metadata,
 palette resolution, and composed proofs are reviewed in
 `docs/reviews/m16_region_runtime_integration_review.md`. Bullet/UI art and both
-VFX modes still need screenshot review in their actual runtime backgrounds.
-Those remaining integration gates stay open.
+VFX modes subsequently completed their runtime-background screenshot and player
+review in `docs/reviews/m16_combat_ui_vfx_runtime_integration_review.md`. The
+remaining M16 gate is the final cross-system audit rather than another asset-file
+approval.

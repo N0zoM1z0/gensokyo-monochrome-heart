@@ -27,7 +27,148 @@ func run() -> Array[String]:
 	_expect_story_state_isolation(failures)
 	_expect_missing_minute_components(failures)
 	_expect_photo_graze_component(failures)
+	_expect_production_combat_visuals(failures)
 	return failures
+
+
+func _expect_production_combat_visuals(failures: Array[String]) -> void:
+	var visuals := ProductionCombatVisuals.new()
+	var bullet_source := ProductionCombatVisuals.BULLET_ATLAS.get_image()
+	if bullet_source == null or bullet_source.get_size() != Vector2i(96, 32):
+		failures.append("production bullet atlas did not retain its reviewed 6x2 cell grid")
+		return
+	var signatures: Dictionary[String, bool] = {}
+	var outline_signatures: Dictionary[String, bool] = {}
+	for shape: StringName in ProductionCombatVisuals.BULLET_SHAPES:
+		var ink := visuals.bullet_mask(shape)
+		var outline := visuals.bullet_mask(shape, true)
+		if not _expect_visible_mask(ink, ProductionCombatVisuals.BULLET_MASK_SIZE):
+			failures.append("production bullet shape %s did not resolve to a visible 9x9 mask" % shape)
+			continue
+		if not _expect_visible_mask(outline, ProductionCombatVisuals.BULLET_MASK_SIZE):
+			failures.append("production bullet shape %s did not retain a paper-polarity outline" % shape)
+		signatures[_mask_signature(ink.get_image())] = true
+		outline_signatures[_mask_signature(outline.get_image())] = true
+	if signatures.size() != ProductionCombatVisuals.BULLET_SHAPES.size():
+		failures.append("production bullet reduction collapsed distinct authored silhouettes: %d/%d" % [
+			signatures.size(), ProductionCombatVisuals.BULLET_SHAPES.size(),
+		])
+	if outline_signatures.size() != ProductionCombatVisuals.BULLET_SHAPES.size():
+		failures.append("paper-polarity reduction collapsed distinct authored silhouettes: %d/%d" % [
+			outline_signatures.size(), ProductionCombatVisuals.BULLET_SHAPES.size(),
+		])
+	var paper_knife := visuals.bullet_mask(&"knife", true)
+	if paper_knife == null or not _is_connected_mask(paper_knife.get_image(), 6):
+		failures.append("paper knife did not retain a connected six-pixel diagonal gesture")
+	if visuals.bullet_mask(&"unsupported") != null:
+		failures.append("production bullet resolver accepted an unsupported semantic shape")
+	var telegraph := DanmakuBulletBatchRenderer.new().call(
+		"_make_texture", DanmakuBulletBatchRenderer.Batch.TELEGRAPH
+	) as Texture2D
+	if telegraph == null or telegraph.get_image().get_size() != Vector2i(11, 11):
+		failures.append("danmaku telegraph did not retain its distinct 11x11 bracket mask")
+	elif telegraph.get_image().get_pixel(5, 5).a > 0.0:
+		failures.append("danmaku telegraph reused the focused-player center core")
+	for reduced: bool in [false, true]:
+		for character_id: StringName in ProductionCombatVisuals.VFX_CHARACTERS:
+			for frame: int in range(4):
+				var palette_a := visuals.vfx_texture(character_id, frame, reduced, false)
+				var palette_d := visuals.vfx_texture(character_id, frame, reduced, true)
+				if palette_a == null or palette_d == null:
+					failures.append("production VFX cell did not resolve: %s frame %d reduced=%s" % [
+						character_id, frame, reduced,
+					])
+					continue
+				if not _images_are_binary_inverses(palette_a.get_image(), palette_d.get_image()):
+					failures.append("production VFX cell broke palette A/D reciprocity: %s frame %d" % [
+						character_id, frame,
+					])
+	var standard := visuals.vfx_texture(&"char.reimu_hakurei", 2, false, false)
+	var reduced := visuals.vfx_texture(&"char.reimu_hakurei", 2, true, false)
+	if standard == null or reduced == null or _mask_signature(standard.get_image()) == _mask_signature(reduced.get_image()):
+		failures.append("reduced-flash VFX did not retain a visibly distinct authored alternative")
+	if visuals.vfx_texture(&"char.unsupported", 0, false, false) != null:
+		failures.append("production VFX resolver accepted an unsupported character")
+	var marker_signatures: Dictionary[String, bool] = {}
+	for character_id: StringName in ProductionCombatVisuals.VFX_CHARACTERS:
+		var marker_a := visuals.character_marker(character_id, 0, false)
+		var marker_d := visuals.character_marker(character_id, 0, true)
+		if marker_a == null or marker_d == null:
+			failures.append("production Model M combat marker did not resolve: %s" % character_id)
+			continue
+		if marker_a.get_image().get_size() != ProductionCombatVisuals.CHARACTER_MARKER_SIZE:
+			failures.append("production Model M combat marker lost its reviewed compact size: %s" % character_id)
+		if not _images_are_binary_inverses(marker_a.get_image(), marker_d.get_image()):
+			failures.append("production Model M combat marker broke A/D reciprocity: %s" % character_id)
+		marker_signatures[_mask_signature(marker_a.get_image())] = true
+	if marker_signatures.size() != ProductionCombatVisuals.VFX_CHARACTERS.size():
+		failures.append("production Model M combat markers lost launch-character identity")
+
+
+func _expect_visible_mask(texture: Texture2D, expected_size: int) -> bool:
+	if texture == null:
+		return false
+	var image := texture.get_image()
+	if image == null or image.get_size() != Vector2i(expected_size, expected_size):
+		return false
+	for y: int in range(image.get_height()):
+		for x: int in range(image.get_width()):
+			if image.get_pixel(x, y).a > 0.0:
+				return true
+	return false
+
+
+func _mask_signature(image: Image) -> String:
+	var signature := ""
+	for y: int in range(image.get_height()):
+		for x: int in range(image.get_width()):
+			var pixel := image.get_pixel(x, y)
+			signature += "1" if pixel.a > 0.0 and pixel.r < 0.5 else ("2" if pixel.a > 0.0 else "0")
+	return signature
+
+
+func _images_are_binary_inverses(palette_a: Image, palette_d: Image) -> bool:
+	if palette_a.get_size() != palette_d.get_size():
+		return false
+	var visible_pixels := 0
+	for y: int in range(palette_a.get_height()):
+		for x: int in range(palette_a.get_width()):
+			var a := palette_a.get_pixel(x, y)
+			var d := palette_d.get_pixel(x, y)
+			if not is_equal_approx(a.a, d.a):
+				return false
+			if a.a <= 0.0:
+				continue
+			visible_pixels += 1
+			if not (is_equal_approx(a.r + d.r, 1.0) and is_equal_approx(a.g + d.g, 1.0) and is_equal_approx(a.b + d.b, 1.0)):
+				return false
+	return visible_pixels > 0
+
+
+func _is_connected_mask(image: Image, minimum_pixels: int) -> bool:
+	var occupied: Dictionary[Vector2i, bool] = {}
+	for y: int in range(image.get_height()):
+		for x: int in range(image.get_width()):
+			if image.get_pixel(x, y).a > 0.0:
+				occupied[Vector2i(x, y)] = true
+	if occupied.size() < minimum_pixels:
+		return false
+	var first_point: Vector2i = occupied.keys()[0]
+	var pending: Array[Vector2i] = [first_point]
+	var visited: Dictionary[Vector2i, bool] = {}
+	while not pending.is_empty():
+		var point: Vector2i = pending.pop_back()
+		if visited.has(point):
+			continue
+		visited[point] = true
+		for offset_y: int in range(-1, 2):
+			for offset_x: int in range(-1, 2):
+				if offset_x == 0 and offset_y == 0:
+					continue
+				var neighbor: Vector2i = point + Vector2i(offset_x, offset_y)
+				if occupied.has(neighbor) and not visited.has(neighbor):
+					pending.append(neighbor)
+	return visited.size() == occupied.size()
 
 
 func _expect_pattern_schema_and_identity(failures: Array[String]) -> void:

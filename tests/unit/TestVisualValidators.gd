@@ -6,6 +6,7 @@ func run() -> Array[String]:
 	var failures: Array[String] = []
 	_validate_one_bit_contract(failures)
 	_validate_pixel_alignment_contract(failures)
+	_validate_production_ui_art(failures)
 	return failures
 
 
@@ -40,3 +41,50 @@ func _validate_pixel_alignment_contract(failures: Array[String]) -> void:
 	if not validator.validate_tree(aligned, "aligned Sprite2D").is_empty():
 		failures.append("integer-aligned Sprite2D was rejected")
 	aligned.free()
+
+
+func _validate_production_ui_art(failures: Array[String]) -> void:
+	var art := ProductionUiArt.new()
+	var palette_a := art.texture_for(false)
+	var palette_d := art.texture_for(true)
+	if palette_a == null or palette_d == null:
+		failures.append("production UI atlas did not resolve both runtime palettes")
+		return
+	var expected_size := Vector2(ProductionUiArt.ATLAS_SIZE)
+	if palette_a.get_size() != expected_size or palette_d.get_size() != expected_size:
+		failures.append("production UI atlas did not retain its reviewed 256x128 export size")
+	if not _are_palette_inverses(palette_a.get_image(), palette_d.get_image()):
+		failures.append("production UI atlas broke exact palette A/D reciprocity")
+	for frame_index: int in range(ProductionUiArt.FRAME_RECTS.size()):
+		var frame := art.frame_style(frame_index, false)
+		if frame == null:
+			failures.append("production UI frame %d did not resolve" % frame_index)
+			continue
+		for side: int in range(4):
+			if not is_equal_approx(frame.get_texture_margin(side), 4.0):
+				failures.append("production UI frame %d lost its four-pixel nine-patch margin" % frame_index)
+				break
+	for icon_id: StringName in ProductionUiArt.ICON_RECTS:
+		var icon := art.icon_texture(icon_id, false)
+		if icon == null or icon.get_size().x < 16 or icon.get_size().y != 16:
+			failures.append("production semantic UI icon did not resolve: %s" % icon_id)
+	if art.icon_texture(&"unsupported", false) != null or art.frame_style(-1, false) != null:
+		failures.append("production UI resolver accepted unsupported regions")
+
+
+func _are_palette_inverses(palette_a: Image, palette_d: Image) -> bool:
+	if palette_a.get_size() != palette_d.get_size():
+		return false
+	var visible_pixels := 0
+	for y: int in range(palette_a.get_height()):
+		for x: int in range(palette_a.get_width()):
+			var a := palette_a.get_pixel(x, y)
+			var d := palette_d.get_pixel(x, y)
+			if not is_equal_approx(a.a, d.a):
+				return false
+			if a.a <= 0.0:
+				continue
+			visible_pixels += 1
+			if not is_equal_approx(a.r + d.r, 1.0):
+				return false
+	return visible_pixels > 0

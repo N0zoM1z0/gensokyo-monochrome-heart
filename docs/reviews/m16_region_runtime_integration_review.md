@@ -1,8 +1,8 @@
 # M16 Production Region Runtime Integration Review
 
 Date: 2026-07-17
-Decision: approved for the five headline runtime surfaces; bullet, UI, and VFX
-integration remain open.
+Decision: approved for the five headline runtime surfaces. The later bullet,
+UI, and VFX gate is tracked separately.
 
 ## Runtime and metadata contract
 
@@ -93,7 +93,8 @@ blocker.
 
 ## Remaining scope
 
-This approval closes the five headline region atlas/runtime gate. The production
-bullet library, UI export, and standard/reduced-flash VFX still require their
-own runtime mapping, composed screenshots, and player review before overall M16
-acceptance.
+This approval closes the five headline region atlas/runtime gate. The subsequent
+production bullet, UI export, and standard/reduced-flash VFX mapping, composed
+screenshots, and player review are recorded in
+`m16_combat_ui_vfx_runtime_integration_review.md`. Overall M16 acceptance still
+requires the final cross-system audit.

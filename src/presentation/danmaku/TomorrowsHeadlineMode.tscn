@@ -6,6 +6,7 @@
 pattern_path = "res://content/danmaku/tomorrows_headline.json"
 default_mode_id = &"danmaku.mtn.tomorrows_headline"
 default_event_id = &"evt.mtn.tomorrows_headline"
+boss_character_id = &"char.aya_shameimaru"
 pause_title_key = &"ui.danmaku.photo.paused"
 result_text_prefix = "ui.danmaku.photo.result"
 simulation_component = "photo_frame"

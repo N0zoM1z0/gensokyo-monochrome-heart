@@ -16,15 +16,16 @@ enum Batch {
 	COUNT,
 }
 
-const TEXTURE_SIZE := 7
-const KNIFE_TEXTURE_SIZE := 9
-const TEXTURE_CENTER := 3
+const TEXTURE_SIZE := ProductionCombatVisuals.BULLET_MASK_SIZE
+const TEXTURE_CENTER := 4
+const TELEGRAPH_SIZE := 11
 
 var rendered_bullet_count: int = 0
 var _batch_capacity: int = 0
 var _batch_color := Color(-1, -1, -1, -1)
 var _meshes: Array[MultiMesh] = []
 var _textures: Array[Texture2D] = []
+var _production := ProductionCombatVisuals.new()
 
 
 func draw_field(
@@ -123,7 +124,7 @@ func _ensure_batches(capacity: int, foreground: Color) -> void:
 		_textures.clear()
 		for batch: int in range(Batch.COUNT):
 			var quad_mesh := QuadMesh.new()
-			var texture_size := KNIFE_TEXTURE_SIZE if batch in [Batch.KNIFE_INK, Batch.KNIFE_PAPER] else TEXTURE_SIZE
+			var texture_size := TELEGRAPH_SIZE if batch == Batch.TELEGRAPH else TEXTURE_SIZE
 			quad_mesh.size = Vector2(texture_size, texture_size)
 			var multimesh := MultiMesh.new()
 			multimesh.transform_format = MultiMesh.TRANSFORM_2D
@@ -142,35 +143,29 @@ func _ensure_batches(capacity: int, foreground: Color) -> void:
 
 
 func _make_texture(batch: int) -> Texture2D:
-	var texture_size := KNIFE_TEXTURE_SIZE if batch in [Batch.KNIFE_INK, Batch.KNIFE_PAPER] else TEXTURE_SIZE
+	var production_shape := &""
+	match batch:
+		Batch.AMULET_INK, Batch.AMULET_PAPER:
+			production_shape = &"amulet"
+		Batch.OFFERING_INK, Batch.OFFERING_PAPER:
+			production_shape = &"orb"
+		Batch.MEMORY_INK, Batch.MEMORY_PAPER:
+			production_shape = &"shard"
+		Batch.KNIFE_INK, Batch.KNIFE_PAPER:
+			production_shape = &"knife"
+	if production_shape != &"":
+		var outline_only := batch in [
+			Batch.AMULET_PAPER, Batch.OFFERING_PAPER, Batch.MEMORY_PAPER, Batch.KNIFE_PAPER,
+		]
+		var production_texture := _production.bullet_mask(production_shape, outline_only)
+		if production_texture != null:
+			return production_texture
+	var texture_size := TELEGRAPH_SIZE if batch == Batch.TELEGRAPH else TEXTURE_SIZE
 	var image := Image.create(texture_size, texture_size, false, Image.FORMAT_RGBA8)
 	image.fill(Color.TRANSPARENT)
 	match batch:
 		Batch.TELEGRAPH:
-			_draw_mask_box(image, 0, 6)
-			_set_mask_pixel(image, TEXTURE_CENTER, TEXTURE_CENTER)
-		Batch.AMULET_INK, Batch.AMULET_PAPER:
-			for y: int in range(1, 6):
-				for x: int in range(2, 5):
-					if batch == Batch.AMULET_INK or x != TEXTURE_CENTER or y != TEXTURE_CENTER:
-						_set_mask_pixel(image, x, y)
-		Batch.OFFERING_INK, Batch.OFFERING_PAPER:
-			_draw_mask_box(image, 1, 5)
-			if batch == Batch.OFFERING_INK:
-				_set_mask_pixel(image, TEXTURE_CENTER, TEXTURE_CENTER)
-		Batch.MEMORY_INK, Batch.MEMORY_PAPER:
-			for offset: int in range(1, 6):
-				if batch == Batch.MEMORY_INK or offset != TEXTURE_CENTER:
-					_set_mask_pixel(image, offset, TEXTURE_CENTER)
-					_set_mask_pixel(image, TEXTURE_CENTER, offset)
-		Batch.KNIFE_INK, Batch.KNIFE_PAPER:
-			for offset: int in range(1, 8):
-				_set_mask_pixel(image, 8 - offset, offset)
-				if batch == Batch.KNIFE_INK and offset < 7:
-					_set_mask_pixel(image, 7 - offset, offset)
-			_set_mask_pixel(image, 1, 7)
-			_set_mask_pixel(image, 2, 7)
-			_set_mask_pixel(image, 1, 6)
+			_draw_mask_corners(image)
 		Batch.DISSOLVE:
 			_set_mask_pixel(image, TEXTURE_CENTER, TEXTURE_CENTER)
 	return ImageTexture.create_from_image(image)
@@ -182,6 +177,19 @@ func _draw_mask_box(image: Image, minimum: int, maximum: int) -> void:
 		_set_mask_pixel(image, offset, maximum)
 		_set_mask_pixel(image, minimum, offset)
 		_set_mask_pixel(image, maximum, offset)
+
+
+func _draw_mask_corners(image: Image) -> void:
+	var last := image.get_width() - 1
+	for offset: int in range(3):
+		_set_mask_pixel(image, offset, 0)
+		_set_mask_pixel(image, 0, offset)
+		_set_mask_pixel(image, last - offset, 0)
+		_set_mask_pixel(image, last, offset)
+		_set_mask_pixel(image, offset, last)
+		_set_mask_pixel(image, 0, last - offset)
+		_set_mask_pixel(image, last - offset, last)
+		_set_mask_pixel(image, last, last - offset)
 
 
 func _set_mask_pixel(image: Image, x: int, y: int) -> void:

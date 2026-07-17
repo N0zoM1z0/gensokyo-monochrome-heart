@@ -223,6 +223,7 @@ run_checked "pixel alignment" "$GODOT_BIN" --headless --path . \
 	--scene=res://tests/ui/fixtures/CompactFighterTrainingFixture.tscn \
 	--scene=res://tests/ui/fixtures/CompactFighterResultWinFixture.tscn \
 	--scene=res://tests/ui/fixtures/CompactFighterResultLossFixture.tscn \
+	--scene=res://tests/ui/fixtures/CompactFighterProjectileReadabilityFixture.tscn \
 	--scene=res://tests/ui/fixtures/CompactFighterStressFixture.tscn \
 	--scene=res://src/presentation/tools/BulletPatternLab.tscn \
 	--scene=res://tests/ui/fixtures/BulletPatternLabFixture.tscn \

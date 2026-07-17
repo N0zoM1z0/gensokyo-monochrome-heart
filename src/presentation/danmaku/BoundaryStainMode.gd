@@ -30,6 +30,7 @@ const ACTION_CONTRACT := [
 @export var result_text_prefix := "ui.danmaku.result"
 @export_enum("standard", "photo_frame", "archive_adaptive") var simulation_component := "standard"
 @export_enum("shrine", "mountain_wind", "archive_core") var field_component := "shrine"
+@export var boss_character_id: StringName = &"char.reimu_hakurei"
 @export var companion_action_key: StringName = &"ui.input.margin"
 @export var teaching_keys: Array[StringName] = [
 	&"ui.danmaku.boundary.teach.amulet",
@@ -49,6 +50,8 @@ var _catalog := UiTextCatalog.new()
 var _latin_font: Font
 var _japanese_font: Font
 var _batch_renderer := DanmakuBulletBatchRenderer.new()
+var _production_combat := ProductionCombatVisuals.new()
+var _ui_art := ProductionUiArt.new()
 var _fixed_accumulator: float = 0.0
 var _intro_ticks_remaining: int = 60
 var _tutorial_waiting: bool = true
@@ -583,13 +586,13 @@ func _draw() -> void:
 
 func _draw_field_shell(foreground: Color, background: Color) -> void:
 	draw_rect(FIELD_FRAME, background)
-	draw_rect(FIELD_FRAME, foreground, false, 1.0)
+	_draw_production_ui_frame(FIELD_FRAME, 1, foreground)
 	draw_rect(FIELD_TITLE_FRAME, background)
-	draw_rect(FIELD_TITLE_FRAME, foreground, false, 1.0)
+	_draw_production_ui_frame(FIELD_TITLE_FRAME, 0, foreground)
 	draw_rect(RAIL_FRAME, background)
-	draw_rect(RAIL_FRAME, foreground, false, 1.0)
+	_draw_production_ui_frame(RAIL_FRAME, 1, foreground)
 	draw_rect(FOOTER_FRAME, background)
-	draw_rect(FOOTER_FRAME, foreground, false, 1.0)
+	_draw_production_ui_frame(FOOTER_FRAME, 0, foreground)
 	if not runtime.state.focus_held and runtime.assists.background_dim_percent < 80:
 		_draw_field_landmark(foreground)
 	var font := _font()
@@ -609,6 +612,14 @@ func _draw_field_shell(foreground: Color, background: Color) -> void:
 	draw_string(font, Vector2(8, 176), controls, HORIZONTAL_ALIGNMENT_CENTER, 304, _hud_font_size(), foreground)
 	if _border_pulse_seconds > 0.0 and not _no_flash_active:
 		draw_rect(FIELD_FRAME.grow(-2), foreground, false, 2.0)
+
+
+func _draw_production_ui_frame(rect: Rect2, frame_index: int, fallback_color: Color) -> void:
+	var style := _ui_art.frame_style(frame_index, _profile.is_inverted)
+	if style == null:
+		draw_rect(rect, fallback_color, false, 1.0)
+	else:
+		draw_style_box(style, rect)
 
 
 func _draw_field_landmark(foreground: Color) -> void:
@@ -650,9 +661,12 @@ func _draw_interaction_overlay(foreground: Color) -> void:
 	var frame_size := runtime.interaction_frame_size_pixels()
 	var player := _display_position(runtime.state.player_x_fp, runtime.state.player_y_fp)
 	var rect := Rect2(player - Vector2(frame_size) / 2.0, Vector2(frame_size))
-	draw_rect(rect, foreground, false, 1.0)
+	var corner_length := 6.0
 	for corner: Vector2 in [rect.position, Vector2(rect.end.x, rect.position.y), rect.end, Vector2(rect.position.x, rect.end.y)]:
-		draw_circle(corner, 1.0, foreground)
+		var horizontal_direction := 1.0 if is_equal_approx(corner.x, rect.position.x) else -1.0
+		var vertical_direction := 1.0 if is_equal_approx(corner.y, rect.position.y) else -1.0
+		draw_line(corner, corner + Vector2(horizontal_direction * corner_length, 0), foreground, 1.0)
+		draw_line(corner, corner + Vector2(0, vertical_direction * corner_length), foreground, 1.0)
 
 
 func _draw_boss_and_player(foreground: Color, background: Color) -> void:
@@ -661,13 +675,30 @@ func _draw_boss_and_player(foreground: Color, background: Color) -> void:
 	if _last_shot_held:
 		for y: int in range(roundi(boss.y + 7), roundi(player.y - 6), 6):
 			draw_line(Vector2(player.x, y), Vector2(player.x, mini(y + 2, player.y - 6)), foreground, 1.0)
-	draw_rect(Rect2(boss - Vector2(5, 2), Vector2(11, 5)), foreground, false, 1.0)
-	draw_rect(Rect2(boss - Vector2(1, 4), Vector2(3, 9)), foreground, false, 1.0)
-	draw_rect(Rect2(player - Vector2(2, 3), Vector2(5, 6)), foreground, false, 1.0)
-	draw_rect(Rect2(player + Vector2(-4, 3), Vector2(9, 2)), foreground)
-	draw_rect(Rect2(player + Vector2(-1, -5), Vector2(3, 2)), foreground)
+	var boss_texture := _production_combat.character_marker(boss_character_id, 0, _profile.is_inverted)
+	if boss_texture != null:
+		draw_texture_rect(
+			boss_texture,
+			Rect2(boss - Vector2(ProductionCombatVisuals.CHARACTER_MARKER_SIZE) / 2.0, Vector2(ProductionCombatVisuals.CHARACTER_MARKER_SIZE)),
+			false
+		)
+	else:
+		draw_rect(Rect2(boss - Vector2(5, 3), Vector2(11, 7)), foreground, false, 1.0)
+	var player_texture := _production_combat.bullet_mask(&"spirit")
+	if player_texture != null:
+		draw_texture_rect(player_texture, Rect2(player - Vector2(4, 4), Vector2(9, 9)), false, foreground)
+	else:
+		draw_rect(Rect2(player - Vector2(2, 3), Vector2(5, 6)), foreground, false, 1.0)
 	if runtime.state.focus_held:
-		draw_rect(Rect2(player - Vector2(4, 4), Vector2(9, 9)), foreground, false, 1.0)
+		var radius := 7.0
+		var diamond := PackedVector2Array([
+			player + Vector2(0, -radius),
+			player + Vector2(radius, 0),
+			player + Vector2(0, radius),
+			player + Vector2(-radius, 0),
+			player + Vector2(0, -radius),
+		])
+		draw_polyline(diamond, foreground, 1.0, false)
 		draw_rect(Rect2(player, Vector2(2, 2)), foreground)
 		draw_rect(Rect2(player + Vector2(1, 1), Vector2.ONE), background)
 
@@ -827,17 +858,17 @@ func _draw_result(foreground: Color, background: Color) -> void:
 	draw_string(font, Vector2(176, 147), input_hint(GameInput.CANCEL, _catalog.text(&"ui.danmaku.result.retry", _locale)), HORIZONTAL_ALIGNMENT_RIGHT, 118, _hud_font_size(), foreground)
 
 
-func _draw_result_stamp(origin: Vector2, tag: StringName, foreground: Color, background: Color) -> void:
-	draw_rect(Rect2(origin - Vector2(15, 15), Vector2(30, 30)), foreground, false, 2.0)
-	if tag == &"clear":
-		draw_rect(Rect2(origin - Vector2(8, 8), Vector2(16, 16)), foreground)
-		draw_rect(Rect2(origin - Vector2(2, 2), Vector2(4, 4)), background)
-	elif tag == &"assist_clear":
-		draw_line(origin + Vector2(-9, 0), origin + Vector2(9, 0), foreground, 2.0)
-		draw_line(origin + Vector2(0, -9), origin + Vector2(0, 9), foreground, 2.0)
+func _draw_result_stamp(origin: Vector2, tag: StringName, foreground: Color, _background: Color) -> void:
+	draw_rect(Rect2(origin - Vector2(13, 13), Vector2(26, 26)), foreground, false, 2.0)
+	var icon_id := &"confirm" if tag == &"clear" else (&"assist" if tag == &"assist_clear" else &"cancel")
+	var icon := _ui_art.icon_texture(icon_id, _profile.is_inverted)
+	if icon != null:
+		var native_size := icon.get_size()
+		var scale := minf(20.0 / native_size.x, 18.0 / native_size.y)
+		var draw_size := (native_size * scale).round()
+		draw_texture_rect(icon, Rect2(origin - draw_size / 2.0, draw_size), false)
 	else:
-		draw_line(origin + Vector2(-8, -8), origin + Vector2(8, 8), foreground, 2.0)
-		draw_line(origin + Vector2(8, -8), origin + Vector2(-8, 8), foreground, 2.0)
+		draw_circle(origin, 7, foreground, false, 2.0)
 
 
 func _draw_gauge(
