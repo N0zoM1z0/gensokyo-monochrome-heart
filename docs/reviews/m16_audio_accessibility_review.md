@@ -70,4 +70,6 @@ Automated amplitude policy does not prove that a mix is comfortable or audible.
 Before M16 audio acceptance, a listener must review all five stem families and
 the twelve SFX on laptop speakers and headphones, including Mono and Low Dynamic
 Range, and record fatigue, warning audibility, dialogue ducking, and cue-balance
-results. Campaign regions beyond the five production families also remain open.
+results. All currently authored campaign event states now resolve through the
+five reviewed families, including three explicit thematic fallbacks; automated
+coverage no longer remains open.

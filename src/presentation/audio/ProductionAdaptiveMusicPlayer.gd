@@ -42,7 +42,7 @@ const FAMILY_DEFINITIONS := {
 const FAMILY_STATES := {
 	&"hakurei_shrine": [
 		&"mus_shrine_day", &"mus_reimu_private", &"mus_marisa_arrival",
-		&"mus_shrine_duel", &"mus_border_crossing",
+		&"mus_shrine_duel", &"mus_border_crossing", &"mus_marisa_night",
 	],
 	&"scarlet_devil_mansion": [
 		&"mus_sdm_foyer", &"mus_meiling_gate", &"mus_library",
@@ -51,7 +51,8 @@ const FAMILY_STATES := {
 	],
 	&"youkai_mountain": [
 		&"mus_mountain_base", &"mus_nitori_workshop", &"mus_hina_event",
-		&"mus_aya_chase", &"mus_aya_afterbeat",
+		&"mus_aya_chase", &"mus_aya_afterbeat", &"mus_sanae_route",
+		&"mus_tenshi_route",
 	],
 	&"eientei_bamboo": [
 		&"mus_bamboo_forest", &"mus_tewi_shortcut", &"mus_reisen_wave",
@@ -64,9 +65,10 @@ const FAMILY_STATES := {
 	],
 }
 const PERSON_STATES: Array[StringName] = [
-	&"mus_reimu_private", &"mus_patchouli_route", &"mus_remilia_route",
+	&"mus_reimu_private", &"mus_marisa_night", &"mus_patchouli_route", &"mus_remilia_route",
 	&"mus_aya_afterbeat", &"mus_eirin_route", &"mus_kaguya_afterbeat",
 	&"mus_youmu_afterbeat", &"mus_yuyuko_private", &"mus_yukari_private",
+	&"mus_sanae_route", &"mus_tenshi_route",
 ]
 const INCIDENT_STATES: Array[StringName] = [
 	&"mus_border_crossing", &"mus_marisa_arrival", &"mus_shrine_duel",

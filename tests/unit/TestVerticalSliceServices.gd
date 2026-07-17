@@ -9,6 +9,7 @@ func run() -> Array[String]:
 	var failures: Array[String] = []
 	_remove_tree(TEST_ROOT)
 	_expect_production_adaptive_music(failures)
+	_expect_campaign_music_state_coverage(failures)
 	_expect_production_sfx(failures)
 	_expect_production_manifest_alignment(failures)
 	_expect_local_telemetry(failures)
@@ -73,6 +74,40 @@ func _expect_production_adaptive_music(failures: Array[String]) -> void:
 	player.free()
 	if AudioServer.get_bus_index(&"Music") < 0 or AudioServer.get_bus_index(&"SFX") < 0:
 		failures.append("production Music/SFX buses are absent from the default layout")
+
+
+func _expect_campaign_music_state_coverage(failures: Array[String]) -> void:
+	var reviewed_fallbacks := {
+		&"mus_marisa_night": &"hakurei_shrine",
+		&"mus_sanae_route": &"youkai_mountain",
+		&"mus_tenshi_route": &"youkai_mountain",
+	}
+	for state_id: StringName in reviewed_fallbacks:
+		if ProductionAdaptiveMusicPlayer.family_for_state(state_id) != reviewed_fallbacks[state_id]:
+			failures.append("reviewed campaign music fallback drifted: %s" % state_id)
+	var event_states: Dictionary[StringName, bool] = {}
+	for file_name: String in DirAccess.get_files_at("res://content/events"):
+		if not file_name.ends_with(".json"):
+			continue
+		var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(
+			"res://content/events/%s" % file_name
+		))
+		if not parsed is Dictionary:
+			continue
+		var nodes: Variant = parsed.get("nodes", {})
+		if not nodes is Dictionary:
+			continue
+		for node_value: Variant in nodes.values():
+			if not node_value is Dictionary or String(node_value.get("type", "")) != "music_state":
+				continue
+			var state_id := StringName(node_value.get("state", ""))
+			event_states[state_id] = true
+			if ProductionAdaptiveMusicPlayer.family_for_state(state_id) == &"":
+				failures.append("campaign event music state has no reviewed production family: %s (%s)" % [
+					state_id, file_name,
+				])
+	if event_states.is_empty():
+		failures.append("campaign music coverage test found no authored event states")
 
 
 func _expect_production_sfx(failures: Array[String]) -> void:

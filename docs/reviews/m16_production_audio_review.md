@@ -1,9 +1,9 @@
 # M16 Production Audio Technical Review
 
-Date: 2026-07-17  
+Date: 2026-07-17
 Decision: the listed original files are approved as production audio inputs;
 runtime adaptive playback, bounded SFX, and user-facing mix accessibility are
-implemented, while listener sign-off and full campaign cue coverage remain open.
+implemented, while real-device listener sign-off remains open.
 
 ## Authorship and rights
 
@@ -50,6 +50,7 @@ controls. Its technical and simulated-player evidence is recorded in
 ## Blocking remainder
 
 M16 still needs listener review of the production mix on real speakers and
-headphones, plus deliberate production-family mapping for campaign regions
-outside the five headline families. This file approval therefore does not by
+headphones. All authored event states now have deliberate production-family
+coverage, including three documented thematic fallbacks; the runtime scan
+rejects any future uncovered state. This file approval therefore does not by
 itself close the complete M16 audio gate.

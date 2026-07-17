@@ -1,8 +1,9 @@
 # M16 Production Audio Runtime Integration Review
 
 Date: 2026-07-17
-Decision: PASS for production playback and its follow-up mix-accessibility
-slice; M16 audio remains open for listener review and non-headline coverage.
+Decision: PASS for production playback, complete authored-event state coverage,
+and its follow-up mix-accessibility slice; M16 audio remains open for real-device
+listener review.
 
 ## Runtime contract
 
@@ -51,10 +52,25 @@ Persistent Mono Audio and Low Dynamic Range controls now apply live through
 UI review, and cancellation/persistence evidence is recorded in
 `docs/reviews/m16_audio_accessibility_review.md`.
 
+## Campaign state coverage
+
+Every `music_state` referenced by the 104 shipped event graphs resolves to a
+reviewed production family. Three states outside the five headline location
+names use explicit, documented thematic fallbacks rather than silent defaults:
+
+- `mus_marisa_night` uses Hakurei Shrine's person-forward mix because that
+  reviewed family already owns Marisa's arrival identity;
+- `mus_sanae_route` uses Youkai Mountain's person-forward mix because Moriya
+  Shrine is part of the mountain campaign geography;
+- `mus_tenshi_route` uses Youkai Mountain's person-forward mix for its reviewed
+  high-altitude, wind, and terrain language.
+
+The unit suite scans every event JSON and fails if any authored music state no
+longer resolves. Unknown external or future states are still rejected.
+
 ## Remaining gate
 
 A listener review must judge audibility, fatigue, ducking, cue priority, and the
-balance of all five stem families on a real audio driver. Remaining campaign
-regions need new approved production families or an explicitly reviewed
-fallback policy; they must not be silently mapped to unrelated headline-region
-music.
+balance of all five stem families on a real audio driver. Automated state,
+rights, and amplitude checks are supporting evidence, not a substitute for that
+human listening gate.
