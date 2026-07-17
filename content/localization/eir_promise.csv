@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.eir.promise.choose,objective,,"Confirm that the ledger belongs to the patient, has a final page, and promises only the next appointment.",台帳が患者本人のもので、最後のページを持ち、次の一回の予約だけを約束することを確かめる。,208,Original
 event.eir.promise.title,event_title,,Promise,約束,208,Original
 choice.eir.promise.friendship,choice,,Choose friendship for one ordinary life.,普通の寿命に寄り添う友情を選ぶ。,248,Original

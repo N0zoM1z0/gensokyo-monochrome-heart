@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.hkr.unasked_rescue.hold_veranda,objective,,Keep the veranda line from opening.,縁側の線を開かせない。,208,Original
 event.hkr.unasked_rescue.title,event_title,,The Unasked Rescue,頼まれなかった救助,248,Original
 choice.hkr.rescue.direct,choice,,Say you heard her and will hold the marker.,聞こえた、札を持つと言う。,248,Original

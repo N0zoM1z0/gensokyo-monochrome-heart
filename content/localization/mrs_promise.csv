@@ -1,15 +1,15 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.mrs.promise.take_broom,objective,,Take the broom only if you mean to carry the bags too.,鞄も持つつもりなら、箒に乗る。,208,Original
 event.mrs.promise.title,event_title,,Return Before Borrowing,借りる前に返す,208,Original
 choice.mrs.promise.friendship,choice,,Accept a permanent seat on the broom as friends.,友人として、箒の後ろの席をいつでも使う。,248,Original
 choice.mrs.promise.romance,choice,,Ask whether tomorrow can be more than friendship.,明日から友人以上になれるか尋ねる。,248,Original
 choice.mrs.promise.postponed,choice,,Leave tomorrow open and ride together today.,明日は保留して、今日は一緒に乗る。,248,Original
 choice.mrs.promise.undecided,choice,,Say you do not know what to call the future yet.,未来をまだ何と呼ぶか分からないと言う。,248,Original
-dlg.mrs.promise.intro,dialogue,char.marisa_kirisame,"Here. I borrowed this too long. It belongs back with you.",「ほら。これも長く借りすぎた。お前の所へ戻る物だ。」,248,Original
-dlg.mrs.promise.choice,dialogue,char.marisa_kirisame,"I will not borrow tomorrow by pretending it is already mine. What are you offering?",「明日がもう私の物みたいなふりをして、借りたりしない。お前は何を約束する？」,248,Original
+dlg.mrs.promise.intro,dialogue,char.marisa_kirisame,Here. I borrowed this too long. It belongs back with you.,「ほら。これも長く借りすぎた。お前の所へ戻る物だ。」,248,Original
+dlg.mrs.promise.choice,dialogue,char.marisa_kirisame,I will not borrow tomorrow by pretending it is already mine. What are you offering?,「明日がもう私の物みたいなふりをして、借りたりしない。お前は何を約束する？」,248,Original
 dlg.mrs.promise.friendship,dialogue,char.marisa_kirisame,"Then the backseat is permanent. Hold the bags, call the wind, and come when the road looks interesting.",「じゃあ後ろの席は永久だ。鞄を持って、風を呼んで、道が面白そうなら来い。」,248,Original
 dlg.mrs.promise.romance,dialogue,char.marisa_kirisame,"More than friendship, then. I returned the keepsake first. May I borrow tomorrow with your permission?",「友人以上、だな。先に預かり物を返した。許してくれるなら、明日を借りてもいいか？」,248,Original
-dlg.mrs.promise.postponed,dialogue,char.marisa_kirisame,"Good. A future can stay open without becoming somebody else's storage shelf.",「いい。未来は開けたままでいい。誰かの物置棚になる必要はない。」,248,Original
-dlg.mrs.promise.undecided,dialogue,char.marisa_kirisame,"Then do not name it early. Just tell me when the left pull starts.",「じゃあ早く名前をつけるな。左への引きが始まったら、教えてくれ。」,248,Original
-journal.mrs.promise.title,journal_title,,Tomorrow Asked, Not Taken,奪わずに尋ねた明日,248,Original
-journal.mrs.promise.body,journal_body,,Marisa returned what was not hers before asking for any future. The answer named friendship, romance, postponement, or uncertainty without turning any of them into possession.,魔理沙は未来を尋ねる前に、自分の物でない物を返した。答えは友情、恋愛、保留、未定を名づけたが、そのどれも所有にはしなかった。,248,Original
+dlg.mrs.promise.postponed,dialogue,char.marisa_kirisame,Good. A future can stay open without becoming somebody else's storage shelf.,「いい。未来は開けたままでいい。誰かの物置棚になる必要はない。」,248,Original
+dlg.mrs.promise.undecided,dialogue,char.marisa_kirisame,Then do not name it early. Just tell me when the left pull starts.,「じゃあ早く名前をつけるな。左への引きが始まったら、教えてくれ。」,248,Original
+journal.mrs.promise.title,journal_title,,"Tomorrow Asked, Not Taken",奪わずに尋ねた明日,248,Original
+journal.mrs.promise.body,journal_body,,"Marisa returned what was not hers before asking for any future. The answer named friendship, romance, postponement, or uncertainty without turning any of them into possession.",魔理沙は未来を尋ねる前に、自分の物でない物を返した。答えは友情、恋愛、保留、未定を名づけたが、そのどれも所有にはしなかった。,248,Original

@@ -1,16 +1,16 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.pch.shared_silence_different_books.choose,objective,,Choose how to share an uninterrupted reading hour.,中断されない読書の時間をどう共有するか選ぶ。,208,Original
-event.pch.shared_silence_different_books.title,event_title,,Shared Silence, Different Books,共にある沈黙、違う本,208,Original
+event.pch.shared_silence_different_books.title,event_title,,"Shared Silence, Different Books",共にある沈黙、違う本,208,Original
 choice.pch.shared_silence_different_books.direct,choice,,Agree that reading together does not require conversation.,一緒に読んでも会話は必要ないと認める。,248,Original
 choice.pch.shared_silence_different_books.playful,choice,,Offer to compare only the page numbers when the hour ends.,時間が終わったら頁番号だけ比べようと言う。,248,Original
 choice.pch.shared_silence_different_books.patient,choice,,Leave the companion-comment switch off and keep reading.,同行者のコメントを切ったまま、読み続ける。,248,Original
 choice.pch.shared_silence_different_books.defiant,choice,,Refuse to turn her silence into a verdict about your worth.,彼女の沈黙を自分の価値への判定にすることを断る。,248,Original
-dlg.pch.shared_silence_different_books.intro,dialogue,char.patchouli_knowledge,"You may read beside me. We do not need to select the same book to make the hour shared.",「隣で読んでもいい。同じ本を選ばなくても、この時間は共有できる。」,248,Original
-dlg.pch.shared_silence_different_books.terms,dialogue,char.patchouli_knowledge,"Companion comments are disabled. They confuse attention with a vacancy that must be filled.",「同行者のコメントは切る。注意を、埋めるべき空席と取り違えるから。」,248,Original
-dlg.pch.shared_silence_different_books.direct,dialogue,char.patchouli_knowledge,"Correct. Conversation is not included by default. Neither is loneliness.",「その通り。会話は標準装備じゃない。孤独もね。」,248,Original
-dlg.pch.shared_silence_different_books.playful,dialogue,char.patchouli_knowledge,"Page numbers are tolerable. They are facts with no ambition to become small talk.",「頁番号なら許容できる。世間話になろうという野心のない事実だから。」,248,Original
-dlg.pch.shared_silence_different_books.patient,dialogue,char.patchouli_knowledge,"Good. The switch remains off. Notice how much of a room survives when no one narrates it.",「いい。切ったままにして。誰も語らない時、部屋がどれだけ残るか見て。」,248,Original
+dlg.pch.shared_silence_different_books.intro,dialogue,char.patchouli_knowledge,You may read beside me. We do not need to select the same book to make the hour shared.,「隣で読んでもいい。同じ本を選ばなくても、この時間は共有できる。」,248,Original
+dlg.pch.shared_silence_different_books.terms,dialogue,char.patchouli_knowledge,Companion comments are disabled. They confuse attention with a vacancy that must be filled.,「同行者のコメントは切る。注意を、埋めるべき空席と取り違えるから。」,248,Original
+dlg.pch.shared_silence_different_books.direct,dialogue,char.patchouli_knowledge,Correct. Conversation is not included by default. Neither is loneliness.,「その通り。会話は標準装備じゃない。孤独もね。」,248,Original
+dlg.pch.shared_silence_different_books.playful,dialogue,char.patchouli_knowledge,Page numbers are tolerable. They are facts with no ambition to become small talk.,「頁番号なら許容できる。世間話になろうという野心のない事実だから。」,248,Original
+dlg.pch.shared_silence_different_books.patient,dialogue,char.patchouli_knowledge,Good. The switch remains off. Notice how much of a room survives when no one narrates it.,「いい。切ったままにして。誰も語らない時、部屋がどれだけ残るか見て。」,248,Original
 dlg.pch.shared_silence_different_books.defiant,dialogue,char.patchouli_knowledge,"A useful refusal. Silence is information about the page, not a measurement of you.",「役に立つ拒絶ね。沈黙は頁についての情報であって、あなたを測るものじゃない。」,248,Original
-dlg.pch.shared_silence_different_books.after,dialogue,char.patchouli_knowledge,"The hour ended without needing an account of itself. Mark your page; I will mark mine.",「時間は自分自身の報告を必要とせずに終わった。あなたは栞を挟んで。私も挟む。」,248,Original
+dlg.pch.shared_silence_different_books.after,dialogue,char.patchouli_knowledge,The hour ended without needing an account of itself. Mark your page; I will mark mine.,「時間は自分自身の報告を必要とせずに終わった。あなたは栞を挟んで。私も挟む。」,248,Original
 journal.pch.shared_silence_different_books.title,journal_title,,Two Bookmarks,二つの栞,248,Original
-journal.pch.shared_silence_different_books.body,journal_body,,Patchouli and the protagonist read different books in the same alcove. The quiet was neither empty nor a test, and companion comments remained deliberately disabled.,パチュリーと主人公は同じ小部屋で別々の本を読んだ。静けさは空虚でも試験でもなく、同行者のコメントは意図して切られたままだった。,248,Original
+journal.pch.shared_silence_different_books.body,journal_body,,"Patchouli and the protagonist read different books in the same alcove. The quiet was neither empty nor a test, and companion comments remained deliberately disabled.",パチュリーと主人公は同じ小部屋で別々の本を読んだ。静けさは空虚でも試験でもなく、同行者のコメントは意図して切られたままだった。,248,Original

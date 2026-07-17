@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.eir.practical_care.balance,objective,,"Keep consent, Kosuzu's next task, and the centuries-scale orbit error visible without ranking scale as worth.",同意、小鈴の次の作業、数百年規模の軌道誤差を見えるままにし、規模を価値の序列に結びつけない。,208,Original
 event.eir.practical_care.title,event_title,,An Immortal's Practical Care,不死者の実際的なケア,208,Original
 choice.eir.practical_care.direct,choice,,Ask what Kosuzu's hand must do next.,小鈴が次にその手で何をする必要があるか尋ねる。,248,Original

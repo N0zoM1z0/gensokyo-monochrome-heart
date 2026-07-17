@@ -1,16 +1,16 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.hgy.cutting_wrong_problem.listen,objective,,Stay with Youmu while the practice cut remains unfinished.,稽古の斬撃が未完成のまま、妖夢のそばにいる。,208,Original
 event.hgy.cutting_wrong_problem.title,event_title,,Cutting the Wrong Problem,切るべきではない問題,208,Original
 choice.hgy.wrong_cut.direct,choice,,Say an apology is not a technique to execute.,謝罪は実行する技ではないと言う。,248,Original
 choice.hgy.wrong_cut.playful,choice,,Ask whether the training board has instructions for feelings.,感情の指示も稽古板に書いてあるのか尋ねる。,248,Original
 choice.hgy.wrong_cut.patient,choice,,Tell her you can listen without assigning a next step.,次の手順を決めずに聞けると言う。,248,Original
 choice.hgy.wrong_cut.defiant,choice,,Refuse to give orders about what she should feel.,何を感じるべきか命令するのを断る。,248,Original
-dlg.hgy.wrong_cut.intro,dialogue,char.youmu_konpaku,"I made you wait at the east path longer than I promised. I have written three corrections and none of them say what I need to say.",「東の道で、約束より長く待たせました。修正を三つ書きましたが、どれにも本当に言うべきことが書かれていません。」,248,Original
+dlg.hgy.wrong_cut.intro,dialogue,char.youmu_konpaku,I made you wait at the east path longer than I promised. I have written three corrections and none of them say what I need to say.,「東の道で、約束より長く待たせました。修正を三つ書きましたが、どれにも本当に言うべきことが書かれていません。」,248,Original
 dlg.hgy.wrong_cut.request,dialogue,char.youmu_konpaku,"Please tell me the proper next action. An apology, an extra watch, a punishment drill—something I can complete correctly.",「正しい次の行動を言ってください。謝罪、追加の見守り、罰の稽古――正しく終えられるものを。」,248,Original
 dlg.hgy.wrong_cut.direct,dialogue,char.youmu_konpaku,"Then I should apologize because I kept you waiting, not because it finishes a line on this board.",「では、待たせたことを謝るべきですね。稽古板の一行を終えるためではなく。」,248,Original
 dlg.hgy.wrong_cut.playful,dialogue,char.youmu_konpaku,"It has diagrams for feet, not hearts. I was hoping it might be more useful than that.",「足運びの図しかありません。心の方にも役立てばと思っていました。」,248,Original
-dlg.hgy.wrong_cut.patient,dialogue,char.youmu_konpaku,"Listening without a conclusion feels unguarded. I will try to stay there anyway.",「結論なしで聞くのは、無防備に感じます。それでも、そこにいようと思います。」,248,Original
-dlg.hgy.wrong_cut.defiant,dialogue,char.youmu_konpaku,"You are right to refuse. I was asking you to command me so I would not have to notice what I chose.",「断って当然です。自分で選んだことに気づかずに済むよう、私を指揮してほしかったのです。」,248,Original
+dlg.hgy.wrong_cut.patient,dialogue,char.youmu_konpaku,Listening without a conclusion feels unguarded. I will try to stay there anyway.,「結論なしで聞くのは、無防備に感じます。それでも、そこにいようと思います。」,248,Original
+dlg.hgy.wrong_cut.defiant,dialogue,char.youmu_konpaku,You are right to refuse. I was asking you to command me so I would not have to notice what I chose.,「断って当然です。自分で選んだことに気づかずに済むよう、私を指揮してほしかったのです。」,248,Original
 dlg.hgy.wrong_cut.after,dialogue,char.youmu_konpaku,"The cut can remain unfinished. So can this conversation, if we return to it honestly.",「この斬撃は未完成のままで構いません。この話も、正直に戻ってこられるなら未完成で構いません。」,248,Original
 journal.hgy.cutting_wrong_problem.title,journal_title,,The Problem Left Uncut,切らずに残した問題,248,Original
-journal.hgy.cutting_wrong_problem.body,journal_body,,Youmu did not turn an apology into a drill or hand command of her feelings to someone else. The disagreement stayed open, but it stayed honest.,妖夢は謝罪を稽古にせず、気持ちの指揮を他人に渡さなかった。不一致は開いたままだが、正直なままでいた。,248,Original
+journal.hgy.cutting_wrong_problem.body,journal_body,,"Youmu did not turn an apology into a drill or hand command of her feelings to someone else. The disagreement stayed open, but it stayed honest.",妖夢は謝罪を稽古にせず、気持ちの指揮を他人に渡さなかった。不一致は開いたままだが、正直なままでいた。,248,Original

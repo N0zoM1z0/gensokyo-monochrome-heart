@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.hgy.farewell.release,objective,,Stay with Youmu until the petal and spirit may move again.,花びらと魂が再び動けるまで、妖夢のそばにいる。,208,Original
 event.hgy.farewell_will_not_fall.title,event_title,,A Farewell That Will Not Fall,落ちない別れ,208,Original
 choice.hgy.farewell.direct,choice,,Say guarding can include stepping aside.,守ることには一歩退くことも含まれると言う。,248,Original

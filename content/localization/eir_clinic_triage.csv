@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.eir.clinic_triage.separate,objective,,"Separate observed signs, patient statements, magical residue, and rumor-stamped symptom cards.",観察した所見、患者自身の説明、魔法の残留、流言印の症状札を分ける。,208,Original
 event.eir.clinic_triage.title,event_title,,Clinic Triage,診療所のトリアージ,208,Original
 choice.eir.clinic_triage.direct,choice,,"Sort observation, statement, residue, and rumor without calling any one a diagnosis.",観察、説明、残留、流言を分け、どれ一つも診断そのものとは呼ばない。,248,Original

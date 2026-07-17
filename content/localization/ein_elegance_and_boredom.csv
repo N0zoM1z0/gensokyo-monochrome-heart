@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.ein.elegance_and_boredom.host,objective,,Decide how Kaguya will receive Eientei's guests.,輝夜が永遠亭の客をどう迎えるか決める。,208,Original
 event.ein.elegance_and_boredom.title,event_title,,Elegance and Boredom,優雅さと退屈,208,Original
 choice.ein.elegance_and_boredom.direct,choice,,Ask which part of hosting she actually wants to do today.,今日、もてなしのどの部分を本当にしたいのか尋ねる。,248,Original

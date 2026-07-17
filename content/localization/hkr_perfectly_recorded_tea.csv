@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.hkr.recorded_tea.set_cups,objective,,Set out two cups without making an occasion of it.,大げさにせず、湯呑みを二つ出す。,208,Original
 event.hkr.perfectly_recorded_tea.title,event_title,,Perfectly Recorded Tea,完全に記録されたお茶,248,Original
 choice.hkr.recorded_tea.direct,choice,,Say a saved afternoon would stop being an afternoon.,保存された午後は、もう午後じゃないと言う。,248,Original
@@ -7,14 +7,14 @@ choice.hkr.recorded_tea.patient,choice,,Let Reimu decide whether today is worth 
 choice.hkr.recorded_tea.defiant,choice,,Say refusing a perfect copy sounds like choosing inconvenience.,完璧な写しを拒むのは、不便を選ぶことだと言う。,248,Original
 dlg.hkr.recorded_tea.reimu.offer,dialogue,char.reimu_hakurei,"It offered to keep this afternoon exactly as it is. Cups, dust, you sitting there.",「この午後を、そのまま残すって言ってきた。湯呑みも、埃も、そこに座るあなたも。」,248,Original
 dlg.hkr.recorded_tea.reimu.refusal,dialogue,char.reimu_hakurei,"No. Then the tea never cools, and nobody has to decide whether to make more.",「嫌よ。そうしたらお茶は冷めないし、もう一杯いれるか誰も決めなくていい。」,248,Original
-dlg.hkr.recorded_tea.reimu.direct,dialogue,char.reimu_hakurei,"Exactly. A copy can keep a room. It cannot keep an afternoon honest.",「そう。写しは部屋を残せる。午後を正直には残せない。」,248,Original
-dlg.hkr.recorded_tea.reimu.playful,dialogue,char.reimu_hakurei,"That is the part it would probably call an error. Good.",「そこは、たぶん誤差って呼ぶでしょうね。それでいい。」,248,Original
-dlg.hkr.recorded_tea.reimu.patient,dialogue,char.reimu_hakurei,"That is all it gets. Today can finish before anyone files it away.",「それでいい。誰かがしまい込む前に、今日は終わっていい。」,248,Original
-dlg.hkr.recorded_tea.reimu.defiant,dialogue,char.reimu_hakurei,"Yes. I am not taking advice from a thing that has never washed a cup.",「そうよ。湯呑みも洗ったことがない物に、助言はされない。」,248,Original
+dlg.hkr.recorded_tea.reimu.direct,dialogue,char.reimu_hakurei,Exactly. A copy can keep a room. It cannot keep an afternoon honest.,「そう。写しは部屋を残せる。午後を正直には残せない。」,248,Original
+dlg.hkr.recorded_tea.reimu.playful,dialogue,char.reimu_hakurei,That is the part it would probably call an error. Good.,「そこは、たぶん誤差って呼ぶでしょうね。それでいい。」,248,Original
+dlg.hkr.recorded_tea.reimu.patient,dialogue,char.reimu_hakurei,That is all it gets. Today can finish before anyone files it away.,「それでいい。誰かがしまい込む前に、今日は終わっていい。」,248,Original
+dlg.hkr.recorded_tea.reimu.defiant,dialogue,char.reimu_hakurei,Yes. I am not taking advice from a thing that has never washed a cup.,「そうよ。湯呑みも洗ったことがない物に、助言はされない。」,248,Original
 dlg.hkr.recorded_tea.reimu.brew,dialogue,char.reimu_hakurei,"Make it warm, not perfect. We are going to drink it before it becomes evidence.",「温かくして、完璧にはしないで。証拠になる前に飲むから。」,248,Original
 dlg.hkr.recorded_tea.reimu.excellent,dialogue,char.reimu_hakurei,"Close enough to remember, different enough to be today.",「覚えておくには近くて、今日であるには違う。」,248,Original
-dlg.hkr.recorded_tea.reimu.clear,dialogue,char.reimu_hakurei,"Fine. Drink it before the Archive decides it has a better version.",「いいわ。文庫がもっといい版を決める前に飲んで。」,248,Original
-dlg.hkr.recorded_tea.reimu.loss,dialogue,char.reimu_hakurei,"Too hot. That is still more useful than a cup that never changes.",「熱すぎ。でも、変わらない湯呑みよりは役に立つ。」,248,Original
-dlg.hkr.recorded_tea.reimu.after,dialogue,char.reimu_hakurei,"Tomorrow can be ordinary again. It does not need permission from yesterday.",「明日も普通でいい。昨日の許可はいらない。」,248,Original
+dlg.hkr.recorded_tea.reimu.clear,dialogue,char.reimu_hakurei,Fine. Drink it before the Archive decides it has a better version.,「いいわ。文庫がもっといい版を決める前に飲んで。」,248,Original
+dlg.hkr.recorded_tea.reimu.loss,dialogue,char.reimu_hakurei,Too hot. That is still more useful than a cup that never changes.,「熱すぎ。でも、変わらない湯呑みよりは役に立つ。」,248,Original
+dlg.hkr.recorded_tea.reimu.after,dialogue,char.reimu_hakurei,Tomorrow can be ordinary again. It does not need permission from yesterday.,「明日も普通でいい。昨日の許可はいらない。」,248,Original
 journal.hkr.perfectly_recorded_tea.title,journal_title,,Tea That Was Allowed to Cool,冷めるままにしたお茶,248,Original
-journal.hkr.perfectly_recorded_tea.body,journal_body,,The Archive offered a perfect copy of the afternoon. Reimu chose tea that could cool, run out, and be made again differently tomorrow.,文庫は午後の完璧な写しを差し出した。霊夢は、冷めて、なくなって、明日には違うように淹れ直せるお茶を選んだ。,248,Original
+journal.hkr.perfectly_recorded_tea.body,journal_body,,"The Archive offered a perfect copy of the afternoon. Reimu chose tea that could cool, run out, and be made again differently tomorrow.",文庫は午後の完璧な写しを差し出した。霊夢は、冷めて、なくなって、明日には違うように淹れ直せるお茶を選んだ。,248,Original

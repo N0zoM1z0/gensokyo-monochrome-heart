@@ -74,6 +74,7 @@ run_checked "design package" python3 design/tools/validate_package.py
 run_checked "content synchronization" python3 scripts/sync_design_content.py --check
 run_checked "font synchronization" python3 scripts/sync_fonts.py --check
 run_checked "Python syntax" python3 -m compileall -q scripts
+run_checked "localization CSV validation" python3 scripts/validate_localization_csv.py
 run_checked "M12 architecture reuse scan" python3 scripts/validate_m12_architecture.py
 
 # Measure the provisional CPU budget before the editor/import and authoring

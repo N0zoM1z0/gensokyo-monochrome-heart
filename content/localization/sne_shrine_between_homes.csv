@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.sne.shrine_between_homes.inspect,objective,,Inspect the old unlabelled key and Sanae's current threshold repair list.,古い無記名の鍵と、早苗の今の敷居修繕表を確かめる。,208,Original
 event.sne.shrine_between_homes.title,event_title,,A Shrine Between Homes,二つの故郷を持つ神社,208,Original
 choice.sne.shrine_between_homes.direct,choice,,Say neither home has to defeat the other to be real.,どちらの故郷も、本物になるために他方を負かす必要はないと伝える。,248,Original

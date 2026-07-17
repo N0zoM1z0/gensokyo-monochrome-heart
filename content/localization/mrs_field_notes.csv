@@ -1,16 +1,16 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.mrs.field_notes.read_marks,objective,,Read the field marks without moving them.,印を動かさずに観察する。,208,Original
 event.mrs.field_notes.title,event_title,,Field Notes in the Forest,森の野外記録,208,Original
 choice.mrs.notes.direct,choice,,Say the crossed-out pages prove she kept trying.,消された頁は続けた証拠だと言う。,248,Original
 choice.mrs.notes.playful,choice,,Ask whether the mushrooms grade her handwriting.,キノコが字を採点するのかと聞く。,248,Original
 choice.mrs.notes.patient,choice,,Ask which failed attempt she wants to repeat.,どの失敗をもう一度試したいか聞く。,248,Original
 choice.mrs.notes.defiant,choice,,Say effort is not something Reimu gets to define.,努力を霊夢に決めさせる必要はないと言う。,248,Original
-dlg.mrs.notes.intro,dialogue,char.marisa_kirisame,"Do not move the stones. Each one marks where the light bent wrong.",「石は動かすな。光が曲がり損ねた場所を全部、印にしてる。」,248,Original
+dlg.mrs.notes.intro,dialogue,char.marisa_kirisame,Do not move the stones. Each one marks where the light bent wrong.,「石は動かすな。光が曲がり損ねた場所を全部、印にしてる。」,248,Original
 dlg.mrs.notes.work,dialogue,char.marisa_kirisame,"The blast looks reckless from far away. Up close, it has dates, wind, and every mistake twice.",「遠くからなら無茶に見える。近くで見れば日付と風、それに失敗がどれも二度ずつ記録してある。」,248,Original
-dlg.mrs.notes.direct,dialogue,char.marisa_kirisame,"Exactly. A crossed-out page is a promise I made to the next attempt.",「その通り。消した頁は次の試みに託した約束だ。」,248,Original
-dlg.mrs.notes.playful,dialogue,char.marisa_kirisame,"They would give me terrible marks. Good thing mushrooms cannot hold a pencil.",「ひどい点をつけるだろうな。キノコが鉛筆を持てなくて助かったぜ。」,248,Original
-dlg.mrs.notes.patient,dialogue,char.marisa_kirisame,"This one. It failed honestly. Honest failures teach faster than lucky sparks.",「これだ。ごまかしのない失敗だった。運の火花より、ごまかしのない失敗の方が早く教えてくれる。」,248,Original
-dlg.mrs.notes.defiant,dialogue,char.marisa_kirisame,"Right. Do not use her talent as a ruler for my work.",「そうだ。霊夢の才能を、私の仕事を測る物差しにするな。」,248,Original
+dlg.mrs.notes.direct,dialogue,char.marisa_kirisame,Exactly. A crossed-out page is a promise I made to the next attempt.,「その通り。消した頁は次の試みに託した約束だ。」,248,Original
+dlg.mrs.notes.playful,dialogue,char.marisa_kirisame,They would give me terrible marks. Good thing mushrooms cannot hold a pencil.,「ひどい点をつけるだろうな。キノコが鉛筆を持てなくて助かったぜ。」,248,Original
+dlg.mrs.notes.patient,dialogue,char.marisa_kirisame,This one. It failed honestly. Honest failures teach faster than lucky sparks.,「これだ。ごまかしのない失敗だった。運の火花より、ごまかしのない失敗の方が早く教えてくれる。」,248,Original
+dlg.mrs.notes.defiant,dialogue,char.marisa_kirisame,Right. Do not use her talent as a ruler for my work.,「そうだ。霊夢の才能を、私の仕事を測る物差しにするな。」,248,Original
 dlg.mrs.notes.after,dialogue,char.marisa_kirisame,"Write down the weather for me. Next time, I want the failure to be different.",「天気を書いてくれ。次は違う失敗にしたいんだ。」,248,Original
 journal.mrs.field_notes.title,journal_title,,A Failure With a Date,日付のある失敗,248,Original
-journal.mrs.field_notes.body,journal_body,,Marisa's field was not a pile of accidents. It was a map of attempts she refused to forget, including the ones that taught her nothing at first.,魔理沙の野原は事故の山ではなかった。最初は何も教えなかった失敗も含め、忘れることを拒んだ試みの地図だった。,248,Original
+journal.mrs.field_notes.body,journal_body,,"Marisa's field was not a pile of accidents. It was a map of attempts she refused to forget, including the ones that taught her nothing at first.",魔理沙の野原は事故の山ではなかった。最初は何も教えなかった失敗も含め、忘れることを拒んだ試みの地図だった。,248,Original

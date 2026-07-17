@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.sdm.missing_minute.leave,objective,,Leave the stopped minute where the Archive placed it.,アーカイブが置いた停止した一分を、そのまま残す。,208,Original
 event.sdm.missing_minute.title,event_title,,The Missing Minute,失われた一分,208,Original
 choice.sdm.minute.direct,choice,,Say time that is chosen is different from time that is hidden.,選んだ時間と隠した時間は違うと言う。,248,Original
@@ -6,11 +6,11 @@ choice.sdm.minute.playful,choice,,Ask whether a perfect minute ever learns to ma
 choice.sdm.minute.patient,choice,,Wait for Sakuya to decide when the second hand moves.,咲夜が秒針を動かす時を決めるまで待つ。,248,Original
 choice.sdm.minute.defiant,choice,,Say duty cannot own every second she has.,義務が彼女のすべての秒を所有することはできないと言う。,248,Original
 dlg.sdm.minute.offer,dialogue,char.sakuya_izayoi,"The Archive offers one stopped minute. No bell, no tray, no request can enter it.",「アーカイブは停止した一分を差し出しています。ベルも盆も頼み事も、その中には入れません。」,248,Original
-dlg.sdm.minute.refusal,dialogue,char.sakuya_izayoi,"Then it would be a minute stolen from the world. I do not want rest that requires everything else to wait for me.",「それでは世界から盗んだ一分になります。ほかのすべてを私のために待たせる休息は、望みません。」,248,Original
-dlg.sdm.minute.direct,dialogue,char.sakuya_izayoi,"Exactly. I may choose a pause; I will not hide inside one.",「その通りです。休止を選ぶことはできます。でも、その中に隠れはしません。」,248,Original
-dlg.sdm.minute.playful,dialogue,char.sakuya_izayoi,"It might heat the water perfectly and leave nobody to drink it. That would be very efficient.",「お湯は完璧に沸かせても、飲む人は残さないでしょう。とても効率的です。」,248,Original
-dlg.sdm.minute.patient,dialogue,char.sakuya_izayoi,"Thank you. I will let it move now.",「ありがとうございます。では、動かします。」,248,Original
+dlg.sdm.minute.refusal,dialogue,char.sakuya_izayoi,Then it would be a minute stolen from the world. I do not want rest that requires everything else to wait for me.,「それでは世界から盗んだ一分になります。ほかのすべてを私のために待たせる休息は、望みません。」,248,Original
+dlg.sdm.minute.direct,dialogue,char.sakuya_izayoi,Exactly. I may choose a pause; I will not hide inside one.,「その通りです。休止を選ぶことはできます。でも、その中に隠れはしません。」,248,Original
+dlg.sdm.minute.playful,dialogue,char.sakuya_izayoi,It might heat the water perfectly and leave nobody to drink it. That would be very efficient.,「お湯は完璧に沸かせても、飲む人は残さないでしょう。とても効率的です。」,248,Original
+dlg.sdm.minute.patient,dialogue,char.sakuya_izayoi,Thank you. I will let it move now.,「ありがとうございます。では、動かします。」,248,Original
 dlg.sdm.minute.defiant,dialogue,char.sakuya_izayoi,"No. Duty is something I choose again each day, not a lock on every second.",「いいえ。義務は毎日あらためて選ぶものです。すべての秒にかける鍵ではありません。」,248,Original
-dlg.sdm.minute.after,dialogue,char.sakuya_izayoi,"There. The clock is imperfect again. So is the evening. Both may continue.",「ほら。時計はまた不完全です。夜も同じです。どちらも続けて構いません。」,248,Original
+dlg.sdm.minute.after,dialogue,char.sakuya_izayoi,There. The clock is imperfect again. So is the evening. Both may continue.,「ほら。時計はまた不完全です。夜も同じです。どちらも続けて構いません。」,248,Original
 journal.sdm.missing_minute_returned.title,journal_title,,The Minute Returned,返した一分,248,Original
-journal.sdm.missing_minute_returned.body,journal_body,,Sakuya refused a perfect minute that would make the rest of the world wait. Rest remained meaningful because it was chosen in moving time, not hidden outside it.,咲夜は世界の残りを待たせる完璧な一分を拒んだ。休息は、動く時間の中で選ばれるからこそ意味を保ち、その外に隠されなかった。,248,Original
+journal.sdm.missing_minute_returned.body,journal_body,,"Sakuya refused a perfect minute that would make the rest of the world wait. Rest remained meaningful because it was chosen in moving time, not hidden outside it.",咲夜は世界の残りを待たせる完璧な一分を拒んだ。休息は、動く時間の中で選ばれるからこそ意味を保ち、その外に隠されなかった。,248,Original

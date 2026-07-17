@@ -1,4 +1,4 @@
-﻿key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 event.hkr.empty_cushion.title,event title,,The Empty Cushion,空いたままの座布団,180,Original
 obj.hkr.find_second_cup,objective,,Find why a second cup is warm.,二つ目の湯呑みが温かい理由を探す。,200,Original
 dlg.hkr.empty_cushion.reimu.001,private dialogue,Reimu,I didn't wait. I simply hadn't put the second cup away yet.,待ってないわ。二つ目の湯呑みを片づけてなかっただけ。,214,Original

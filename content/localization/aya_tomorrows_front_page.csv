@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.aya.tomorrows_front_page.withhold,objective,,Decide whether tomorrow's perfect headline should remain unprinted.,明日の完璧な見出しを掲載しないままにするか決める。,208,Original
 event.aya.tomorrows_front_page.title,event_title,,Tomorrow's Front Page,明日の一面,208,Original
 choice.aya.tomorrows_front_page.direct,choice,,Say a correct future can still become a harmful instruction.,正しい未来でも、有害な指示になり得ると言う。,248,Original

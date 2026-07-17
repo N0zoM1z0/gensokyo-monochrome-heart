@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.eir.permanent_cure.audit,objective,,"Audit the three zeroes, find the missing patient, and preserve consent, uncertainty, and revision.",三つのゼロを検証し、消えた患者を見つけ、同意、不確実性、修正の余地を守る。,208,Original
 event.eir.permanent_cure.title,event_title,,Permanent Cure,永久の治療,208,Original
 choice.eir.permanent_cure.direct,choice,,Record that no patient remains to benefit.,恩恵を受ける患者が残らないと記録する。,248,Original

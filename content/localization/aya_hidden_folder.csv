@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.aya.hidden_folder.review,objective,,Review Aya's unprinted intervention record.,文の未掲載の介入記録を見る。,208,Original
 event.aya.hidden_folder.title,event_title,,The Hidden Folder,隠されたフォルダ,208,Original
 choice.aya.hidden_folder.direct,choice,,Ask what Aya changed before deciding not to print it.,載せないと決める前に、文が何を変えたのか聞く。,248,Original

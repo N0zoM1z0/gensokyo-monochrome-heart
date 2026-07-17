@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.mrs.archive.leave_copy,objective,,Leave the perfect failure-copy unopened.,完璧な失敗の写しを開かずに置く。,208,Original
 event.mrs.infinite_experiment.title,event_title,,The Infinite Experiment,無限の実験,208,Original
 choice.mrs.archive.direct,choice,,Say the next attempt must belong to her.,次の試みは彼女のものだと言う。,248,Original

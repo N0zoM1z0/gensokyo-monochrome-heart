@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.sne.ordinary_miracle.inspect,objective,,Inspect the torn Journal strap and the ordinary sewing kit Sanae chose.,切れた日誌の肩紐と、早苗が選んだ普通の裁縫道具を確かめる。,208,Original
 event.sne.ordinary_miracle.title,event_title,,The Ordinary Miracle,普通の奇跡,208,Original
 choice.sne.ordinary_miracle.direct,choice,,You fixed what I still have to carry next.,次に自分で背負うものを直してくれたと伝える。,248,Original

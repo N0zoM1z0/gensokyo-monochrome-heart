@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.mtn.trace_tomorrows_photo,objective,,Read tomorrow's paper. Check the rail in it.,明日の新聞を読み、写った柵を確かめる。,208,Original
 event.mtn.tomorrows_headline.title,event_title,,Tomorrow's Headline,明日の見出し,208,Original
 choice.mtn.headline.direct,choice,,Do not print my face or name.,顔も名前も載せないでと告げる。,248,Original

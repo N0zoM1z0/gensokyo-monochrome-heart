@@ -555,6 +555,8 @@ func _load_csv(path: String, errors: Array[String]) -> Array[PackedStringArray]:
 	var header := file.get_csv_line()
 	if not header.is_empty():
 		header[0] = header[0].trim_prefix("\ufeff")
+	for index: int in header.size():
+		header[index] = header[index].trim_prefix("_")
 	if header != PackedStringArray(["key", "context", "speaker", "en", "ja", "max_width_px", "origin"]):
 		errors.append("unexpected localization CSV header: %s" % path)
 		return rows
@@ -578,7 +580,7 @@ func _write_csv(path: String, rows: Array[PackedStringArray], errors: Array[Stri
 	if file == null:
 		errors.append("could not write CSV: %s" % path)
 		return
-	file.store_csv_line(PackedStringArray(["key", "context", "speaker", "en", "ja", "max_width_px", "origin"]))
+	file.store_csv_line(PackedStringArray(["key", "_context", "_speaker", "en", "ja", "_max_width_px", "_origin"]))
 	for row: PackedStringArray in rows:
 		file.store_csv_line(row)
 

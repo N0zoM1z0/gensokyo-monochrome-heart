@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.mrs.shelf.wait,objective,,Wait for Marisa to name what may be moved.,魔理沙が動かしてよい物を言うまで待つ。,208,Original
 event.mrs.shelf_marked_later.title,event_title,,The Shelf Marked Later,「あとで」の棚,208,Original
 choice.mrs.shelf.direct,choice,,Ask which things may be catalogued.,どれを目録にしてよいか聞く。,248,Original

@@ -233,6 +233,8 @@ func _validate_localization() -> void:
 	var header := file.get_csv_line()
 	if not header.is_empty():
 		header[0] = header[0].trim_prefix("\ufeff")
+	for index: int in header.size():
+		header[index] = header[index].trim_prefix("_")
 	var key_index := header.find("key")
 	var en_index := header.find("en")
 	var ja_index := header.find("ja")

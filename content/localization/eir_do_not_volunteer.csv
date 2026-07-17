@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.eir.do_not_volunteer.withdraw,objective,,"Withdraw the volunteer offer, keep the Archive sample sealed, and accept the missing result.",志願の申し出を撤回し、アーカイブ試料を封じたまま、欠けた結果を受け入れる。,208,Original
 event.eir.do_not_volunteer.title,event_title,,Do Not Volunteer as an Experiment,実験台に志願しないで,208,Original
 dlg.eir.do_not_volunteer.context,dialogue,char.reisen_udongein_inaba,"The Archive demanded a living comparison before dusk. We had already agreed the result could stay blank. Then you wrote your own name in the subject field so no one else would be asked.",「アーカイブは日暮れまでに生体比較を求めていました。結果は空白のままでよいと、すでに決めていたのに。誰かほかの人が被験者にされないよう、あなたは被験者欄へ自分の名を書いた。」,248,Original

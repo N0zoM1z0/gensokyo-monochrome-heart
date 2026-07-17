@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.hkr.day_nothing_happens.enter,objective,,Spend an ordinary afternoon at the shrine.,神社でいつもの午後を過ごす。,208,Original
 event.hkr.day_nothing_happens.title,event_title,,The Day Nothing Happens,何も起きない日,208,Original
 choice.hkr.quiet.direct,choice,,Take the second broom and start on the far side.,二本目の箒を取り、向こう側から始める。,248,Original

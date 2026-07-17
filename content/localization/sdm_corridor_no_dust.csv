@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.sdm.corridor_no_dust.walk_once,objective,,Walk the corridor once without asking it to reset.,廊下にリセットを頼まず、一度歩き通す。,208,Original
 event.sdm.corridor_no_dust.title,event_title,,The Corridor With No Dust,埃のない廊下,208,Original
 choice.sdm.corridor.direct,choice,,Say a clean floor can still show that someone worked.,きれいな床にも、誰かが働いた跡は残せると言う。,248,Original

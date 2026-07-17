@@ -135,6 +135,8 @@ func parse_localization(path: String) -> Array[ContentStringRecord]:
 	var header := file.get_csv_line()
 	if not header.is_empty():
 		header[0] = header[0].trim_prefix("\ufeff")
+	for index: int in header.size():
+		header[index] = header[index].trim_prefix("_")
 	var required := ["key", "context", "speaker", "en", "ja", "max_width_px", "origin"]
 	for column: String in required:
 		if header.find(column) < 0:
@@ -149,6 +151,13 @@ func parse_localization(path: String) -> Array[ContentStringRecord]:
 			continue
 		if row.size() < header.size():
 			_report.add_error(&"parse_localization", path, "incomplete CSV row %d" % line_number)
+			continue
+		if row.size() > header.size():
+			_report.add_error(
+				&"parse_localization",
+				path,
+				"unexpected CSV column count on row %d: expected %d, found %d" % [line_number, header.size(), row.size()]
+			)
 			continue
 		result.append(
 			ContentStringRecord.new(
@@ -196,6 +205,8 @@ func parse_music_cues(path: String) -> Array[MusicCueRecord]:
 	var header := file.get_csv_line()
 	if not header.is_empty():
 		header[0] = header[0].trim_prefix("\ufeff")
+	for index: int in header.size():
+		header[index] = header[index].trim_prefix("_")
 	var required := [
 		"cue_id",
 		"section",

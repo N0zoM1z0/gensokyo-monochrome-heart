@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.hkr.offerings.inspect_box,objective,,Sort memory offerings from boundary residue.,記憶の供物と結界の残滓を分ける。,208,Original
 event.hkr.offerings_without_owners.title,event_title,,Offerings Without Owners,持ち主のない供物,208,Original
 choice.hkr.offerings.direct,choice,,Sort what belongs to the shrine from what does not.,神社に属する物と、そうでない物を分けようと言う。,248,Original

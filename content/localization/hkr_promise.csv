@@ -1,16 +1,16 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.hkr.promise.come_in_from_rain,objective,,Come in from the rain.,雨をしのいで中に入る。,208,Original
 event.hkr.promise.title,event_title,,Promise,約束,248,Original
 choice.hkr.promise.friendship,choice,,Accept a standing invitation as friends.,友人として、いつでも来ていいという誘いを受ける。,248,Original
 choice.hkr.promise.romance,choice,,Ask to make this more than friendship.,友人以上として、この誘いを受けていいか尋ねる。,248,Original
 choice.hkr.promise.postponed,choice,,Leave it open and come in anyway.,答えを保留したまま、それでも中に入る。,248,Original
 choice.hkr.promise.undecided,choice,,Say you do not know this yet.,まだ何と呼ぶか分からないと言う。,248,Original
-dlg.hkr.promise.reimu.rain,dialogue,char.reimu_hakurei,"It is raining. Your cushion is still outside.",「雨よ。あなたの座布団、まだ外にある。」,248,Original
-dlg.hkr.promise.reimu.choice,dialogue,char.reimu_hakurei,"I am not going to name it for you. Decide what you are actually promising.",「私が代わりに名前をつけるつもりはない。何を約束するのか、自分で決めて。」,248,Original
-dlg.hkr.promise.reimu.friendship,dialogue,char.reimu_hakurei,"Come by when you feel like it. Knock if the boundary is acting strange.",「来たい時に来ればいい。結界がおかしい時はノックして。」,248,Original
-dlg.hkr.promise.reimu.romance,dialogue,char.reimu_hakurei,"Then let it be more than friendship. Bring the cushion inside before the rain gets it.",「じゃあ、友人以上ってことにしましょう。雨が座布団を濡らす前に、中へ入れて。」,248,Original
-dlg.hkr.promise.reimu.postponed,dialogue,char.reimu_hakurei,"Fine. Do not promise what you cannot keep. The door is open tonight.",「いいわ。守れない約束はしないで。今夜は戸を開けておく。」,248,Original
-dlg.hkr.promise.reimu.undecided,dialogue,char.reimu_hakurei,"Then do not pretend. Sit down until you know whether you are leaving.",「じゃあ、ふりはしないで。帰るか分かるまで座ってなさい。」,248,Original
-dlg.hkr.promise.reimu.after,dialogue,char.reimu_hakurei,"The tea is inside. The rest can be ordinary.",「お茶は中。あとは普通でいい。」,248,Original
+dlg.hkr.promise.reimu.rain,dialogue,char.reimu_hakurei,It is raining. Your cushion is still outside.,「雨よ。あなたの座布団、まだ外にある。」,248,Original
+dlg.hkr.promise.reimu.choice,dialogue,char.reimu_hakurei,I am not going to name it for you. Decide what you are actually promising.,「私が代わりに名前をつけるつもりはない。何を約束するのか、自分で決めて。」,248,Original
+dlg.hkr.promise.reimu.friendship,dialogue,char.reimu_hakurei,Come by when you feel like it. Knock if the boundary is acting strange.,「来たい時に来ればいい。結界がおかしい時はノックして。」,248,Original
+dlg.hkr.promise.reimu.romance,dialogue,char.reimu_hakurei,Then let it be more than friendship. Bring the cushion inside before the rain gets it.,「じゃあ、友人以上ってことにしましょう。雨が座布団を濡らす前に、中へ入れて。」,248,Original
+dlg.hkr.promise.reimu.postponed,dialogue,char.reimu_hakurei,Fine. Do not promise what you cannot keep. The door is open tonight.,「いいわ。守れない約束はしないで。今夜は戸を開けておく。」,248,Original
+dlg.hkr.promise.reimu.undecided,dialogue,char.reimu_hakurei,Then do not pretend. Sit down until you know whether you are leaving.,「じゃあ、ふりはしないで。帰るか分かるまで座ってなさい。」,248,Original
+dlg.hkr.promise.reimu.after,dialogue,char.reimu_hakurei,The tea is inside. The rest can be ordinary.,「お茶は中。あとは普通でいい。」,248,Original
 journal.hkr.promise.title,journal_title,,The Door Left Open,開けておいた戸,248,Original
-journal.hkr.promise.body,journal_body,,The rain reached the veranda. Reimu left the choice yours, the door open, and the next ordinary afternoon unrecorded.,雨は縁側まで来た。霊夢は選択をこちらに委ね、戸を開け、次の普通の午後は記録しなかった。,248,Original
+journal.hkr.promise.body,journal_body,,"The rain reached the veranda. Reimu left the choice yours, the door open, and the next ordinary afternoon unrecorded.",雨は縁側まで来た。霊夢は選択をこちらに委ね、戸を開け、次の普通の午後は記録しなかった。,248,Original

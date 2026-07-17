@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.aya.wind_frame_graze.exit,objective,,Mark the safe exit before trying Aya's wind frame.,文の風枠に挑む前に、安全な退路を印す。,208,Original
 event.aya.wind_frame_graze.title,event_title,,Wind-Frame Graze,風枠グレイズ,208,Original
 choice.aya.wind_frame_graze.direct,choice,,Ask Aya to mark the safe exit before the first shutter.,最初のシャッターの前に安全な退路を印してと文に頼む。,248,Original
@@ -9,14 +9,14 @@ dlg.aya.wind_frame_graze.intro,dialogue,char.aya_shameimaru,"A clean wind frame 
 dlg.aya.wind_frame_graze.frame,dialogue,char.aya_shameimaru,"The graze is only a composition exercise. If the frame asks more than you agreed to give, we lower the camera and call it unfinished.",「グレイズは構図の練習にすぎません。枠があなたの同意以上を求めたら、カメラを下ろして未完成と呼びます。」,248,Original
 dlg.aya.wind_frame_graze.direct,dialogue,char.aya_shameimaru,"Marked. The exit is part of the photograph now, even if no reader notices it.",「印しました。読者が気づかなくても、退路は今この写真の一部です。」,248,Original
 dlg.aya.wind_frame_graze.playful,dialogue,char.aya_shameimaru,"It does now. I have put the setting beside the shutter, where my enthusiasm cannot pretend not to see it.",「今できました。その設定はシャッターの隣に置きます。私の熱意が見ないふりをできない場所に。」,248,Original
-dlg.aya.wind_frame_graze.patient,dialogue,char.aya_shameimaru,"Close enough is where the wind changes on camera but your next step still belongs to you. Wider is often better reporting.",「十分に近いのは、風の変化が写っても次の一歩がまだあなたのものの場所です。広い方が良い記事になることも多いです。」,248,Original
-dlg.aya.wind_frame_graze.defiant,dialogue,char.aya_shameimaru,"Agreed. A photograph can show a risk without appointing a person to endure it. I should have said that before I lifted the lens.",「同意します。写真は危険を示せても、誰かをそれに耐える役へ任命してはいけません。レンズを上げる前に言うべきでした。」,248,Original
-dlg.aya.wind_frame_graze.withdrawn,dialogue,char.aya_shameimaru,"Then we do not enter the chase. Camera down is part of the practice too; today the wind can remain only wind.",「では、この追走には入りません。カメラを下ろすことも練習の一部です。今日は風を、ただの風のままにしておきましょう。」,248,Original
+dlg.aya.wind_frame_graze.patient,dialogue,char.aya_shameimaru,Close enough is where the wind changes on camera but your next step still belongs to you. Wider is often better reporting.,「十分に近いのは、風の変化が写っても次の一歩がまだあなたのものの場所です。広い方が良い記事になることも多いです。」,248,Original
+dlg.aya.wind_frame_graze.defiant,dialogue,char.aya_shameimaru,Agreed. A photograph can show a risk without appointing a person to endure it. I should have said that before I lifted the lens.,「同意します。写真は危険を示せても、誰かをそれに耐える役へ任命してはいけません。レンズを上げる前に言うべきでした。」,248,Original
+dlg.aya.wind_frame_graze.withdrawn,dialogue,char.aya_shameimaru,Then we do not enter the chase. Camera down is part of the practice too; today the wind can remain only wind.,「では、この追走には入りません。カメラを下ろすことも練習の一部です。今日は風を、ただの風のままにしておきましょう。」,248,Original
 dlg.aya.wind_frame_graze.clear,dialogue,char.aya_shameimaru,"There. The gap in the wind is the frame, not the person inside it. That is a picture I can defend.",「ほら。風の隙間が枠で、中にいる人ではありません。これは私が責任を持てる一枚です。」,248,Original
 dlg.aya.wind_frame_graze.assist,dialogue,char.aya_shameimaru,"The safe preview counts as a choice, not a compromise. We saw the same wind and nobody had to prove courage.",「安全予測は妥協ではなく選択です。同じ風を見て、誰も勇気を証明する必要はありませんでした。」,248,Original
-dlg.aya.wind_frame_graze.loss,dialogue,char.aya_shameimaru,"Camera down. A missed frame may stay missing; it does not earn another attempt from your body.",「カメラを下ろします。撮り逃した枠は、撮り逃したままでいい。あなたの体からもう一度挑戦を得る理由にはなりません。」,248,Original
-dlg.aya.wind_frame_graze.after,dialogue,char.aya_shameimaru,"I can report the wind vector without staging anyone inside it. That is less dramatic. It is also truer.",「誰かをその中に立たせなくても、風向きは記事にできます。派手さは減ります。でも、その方が真実です。」,248,Original
+dlg.aya.wind_frame_graze.loss,dialogue,char.aya_shameimaru,Camera down. A missed frame may stay missing; it does not earn another attempt from your body.,「カメラを下ろします。撮り逃した枠は、撮り逃したままでいい。あなたの体からもう一度挑戦を得る理由にはなりません。」,248,Original
+dlg.aya.wind_frame_graze.after,dialogue,char.aya_shameimaru,I can report the wind vector without staging anyone inside it. That is less dramatic. It is also truer.,「誰かをその中に立たせなくても、風向きは記事にできます。派手さは減ります。でも、その方が真実です。」,248,Original
 journal.aya.wind_frame_graze.title,journal_title,,A Frame With Room to Move,動ける余地のある枠,248,Original
-journal.aya.wind_frame_graze.body,journal_body,,Aya practiced a wind frame with a visible safe exit. The useful image was the gap in the pattern, not a person made to stand in danger for it.,文は見える退路を含む風枠を練習した。役立つ像は模様の隙間であり、そのために危険の中へ立たされた人ではなかった。,248,Original
+journal.aya.wind_frame_graze.body,journal_body,,"Aya practiced a wind frame with a visible safe exit. The useful image was the gap in the pattern, not a person made to stand in danger for it.",文は見える退路を含む風枠を練習した。役立つ像は模様の隙間であり、そのために危険の中へ立たされた人ではなかった。,248,Original
 journal.aya.wind_frame_graze.withdrawn.title,journal_title,,The Frame Left Open,開いたままの枠,248,Original
-journal.aya.wind_frame_graze.withdrawn.body,journal_body,,Aya accepted that no frame was owed. The camera stayed down, and declining the chase became part of practicing responsible attention.,文は、どんな枠も当然に求められるものではないと受け止めた。カメラは下ろされたまま、追走を断ることも責任ある注意の練習になった。,248,Original
+journal.aya.wind_frame_graze.withdrawn.body,journal_body,,"Aya accepted that no frame was owed. The camera stayed down, and declining the chase became part of practicing responsible attention.",文は、どんな枠も当然に求められるものではないと受け止めた。カメラは下ろされたまま、追走を断ることも責任ある注意の練習になった。,248,Original

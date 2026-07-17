@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.ein.patient_refuses.preserve,objective,,"Keep the declined scan closed, preserve the patient's words, and offer choices that do not make refusal a debt.",断られた検査は閉じたままにし、患者の言葉を保ち、拒否を負債にしない選択肢を用意する。,208,Original
 event.ein.patient_refuses.title,event_title,,The Patient Who Says No,「いいえ」と言う患者,208,Original
 choice.ein.patient_refuses.direct,choice,,"Record ""no"" as a complete answer.",「いいえ」を記録の不備ではなく、完全な回答として残す。,248,Original

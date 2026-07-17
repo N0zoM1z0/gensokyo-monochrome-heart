@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.eir.doctor_sleeps.handoff,objective,,"Verify the handoff, move nonurgent work to morning, and protect the chosen rest boundary rather than guarding Eirin.",引き継ぎを確認し、急がない仕事を朝へ回し、永琳本人を見張るのではなく、彼女が選んだ休息の境界を守る。,208,Original
 event.eir.doctor_sleeps.title,event_title,,The Doctor Sleeps,医者が眠る夜,208,Original
 choice.eir.doctor_sleeps.direct,choice,,Guard the boundary not the doctor.,医者ではなく、休息の境界を守る。,248,Original

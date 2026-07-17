@@ -1,5 +1,5 @@
-key,context,speaker,en,ja,max_width_px,origin
-obj.tsh.repair_she_finishes.inspect,objective,,Inspect the visible repair seam, unclaimed tool tray, and reopened delivery path.,見える修復の継ぎ目、署名のない工具盆、開いた配達路を調べる。,208,Original
+key,_context,_speaker,en,ja,_max_width_px,_origin
+obj.tsh.repair_she_finishes.inspect,objective,,"Inspect the visible repair seam, unclaimed tool tray, and reopened delivery path.",見える修復の継ぎ目、署名のない工具盆、開いた配達路を調べる。,208,Original
 event.tsh.repair_she_finishes.title,event_title,,The Repair She Finishes,彼女が終えた修復,208,Original
 choice.tsh.repair_she_finishes.direct,choice,,Say the repair matters without making it an excuse for the crossing.,修復は大切だが、越えた境界の言い訳にはならないと言う。,248,Original
 choice.tsh.repair_she_finishes.playful,choice,,Decline to turn the empty tool tray into a trophy display.,空の工具盆を戦利品展示にすることを断る。,248,Original
@@ -9,8 +9,8 @@ dlg.tsh.repair_she_finishes.discovery,dialogue,char.iku_nagae,"The seam is still
 dlg.tsh.repair_she_finishes.tenshi,dialogue,char.tenshi_hinanawi,"I did not leave a note. The cart needed a route, not a report about my feelings. I am not asking you to call it enough.",「置き手紙は残していない。車に必要なのは道であって、私の気持ちの報告じゃない。これで十分だと言ってほしいわけじゃない。」,248,Original
 dlg.tsh.repair_she_finishes.direct,dialogue,char.tenshi_hinanawi,"Good. Repair does not purchase forgiveness. It makes the next crossing possible, and it is work I owed before we could discuss anything else.",「そう。修復は許しを買わない。次の通行を可能にするだけ。それ以外を話す前に、私が負っていた仕事よ。」,248,Original
 dlg.tsh.repair_she_finishes.playful,dialogue,char.tenshi_hinanawi,"No trophy, then. Sensible. A tool tray is allowed to be empty when the work is done; it does not need an audience to become meaningful.",「戦利品にはしない、ね。賢明だわ。仕事が終われば工具盆は空でいい。意味を持つために観客はいらない。」,248,Original
-dlg.tsh.repair_she_finishes.patient,dialogue,char.tenshi_hinanawi,"The cart crossed before either of us said anything. That is better evidence than a speech. I will keep choosing evidence like that.",「私たちが何か言う前に、車は渡った。演説よりいい証拠ね。これからも、そういう証拠を選ぶ。」,248,Original
-dlg.tsh.repair_she_finishes.defiant,dialogue,char.tenshi_hinanawi,"The first answer that counted. I dislike how correct that is. I will not ask you to watch the next repair either.",「初めて意味のある答え。腹が立つほど正しいわ。次の修復も、見ていてほしいとは頼まない。」,248,Original
-dlg.tsh.repair_she_finishes.after,dialogue,char.tenshi_hinanawi,"The strain is not erased. It is no longer the only thing I have done. The path stays open whether you walk beside me today or not.",「緊張が消えたわけじゃない。ただ、私がしたことのすべてではなくなった。今日、隣を歩くかどうかに関係なく、道は開けておく。」,248,Original
+dlg.tsh.repair_she_finishes.patient,dialogue,char.tenshi_hinanawi,The cart crossed before either of us said anything. That is better evidence than a speech. I will keep choosing evidence like that.,「私たちが何か言う前に、車は渡った。演説よりいい証拠ね。これからも、そういう証拠を選ぶ。」,248,Original
+dlg.tsh.repair_she_finishes.defiant,dialogue,char.tenshi_hinanawi,The first answer that counted. I dislike how correct that is. I will not ask you to watch the next repair either.,「初めて意味のある答え。腹が立つほど正しいわ。次の修復も、見ていてほしいとは頼まない。」,248,Original
+dlg.tsh.repair_she_finishes.after,dialogue,char.tenshi_hinanawi,The strain is not erased. It is no longer the only thing I have done. The path stays open whether you walk beside me today or not.,「緊張が消えたわけじゃない。ただ、私がしたことのすべてではなくなった。今日、隣を歩くかどうかに関係なく、道は開けておく。」,248,Original
 journal.tsh.repair_she_finishes.title,journal_title,,The Seam Remained Visible,継ぎ目は見えたまま,248,Original
 journal.tsh.repair_she_finishes.body,journal_body,,Tenshi repaired the boundary without an audience or a signature. The visible seam and reopened route proved practice rather than apology performance; strain changed only after that work was complete.,天子は観客も署名もなく境界を修復した。見える継ぎ目と開いた道は、謝罪の演技ではなく実践を示した。緊張が変わったのは、その仕事が終わった後だけだった。,248,Original

@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.pch.library_breathing_room.choose,objective,,Choose how to help stabilize the library's air and shelves.,図書館の空気と書架をどう安定させるか選ぶ。,208,Original
 event.pch.library_breathing_room.title,event_title,,Library Breathing Room,図書館の呼吸する場所,208,Original
 choice.pch.library_breathing_room.direct,choice,,Ask which elemental shelf can be moved without spreading dust.,埃を広げずに動かせる元素棚を尋ねる。,248,Original

@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.mrs.rescue.hold_cargo,objective,,Hold the cargo while the wind turns.,風が曲がる間、荷物を支える。,208,Original
 event.mrs.rescue_looks_like_race.title,event_title,,The Rescue That Looks Like a Race,競走に見える救助,208,Original
 choice.mrs.rescue.direct,choice,,Ask where Marisa needs the cargo balanced.,荷物をどこで支えればいいか聞く。,248,Original

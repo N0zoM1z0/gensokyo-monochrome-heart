@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.hgy.promise.wait,objective,,Wait for Youmu to name a morning that belongs to no duty.,妖夢が役目に属さない朝を言葉にするまで待つ。,208,Original
 event.hgy.promise.title,event_title,,What the Sword Cannot Finish,剣では終えられないこと,208,Original
 choice.hgy.promise.friendship,choice,,Accept a practice sword and a morning training invitation as friends.,友人として、稽古刀と朝稽古の誘いを受ける。,248,Original

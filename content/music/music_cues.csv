@@ -1,4 +1,4 @@
-﻿cue_id,section,scene_or_system,mood_function,touhou_reference_en,touhou_reference_ja,source_work,arrangement_brief,loop,priority
+cue_id,_section,_scene_or_system,_mood_function,_touhou_reference_en,_touhou_reference_ja,_source_work,_arrangement_brief,_loop,_priority
 mus_title,system,Title screen,fragile invitation,Eternal Shrine Maiden,永遠の巫女,Highly Responsive to Prayers,Pulse duet with one missing cadence; acoustic bell enters only after input.,yes,A
 mus_prologue_outside,system,Outside World prologue,"lonely, technologically cold",Last Occultism ~ Esotericist of the Present World,ラストオカルティズム ～ 現し世の秘術師,Urban Legend in Limbo,"LCD pulse, train-crossing rhythm, distant piano; do not reveal full melody.",yes,A
 mus_border_crossing,system,Crossing the boundary,wonder and danger,Necrofantasia,ネクロファンタジア,Perfect Cherry Blossom,Break the motif into alternating left/right pulse fragments and a folding-noise sweep.,no,A

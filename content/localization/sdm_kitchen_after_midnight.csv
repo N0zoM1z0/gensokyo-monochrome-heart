@@ -1,4 +1,4 @@
-key,context,speaker,en,ja,max_width_px,origin
+key,_context,_speaker,en,ja,_max_width_px,_origin
 obj.sdm.kitchen_after_midnight.wait,objective,,Wait for Sakuya to name a task she wants shared.,咲夜が共有したい作業を口にするまで待つ。,208,Original
 event.sdm.kitchen_after_midnight.title,event_title,,Kitchen After Midnight,真夜中の厨房,208,Original
 choice.sdm.kitchen.direct,choice,,Ask whether one cup may be prepared together.,一杯だけ一緒に用意してよいか尋ねる。,248,Original
