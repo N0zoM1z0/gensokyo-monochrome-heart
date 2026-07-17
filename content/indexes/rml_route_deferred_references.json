@@ -102,6 +102,36 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records a public rupture repaired by returning rather than taking over Remilia's voice."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.route_planning_room",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A planning room makes a protective change observable through routes, labor, and consequences rather than narrated hidden motives."
+    },
+    {
+      "id": "prop.rml.revised_mansion_route",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A revised reception path visibly moves the protagonist away from Archive residue."
+    },
+    {
+      "id": "prop.rml.unopened_balcony_invitation",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "An unopened invitation proves the original placement without turning care into a declared romantic fact."
+    },
+    {
+      "id": "prop.rml.sakuya_change_ledger",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "Sakuya's ledger keeps her planning labor and authority visible inside Remilia's decision."
+    },
+    {
+      "id": "journal.rml.fate_she_does_not_announce",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records chosen protection, refused credit, household labor, and a future consultation boundary."
     }
   ]
 }

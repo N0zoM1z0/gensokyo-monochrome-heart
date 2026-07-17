@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "95c94dd31adbd3c0bcd844b55d9d337363ff905ca7beb4530c97d2594c21fb72",
+  "content_hash": "60f02f1118a2f20a934529fa7ff56b53c69c31fc81dbe216515de69179903641",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 76,
-    "dialogue_beats": 438,
-    "localization": 1476,
+    "events": 77,
+    "dialogue_beats": 445,
+    "localization": 1491,
     "music_cues": 89,
-    "event_nodes": 1068
+    "event_nodes": 1085
   },
   "ids": {
     "characters": [
@@ -170,6 +170,7 @@
       "evt.pch.spell_for_two_readers",
       "evt.pro.phone_no_signal",
       "evt.rml.do_not_laugh_wrong_thing",
+      "evt.rml.fate_she_does_not_announce",
       "evt.rml.red_mist_etiquette",
       "evt.rml.the_audience",
       "evt.sdm.book_written_tomorrow",
@@ -542,6 +543,13 @@
       "beat.rml.do_not_laugh_wrong_thing.patient",
       "beat.rml.do_not_laugh_wrong_thing.playful",
       "beat.rml.do_not_laugh_wrong_thing.wrong_target",
+      "beat.rml.fate_she_does_not_announce.after",
+      "beat.rml.fate_she_does_not_announce.defiant",
+      "beat.rml.fate_she_does_not_announce.deflection",
+      "beat.rml.fate_she_does_not_announce.direct",
+      "beat.rml.fate_she_does_not_announce.evidence",
+      "beat.rml.fate_she_does_not_announce.patient",
+      "beat.rml.fate_she_does_not_announce.playful",
       "beat.rml.red_mist_etiquette.after",
       "beat.rml.red_mist_etiquette.assist",
       "beat.rml.red_mist_etiquette.clear",
@@ -807,6 +815,10 @@
       "choice.rml.do_not_laugh_wrong_thing.direct",
       "choice.rml.do_not_laugh_wrong_thing.patient",
       "choice.rml.do_not_laugh_wrong_thing.playful",
+      "choice.rml.fate_she_does_not_announce.defiant",
+      "choice.rml.fate_she_does_not_announce.direct",
+      "choice.rml.fate_she_does_not_announce.patient",
+      "choice.rml.fate_she_does_not_announce.playful",
       "choice.rml.red_mist_etiquette.defiant",
       "choice.rml.red_mist_etiquette.direct",
       "choice.rml.red_mist_etiquette.patient",
@@ -1204,6 +1216,13 @@
       "dlg.rml.do_not_laugh_wrong_thing.patient",
       "dlg.rml.do_not_laugh_wrong_thing.playful",
       "dlg.rml.do_not_laugh_wrong_thing.wrong_target",
+      "dlg.rml.fate_she_does_not_announce.after",
+      "dlg.rml.fate_she_does_not_announce.defiant",
+      "dlg.rml.fate_she_does_not_announce.deflection",
+      "dlg.rml.fate_she_does_not_announce.direct",
+      "dlg.rml.fate_she_does_not_announce.evidence",
+      "dlg.rml.fate_she_does_not_announce.patient",
+      "dlg.rml.fate_she_does_not_announce.playful",
       "dlg.rml.red_mist_etiquette.after",
       "dlg.rml.red_mist_etiquette.assist",
       "dlg.rml.red_mist_etiquette.clear",
@@ -1329,6 +1348,7 @@
       "event.pch.shared_silence_different_books.title",
       "event.pch.spell_for_two_readers.title",
       "event.rml.do_not_laugh_wrong_thing.title",
+      "event.rml.fate_she_does_not_announce.title",
       "event.rml.red_mist_etiquette.title",
       "event.rml.the_audience.title",
       "event.sdm.competence_not_consent.title",
@@ -1473,6 +1493,8 @@
       "journal.pch.spell_for_two_readers.title",
       "journal.rml.do_not_laugh_wrong_thing.body",
       "journal.rml.do_not_laugh_wrong_thing.title",
+      "journal.rml.fate_she_does_not_announce.body",
+      "journal.rml.fate_she_does_not_announce.title",
       "journal.rml.red_mist_etiquette.body",
       "journal.rml.red_mist_etiquette.title",
       "journal.rml.the_audience.body",
@@ -1538,6 +1560,7 @@
       "obj.pch.shared_silence_different_books.choose",
       "obj.pch.spell_for_two_readers.choose",
       "obj.rml.do_not_laugh_wrong_thing.return_floor",
+      "obj.rml.fate_she_does_not_announce.compare_plan",
       "obj.rml.red_mist_etiquette.read_paths",
       "obj.rml.the_audience.take_place",
       "obj.sdm.competence_not_consent.ask",
@@ -5766,6 +5789,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.rml.fate_she_does_not_announce.after",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.after",
+      "target": "dlg.rml.fate_she_does_not_announce.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.defiant",
+      "target": "dlg.rml.fate_she_does_not_announce.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.deflection",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.deflection",
+      "target": "dlg.rml.fate_she_does_not_announce.deflection",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.direct",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.direct",
+      "target": "dlg.rml.fate_she_does_not_announce.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.evidence",
+      "target": "char.sakuya_izayoi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.evidence",
+      "target": "dlg.rml.fate_she_does_not_announce.evidence",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.patient",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.patient",
+      "target": "dlg.rml.fate_she_does_not_announce.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.playful",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.fate_she_does_not_announce.playful",
+      "target": "dlg.rml.fate_she_does_not_announce.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.rml.red_mist_etiquette.after",
       "target": "char.remilia_scarlet",
       "kind": "speaker"
@@ -7463,6 +7556,26 @@
     {
       "source": "choice.rml.do_not_laugh_wrong_thing.response",
       "target": "choice.rml.do_not_laugh_wrong_thing.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.fate_she_does_not_announce.response",
+      "target": "choice.rml.fate_she_does_not_announce.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.fate_she_does_not_announce.response",
+      "target": "choice.rml.fate_she_does_not_announce.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.fate_she_does_not_announce.response",
+      "target": "choice.rml.fate_she_does_not_announce.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.fate_she_does_not_announce.response",
+      "target": "choice.rml.fate_she_does_not_announce.playful",
       "kind": "localization"
     },
     {
@@ -18627,6 +18740,236 @@
     },
     {
       "source": "evt.rml.do_not_laugh_wrong_thing",
+      "target": "loc.scarlet_devil_mansion",
+      "kind": "location"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n001",
+      "target": "evt.rml.fate_she_does_not_announce.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n001",
+      "target": "mus_remilia_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n002",
+      "target": "evt.rml.fate_she_does_not_announce.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n002",
+      "target": "obj.rml.fate_she_does_not_announce.compare_plan",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n002",
+      "target": "prop.rml.revised_mansion_route",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n002",
+      "target": "prop.rml.sakuya_change_ledger",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n002",
+      "target": "prop.rml.unopened_balcony_invitation",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n003",
+      "target": "beat.rml.fate_she_does_not_announce.evidence",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n003",
+      "target": "evt.rml.fate_she_does_not_announce.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n004",
+      "target": "beat.rml.fate_she_does_not_announce.deflection",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n004",
+      "target": "evt.rml.fate_she_does_not_announce.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n005",
+      "target": "choice.rml.fate_she_does_not_announce.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n005",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n005",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n005",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n005",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_after",
+      "target": "beat.rml.fate_she_does_not_announce.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_after",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_defiant_line",
+      "target": "beat.rml.fate_she_does_not_announce.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_defiant_line",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_defiant",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_direct_line",
+      "target": "beat.rml.fate_she_does_not_announce.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_direct_line",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_direct",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_direct",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_effects",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_effects",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_journal",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_journal",
+      "target": "journal.rml.fate_she_does_not_announce",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_patient_line",
+      "target": "beat.rml.fate_she_does_not_announce.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_patient_line",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_patient",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_patient",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_playful_line",
+      "target": "beat.rml.fate_she_does_not_announce.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_playful_line",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_playful",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce.node.n_playful",
+      "target": "evt.rml.fate_she_does_not_announce.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce",
+      "target": "char.remilia_scarlet",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce",
+      "target": "char.remilia_scarlet",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce",
+      "target": "char.sakuya_izayoi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce",
+      "target": "char.sakuya_izayoi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce",
+      "target": "event.rml.fate_she_does_not_announce.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce",
+      "target": "evt.rml.fate_she_does_not_announce",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce",
+      "target": "loc.scarlet_devil_mansion.route_planning_room",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.rml.fate_she_does_not_announce",
       "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },
