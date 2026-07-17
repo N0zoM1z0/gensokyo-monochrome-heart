@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "6b8a23c561ac9fe077a4e8ce6eb106cb9b29e1838f4fca7650ebed10714bee56",
+  "content_hash": "95c94dd31adbd3c0bcd844b55d9d337363ff905ca7beb4530c97d2594c21fb72",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 75,
-    "dialogue_beats": 431,
-    "localization": 1461,
+    "events": 76,
+    "dialogue_beats": 438,
+    "localization": 1476,
     "music_cues": 89,
-    "event_nodes": 1051
+    "event_nodes": 1068
   },
   "ids": {
     "characters": [
@@ -169,6 +169,7 @@
       "evt.pch.shared_silence_different_books",
       "evt.pch.spell_for_two_readers",
       "evt.pro.phone_no_signal",
+      "evt.rml.do_not_laugh_wrong_thing",
       "evt.rml.red_mist_etiquette",
       "evt.rml.the_audience",
       "evt.sdm.book_written_tomorrow",
@@ -534,6 +535,13 @@
       "beat.pch.spell_for_two_readers.patient",
       "beat.pch.spell_for_two_readers.playful",
       "beat.pch.spell_for_two_readers.terms",
+      "beat.rml.do_not_laugh_wrong_thing.after",
+      "beat.rml.do_not_laugh_wrong_thing.defiant",
+      "beat.rml.do_not_laugh_wrong_thing.direct",
+      "beat.rml.do_not_laugh_wrong_thing.misfire",
+      "beat.rml.do_not_laugh_wrong_thing.patient",
+      "beat.rml.do_not_laugh_wrong_thing.playful",
+      "beat.rml.do_not_laugh_wrong_thing.wrong_target",
       "beat.rml.red_mist_etiquette.after",
       "beat.rml.red_mist_etiquette.assist",
       "beat.rml.red_mist_etiquette.clear",
@@ -795,6 +803,10 @@
       "choice.pch.spell_for_two_readers.direct",
       "choice.pch.spell_for_two_readers.patient",
       "choice.pch.spell_for_two_readers.playful",
+      "choice.rml.do_not_laugh_wrong_thing.defiant",
+      "choice.rml.do_not_laugh_wrong_thing.direct",
+      "choice.rml.do_not_laugh_wrong_thing.patient",
+      "choice.rml.do_not_laugh_wrong_thing.playful",
       "choice.rml.red_mist_etiquette.defiant",
       "choice.rml.red_mist_etiquette.direct",
       "choice.rml.red_mist_etiquette.patient",
@@ -1185,6 +1197,13 @@
       "dlg.pch.spell_for_two_readers.patient",
       "dlg.pch.spell_for_two_readers.playful",
       "dlg.pch.spell_for_two_readers.terms",
+      "dlg.rml.do_not_laugh_wrong_thing.after",
+      "dlg.rml.do_not_laugh_wrong_thing.defiant",
+      "dlg.rml.do_not_laugh_wrong_thing.direct",
+      "dlg.rml.do_not_laugh_wrong_thing.misfire",
+      "dlg.rml.do_not_laugh_wrong_thing.patient",
+      "dlg.rml.do_not_laugh_wrong_thing.playful",
+      "dlg.rml.do_not_laugh_wrong_thing.wrong_target",
       "dlg.rml.red_mist_etiquette.after",
       "dlg.rml.red_mist_etiquette.assist",
       "dlg.rml.red_mist_etiquette.clear",
@@ -1309,6 +1328,7 @@
       "event.pch.question_worth_asking.title",
       "event.pch.shared_silence_different_books.title",
       "event.pch.spell_for_two_readers.title",
+      "event.rml.do_not_laugh_wrong_thing.title",
       "event.rml.red_mist_etiquette.title",
       "event.rml.the_audience.title",
       "event.sdm.competence_not_consent.title",
@@ -1451,6 +1471,8 @@
       "journal.pch.shared_silence_different_books.title",
       "journal.pch.spell_for_two_readers.body",
       "journal.pch.spell_for_two_readers.title",
+      "journal.rml.do_not_laugh_wrong_thing.body",
+      "journal.rml.do_not_laugh_wrong_thing.title",
       "journal.rml.red_mist_etiquette.body",
       "journal.rml.red_mist_etiquette.title",
       "journal.rml.the_audience.body",
@@ -1515,6 +1537,7 @@
       "obj.pch.question_worth_asking.choose",
       "obj.pch.shared_silence_different_books.choose",
       "obj.pch.spell_for_two_readers.choose",
+      "obj.rml.do_not_laugh_wrong_thing.return_floor",
       "obj.rml.red_mist_etiquette.read_paths",
       "obj.rml.the_audience.take_place",
       "obj.sdm.competence_not_consent.ask",
@@ -5673,6 +5696,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.rml.do_not_laugh_wrong_thing.after",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.after",
+      "target": "dlg.rml.do_not_laugh_wrong_thing.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.defiant",
+      "target": "dlg.rml.do_not_laugh_wrong_thing.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.direct",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.direct",
+      "target": "dlg.rml.do_not_laugh_wrong_thing.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.misfire",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.misfire",
+      "target": "dlg.rml.do_not_laugh_wrong_thing.misfire",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.patient",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.patient",
+      "target": "dlg.rml.do_not_laugh_wrong_thing.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.playful",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.playful",
+      "target": "dlg.rml.do_not_laugh_wrong_thing.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.wrong_target",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.rml.do_not_laugh_wrong_thing.wrong_target",
+      "target": "dlg.rml.do_not_laugh_wrong_thing.wrong_target",
+      "kind": "localization"
+    },
+    {
       "source": "beat.rml.red_mist_etiquette.after",
       "target": "char.remilia_scarlet",
       "kind": "speaker"
@@ -7350,6 +7443,26 @@
     {
       "source": "choice.pch.spell_for_two_readers.response",
       "target": "choice.pch.spell_for_two_readers.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.do_not_laugh_wrong_thing.response",
+      "target": "choice.rml.do_not_laugh_wrong_thing.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.do_not_laugh_wrong_thing.response",
+      "target": "choice.rml.do_not_laugh_wrong_thing.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.do_not_laugh_wrong_thing.response",
+      "target": "choice.rml.do_not_laugh_wrong_thing.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.rml.do_not_laugh_wrong_thing.response",
+      "target": "choice.rml.do_not_laugh_wrong_thing.playful",
       "kind": "localization"
     },
     {
@@ -18300,6 +18413,221 @@
     {
       "source": "evt.pro.phone_no_signal",
       "target": "loc.outside_world",
+      "kind": "location"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n001",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n001",
+      "target": "mus_remilia_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n002",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n002",
+      "target": "obj.rml.do_not_laugh_wrong_thing.return_floor",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n002",
+      "target": "prop.rml.laughter_ripple_marker",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n002",
+      "target": "prop.rml.misfired_chandelier_cue",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n003",
+      "target": "beat.rml.do_not_laugh_wrong_thing.misfire",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n003",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n004",
+      "target": "beat.rml.do_not_laugh_wrong_thing.wrong_target",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n004",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n005",
+      "target": "choice.rml.do_not_laugh_wrong_thing.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n005",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n005",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n005",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n005",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_after",
+      "target": "beat.rml.do_not_laugh_wrong_thing.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_after",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_defiant_line",
+      "target": "beat.rml.do_not_laugh_wrong_thing.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_defiant_line",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_defiant",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_direct_line",
+      "target": "beat.rml.do_not_laugh_wrong_thing.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_direct_line",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_direct",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_direct",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_effects",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_effects",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_journal",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_journal",
+      "target": "journal.rml.do_not_laugh_wrong_thing",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_patient_line",
+      "target": "beat.rml.do_not_laugh_wrong_thing.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_patient_line",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_patient",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_patient",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_playful_line",
+      "target": "beat.rml.do_not_laugh_wrong_thing.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_playful_line",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_playful",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing.node.n_playful",
+      "target": "evt.rml.do_not_laugh_wrong_thing.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing",
+      "target": "char.remilia_scarlet",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing",
+      "target": "char.remilia_scarlet",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing",
+      "target": "event.rml.do_not_laugh_wrong_thing.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing",
+      "target": "evt.rml.do_not_laugh_wrong_thing",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing",
+      "target": "loc.scarlet_devil_mansion.public_dais",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.rml.do_not_laugh_wrong_thing",
+      "target": "loc.scarlet_devil_mansion",
       "kind": "location"
     },
     {

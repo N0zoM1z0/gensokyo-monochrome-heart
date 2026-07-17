@@ -78,6 +78,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records invited privacy, chosen rest, and the distinction between an office and a body."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.public_dais",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A public dais can lose and restore symmetry while leaving Remilia responsible for her own final line."
+    },
+    {
+      "id": "prop.rml.misfired_chandelier_cue",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A visibly early mechanism separates an ordinary staging mistake from a joke aimed at Remilia's dignity."
+    },
+    {
+      "id": "prop.rml.laughter_ripple_marker",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A public ripple shows where laughter spreads without inventing a named canon guest or hiding the target."
+    },
+    {
+      "id": "journal.rml.do_not_laugh_wrong_thing",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records a public rupture repaired by returning rather than taking over Remilia's voice."
     }
   ]
 }
