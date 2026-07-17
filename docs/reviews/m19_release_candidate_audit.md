@@ -19,6 +19,10 @@ Save schema: `2`
   whole package away from its install path while keeping isolated user data.
   This is the appropriate install/run/uninstall simulation for the Linux
   portable package; it does not claim a Windows or macOS test.
+- `Release Windows` exports a Windows x86_64 `.exe` and `.pck` with the same
+  provenance, runtime-content, and checksum rules. The checked
+  `WINDOWS_CLEAN_MACHINE_PROTOCOL.md` records the external Windows evidence
+  required before any compatibility claim.
 - Runtime CSV mirrors under `content/runtime/` avoid Godot's Translation CSV
   export stripping. The exported game now loads 71 characters, 19 locations,
   104 events, 713 beats, 2,065 strings, and 89 cues without errors.
