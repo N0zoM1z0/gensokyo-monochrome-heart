@@ -68,10 +68,11 @@ names use explicit, documented thematic fallbacks rather than silent defaults:
 The unit suite scans every event JSON and fails if any authored music state no
 longer resolves. Unknown external or future states are still rejected.
 
-## Remaining gate
+## Optional later listening pass
 
-A listener review must judge audibility, fatigue, ducking, cue priority, and the
-balance of all five stem families on a real audio driver. Automated state,
-rights, and amplitude checks are supporting evidence, not a substitute for that
-human listening gate. Use `docs/reviews/m16_audio_listener_signoff.md` to record
-the result without conflating device listening with headless verification.
+A listener may still judge audibility, fatigue, ducking, cue priority, and the
+balance of all five stem families on a real audio driver. The owner waived this
+from M16 and project-completion gates on 2026-07-17; automated state, rights,
+and amplitude checks remain the required evidence. Use
+`docs/reviews/m16_audio_listener_signoff.md` for an optional later device pass
+without conflating it with headless verification.

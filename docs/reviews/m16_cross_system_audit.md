@@ -3,8 +3,8 @@
 Date: 2026-07-17
 Decision: PASS for the tracked production pipeline, runtime integration,
 provenance, accessibility variants, automated release gates, and final visual
-player review. Real-device audio listener sign-off remains explicitly open and
-must not be inferred from this technical decision.
+player review. The owner waived real-device audio listener sign-off on
+2026-07-17; the waiver is recorded rather than inferred as a completed audition.
 
 ## Acceptance inventory
 
@@ -77,11 +77,12 @@ After recapture, all three reviewers returned PASS. The independent final sample
 covered the twelve repaired EN/JA images and found no new clipping, polarity,
 state, or readability regression.
 
-## Open human gate
+## Waived listening worksheet
 
 Headless amplitude, bus, persistence, mono-source, voice-limit, and hierarchy
 checks cannot establish comfort, fatigue, or real-device audibility. A human
 listener must complete `docs/reviews/m16_audio_listener_signoff.md` on speakers
 and headphones for the default, Mono, Low Dynamic Range, and combined mixes.
-Until that record says PASS, broader audio/release readiness remains open even
-though the automated and visual M16 cross-system audit is complete.
+The owner explicitly waived this from the M16 and project-completion gates on
+2026-07-17. It remains a useful later release-quality worksheet, but does not
+block this taskbook progression.

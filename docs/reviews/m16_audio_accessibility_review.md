@@ -64,7 +64,7 @@ Three independent simulated-player reviews returned PASS:
 - Screenshot capture returns exact 320×180 opaque one-bit images in both tested
   profiles and locales.
 
-## Remaining gate
+## Optional later listening pass
 
 Automated amplitude policy does not prove that a mix is comfortable or audible.
 Before M16 audio acceptance, a listener must review all five stem families and
@@ -72,5 +72,6 @@ the twelve SFX on laptop speakers and headphones, including Mono and Low Dynamic
 Range, and record fatigue, warning audibility, dialogue ducking, and cue-balance
 results. All currently authored campaign event states now resolve through the
 five reviewed families, including three explicit thematic fallbacks; automated
-coverage no longer remains open. The exact device matrix and sign-off fields are
-in `docs/reviews/m16_audio_listener_signoff.md`.
+coverage no longer remains open. The owner waived this real-device review from
+M16 and project completion on 2026-07-17; the optional device matrix and sign-off
+fields remain in `docs/reviews/m16_audio_listener_signoff.md`.

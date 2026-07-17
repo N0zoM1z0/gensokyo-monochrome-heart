@@ -47,10 +47,10 @@ low-dynamic compressor, compact stem/SFX gain matrices, and bilingual Options
 controls. Its technical and simulated-player evidence is recorded in
 `docs/reviews/m16_audio_accessibility_review.md`.
 
-## Blocking remainder
+## Waived listener review
 
-M16 still needs listener review of the production mix on real speakers and
-headphones. All authored event states now have deliberate production-family
-coverage, including three documented thematic fallbacks; the runtime scan
-rejects any future uncovered state. This file approval therefore does not by
-itself close the complete M16 audio gate.
+The owner waived real-device listener review from the M16 and project-completion
+gates on 2026-07-17. All authored event states have deliberate production-family
+coverage, including three documented thematic fallbacks; the runtime scan rejects
+any future uncovered state. The listener worksheet remains optional release-
+quality evidence rather than a completion blocker.

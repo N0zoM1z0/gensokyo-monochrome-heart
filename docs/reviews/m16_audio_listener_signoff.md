@@ -1,7 +1,9 @@
 # M16 Real-Device Audio Listener Sign-off
 
-Status: awaiting a human listener. Automated tests must not mark this review as
-passed.
+Status: owner-waived on 2026-07-17. This real-device listening worksheet remains
+available for a later release-quality pass, but it is not an M16 or project
+completion gate under the owner's explicit direction. Automated tests must not
+claim that a human listener completed it.
 
 ## Setup
 
