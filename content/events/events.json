@@ -121,16 +121,21 @@
     {
       "id": "evt.sdm.small_chair",
       "legacy_id": "EVT-009",
-      "title_en": "The Small Chair",
+      "title_en": "The Small Chair Behind the Throne",
       "location_id": "loc.scarlet_devil_mansion",
       "lead_character_ids": [
         "char.remilia_scarlet"
       ],
       "primary_mode": "dialogue",
-      "core_change": "public/private mask",
-      "status": "planned",
+      "core_change": "Remilia invites the protagonist behind the throne and chooses an ordinary resting chair without letting privacy become shame or infantilization.",
+      "status": "authored",
       "estimated_minutes": 12,
-      "comfort_tags": []
+      "comfort_tags": [
+        "no_timer",
+        "no_failure",
+        "private_access_invited",
+        "no_infantilization"
+      ]
     },
     {
       "id": "evt.sdm.breakable_point",

@@ -54,6 +54,30 @@
       "kind": "journal_entry",
       "target_milestone": "M14",
       "reason": "The journal records ceremony serving people and Remilia retaining responsibility when a route changes."
+    },
+    {
+      "id": "loc.scarlet_devil_mansion.throne_recess",
+      "kind": "spot",
+      "target_milestone": "M14",
+      "reason": "A recess keeps the throne's dominant silhouette visible while lowering Remilia's private staging off-axis."
+    },
+    {
+      "id": "prop.rml.throne_backstage_curtain",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A curtain makes access visibly controlled by Remilia rather than discovered through voyeurism."
+    },
+    {
+      "id": "prop.rml.small_resting_chair",
+      "kind": "interactable",
+      "target_milestone": "M14",
+      "reason": "A plain adult resting chair contrasts with the throne as furniture and must never be framed as a child's seat."
+    },
+    {
+      "id": "journal.sdm.small_chair",
+      "kind": "journal_entry",
+      "target_milestone": "M14",
+      "reason": "The journal records invited privacy, chosen rest, and the distinction between an office and a body."
     }
   ]
 }

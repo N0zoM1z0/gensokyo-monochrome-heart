@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "678ea23fcfaaaa3bb4a8c3f531fde454f5e1ae52d50681489c02c328878f2db7",
+  "content_hash": "6b8a23c561ac9fe077a4e8ce6eb106cb9b29e1838f4fca7650ebed10714bee56",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 75,
-    "dialogue_beats": 424,
-    "localization": 1446,
+    "dialogue_beats": 431,
+    "localization": 1461,
     "music_cues": 89,
-    "event_nodes": 1034
+    "event_nodes": 1051
   },
   "ids": {
     "characters": [
@@ -607,7 +607,14 @@
       "beat.sdm.promise.intro",
       "beat.sdm.promise.postponed",
       "beat.sdm.promise.romance",
-      "beat.sdm.promise.undecided"
+      "beat.sdm.promise.undecided",
+      "beat.sdm.small_chair.after",
+      "beat.sdm.small_chair.defiant",
+      "beat.sdm.small_chair.direct",
+      "beat.sdm.small_chair.invitation",
+      "beat.sdm.small_chair.patient",
+      "beat.sdm.small_chair.playful",
+      "beat.sdm.small_chair.private_seat"
     ],
     "localization": [
       "accessibility.preset.custom",
@@ -824,6 +831,10 @@
       "choice.sdm.promise.postponed",
       "choice.sdm.promise.romance",
       "choice.sdm.promise.undecided",
+      "choice.sdm.small_chair.defiant",
+      "choice.sdm.small_chair.direct",
+      "choice.sdm.small_chair.patient",
+      "choice.sdm.small_chair.playful",
       "dlg.aya.camera_down.after",
       "dlg.aya.camera_down.defiant",
       "dlg.aya.camera_down.direct",
@@ -1248,6 +1259,13 @@
       "dlg.sdm.promise.postponed",
       "dlg.sdm.promise.romance",
       "dlg.sdm.promise.undecided",
+      "dlg.sdm.small_chair.after",
+      "dlg.sdm.small_chair.defiant",
+      "dlg.sdm.small_chair.direct",
+      "dlg.sdm.small_chair.invitation",
+      "dlg.sdm.small_chair.patient",
+      "dlg.sdm.small_chair.playful",
+      "dlg.sdm.small_chair.private_seat",
       "event.aya.camera_down.title",
       "event.aya.exclusive_interview.title",
       "event.aya.hidden_folder.title",
@@ -1300,6 +1318,7 @@
       "event.sdm.late_by_three_minutes.title",
       "event.sdm.missing_minute.title",
       "event.sdm.promise.title",
+      "event.sdm.small_chair.title",
       "input.glyph.keyboard.cancel",
       "input.glyph.keyboard.confirm",
       "input.glyph.keyboard.menu",
@@ -1450,6 +1469,8 @@
       "journal.sdm.missing_minute_returned.title",
       "journal.sdm.promise.body",
       "journal.sdm.promise.title",
+      "journal.sdm.small_chair.body",
+      "journal.sdm.small_chair.title",
       "obj.aya.camera_down.wait",
       "obj.aya.exclusive_interview.mark_record",
       "obj.aya.hidden_folder.review",
@@ -1502,6 +1523,7 @@
       "obj.sdm.kitchen_after_midnight.wait",
       "obj.sdm.missing_minute.leave",
       "obj.sdm.promise.wait",
+      "obj.sdm.small_chair.enter_by_invitation",
       "obj.sdm.trace_missing_minute",
       "rumor.mtn.tomorrows_headline.reporter_prevented_accident",
       "rumor.mtn.tomorrows_headline.withheld_correction",
@@ -6391,6 +6413,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sdm.small_chair.after",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.small_chair.after",
+      "target": "dlg.sdm.small_chair.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.small_chair.defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.small_chair.defiant",
+      "target": "dlg.sdm.small_chair.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.small_chair.direct",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.small_chair.direct",
+      "target": "dlg.sdm.small_chair.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.small_chair.invitation",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.small_chair.invitation",
+      "target": "dlg.sdm.small_chair.invitation",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.small_chair.patient",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.small_chair.patient",
+      "target": "dlg.sdm.small_chair.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.small_chair.playful",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.small_chair.playful",
+      "target": "dlg.sdm.small_chair.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sdm.small_chair.private_seat",
+      "target": "char.remilia_scarlet",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sdm.small_chair.private_seat",
+      "target": "dlg.sdm.small_chair.private_seat",
+      "kind": "localization"
+    },
+    {
       "source": "choice.aya.camera_down.response",
       "target": "choice.aya.camera_down.defiant",
       "kind": "localization"
@@ -7438,6 +7530,26 @@
     {
       "source": "choice.sdm.promise.intent",
       "target": "choice.sdm.promise.undecided",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.small_chair.response",
+      "target": "choice.sdm.small_chair.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.small_chair.response",
+      "target": "choice.sdm.small_chair.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.small_chair.response",
+      "target": "choice.sdm.small_chair.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sdm.small_chair.response",
+      "target": "choice.sdm.small_chair.playful",
       "kind": "localization"
     },
     {
@@ -20481,9 +20593,214 @@
       "kind": "location"
     },
     {
+      "source": "evt.sdm.small_chair.node.n001",
+      "target": "evt.sdm.small_chair.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n001",
+      "target": "mus_remilia_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n002",
+      "target": "evt.sdm.small_chair.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n002",
+      "target": "obj.sdm.small_chair.enter_by_invitation",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n002",
+      "target": "prop.rml.small_resting_chair",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n002",
+      "target": "prop.rml.throne_backstage_curtain",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n003",
+      "target": "beat.sdm.small_chair.invitation",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n003",
+      "target": "evt.sdm.small_chair.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n004",
+      "target": "beat.sdm.small_chair.private_seat",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n004",
+      "target": "evt.sdm.small_chair.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n005",
+      "target": "choice.sdm.small_chair.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n005",
+      "target": "evt.sdm.small_chair.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n005",
+      "target": "evt.sdm.small_chair.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n005",
+      "target": "evt.sdm.small_chair.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n005",
+      "target": "evt.sdm.small_chair.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_after",
+      "target": "beat.sdm.small_chair.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_after",
+      "target": "evt.sdm.small_chair.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_defiant_line",
+      "target": "beat.sdm.small_chair.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_defiant_line",
+      "target": "evt.sdm.small_chair.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_defiant",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_defiant",
+      "target": "evt.sdm.small_chair.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_direct_line",
+      "target": "beat.sdm.small_chair.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_direct_line",
+      "target": "evt.sdm.small_chair.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_direct",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_direct",
+      "target": "evt.sdm.small_chair.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_effects",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_effects",
+      "target": "evt.sdm.small_chair.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_journal",
+      "target": "evt.sdm.small_chair.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_journal",
+      "target": "journal.sdm.small_chair",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_patient_line",
+      "target": "beat.sdm.small_chair.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_patient_line",
+      "target": "evt.sdm.small_chair.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_patient",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_patient",
+      "target": "evt.sdm.small_chair.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_playful_line",
+      "target": "beat.sdm.small_chair.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_playful_line",
+      "target": "evt.sdm.small_chair.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_playful",
+      "target": "char.remilia_scarlet",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sdm.small_chair.node.n_playful",
+      "target": "evt.sdm.small_chair.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sdm.small_chair",
+      "target": "char.remilia_scarlet",
+      "kind": "cast"
+    },
+    {
       "source": "evt.sdm.small_chair",
       "target": "char.remilia_scarlet",
       "kind": "lead_character"
+    },
+    {
+      "source": "evt.sdm.small_chair",
+      "target": "event.sdm.small_chair.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sdm.small_chair",
+      "target": "evt.sdm.small_chair",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sdm.small_chair",
+      "target": "loc.scarlet_devil_mansion.throne_recess",
+      "kind": "spot"
     },
     {
       "source": "evt.sdm.small_chair",
