@@ -46,3 +46,12 @@ The fixture is structurally correct on every run, but it does not meet the
 rasterizer identity are recorded rather than presented as target-hardware
 performance. A hardware-GPU capture on the target integrated-graphics class is
 required before closing the full-frame budget.
+
+## M18 follow-up capture — 2026-07-17
+
+The same Xvfb/llvmpipe fixture was repeated with the production art atlas. It
+kept its structural contract (two fighters, 128 projectiles, 40 effects) and
+measured 9.171 ms average and **10.426 ms p95**, below the 16.67 ms provisional
+target in this run. This is useful regression evidence, but it does not replace
+a target-GPU measurement: the earlier llvmpipe variance above remains why the
+minimum-hardware decision is still deferred to an actual integrated-GPU capture.

@@ -66,3 +66,17 @@ The final rendered stress scene does not meet 16.67 ms under llvmpipe, and M07
 therefore records the open renderer bottleneck instead of claiming a 60 fps
 result. A hardware-GPU capture on target-class integrated graphics is still
 required before setting minimum hardware or closing the full-frame budget.
+
+## M18 follow-up capture — 2026-07-17
+
+The packed simulation fixture was repeated three times before the rest of the
+verification workload. All three trials kept 2,500 active bullets with zero
+dropped spawns. Its aggregate p95 was **0.924 ms** (trial p95 values `0.999`,
+`1.039`, and `0.924` ms), below the 3.5 ms simulation gate.
+
+The full presentation fixture was also re-run under Xvfb with Mesa
+`llvmpipe (LLVM 20.1.2, 256 bits)`. It remained structurally complete (2,500
+source and rendered bullets, zero dropped spawns), but measured 22.071 ms
+average and **32.256 ms p95**, over the 16.67 ms full-frame target. This is a
+recorded software-rasterizer limitation, not a performance pass or a hardware
+claim. The target-GPU capture remains required for the frame-time closure.

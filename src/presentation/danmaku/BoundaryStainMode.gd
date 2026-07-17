@@ -290,6 +290,7 @@ func capture_debug_state() -> Dictionary:
 		"bullets": runtime.pool.active_count if runtime != null else 0,
 		"committed": runtime.pool.committed_count if runtime != null else 0,
 		"pool_capacity": runtime.pool.capacity if runtime != null else 0,
+		"locale": String(_locale),
 		"intro_ticks": _intro_ticks_remaining,
 		"tutorial_waiting": _tutorial_waiting,
 		"start_release_ticks": _start_release_ticks,

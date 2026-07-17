@@ -208,11 +208,35 @@ func _expect_local_telemetry(failures: Array[String]) -> void:
 	if not parsed is Dictionary or parsed.get("schema", "") != VerticalSliceTelemetry.SCHEMA_ID:
 		failures.append("local acceptance telemetry did not round-trip its schema")
 		return
+	var allowed_document_keys := [
+		"build_channel", "completed", "content_hash", "content_revision", "engine_version",
+		"profile_id", "records", "schema",
+	]
+	if parsed.keys().size() != allowed_document_keys.size():
+		failures.append("local acceptance telemetry added an unreviewed document field")
+	else:
+		for key: String in parsed.keys():
+			if not key in allowed_document_keys:
+				failures.append("local acceptance telemetry exposed an unreviewed field: %s" % key)
 	var records: Variant = parsed.get("records", [])
 	if not records is Array or records.size() != 5:
 		failures.append("local acceptance telemetry omitted ordered session evidence")
+	elif not records.is_empty():
+		var allowed_record_keys := [
+			"attempt_count", "elapsed_ms", "is_replay", "kind", "phase_id", "result_tag", "sequence",
+		]
+		for record_value: Variant in records:
+			if not record_value is Dictionary or record_value.keys().size() != allowed_record_keys.size():
+				failures.append("local acceptance telemetry added an unreviewed record field")
+				break
+			for key: String in record_value.keys():
+				if not key in allowed_record_keys:
+					failures.append("local acceptance telemetry exposed an unreviewed record field: %s" % key)
+					break
 	if source.contains("/home/") or source.contains("\\Users\\"):
 		failures.append("local acceptance telemetry leaked a personal filesystem path")
+	if source.contains("second cup") or source.contains("Reimu"):
+		failures.append("local acceptance telemetry leaked authored dialogue or a protagonist name")
 	if not bool(parsed.get("completed", false)):
 		failures.append("local acceptance telemetry omitted session completion")
 

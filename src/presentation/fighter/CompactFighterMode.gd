@@ -328,6 +328,7 @@ func capture_debug_state() -> Dictionary:
 		"projectiles": runtime.projectiles.active_count if runtime != null else -1,
 		"effects": _stress_effects,
 		"fighters": rendered_fighter_count(),
+		"locale": String(_locale),
 		"player_move": String(runtime.states[0].current_move_id) if runtime != null else "",
 		"opponent_move": String(runtime.states[1].current_move_id) if runtime != null else "",
 		"hitbox": runtime.current_hitbox(0) if runtime != null else Rect2i(),
