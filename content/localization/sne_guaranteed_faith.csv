@@ -1,5 +1,5 @@
 key,context,speaker,en,ja,max_width_px,origin
-obj.sne.guaranteed_faith.inspect,objective,,Inspect the faith value that cannot fall and the verification lead Sanae has not connected.,下がらない信仰値と、早苗がまだ接続していない検証線を確かめる。,208,Original
+obj.sne.guaranteed_faith.inspect,objective,,Inspect the faith value that cannot fall and the active verification lead feeding it.,下がらない信仰値と、その値を送る接続中の検証線を確かめる。,208,Original
 event.sne.guaranteed_faith.title,event_title,,Guaranteed Faith,保証された信仰,208,Original
 choice.sne.guaranteed_faith.direct,choice,,Faith without the ability to doubt is only recorded compliance.,疑う力のない信仰は、記録された服従にすぎないと告げる。,248,Original
 choice.sne.guaranteed_faith.playful,choice,,A guaranteed testimony is an answer key wearing shrine clothes.,保証された証言は、神社の服を着た解答用紙だと言う。,248,Original

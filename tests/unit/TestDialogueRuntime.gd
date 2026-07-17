@@ -142,12 +142,14 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 		&"choice.ein.promise.intent",
 		&"choice.pch.promise.intent",
 		&"choice.rml.promise.intent",
+		&"choice.sne.promise.intent",
 	]:
 		if not FourToneChoiceControl.uses_route_intent_labels(choice_id):
 			failures.append("Promise choice did not request route-intent labels: %s" % choice_id)
 	for choice_id: StringName in [
 		&"choice.rml.the_audience.response",
 		&"choice.aya.promise.romance_consent",
+		&"choice.sne.promise.romance_consent",
 	]:
 		if FourToneChoiceControl.uses_route_intent_labels(choice_id):
 			failures.append("ordinary or consent choice was mislabeled as route intent: %s" % choice_id)
