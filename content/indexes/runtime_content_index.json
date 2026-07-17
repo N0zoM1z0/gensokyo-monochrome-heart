@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "08cfd3a6b9f3a5feb4e2f44f0f8686cb23c05299da37c3fe7906ae75463a767c",
+  "content_hash": "a3ed6a5bdaa90c03ee3c9e239d85ba34ced9fad36ed3c6323174790d98aac518",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 95,
-    "dialogue_beats": 636,
-    "localization": 1885,
+    "events": 96,
+    "dialogue_beats": 650,
+    "localization": 1907,
     "music_cues": 89,
-    "event_nodes": 1528
+    "event_nodes": 1553
   },
   "ids": {
     "characters": [
@@ -128,6 +128,7 @@
       "evt.eir.clinic_triage",
       "evt.eir.do_not_volunteer",
       "evt.eir.doctor_sleeps",
+      "evt.eir.permanent_cure",
       "evt.eir.practical_care",
       "evt.fin.borders_back",
       "evt.fin.margin_of_error",
@@ -353,6 +354,20 @@
       "beat.eir.doctor_sleeps.roster",
       "beat.eir.doctor_sleeps.routine",
       "beat.eir.doctor_sleeps.wake",
+      "beat.eir.permanent_cure.after",
+      "beat.eir.permanent_cure.audit",
+      "beat.eir.permanent_cure.checksum",
+      "beat.eir.permanent_cure.close",
+      "beat.eir.permanent_cure.cost",
+      "beat.eir.permanent_cure.defiant",
+      "beat.eir.permanent_cure.direct",
+      "beat.eir.permanent_cure.kaguya",
+      "beat.eir.permanent_cure.offer",
+      "beat.eir.permanent_cure.patient",
+      "beat.eir.permanent_cure.playful",
+      "beat.eir.permanent_cure.reject",
+      "beat.eir.permanent_cure.revision",
+      "beat.eir.permanent_cure.zero_mapping",
       "beat.eir.practical_care.after",
       "beat.eir.practical_care.assist",
       "beat.eir.practical_care.clear",
@@ -922,6 +937,10 @@
       "choice.eir.doctor_sleeps.direct",
       "choice.eir.doctor_sleeps.patient",
       "choice.eir.doctor_sleeps.playful",
+      "choice.eir.permanent_cure.defiant",
+      "choice.eir.permanent_cure.direct",
+      "choice.eir.permanent_cure.patient",
+      "choice.eir.permanent_cure.playful",
       "choice.eir.practical_care.defiant",
       "choice.eir.practical_care.direct",
       "choice.eir.practical_care.patient",
@@ -1309,6 +1328,20 @@
       "dlg.eir.doctor_sleeps.roster",
       "dlg.eir.doctor_sleeps.routine",
       "dlg.eir.doctor_sleeps.wake",
+      "dlg.eir.permanent_cure.after",
+      "dlg.eir.permanent_cure.audit",
+      "dlg.eir.permanent_cure.checksum",
+      "dlg.eir.permanent_cure.close",
+      "dlg.eir.permanent_cure.cost",
+      "dlg.eir.permanent_cure.defiant",
+      "dlg.eir.permanent_cure.direct",
+      "dlg.eir.permanent_cure.kaguya",
+      "dlg.eir.permanent_cure.offer",
+      "dlg.eir.permanent_cure.patient",
+      "dlg.eir.permanent_cure.playful",
+      "dlg.eir.permanent_cure.reject",
+      "dlg.eir.permanent_cure.revision",
+      "dlg.eir.permanent_cure.zero_mapping",
       "dlg.eir.practical_care.after",
       "dlg.eir.practical_care.assist",
       "dlg.eir.practical_care.clear",
@@ -1814,6 +1847,7 @@
       "event.eir.clinic_triage.title",
       "event.eir.do_not_volunteer.title",
       "event.eir.doctor_sleeps.title",
+      "event.eir.permanent_cure.title",
       "event.eir.practical_care.title",
       "event.hgy.cutting_wrong_problem.title",
       "event.hgy.duty_delegated.title",
@@ -1937,6 +1971,8 @@
       "journal.eir.do_not_volunteer.title",
       "journal.eir.doctor_sleeps.body",
       "journal.eir.doctor_sleeps.title",
+      "journal.eir.permanent_cure.body",
+      "journal.eir.permanent_cure.title",
       "journal.eir.practical_care.body",
       "journal.eir.practical_care.title",
       "journal.hgy.cutting_wrong_problem.body",
@@ -2114,6 +2150,7 @@
       "obj.eir.clinic_triage.separate",
       "obj.eir.do_not_volunteer.withdraw",
       "obj.eir.doctor_sleeps.handoff",
+      "obj.eir.permanent_cure.audit",
       "obj.eir.practical_care.balance",
       "obj.hgy.cutting_wrong_problem.listen",
       "obj.hgy.duty_delegated.watch",
@@ -4309,6 +4346,146 @@
     {
       "source": "beat.eir.doctor_sleeps.wake",
       "target": "dlg.eir.doctor_sleeps.wake",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.after",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.after",
+      "target": "dlg.eir.permanent_cure.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.audit",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.audit",
+      "target": "dlg.eir.permanent_cure.audit",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.checksum",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.checksum",
+      "target": "dlg.eir.permanent_cure.checksum",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.close",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.close",
+      "target": "dlg.eir.permanent_cure.close",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.cost",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.cost",
+      "target": "dlg.eir.permanent_cure.cost",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.defiant",
+      "target": "dlg.eir.permanent_cure.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.direct",
+      "target": "dlg.eir.permanent_cure.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.kaguya",
+      "target": "char.kaguya_houraisan",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.kaguya",
+      "target": "dlg.eir.permanent_cure.kaguya",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.offer",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.offer",
+      "target": "dlg.eir.permanent_cure.offer",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.patient",
+      "target": "dlg.eir.permanent_cure.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.playful",
+      "target": "dlg.eir.permanent_cure.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.reject",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.reject",
+      "target": "dlg.eir.permanent_cure.reject",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.revision",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.revision",
+      "target": "dlg.eir.permanent_cure.revision",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.eir.permanent_cure.zero_mapping",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.eir.permanent_cure.zero_mapping",
+      "target": "dlg.eir.permanent_cure.zero_mapping",
       "kind": "localization"
     },
     {
@@ -9559,6 +9736,26 @@
     {
       "source": "choice.eir.doctor_sleeps.response",
       "target": "choice.eir.doctor_sleeps.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.permanent_cure.record",
+      "target": "choice.eir.permanent_cure.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.permanent_cure.record",
+      "target": "choice.eir.permanent_cure.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.permanent_cure.record",
+      "target": "choice.eir.permanent_cure.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.eir.permanent_cure.record",
+      "target": "choice.eir.permanent_cure.playful",
       "kind": "localization"
     },
     {
@@ -15183,6 +15380,326 @@
     },
     {
       "source": "evt.eir.doctor_sleeps",
+      "target": "loc.eientei",
+      "kind": "location"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n001",
+      "target": "evt.eir.permanent_cure.node.n_offer",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n001",
+      "target": "mus_eirin_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_after",
+      "target": "beat.eir.permanent_cure.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_after",
+      "target": "evt.eir.permanent_cure.node.n_close",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_audit",
+      "target": "beat.eir.permanent_cure.audit",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_audit",
+      "target": "evt.eir.permanent_cure.node.n_zero_mapping",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_checksum",
+      "target": "beat.eir.permanent_cure.checksum",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_checksum",
+      "target": "evt.eir.permanent_cure.node.n_kaguya",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_choice",
+      "target": "choice.eir.permanent_cure.record",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_choice",
+      "target": "evt.eir.permanent_cure.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_choice",
+      "target": "evt.eir.permanent_cure.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_choice",
+      "target": "evt.eir.permanent_cure.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_choice",
+      "target": "evt.eir.permanent_cure.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_close",
+      "target": "beat.eir.permanent_cure.close",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_close",
+      "target": "evt.eir.permanent_cure.node.n_revision",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_cost",
+      "target": "beat.eir.permanent_cure.cost",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_cost",
+      "target": "evt.eir.permanent_cure.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_defiant_line",
+      "target": "beat.eir.permanent_cure.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_defiant_line",
+      "target": "evt.eir.permanent_cure.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_defiant",
+      "target": "evt.eir.permanent_cure.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_direct_line",
+      "target": "beat.eir.permanent_cure.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_direct_line",
+      "target": "evt.eir.permanent_cure.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_direct",
+      "target": "evt.eir.permanent_cure.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_effects",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_effects",
+      "target": "evt.eir.permanent_cure.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_journal",
+      "target": "evt.eir.permanent_cure.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_journal",
+      "target": "journal.eir.permanent_cure",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_kaguya",
+      "target": "beat.eir.permanent_cure.kaguya",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_kaguya",
+      "target": "evt.eir.permanent_cure.node.n_cost",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_objective",
+      "target": "evt.eir.permanent_cure.node.n_reject",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_objective",
+      "target": "obj.eir.permanent_cure.audit",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_objective",
+      "target": "prop.eir.archive_three_zero_offer",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_objective",
+      "target": "prop.eir.blank_revision_line",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_objective",
+      "target": "prop.eir.disappearing_consent_field",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_objective",
+      "target": "prop.eir.fixed_patient_checksum",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_offer",
+      "target": "beat.eir.permanent_cure.offer",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_offer",
+      "target": "evt.eir.permanent_cure.node.n_audit",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_patient_line",
+      "target": "beat.eir.permanent_cure.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_patient_line",
+      "target": "evt.eir.permanent_cure.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_patient",
+      "target": "evt.eir.permanent_cure.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_playful_line",
+      "target": "beat.eir.permanent_cure.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_playful_line",
+      "target": "evt.eir.permanent_cure.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_playful",
+      "target": "evt.eir.permanent_cure.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_reject_effects",
+      "target": "evt.eir.permanent_cure.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_reject",
+      "target": "beat.eir.permanent_cure.reject",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_reject",
+      "target": "evt.eir.permanent_cure.node.n_reject_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_revision",
+      "target": "beat.eir.permanent_cure.revision",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_revision",
+      "target": "evt.eir.permanent_cure.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_zero_mapping",
+      "target": "beat.eir.permanent_cure.zero_mapping",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.eir.permanent_cure.node.n_zero_mapping",
+      "target": "evt.eir.permanent_cure.node.n_checksum",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "char.eirin_yagokoro",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "char.eirin_yagokoro",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "char.kaguya_houraisan",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "char.kaguya_houraisan",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "event.eir.permanent_cure.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "evt.eir.permanent_cure",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
+      "target": "loc.eientei.permanent_cure_audit_table",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.eir.permanent_cure",
       "target": "loc.eientei",
       "kind": "location"
     },
