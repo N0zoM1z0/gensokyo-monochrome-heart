@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "18d20572cedf2a3c28fd312e3b456d208c5c4dfc33e56bf0f14c38bda142c47b",
+  "content_hash": "862de94796ed643864fb4a873779af9280bc51847a17e8ae3d6f0fc494372cd8",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 98,
-    "dialogue_beats": 665,
-    "localization": 1948,
+    "events": 99,
+    "dialogue_beats": 675,
+    "localization": 1966,
     "music_cues": 89,
-    "event_nodes": 1598
+    "event_nodes": 1619
   },
   "ids": {
     "characters": [
@@ -199,6 +199,7 @@
       "evt.sne.promise",
       "evt.sne.shrine_between_homes",
       "evt.tsh.entrance_tremor",
+      "evt.tsh.keystone_construction",
       "evt.yyk.bottomless_banquet",
       "evt.yyk.empty_plate",
       "evt.yyk.feast_without_ending",
@@ -824,6 +825,16 @@
       "beat.tsh.entrance_tremor.patient",
       "beat.tsh.entrance_tremor.playful",
       "beat.tsh.entrance_tremor.repair_terms",
+      "beat.tsh.keystone_construction.after",
+      "beat.tsh.keystone_construction.assist",
+      "beat.tsh.keystone_construction.clear",
+      "beat.tsh.keystone_construction.defiant",
+      "beat.tsh.keystone_construction.direct",
+      "beat.tsh.keystone_construction.iku_constraint",
+      "beat.tsh.keystone_construction.loss",
+      "beat.tsh.keystone_construction.patient",
+      "beat.tsh.keystone_construction.plan",
+      "beat.tsh.keystone_construction.playful",
       "beat.yyk.bottomless_banquet.after",
       "beat.yyk.bottomless_banquet.assist",
       "beat.yyk.bottomless_banquet.clear",
@@ -1182,6 +1193,10 @@
       "choice.tsh.entrance_tremor.direct",
       "choice.tsh.entrance_tremor.patient",
       "choice.tsh.entrance_tremor.playful",
+      "choice.tsh.keystone_construction.defiant",
+      "choice.tsh.keystone_construction.direct",
+      "choice.tsh.keystone_construction.patient",
+      "choice.tsh.keystone_construction.playful",
       "choice.yyk.bottomless_banquet.defiant",
       "choice.yyk.bottomless_banquet.direct",
       "choice.yyk.bottomless_banquet.patient",
@@ -1823,6 +1838,16 @@
       "dlg.tsh.entrance_tremor.patient",
       "dlg.tsh.entrance_tremor.playful",
       "dlg.tsh.entrance_tremor.repair_terms",
+      "dlg.tsh.keystone_construction.after",
+      "dlg.tsh.keystone_construction.assist",
+      "dlg.tsh.keystone_construction.clear",
+      "dlg.tsh.keystone_construction.defiant",
+      "dlg.tsh.keystone_construction.direct",
+      "dlg.tsh.keystone_construction.iku_constraint",
+      "dlg.tsh.keystone_construction.loss",
+      "dlg.tsh.keystone_construction.patient",
+      "dlg.tsh.keystone_construction.plan",
+      "dlg.tsh.keystone_construction.playful",
       "dlg.yyk.bottomless_banquet.after",
       "dlg.yyk.bottomless_banquet.assist",
       "dlg.yyk.bottomless_banquet.clear",
@@ -1944,6 +1969,7 @@
       "event.sne.promise.title",
       "event.sne.shrine_between_homes.title",
       "event.tsh.entrance_tremor.title",
+      "event.tsh.keystone_construction.title",
       "event.yyk.bottomless_banquet.title",
       "event.yyk.empty_plate.title",
       "event.yyk.feast_without_ending.title",
@@ -2175,6 +2201,8 @@
       "journal.sne.shrine_between_homes.title",
       "journal.tsh.entrance_tremor.body",
       "journal.tsh.entrance_tremor.title",
+      "journal.tsh.keystone_construction.body",
+      "journal.tsh.keystone_construction.title",
       "journal.yyk.bottomless_banquet.body",
       "journal.yyk.bottomless_banquet.title",
       "journal.yyk.empty_plate.body",
@@ -2261,6 +2289,7 @@
       "obj.sne.promise.choose",
       "obj.sne.shrine_between_homes.inspect",
       "obj.tsh.entrance_tremor.inspect",
+      "obj.tsh.keystone_construction.read",
       "obj.yyk.bottomless_banquet.read_table",
       "obj.yyk.empty_plate.observe",
       "obj.yyk.feast_without_ending.inspect",
@@ -9087,6 +9116,106 @@
       "kind": "localization"
     },
     {
+      "source": "beat.tsh.keystone_construction.after",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.after",
+      "target": "dlg.tsh.keystone_construction.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.assist",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.assist",
+      "target": "dlg.tsh.keystone_construction.assist",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.clear",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.clear",
+      "target": "dlg.tsh.keystone_construction.clear",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.defiant",
+      "target": "dlg.tsh.keystone_construction.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.direct",
+      "target": "dlg.tsh.keystone_construction.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.iku_constraint",
+      "target": "char.iku_nagae",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.iku_constraint",
+      "target": "dlg.tsh.keystone_construction.iku_constraint",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.loss",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.loss",
+      "target": "dlg.tsh.keystone_construction.loss",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.patient",
+      "target": "dlg.tsh.keystone_construction.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.plan",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.plan",
+      "target": "dlg.tsh.keystone_construction.plan",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.keystone_construction.playful",
+      "target": "dlg.tsh.keystone_construction.playful",
+      "kind": "localization"
+    },
+    {
       "source": "beat.yyk.bottomless_banquet.after",
       "target": "char.yuyuko_saigyouji",
       "kind": "speaker"
@@ -11084,6 +11213,26 @@
     {
       "source": "choice.tsh.entrance_tremor.response",
       "target": "choice.tsh.entrance_tremor.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.keystone_construction.response",
+      "target": "choice.tsh.keystone_construction.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.keystone_construction.response",
+      "target": "choice.tsh.keystone_construction.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.keystone_construction.response",
+      "target": "choice.tsh.keystone_construction.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.keystone_construction.response",
+      "target": "choice.tsh.keystone_construction.playful",
       "kind": "localization"
     },
     {
@@ -29738,6 +29887,286 @@
     },
     {
       "source": "evt.tsh.entrance_tremor",
+      "target": "loc.heaven",
+      "kind": "location"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n001",
+      "target": "evt.tsh.keystone_construction.node.n_plan",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n001",
+      "target": "mus_tenshi_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_after",
+      "target": "beat.tsh.keystone_construction.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_after",
+      "target": "evt.tsh.keystone_construction.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_assist",
+      "target": "beat.tsh.keystone_construction.assist",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_assist",
+      "target": "evt.tsh.keystone_construction.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_build",
+      "target": "evt.tsh.keystone_construction.node.n_assist",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_build",
+      "target": "evt.tsh.keystone_construction.node.n_clear",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_build",
+      "target": "evt.tsh.keystone_construction.node.n_loss",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_build",
+      "target": "mini.tsh.keystone_construction",
+      "kind": "minigame"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_choice",
+      "target": "choice.tsh.keystone_construction.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_choice",
+      "target": "evt.tsh.keystone_construction.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_choice",
+      "target": "evt.tsh.keystone_construction.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_choice",
+      "target": "evt.tsh.keystone_construction.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_choice",
+      "target": "evt.tsh.keystone_construction.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_clear",
+      "target": "beat.tsh.keystone_construction.clear",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_clear",
+      "target": "evt.tsh.keystone_construction.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_defiant_line",
+      "target": "beat.tsh.keystone_construction.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_defiant_line",
+      "target": "evt.tsh.keystone_construction.node.n_build",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_defiant",
+      "target": "evt.tsh.keystone_construction.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_direct_line",
+      "target": "beat.tsh.keystone_construction.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_direct_line",
+      "target": "evt.tsh.keystone_construction.node.n_build",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_direct",
+      "target": "evt.tsh.keystone_construction.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_effects",
+      "target": "evt.tsh.keystone_construction.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_iku",
+      "target": "beat.tsh.keystone_construction.iku_constraint",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_iku",
+      "target": "evt.tsh.keystone_construction.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_journal",
+      "target": "evt.tsh.keystone_construction.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_journal",
+      "target": "journal.tsh.keystone_construction",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_loss",
+      "target": "beat.tsh.keystone_construction.loss",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_loss",
+      "target": "evt.tsh.keystone_construction.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_objective",
+      "target": "evt.tsh.keystone_construction.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_objective",
+      "target": "obj.tsh.keystone_construction.read",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_objective",
+      "target": "prop.tsh.plumb_line_weather_card",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_objective",
+      "target": "prop.tsh.three_anchor_slots",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_objective",
+      "target": "prop.tsh.unnarrowed_cloud_lane",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_patient_line",
+      "target": "beat.tsh.keystone_construction.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_patient_line",
+      "target": "evt.tsh.keystone_construction.node.n_build",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_patient",
+      "target": "evt.tsh.keystone_construction.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_plan",
+      "target": "beat.tsh.keystone_construction.plan",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_plan",
+      "target": "evt.tsh.keystone_construction.node.n_iku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_playful_line",
+      "target": "beat.tsh.keystone_construction.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_playful_line",
+      "target": "evt.tsh.keystone_construction.node.n_build",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.keystone_construction.node.n_playful",
+      "target": "evt.tsh.keystone_construction.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.keystone_construction",
+      "target": "char.iku_nagae",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.keystone_construction",
+      "target": "char.iku_nagae",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.keystone_construction",
+      "target": "char.tenshi_hinanawi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.keystone_construction",
+      "target": "char.tenshi_hinanawi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.keystone_construction",
+      "target": "event.tsh.keystone_construction.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.keystone_construction",
+      "target": "evt.tsh.keystone_construction",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.tsh.keystone_construction",
+      "target": "loc.heaven.keystone_span_worksite",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.tsh.keystone_construction",
       "target": "loc.heaven",
       "kind": "location"
     },
