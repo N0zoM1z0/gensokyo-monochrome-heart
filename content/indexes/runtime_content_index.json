@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "a16574e673978c32bc5aacf11d24f8c5418b4006ba7679c48a658690b4e7f623",
+  "content_hash": "924572f39962bb4eccd4fcd58efc826c4ad98b29fff7c788f3a18ec2abd7a8d9",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 88,
-    "dialogue_beats": 552,
-    "localization": 1722,
+    "events": 89,
+    "dialogue_beats": 560,
+    "localization": 1738,
     "music_cues": 89,
-    "event_nodes": 1345
+    "event_nodes": 1363
   },
   "ids": {
     "characters": [
@@ -187,6 +187,7 @@
       "evt.sdm.promise",
       "evt.sdm.small_chair",
       "evt.sne.faith_festival_planner",
+      "evt.sne.ordinary_miracle",
       "evt.sne.outside_world_shorthand",
       "evt.sne.shrine_between_homes",
       "evt.yyk.bottomless_banquet",
@@ -685,6 +686,14 @@
       "beat.sne.faith_festival_planner.playful",
       "beat.sne.faith_festival_planner.sanae_plan",
       "beat.sne.faith_festival_planner.suwako_condition",
+      "beat.sne.ordinary_miracle.after_meaning",
+      "beat.sne.ordinary_miracle.after_test",
+      "beat.sne.ordinary_miracle.defiant",
+      "beat.sne.ordinary_miracle.direct",
+      "beat.sne.ordinary_miracle.patient",
+      "beat.sne.ordinary_miracle.playful",
+      "beat.sne.ordinary_miracle.repair",
+      "beat.sne.ordinary_miracle.shortcut",
       "beat.sne.outside_world_shorthand.after_recognition",
       "beat.sne.outside_world_shorthand.after_relabel",
       "beat.sne.outside_world_shorthand.correction",
@@ -1001,6 +1010,10 @@
       "choice.sne.faith_festival_planner.direct",
       "choice.sne.faith_festival_planner.patient",
       "choice.sne.faith_festival_planner.playful",
+      "choice.sne.ordinary_miracle.defiant",
+      "choice.sne.ordinary_miracle.direct",
+      "choice.sne.ordinary_miracle.patient",
+      "choice.sne.ordinary_miracle.playful",
       "choice.sne.outside_world_shorthand.defiant",
       "choice.sne.outside_world_shorthand.direct",
       "choice.sne.outside_world_shorthand.patient",
@@ -1521,6 +1534,14 @@
       "dlg.sne.faith_festival_planner.playful",
       "dlg.sne.faith_festival_planner.sanae_plan",
       "dlg.sne.faith_festival_planner.suwako_condition",
+      "dlg.sne.ordinary_miracle.after_meaning",
+      "dlg.sne.ordinary_miracle.after_test",
+      "dlg.sne.ordinary_miracle.defiant",
+      "dlg.sne.ordinary_miracle.direct",
+      "dlg.sne.ordinary_miracle.patient",
+      "dlg.sne.ordinary_miracle.playful",
+      "dlg.sne.ordinary_miracle.repair",
+      "dlg.sne.ordinary_miracle.shortcut",
       "dlg.sne.outside_world_shorthand.after_recognition",
       "dlg.sne.outside_world_shorthand.after_relabel",
       "dlg.sne.outside_world_shorthand.correction",
@@ -1645,6 +1666,7 @@
       "event.sdm.promise.title",
       "event.sdm.small_chair.title",
       "event.sne.faith_festival_planner.title",
+      "event.sne.ordinary_miracle.title",
       "event.sne.outside_world_shorthand.title",
       "event.sne.shrine_between_homes.title",
       "event.yyk.bottomless_banquet.title",
@@ -1835,6 +1857,8 @@
       "journal.sdm.small_chair.title",
       "journal.sne.faith_festival_planner.body",
       "journal.sne.faith_festival_planner.title",
+      "journal.sne.ordinary_miracle.body",
+      "journal.sne.ordinary_miracle.title",
       "journal.sne.outside_world_shorthand.body",
       "journal.sne.outside_world_shorthand.title",
       "journal.sne.shrine_between_homes.body",
@@ -1912,6 +1936,7 @@
       "obj.sdm.small_chair.enter_by_invitation",
       "obj.sdm.trace_missing_minute",
       "obj.sne.faith_festival_planner.compare",
+      "obj.sne.ordinary_miracle.inspect",
       "obj.sne.outside_world_shorthand.read_labels",
       "obj.sne.shrine_between_homes.inspect",
       "obj.yyk.bottomless_banquet.read_table",
@@ -7448,6 +7473,86 @@
       "kind": "localization"
     },
     {
+      "source": "beat.sne.ordinary_miracle.after_meaning",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.after_meaning",
+      "target": "dlg.sne.ordinary_miracle.after_meaning",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.after_test",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.after_test",
+      "target": "dlg.sne.ordinary_miracle.after_test",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.defiant",
+      "target": "dlg.sne.ordinary_miracle.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.direct",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.direct",
+      "target": "dlg.sne.ordinary_miracle.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.patient",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.patient",
+      "target": "dlg.sne.ordinary_miracle.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.playful",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.playful",
+      "target": "dlg.sne.ordinary_miracle.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.repair",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.repair",
+      "target": "dlg.sne.ordinary_miracle.repair",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.shortcut",
+      "target": "char.sanae_kochiya",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.sne.ordinary_miracle.shortcut",
+      "target": "dlg.sne.ordinary_miracle.shortcut",
+      "kind": "localization"
+    },
+    {
       "source": "beat.sne.outside_world_shorthand.after_recognition",
       "target": "char.sanae_kochiya",
       "kind": "speaker"
@@ -9315,6 +9420,26 @@
     {
       "source": "choice.sne.faith_festival_planner.response",
       "target": "choice.sne.faith_festival_planner.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.ordinary_miracle.response",
+      "target": "choice.sne.ordinary_miracle.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.ordinary_miracle.response",
+      "target": "choice.sne.ordinary_miracle.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.ordinary_miracle.response",
+      "target": "choice.sne.ordinary_miracle.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.sne.ordinary_miracle.response",
+      "target": "choice.sne.ordinary_miracle.playful",
       "kind": "localization"
     },
     {
@@ -24489,6 +24614,231 @@
     },
     {
       "source": "evt.sne.faith_festival_planner",
+      "target": "loc.moriya_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n001",
+      "target": "evt.sne.ordinary_miracle.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n001",
+      "target": "mus_sanae_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n002",
+      "target": "evt.sne.ordinary_miracle.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n002",
+      "target": "obj.sne.ordinary_miracle.inspect",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n002",
+      "target": "prop.sne.ordinary_sewing_kit",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n002",
+      "target": "prop.sne.torn_journal_strap",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n003",
+      "target": "beat.sne.ordinary_miracle.shortcut",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n003",
+      "target": "evt.sne.ordinary_miracle.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n004",
+      "target": "beat.sne.ordinary_miracle.repair",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n004",
+      "target": "evt.sne.ordinary_miracle.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n005",
+      "target": "choice.sne.ordinary_miracle.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n005",
+      "target": "evt.sne.ordinary_miracle.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n005",
+      "target": "evt.sne.ordinary_miracle.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n005",
+      "target": "evt.sne.ordinary_miracle.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n005",
+      "target": "evt.sne.ordinary_miracle.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_after_01",
+      "target": "beat.sne.ordinary_miracle.after_test",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_after_01",
+      "target": "evt.sne.ordinary_miracle.node.n_after_02",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_after_02",
+      "target": "beat.sne.ordinary_miracle.after_meaning",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_after_02",
+      "target": "evt.sne.ordinary_miracle.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_defiant_line",
+      "target": "beat.sne.ordinary_miracle.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_defiant_line",
+      "target": "evt.sne.ordinary_miracle.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_defiant",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_defiant",
+      "target": "evt.sne.ordinary_miracle.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_direct_line",
+      "target": "beat.sne.ordinary_miracle.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_direct_line",
+      "target": "evt.sne.ordinary_miracle.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_direct",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_direct",
+      "target": "evt.sne.ordinary_miracle.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_effects",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_effects",
+      "target": "evt.sne.ordinary_miracle.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_journal",
+      "target": "evt.sne.ordinary_miracle.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_journal",
+      "target": "journal.sne.ordinary_miracle",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_patient_line",
+      "target": "beat.sne.ordinary_miracle.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_patient_line",
+      "target": "evt.sne.ordinary_miracle.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_patient",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_patient",
+      "target": "evt.sne.ordinary_miracle.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_playful_line",
+      "target": "beat.sne.ordinary_miracle.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_playful_line",
+      "target": "evt.sne.ordinary_miracle.node.n_after_01",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_playful",
+      "target": "char.sanae_kochiya",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle.node.n_playful",
+      "target": "evt.sne.ordinary_miracle.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle",
+      "target": "char.sanae_kochiya",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle",
+      "target": "char.sanae_kochiya",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle",
+      "target": "event.sne.ordinary_miracle.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle",
+      "target": "evt.sne.ordinary_miracle",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle",
+      "target": "loc.moriya_shrine.ropeway_rain_shelter",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.sne.ordinary_miracle",
       "target": "loc.moriya_shrine",
       "kind": "location"
     },
