@@ -74,6 +74,8 @@ run_checked "design package" python3 design/tools/validate_package.py
 run_checked "M15 roster metadata" python3 scripts/build_m15_roster.py --check
 run_checked "content synchronization" python3 scripts/sync_design_content.py --check
 run_checked "font synchronization" python3 scripts/sync_fonts.py --check
+run_checked "M16 production audio" python3 scripts/build_m16_audio_assets.py --check
+run_checked "M16 production asset synchronization" python3 scripts/sync_production_asset_ledger.py --check
 run_checked "M16 asset ledger and generated credits" python3 scripts/validate_asset_ledger.py --check
 run_checked "Python syntax" python3 -m compileall -q scripts
 run_checked "localization CSV validation" python3 scripts/validate_localization_csv.py

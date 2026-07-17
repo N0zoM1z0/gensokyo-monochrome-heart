@@ -33,3 +33,8 @@ assets:
     name: "Kiri8 Latin bitmap font"
     license: project_original
     status: approved_for_release
+  - id: m16_production_audio
+    name: "Five-region adaptive stems and production sound effects"
+    source: "assets/audio/production/production_manifest.json"
+    license: project_original
+    status: approved_for_release

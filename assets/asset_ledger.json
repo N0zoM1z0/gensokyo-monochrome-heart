@@ -25,84 +25,24 @@
   ],
   "records": [
     {
-      "id": "asset.art.marisa.model_m",
-      "path": "assets/art/fighter/marisa_m_sheet.png",
-      "kind": "sprite_sheet",
+      "id": "asset.font.kiri8.latin",
+      "path": "ui/fonts/kiri8_latin.png",
+      "kind": "bitmap_font",
       "creator": "Gensokyo: Monochrome Heart project",
       "rights_basis": "project_original",
       "license_id": "project-original-fanwork",
       "license_path": "",
       "source_paths": [
-        "design/06_art/visual_system_v2/source/characters.js",
-        "design/06_art/visual_system_v2/assets/sprites/marisa_m_sheet.png"
+        "design/06_art/visual_system_v2/source/pixel_core.js",
+        "scripts/sync_fonts.py"
       ],
-      "sha256": "b1fc0deb7f14efa1b97925a20208f426be440a23fc2bc9f201473adf486d3cf6",
+      "sha256": "d225988c0ae6f986d1681c886edf9ed02c8e49022ac5fbd948c4574d7efe119c",
       "approval_status": "approved_for_release",
-      "approval_basis": "M16 technical validation and original-source review",
+      "approval_basis": "Deterministic glyph-source and one-bit import validation",
       "approved_by": "codex-m16-technical-review",
       "approved_at": "2026-07-17",
       "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
-      "accessibility_pair": "asset.art.marisa.model_m.inverted"
-    },
-    {
-      "id": "asset.art.marisa.model_m.inverted",
-      "path": "assets/art/fighter/marisa_m_sheet_inverted.png",
-      "kind": "sprite_sheet_accessibility_variant",
-      "creator": "Gensokyo: Monochrome Heart project",
-      "rights_basis": "project_original",
-      "license_id": "project-original-fanwork",
-      "license_path": "",
-      "source_paths": [
-        "design/06_art/visual_system_v2/source/characters.js",
-        "design/06_art/visual_system_v2/assets/sprites/marisa_m_sheet_inverted.png"
-      ],
-      "sha256": "172a5ac9187b6cfa757a252403aab0bfe6b06ead5662e42ea7ff456cc973a8fe",
-      "approval_status": "approved_for_release",
-      "approval_basis": "M16 polarity validation against the Model M source",
-      "approved_by": "codex-m16-technical-review",
-      "approved_at": "2026-07-17",
-      "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
-      "accessibility_pair": "asset.art.marisa.model_m"
-    },
-    {
-      "id": "asset.art.reimu.model_m",
-      "path": "assets/art/fighter/reimu_m_sheet.png",
-      "kind": "sprite_sheet",
-      "creator": "Gensokyo: Monochrome Heart project",
-      "rights_basis": "project_original",
-      "license_id": "project-original-fanwork",
-      "license_path": "",
-      "source_paths": [
-        "design/06_art/visual_system_v2/source/characters.js",
-        "design/06_art/visual_system_v2/assets/sprites/reimu_m_sheet.png"
-      ],
-      "sha256": "606278dda62f806092ea174fa19eb793f109cd6d0ef3ef7e5f7049dba1068c0d",
-      "approval_status": "approved_for_release",
-      "approval_basis": "M16 technical validation and original-source review",
-      "approved_by": "codex-m16-technical-review",
-      "approved_at": "2026-07-17",
-      "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
-      "accessibility_pair": "asset.art.reimu.model_m.inverted"
-    },
-    {
-      "id": "asset.art.reimu.model_m.inverted",
-      "path": "assets/art/fighter/reimu_m_sheet_inverted.png",
-      "kind": "sprite_sheet_accessibility_variant",
-      "creator": "Gensokyo: Monochrome Heart project",
-      "rights_basis": "project_original",
-      "license_id": "project-original-fanwork",
-      "license_path": "",
-      "source_paths": [
-        "design/06_art/visual_system_v2/source/characters.js",
-        "design/06_art/visual_system_v2/assets/sprites/reimu_m_sheet_inverted.png"
-      ],
-      "sha256": "5f3f29053e1c85b39ef00dec702a6c95305493dd022a7be610c081a6a71ce5ae",
-      "approval_status": "approved_for_release",
-      "approval_basis": "M16 polarity validation against the Model M source",
-      "approved_by": "codex-m16-technical-review",
-      "approved_at": "2026-07-17",
-      "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
-      "accessibility_pair": "asset.art.reimu.model_m"
+      "accessibility_pair": ""
     },
     {
       "id": "asset.font.dotgothic16.japanese",
@@ -143,24 +83,597 @@
       "accessibility_pair": ""
     },
     {
-      "id": "asset.font.kiri8.latin",
-      "path": "ui/fonts/kiri8_latin.png",
-      "kind": "bitmap_font",
+      "id": "asset.audio.music.eientei_bamboo.incident",
+      "path": "assets/audio/production/music/eientei_bamboo_incident.wav",
+      "kind": "music_stem",
       "creator": "Gensokyo: Monochrome Heart project",
       "rights_basis": "project_original",
       "license_id": "project-original-fanwork",
       "license_path": "",
       "source_paths": [
-        "design/06_art/visual_system_v2/source/pixel_core.js",
-        "scripts/sync_fonts.py"
+        "scripts/build_m16_audio_assets.py"
       ],
-      "sha256": "d225988c0ae6f986d1681c886edf9ed02c8e49022ac5fbd948c4574d7efe119c",
+      "sha256": "4774139b01ac2fa0199c852cd91499928f5d3f89757d6bf98728f687c9798feb",
       "approval_status": "approved_for_release",
-      "approval_basis": "Deterministic glyph-source and one-bit import validation",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.eientei_bamboo.person",
+      "path": "assets/audio/production/music/eientei_bamboo_person.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "e71f236b0e62fdb3d439640b16edd9c35483249bee98aac18eb93edb35d6cf8c",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.eientei_bamboo.place",
+      "path": "assets/audio/production/music/eientei_bamboo_place.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "78443928ea158eb6b7b7d281d75ac645de85927731d5dfab315d2a8aa6a6e518",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.hakugyokurou.incident",
+      "path": "assets/audio/production/music/hakugyokurou_incident.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "1bc4d4b94a4a54a9960759b6d49d85ad5110186bde32668a3d1c94834565120b",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.hakugyokurou.person",
+      "path": "assets/audio/production/music/hakugyokurou_person.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "e9fa84eadcf8955a57031648e86d69c7869541972f09b98cbc96fb1747168dab",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.hakugyokurou.place",
+      "path": "assets/audio/production/music/hakugyokurou_place.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "bbad3be7b0371b842d32b9781e020160ac70e2a5e7d82ddd121f52287f0130ba",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.hakurei_shrine.incident",
+      "path": "assets/audio/production/music/hakurei_shrine_incident.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "b5a4994806298e66c388804f9656c012bffbd3bd193f55459e46f0b1da2c4d3b",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.hakurei_shrine.person",
+      "path": "assets/audio/production/music/hakurei_shrine_person.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "b45e885832f045d7aba64584330969e4f1b95d141887308fdb53703822faadee",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.hakurei_shrine.place",
+      "path": "assets/audio/production/music/hakurei_shrine_place.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "4a5515c6b1111bb6c5dd8aeb6e8727e5c53caa67618c47925459ac05c6555553",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.scarlet_devil_mansion.incident",
+      "path": "assets/audio/production/music/scarlet_devil_mansion_incident.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "d2d7d1f275fb56e27cb158dc7bd4ce0551cfe85b2b7ee6b8c09465062519af77",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.scarlet_devil_mansion.person",
+      "path": "assets/audio/production/music/scarlet_devil_mansion_person.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "08f5b58655ce23ec0edf701b3e6dcfb8c155d7d2be993290ce943d2f11552d58",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.scarlet_devil_mansion.place",
+      "path": "assets/audio/production/music/scarlet_devil_mansion_place.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "3b39726852066e756ba1106fc90d5ba84c2e0959073a32c38947876cfacdf400",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.youkai_mountain.incident",
+      "path": "assets/audio/production/music/youkai_mountain_incident.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "f555b3b1c4317fa7b3f4aa7b9a8dbf89abc91208b5ad13bcf4016d6466bc709b",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.youkai_mountain.person",
+      "path": "assets/audio/production/music/youkai_mountain_person.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "136390c5f263db1c854998936c10f5ce9445f99d8c40af87653a49317cbe6006",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.audio.music.youkai_mountain.place",
+      "path": "assets/audio/production/music/youkai_mountain_place.wav",
+      "kind": "music_stem",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "0700d69a0ab7b2bd6a972a5bfcadd70f2610c3a4036c2fe398e6e8992d3bcd87",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.ambience.region_bed",
+      "path": "assets/audio/production/sfx/ambience_region_bed.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "23e893f4b5712806f1e3080eb00a35331f3a196439de84d46284ce7695d9fedb",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.bullet.group_loop",
+      "path": "assets/audio/production/sfx/bullet_group_loop.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "73744f4a55be5ce9e6dd3845de99b04313ac98b2af090229b795e5dd3586168d",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.bullet.transient",
+      "path": "assets/audio/production/sfx/bullet_transient.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "eea439b16953dd76c55fab501bfddb16d4995202543213d89110dc510927ae59",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.combat.impact",
+      "path": "assets/audio/production/sfx/combat_impact.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "6f43b2ac03c0538c78f9b7b6828b071cd53594ecadf888dc498d93838c12eef5",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.danmaku.graze",
+      "path": "assets/audio/production/sfx/danmaku_graze.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "3392f8c3426f3db593dc49b1e4a0ad778427106c447f9771c16a25a564007c5a",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.player.damage",
+      "path": "assets/audio/production/sfx/player_damage.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "f893148aa50a912d53e6d81ec9a866444760f6230e24a04ed1fc2cf4d13faf8b",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.save.begin",
+      "path": "assets/audio/production/sfx/save_begin.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "5ad181f841501cc678e1da0f9df05e876825c3663af9f842cc3de7cfd0f476e9",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.save.end",
+      "path": "assets/audio/production/sfx/save_end.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "45c5039f14dbe04dd493ac1cbe85669eb7afc3ceafdde637a884f6294044ceff",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.ui.cancel",
+      "path": "assets/audio/production/sfx/ui_cancel.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "9c34bb53bf3ddda2d72b6abf77d0e2d4e621ac9a786831dd1cbe043b662b37a2",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.ui.confirm",
+      "path": "assets/audio/production/sfx/ui_confirm.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "5cd74a7396fcf0a7eed7a7539a5d2b131f3fd5bfe244e84b07b443a590b671e2",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.ui.focus",
+      "path": "assets/audio/production/sfx/ui_focus.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "814cd6ab30af6692c001d30d646b4b1d90205ba7914eaf09561023f989905ba6",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.sfx.warning.threat",
+      "path": "assets/audio/production/sfx/warning_threat.wav",
+      "kind": "sfx",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "scripts/build_m16_audio_assets.py"
+      ],
+      "sha256": "2f5c422b1b4d1904e0c3e7f72ed512124803c1f017ae6a03f2c95f95522abab6",
+      "approval_status": "approved_for_release",
+      "approval_basis": "Deterministically synthesized from project-authored integer oscillator, envelope, and noise code; contains no imported samples and no transcribed melody.",
+      "approved_by": "codex-m16-audio-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_production_audio_review.md",
+      "accessibility_pair": ""
+    },
+    {
+      "id": "asset.art.marisa.model_m",
+      "path": "assets/art/fighter/marisa_m_sheet.png",
+      "kind": "sprite_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/characters.js",
+        "design/06_art/visual_system_v2/assets/sprites/marisa_m_sheet.png"
+      ],
+      "sha256": "b1fc0deb7f14efa1b97925a20208f426be440a23fc2bc9f201473adf486d3cf6",
+      "approval_status": "approved_for_release",
+      "approval_basis": "M16 technical validation and original-source review",
       "approved_by": "codex-m16-technical-review",
       "approved_at": "2026-07-17",
       "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
-      "accessibility_pair": ""
+      "accessibility_pair": "asset.art.marisa.model_m.inverted"
+    },
+    {
+      "id": "asset.art.reimu.model_m",
+      "path": "assets/art/fighter/reimu_m_sheet.png",
+      "kind": "sprite_sheet",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/characters.js",
+        "design/06_art/visual_system_v2/assets/sprites/reimu_m_sheet.png"
+      ],
+      "sha256": "606278dda62f806092ea174fa19eb793f109cd6d0ef3ef7e5f7049dba1068c0d",
+      "approval_status": "approved_for_release",
+      "approval_basis": "M16 technical validation and original-source review",
+      "approved_by": "codex-m16-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
+      "accessibility_pair": "asset.art.reimu.model_m.inverted"
+    },
+    {
+      "id": "asset.art.marisa.model_m.inverted",
+      "path": "assets/art/fighter/marisa_m_sheet_inverted.png",
+      "kind": "sprite_sheet_accessibility_variant",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/characters.js",
+        "design/06_art/visual_system_v2/assets/sprites/marisa_m_sheet_inverted.png"
+      ],
+      "sha256": "172a5ac9187b6cfa757a252403aab0bfe6b06ead5662e42ea7ff456cc973a8fe",
+      "approval_status": "approved_for_release",
+      "approval_basis": "M16 polarity validation against the Model M source",
+      "approved_by": "codex-m16-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
+      "accessibility_pair": "asset.art.marisa.model_m"
+    },
+    {
+      "id": "asset.art.reimu.model_m.inverted",
+      "path": "assets/art/fighter/reimu_m_sheet_inverted.png",
+      "kind": "sprite_sheet_accessibility_variant",
+      "creator": "Gensokyo: Monochrome Heart project",
+      "rights_basis": "project_original",
+      "license_id": "project-original-fanwork",
+      "license_path": "",
+      "source_paths": [
+        "design/06_art/visual_system_v2/source/characters.js",
+        "design/06_art/visual_system_v2/assets/sprites/reimu_m_sheet_inverted.png"
+      ],
+      "sha256": "5f3f29053e1c85b39ef00dec702a6c95305493dd022a7be610c081a6a71ce5ae",
+      "approval_status": "approved_for_release",
+      "approval_basis": "M16 polarity validation against the Model M source",
+      "approved_by": "codex-m16-technical-review",
+      "approved_at": "2026-07-17",
+      "approval_evidence_path": "docs/reviews/m16_runtime_asset_foundation_review.md",
+      "accessibility_pair": "asset.art.reimu.model_m"
     }
   ]
 }
