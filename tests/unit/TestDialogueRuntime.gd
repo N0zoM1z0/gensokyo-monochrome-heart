@@ -153,6 +153,21 @@ func _expect_route_intent_label_detection(failures: Array[String]) -> void:
 	]:
 		if FourToneChoiceControl.uses_route_intent_labels(choice_id):
 			failures.append("ordinary or consent choice was mislabeled as route intent: %s" % choice_id)
+	for choice_id: StringName in [
+		&"choice.rml.promise.romance_consent",
+		&"choice.sne.promise.romance_consent",
+		&"choice.ein.patient_refuses.player_test_consent",
+	]:
+		if not FourToneChoiceControl.uses_consent_labels(choice_id):
+			failures.append("explicit consent choice did not request yes/no labels: %s" % choice_id)
+	if FourToneChoiceControl.uses_consent_labels(&"choice.ein.patient_refuses.response"):
+		failures.append("ordinary authored tone choice was mislabeled as yes/no consent")
+	var graph := _content.graph(&"evt.ein.patient_refuses")
+	var consent := EventChoiceResolver.new().resolve(graph.node(&"n_player_choice").choice, _event_state())
+	var control := FourToneChoiceControl.new()
+	control.configure(consent, _content, &"en")
+	if control.focused_tone() != &"defiant":
+		failures.append("explicit consent did not default to the no/refusal option")
 
 
 func _expect_safe_resonance_and_debug_views(failures: Array[String]) -> void:

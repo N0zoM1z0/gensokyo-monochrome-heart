@@ -18,6 +18,10 @@ const ROUTE_INTENT_LABEL_KEYS: Dictionary[StringName, StringName] = {
 	&"patient": &"ui.dialogue.intent.postponed",
 	&"defiant": &"ui.dialogue.intent.undecided",
 }
+const CONSENT_LABEL_KEYS: Dictionary[StringName, StringName] = {
+	&"direct": &"ui.dialogue.consent.yes",
+	&"defiant": &"ui.dialogue.consent.no",
+}
 
 var profile_id: StringName = &"A"
 var locale: StringName = &"en"
@@ -28,6 +32,7 @@ var _catalog := UiTextCatalog.new()
 var _latin_font: Font
 var _japanese_font: Font
 var _uses_route_intent_labels: bool = false
+var _uses_consent_labels: bool = false
 
 
 func _ready() -> void:
@@ -49,6 +54,10 @@ func configure(
 	presenter = FourToneChoicePresenter.new(content)
 	presenter.configure(choice, next_locale, preferred_tone)
 	_uses_route_intent_labels = choice != null and uses_route_intent_labels(choice.choice_id)
+	_uses_consent_labels = choice != null and uses_consent_labels(choice.choice_id)
+	# Explicit consent is opt-in: focus refusal until the player moves to yes.
+	if _uses_consent_labels and presenter.choice.option_for_tone(&"defiant") != null:
+		presenter.focused_tone = &"defiant"
 	locale = next_locale
 	profile_id = next_profile_id
 	queue_redraw()
@@ -56,6 +65,10 @@ func configure(
 
 static func uses_route_intent_labels(choice_id: StringName) -> bool:
 	return String(choice_id).ends_with(".promise.intent")
+
+
+static func uses_consent_labels(choice_id: StringName) -> bool:
+	return String(choice_id).ends_with("_consent")
 
 
 func set_locale(next_locale: StringName) -> void:
@@ -146,13 +159,17 @@ func _draw_option(
 	if not option.is_available:
 		for x: int in range(0, int(size.x), 8):
 			draw_line(Vector2(x, top + row_height - 4), Vector2(x + 5, top + 1), foreground, 1.0)
-	_draw_tone_mark(option.tone, Vector2(13, top + 8), foreground, background)
+	_draw_tone_mark(option.tone, Vector2(13, top + 8), foreground, background, _uses_consent_labels)
 	var font := _japanese_font if locale == &"ja" else _latin_font
 	var body_base := (10 if ui_scale_percent > 100 else 12) if locale == &"ja" else 8
 	var body_size := UI_SCALE_POLICY.pixels(body_base, ui_scale_percent)
 	var tone_size := UI_SCALE_POLICY.pixels(10 if locale == &"ja" else 8, ui_scale_percent)
 	var line_height := body_size
-	var label_keys := ROUTE_INTENT_LABEL_KEYS if _uses_route_intent_labels else TONE_LABEL_KEYS
+	var label_keys := (
+		ROUTE_INTENT_LABEL_KEYS
+		if _uses_route_intent_labels
+		else CONSENT_LABEL_KEYS if _uses_consent_labels else TONE_LABEL_KEYS
+	)
 	var tone_label := _catalog.text(label_keys.get(option.tone, &"ui.common.unavailable"), locale)
 	var first_baseline := mini(row_height - 4, tone_size + 1)
 	var is_reflow := ui_scale_percent > 100
@@ -179,7 +196,21 @@ func _draw_option(
 		)
 
 
-func _draw_tone_mark(tone: StringName, origin: Vector2, foreground: Color, background: Color) -> void:
+func _draw_tone_mark(
+	tone: StringName,
+	origin: Vector2,
+	foreground: Color,
+	background: Color,
+	is_consent: bool
+) -> void:
+	if is_consent:
+		if tone == &"direct":
+			draw_line(origin + Vector2(1, 1), origin + Vector2(4, 5), foreground, 2.0)
+			draw_line(origin + Vector2(4, 5), origin + Vector2(11, -3), foreground, 2.0)
+		else:
+			draw_line(origin, origin + Vector2(10, 8), foreground, 2.0)
+			draw_line(origin + Vector2(10, 0), origin + Vector2(0, 8), foreground, 2.0)
+		return
 	match tone:
 		&"direct":
 			draw_line(origin, origin + Vector2(9, 0), foreground, 2.0)

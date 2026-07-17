@@ -48,6 +48,8 @@
 	{"key": "ui.dialogue.intent.postponed", "en": "NOT YET", "ja": "保留"},
 	{"key": "ui.dialogue.intent.undecided", "en": "UNSURE", "ja": "未定"},
     {"key": "ui.dialogue.complete", "en": "EVENT COMPLETE", "ja": "イベント完了"},
+    {"key": "ui.dialogue.consent.no", "en": "NO", "ja": "いいえ"},
+    {"key": "ui.dialogue.consent.yes", "en": "YES", "ja": "はい"},
     {"key": "ui.dialogue.mock_mode", "en": "TEA TEMPERATURE -- MOCK RESULT", "ja": "お茶の温度・仮結果"},
     {"key": "ui.dialogue.resonance.cup_closer", "en": "THE SECOND CUP SLIDES CLOSER.", "ja": "二つ目の湯呑みが近づく。"},
     {"key": "ui.dialogue.result.clear", "en": "CLEAR", "ja": "成功"},

@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "bc88f69050c581abbcdd2ffcdfb2ac0d09ae09b7fff03ea46cb567f79b0aff49",
+  "content_hash": "df11759b258d5315361159c4a7e51dc5f036c7c95cfc12f3af8c3e5f664b1ff0",
   "counts": {
     "characters": 71,
     "locations": 19,
     "events": 92,
-    "dialogue_beats": 587,
-    "localization": 1799,
+    "dialogue_beats": 598,
+    "localization": 1823,
     "music_cues": 89,
-    "event_nodes": 1430
+    "event_nodes": 1457
   },
   "ids": {
     "characters": [
@@ -290,6 +290,17 @@
       "beat.ein.mokou_uninvited_honesty.patient",
       "beat.ein.mokou_uninvited_honesty.playful",
       "beat.ein.mokou_uninvited_honesty.rivalry",
+      "beat.ein.patient_refuses.after",
+      "beat.ein.patient_refuses.ask_player",
+      "beat.ein.patient_refuses.defiant",
+      "beat.ein.patient_refuses.direct",
+      "beat.ein.patient_refuses.eirin_stop",
+      "beat.ein.patient_refuses.eirin_terms",
+      "beat.ein.patient_refuses.patient",
+      "beat.ein.patient_refuses.player_no",
+      "beat.ein.patient_refuses.player_yes",
+      "beat.ein.patient_refuses.playful",
+      "beat.ein.patient_refuses.reisen_report",
       "beat.ein.promise.ask",
       "beat.ein.promise.friendship",
       "beat.ein.promise.intro",
@@ -844,6 +855,12 @@
       "choice.ein.mokou_uninvited_honesty.direct",
       "choice.ein.mokou_uninvited_honesty.patient",
       "choice.ein.mokou_uninvited_honesty.playful",
+      "choice.ein.patient_refuses.defiant",
+      "choice.ein.patient_refuses.direct",
+      "choice.ein.patient_refuses.patient",
+      "choice.ein.patient_refuses.player_no",
+      "choice.ein.patient_refuses.player_yes",
+      "choice.ein.patient_refuses.playful",
       "choice.ein.promise.friendship",
       "choice.ein.promise.postponed",
       "choice.ein.promise.romance",
@@ -1179,6 +1196,17 @@
       "dlg.ein.mokou_uninvited_honesty.patient",
       "dlg.ein.mokou_uninvited_honesty.playful",
       "dlg.ein.mokou_uninvited_honesty.rivalry",
+      "dlg.ein.patient_refuses.after",
+      "dlg.ein.patient_refuses.ask_player",
+      "dlg.ein.patient_refuses.defiant",
+      "dlg.ein.patient_refuses.direct",
+      "dlg.ein.patient_refuses.eirin_stop",
+      "dlg.ein.patient_refuses.eirin_terms",
+      "dlg.ein.patient_refuses.patient",
+      "dlg.ein.patient_refuses.player_no",
+      "dlg.ein.patient_refuses.player_yes",
+      "dlg.ein.patient_refuses.playful",
+      "dlg.ein.patient_refuses.reisen_report",
       "dlg.ein.promise.ask",
       "dlg.ein.promise.friendship",
       "dlg.ein.promise.intro",
@@ -1689,6 +1717,7 @@
       "event.ein.five_impossibilities.title",
       "event.ein.game_with_no_continue.title",
       "event.ein.mokou_uninvited_honesty.title",
+      "event.ein.patient_refuses.title",
       "event.ein.promise.title",
       "event.ein.short_lived_guest.title",
       "event.eir.clinic_triage.title",
@@ -1795,6 +1824,9 @@
       "journal.ein.game_with_no_continue.title",
       "journal.ein.mokou_uninvited_honesty.body",
       "journal.ein.mokou_uninvited_honesty.title",
+      "journal.ein.patient_refuses.player_no.body",
+      "journal.ein.patient_refuses.player_yes.body",
+      "journal.ein.patient_refuses.title",
       "journal.ein.promise.friendship.body",
       "journal.ein.promise.friendship.title",
       "journal.ein.promise.postponed.body",
@@ -1976,6 +2008,7 @@
       "obj.ein.five_impossibilities.answer",
       "obj.ein.game_with_no_continue.choose",
       "obj.ein.mokou_uninvited_honesty.choose",
+      "obj.ein.patient_refuses.preserve",
       "obj.ein.promise.choose",
       "obj.ein.short_lived_guest.choose",
       "obj.eir.clinic_triage.separate",
@@ -2151,6 +2184,8 @@
       "ui.dialogue.backlog",
       "ui.dialogue.choose_intent",
       "ui.dialogue.complete",
+      "ui.dialogue.consent.no",
+      "ui.dialogue.consent.yes",
       "ui.dialogue.intent.friendship",
       "ui.dialogue.intent.postponed",
       "ui.dialogue.intent.romance",
@@ -3571,6 +3606,116 @@
     {
       "source": "beat.ein.mokou_uninvited_honesty.rivalry",
       "target": "dlg.ein.mokou_uninvited_honesty.rivalry",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.after",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.after",
+      "target": "dlg.ein.patient_refuses.after",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.ask_player",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.ask_player",
+      "target": "dlg.ein.patient_refuses.ask_player",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.defiant",
+      "target": "dlg.ein.patient_refuses.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.direct",
+      "target": "dlg.ein.patient_refuses.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.eirin_stop",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.eirin_stop",
+      "target": "dlg.ein.patient_refuses.eirin_stop",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.eirin_terms",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.eirin_terms",
+      "target": "dlg.ein.patient_refuses.eirin_terms",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.patient",
+      "target": "dlg.ein.patient_refuses.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.player_no",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.player_no",
+      "target": "dlg.ein.patient_refuses.player_no",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.player_yes",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.player_yes",
+      "target": "dlg.ein.patient_refuses.player_yes",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.playful",
+      "target": "dlg.ein.patient_refuses.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.ein.patient_refuses.reisen_report",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.ein.patient_refuses.reisen_report",
+      "target": "dlg.ein.patient_refuses.reisen_report",
       "kind": "localization"
     },
     {
@@ -8804,6 +8949,36 @@
       "kind": "localization"
     },
     {
+      "source": "choice.ein.patient_refuses.player_test_consent",
+      "target": "choice.ein.patient_refuses.player_no",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.patient_refuses.player_test_consent",
+      "target": "choice.ein.patient_refuses.player_yes",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.patient_refuses.response",
+      "target": "choice.ein.patient_refuses.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.patient_refuses.response",
+      "target": "choice.ein.patient_refuses.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.patient_refuses.response",
+      "target": "choice.ein.patient_refuses.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.ein.patient_refuses.response",
+      "target": "choice.ein.patient_refuses.playful",
+      "kind": "localization"
+    },
+    {
       "source": "choice.ein.promise.intent",
       "target": "choice.ein.promise.friendship",
       "kind": "localization"
@@ -12824,9 +12999,309 @@
       "kind": "location"
     },
     {
+      "source": "evt.ein.patient_refuses.node.n001",
+      "target": "evt.ein.patient_refuses.node.n003",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n001",
+      "target": "mus_eirin_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n002",
+      "target": "evt.ein.patient_refuses.node.n005",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n002",
+      "target": "obj.ein.patient_refuses.preserve",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n002",
+      "target": "prop.ein.closed_diagnostic_lens_case",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n002",
+      "target": "prop.ein.refusal_record_slot",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n002",
+      "target": "prop.ein.return_later_card",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n003",
+      "target": "beat.ein.patient_refuses.reisen_report",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n003",
+      "target": "evt.ein.patient_refuses.node.n004",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n004",
+      "target": "beat.ein.patient_refuses.eirin_stop",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n004",
+      "target": "evt.ein.patient_refuses.node.n_terms",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n005",
+      "target": "choice.ein.patient_refuses.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n005",
+      "target": "evt.ein.patient_refuses.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n005",
+      "target": "evt.ein.patient_refuses.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n005",
+      "target": "evt.ein.patient_refuses.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n005",
+      "target": "evt.ein.patient_refuses.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_after",
+      "target": "beat.ein.patient_refuses.after",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_after",
+      "target": "evt.ein.patient_refuses.node.n_ask",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_ask",
+      "target": "beat.ein.patient_refuses.ask_player",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_ask",
+      "target": "evt.ein.patient_refuses.node.n_player_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_defiant_line",
+      "target": "beat.ein.patient_refuses.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_defiant_line",
+      "target": "evt.ein.patient_refuses.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_defiant",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_defiant",
+      "target": "evt.ein.patient_refuses.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_direct_line",
+      "target": "beat.ein.patient_refuses.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_direct_line",
+      "target": "evt.ein.patient_refuses.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_direct",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_direct",
+      "target": "evt.ein.patient_refuses.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_effects_no",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_effects_no",
+      "target": "evt.ein.patient_refuses.node.n_end_no",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_effects_yes",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_effects_yes",
+      "target": "evt.ein.patient_refuses.node.n_end_yes",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_journal_no",
+      "target": "evt.ein.patient_refuses.node.n_effects_no",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_journal_no",
+      "target": "journal.ein.patient_refuses.player_no",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_journal_yes",
+      "target": "evt.ein.patient_refuses.node.n_effects_yes",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_journal_yes",
+      "target": "journal.ein.patient_refuses.player_yes",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_no_line",
+      "target": "beat.ein.patient_refuses.player_no",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_no_line",
+      "target": "evt.ein.patient_refuses.node.n_journal_no",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_no",
+      "target": "evt.ein.patient_refuses.node.n_no_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_patient_line",
+      "target": "beat.ein.patient_refuses.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_patient_line",
+      "target": "evt.ein.patient_refuses.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_patient",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_patient",
+      "target": "evt.ein.patient_refuses.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_player_choice",
+      "target": "choice.ein.patient_refuses.player_test_consent",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_player_choice",
+      "target": "evt.ein.patient_refuses.node.n_no",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_player_choice",
+      "target": "evt.ein.patient_refuses.node.n_yes",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_playful_line",
+      "target": "beat.ein.patient_refuses.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_playful_line",
+      "target": "evt.ein.patient_refuses.node.n_after",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_playful",
+      "target": "char.eirin_yagokoro",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_playful",
+      "target": "evt.ein.patient_refuses.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_terms",
+      "target": "beat.ein.patient_refuses.eirin_terms",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_terms",
+      "target": "evt.ein.patient_refuses.node.n002",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_yes_line",
+      "target": "beat.ein.patient_refuses.player_yes",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_yes_line",
+      "target": "evt.ein.patient_refuses.node.n_journal_yes",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses.node.n_yes",
+      "target": "evt.ein.patient_refuses.node.n_yes_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.ein.patient_refuses",
+      "target": "char.eirin_yagokoro",
+      "kind": "cast"
+    },
+    {
       "source": "evt.ein.patient_refuses",
       "target": "char.eirin_yagokoro",
       "kind": "lead_character"
+    },
+    {
+      "source": "evt.ein.patient_refuses",
+      "target": "char.reisen_udongein_inaba",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.ein.patient_refuses",
+      "target": "event.ein.patient_refuses.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.ein.patient_refuses",
+      "target": "evt.ein.patient_refuses",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.ein.patient_refuses",
+      "target": "loc.eientei.consent_intake_desk",
+      "kind": "spot"
     },
     {
       "source": "evt.ein.patient_refuses",

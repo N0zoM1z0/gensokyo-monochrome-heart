@@ -244,16 +244,23 @@
     {
       "id": "evt.ein.patient_refuses",
       "legacy_id": "EVT-017",
-      "title_en": "The Patient Who Refuses",
+      "title_en": "The Patient Who Says No",
       "location_id": "loc.eientei",
       "lead_character_ids": [
         "char.eirin_yagokoro"
       ],
-      "primary_mode": "triage_minigame",
-      "core_change": "consent theme",
-      "status": "planned",
-      "estimated_minutes": 18,
-      "comfort_tags": []
+      "primary_mode": "consent_dialogue",
+      "core_change": "Eirin treats a patient's refusal as a complete clinical answer, then gives the protagonist a separate test choice whose acceptance or refusal changes neither care nor route access.",
+      "status": "authored",
+      "estimated_minutes": 11,
+      "comfort_tags": [
+        "no_timer",
+        "no_failure",
+        "medical_refusal_respected",
+        "player_test_optional",
+        "refusal_no_route_penalty",
+        "no_real_world_treatment_advice"
+      ]
     },
     {
       "id": "evt.ein.five_impossibilities",

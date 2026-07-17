@@ -2,7 +2,7 @@ key,context,speaker,en,ja,max_width_px,origin
 obj.eir.clinic_triage.separate,objective,,"Separate observed signs, patient statements, magical residue, and rumor-stamped symptom cards.",観察した所見、患者自身の説明、魔法の残留、流言印の症状札を分ける。,208,Original
 event.eir.clinic_triage.title,event_title,,Clinic Triage,診療所のトリアージ,208,Original
 choice.eir.clinic_triage.direct,choice,,"Sort observation, statement, residue, and rumor without calling any one a diagnosis.",観察、説明、残留、流言を分け、どれ一つも診断そのものとは呼ばない。,248,Original
-choice.eir.clinic_triage.playful,choice,,Give Tewi's most dramatic symptom its own “unverified” tray.,てゐの最も派手な症状に「未確認」専用の盆を与える。,248,Original
+choice.eir.clinic_triage.playful,choice,,"Give Tewi's most dramatic symptom its own ""unverified"" tray.",てゐの最も派手な症状に「未確認」専用の盆を与える。,248,Original
 choice.eir.clinic_triage.patient,choice,,Ask what changed and what each patient agrees may be examined.,何が変わったか、何を診てもよいかを患者ごとに尋ねる。,248,Original
 choice.eir.clinic_triage.defiant,choice,,Refuse an efficient average that turns several people into one patient.,複数の人を一人の患者にする効率的な平均を拒む。,248,Original
 dlg.eir.clinic_triage.eirin_terms,dialogue,char.eirin_yagokoro,"Four trays before any conclusion: what we observe, what the patient says, what magic left behind, and what arrived as rumor. Triage determines the next question, not the whole person.",「結論の前に四つの盆を用意します。観察したもの、患者が語ったもの、魔法が残したもの、流言として届いたもの。トリアージが決めるのは次の問いであって、その人の全てではありません。」,248,Original
