@@ -10,8 +10,9 @@ This is a technical release candidate, not a public-release approval.
    accessibility features are visual/motion/timing/input assists; see
    `docs/accessibility/m10_screen_reader_feasibility.md` in the source archive.
 3. The M17 human EN, JA, character/canon, and comfort review manifest is still
-   intentionally absent. Automated readiness checks are not a substitute for
-   those reviewers; this blocks public-release approval.
+   intentionally absent, and the M10 external-session sheet remains pending.
+   The owner deferred both until after owner playback and feedback; automated
+   readiness checks are not a substitute for those reviews before public use.
 4. The owner waived the real-device speaker/headphone audition as a release
    gate. This waiver does not claim a human audition occurred.
 5. A public support contact and storefront/distributor decision have not been

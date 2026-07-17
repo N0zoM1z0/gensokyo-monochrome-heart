@@ -53,8 +53,10 @@ copy and marks the required human editorial approval.
 ## Public-release decision
 
 **Do not publish this candidate yet.** The technical Linux package is
-reproducible and smoke-tested, but public release remains blocked by the M17
-human review manifest, a target-class GPU capture before hardware claims, a
-named permitted storefront/distribution decision, and an owned support contact.
-The real-device speaker/headphone audition is not a blocker because the owner
-explicitly waived it; no audition is claimed to have occurred.
+reproducible and smoke-tested. The owner deferred M17/M10 human review until
+after owner playback and feedback; this permits technical-goal completion, not
+public-release approval. A target-class GPU capture before hardware claims, a
+named permitted storefront/distribution decision, and an owned support contact
+also remain required for public release. The real-device speaker/headphone
+audition is not a blocker because the owner explicitly waived it; no audition
+is claimed to have occurred.

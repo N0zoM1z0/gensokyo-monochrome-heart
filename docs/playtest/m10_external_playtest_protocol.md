@@ -2,6 +2,11 @@
 
 This protocol supports the M10 exit gate: five external sessions comprising two Touhou-aware players, two players unfamiliar with Touhou, and one accessibility-focused player. Empty rows in the companion CSV are intentional; simulated reviews and developer automation do not count as external participants.
 
+For the current technical-goal handoff, the owner explicitly deferred these
+sessions until after owner playback and feedback. This is recorded in
+`docs/reviews/m17_m10_owner_deferred_review.md`; it is not a claim that the
+external gate passed.
+
 ## Before each session
 
 - Record only a random session ID; do not enter a name, email address, account name, or free-form demographic detail.

@@ -46,6 +46,10 @@ The first command provides the reviewer-facing inventory. The second is the
 future sign-off gate and currently fails by design because no human review
 manifest has been supplied.
 
+The owner has deferred that human gate until after the technical goal is played;
+see `docs/reviews/m17_m10_owner_deferred_review.md`. The strict future-release
+gate remains intentionally active.
+
 ## Human-review handoff
 
 Generate the complete pending template with:
