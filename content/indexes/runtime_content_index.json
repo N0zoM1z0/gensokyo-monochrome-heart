@@ -1,15 +1,15 @@
 {
   "schema": "gmh-runtime-content-index-v1",
   "content_revision": "2026.07.16.10",
-  "content_hash": "5d1b9a3e06feb60782939ce9d76942943c7c16feef7778b52480eba00c5e74c8",
+  "content_hash": "18d20572cedf2a3c28fd312e3b456d208c5c4dfc33e56bf0f14c38bda142c47b",
   "counts": {
     "characters": 71,
     "locations": 19,
-    "events": 97,
-    "dialogue_beats": 658,
-    "localization": 1933,
+    "events": 98,
+    "dialogue_beats": 665,
+    "localization": 1948,
     "music_cues": 89,
-    "event_nodes": 1581
+    "event_nodes": 1598
   },
   "ids": {
     "characters": [
@@ -198,6 +198,7 @@
       "evt.sne.outside_world_shorthand",
       "evt.sne.promise",
       "evt.sne.shrine_between_homes",
+      "evt.tsh.entrance_tremor",
       "evt.yyk.bottomless_banquet",
       "evt.yyk.empty_plate",
       "evt.yyk.feast_without_ending",
@@ -816,6 +817,13 @@
       "beat.sne.shrine_between_homes.key",
       "beat.sne.shrine_between_homes.patient",
       "beat.sne.shrine_between_homes.playful",
+      "beat.tsh.entrance_tremor.arrival",
+      "beat.tsh.entrance_tremor.defiant",
+      "beat.tsh.entrance_tremor.direct",
+      "beat.tsh.entrance_tremor.iku_damage",
+      "beat.tsh.entrance_tremor.patient",
+      "beat.tsh.entrance_tremor.playful",
+      "beat.tsh.entrance_tremor.repair_terms",
       "beat.yyk.bottomless_banquet.after",
       "beat.yyk.bottomless_banquet.assist",
       "beat.yyk.bottomless_banquet.clear",
@@ -1170,6 +1178,10 @@
       "choice.sne.shrine_between_homes.direct",
       "choice.sne.shrine_between_homes.patient",
       "choice.sne.shrine_between_homes.playful",
+      "choice.tsh.entrance_tremor.defiant",
+      "choice.tsh.entrance_tremor.direct",
+      "choice.tsh.entrance_tremor.patient",
+      "choice.tsh.entrance_tremor.playful",
       "choice.yyk.bottomless_banquet.defiant",
       "choice.yyk.bottomless_banquet.direct",
       "choice.yyk.bottomless_banquet.patient",
@@ -1804,6 +1816,13 @@
       "dlg.sne.shrine_between_homes.key",
       "dlg.sne.shrine_between_homes.patient",
       "dlg.sne.shrine_between_homes.playful",
+      "dlg.tsh.entrance_tremor.arrival",
+      "dlg.tsh.entrance_tremor.defiant",
+      "dlg.tsh.entrance_tremor.direct",
+      "dlg.tsh.entrance_tremor.iku_damage",
+      "dlg.tsh.entrance_tremor.patient",
+      "dlg.tsh.entrance_tremor.playful",
+      "dlg.tsh.entrance_tremor.repair_terms",
       "dlg.yyk.bottomless_banquet.after",
       "dlg.yyk.bottomless_banquet.assist",
       "dlg.yyk.bottomless_banquet.clear",
@@ -1924,6 +1943,7 @@
       "event.sne.outside_world_shorthand.title",
       "event.sne.promise.title",
       "event.sne.shrine_between_homes.title",
+      "event.tsh.entrance_tremor.title",
       "event.yyk.bottomless_banquet.title",
       "event.yyk.empty_plate.title",
       "event.yyk.feast_without_ending.title",
@@ -2153,6 +2173,8 @@
       "journal.sne.promise.undecided.title",
       "journal.sne.shrine_between_homes.body",
       "journal.sne.shrine_between_homes.title",
+      "journal.tsh.entrance_tremor.body",
+      "journal.tsh.entrance_tremor.title",
       "journal.yyk.bottomless_banquet.body",
       "journal.yyk.bottomless_banquet.title",
       "journal.yyk.empty_plate.body",
@@ -2238,6 +2260,7 @@
       "obj.sne.outside_world_shorthand.read_labels",
       "obj.sne.promise.choose",
       "obj.sne.shrine_between_homes.inspect",
+      "obj.tsh.entrance_tremor.inspect",
       "obj.yyk.bottomless_banquet.read_table",
       "obj.yyk.empty_plate.observe",
       "obj.yyk.feast_without_ending.inspect",
@@ -8994,6 +9017,76 @@
       "kind": "localization"
     },
     {
+      "source": "beat.tsh.entrance_tremor.arrival",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.arrival",
+      "target": "dlg.tsh.entrance_tremor.arrival",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.defiant",
+      "target": "dlg.tsh.entrance_tremor.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.direct",
+      "target": "dlg.tsh.entrance_tremor.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.iku_damage",
+      "target": "char.iku_nagae",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.iku_damage",
+      "target": "dlg.tsh.entrance_tremor.iku_damage",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.patient",
+      "target": "dlg.tsh.entrance_tremor.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.playful",
+      "target": "dlg.tsh.entrance_tremor.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.repair_terms",
+      "target": "char.tenshi_hinanawi",
+      "kind": "speaker"
+    },
+    {
+      "source": "beat.tsh.entrance_tremor.repair_terms",
+      "target": "dlg.tsh.entrance_tremor.repair_terms",
+      "kind": "localization"
+    },
+    {
       "source": "beat.yyk.bottomless_banquet.after",
       "target": "char.yuyuko_saigyouji",
       "kind": "speaker"
@@ -10971,6 +11064,26 @@
     {
       "source": "choice.sne.shrine_between_homes.response",
       "target": "choice.sne.shrine_between_homes.playful",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.entrance_tremor.response",
+      "target": "choice.tsh.entrance_tremor.defiant",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.entrance_tremor.response",
+      "target": "choice.tsh.entrance_tremor.direct",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.entrance_tremor.response",
+      "target": "choice.tsh.entrance_tremor.patient",
+      "kind": "localization"
+    },
+    {
+      "source": "choice.tsh.entrance_tremor.response",
+      "target": "choice.tsh.entrance_tremor.playful",
       "kind": "localization"
     },
     {
@@ -29396,6 +29509,236 @@
     {
       "source": "evt.sne.shrine_between_homes",
       "target": "loc.moriya_shrine",
+      "kind": "location"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n001",
+      "target": "evt.tsh.entrance_tremor.node.n_arrival",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n001",
+      "target": "mus_tenshi_route",
+      "kind": "music"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_arrival",
+      "target": "beat.tsh.entrance_tremor.arrival",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_arrival",
+      "target": "evt.tsh.entrance_tremor.node.n_iku",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_choice",
+      "target": "choice.tsh.entrance_tremor.response",
+      "kind": "choice"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_choice",
+      "target": "evt.tsh.entrance_tremor.node.n_defiant",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_choice",
+      "target": "evt.tsh.entrance_tremor.node.n_direct",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_choice",
+      "target": "evt.tsh.entrance_tremor.node.n_patient",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_choice",
+      "target": "evt.tsh.entrance_tremor.node.n_playful",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_defiant_line",
+      "target": "beat.tsh.entrance_tremor.defiant",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_defiant_line",
+      "target": "evt.tsh.entrance_tremor.node.n_repair",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_defiant",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_defiant",
+      "target": "evt.tsh.entrance_tremor.node.n_defiant_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_direct_line",
+      "target": "beat.tsh.entrance_tremor.direct",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_direct_line",
+      "target": "evt.tsh.entrance_tremor.node.n_repair",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_direct",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_direct",
+      "target": "evt.tsh.entrance_tremor.node.n_direct_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_effects",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_effects",
+      "target": "evt.tsh.entrance_tremor.node.n_end",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_iku",
+      "target": "beat.tsh.entrance_tremor.iku_damage",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_iku",
+      "target": "evt.tsh.entrance_tremor.node.n_objective",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_journal",
+      "target": "evt.tsh.entrance_tremor.node.n_effects",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_journal",
+      "target": "journal.tsh.entrance_tremor",
+      "kind": "journal_entry"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_objective",
+      "target": "evt.tsh.entrance_tremor.node.n_choice",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_objective",
+      "target": "obj.tsh.entrance_tremor.inspect",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_objective",
+      "target": "prop.tsh.keystone_warning_chalk",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_objective",
+      "target": "prop.tsh.split_arrival_step",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_objective",
+      "target": "prop.tsh.unmoved_delivery_cart",
+      "kind": "interactable"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_patient_line",
+      "target": "beat.tsh.entrance_tremor.patient",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_patient_line",
+      "target": "evt.tsh.entrance_tremor.node.n_repair",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_patient",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_patient",
+      "target": "evt.tsh.entrance_tremor.node.n_patient_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_playful_line",
+      "target": "beat.tsh.entrance_tremor.playful",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_playful_line",
+      "target": "evt.tsh.entrance_tremor.node.n_repair",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_playful",
+      "target": "char.tenshi_hinanawi",
+      "kind": "effect_character"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_playful",
+      "target": "evt.tsh.entrance_tremor.node.n_playful_line",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_repair",
+      "target": "beat.tsh.entrance_tremor.repair_terms",
+      "kind": "dialogue_beat"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor.node.n_repair",
+      "target": "evt.tsh.entrance_tremor.node.n_journal",
+      "kind": "event_edge"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor",
+      "target": "char.iku_nagae",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor",
+      "target": "char.iku_nagae",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor",
+      "target": "char.tenshi_hinanawi",
+      "kind": "cast"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor",
+      "target": "char.tenshi_hinanawi",
+      "kind": "lead_character"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor",
+      "target": "event.tsh.entrance_tremor.title",
+      "kind": "localization"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor",
+      "target": "evt.tsh.entrance_tremor",
+      "kind": "event_index"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor",
+      "target": "loc.heaven.arrival_terrace_crackline",
+      "kind": "spot"
+    },
+    {
+      "source": "evt.tsh.entrance_tremor",
+      "target": "loc.heaven",
       "kind": "location"
     },
     {
