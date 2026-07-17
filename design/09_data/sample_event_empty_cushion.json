@@ -304,5 +304,11 @@
     "fanon": 0,
     "original": 9
   },
-  "comfort_tags": []
+  "comfort_tags": [
+    "no_timer",
+    "assist_available",
+    "loss_continues",
+    "spell_terms_explicit",
+    "choice_tones_remain_distinct"
+  ]
 }

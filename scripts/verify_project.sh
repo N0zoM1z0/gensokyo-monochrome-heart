@@ -81,6 +81,7 @@ run_checked "M16 production asset synchronization" python3 scripts/sync_producti
 run_checked "M16 asset ledger and generated credits" python3 scripts/validate_asset_ledger.py --check
 run_checked "Python syntax" python3 -m compileall -q scripts
 run_checked "localization CSV validation" python3 scripts/validate_localization_csv.py
+run_checked "M17 content review readiness" python3 scripts/validate_m17_review.py
 run_checked "M12 architecture reuse scan" python3 scripts/validate_m12_architecture.py
 
 # Measure the provisional CPU budget before the editor/import and authoring
@@ -591,6 +592,9 @@ run_expected_failure "fractional position fixture" "got (10.500,12.000)" \
 run_expected_failure "placeholder fixture" "placeholder filename is forbidden" \
 	"$GODOT_BIN" --headless --path . --script res://src/tools/validate_release.gd -- \
 	--fixture-placeholder
+run_expected_failure "M17 incomplete human review manifest" "missing human review for" \
+	python3 scripts/validate_m17_review.py --require-human-review \
+	--review-manifest=tests/fixtures/invalid/m17/incomplete_human_reviews.json
 
 if [[ "${GMH_SKIP_SCREENSHOTS:-0}" == "1" ]]; then
 	echo "==> screenshot matrix explicitly skipped with GMH_SKIP_SCREENSHOTS=1"

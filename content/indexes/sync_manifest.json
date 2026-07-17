@@ -20,7 +20,7 @@
     {
       "source": "design/09_data/sample_event_empty_cushion.json",
       "destination": "content/events/sample_event_empty_cushion.json",
-      "sha256": "a5ee6419b3b2c30b70dc9c69bd8903e804af335aadca8060fd1eca5a9c1b9be2"
+      "sha256": "fcc7d0ff93c47c163b2f24818ef984b03bf1d43b3302d2f621ec9fcba860d223"
     },
     {
       "source": "design/09_data/content_index.json",
